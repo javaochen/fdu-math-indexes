@@ -142,9 +142,6 @@ body {
   font-family: var(--serif); font-size: 26px; margin: 0 0 6px; font-weight: 700; letter-spacing: .02em;
 }
 .sec-head .meta { font-size: 12.5px; color: var(--muted); display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-.progress { height: 3px; background: var(--line); border-radius: 2px; overflow: hidden; margin-top: 12px; }
-.progress > i { display: block; height: 100%; background: var(--accent); width: 0; transition: width .25s; }
-
 .item {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -182,12 +179,6 @@ body {
 .title { font-family: var(--serif); font-weight: 600; font-size: 15px; }
 .head-right { margin-left: auto; display: flex; align-items: center; gap: 6px; }
 .pageref { font-size: 11.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
-.mark-btn {
-  background: none; border: 1px solid var(--line); border-radius: 6px;
-  font-size: 11.5px; color: var(--muted); padding: 1px 7px; cursor: pointer; white-space: nowrap;
-}
-.mark-btn:hover { border-color: var(--accent); color: var(--accent); }
-.item.mastered .mark-btn { background: var(--accent); border-color: var(--accent); color: #fff; }
 
 .stmt { font-family: var(--serif); font-size: 15.5px; line-height: 1.95; }
 .stmt p { margin: 0 0 .55em; }

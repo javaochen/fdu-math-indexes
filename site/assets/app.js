@@ -3,18 +3,10 @@
   "use strict";
 
   const $ = (s) => document.querySelector(s);
-  const store = {
-    get mastered() {
-      try { return new Set(JSON.parse(localStorage.getItem("fa.mastered.v1") || "[]")); }
-      catch { return new Set(); }
-    },
-    set mastered(s) { localStorage.setItem("fa.mastered.v1", JSON.stringify([...s])); },
-  };
 
   let DATA = null;
   let SECTIONS = [];          // 扁平章节列表
   let INDEX = new Map();      // anchor -> {item, section}
-  let mastered = store.mastered;
   let mode = "read";
   let current = null;         // 当前 section
   let query = "";
@@ -77,7 +69,6 @@
 
   /* ---------------- 条目渲染 ---------------- */
   function itemHtml(it, opts = {}) {
-    const isMastered = mastered.has(it.anchor);
     const head = `
       <div class="item-head">
         <span class="badge">${esc(it.type)}</span>
@@ -85,8 +76,6 @@
         ${it.title ? `<span class="title">${esc(it.title)}</span>` : ""}
         <span class="head-right">
           <span class="pageref">p.${it.page}</span>
-          <button class="mark-btn" type="button" data-mark="${esc(it.anchor)}"
-            title="标记为已掌握（快捷键 m）">${isMastered ? "已掌握" : "掌握"}</button>
         </span>
       </div>`;
     const hide = opts.hidden && !!it.title;
@@ -94,18 +83,11 @@
       ? `<div class="stmt hidden-stmt">${it.html}</div>
          <div class="reveal">点击或按 <kbd>空格</kbd> 显示陈述</div>`
       : `<div class="stmt">${it.html}</div>`;
-    return `<article class="item${isMastered ? " mastered" : ""}${hide ? "" : " revealed"}"
+    return `<article class="item${hide ? "" : " revealed"}"
       data-type="${esc(it.type)}" data-anchor="${esc(it.anchor)}" id="i-${esc(it.anchor)}">${head}${body}</article>`;
   }
 
-  function sectionMeta(s) {
-    const done = s.items.filter((i) => mastered.has(i.anchor)).length;
-    const pct = s.items.length ? Math.round((done / s.items.length) * 100) : 0;
-    return { done, pct };
-  }
-
   function renderSection(s) {
-    const { done, pct } = sectionMeta(s);
     const head = `
       <div class="sec-head">
         <h1>${esc(s.id)}&nbsp;&nbsp;${esc(s.title)}</h1>
@@ -113,9 +95,7 @@
           <span>${esc(s.chapterTitle)}</span>
           <span>${s.items.length} 个条目</span>
           ${s.pages ? `<span>原书 p.${esc(s.pages)}</span>` : ""}
-          <span>已掌握 ${done}/${s.items.length}</span>
         </div>
-        <div class="progress"><i style="width:${pct}%"></i></div>
       </div>`;
     const body = s.items.map((it) => itemHtml(it, { hidden: mode === "test" })).join("");
     $("#view").innerHTML = head + body;
@@ -193,27 +173,6 @@
 
   /* ---------------- 交互 ---------------- */
   document.addEventListener("click", (e) => {
-    const mark = e.target.closest("[data-mark]");
-    if (mark) {
-      const a = mark.dataset.mark;
-      mastered.has(a) ? mastered.delete(a) : mastered.add(a);
-      store.mastered = mastered;
-      const card = mark.closest(".item");
-      card.classList.toggle("mastered", mastered.has(a));
-      mark.textContent = mastered.has(a) ? "已掌握" : "掌握";
-      if (current) {
-        const { done, pct } = sectionMeta(current);
-        const meta = document.querySelector(".sec-head .meta");
-        if (meta && mode !== "random") {
-          const last = [...meta.querySelectorAll("span")].find((x) => x.textContent.startsWith("已掌握"));
-          if (last) last.textContent = `已掌握 ${done}/${current.items.length}`;
-          const bar = document.querySelector(".progress > i");
-          if (bar) bar.style.width = pct + "%";
-        }
-      }
-      return;
-    }
-
     const reveal = e.target.closest(".reveal");
     if (reveal) {
       const card = reveal.closest(".item");
@@ -262,11 +221,6 @@
     if (e.key === " ") {
       const card = revealedCard();
       if (card) { e.preventDefault(); card.classList.add("revealed"); card.querySelector(".reveal")?.remove(); }
-      return;
-    }
-    if (e.key === "m") {
-      const card = document.querySelector(".item.revealed") || document.querySelector(".item");
-      card?.querySelector("[data-mark]")?.click();
       return;
     }
     if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
