@@ -40,7 +40,7 @@ CONTENT = ROOT / "content"
 OUT = ROOT / "site" / "data" / "index.json"
 
 TYPE_RE = re.compile(
-    r"^###\s+(?P<type>\S+?)\s*(?P<number>\d+(?:\.\d+)*)?\s*(?:[（(](?P<title>[^（()）]*)[）)])?\s*@(?P<page>\d+)\s*$"
+    r"^###\s+(?P<type>\S+?)\s*(?P<number>\d+(?:\.\d+)*)?\s*(?:[（(](?P<title>.*)[）)])?\s*@(?P<page>\d+)\s*$"
 )
 TYPES = {"定义", "定理", "命题", "引理", "推论", "例", "反例", "注", "构造", "公理"}
 BIG_NUM = {"一": 1, "二": 2, "三": 3, "四": 4, "五": 5, "六": 6, "七": 7, "八": 8, "九": 9, "十": 10}
@@ -132,7 +132,15 @@ def load_book(book_dir: Path, problems: list[str]) -> dict | None:
         )
 
         lines = body.split("\n")
-        heads = [(i, m) for i, l in enumerate(lines) if (m := TYPE_RE.match(l))]
+        heads = []
+        for i, l in enumerate(lines):
+            if not l.startswith("### "):
+                continue
+            m = TYPE_RE.match(l)
+            if m:
+                heads.append((i, m))
+            else:
+                problems.append(f"{path.name}: 条目头无法解析「{l[:48]}」")
         if not heads:
             problems.append(f"{path.name}: 没有识别到任何条目头")
             continue

@@ -1498,6 +1498,1064 @@
        ]
       }
      ]
+    },
+    {
+     "no": "2",
+     "title": "线性泛函",
+     "sections": [
+      {
+       "id": "2.1",
+       "title": "赋范线性空间上的线性算子",
+       "pages": "66–73",
+       "items": [
+        {
+         "type": "定义",
+         "number": "2.1.1",
+         "title": "线性算子",
+         "page": 66,
+         "html": "<p>设 $\\mathbb{K}$ 是实数或复数域，$X$ 及 $Y$ 是域 $\\mathbb{K}$ 上的两个线性空间，$D$ 是 $X$ 的线性子空间，$T$ 是从 $D$ 到 $Y$ 中的映射。如果对任何 $x,y\\in D$ 及数 $\\alpha,\\beta\\in\\mathbb{K}$，成立$$T(\\alpha x+\\beta y)=\\alpha T(x)+\\beta T(y),$$就称 $T$ 是<strong>线性算子</strong>，称 $D$ 是 $T$ 的<strong>定义域</strong>，也记为 $\\mathcal{D}(T)$。而称集 $T(D)=\\{Tx:\\ x\\in D\\}$ 是 $T$ 的<strong>值域</strong>（或<strong>像</strong>），记为 $\\mathfrak{R}(T)$。$X$ 的子空间$$\\ker T\\stackrel{\\text{def}}{=}T^{-1}(0)=\\{x\\in D:\\ Tx=0\\}$$称为<strong>核</strong>（或<strong>零空间</strong>）。</p><p>今后所讨论的算子都是线性算子。特别地，当 $Y=X$ 时，称 $T$ 是 $X$ 上的线性算子；当 $Y=\\mathbb{K}$ 时，称 $T$ 是 $X$ 上的<strong>线性泛函</strong>。</p>",
+         "src": "设 $\\mathbb{K}$ 是实数或复数域，$X$ 及 $Y$ 是域 $\\mathbb{K}$ 上的两个线性空间，$D$ 是 $X$ 的线性子空间，$T$ 是从 $D$ 到 $Y$ 中的映射。如果对任何 $x,y\\in D$ 及数 $\\alpha,\\beta\\in\\mathbb{K}$，成立$$T(\\alpha x+\\beta y)=\\alpha T(x)+\\beta T(y),$$就称 $T$ 是**线性算子**，称 $D$ 是 $T$ 的**定义域**，也记为 $\\mathcal{D}(T)$。而称集 $T(D)=\\{Tx:\\ x\\in D\\}$ 是 $T$ 的**值域**（或**像**），记为 $\\mathfrak{R}(T)$。$X$ 的子空间$$\\ker T\\stackrel{\\text{def}}{=}T^{-1}(0)=\\{x\\in D:\\ Tx=0\\}$$称为**核**（或**零空间**）。\n\n今后所讨论的算子都是线性算子。特别地，当 $Y=X$ 时，称 $T$ 是 $X$ 上的线性算子；当 $Y=\\mathbb{K}$ 时，称 $T$ 是 $X$ 上的**线性泛函**。",
+         "anchor": "定义-2.1.1"
+        },
+        {
+         "type": "例",
+         "number": "2.1.1",
+         "title": "矩阵与线性变换",
+         "page": 66,
+         "html": "<p>设 $\\mathbb{K}^n$ 是 $n$ 维（实或复系数）向量空间，在 $\\mathbb{K}^n$ 中取一组基 $\\{e_1,e_2,\\cdots,e_n\\}$。相应于任意一个 $n$ 阶方阵 $(t_{ji})$，作 $\\mathbb{K}^n\\mapsto\\mathbb{K}^n$ 的算子 $T$ 如下：当 $x=\\sum\\limits_{i=1}^{n}x_ie_i$ 时，$$y=Tx=\\sum_{j=1}^{n}y_je_j,$$其中 $y_j=\\sum\\limits_{i=1}^{n}t_{ji}x_i\\ (j=1,2,\\cdots,n)$。这样定义的 $T$ 是一个线性算子，这个算子在线性代数中称为线性变换。算子 $T$ 显然由矩阵 $(t_{ji})$ 唯一确定，有时就直接记为 $T=(t_{ji})$。</p><p>反过来，设 $T$ 是 $\\mathbb{K}^n\\mapsto\\mathbb{K}^n$ 的线性算子，由于 $Te_i$ 是 $e_1,e_2,\\cdots,e_n$ 的线性组合，所以存在矩阵 $(t_{ji})$，使得$$Te_i=t_{1i}e_1+t_{2i}e_2+\\cdots+t_{ni}e_n.\\tag{2.1}$$因此 $T$ 是对应于矩阵 $(t_{ji})$ 的算子。</p><p>由此可知，在有限维线性空间上，当基选定后，线性算子与矩阵是相对应的。</p>",
+         "src": "设 $\\mathbb{K}^n$ 是 $n$ 维（实或复系数）向量空间，在 $\\mathbb{K}^n$ 中取一组基 $\\{e_1,e_2,\\cdots,e_n\\}$。相应于任意一个 $n$ 阶方阵 $(t_{ji})$，作 $\\mathbb{K}^n\\mapsto\\mathbb{K}^n$ 的算子 $T$ 如下：当 $x=\\sum\\limits_{i=1}^{n}x_ie_i$ 时，$$y=Tx=\\sum_{j=1}^{n}y_je_j,$$其中 $y_j=\\sum\\limits_{i=1}^{n}t_{ji}x_i\\ (j=1,2,\\cdots,n)$。这样定义的 $T$ 是一个线性算子，这个算子在线性代数中称为线性变换。算子 $T$ 显然由矩阵 $(t_{ji})$ 唯一确定，有时就直接记为 $T=(t_{ji})$。\n\n反过来，设 $T$ 是 $\\mathbb{K}^n\\mapsto\\mathbb{K}^n$ 的线性算子，由于 $Te_i$ 是 $e_1,e_2,\\cdots,e_n$ 的线性组合，所以存在矩阵 $(t_{ji})$，使得$$Te_i=t_{1i}e_1+t_{2i}e_2+\\cdots+t_{ni}e_n.\\tag{2.1}$$因此 $T$ 是对应于矩阵 $(t_{ji})$ 的算子。\n\n由此可知，在有限维线性空间上，当基选定后，线性算子与矩阵是相对应的。",
+         "anchor": "例-2.1.1"
+        },
+        {
+         "type": "注",
+         "number": "",
+         "title": "有限维空间上的线性泛函",
+         "page": 66,
+         "html": "<p>类似地，对线性泛函 $f:\\mathbb{K}^n\\to\\mathbb{K}$，存在唯一的 $a\\in\\mathbb{K}^n$ 使得$$f(x)=a\\cdot x,\\qquad x\\in\\mathbb{K}^n.$$</p>",
+         "src": "类似地，对线性泛函 $f:\\mathbb{K}^n\\to\\mathbb{K}$，存在唯一的 $a\\in\\mathbb{K}^n$ 使得$$f(x)=a\\cdot x,\\qquad x\\in\\mathbb{K}^n.$$",
+         "anchor": "注-有限维空间上的线性泛函"
+        },
+        {
+         "type": "例",
+         "number": "2.1.2",
+         "title": "多项式微分算子",
+         "page": 67,
+         "html": "<p>设 $P(t)=\\sum\\limits_{i=0}^{k}a_ix^i$ 是常系数多项式，那么将函数 $x(t)$ 映射成 $P\\left(\\dfrac{\\mathrm{d}}{\\mathrm{d}t}\\right)x(t)$ 的算子$$P\\left(\\frac{\\mathrm{d}}{\\mathrm{d}t}\\right):\\ x(t)\\mapsto P\\left(\\frac{\\mathrm{d}}{\\mathrm{d}t}\\right)x(t)$$是 $C^{(k)}[a,b]$ 到 $C[a,b]$ 的线性算子。</p>",
+         "src": "设 $P(t)=\\sum\\limits_{i=0}^{k}a_ix^i$ 是常系数多项式，那么将函数 $x(t)$ 映射成 $P\\left(\\dfrac{\\mathrm{d}}{\\mathrm{d}t}\\right)x(t)$ 的算子$$P\\left(\\frac{\\mathrm{d}}{\\mathrm{d}t}\\right):\\ x(t)\\mapsto P\\left(\\frac{\\mathrm{d}}{\\mathrm{d}t}\\right)x(t)$$是 $C^{(k)}[a,b]$ 到 $C[a,b]$ 的线性算子。",
+         "anchor": "例-2.1.2"
+        },
+        {
+         "type": "例",
+         "number": "2.1.3",
+         "title": "积分运算",
+         "page": 67,
+         "html": "<p>积分运算$$F(f)=\\int_a^b f(t)\\,\\mathrm{d}t,\\qquad \\forall f\\in L^1[a,b]$$是 $L^1[a,b]$ 上的线性泛函。</p>",
+         "src": "积分运算$$F(f)=\\int_a^b f(t)\\,\\mathrm{d}t,\\qquad \\forall f\\in L^1[a,b]$$是 $L^1[a,b]$ 上的线性泛函。",
+         "anchor": "例-2.1.3"
+        },
+        {
+         "type": "例",
+         "number": "2.1.4",
+         "title": "纯量算子",
+         "page": 67,
+         "html": "<p>设 $E$ 是线性空间，给定数 $\\alpha$。映射$$T:\\ x\\mapsto \\alpha x,\\qquad \\forall x\\in E$$是 $E$ 上的线性算子，记作 $\\alpha I$，称为<strong>纯量算子</strong>（或称为<strong>倍单位算子</strong>）。当 $\\alpha=0$ 时，$T$ 是<strong>零算子</strong>，记作 $0$。当 $\\alpha=1$ 时，称为<strong>单位算子</strong>或恒等算子，记作 $I$。</p>",
+         "src": "设 $E$ 是线性空间，给定数 $\\alpha$。映射$$T:\\ x\\mapsto \\alpha x,\\qquad \\forall x\\in E$$是 $E$ 上的线性算子，记作 $\\alpha I$，称为**纯量算子**（或称为**倍单位算子**）。当 $\\alpha=0$ 时，$T$ 是**零算子**，记作 $0$。当 $\\alpha=1$ 时，称为**单位算子**或恒等算子，记作 $I$。",
+         "anchor": "例-2.1.4"
+        },
+        {
+         "type": "例",
+         "number": "2.1.5",
+         "title": "Fourier 级数",
+         "page": 67,
+         "html": "<p>对于 $f\\in L^1(\\mathbb{T})$，它的第 $n$ 个 Fourier 系数为$$\\hat{f}(n)=\\langle f,\\mathrm{e}^{\\mathrm{i}n\\theta}\\rangle=\\int_{[0,2\\pi]}f(\\mathrm{e}^{\\mathrm{i}\\theta})\\mathrm{e}^{-\\mathrm{i}n\\theta}\\,\\frac{\\mathrm{d}\\theta}{2\\pi}.\\tag{2.2}$$则映射 $\\tau(f)=\\{\\hat{f}(n)\\}_{n\\in\\mathbb{Z}}$ 是从 $L^1(\\mathbb{T})$ 到 $l^\\infty(\\mathbb{Z})$ 的线性算子。再由 Riemann–Lebesgue 引理知道当 $|n|\\to\\infty$ 时，$|\\hat{f}(n)|\\to 0$，故 $\\tau$ 是从 $L^1(\\mathbb{T})$ 到 $c_0(\\mathbb{Z})$ 的线性算子。</p>",
+         "src": "对于 $f\\in L^1(\\mathbb{T})$，它的第 $n$ 个 Fourier 系数为$$\\hat{f}(n)=\\langle f,\\mathrm{e}^{\\mathrm{i}n\\theta}\\rangle=\\int_{[0,2\\pi]}f(\\mathrm{e}^{\\mathrm{i}\\theta})\\mathrm{e}^{-\\mathrm{i}n\\theta}\\,\\frac{\\mathrm{d}\\theta}{2\\pi}.\\tag{2.2}$$则映射 $\\tau(f)=\\{\\hat{f}(n)\\}_{n\\in\\mathbb{Z}}$ 是从 $L^1(\\mathbb{T})$ 到 $l^\\infty(\\mathbb{Z})$ 的线性算子。再由 Riemann–Lebesgue 引理知道当 $|n|\\to\\infty$ 时，$|\\hat{f}(n)|\\to 0$，故 $\\tau$ 是从 $L^1(\\mathbb{T})$ 到 $c_0(\\mathbb{Z})$ 的线性算子。",
+         "anchor": "例-2.1.5"
+        },
+        {
+         "type": "例",
+         "number": "2.1.6",
+         "title": "Fourier 变换",
+         "page": 67,
+         "html": "<p>对 $f\\in L^1(\\mathbb{R})$，定义它的 Fourier 变换 $\\mathcal{F}(f)$（或记作 $\\hat{f}$）为$$\\mathcal{F}(f)(t)=\\int_{\\mathbb{R}}f(x)\\mathrm{e}^{-2\\pi\\mathrm{i}tx}\\,\\mathrm{d}x,\\qquad f\\in L^1(\\mathbb{R}).\\tag{2.3}$$$\\hat{f}$ 是 $\\mathbb{R}$ 上的连续函数。再由 Riemann–Lebesgue 引理知，当 $|t|\\to\\infty$ 时，有 $\\hat{f}(t)\\to 0$。因此 $\\mathcal{F}:f\\mapsto \\hat{f}$ 是 $L^1(\\mathbb{R})$ 到 $c_0(\\mathbb{R})$ 的线性算子。</p>",
+         "src": "对 $f\\in L^1(\\mathbb{R})$，定义它的 Fourier 变换 $\\mathcal{F}(f)$（或记作 $\\hat{f}$）为$$\\mathcal{F}(f)(t)=\\int_{\\mathbb{R}}f(x)\\mathrm{e}^{-2\\pi\\mathrm{i}tx}\\,\\mathrm{d}x,\\qquad f\\in L^1(\\mathbb{R}).\\tag{2.3}$$$\\hat{f}$ 是 $\\mathbb{R}$ 上的连续函数。再由 Riemann–Lebesgue 引理知，当 $|t|\\to\\infty$ 时，有 $\\hat{f}(t)\\to 0$。因此 $\\mathcal{F}:f\\mapsto \\hat{f}$ 是 $L^1(\\mathbb{R})$ 到 $c_0(\\mathbb{R})$ 的线性算子。",
+         "anchor": "例-2.1.6"
+        },
+        {
+         "type": "例",
+         "number": "2.1.7",
+         "title": "Hilbert 空间上的投影算子",
+         "page": 67,
+         "html": "<p>设 $L$ 是 Hilbert 空间 $H$ 的闭子空间，对 $H$ 中元 $x$，记它在 $L$ 上的投影为 $x_L$。那么，从 $H$ 到 $L$ 上的投影算子 $P$ 定义为$$P:\\ x\\mapsto x_L,$$当强调空间 $L$ 时，常常将其记为 $P_L$。显然 $P_L^2=P_L$。</p>",
+         "src": "设 $L$ 是 Hilbert 空间 $H$ 的闭子空间，对 $H$ 中元 $x$，记它在 $L$ 上的投影为 $x_L$。那么，从 $H$ 到 $L$ 上的投影算子 $P$ 定义为$$P:\\ x\\mapsto x_L,$$当强调空间 $L$ 时，常常将其记为 $P_L$。显然 $P_L^2=P_L$。",
+         "anchor": "例-2.1.7"
+        },
+        {
+         "type": "例",
+         "number": "2.1.8",
+         "title": "有限维赋范空间中的线性算子",
+         "page": 68,
+         "html": "<p>有限维赋范空间中的线性算子都是连续算子。</p>",
+         "src": "有限维赋范空间中的线性算子都是连续算子。",
+         "anchor": "例-2.1.8"
+        },
+        {
+         "type": "定理",
+         "number": "2.1.1",
+         "title": "",
+         "page": 68,
+         "html": "<p>设 $(X,\\|\\cdot\\|),(Y,\\|\\cdot\\|)$ 是赋范线性空间，$T:X\\to Y$ 是线性映射，则下列命题等价：</p><p>（i）$T$ 是连续映射。</p><p>（ii）$T$ 在点 $0$ 连续。</p><p>（iii）存在 $M&gt;0$，使得 $\\|Tx\\|\\leqslant M\\|x\\|$。</p>",
+         "src": "设 $(X,\\|\\cdot\\|),(Y,\\|\\cdot\\|)$ 是赋范线性空间，$T:X\\to Y$ 是线性映射，则下列命题等价：\n\n（i）$T$ 是连续映射。\n\n（ii）$T$ 在点 $0$ 连续。\n\n（iii）存在 $M>0$，使得 $\\|Tx\\|\\leqslant M\\|x\\|$。",
+         "anchor": "定理-2.1.1"
+        },
+        {
+         "type": "定义",
+         "number": "",
+         "title": "有界算子与无界算子",
+         "page": 68,
+         "html": "<p>如果算子 $T$ 满足定理 2.1.1 中任一条件，就称 $T$ 是<strong>有界算子</strong>。否则就称 $T$ 为<strong>无界算子</strong>。显然，并非每个算子都是有界的。</p>",
+         "src": "如果算子 $T$ 满足定理 2.1.1 中任一条件，就称 $T$ 是**有界算子**。否则就称 $T$ 为**无界算子**。显然，并非每个算子都是有界的。",
+         "anchor": "定义-有界算子与无界算子"
+        },
+        {
+         "type": "例",
+         "number": "2.1.9",
+         "title": "无界的微分算子",
+         "page": 68,
+         "html": "<p>设 $X=C^{(1)}[a,b]$，视 $X$ 为 $C[a,b]$ 的子空间（就是说，$X$ 中的范数取为 $C[a,b]$ 中的范数）时，$X$ 也成为一个赋范线性空间。定义算子 $D:X\\to C[a,b]$ 如下：$$(Dx)(t)=\\frac{\\mathrm{d}}{\\mathrm{d}t}x(t),\\qquad \\forall x\\in X.$$那么 $D$ 显然是线性算子，$D$ 是无界的。</p>",
+         "src": "设 $X=C^{(1)}[a,b]$，视 $X$ 为 $C[a,b]$ 的子空间（就是说，$X$ 中的范数取为 $C[a,b]$ 中的范数）时，$X$ 也成为一个赋范线性空间。定义算子 $D:X\\to C[a,b]$ 如下：$$(Dx)(t)=\\frac{\\mathrm{d}}{\\mathrm{d}t}x(t),\\qquad \\forall x\\in X.$$那么 $D$ 显然是线性算子，$D$ 是无界的。",
+         "anchor": "例-2.1.9"
+        },
+        {
+         "type": "定义",
+         "number": "2.1.2",
+         "title": "算子范数",
+         "page": 68,
+         "html": "<p>设 $T$ 为赋范线性空间 $X$ 到赋范线性空间 $Y$ 的有界算子，称$$\\|T\\|=\\sup_{x\\neq 0}\\frac{\\|Tx\\|}{\\|x\\|}$$为算子 $T$ 的<strong>范数</strong>。对有界线性算子 $T$，成立$$\\|Tx\\|\\leqslant \\|T\\|\\,\\|x\\|,\\qquad \\forall x\\in X.\\tag{2.4}$$</p>",
+         "src": "设 $T$ 为赋范线性空间 $X$ 到赋范线性空间 $Y$ 的有界算子，称$$\\|T\\|=\\sup_{x\\neq 0}\\frac{\\|Tx\\|}{\\|x\\|}$$为算子 $T$ 的**范数**。对有界线性算子 $T$，成立$$\\|Tx\\|\\leqslant \\|T\\|\\,\\|x\\|,\\qquad \\forall x\\in X.\\tag{2.4}$$",
+         "anchor": "定义-2.1.2"
+        },
+        {
+         "type": "命题",
+         "number": "",
+         "title": "算子范数的等价表示",
+         "page": 69,
+         "html": "<p>若称 $\\dfrac{\\|Tx\\|}{\\|x\\|}$ 为 $T$ 在 $x$ 方向的<strong>伸长系数</strong>，则可以看出 $\\|T\\|$ 的几何意义是一切方向伸长系数的上确界。容易看出，$\\|T\\|$ 有如下简单性质：$$\\|T\\|=\\sup_{x\\neq 0}\\frac{\\|Tx\\|}{\\|x\\|}=\\sup_{\\|x\\|=1}\\|Tx\\|=\\sup_{\\|x\\|\\leqslant 1}\\|Tx\\|=\\sup_{\\|x\\|&lt;1}\\|Tx\\|.\\tag{2.5}$$显然，当 $T=I$（单位算子）时，$\\|I\\|=1$。</p><p>算子范数本质上是线性算子的 Lipschitz 常数。</p>",
+         "src": "若称 $\\dfrac{\\|Tx\\|}{\\|x\\|}$ 为 $T$ 在 $x$ 方向的**伸长系数**，则可以看出 $\\|T\\|$ 的几何意义是一切方向伸长系数的上确界。容易看出，$\\|T\\|$ 有如下简单性质：$$\\|T\\|=\\sup_{x\\neq 0}\\frac{\\|Tx\\|}{\\|x\\|}=\\sup_{\\|x\\|=1}\\|Tx\\|=\\sup_{\\|x\\|\\leqslant 1}\\|Tx\\|=\\sup_{\\|x\\|<1}\\|Tx\\|.\\tag{2.5}$$显然，当 $T=I$（单位算子）时，$\\|I\\|=1$。\n\n算子范数本质上是线性算子的 Lipschitz 常数。",
+         "anchor": "命题-算子范数的等价表示"
+        },
+        {
+         "type": "定理",
+         "number": "",
+         "title": "稠密子空间上有界算子的延拓",
+         "page": 69,
+         "html": "<p>在具体问题中，我们经常知道线性变换 $T$ 在赋范线性空间 $X$ 的一个稠密子空间 $M$ 上是如何定义的。如果我们还知道 $T$ 在 $M$ 上是有界的，值域落在 Banach 空间 $Y$ 中，那么 $T$ 可以自动延拓到 $X$ 上：对于 $x\\in X$，取一个 $M$ 中的点列 $\\{x_n\\}$ 收敛到 $x$，则 $\\{Tx_n\\}$ 是 $Y$ 中的 Cauchy 点列，从而可定义$$Tx=\\lim_{n\\to\\infty}Tx_n.$$容易验证，此时 $T$ 是 $X$ 上一个良定义的有界算子。</p>",
+         "src": "在具体问题中，我们经常知道线性变换 $T$ 在赋范线性空间 $X$ 的一个稠密子空间 $M$ 上是如何定义的。如果我们还知道 $T$ 在 $M$ 上是有界的，值域落在 Banach 空间 $Y$ 中，那么 $T$ 可以自动延拓到 $X$ 上：对于 $x\\in X$，取一个 $M$ 中的点列 $\\{x_n\\}$ 收敛到 $x$，则 $\\{Tx_n\\}$ 是 $Y$ 中的 Cauchy 点列，从而可定义$$Tx=\\lim_{n\\to\\infty}Tx_n.$$容易验证，此时 $T$ 是 $X$ 上一个良定义的有界算子。",
+         "anchor": "定理-稠密子空间上有界算子的延拓"
+        },
+        {
+         "type": "例",
+         "number": "2.1.10",
+         "title": "积分算子的范数",
+         "page": 69,
+         "html": "<p>对任意 $f\\in L^1[a,b]$，作$$(Tf)(x)=\\int_a^x f(t)\\,\\mathrm{d}t.\\tag{2.6}$$把 $T$ 视为 $L^1[a,b]\\mapsto C[a,b]$ 的算子时，那么 $\\|T\\|=1$。如将 $T$ 看成 $L^1[a,b]\\mapsto L^1[a,b]$ 的算子，那么 $\\|T\\|=b-a$。</p>",
+         "src": "对任意 $f\\in L^1[a,b]$，作$$(Tf)(x)=\\int_a^x f(t)\\,\\mathrm{d}t.\\tag{2.6}$$把 $T$ 视为 $L^1[a,b]\\mapsto C[a,b]$ 的算子时，那么 $\\|T\\|=1$。如将 $T$ 看成 $L^1[a,b]\\mapsto L^1[a,b]$ 的算子，那么 $\\|T\\|=b-a$。",
+         "anchor": "例-2.1.10"
+        },
+        {
+         "type": "例",
+         "number": "2.1.11",
+         "title": "乘积算子",
+         "page": 70,
+         "html": "<p>设 $X=L^1[a,b]$。取 $x\\in L^\\infty[a,b]$，作 $X\\to X$ 的线性算子如下：$$M_x:\\ f(t)\\mapsto x(t)f(t),\\qquad \\forall f\\in L^1[a,b].$$显然，算子 $M_x$ 是 $X\\mapsto X$ 的线性算子，通常称它为<strong>乘积算子</strong>。那么 $M_x$ 是有界算子，并且$$\\|M_x\\|=\\|x\\|_\\infty.\\tag{2.7}$$</p>",
+         "src": "设 $X=L^1[a,b]$。取 $x\\in L^\\infty[a,b]$，作 $X\\to X$ 的线性算子如下：$$M_x:\\ f(t)\\mapsto x(t)f(t),\\qquad \\forall f\\in L^1[a,b].$$显然，算子 $M_x$ 是 $X\\mapsto X$ 的线性算子，通常称它为**乘积算子**。那么 $M_x$ 是有界算子，并且$$\\|M_x\\|=\\|x\\|_\\infty.\\tag{2.7}$$",
+         "anchor": "例-2.1.11"
+        },
+        {
+         "type": "例",
+         "number": "2.1.12",
+         "title": "商算子",
+         "page": 71,
+         "html": "<p>设 $X,Y$ 是赋范线性空间，$T$ 是 $X$ 到 $Y$ 上的有界线性算子。那么，核空间 $\\ker T$ 是 $X$ 的闭线性子空间。并且，$T$ 诱导出的算子$$\\tilde{T}([x])\\stackrel{\\text{def}}{=}T(x)$$是从 $X/\\ker T$ 到 $\\mathfrak{R}(T)$ 的一一到上的有界线性算子，且 $\\|\\tilde{T}\\|=\\|T\\|$。</p>",
+         "src": "设 $X,Y$ 是赋范线性空间，$T$ 是 $X$ 到 $Y$ 上的有界线性算子。那么，核空间 $\\ker T$ 是 $X$ 的闭线性子空间。并且，$T$ 诱导出的算子$$\\tilde{T}([x])\\stackrel{\\text{def}}{=}T(x)$$是从 $X/\\ker T$ 到 $\\mathfrak{R}(T)$ 的一一到上的有界线性算子，且 $\\|\\tilde{T}\\|=\\|T\\|$。",
+         "anchor": "例-2.1.12"
+        },
+        {
+         "type": "构造",
+         "number": "",
+         "title": "有界线性算子全体构成的空间",
+         "page": 71,
+         "html": "<p>设 $X,Y$ 是赋范线性空间，以 $\\mathfrak{B}(X,Y)$ 表示由 $X$ 到 $Y$ 的有界线性算子的全体。设 $A,B\\in\\mathfrak{B}(X,Y)$，$\\alpha$ 是数，作算子 $A+B,\\alpha A$ 如下：对于任意 $x\\in X$，规定$$(A+B)(x)=Ax+Bx,\\qquad (\\alpha A)(x)=\\alpha Ax.$$容易验证$$\\|A+B\\|\\leqslant \\|A\\|+\\|B\\|,\\qquad \\|\\alpha A\\|=|\\alpha|\\,\\|A\\|.$$显然 $\\|A\\|\\geqslant 0$，而 $\\|A\\|=0$ 当且仅当 $A=0$。</p>",
+         "src": "设 $X,Y$ 是赋范线性空间，以 $\\mathfrak{B}(X,Y)$ 表示由 $X$ 到 $Y$ 的有界线性算子的全体。设 $A,B\\in\\mathfrak{B}(X,Y)$，$\\alpha$ 是数，作算子 $A+B,\\alpha A$ 如下：对于任意 $x\\in X$，规定$$(A+B)(x)=Ax+Bx,\\qquad (\\alpha A)(x)=\\alpha Ax.$$容易验证$$\\|A+B\\|\\leqslant \\|A\\|+\\|B\\|,\\qquad \\|\\alpha A\\|=|\\alpha|\\,\\|A\\|.$$显然 $\\|A\\|\\geqslant 0$，而 $\\|A\\|=0$ 当且仅当 $A=0$。",
+         "anchor": "构造-有界线性算子全体构成的空间"
+        },
+        {
+         "type": "定理",
+         "number": "2.1.2",
+         "title": "",
+         "page": 71,
+         "html": "<p>设 $X,Y$ 是赋范线性空间，$\\mathfrak{B}(X,Y)$ 是 $X$ 到 $Y$ 的有界线性算子全体，那么</p><p>（i）按上述线性运算及算子范数，$\\mathfrak{B}(X,Y)$ 成为赋范线性空间；</p><p>（ii）当 $Y$ 是 Banach 空间时，$\\mathfrak{B}(X,Y)$ 是 Banach 空间。</p>",
+         "src": "设 $X,Y$ 是赋范线性空间，$\\mathfrak{B}(X,Y)$ 是 $X$ 到 $Y$ 的有界线性算子全体，那么\n\n（i）按上述线性运算及算子范数，$\\mathfrak{B}(X,Y)$ 成为赋范线性空间；\n\n（ii）当 $Y$ 是 Banach 空间时，$\\mathfrak{B}(X,Y)$ 是 Banach 空间。",
+         "anchor": "定理-2.1.2"
+        },
+        {
+         "type": "构造",
+         "number": "",
+         "title": "算子的乘法与 $\\mathfrak{B}(X)$ 的代数结构",
+         "page": 72,
+         "html": "<p>除了线性运算之外，我们还可以定义算子的乘法运算（即复合运算）。设 $X,Y,Z$ 都是赋范线性空间，$A\\in\\mathfrak{B}(X,Y)$，$B\\in\\mathfrak{B}(Y,Z)$，规定$$(BA)(x)=B(Ax),\\qquad x\\in X,$$则 $BA\\in\\mathfrak{B}(X,Z)$，并且 $\\|BA\\|\\leqslant \\|B\\|\\,\\|A\\|$。</p><p>特别地，将 $\\mathfrak{B}(X,X)$ 记为 $\\mathfrak{B}(X)$，则 $\\mathfrak{B}(X)$ 在上述乘法的意义下构成一个代数。</p>",
+         "src": "除了线性运算之外，我们还可以定义算子的乘法运算（即复合运算）。设 $X,Y,Z$ 都是赋范线性空间，$A\\in\\mathfrak{B}(X,Y)$，$B\\in\\mathfrak{B}(Y,Z)$，规定$$(BA)(x)=B(Ax),\\qquad x\\in X,$$则 $BA\\in\\mathfrak{B}(X,Z)$，并且 $\\|BA\\|\\leqslant \\|B\\|\\,\\|A\\|$。\n\n特别地，将 $\\mathfrak{B}(X,X)$ 记为 $\\mathfrak{B}(X)$，则 $\\mathfrak{B}(X)$ 在上述乘法的意义下构成一个代数。",
+         "anchor": "构造-算子的乘法与-mathfrak-B-X-的代数结构"
+        }
+       ]
+      },
+      {
+       "id": "2.2",
+       "title": "有界线性泛函",
+       "pages": "74–81",
+       "items": [
+        {
+         "type": "定义",
+         "number": "",
+         "title": "对偶空间",
+         "page": 74,
+         "html": "<p>对于赋范线性空间 $X$，全体有界线性泛函 $\\mathfrak{B}(X,\\mathbb{K})$ 简记为 $X^*$，称为 $X$ 的<strong>对偶空间</strong>。由 $\\mathbb{K}$ 的完备性可得 $X^*$ 是一个 Banach 空间。这时，对于 $f\\in X^*$，$$\\|f\\|=\\sup_{x\\neq 0}\\frac{|f(x)|}{\\|x\\|}=\\sup_{\\|x\\|=1}|f(x)|=\\sup_{\\|x\\|&lt;1}|f(x)|.\\tag{2.8}$$</p>",
+         "src": "对于赋范线性空间 $X$，全体有界线性泛函 $\\mathfrak{B}(X,\\mathbb{K})$ 简记为 $X^*$，称为 $X$ 的**对偶空间**。由 $\\mathbb{K}$ 的完备性可得 $X^*$ 是一个 Banach 空间。这时，对于 $f\\in X^*$，$$\\|f\\|=\\sup_{x\\neq 0}\\frac{|f(x)|}{\\|x\\|}=\\sup_{\\|x\\|=1}|f(x)|=\\sup_{\\|x\\|<1}|f(x)|.\\tag{2.8}$$",
+         "anchor": "定义-对偶空间"
+        },
+        {
+         "type": "例",
+         "number": "2.2.1",
+         "title": "",
+         "page": 74,
+         "html": "<p>（i）$n$ 维线性空间 $\\mathbb{R}^n$ 上线性泛函 $f(x)=\\sum\\limits_{i=1}^{n}a_ix_i$（$\\forall x=(x_1,x_2,\\cdots,x_n)\\in\\mathbb{R}^n$），其中 $a=(a_1,a_2,\\cdots,a_n)\\in\\mathbb{R}^n$，则$$\\ker f=\\left\\{x:\\ \\sum_{i=1}^{n}a_ix_i=0\\right\\},$$即 $\\mathbb{R}^n$ 中的超平面。</p><p>（ii）空间 $C[0,1]$ 上的线性泛函 $f(\\varphi)=\\int_0^1\\varphi(t)\\,\\mathrm{d}t$（$\\varphi\\in C[0,1]$），它的核是$$\\ker f=\\left\\{\\varphi\\in C[0,1]:\\ \\int_0^1\\varphi(t)\\,\\mathrm{d}t=0\\right\\}.$$</p><p>（iii）空间 $C[0,1]$ 上的线性泛函 $\\delta_0(\\varphi)=\\varphi(0)$（$\\varphi\\in C[0,1]$），它的核是$$\\ker\\delta_0=\\{\\varphi\\in C[0,1]:\\varphi(0)=0\\}.$$</p><p>（iv）设 $1\\leqslant q\\leqslant\\infty$，$\\dfrac{1}{q}+\\dfrac{1}{p}=1$。对于 $\\phi\\in L^q[a,b]$，令$$F_\\phi(\\varphi)=\\int_{[a,b]}\\varphi(t)\\overline{\\phi(t)}\\,\\mathrm{d}t,$$由 Hölder 不等式，$F_\\phi$ 为 $L^p[0,1]$ 上的有界线性泛函，且 $\\|F_\\phi\\|=\\|\\phi\\|_q$。它的核$$\\ker F_\\phi=\\left\\{\\varphi\\in L^p[0,1]:\\ \\int_0^1\\varphi(t)\\overline{\\phi(t)}\\,\\mathrm{d}t=0\\right\\}.$$</p><p>（v）对于 Hilbert 空间 $H$ 中一元素 $x$，令$$F_x(y)=\\langle y,x\\rangle,\\qquad \\forall y\\in H.$$由 Cauchy–Schwarz 不等式，我们有 $|\\langle y,x\\rangle|\\leqslant\\|x\\|\\|y\\|$，并且当 $x=y$ 时等号成立。故 $F_x\\in H^*$ 且 $\\|F_x\\|=\\|x\\|$。它的核$$\\ker F_x=\\{x\\}^{\\perp}.$$</p><p>线性泛函的很多性质都由它的核决定。</p>",
+         "src": "（i）$n$ 维线性空间 $\\mathbb{R}^n$ 上线性泛函 $f(x)=\\sum\\limits_{i=1}^{n}a_ix_i$（$\\forall x=(x_1,x_2,\\cdots,x_n)\\in\\mathbb{R}^n$），其中 $a=(a_1,a_2,\\cdots,a_n)\\in\\mathbb{R}^n$，则$$\\ker f=\\left\\{x:\\ \\sum_{i=1}^{n}a_ix_i=0\\right\\},$$即 $\\mathbb{R}^n$ 中的超平面。\n\n（ii）空间 $C[0,1]$ 上的线性泛函 $f(\\varphi)=\\int_0^1\\varphi(t)\\,\\mathrm{d}t$（$\\varphi\\in C[0,1]$），它的核是$$\\ker f=\\left\\{\\varphi\\in C[0,1]:\\ \\int_0^1\\varphi(t)\\,\\mathrm{d}t=0\\right\\}.$$\n\n（iii）空间 $C[0,1]$ 上的线性泛函 $\\delta_0(\\varphi)=\\varphi(0)$（$\\varphi\\in C[0,1]$），它的核是$$\\ker\\delta_0=\\{\\varphi\\in C[0,1]:\\varphi(0)=0\\}.$$\n\n（iv）设 $1\\leqslant q\\leqslant\\infty$，$\\dfrac{1}{q}+\\dfrac{1}{p}=1$。对于 $\\phi\\in L^q[a,b]$，令$$F_\\phi(\\varphi)=\\int_{[a,b]}\\varphi(t)\\overline{\\phi(t)}\\,\\mathrm{d}t,$$由 Hölder 不等式，$F_\\phi$ 为 $L^p[0,1]$ 上的有界线性泛函，且 $\\|F_\\phi\\|=\\|\\phi\\|_q$。它的核$$\\ker F_\\phi=\\left\\{\\varphi\\in L^p[0,1]:\\ \\int_0^1\\varphi(t)\\overline{\\phi(t)}\\,\\mathrm{d}t=0\\right\\}.$$\n\n（v）对于 Hilbert 空间 $H$ 中一元素 $x$，令$$F_x(y)=\\langle y,x\\rangle,\\qquad \\forall y\\in H.$$由 Cauchy–Schwarz 不等式，我们有 $|\\langle y,x\\rangle|\\leqslant\\|x\\|\\|y\\|$，并且当 $x=y$ 时等号成立。故 $F_x\\in H^*$ 且 $\\|F_x\\|=\\|x\\|$。它的核$$\\ker F_x=\\{x\\}^{\\perp}.$$\n\n线性泛函的很多性质都由它的核决定。",
+         "anchor": "例-2.2.1"
+        },
+        {
+         "type": "命题",
+         "number": "",
+         "title": "非零线性泛函的核",
+         "page": 75,
+         "html": "<p>设 $f$ 是线性空间 $V$ 上的非零线性泛函，那么 $f$ 的核 $\\ker f$ 的余维数是 $1$。</p><p>反之，设 $V'$ 是 $V$ 的余维数为 $1$ 的线性子空间（即商空间 $V/V'$ 的维数等于 $1$，注意 $V'$ 不一定是闭的），则存在 $V$ 上的线性泛函 $f$ 使得 $\\ker f=V'$。</p>",
+         "src": "设 $f$ 是线性空间 $V$ 上的非零线性泛函，那么 $f$ 的核 $\\ker f$ 的余维数是 $1$。\n\n反之，设 $V'$ 是 $V$ 的余维数为 $1$ 的线性子空间（即商空间 $V/V'$ 的维数等于 $1$，注意 $V'$ 不一定是闭的），则存在 $V$ 上的线性泛函 $f$ 使得 $\\ker f=V'$。",
+         "anchor": "命题-非零线性泛函的核"
+        },
+        {
+         "type": "定义",
+         "number": "2.2.1",
+         "title": "超平面",
+         "page": 75,
+         "html": "<p>设 $f$ 是线性空间 $V$ 上非零的线性泛函，$c$ 是给定常数，集合$$M_c=\\{x:f(x)=c,\\ x\\in V\\}$$称为 $V$ 中的一个<strong>超平面</strong>。它决定的半空间 $\\{x:f(x)\\geqslant c\\}$ 与 $\\{x:f(x)\\leqslant c\\}$ 称为<strong>闭半平面</strong>；$\\{x:f(x)&gt;c\\}$ 与 $\\{x:f(x)&lt;c\\}$ 称为<strong>开半平面</strong>。</p><p>任取一个 $y_0\\in V$ 使得 $f(y_0)=c$，则 $M_c=y_0+\\ker f$。</p><p>如果 $V'$ 是线性空间 $V$ 中余维数为 $1$ 的子空间，则 $y_0+V'$，$y_0\\in V$ 是超平面。事实上，取非零线性泛函 $f$ 使得 $\\ker f=V'$。如果 $y_0\\in V'$，则 $y_0+V'=M_0$；如果 $y_0\\notin V'$，令 $f(y_0)=c$，则 $y_0+V'=M_c$。</p>",
+         "src": "设 $f$ 是线性空间 $V$ 上非零的线性泛函，$c$ 是给定常数，集合$$M_c=\\{x:f(x)=c,\\ x\\in V\\}$$称为 $V$ 中的一个**超平面**。它决定的半空间 $\\{x:f(x)\\geqslant c\\}$ 与 $\\{x:f(x)\\leqslant c\\}$ 称为**闭半平面**；$\\{x:f(x)>c\\}$ 与 $\\{x:f(x)<c\\}$ 称为**开半平面**。\n\n任取一个 $y_0\\in V$ 使得 $f(y_0)=c$，则 $M_c=y_0+\\ker f$。\n\n如果 $V'$ 是线性空间 $V$ 中余维数为 $1$ 的子空间，则 $y_0+V'$，$y_0\\in V$ 是超平面。事实上，取非零线性泛函 $f$ 使得 $\\ker f=V'$。如果 $y_0\\in V'$，则 $y_0+V'=M_0$；如果 $y_0\\notin V'$，令 $f(y_0)=c$，则 $y_0+V'=M_c$。",
+         "anchor": "定义-2.2.1"
+        },
+        {
+         "type": "定理",
+         "number": "2.2.1",
+         "title": "",
+         "page": 75,
+         "html": "<p>设 $f$ 是赋范线性空间 $X$ 上的线性泛函，则 $f$ 有界的充要条件是 $\\ker f$ 是闭的。</p>",
+         "src": "设 $f$ 是赋范线性空间 $X$ 上的线性泛函，则 $f$ 有界的充要条件是 $\\ker f$ 是闭的。",
+         "anchor": "定理-2.2.1"
+        },
+        {
+         "type": "定义",
+         "number": "2.2.2",
+         "title": "保范算子与同构",
+         "page": 76,
+         "html": "<p>设 $X,Y$ 是两个赋范线性空间，$U$ 是 $X$ 到 $Y$ 的映射。</p><p>（i）如果对一切 $x\\in X$，有 $\\|Ux\\|=\\|x\\|$，那么称 $U$ 是 $X$ 到 $Y$ 的<strong>保范算子</strong>。</p><p>（ii）如果 $U$ 不但是保范的，又是线性的，而且还实现 $X$ 到 $Y$ 上的一一对应，那么我们就称 $U$ 是 $X$ 到 $Y$ 上的（保范）<strong>同构映射</strong>。</p><p>（iii）若空间 $X,Y$ 之间存在一个从 $X$ 到 $Y$ 上的（保范）同构映射，就称 $X$ 和 $Y$ <strong>同构</strong>，记为 $X\\cong Y$。</p><p>如果$$U:X\\to Y$$是 $X$ 到 $Y$ 的一个同构，我们把 $x$ 与 $Ux$ 同一化（即把 $x$ 与 $Ux$ 视为同一的），那么就可以把 $X$ 和 $Y$ 同一化而不加区别。</p><p>在泛函分析中，常把两个同构的空间同一化，这是泛函分析中一个基本的观念。</p>",
+         "src": "设 $X,Y$ 是两个赋范线性空间，$U$ 是 $X$ 到 $Y$ 的映射。\n\n（i）如果对一切 $x\\in X$，有 $\\|Ux\\|=\\|x\\|$，那么称 $U$ 是 $X$ 到 $Y$ 的**保范算子**。\n\n（ii）如果 $U$ 不但是保范的，又是线性的，而且还实现 $X$ 到 $Y$ 上的一一对应，那么我们就称 $U$ 是 $X$ 到 $Y$ 上的（保范）**同构映射**。\n\n（iii）若空间 $X,Y$ 之间存在一个从 $X$ 到 $Y$ 上的（保范）同构映射，就称 $X$ 和 $Y$ **同构**，记为 $X\\cong Y$。\n\n如果$$U:X\\to Y$$是 $X$ 到 $Y$ 的一个同构，我们把 $x$ 与 $Ux$ 同一化（即把 $x$ 与 $Ux$ 视为同一的），那么就可以把 $X$ 和 $Y$ 同一化而不加区别。\n\n在泛函分析中，常把两个同构的空间同一化，这是泛函分析中一个基本的观念。",
+         "anchor": "定义-2.2.2"
+        },
+        {
+         "type": "命题",
+         "number": "",
+         "title": "由向量导出的有界线性泛函",
+         "page": 76,
+         "html": "<p>设 $H$ 是一个 Hilbert 空间，任意取 $H$ 中一个固定向量 $y$，可以在 $H$ 上作泛函 $F_y$ 如下：$$F_y(x)=\\langle x,y\\rangle,\\qquad \\forall x\\in H,\\tag{2.9}$$则 $F_y\\in H^*$ 且 $\\|F_y\\|=\\|y\\|$。我们称 $F_y$ 是向量 $y$ <strong>导出的有界线性泛函</strong>。</p>",
+         "src": "设 $H$ 是一个 Hilbert 空间，任意取 $H$ 中一个固定向量 $y$，可以在 $H$ 上作泛函 $F_y$ 如下：$$F_y(x)=\\langle x,y\\rangle,\\qquad \\forall x\\in H,\\tag{2.9}$$则 $F_y\\in H^*$ 且 $\\|F_y\\|=\\|y\\|$。我们称 $F_y$ 是向量 $y$ **导出的有界线性泛函**。",
+         "anchor": "命题-由向量导出的有界线性泛函"
+        },
+        {
+         "type": "定理",
+         "number": "2.2.2",
+         "title": "F. Riesz",
+         "page": 77,
+         "html": "<p>设 $H$ 是 Hilbert 空间，$F$ 是 $H$ 上的连续线性泛函，那么存在唯一的向量 $y\\in H$，使得$$F(x)=\\langle x,y\\rangle,\\qquad \\forall x\\in H\\tag{2.10}$$并且 $\\|F\\|=\\|y\\|$。</p>",
+         "src": "设 $H$ 是 Hilbert 空间，$F$ 是 $H$ 上的连续线性泛函，那么存在唯一的向量 $y\\in H$，使得$$F(x)=\\langle x,y\\rangle,\\qquad \\forall x\\in H\\tag{2.10}$$并且 $\\|F\\|=\\|y\\|$。",
+         "anchor": "定理-2.2.2"
+        },
+        {
+         "type": "命题",
+         "number": "",
+         "title": "Hilbert 空间与其对偶空间的共轭同构",
+         "page": 77,
+         "html": "<p>作 Hilbert 空间 $H$ 到它的对偶空间 $H^*$ 的映射 $U$ 如下：$$U:y\\mapsto F_y,$$其中 $F_y$ 是由等式（2.9）规定的泛函。那么由 F. Riesz 定理 2.2.2，$U$ 是 $H$ 到 $H^*$ 上的一一对应。</p><p>当 $H$ 是复空间时，映射 $U$ 是共轭线性的，即$$U(\\alpha x+\\beta y)=\\overline{\\alpha}U(x)+\\overline{\\beta}U(y),\\qquad x,y\\in H,\\ \\alpha,\\beta\\in\\mathbb{C}.$$此外，映射 $U$ 保持范数不变。</p><p>总之，对于复空间，映射 $U$ 是 $H$ 到 $H^*$ 上的一一对应，共轭线性的，而且保持范数不变，这时映射 $U$ 不是 $H$ 到 $H^*$ 之间的保范线性同构，而称为\"复共轭\"保范线性同构。在这种同构方式下，今后我们将把 $y$ 和 $F_y$ 看成一致的，即把向量 $y$ 看成泛函 $F_y$，把泛函 $F_y$ 看成向量 $y$。这样，$H$ 和 $H^*$ 就同一化了。</p>",
+         "src": "作 Hilbert 空间 $H$ 到它的对偶空间 $H^*$ 的映射 $U$ 如下：$$U:y\\mapsto F_y,$$其中 $F_y$ 是由等式（2.9）规定的泛函。那么由 F. Riesz 定理 2.2.2，$U$ 是 $H$ 到 $H^*$ 上的一一对应。\n\n当 $H$ 是复空间时，映射 $U$ 是共轭线性的，即$$U(\\alpha x+\\beta y)=\\overline{\\alpha}U(x)+\\overline{\\beta}U(y),\\qquad x,y\\in H,\\ \\alpha,\\beta\\in\\mathbb{C}.$$此外，映射 $U$ 保持范数不变。\n\n总之，对于复空间，映射 $U$ 是 $H$ 到 $H^*$ 上的一一对应，共轭线性的，而且保持范数不变，这时映射 $U$ 不是 $H$ 到 $H^*$ 之间的保范线性同构，而称为\"复共轭\"保范线性同构。在这种同构方式下，今后我们将把 $y$ 和 $F_y$ 看成一致的，即把向量 $y$ 看成泛函 $F_y$，把泛函 $F_y$ 看成向量 $y$。这样，$H$ 和 $H^*$ 就同一化了。",
+         "anchor": "命题-Hilbert-空间与其对偶空间的共轭同构"
+        },
+        {
+         "type": "定理",
+         "number": "2.2.3",
+         "title": "F. Riesz",
+         "page": 77,
+         "html": "<p>设 $1\\leqslant p&lt;\\infty$，$\\dfrac{1}{p}+\\dfrac{1}{q}=1$。若 $f$ 是 $l^p$ 上的连续线性泛函，那么存在唯一的向量 $\\eta\\in l^q$，使得$$f(x)=\\sum_{\\nu=1}^{\\infty}x_\\nu\\eta_\\nu,\\qquad \\forall x\\in l^p,$$并且 $\\|f\\|=\\|\\eta\\|_q$。故此，$(l^p)^*\\cong l^q$。</p>",
+         "src": "设 $1\\leqslant p<\\infty$，$\\dfrac{1}{p}+\\dfrac{1}{q}=1$。若 $f$ 是 $l^p$ 上的连续线性泛函，那么存在唯一的向量 $\\eta\\in l^q$，使得$$f(x)=\\sum_{\\nu=1}^{\\infty}x_\\nu\\eta_\\nu,\\qquad \\forall x\\in l^p,$$并且 $\\|f\\|=\\|\\eta\\|_q$。故此，$(l^p)^*\\cong l^q$。",
+         "anchor": "定理-2.2.3"
+        },
+        {
+         "type": "注",
+         "number": "",
+         "title": "对偶空间的例子",
+         "page": 78,
+         "html": "<p>特别地，我们有 $(l^2)^*\\cong l^2$。用类似的方法也可以证明 $c_0^*\\cong l^1$。</p>",
+         "src": "特别地，我们有 $(l^2)^*\\cong l^2$。用类似的方法也可以证明 $c_0^*\\cong l^1$。",
+         "anchor": "注-对偶空间的例子"
+        },
+        {
+         "type": "定义",
+         "number": "2.2.3",
+         "title": "共轭双线性泛函与 Hermite 泛函",
+         "page": 78,
+         "html": "<p>设 $H$ 是内积空间，$\\varphi(x,y)$ 是 $H$ 上的二元泛函。</p><p>（i）如果对于任何 $x,y,z\\in H$ 及 $\\alpha,\\beta\\in\\mathbb{C}$，都成立$$\\varphi(\\alpha x+\\beta y,z)=\\alpha\\varphi(x,z)+\\beta\\varphi(y,z),$$$$\\varphi(z,\\alpha x+\\beta y)=\\overline{\\alpha}\\varphi(z,x)+\\overline{\\beta}\\varphi(z,y),$$那么称 $\\varphi(\\cdot,\\cdot)$ 是 $H$ 上的<strong>共轭双线性泛函</strong>。</p><p>（ii）如果对任何 $x,y\\in H$ 成立 $\\varphi(x,y)=\\overline{\\varphi(y,x)}$，那么称 $\\varphi(x,y)$ 是 $H$ 上的 <strong>Hermite 泛函</strong>。</p><p>（iii）对共轭双线性泛函 $\\varphi$，如果有正常数 $c$ 使得$$|\\varphi(x,y)|\\leqslant c\\|x\\|\\|y\\|,\\qquad \\forall x,y\\in H,$$那么称 $\\varphi$ 是 $H$ 上<strong>有界的</strong>共轭双线性泛函，$\\|\\varphi\\|=\\sup\\limits_{\\|x\\|=\\|y\\|=1}|\\varphi(x,y)|$ 称为泛函 $\\varphi$ 的<strong>范数</strong>。</p>",
+         "src": "设 $H$ 是内积空间，$\\varphi(x,y)$ 是 $H$ 上的二元泛函。\n\n（i）如果对于任何 $x,y,z\\in H$ 及 $\\alpha,\\beta\\in\\mathbb{C}$，都成立$$\\varphi(\\alpha x+\\beta y,z)=\\alpha\\varphi(x,z)+\\beta\\varphi(y,z),$$$$\\varphi(z,\\alpha x+\\beta y)=\\overline{\\alpha}\\varphi(z,x)+\\overline{\\beta}\\varphi(z,y),$$那么称 $\\varphi(\\cdot,\\cdot)$ 是 $H$ 上的**共轭双线性泛函**。\n\n（ii）如果对任何 $x,y\\in H$ 成立 $\\varphi(x,y)=\\overline{\\varphi(y,x)}$，那么称 $\\varphi(x,y)$ 是 $H$ 上的 **Hermite 泛函**。\n\n（iii）对共轭双线性泛函 $\\varphi$，如果有正常数 $c$ 使得$$|\\varphi(x,y)|\\leqslant c\\|x\\|\\|y\\|,\\qquad \\forall x,y\\in H,$$那么称 $\\varphi$ 是 $H$ 上**有界的**共轭双线性泛函，$\\|\\varphi\\|=\\sup\\limits_{\\|x\\|=\\|y\\|=1}|\\varphi(x,y)|$ 称为泛函 $\\varphi$ 的**范数**。",
+         "anchor": "定义-2.2.3"
+        },
+        {
+         "type": "例",
+         "number": "2.2.2",
+         "title": "",
+         "page": 79,
+         "html": "<p>设 $T$ 是 $H$ 上的线性算子，则 $T$ 导出的泛函 $\\varphi(x,y)=\\langle Tx,y\\rangle$ 是共轭双线性泛函。如果 $T$ 还是有界的，那么 $\\varphi$ 也是有界的共轭双线性泛函且 $\\|\\varphi\\|=\\|T\\|$。</p>",
+         "src": "设 $T$ 是 $H$ 上的线性算子，则 $T$ 导出的泛函 $\\varphi(x,y)=\\langle Tx,y\\rangle$ 是共轭双线性泛函。如果 $T$ 还是有界的，那么 $\\varphi$ 也是有界的共轭双线性泛函且 $\\|\\varphi\\|=\\|T\\|$。",
+         "anchor": "例-2.2.2"
+        },
+        {
+         "type": "定理",
+         "number": "2.2.4",
+         "title": "",
+         "page": 79,
+         "html": "<p>设 $H$ 是 Hilbert 空间，$\\varphi(\\cdot,\\cdot)$ 是 $H$ 上有界的共轭双线性泛函，那么存在 $H$ 上唯一的有界线性算子 $T$，使得 $\\varphi$ 是由 $T$ 导出的共轭双线性泛函。</p><p>由此可见，Hilbert 空间上的共轭双线性有界泛函相当于有界线性算子。</p>",
+         "src": "设 $H$ 是 Hilbert 空间，$\\varphi(\\cdot,\\cdot)$ 是 $H$ 上有界的共轭双线性泛函，那么存在 $H$ 上唯一的有界线性算子 $T$，使得 $\\varphi$ 是由 $T$ 导出的共轭双线性泛函。\n\n由此可见，Hilbert 空间上的共轭双线性有界泛函相当于有界线性算子。",
+         "anchor": "定理-2.2.4"
+        },
+        {
+         "type": "定理",
+         "number": "2.2.5",
+         "title": "",
+         "page": 79,
+         "html": "<p>设 $H$ 是复 Hilbert 空间，$\\varphi(\\cdot,\\cdot)$ 是 $H$ 上共轭双线性泛函。那么，$\\varphi$ 是 Hermite 泛函的充要条件是 $\\varphi(x,x)$ 对一切 $x\\in H$ 都是实数。</p>",
+         "src": "设 $H$ 是复 Hilbert 空间，$\\varphi(\\cdot,\\cdot)$ 是 $H$ 上共轭双线性泛函。那么，$\\varphi$ 是 Hermite 泛函的充要条件是 $\\varphi(x,x)$ 对一切 $x\\in H$ 都是实数。",
+         "anchor": "定理-2.2.5"
+        },
+        {
+         "type": "定理",
+         "number": "2.2.6",
+         "title": "",
+         "page": 80,
+         "html": "<p>设 $\\varphi(\\cdot,\\cdot)$ 是复 Hilbert 空间 $H$ 上的共轭双线性 Hermite 泛函，且存在常数 $c$ 使得$$|\\varphi(x,x)|\\leqslant c\\|x\\|^2,\\qquad \\forall x\\in H,\\tag{2.13}$$那么 $\\varphi$ 是有界的，且 $\\|\\varphi\\|\\leqslant c$。</p>",
+         "src": "设 $\\varphi(\\cdot,\\cdot)$ 是复 Hilbert 空间 $H$ 上的共轭双线性 Hermite 泛函，且存在常数 $c$ 使得$$|\\varphi(x,x)|\\leqslant c\\|x\\|^2,\\qquad \\forall x\\in H,\\tag{2.13}$$那么 $\\varphi$ 是有界的，且 $\\|\\varphi\\|\\leqslant c$。",
+         "anchor": "定理-2.2.6"
+        },
+        {
+         "type": "推论",
+         "number": "",
+         "title": "Hermite 算子的范数",
+         "page": 80,
+         "html": "<p>对复 Hilbert 空间 $H$ 上的有界线性算子 $T$，若对任何 $x\\in H$，$\\langle Tx,x\\rangle$ 都是实数，则称 $T$ 是 <strong>Hermite 算子</strong>。那么上述结果即为：$H$ 上有界的共轭双线性 Hermite 泛函 $\\varphi(\\cdot,\\cdot)$ 都是由一个 Hermite 算子诱导的。并且，对于复 Hilbert 空间上的 Hermite 算子 $T$，$$\\|T\\|=\\sup_{\\|x\\|=1}|\\langle Tx,x\\rangle|.$$</p>",
+         "src": "对复 Hilbert 空间 $H$ 上的有界线性算子 $T$，若对任何 $x\\in H$，$\\langle Tx,x\\rangle$ 都是实数，则称 $T$ 是 **Hermite 算子**。那么上述结果即为：$H$ 上有界的共轭双线性 Hermite 泛函 $\\varphi(\\cdot,\\cdot)$ 都是由一个 Hermite 算子诱导的。并且，对于复 Hilbert 空间上的 Hermite 算子 $T$，$$\\|T\\|=\\sup_{\\|x\\|=1}|\\langle Tx,x\\rangle|.$$",
+         "anchor": "推论-Hermite-算子的范数"
+        }
+       ]
+      },
+      {
+       "id": "2.3",
+       "title": "Hahn-Banach 延拓定理",
+       "pages": "82–88",
+       "items": [
+        {
+         "type": "定义",
+         "number": "2.3.1",
+         "title": "延拓",
+         "page": 82,
+         "html": "<p>设 $L$ 是实线性空间，$L_0$ 是它的线性子空间，又设在子空间 $L_0$ 上给定一线性泛函 $f_0$。在全空间 $L$ 上定义的线性泛函 $f$ 叫做泛函 $f_0$ 的<strong>延拓</strong>，如果$$f(x)=f_0(x),\\qquad \\forall x\\in L_0.$$</p>",
+         "src": "设 $L$ 是实线性空间，$L_0$ 是它的线性子空间，又设在子空间 $L_0$ 上给定一线性泛函 $f_0$。在全空间 $L$ 上定义的线性泛函 $f$ 叫做泛函 $f_0$ 的**延拓**，如果$$f(x)=f_0(x),\\qquad \\forall x\\in L_0.$$",
+         "anchor": "定义-2.3.1"
+        },
+        {
+         "type": "定理",
+         "number": "2.3.1",
+         "title": "Hahn–Banach",
+         "page": 82,
+         "html": "<p>设 $L_0$ 是实赋范线性空间 $L$ 的线性子空间。若 $f_0$ 是 $L_0$ 上的有界线性泛函，则存在 $L$ 上的有界线性泛函 $f$，$f|_{L_0}=f_0$，且 $\\|f\\|=\\|f_0\\|$。</p>",
+         "src": "设 $L_0$ 是实赋范线性空间 $L$ 的线性子空间。若 $f_0$ 是 $L_0$ 上的有界线性泛函，则存在 $L$ 上的有界线性泛函 $f$，$f|_{L_0}=f_0$，且 $\\|f\\|=\\|f_0\\|$。",
+         "anchor": "定理-2.3.1"
+        },
+        {
+         "type": "例",
+         "number": "2.3.1",
+         "title": "",
+         "page": 82,
+         "html": "<p>设 $X=\\mathbb{R}^2$，$X$ 中点 $x=(x_1,x_2)$ 的范数规定为 $\\|x\\|=|x_1|+|x_2|$。又设 $G=\\{(x_1,0):x_1\\in\\mathbb{R}\\}$，$f$ 是定义在 $G$ 上的泛函：$f((x_1,0))=x_1$。显然 $f$ 是 $G$ 上连续线性泛函，且 $\\|f\\|_G=1$。对任何数 $\\beta$，$X$ 上的连续线性泛函 $F((x_1,x_2))=x_1+\\beta x_2$ 都是 $f$ 的延拓，并且$$|F((x_1,x_2))|=|x_1+\\beta x_2|\\leqslant\\max\\{1,|\\beta|\\}\\,\\|(x_1,x_2)\\|.$$所以只要 $|\\beta|\\leqslant 1$，$F$ 都是 $f$ 的保持范数不变的延拓。</p>",
+         "src": "设 $X=\\mathbb{R}^2$，$X$ 中点 $x=(x_1,x_2)$ 的范数规定为 $\\|x\\|=|x_1|+|x_2|$。又设 $G=\\{(x_1,0):x_1\\in\\mathbb{R}\\}$，$f$ 是定义在 $G$ 上的泛函：$f((x_1,0))=x_1$。显然 $f$ 是 $G$ 上连续线性泛函，且 $\\|f\\|_G=1$。对任何数 $\\beta$，$X$ 上的连续线性泛函 $F((x_1,x_2))=x_1+\\beta x_2$ 都是 $f$ 的延拓，并且$$|F((x_1,x_2))|=|x_1+\\beta x_2|\\leqslant\\max\\{1,|\\beta|\\}\\,\\|(x_1,x_2)\\|.$$所以只要 $|\\beta|\\leqslant 1$，$F$ 都是 $f$ 的保持范数不变的延拓。",
+         "anchor": "例-2.3.1"
+        },
+        {
+         "type": "注",
+         "number": "2.3.1",
+         "title": "",
+         "page": 83,
+         "html": "<p>如果不需要保持范数的要求，延拓子空间上泛函是平凡的。考虑 $L_0$ 的一组 Hamel 基 $\\{y_\\lambda\\}_{\\lambda\\in\\Lambda}$，把它扩充为 $L$ 上的一组 Hamel 基，在扩充的基元素上确定 $f$ 的取值就得到 $f_0$ 的延拓。</p>",
+         "src": "如果不需要保持范数的要求，延拓子空间上泛函是平凡的。考虑 $L_0$ 的一组 Hamel 基 $\\{y_\\lambda\\}_{\\lambda\\in\\Lambda}$，把它扩充为 $L$ 上的一组 Hamel 基，在扩充的基元素上确定 $f$ 的取值就得到 $f_0$ 的延拓。",
+         "anchor": "注-2.3.1"
+        },
+        {
+         "type": "定义",
+         "number": "",
+         "title": "次线性函数",
+         "page": 83,
+         "html": "<p>线性空间 $L$ 上的泛函 $p:L\\to\\mathbb{R}$ 称为<strong>次线性函数</strong>（sublinear functional），若$$p(x+y)\\leqslant p(x)+p(y),\\qquad \\forall x,y\\in L;$$$$p(tx)=tp(x),\\qquad \\forall x\\in L,\\ t\\geqslant 0.$$</p>",
+         "src": "线性空间 $L$ 上的泛函 $p:L\\to\\mathbb{R}$ 称为**次线性函数**（sublinear functional），若$$p(x+y)\\leqslant p(x)+p(y),\\qquad \\forall x,y\\in L;$$$$p(tx)=tp(x),\\qquad \\forall x\\in L,\\ t\\geqslant 0.$$",
+         "anchor": "定义-次线性函数"
+        },
+        {
+         "type": "例",
+         "number": "2.3.2",
+         "title": "",
+         "page": 83,
+         "html": "<p>显然，$p(\\{a_n\\})=\\varlimsup\\limits_{n\\to\\infty}\\operatorname{Re}a_n$ 是 $l^\\infty$ 上的次线性泛函，其中 $\\operatorname{Re}a_n$ 代表 $a_n$ 的实部。而 $p(f)=|f(0)|$ 是 $C[0,1]$ 上的次线性函数，实际上它还是个半范数。</p>",
+         "src": "显然，$p(\\{a_n\\})=\\varlimsup\\limits_{n\\to\\infty}\\operatorname{Re}a_n$ 是 $l^\\infty$ 上的次线性泛函，其中 $\\operatorname{Re}a_n$ 代表 $a_n$ 的实部。而 $p(f)=|f(0)|$ 是 $C[0,1]$ 上的次线性函数，实际上它还是个半范数。",
+         "anchor": "例-2.3.2"
+        },
+        {
+         "type": "定理",
+         "number": "2.3.2",
+         "title": "Hahn–Banach",
+         "page": 83,
+         "html": "<p>设 $p$ 是定义在实线性空间 $L$ 上的次线性函数，$L_0$ 是 $L$ 的线性子空间。如果 $f_0$ 是 $L_0$ 上的线性泛函，满足$$f_0(x)\\leqslant p(x),\\qquad \\forall x\\in L_0 \\tag{2.14}$$（满足这个条件的泛函 $f_0$ 称为<strong>从属于</strong>泛函 $p$），则 $f_0$ 可以延拓为 $L$ 上的线性泛函 $f$，并且 $f$ 在全空间 $L$ 上从属于 $p$。</p>",
+         "src": "设 $p$ 是定义在实线性空间 $L$ 上的次线性函数，$L_0$ 是 $L$ 的线性子空间。如果 $f_0$ 是 $L_0$ 上的线性泛函，满足$$f_0(x)\\leqslant p(x),\\qquad \\forall x\\in L_0 \\tag{2.14}$$（满足这个条件的泛函 $f_0$ 称为**从属于**泛函 $p$），则 $f_0$ 可以延拓为 $L$ 上的线性泛函 $f$，并且 $f$ 在全空间 $L$ 上从属于 $p$。",
+         "anchor": "定理-2.3.2"
+        },
+        {
+         "type": "注",
+         "number": "",
+         "title": "实线性泛函与复线性泛函的关系",
+         "page": 84,
+         "html": "<p>设 $f$ 是复线性空间 $L$ 上的实线性泛函，记 $f_R=\\operatorname{Re}f$ 是 $f$ 的实部，$f_I=\\operatorname{Im}f$ 是 $f$ 的虚部，则 $f$ 是复线性泛函当且仅当$$f_I(\\mathrm{i}x)=f_R(x)$$成立，这也等价于 $f_R(\\mathrm{i}x)=-f_I(x)$ 成立。</p>",
+         "src": "设 $f$ 是复线性空间 $L$ 上的实线性泛函，记 $f_R=\\operatorname{Re}f$ 是 $f$ 的实部，$f_I=\\operatorname{Im}f$ 是 $f$ 的虚部，则 $f$ 是复线性泛函当且仅当$$f_I(\\mathrm{i}x)=f_R(x)$$成立，这也等价于 $f_R(\\mathrm{i}x)=-f_I(x)$ 成立。",
+         "anchor": "注-实线性泛函与复线性泛函的关系"
+        },
+        {
+         "type": "定理",
+         "number": "2.3.3",
+         "title": "Hahn–Banach",
+         "page": 84,
+         "html": "<p>设 $L_0$ 是复线性空间 $L$ 的子空间，$p$ 是复线性空间 $L$ 上的半范数，$f_0$ 是子空间 $L_0$ 上的线性泛函，且在 $L_0$ 上满足条件$$|f_0(x)|\\leqslant p(x),\\qquad \\forall x\\in L_0,$$则存在定义在全空间 $L$ 上的线性泛函 $f$ 满足如下条件：$$|f(x)|\\leqslant p(x),\\ \\ \\forall x\\in L;\\qquad \\text{并且}\\qquad f(x)=f_0(x),\\ \\ \\forall x\\in L_0.$$</p>",
+         "src": "设 $L_0$ 是复线性空间 $L$ 的子空间，$p$ 是复线性空间 $L$ 上的半范数，$f_0$ 是子空间 $L_0$ 上的线性泛函，且在 $L_0$ 上满足条件$$|f_0(x)|\\leqslant p(x),\\qquad \\forall x\\in L_0,$$则存在定义在全空间 $L$ 上的线性泛函 $f$ 满足如下条件：$$|f(x)|\\leqslant p(x),\\ \\ \\forall x\\in L;\\qquad \\text{并且}\\qquad f(x)=f_0(x),\\ \\ \\forall x\\in L_0.$$",
+         "anchor": "定理-2.3.3"
+        },
+        {
+         "type": "推论",
+         "number": "2.3.1",
+         "title": "",
+         "page": 85,
+         "html": "<p>对赋范线性空间 $X$ 中的非零元素 $x_0$，存在 $f\\in X^*$ 使得 $\\|f\\|=1$ 且 $f(x_0)=\\|x_0\\|$。</p>",
+         "src": "对赋范线性空间 $X$ 中的非零元素 $x_0$，存在 $f\\in X^*$ 使得 $\\|f\\|=1$ 且 $f(x_0)=\\|x_0\\|$。",
+         "anchor": "推论-2.3.1"
+        },
+        {
+         "type": "推论",
+         "number": "2.3.2",
+         "title": "",
+         "page": 85,
+         "html": "<p>对赋范线性空间 $X$ 中两个不同元素 $x_1,x_2$，存在 $f\\in X^*$ 使得 $f(x_1)\\neq f(x_2)$。</p><p>这个推论说明 $X^*$ 分离 $X$ 中的点。</p>",
+         "src": "对赋范线性空间 $X$ 中两个不同元素 $x_1,x_2$，存在 $f\\in X^*$ 使得 $f(x_1)\\neq f(x_2)$。\n\n这个推论说明 $X^*$ 分离 $X$ 中的点。",
+         "anchor": "推论-2.3.2"
+        },
+        {
+         "type": "推论",
+         "number": "2.3.3",
+         "title": "",
+         "page": 86,
+         "html": "<p>对赋范线性空间 $X$ 中的元素 $x$，我们有$$\\|x\\|=\\max_{\\|f\\|=1}|f(x)|.$$</p>",
+         "src": "对赋范线性空间 $X$ 中的元素 $x$，我们有$$\\|x\\|=\\max_{\\|f\\|=1}|f(x)|.$$",
+         "anchor": "推论-2.3.3"
+        },
+        {
+         "type": "推论",
+         "number": "2.3.4",
+         "title": "",
+         "page": 86,
+         "html": "<p>设 $M$ 是赋范线性空间 $(X,\\|\\cdot\\|)$ 的闭线性子空间，$x\\notin M$，则存在 $f\\in X^*$ 使得$$\\|f\\|=1,\\qquad f(M)=0,\\qquad f(x)=d(x,M).$$</p><p>这个推论说明 $X^*$ 也可以用来分离 $X$ 中的闭线性子空间和点。</p>",
+         "src": "设 $M$ 是赋范线性空间 $(X,\\|\\cdot\\|)$ 的闭线性子空间，$x\\notin M$，则存在 $f\\in X^*$ 使得$$\\|f\\|=1,\\qquad f(M)=0,\\qquad f(x)=d(x,M).$$\n\n这个推论说明 $X^*$ 也可以用来分离 $X$ 中的闭线性子空间和点。",
+         "anchor": "推论-2.3.4"
+        },
+        {
+         "type": "推论",
+         "number": "2.3.5",
+         "title": "",
+         "page": 86,
+         "html": "<p>设 $M$ 为赋范线性空间 $(X,\\|\\cdot\\|)$ 中一个子集，则元素 $x\\in\\overline{\\operatorname{span}}M$ 当且仅当对任意满足 $f(M)=0$ 的线性泛函 $f\\in X^*$，有 $f(x)=0$。</p>",
+         "src": "设 $M$ 为赋范线性空间 $(X,\\|\\cdot\\|)$ 中一个子集，则元素 $x\\in\\overline{\\operatorname{span}}M$ 当且仅当对任意满足 $f(M)=0$ 的线性泛函 $f\\in X^*$，有 $f(x)=0$。",
+         "anchor": "推论-2.3.5"
+        },
+        {
+         "type": "定义",
+         "number": "2.3.2",
+         "title": "零化子与预零化子",
+         "page": 86,
+         "html": "<p>对于赋范线性空间 $X$ 的子集 $M$，定义 $M$ 的<strong>零化子</strong>为$$M^{\\perp}=\\{f\\in X^*:\\ f(x)=0,\\ \\forall x\\in M\\}; \\tag{2.18}$$对于对偶空间 $X^*$ 的子集 $N$，定义 $N$ 的<strong>预零化子</strong>为$${}^{\\perp}N=\\{x\\in X:\\ f(x)=0,\\ \\forall f\\in N\\}. \\tag{2.19}$$显然 $M^{\\perp}$ 是 $X^*$ 的闭线性子空间，${}^{\\perp}N$ 是 $X$ 的闭线性子空间。零化子和预零化子可以视为正交补空间在 Banach 空间情形的推广。</p>",
+         "src": "对于赋范线性空间 $X$ 的子集 $M$，定义 $M$ 的**零化子**为$$M^{\\perp}=\\{f\\in X^*:\\ f(x)=0,\\ \\forall x\\in M\\}; \\tag{2.18}$$对于对偶空间 $X^*$ 的子集 $N$，定义 $N$ 的**预零化子**为$${}^{\\perp}N=\\{x\\in X:\\ f(x)=0,\\ \\forall f\\in N\\}. \\tag{2.19}$$显然 $M^{\\perp}$ 是 $X^*$ 的闭线性子空间，${}^{\\perp}N$ 是 $X$ 的闭线性子空间。零化子和预零化子可以视为正交补空间在 Banach 空间情形的推广。",
+         "anchor": "定义-2.3.2"
+        },
+        {
+         "type": "定理",
+         "number": "2.3.4",
+         "title": "",
+         "page": 86,
+         "html": "<p>设 $M$ 是赋范线性空间 $X$ 的闭线性子空间。</p><p>（i）对于任一 $m^*\\in M^*$，定义$$\\sigma(m^*)=[x^*],$$这里 $x^*$ 是 $m^*$ 在 $X$ 上的一个保范延拓，$[x^*]$ 是 $x^*$ 在商空间 $X^*/M^{\\perp}$ 中的等价类。则映射 $\\sigma:M^*\\to X^*/M^{\\perp}$ 是一个良定义的保范同构。</p><p>（ii）令 $\\pi:x\\to[x]$ 是 $X$ 到 $X/M$ 的商映射。对 $f\\in(X/M)^*$，定义$$\\tau(f)=f\\circ\\pi.$$则 $\\tau$ 是 $(X/M)^*$ 到 $M^{\\perp}$ 的一个保范同构。</p>",
+         "src": "设 $M$ 是赋范线性空间 $X$ 的闭线性子空间。\n\n（i）对于任一 $m^*\\in M^*$，定义$$\\sigma(m^*)=[x^*],$$这里 $x^*$ 是 $m^*$ 在 $X$ 上的一个保范延拓，$[x^*]$ 是 $x^*$ 在商空间 $X^*/M^{\\perp}$ 中的等价类。则映射 $\\sigma:M^*\\to X^*/M^{\\perp}$ 是一个良定义的保范同构。\n\n（ii）令 $\\pi:x\\to[x]$ 是 $X$ 到 $X/M$ 的商映射。对 $f\\in(X/M)^*$，定义$$\\tau(f)=f\\circ\\pi.$$则 $\\tau$ 是 $(X/M)^*$ 到 $M^{\\perp}$ 的一个保范同构。",
+         "anchor": "定理-2.3.4"
+        }
+       ]
+      },
+      {
+       "id": "2.4",
+       "title": "几何形式——凸集分离定理",
+       "pages": "89–95",
+       "items": [
+        {
+         "type": "定义",
+         "number": "2.4.1",
+         "title": "凸集",
+         "page": 90,
+         "html": "<p>设 $V$ 是线性空间，$M$ 是 $V$ 的一个子集。如果对于任意的 $x,y\\in M$，及 $\\alpha\\in[0,1]$，有 $\\alpha x+(1-\\alpha)y\\in M$，就称 $M$ 是一个<strong>凸集</strong>。</p>",
+         "src": "设 $V$ 是线性空间，$M$ 是 $V$ 的一个子集。如果对于任意的 $x,y\\in M$，及 $\\alpha\\in[0,1]$，有 $\\alpha x+(1-\\alpha)y\\in M$，就称 $M$ 是一个**凸集**。",
+         "anchor": "定义-2.4.1"
+        },
+        {
+         "type": "例",
+         "number": "2.4.1",
+         "title": "",
+         "page": 90,
+         "html": "<p>在三维 Euclid 空间 $\\mathbb{R}^3$ 中，线段、平面、三角形、立方体、球、四面体以及半空间等都是凸集。</p>",
+         "src": "在三维 Euclid 空间 $\\mathbb{R}^3$ 中，线段、平面、三角形、立方体、球、四面体以及半空间等都是凸集。",
+         "anchor": "例-2.4.1"
+        },
+        {
+         "type": "例",
+         "number": "2.4.2",
+         "title": "",
+         "page": 90,
+         "html": "<p>若 $\\varphi$ 是直线 $\\mathbb{R}$ 上的凸函数，即</p><p>$$\\varphi(tx+(1-t)y)\\leqslant t\\varphi(x)+(1-t)\\varphi(y),\\qquad \\forall x,y\\in\\mathbb{R},\\ t\\in(0,1),$$</p><p>那么图形 $\\{(x,y)\\in\\mathbb{R}^2:\\ y\\geqslant\\varphi(x)\\}$ 是平面中的一个凸集。</p>",
+         "src": "若 $\\varphi$ 是直线 $\\mathbb{R}$ 上的凸函数，即\n\n$$\\varphi(tx+(1-t)y)\\leqslant t\\varphi(x)+(1-t)\\varphi(y),\\qquad \\forall x,y\\in\\mathbb{R},\\ t\\in(0,1),$$\n\n那么图形 $\\{(x,y)\\in\\mathbb{R}^2:\\ y\\geqslant\\varphi(x)\\}$ 是平面中的一个凸集。",
+         "anchor": "例-2.4.2"
+        },
+        {
+         "type": "例",
+         "number": "2.4.3",
+         "title": "",
+         "page": 90,
+         "html": "<p>$C[a,b]$ 的子集 $A=\\{f:\\ |f|\\leqslant 1\\}$ 是凸集。</p>",
+         "src": "$C[a,b]$ 的子集 $A=\\{f:\\ |f|\\leqslant 1\\}$ 是凸集。",
+         "anchor": "例-2.4.3"
+        },
+        {
+         "type": "例",
+         "number": "2.4.4",
+         "title": "",
+         "page": 90,
+         "html": "<p>$l^2$ 中的集合</p><p>$$A=\\left\\{x:\\ x=(x_1,x_2,\\cdots)\\in l^2,\\ \\sum_{n=1}^{\\infty}n^2x_n^2\\leqslant 1\\right\\}$$</p><p>是凸集。</p>",
+         "src": "$l^2$ 中的集合\n\n$$A=\\left\\{x:\\ x=(x_1,x_2,\\cdots)\\in l^2,\\ \\sum_{n=1}^{\\infty}n^2x_n^2\\leqslant 1\\right\\}$$\n\n是凸集。",
+         "anchor": "例-2.4.4"
+        },
+        {
+         "type": "例",
+         "number": "2.4.5",
+         "title": "",
+         "page": 90,
+         "html": "<p>若 $M$ 是赋范线性空间 $X$ 中的凸子集，则 $M$ 的内部 $M^\\circ$ 也是凸的。</p>",
+         "src": "若 $M$ 是赋范线性空间 $X$ 中的凸子集，则 $M$ 的内部 $M^\\circ$ 也是凸的。",
+         "anchor": "例-2.4.5"
+        },
+        {
+         "type": "命题",
+         "number": "2.4.1",
+         "title": "",
+         "page": 90,
+         "html": "<p>线性空间 $V$ 中的任意多个凸集的交仍是凸集。</p>",
+         "src": "线性空间 $V$ 中的任意多个凸集的交仍是凸集。",
+         "anchor": "命题-2.4.1"
+        },
+        {
+         "type": "定义",
+         "number": "",
+         "title": "凸包",
+         "page": 90,
+         "html": "<p>在线性空间 $V$ 中，对于任意的子集 $A$，存在包含它的最小凸集：包含 $A$ 的所有凸集的交是最小凸集。我们称包含 $A$ 的最小凸集为集 $A$ 的<strong>凸包</strong>，记为 $co(A)$。容易验证：</p><p>$$co(A)=\\left\\{\\sum\\alpha_i x_i:\\ x_i\\in A,\\ \\alpha_i\\geqslant 0,\\ \\sum\\alpha_i=1,\\ \\text{其中 } \\alpha_i \\text{ 有限非零}\\right\\}.$$</p>",
+         "src": "在线性空间 $V$ 中，对于任意的子集 $A$，存在包含它的最小凸集：包含 $A$ 的所有凸集的交是最小凸集。我们称包含 $A$ 的最小凸集为集 $A$ 的**凸包**，记为 $co(A)$。容易验证：\n\n$$co(A)=\\left\\{\\sum\\alpha_i x_i:\\ x_i\\in A,\\ \\alpha_i\\geqslant 0,\\ \\sum\\alpha_i=1,\\ \\text{其中 } \\alpha_i \\text{ 有限非零}\\right\\}.$$",
+         "anchor": "定义-凸包"
+        },
+        {
+         "type": "定义",
+         "number": "",
+         "title": "单纯形",
+         "page": 90,
+         "html": "<p>当 $x_0,x_1,\\cdots,x_n$ 是线性空间 $V$ 中的 $n+1$ 个点，并且向量组 $x_1-x_0,x_2-x_0,\\cdots,x_n-x_0$ 线性无关时，则称 $co(x_0,x_1,\\cdots,x_n)$ 为 $n$ 维<strong>单纯形</strong>。</p>",
+         "src": "当 $x_0,x_1,\\cdots,x_n$ 是线性空间 $V$ 中的 $n+1$ 个点，并且向量组 $x_1-x_0,x_2-x_0,\\cdots,x_n-x_0$ 线性无关时，则称 $co(x_0,x_1,\\cdots,x_n)$ 为 $n$ 维**单纯形**。",
+         "anchor": "定义-单纯形"
+        },
+        {
+         "type": "例",
+         "number": "2.4.6",
+         "title": "",
+         "page": 90,
+         "html": "<p>设 $f$ 是线性空间 $V$ 上的线性泛函，则 $|f|$ 是半范数。</p>",
+         "src": "设 $f$ 是线性空间 $V$ 上的线性泛函，则 $|f|$ 是半范数。",
+         "anchor": "例-2.4.6"
+        },
+        {
+         "type": "例",
+         "number": "2.4.7",
+         "title": "",
+         "page": 90,
+         "html": "<p>定义线性空间 $\\mathbb{R}^2$ 上的泛函：</p><p>$$p(x,y)=\\sqrt{ax^2+by^2},\\qquad (x,y)\\in\\mathbb{R}^2,$$</p><p>其中 $a,b\\geqslant 0$，则 $p(x,y)$ 是 $\\mathbb{R}^2$ 上的半范数。</p>",
+         "src": "定义线性空间 $\\mathbb{R}^2$ 上的泛函：\n\n$$p(x,y)=\\sqrt{ax^2+by^2},\\qquad (x,y)\\in\\mathbb{R}^2,$$\n\n其中 $a,b\\geqslant 0$，则 $p(x,y)$ 是 $\\mathbb{R}^2$ 上的半范数。",
+         "anchor": "例-2.4.7"
+        },
+        {
+         "type": "命题",
+         "number": "2.4.2",
+         "title": "",
+         "page": 91,
+         "html": "<p>设 $p(x)$ 是线性空间 $V$ 上的半范数，则 $M=\\{x\\in V:\\ p(x)\\leqslant 1\\}$ 具有下列性质：</p><p>（i）$0\\in M$；</p><p>（ii）$M$ 是凸的：若 $x,y\\in M$ 且 $0&lt;\\alpha&lt;1$，则 $\\alpha x+(1-\\alpha)y\\in M$；</p><p>（iii）$M$ 是均衡的：若 $x\\in M$ 且 $|\\alpha|=1$，则 $\\alpha x\\in M$；</p><p>（iv）$M$ 是吸收的：对任何 $x\\in X$，总存在 $\\alpha&gt;0$，使得 $\\alpha^{-1}x\\in M$；</p><p>（v）</p><p>$$p(x)=\\inf_{\\alpha&gt;0,\\ \\alpha^{-1}x\\in M}\\alpha.$$</p>",
+         "src": "设 $p(x)$ 是线性空间 $V$ 上的半范数，则 $M=\\{x\\in V:\\ p(x)\\leqslant 1\\}$ 具有下列性质：\n\n（i）$0\\in M$；\n\n（ii）$M$ 是凸的：若 $x,y\\in M$ 且 $0<\\alpha<1$，则 $\\alpha x+(1-\\alpha)y\\in M$；\n\n（iii）$M$ 是均衡的：若 $x\\in M$ 且 $|\\alpha|=1$，则 $\\alpha x\\in M$；\n\n（iv）$M$ 是吸收的：对任何 $x\\in X$，总存在 $\\alpha>0$，使得 $\\alpha^{-1}x\\in M$；\n\n（v）\n\n$$p(x)=\\inf_{\\alpha>0,\\ \\alpha^{-1}x\\in M}\\alpha.$$",
+         "anchor": "命题-2.4.2"
+        },
+        {
+         "type": "定义",
+         "number": "2.4.2",
+         "title": "Minkowski 泛函",
+         "page": 91,
+         "html": "<p>设 $M$ 是线性空间 $V$ 中吸收的凸集。对于任意的 $x\\in V$，定义</p><p>$$p_M(x)=\\inf_{\\alpha&gt;0,\\ \\alpha^{-1}x\\in M}\\alpha,$$</p><p>称 $p_M$ 为 $M$ 的 <strong>Minkowski 泛函</strong>。</p>",
+         "src": "设 $M$ 是线性空间 $V$ 中吸收的凸集。对于任意的 $x\\in V$，定义\n\n$$p_M(x)=\\inf_{\\alpha>0,\\ \\alpha^{-1}x\\in M}\\alpha,$$\n\n称 $p_M$ 为 $M$ 的 **Minkowski 泛函**。",
+         "anchor": "定义-2.4.2"
+        },
+        {
+         "type": "命题",
+         "number": "2.4.3",
+         "title": "",
+         "page": 91,
+         "html": "<p>设 $M$ 是线性空间 $V$ 中的一个吸收凸子集，那么 $M$ 的 Minkowski 泛函 $p_M(x)$ 是 $V$ 上的一个次线性函数，并且</p><p>$$\\{x:\\ p_M(x)&lt;1\\}\\subset M\\subset\\{x:\\ p_M(x)\\leqslant 1\\}.$$</p><p>如果 $M$ 还是均衡的，那么 $p_M(x)$ 是 $V$ 上的一个半范数。</p>",
+         "src": "设 $M$ 是线性空间 $V$ 中的一个吸收凸子集，那么 $M$ 的 Minkowski 泛函 $p_M(x)$ 是 $V$ 上的一个次线性函数，并且\n\n$$\\{x:\\ p_M(x)<1\\}\\subset M\\subset\\{x:\\ p_M(x)\\leqslant 1\\}.$$\n\n如果 $M$ 还是均衡的，那么 $p_M(x)$ 是 $V$ 上的一个半范数。",
+         "anchor": "命题-2.4.3"
+        },
+        {
+         "type": "例",
+         "number": "2.4.8",
+         "title": "",
+         "page": 91,
+         "html": "<p>当 $M=V$ 时，显然 $p_M(x)=0$。</p>",
+         "src": "当 $M=V$ 时，显然 $p_M(x)=0$。",
+         "anchor": "例-2.4.8"
+        },
+        {
+         "type": "例",
+         "number": "2.4.9",
+         "title": "",
+         "page": 91,
+         "html": "<p>设 $M=B(0,r)$ 是 $n$ 维 Euclid 空间 $\\mathbb{R}^n$ 中，中心为 $0$、半径为 $r$ 的球，则</p><p>$$p_M(x)=\\frac{\\|x\\|}{r}.$$</p>",
+         "src": "设 $M=B(0,r)$ 是 $n$ 维 Euclid 空间 $\\mathbb{R}^n$ 中，中心为 $0$、半径为 $r$ 的球，则\n\n$$p_M(x)=\\frac{\\|x\\|}{r}.$$",
+         "anchor": "例-2.4.9"
+        },
+        {
+         "type": "例",
+         "number": "2.4.10",
+         "title": "",
+         "page": 92,
+         "html": "<p>在空间 $l^2$ 中，设 $M=\\{x:\\ x=(x_1,x_2,\\cdots),\\ -1\\leqslant x_1\\leqslant 1\\}$，则</p><p>$$p_M(x)=|x_1|.$$</p>",
+         "src": "在空间 $l^2$ 中，设 $M=\\{x:\\ x=(x_1,x_2,\\cdots),\\ -1\\leqslant x_1\\leqslant 1\\}$，则\n\n$$p_M(x)=|x_1|.$$",
+         "anchor": "例-2.4.10"
+        },
+        {
+         "type": "命题",
+         "number": "2.4.4",
+         "title": "",
+         "page": 92,
+         "html": "<p>如果 $L$ 是赋范线性空间，$M$ 是 $L$ 中的一个吸收凸子集，则 $p_M(x)$ 是连续函数当且仅当 $0$ 为 $M$ 的内点。</p>",
+         "src": "如果 $L$ 是赋范线性空间，$M$ 是 $L$ 中的一个吸收凸子集，则 $p_M(x)$ 是连续函数当且仅当 $0$ 为 $M$ 的内点。",
+         "anchor": "命题-2.4.4"
+        },
+        {
+         "type": "定义",
+         "number": "2.4.3",
+         "title": "分离与严格分离",
+         "page": 92,
+         "html": "<p>设 $V$ 是实线性空间，$M$ 与 $N$ 是它的子集，$f$ 是 $V$ 上的线性泛函。</p><p>（i）如果存在常数 $C$，使得</p><p>$$f(x)\\leqslant C,\\quad \\forall x\\in M;\\qquad f(y)\\geqslant C,\\quad\\forall y\\in N,$$</p><p>即</p><p>$$\\sup\\{f(x):\\ x\\in M\\}\\leqslant\\inf\\{f(x):\\ x\\in N\\},$$</p><p>则称线性泛函 $f$ <strong>分离</strong>集 $M$ 与 $N$。</p><p>（ii）如果线性泛函 $f$ 满足</p><p>$$\\sup\\{f(x):\\ x\\in M\\}&lt;\\inf\\{f(x):\\ x\\in N\\},$$</p><p>称线性泛函 $f$ <strong>严格分离</strong>集 $M$ 与 $N$。</p>",
+         "src": "设 $V$ 是实线性空间，$M$ 与 $N$ 是它的子集，$f$ 是 $V$ 上的线性泛函。\n\n（i）如果存在常数 $C$，使得\n\n$$f(x)\\leqslant C,\\quad \\forall x\\in M;\\qquad f(y)\\geqslant C,\\quad\\forall y\\in N,$$\n\n即\n\n$$\\sup\\{f(x):\\ x\\in M\\}\\leqslant\\inf\\{f(x):\\ x\\in N\\},$$\n\n则称线性泛函 $f$ **分离**集 $M$ 与 $N$。\n\n（ii）如果线性泛函 $f$ 满足\n\n$$\\sup\\{f(x):\\ x\\in M\\}<\\inf\\{f(x):\\ x\\in N\\},$$\n\n称线性泛函 $f$ **严格分离**集 $M$ 与 $N$。",
+         "anchor": "定义-2.4.3"
+        },
+        {
+         "type": "命题",
+         "number": "",
+         "title": "分离性的等价表述",
+         "page": 92,
+         "html": "<p>从分离性定义容易看出以下两个事实：</p><p>（i）线性泛函 $f$ 分离集 $M$ 与 $N$ 当且仅当它分离集 $M-N=\\{x-y:\\ x\\in M,\\ y\\in N\\}$ 与 $\\{0\\}$。</p><p>（ii）线性泛函 $f$ 分离集 $M$ 与 $N$ 当且仅当对于每一个 $x\\in V$，它分离集 $M-x$ 与 $N-x$。</p>",
+         "src": "从分离性定义容易看出以下两个事实：\n\n（i）线性泛函 $f$ 分离集 $M$ 与 $N$ 当且仅当它分离集 $M-N=\\{x-y:\\ x\\in M,\\ y\\in N\\}$ 与 $\\{0\\}$。\n\n（ii）线性泛函 $f$ 分离集 $M$ 与 $N$ 当且仅当对于每一个 $x\\in V$，它分离集 $M-x$ 与 $N-x$。",
+         "anchor": "命题-分离性的等价表述"
+        },
+        {
+         "type": "引理",
+         "number": "2.4.1",
+         "title": "",
+         "page": 93,
+         "html": "<p>设 $A$ 是实赋范线性空间 $L$ 中的凸子集，如果 $A$ 的内部 $A^\\circ$ 是非空的，并且 $y_0\\notin A^\\circ$，则 $L$ 上存在非零的连续线性泛函分离 $A$ 与 $\\{y_0\\}$。</p>",
+         "src": "设 $A$ 是实赋范线性空间 $L$ 中的凸子集，如果 $A$ 的内部 $A^\\circ$ 是非空的，并且 $y_0\\notin A^\\circ$，则 $L$ 上存在非零的连续线性泛函分离 $A$ 与 $\\{y_0\\}$。",
+         "anchor": "引理-2.4.1"
+        },
+        {
+         "type": "注",
+         "number": "2.4.1",
+         "title": "",
+         "page": 93,
+         "html": "<p>对于 $X$ 是复赋范线性空间的情形，通常可用复线性泛函 $f$ 的实部 $\\operatorname{Re}f$ 分离集合。例如，上面的结果在复线性空间情形的陈述如下：设 $A$ 是复赋范线性空间 $L$ 中的凸子集，如果 $A^\\circ$ 是非空的，并且 $y_0\\notin A^\\circ$，则 $L$ 上存在非零的连续线性泛函 $f$ 使得</p><p>$$\\sup_{x\\in A}\\operatorname{Re}f(x)\\leqslant \\operatorname{Re}f(y_0).$$</p><p>其他的凸集分离结果可作类似的修改。</p>",
+         "src": "对于 $X$ 是复赋范线性空间的情形，通常可用复线性泛函 $f$ 的实部 $\\operatorname{Re}f$ 分离集合。例如，上面的结果在复线性空间情形的陈述如下：设 $A$ 是复赋范线性空间 $L$ 中的凸子集，如果 $A^\\circ$ 是非空的，并且 $y_0\\notin A^\\circ$，则 $L$ 上存在非零的连续线性泛函 $f$ 使得\n\n$$\\sup_{x\\in A}\\operatorname{Re}f(x)\\leqslant \\operatorname{Re}f(y_0).$$\n\n其他的凸集分离结果可作类似的修改。",
+         "anchor": "注-2.4.1"
+        },
+        {
+         "type": "注",
+         "number": "2.4.2",
+         "title": "",
+         "page": 93,
+         "html": "<p>若 $A$ 是一个开凸子集，$x\\notin A$，由上面的证明还可得到</p><p>$$f(x)&lt;\\sup_{y\\in A}f(y)\\leqslant f(y_0),\\qquad \\forall x\\in A.$$</p>",
+         "src": "若 $A$ 是一个开凸子集，$x\\notin A$，由上面的证明还可得到\n\n$$f(x)<\\sup_{y\\in A}f(y)\\leqslant f(y_0),\\qquad \\forall x\\in A.$$",
+         "anchor": "注-2.4.2"
+        },
+        {
+         "type": "定理",
+         "number": "2.4.1",
+         "title": "",
+         "page": 93,
+         "html": "<p>设 $M$ 与 $N$ 是实赋范线性空间 $L$ 中的凸集，如果 $M$ 的内部 $M^\\circ$ 是非空的，并且 $M^\\circ\\cap N=\\varnothing$，则存在 $L$ 上非零的连续线性泛函分离 $M$ 与 $N$。</p>",
+         "src": "设 $M$ 与 $N$ 是实赋范线性空间 $L$ 中的凸集，如果 $M$ 的内部 $M^\\circ$ 是非空的，并且 $M^\\circ\\cap N=\\varnothing$，则存在 $L$ 上非零的连续线性泛函分离 $M$ 与 $N$。",
+         "anchor": "定理-2.4.1"
+        },
+        {
+         "type": "推论",
+         "number": "2.4.1",
+         "title": "",
+         "page": 94,
+         "html": "<p>设 $M,N$ 是实赋范线性空间 $L$ 中的闭凸集，$d(M,N)=\\inf\\limits_{x\\in M,\\ y\\in N}d(x,y)&gt;0$，则存在 $L$ 上的非零连续线性泛函 $f$ 严格分离 $M$ 和 $N$。</p>",
+         "src": "设 $M,N$ 是实赋范线性空间 $L$ 中的闭凸集，$d(M,N)=\\inf\\limits_{x\\in M,\\ y\\in N}d(x,y)>0$，则存在 $L$ 上的非零连续线性泛函 $f$ 严格分离 $M$ 和 $N$。",
+         "anchor": "推论-2.4.1"
+        },
+        {
+         "type": "推论",
+         "number": "",
+         "title": "紧凸集与闭凸集的严格分离",
+         "page": 94,
+         "html": "<p>当 $M$ 是闭凸子集，$N$ 是紧的凸子集（或者单点集），且当 $M\\cap N=\\varnothing$ 时，显然推论 2.4.1 中的距离条件成立，故存在非零的连续线性泛函严格分离 $M$ 和 $N$。</p>",
+         "src": "当 $M$ 是闭凸子集，$N$ 是紧的凸子集（或者单点集），且当 $M\\cap N=\\varnothing$ 时，显然推论 2.4.1 中的距离条件成立，故存在非零的连续线性泛函严格分离 $M$ 和 $N$。",
+         "anchor": "推论-紧凸集与闭凸集的严格分离"
+        }
+       ]
+      },
+      {
+       "id": "2.5",
+       "title": "对偶空间",
+       "pages": "96–110",
+       "items": [
+        {
+         "type": "定理",
+         "number": "",
+         "title": "L^p[a,b] 的对偶空间",
+         "page": 96,
+         "html": "<p>对于赋范线性空间 $L^p[a,b]$（$1\\leqslant p&lt;\\infty$），它的对偶空间是$$(L^p[a,b])^*\\cong L^q[a,b],\\qquad \\frac{1}{p}+\\frac{1}{q}=1.$$</p><p>设 $p&gt;1$，这时 $1&lt;q&lt;\\infty$。利用积分的 Hölder 不等式，易知对任意给定的 $\\beta(t)\\in L^q[a,b]$，$$f(x)=\\int_a^b x(t)\\beta(t)\\,\\mathrm{d}t,\\qquad \\forall x\\in L^p[a,b]\\tag{2.20}$$是 $L^p[a,b]$ 上的连续线性泛函，并且 $\\|f\\|=\\|\\beta\\|_q$。反之，$L^p[a,b]$ 上连续线性泛函均有这样的形式：映射 $f\\mapsto\\beta$ 是一对一的、到上的、保持范数的线性映射，即 $(L^p[a,b])^*$ 与 $L^q[a,b]$ 保范线性同构。</p><p>$p=1$，$q=\\infty$ 的情况可以完全类似地证明。特别地，$(L^2[a,b])^*=L^2[a,b]$。</p>",
+         "src": "对于赋范线性空间 $L^p[a,b]$（$1\\leqslant p<\\infty$），它的对偶空间是$$(L^p[a,b])^*\\cong L^q[a,b],\\qquad \\frac{1}{p}+\\frac{1}{q}=1.$$\n\n设 $p>1$，这时 $1<q<\\infty$。利用积分的 Hölder 不等式，易知对任意给定的 $\\beta(t)\\in L^q[a,b]$，$$f(x)=\\int_a^b x(t)\\beta(t)\\,\\mathrm{d}t,\\qquad \\forall x\\in L^p[a,b]\\tag{2.20}$$是 $L^p[a,b]$ 上的连续线性泛函，并且 $\\|f\\|=\\|\\beta\\|_q$。反之，$L^p[a,b]$ 上连续线性泛函均有这样的形式：映射 $f\\mapsto\\beta$ 是一对一的、到上的、保持范数的线性映射，即 $(L^p[a,b])^*$ 与 $L^q[a,b]$ 保范线性同构。\n\n$p=1$，$q=\\infty$ 的情况可以完全类似地证明。特别地，$(L^2[a,b])^*=L^2[a,b]$。",
+         "anchor": "定理-L-p-a-b-的对偶空间"
+        },
+        {
+         "type": "注",
+         "number": "2.5.1",
+         "title": "",
+         "page": 98,
+         "html": "<p>对一般的测度空间，上述结果也是成立的。设 $(X,\\mathcal{R})$ 是一个可测空间，$\\mu$ 是它的一个全 $\\sigma$-有限测度。对赋范线性空间 $L^p(X,\\mu)$（$1\\leqslant p&lt;\\infty$）上的一个连续线性泛函 $\\psi$，都存在唯一的 $g\\in L^q(X,\\mu)$（$\\dfrac{1}{p}+\\dfrac{1}{q}=1$），使得$$\\psi(f)=\\int_X f(x)g(x)\\,\\mathrm{d}\\mu(x),\\qquad \\forall f\\in L^p(X,\\mu),$$且此时 $\\|\\psi\\|=\\|g\\|_q$。</p>",
+         "src": "对一般的测度空间，上述结果也是成立的。设 $(X,\\mathcal{R})$ 是一个可测空间，$\\mu$ 是它的一个全 $\\sigma$-有限测度。对赋范线性空间 $L^p(X,\\mu)$（$1\\leqslant p<\\infty$）上的一个连续线性泛函 $\\psi$，都存在唯一的 $g\\in L^q(X,\\mu)$（$\\dfrac{1}{p}+\\dfrac{1}{q}=1$），使得$$\\psi(f)=\\int_X f(x)g(x)\\,\\mathrm{d}\\mu(x),\\qquad \\forall f\\in L^p(X,\\mu),$$且此时 $\\|\\psi\\|=\\|g\\|_q$。",
+         "anchor": "注-2.5.1"
+        },
+        {
+         "type": "构造",
+         "number": "",
+         "title": "由 $V_0[a,b]$ 生成的 $C[a,b]$ 上的泛函",
+         "page": 98,
+         "html": "<p>$V_0[a,b]$ 是赋范线性空间 $V[a,b]$ 的线性子空间（例 1.2.10）。对于任何 $g\\in V_0[a,b]$（即 $g$ 是满足 $g(a)=0$、且在 $(a,b)$ 上右连续的有界变差函数），作 $C[a,b]$ 上的泛函 $F_g$ 如下：$$F_g(x)=\\int_a^b x(t)\\,\\mathrm{d}g(t),\\qquad \\forall x\\in C[a,b],\\tag{2.23}$$其中 $\\mathrm{d}g(t)$ 是由 $g$ 诱导的符号（复）测度。那么 $F_g$ 是 $C[a,b]$ 上的线性泛函，且$$|F_g(x)|\\leqslant\\int_a^b|x(t)|\\,|\\mathrm{d}g|(t)\\leqslant\\|x\\|\\bigvee_a^b(g),$$即 $|F_g(x)|\\leqslant\\|x\\|\\,\\|g\\|$，这里 $\\|g\\|=\\bigvee\\limits_a^b(g)$。所以 $F_g$ 是有界泛函，即 $F_g\\in C[a,b]^*$，且 $\\|F_g\\|\\leqslant\\|g\\|$。也就是说，$U:g\\mapsto F_g$ 是 $V_0[a,b]$ 到 $C[a,b]^*$ 的线性算子，且 $\\|Ug\\|\\leqslant\\|g\\|$。</p>",
+         "src": "$V_0[a,b]$ 是赋范线性空间 $V[a,b]$ 的线性子空间（例 1.2.10）。对于任何 $g\\in V_0[a,b]$（即 $g$ 是满足 $g(a)=0$、且在 $(a,b)$ 上右连续的有界变差函数），作 $C[a,b]$ 上的泛函 $F_g$ 如下：$$F_g(x)=\\int_a^b x(t)\\,\\mathrm{d}g(t),\\qquad \\forall x\\in C[a,b],\\tag{2.23}$$其中 $\\mathrm{d}g(t)$ 是由 $g$ 诱导的符号（复）测度。那么 $F_g$ 是 $C[a,b]$ 上的线性泛函，且$$|F_g(x)|\\leqslant\\int_a^b|x(t)|\\,|\\mathrm{d}g|(t)\\leqslant\\|x\\|\\bigvee_a^b(g),$$即 $|F_g(x)|\\leqslant\\|x\\|\\,\\|g\\|$，这里 $\\|g\\|=\\bigvee\\limits_a^b(g)$。所以 $F_g$ 是有界泛函，即 $F_g\\in C[a,b]^*$，且 $\\|F_g\\|\\leqslant\\|g\\|$。也就是说，$U:g\\mapsto F_g$ 是 $V_0[a,b]$ 到 $C[a,b]^*$ 的线性算子，且 $\\|Ug\\|\\leqslant\\|g\\|$。",
+         "anchor": "构造-由-V_0-a-b-生成的-C-a-b-上的泛函"
+        },
+        {
+         "type": "定理",
+         "number": "2.5.1",
+         "title": "F. Riesz",
+         "page": 99,
+         "html": "<p>设 $f$ 是 $C[a,b]$ 上的连续线性泛函，则存在唯一的 $g\\in V_0[a,b]$，使得$$f(x)=\\int_a^b x(t)\\,\\mathrm{d}g(t),\\qquad \\forall x\\in C[a,b],\\tag{2.24}$$且 $\\|g\\|=\\|f\\|$。</p>",
+         "src": "设 $f$ 是 $C[a,b]$ 上的连续线性泛函，则存在唯一的 $g\\in V_0[a,b]$，使得$$f(x)=\\int_a^b x(t)\\,\\mathrm{d}g(t),\\qquad \\forall x\\in C[a,b],\\tag{2.24}$$且 $\\|g\\|=\\|f\\|$。",
+         "anchor": "定理-2.5.1"
+        },
+        {
+         "type": "定理",
+         "number": "",
+         "title": "Riesz 表示定理的测度形式",
+         "page": 101,
+         "html": "<p>由实（复）有界变差函数与广义测度（复测度）之间的对应可得 $V_0[a,b]\\cong M[a,b]$（见例 1.2.10），因此可以将 Riesz 表示定理写成测度的形式：$$(C[a,b])^*=M[a,b].$$也就是说，对实（复）连续函数空间 $C[a,b]$ 上的一个连续线性泛函 $f$，存在 $[a,b]$ 上唯一的全有限广义测度（复测度）$\\mu$，使得$$f(x)=\\int_{[a,b]}x(t)\\,\\mathrm{d}\\mu(t),\\qquad \\forall x\\in C[a,b].$$</p>",
+         "src": "由实（复）有界变差函数与广义测度（复测度）之间的对应可得 $V_0[a,b]\\cong M[a,b]$（见例 1.2.10），因此可以将 Riesz 表示定理写成测度的形式：$$(C[a,b])^*=M[a,b].$$也就是说，对实（复）连续函数空间 $C[a,b]$ 上的一个连续线性泛函 $f$，存在 $[a,b]$ 上唯一的全有限广义测度（复测度）$\\mu$，使得$$f(x)=\\int_{[a,b]}x(t)\\,\\mathrm{d}\\mu(t),\\qquad \\forall x\\in C[a,b].$$",
+         "anchor": "定理-Riesz-表示定理的测度形式"
+        },
+        {
+         "type": "定理",
+         "number": "2.5.2",
+         "title": "Riesz 表示定理",
+         "page": 101,
+         "html": "<p>设 $X$ 是紧度量空间。对实（复）连续函数空间 $C(X)$ 上的一个连续线性泛函 $f$，存在 $X$ 上唯一的全有限广义测度（复测度）$\\mu$，使得$$f(x)=\\int_X x(t)\\,\\mathrm{d}\\mu(t),\\qquad \\forall x\\in C(X),$$并且 $\\|f\\|=|\\mu|(X)$，这里 $|\\mu|$ 是 $\\mu$ 的全变差测度。</p>",
+         "src": "设 $X$ 是紧度量空间。对实（复）连续函数空间 $C(X)$ 上的一个连续线性泛函 $f$，存在 $X$ 上唯一的全有限广义测度（复测度）$\\mu$，使得$$f(x)=\\int_X x(t)\\,\\mathrm{d}\\mu(t),\\qquad \\forall x\\in C(X),$$并且 $\\|f\\|=|\\mu|(X)$，这里 $|\\mu|$ 是 $\\mu$ 的全变差测度。",
+         "anchor": "定理-2.5.2"
+        },
+        {
+         "type": "定义",
+         "number": "",
+         "title": "二次对偶空间",
+         "page": 101,
+         "html": "<p>设 $X$ 是赋范线性空间，$X^*$ 是它的对偶空间。由于 $X^*$ 也是赋范线性空间，它也有对偶空间 $(X^*)^*$，把它记为 $X^{<strong>}$，称 $X^{</strong>}$ 是 $X$ 的<strong>二次对偶空间</strong>。类似地，可定义 $X^{<strong>*}$，$X^{</strong>**}$，$\\cdots$。</p>",
+         "src": "设 $X$ 是赋范线性空间，$X^*$ 是它的对偶空间。由于 $X^*$ 也是赋范线性空间，它也有对偶空间 $(X^*)^*$，把它记为 $X^{**}$，称 $X^{**}$ 是 $X$ 的**二次对偶空间**。类似地，可定义 $X^{***}$，$X^{****}$，$\\cdots$。",
+         "anchor": "定义-二次对偶空间"
+        },
+        {
+         "type": "例",
+         "number": "2.5.1",
+         "title": "",
+         "page": 101,
+         "html": "<p>（i）我们知道 $(c_0)^*=l^1$，$(l^1)^*=l^\\infty$，所以 $(c_0)^{**}=l^\\infty$。</p><p>（ii）$(l^p)^*=l^q$（$1&lt;p&lt;\\infty$，$\\dfrac{1}{q}+\\dfrac{1}{p}=1$），所以 $(l^p)^{<strong>}=l^p$；同样有 $(L^p[a,b])^{</strong>}=L^p[a,b]$。</p>",
+         "src": "（i）我们知道 $(c_0)^*=l^1$，$(l^1)^*=l^\\infty$，所以 $(c_0)^{**}=l^\\infty$。\n\n（ii）$(l^p)^*=l^q$（$1<p<\\infty$，$\\dfrac{1}{q}+\\dfrac{1}{p}=1$），所以 $(l^p)^{**}=l^p$；同样有 $(L^p[a,b])^{**}=L^p[a,b]$。",
+         "anchor": "例-2.5.1"
+        },
+        {
+         "type": "定义",
+         "number": "",
+         "title": "典范映射",
+         "page": 101,
+         "html": "<p>对每个 $x\\in X$，作 $X^*$ 上的泛函 $x^{<strong>}$：$$x^{</strong>}(f)=f(x),\\qquad \\forall f\\in X^*.$$显然这样的 $x^{<strong>}$ 是 $X^*$ 上的线性泛函。又由于$$|x^{</strong>}(f)|\\leqslant\\|f\\|\\,\\|x\\|,$$所以 $x^{<strong>}$ 是有界泛函，并且 $\\|x^{</strong>}\\|\\leqslant\\|x\\|$，称泛函 $x^{<strong>}$ 为 $x$ 生成的。由此得到一个映射 $J:X\\to X^{</strong>}$，通常称它为<strong>典范映射</strong>（或<strong>自然嵌入</strong>）。</p>",
+         "src": "对每个 $x\\in X$，作 $X^*$ 上的泛函 $x^{**}$：$$x^{**}(f)=f(x),\\qquad \\forall f\\in X^*.$$显然这样的 $x^{**}$ 是 $X^*$ 上的线性泛函。又由于$$|x^{**}(f)|\\leqslant\\|f\\|\\,\\|x\\|,$$所以 $x^{**}$ 是有界泛函，并且 $\\|x^{**}\\|\\leqslant\\|x\\|$，称泛函 $x^{**}$ 为 $x$ 生成的。由此得到一个映射 $J:X\\to X^{**}$，通常称它为**典范映射**（或**自然嵌入**）。",
+         "anchor": "定义-典范映射"
+        },
+        {
+         "type": "定理",
+         "number": "2.5.3",
+         "title": "",
+         "page": 102,
+         "html": "<p>设 $X$ 是赋范线性空间，映射 $J:x\\mapsto x^{<strong>}$ 是从 $X$ 到 $X^{</strong>}$ 的保范的线性算子，即</p><p>（i）$(\\alpha x+\\beta y)^{<strong>}=\\alpha x^{</strong>}+\\beta y^{**}$；</p><p>（ii）$\\|x^{**}\\|=\\|x\\|$。</p><p>因此，赋范线性空间 $X$ 可以线性、保范地映射到它的二次对偶空间 $X^{<strong>}$ 中；当 $X$ 不完备时，$JX$ 在 $X^{</strong>}$ 中的闭包就自动给出了 $X$ 的一个完备化。</p>",
+         "src": "设 $X$ 是赋范线性空间，映射 $J:x\\mapsto x^{**}$ 是从 $X$ 到 $X^{**}$ 的保范的线性算子，即\n\n（i）$(\\alpha x+\\beta y)^{**}=\\alpha x^{**}+\\beta y^{**}$；\n\n（ii）$\\|x^{**}\\|=\\|x\\|$。\n\n因此，赋范线性空间 $X$ 可以线性、保范地映射到它的二次对偶空间 $X^{**}$ 中；当 $X$ 不完备时，$JX$ 在 $X^{**}$ 中的闭包就自动给出了 $X$ 的一个完备化。",
+         "anchor": "定理-2.5.3"
+        },
+        {
+         "type": "定义",
+         "number": "2.5.1",
+         "title": "自反空间",
+         "page": 102,
+         "html": "<p>设 $X$ 是赋范线性空间。如果 $J:X\\to X^{<strong>}$ 是同构，就称 $X$ 是</strong>自反的**。</p>",
+         "src": "设 $X$ 是赋范线性空间。如果 $J:X\\to X^{**}$ 是同构，就称 $X$ 是**自反的**。",
+         "anchor": "定义-2.5.1"
+        },
+        {
+         "type": "注",
+         "number": "2.5.2",
+         "title": "",
+         "page": 102,
+         "html": "<p>必须强调的是，自反指的是映射 $J$ 是同构。实际上，存在赋范线性空间 $X$，使得 $J$ 不是满射，但 $X^{**}\\cong X$。（见汪林 [8, 184 页, 例 4]）</p>",
+         "src": "必须强调的是，自反指的是映射 $J$ 是同构。实际上，存在赋范线性空间 $X$，使得 $J$ 不是满射，但 $X^{**}\\cong X$。（见汪林 [8, 184 页, 例 4]）",
+         "anchor": "注-2.5.2"
+        },
+        {
+         "type": "例",
+         "number": "2.5.2",
+         "title": "",
+         "page": 102,
+         "html": "<p>当 $X$ 是自反空间时，$X^*$ 也是自反的。事实上，这时 $(X^*)^{<strong>}=(X^{</strong>})^*=X^*$。</p>",
+         "src": "当 $X$ 是自反空间时，$X^*$ 也是自反的。事实上，这时 $(X^*)^{**}=(X^{**})^*=X^*$。",
+         "anchor": "例-2.5.2"
+        },
+        {
+         "type": "例",
+         "number": "2.5.3",
+         "title": "",
+         "page": 102,
+         "html": "<p>例如当 $1&lt;p&lt;\\infty$ 且 $q$ 是 $p$ 的对偶数，即 $\\dfrac{1}{p}+\\dfrac{1}{q}=1$ 时，那么 $(L^p[a,b])^*=L^q[a,b]$，$(L^q[a,b])^*=L^p[a,b]$，即 $L^p[a,b]$ 是自反的。</p><p>类似地，$l^p$（$1&lt;p&lt;\\infty$）也是自反的。</p>",
+         "src": "例如当 $1<p<\\infty$ 且 $q$ 是 $p$ 的对偶数，即 $\\dfrac{1}{p}+\\dfrac{1}{q}=1$ 时，那么 $(L^p[a,b])^*=L^q[a,b]$，$(L^q[a,b])^*=L^p[a,b]$，即 $L^p[a,b]$ 是自反的。\n\n类似地，$l^p$（$1<p<\\infty$）也是自反的。",
+         "anchor": "例-2.5.3"
+        },
+        {
+         "type": "定理",
+         "number": "2.5.4",
+         "title": "",
+         "page": 102,
+         "html": "<p>$M$ 是 $X$ 的闭线性子空间。若 $X$ 是自反的，则 $M$ 与 $X/M$ 是自反的。</p>",
+         "src": "$M$ 是 $X$ 的闭线性子空间。若 $X$ 是自反的，则 $M$ 与 $X/M$ 是自反的。",
+         "anchor": "定理-2.5.4"
+        },
+        {
+         "type": "定理",
+         "number": "2.5.5",
+         "title": "",
+         "page": 102,
+         "html": "<p>设 $X$ 是赋范线性空间，如果 $X^*$ 是可分的，那么 $X$ 是可分的。</p>",
+         "src": "设 $X$ 是赋范线性空间，如果 $X^*$ 是可分的，那么 $X$ 是可分的。",
+         "anchor": "定理-2.5.5"
+        },
+        {
+         "type": "例",
+         "number": "2.5.4",
+         "title": "",
+         "page": 103,
+         "html": "<p>$L^1[a,b]$ 不是自反的。</p><p>事实上，如果 $L^1[a,b]$ 是自反的，即 $(L^1[a,b])^{**}=L^1[a,b]$。由于 $L^1[a,b]$ 是可分的，所以 $(L^1[a,b])^*=L^\\infty[a,b]$ 也是可分的，这与例 1.4.11 的结论矛盾。因而 $L^1[a,b]$ 不是自反的。</p>",
+         "src": "$L^1[a,b]$ 不是自反的。\n\n事实上，如果 $L^1[a,b]$ 是自反的，即 $(L^1[a,b])^{**}=L^1[a,b]$。由于 $L^1[a,b]$ 是可分的，所以 $(L^1[a,b])^*=L^\\infty[a,b]$ 也是可分的，这与例 1.4.11 的结论矛盾。因而 $L^1[a,b]$ 不是自反的。",
+         "anchor": "例-2.5.4"
+        },
+        {
+         "type": "命题",
+         "number": "2.5.1",
+         "title": "",
+         "page": 103,
+         "html": "<p>若 $X$ 是自反空间，对于任意 $f\\in X^*$，都存在 $x\\in X$，使得 $\\|x\\|=1$，$f(x)=\\|f\\|$。</p>",
+         "src": "若 $X$ 是自反空间，对于任意 $f\\in X^*$，都存在 $x\\in X$，使得 $\\|x\\|=1$，$f(x)=\\|f\\|$。",
+         "anchor": "命题-2.5.1"
+        },
+        {
+         "type": "定理",
+         "number": "2.5.6",
+         "title": "",
+         "page": 103,
+         "html": "<p>设 $X$ 是赋范线性空间，则</p><p>（i）对于 $X$ 中的线性子空间 $M$，${}^{\\perp}(M^{\\perp})=\\overline{M}$；</p><p>（ii）若 $X$ 还是自反的，$G$ 是 $X^*$ 的线性子空间，则 $({}^{\\perp}G)^{\\perp}=\\overline{G}$。</p>",
+         "src": "设 $X$ 是赋范线性空间，则\n\n（i）对于 $X$ 中的线性子空间 $M$，${}^{\\perp}(M^{\\perp})=\\overline{M}$；\n\n（ii）若 $X$ 还是自反的，$G$ 是 $X^*$ 的线性子空间，则 $({}^{\\perp}G)^{\\perp}=\\overline{G}$。",
+         "anchor": "定理-2.5.6"
+        },
+        {
+         "type": "注",
+         "number": "2.5.3",
+         "title": "",
+         "page": 103,
+         "html": "<p>在定理 2.5.6（ii）中，$X$ 是自反的是必须的条件。例如，令 $X=l^1$，则 $X^*=l^\\infty$。取 $X^*$ 的子空间 $c_0$，易证 ${}^{\\perp}c_0=\\{0\\}$，从而 $({}^{\\perp}c_0)^{\\perp}=l^\\infty\\neq c_0$。</p>",
+         "src": "在定理 2.5.6（ii）中，$X$ 是自反的是必须的条件。例如，令 $X=l^1$，则 $X^*=l^\\infty$。取 $X^*$ 的子空间 $c_0$，易证 ${}^{\\perp}c_0=\\{0\\}$，从而 $({}^{\\perp}c_0)^{\\perp}=l^\\infty\\neq c_0$。",
+         "anchor": "注-2.5.3"
+        },
+        {
+         "type": "定义",
+         "number": "2.5.2",
+         "title": "弱收敛与弱* 收敛",
+         "page": 104,
+         "html": "<p>设 $X$ 是赋范线性空间，$X^*$ 是它的对偶空间。</p><p>（i）称 $X$ 中的点列 $\\{x_n\\}_{n=1}^{\\infty}$ <strong>弱收敛</strong>于 $X$ 中点 $x$（记作 $x_n\\xrightarrow{w}x$）是指：对于任意的 $f\\in X^*$，$f(x_n)$ 收敛到 $f(x)$；</p><p>（ii）称 $X^*$ 中的点列 $\\{f_n\\}_{n=1}^{\\infty}$ <strong>弱* 收敛</strong>到 $X^*$ 中点 $f$（记作 $f_n\\xrightarrow{w^*}f$）是指：对于任意的 $x\\in X$，$f_n(x)$ 收敛到 $f(x)$。</p><p>由于 $X^*$ 分离 $X$ 中的点，所以可得弱收敛的极限必然唯一。类似地，弱* 收敛的极限也是唯一的。</p>",
+         "src": "设 $X$ 是赋范线性空间，$X^*$ 是它的对偶空间。\n\n（i）称 $X$ 中的点列 $\\{x_n\\}_{n=1}^{\\infty}$ **弱收敛**于 $X$ 中点 $x$（记作 $x_n\\xrightarrow{w}x$）是指：对于任意的 $f\\in X^*$，$f(x_n)$ 收敛到 $f(x)$；\n\n（ii）称 $X^*$ 中的点列 $\\{f_n\\}_{n=1}^{\\infty}$ **弱* 收敛**到 $X^*$ 中点 $f$（记作 $f_n\\xrightarrow{w^*}f$）是指：对于任意的 $x\\in X$，$f_n(x)$ 收敛到 $f(x)$。\n\n由于 $X^*$ 分离 $X$ 中的点，所以可得弱收敛的极限必然唯一。类似地，弱* 收敛的极限也是唯一的。",
+         "anchor": "定义-2.5.2"
+        },
+        {
+         "type": "例",
+         "number": "2.5.5",
+         "title": "",
+         "page": 104,
+         "html": "<p>（i）若 $x_n$ 按范数收敛于 $x$，则对 $f\\in X^*$，有 $|f(x_n)-f(x)|\\leqslant\\|f\\|\\,\\|x_n-x\\|\\to0$，故 $x_n\\xrightarrow{w}x$。反之则不成立。如考虑 $X=L^2[0,2\\pi]$，则当 $n\\to\\pm\\infty$ 时，$\\mathrm{e}^{\\mathrm{i}n\\theta}\\xrightarrow{w}0$，这等价于 Riemann–Lebesgue 引理；但是 $\\mathrm{e}^{\\mathrm{i}n\\theta}$ 并不按范数收敛。</p><p>（ii）在对偶空间 $X^*$ 中，若 $f_n$ 按范数收敛于 $f$，则 $f_n\\xrightarrow{w^*}f$，反之则不成立。例如，取 $l^\\infty$ 中点列 $\\{e_n\\}_{n=1}^{\\infty}$，$e_n$ 在第 $n$ 个位置为 $1$、其他为 $0$，则 $e_n\\xrightarrow{w^*}0$，但 $e_n$ 并不按范数收敛。</p><p>（iii）赋范线性空间 $X$ 中序列 $x_n\\xrightarrow{w}x$，等价于在二次对偶空间 $X^{**}$ 中 $Jx_n\\xrightarrow{w^*}Jx$。例如：对于 $c_0$ 中序列 $x^{(n)}$，它弱收敛于 $x$ 是指对任意 $\\eta\\in l^1$，$$\\sum_{k=1}^{\\infty}x_k^{(n)}\\eta_k\\to\\sum_{k=1}^{\\infty}x_k\\eta_k,$$这恰好是说 $x^{(n)}$ 在 $l^\\infty$ 中弱* 收敛于 $x$。</p><p>（iv）在对偶空间 $X^*$ 上，现在有三种收敛性：按范数收敛 $(X^*,\\|\\cdot\\|)$，弱收敛 $(X^*,w)$，弱* 收敛 $(X^*,w^*)$。按定义易得，按范数收敛蕴涵弱收敛，弱收敛蕴涵弱* 收敛，反之则不成立。例如，考虑 $X=c_0$，则 $X^*=l^1$，$X^{**}=l^\\infty$，取 $l^1$ 中序列 $\\{e_n\\}_{n=1}^{\\infty}$，$e_n$ 在第 $n$ 个位置为 $1$、其他为 $0$，则 $e_n\\xrightarrow{w^*}0$；但若取 $\\eta=\\{1,1,\\cdots\\}\\in l^\\infty$，显然有 $\\eta(e_n)=1\\neq\\eta(0)$，故 $e_n$ 不是弱收敛于 $0$。进一步，这样也能说明 $e_n$ 不是弱收敛序列。</p><p>（v）当 $X$ 是自反空间时，由定义易得 $X^*$ 的弱收敛 $(X^*,w)$ 与弱* 收敛 $(X^*,w^*)$ 是一致的。</p><p>（vi）对于 Hilbert 空间 $H$，它的弱收敛 $(H,w)$ 与弱* 收敛 $(H,w^*)$ 是一致的。</p>",
+         "src": "（i）若 $x_n$ 按范数收敛于 $x$，则对 $f\\in X^*$，有 $|f(x_n)-f(x)|\\leqslant\\|f\\|\\,\\|x_n-x\\|\\to0$，故 $x_n\\xrightarrow{w}x$。反之则不成立。如考虑 $X=L^2[0,2\\pi]$，则当 $n\\to\\pm\\infty$ 时，$\\mathrm{e}^{\\mathrm{i}n\\theta}\\xrightarrow{w}0$，这等价于 Riemann–Lebesgue 引理；但是 $\\mathrm{e}^{\\mathrm{i}n\\theta}$ 并不按范数收敛。\n\n（ii）在对偶空间 $X^*$ 中，若 $f_n$ 按范数收敛于 $f$，则 $f_n\\xrightarrow{w^*}f$，反之则不成立。例如，取 $l^\\infty$ 中点列 $\\{e_n\\}_{n=1}^{\\infty}$，$e_n$ 在第 $n$ 个位置为 $1$、其他为 $0$，则 $e_n\\xrightarrow{w^*}0$，但 $e_n$ 并不按范数收敛。\n\n（iii）赋范线性空间 $X$ 中序列 $x_n\\xrightarrow{w}x$，等价于在二次对偶空间 $X^{**}$ 中 $Jx_n\\xrightarrow{w^*}Jx$。例如：对于 $c_0$ 中序列 $x^{(n)}$，它弱收敛于 $x$ 是指对任意 $\\eta\\in l^1$，$$\\sum_{k=1}^{\\infty}x_k^{(n)}\\eta_k\\to\\sum_{k=1}^{\\infty}x_k\\eta_k,$$这恰好是说 $x^{(n)}$ 在 $l^\\infty$ 中弱* 收敛于 $x$。\n\n（iv）在对偶空间 $X^*$ 上，现在有三种收敛性：按范数收敛 $(X^*,\\|\\cdot\\|)$，弱收敛 $(X^*,w)$，弱* 收敛 $(X^*,w^*)$。按定义易得，按范数收敛蕴涵弱收敛，弱收敛蕴涵弱* 收敛，反之则不成立。例如，考虑 $X=c_0$，则 $X^*=l^1$，$X^{**}=l^\\infty$，取 $l^1$ 中序列 $\\{e_n\\}_{n=1}^{\\infty}$，$e_n$ 在第 $n$ 个位置为 $1$、其他为 $0$，则 $e_n\\xrightarrow{w^*}0$；但若取 $\\eta=\\{1,1,\\cdots\\}\\in l^\\infty$，显然有 $\\eta(e_n)=1\\neq\\eta(0)$，故 $e_n$ 不是弱收敛于 $0$。进一步，这样也能说明 $e_n$ 不是弱收敛序列。\n\n（v）当 $X$ 是自反空间时，由定义易得 $X^*$ 的弱收敛 $(X^*,w)$ 与弱* 收敛 $(X^*,w^*)$ 是一致的。\n\n（vi）对于 Hilbert 空间 $H$，它的弱收敛 $(H,w)$ 与弱* 收敛 $(H,w^*)$ 是一致的。",
+         "anchor": "例-2.5.5"
+        },
+        {
+         "type": "定义",
+         "number": "2.5.3",
+         "title": "弱拓扑与弱* 拓扑",
+         "page": 104,
+         "html": "<p>对赋范线性空间 $X$ 和它的对偶空间 $X^*$，</p><p>（i）固定 $x_0\\in X$，对于 $f_1,f_2,\\cdots,f_n\\in X^*$，$\\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n&gt;0$，令$$U_{f_1,f_2,\\cdots,f_n}^{\\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n}(x_0)=\\{x\\in X:\\ |f_1(x-x_0)|&lt;\\varepsilon_1,|f_2(x-x_0)|&lt;\\varepsilon_2,\\cdots,|f_n(x-x_0)|&lt;\\varepsilon_n\\}.$$则 $\\{U_{f_1,f_2,\\cdots,f_n}^{\\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n}(x_0):\\ f_1,f_2,\\cdots,f_n\\in X^*,\\ \\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n&gt;0,\\ n\\in\\mathbb{N}_+\\}$ 构成 $x_0$ 的一组拓扑基。子集 $U$ 为 $X$ 的<strong>弱拓扑</strong>的开集，是指对任意 $x_0\\in U$，存在某个 $U_{f_1,f_2,\\cdots,f_n}^{\\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n}(x_0)\\subset U$，这也等价于 $U$ 是某些 $U_{f_1,f_2,\\cdots,f_n}^{\\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n}(x_0)$ 的并集。</p><p>（ii）固定 $f_0\\in X^*$，对于 $x_1,x_2,\\cdots,x_n\\in X$，$\\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n&gt;0$，令$$U_{x_1,x_2,\\cdots,x_n}^{\\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n}(f_0)=\\{f\\in X^*:\\ |(f-f_0)(x_1)|&lt;\\varepsilon_1,|(f-f_0)(x_2)|&lt;\\varepsilon_2,\\cdots,|(f-f_0)(x_n)|&lt;\\varepsilon_n\\}.$$则 $\\{U_{x_1,x_2,\\cdots,x_n}^{\\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n}(f_0):\\ x_1,x_2,\\cdots,x_n\\in X,\\ \\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n&gt;0,\\ n\\in\\mathbb{N}_+\\}$ 构成 $f_0$ 的一组拓扑基。子集 $U$ 为 $X^*$ 的<strong>弱* 拓扑</strong>的开集，是指对任意 $f_0\\in U$，存在某个 $U_{x_1,x_2,\\cdots,x_n}^{\\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n}(f_0)\\subset U$，这也等价于 $U$ 是某些 $U_{x_1,x_2,\\cdots,x_n}^{\\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n}(f_0)$ 的并集。</p>",
+         "src": "对赋范线性空间 $X$ 和它的对偶空间 $X^*$，\n\n（i）固定 $x_0\\in X$，对于 $f_1,f_2,\\cdots,f_n\\in X^*$，$\\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n>0$，令$$U_{f_1,f_2,\\cdots,f_n}^{\\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n}(x_0)=\\{x\\in X:\\ |f_1(x-x_0)|<\\varepsilon_1,|f_2(x-x_0)|<\\varepsilon_2,\\cdots,|f_n(x-x_0)|<\\varepsilon_n\\}.$$则 $\\{U_{f_1,f_2,\\cdots,f_n}^{\\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n}(x_0):\\ f_1,f_2,\\cdots,f_n\\in X^*,\\ \\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n>0,\\ n\\in\\mathbb{N}_+\\}$ 构成 $x_0$ 的一组拓扑基。子集 $U$ 为 $X$ 的**弱拓扑**的开集，是指对任意 $x_0\\in U$，存在某个 $U_{f_1,f_2,\\cdots,f_n}^{\\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n}(x_0)\\subset U$，这也等价于 $U$ 是某些 $U_{f_1,f_2,\\cdots,f_n}^{\\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n}(x_0)$ 的并集。\n\n（ii）固定 $f_0\\in X^*$，对于 $x_1,x_2,\\cdots,x_n\\in X$，$\\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n>0$，令$$U_{x_1,x_2,\\cdots,x_n}^{\\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n}(f_0)=\\{f\\in X^*:\\ |(f-f_0)(x_1)|<\\varepsilon_1,|(f-f_0)(x_2)|<\\varepsilon_2,\\cdots,|(f-f_0)(x_n)|<\\varepsilon_n\\}.$$则 $\\{U_{x_1,x_2,\\cdots,x_n}^{\\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n}(f_0):\\ x_1,x_2,\\cdots,x_n\\in X,\\ \\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n>0,\\ n\\in\\mathbb{N}_+\\}$ 构成 $f_0$ 的一组拓扑基。子集 $U$ 为 $X^*$ 的**弱* 拓扑**的开集，是指对任意 $f_0\\in U$，存在某个 $U_{x_1,x_2,\\cdots,x_n}^{\\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n}(f_0)\\subset U$，这也等价于 $U$ 是某些 $U_{x_1,x_2,\\cdots,x_n}^{\\varepsilon_1,\\varepsilon_2,\\cdots,\\varepsilon_n}(f_0)$ 的并集。",
+         "anchor": "定义-2.5.3"
+        },
+        {
+         "type": "定理",
+         "number": "2.5.7",
+         "title": "Mazur",
+         "page": 105,
+         "html": "<p>设赋范线性空间 $X$ 中的点列 $\\{x_n\\}_{n=1}^{\\infty}$ 弱收敛于 $x$，则存在 $\\{y_n\\}_{n=1}^{\\infty}$，其中的每个 $y_n$ 是有限个 $x_{n_1},x_{n_2},\\cdots,x_{n_k}$ 的凸组合，使得 $y_n\\xrightarrow{\\|\\cdot\\|}x$。</p>",
+         "src": "设赋范线性空间 $X$ 中的点列 $\\{x_n\\}_{n=1}^{\\infty}$ 弱收敛于 $x$，则存在 $\\{y_n\\}_{n=1}^{\\infty}$，其中的每个 $y_n$ 是有限个 $x_{n_1},x_{n_2},\\cdots,x_{n_k}$ 的凸组合，使得 $y_n\\xrightarrow{\\|\\cdot\\|}x$。",
+         "anchor": "定理-2.5.7"
+        },
+        {
+         "type": "推论",
+         "number": "2.5.1",
+         "title": "",
+         "page": 105,
+         "html": "<p>设 $M$ 是赋范线性空间 $X$ 中的凸子集，则 $M$ 在范数拓扑下的闭包和在弱拓扑下的闭包相同。</p>",
+         "src": "设 $M$ 是赋范线性空间 $X$ 中的凸子集，则 $M$ 在范数拓扑下的闭包和在弱拓扑下的闭包相同。",
+         "anchor": "推论-2.5.1"
+        },
+        {
+         "type": "定理",
+         "number": "2.5.8",
+         "title": "Banach–Alaoglu",
+         "page": 105,
+         "html": "<p>对于赋范线性空间 $X$，它的对偶空间 $X^*$ 中的闭单位球是弱* 紧的。</p>",
+         "src": "对于赋范线性空间 $X$，它的对偶空间 $X^*$ 中的闭单位球是弱* 紧的。",
+         "anchor": "定理-2.5.8"
+        },
+        {
+         "type": "定理",
+         "number": "2.5.9",
+         "title": "Banach–Alaoglu",
+         "page": 105,
+         "html": "<p>若 $X$ 可分，$\\{f_n\\}_{n=1}^{\\infty}$ 是 $X^*$ 中有界序列，则存在子列 $\\{f_{n_k}\\}$ 在 $X^*$ 中弱* 收敛。</p>",
+         "src": "若 $X$ 可分，$\\{f_n\\}_{n=1}^{\\infty}$ 是 $X^*$ 中有界序列，则存在子列 $\\{f_{n_k}\\}$ 在 $X^*$ 中弱* 收敛。",
+         "anchor": "定理-2.5.9"
+        },
+        {
+         "type": "构造",
+         "number": "",
+         "title": "可分 $X$ 时 $X_1^*$ 上的度量",
+         "page": 106,
+         "html": "<p>在 $X$ 可分的情况下，设 $\\{x_1,x_2,\\cdots\\}$ 是 $X$ 的单位闭球中的稠密子集。定义 $X^*$ 的闭单位球 $X_1^*=\\{f\\in X^*:\\ \\|f\\|\\leqslant1\\}$ 上的度量为$$d(f,g)=\\sum_{k=1}^{\\infty}\\frac{|f(x_k)-g(x_k)|}{2^k},\\qquad \\forall f,g\\in X_1^*.$$使用拓扑知识容易证明，$X_1^*$ 上由 $d$ 诱导的拓扑恰为其上的 $w^*$ 拓扑。换言之，$(X_1^*,w^*)$ 是可度量化的。因此对可分赋范线性空间 $X$，在对 $X^*$ 中的有界集上弱* 拓扑的讨论中，可以不引入网收敛而只使用序列收敛的概念。特别地，在此情形下上述两个版本的 Banach–Alaoglu 定理是一致的。</p>",
+         "src": "在 $X$ 可分的情况下，设 $\\{x_1,x_2,\\cdots\\}$ 是 $X$ 的单位闭球中的稠密子集。定义 $X^*$ 的闭单位球 $X_1^*=\\{f\\in X^*:\\ \\|f\\|\\leqslant1\\}$ 上的度量为$$d(f,g)=\\sum_{k=1}^{\\infty}\\frac{|f(x_k)-g(x_k)|}{2^k},\\qquad \\forall f,g\\in X_1^*.$$使用拓扑知识容易证明，$X_1^*$ 上由 $d$ 诱导的拓扑恰为其上的 $w^*$ 拓扑。换言之，$(X_1^*,w^*)$ 是可度量化的。因此对可分赋范线性空间 $X$，在对 $X^*$ 中的有界集上弱* 拓扑的讨论中，可以不引入网收敛而只使用序列收敛的概念。特别地，在此情形下上述两个版本的 Banach–Alaoglu 定理是一致的。",
+         "anchor": "构造-可分-X-时-X_1-上的度量"
+        },
+        {
+         "type": "推论",
+         "number": "2.5.2",
+         "title": "",
+         "page": 106,
+         "html": "<p>若 $X$ 是可分自反空间，对于 $X$ 中有界序列 $\\{x_n\\}_{n=1}^{\\infty}$，存在子列在 $X$ 中弱收敛。</p>",
+         "src": "若 $X$ 是可分自反空间，对于 $X$ 中有界序列 $\\{x_n\\}_{n=1}^{\\infty}$，存在子列在 $X$ 中弱收敛。",
+         "anchor": "推论-2.5.2"
+        },
+        {
+         "type": "定义",
+         "number": "2.5.4",
+         "title": "端点",
+         "page": 106,
+         "html": "<p>设 $A$ 是线性空间 $V$ 中的凸集，$x\\in A$。称 $x$ 为 $A$ 的<strong>端点</strong>，是指不能表示为 $A$ 中不同两点的凸组合，也就是说：若存在 $0&lt;t&lt;1$ 与 $y,z\\in A$ 使得 $x=(1-t)y+tz$，则 $x=y=z$。集合 $A$ 的端点全体记为 $\\operatorname{Ext}A$。</p><p>显然，凸多边形的端点就是其顶点；Euclid 空间单位球 $\\{x\\in\\mathbb{R}^n:\\ \\|x\\|_2=1\\}$ 的端点正好为单位球面上的点。但是，无穷维空间的单位球未必有端点。</p>",
+         "src": "设 $A$ 是线性空间 $V$ 中的凸集，$x\\in A$。称 $x$ 为 $A$ 的**端点**，是指不能表示为 $A$ 中不同两点的凸组合，也就是说：若存在 $0<t<1$ 与 $y,z\\in A$ 使得 $x=(1-t)y+tz$，则 $x=y=z$。集合 $A$ 的端点全体记为 $\\operatorname{Ext}A$。\n\n显然，凸多边形的端点就是其顶点；Euclid 空间单位球 $\\{x\\in\\mathbb{R}^n:\\ \\|x\\|_2=1\\}$ 的端点正好为单位球面上的点。但是，无穷维空间的单位球未必有端点。",
+         "anchor": "定义-2.5.4"
+        },
+        {
+         "type": "定理",
+         "number": "2.5.10",
+         "title": "Kreĭn–Mil'man 定理",
+         "page": 106,
+         "html": "<p>设 $X$ 是赋范线性空间，$A$ 是 $X^*$ 中凸的弱* 紧集，则 $A$ 的端点集 $\\operatorname{Ext}A$ 非空，且 $A$ 是包含凸包 $\\operatorname{co}\\operatorname{Ext}A$ 的最小弱* 闭集。</p>",
+         "src": "设 $X$ 是赋范线性空间，$A$ 是 $X^*$ 中凸的弱* 紧集，则 $A$ 的端点集 $\\operatorname{Ext}A$ 非空，且 $A$ 是包含凸包 $\\operatorname{co}\\operatorname{Ext}A$ 的最小弱* 闭集。",
+         "anchor": "定理-2.5.10"
+        },
+        {
+         "type": "注",
+         "number": "",
+         "title": "L^1 的单位球没有端点",
+         "page": 106,
+         "html": "<p>$L^1[0,1]$ 的单位闭球没有端点：对于 $f\\in L^1[0,1]$，$\\|f\\|_1\\leqslant1$，取点 $a\\in(0,1)$ 使得$$\\int_{[0,a]}|f(x)|\\,\\mathrm{d}m(x)=\\frac{\\|f\\|_1}{2},$$令 $g=2f\\chi_{[0,a]}$，$h=2f\\chi_{[a,1]}$，则 $g,h$ 也在单位闭球中且 $f=\\dfrac{g+h}{2}$。</p><p>作为一个直接的推论，由于 $L^1[0,1]$ 单位闭球的端点集是空集，因此不存在赋范空间 $X$ 使得 $X^*=L^1[0,1]$。</p>",
+         "src": "$L^1[0,1]$ 的单位闭球没有端点：对于 $f\\in L^1[0,1]$，$\\|f\\|_1\\leqslant1$，取点 $a\\in(0,1)$ 使得$$\\int_{[0,a]}|f(x)|\\,\\mathrm{d}m(x)=\\frac{\\|f\\|_1}{2},$$令 $g=2f\\chi_{[0,a]}$，$h=2f\\chi_{[a,1]}$，则 $g,h$ 也在单位闭球中且 $f=\\dfrac{g+h}{2}$。\n\n作为一个直接的推论，由于 $L^1[0,1]$ 单位闭球的端点集是空集，因此不存在赋范空间 $X$ 使得 $X^*=L^1[0,1]$。",
+         "anchor": "注-L-1-的单位球没有端点"
+        }
+       ]
+      }
+     ]
     }
    ],
    "empty": false
@@ -1967,5 +3025,5 @@
    "empty": false
   }
  ],
- "count": 209
+ "count": 322
 }
