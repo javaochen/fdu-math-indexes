@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>泛函分析 · 命题索引</title>
+<meta name="description" content="王凯《泛函分析》中有讲解的定义、定理、命题与例的索引，便于随时自测。">
+<link rel="stylesheet" href="vendor/katex/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="app">
+  <aside id="sidebar">
+    <div class="brand">
+      <div class="brand-title">泛函分析</div>
+      <div class="brand-sub">命题索引 · 王凯</div>
+    </div>
+    <div class="search-box">
+      <input id="search" type="search" placeholder="搜索命题、术语（/ 聚焦）" autocomplete="off">
+    </div>
+    <nav id="toc" aria-label="目录"></nav>
+    <div class="side-foot">
+      <a href="https://github.com/javaochen" target="_blank" rel="noopener">GitHub</a>
+      <span class="dot">·</span>
+      <button id="about-btn" class="linklike" type="button">说明</button>
+    </div>
+  </aside>
+
+  <main id="main">
+    <header id="topbar">
+      <button id="menu-btn" class="icon-btn" type="button" aria-label="目录">☰</button>
+      <div id="crumbs" class="crumbs"></div>
+      <div class="modes" role="group" aria-label="显示模式">
+        <button class="mode" data-mode="read" type="button">阅读</button>
+        <button class="mode" data-mode="test" type="button">自测</button>
+        <button class="mode" data-mode="random" type="button">随机</button>
+      </div>
+    </header>
+    <div id="view"></div>
+  </main>
+</div>
+
+<div id="modal" class="modal" hidden>
+  <div class="modal-card">
+    <button id="modal-close" class="modal-close" type="button" aria-label="关闭">×</button>
+    <h2>关于本索引</h2>
+    <p>收录王凯《泛函分析》正文中有讲解的定义、定理、命题、推论与例，只保留陈述，不含证明、不含习题与解答。</p>
+    <p>页码为原书页码。内容由扫描页人工校对提取，可能存在识别错误；发现错误请在仓库提 issue。</p>
+    <p>操作：<kbd>/</kbd> 搜索，<kbd>空格</kbd> 显示/隐藏，<kbd>←</kbd> <kbd>→</kbd> 切换条目，<kbd>m</kbd> 标记已掌握，<kbd>r</kbd> 随机抽一条。</p>
+    <p>“已掌握”只保存在本机浏览器（localStorage），不上传。</p>
+  </div>
+</div>
+
+<script src="vendor/katex/katex.min.js"></script>
+<script src="vendor/katex/contrib/auto-render.min.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
