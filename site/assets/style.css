@@ -174,7 +174,8 @@ body {
 .item[data-type="例"]   { border-left-color: var(--ex); }
 .item[data-type="反例"] { border-left-color: var(--cex); }
 .item[data-type="注"],
-.item[data-type="构造"] { border-left-color: var(--remark); }
+.item[data-type="构造"],
+.item[data-type="公理"] { border-left-color: var(--remark); }
 .item.flash { animation: flash 1.1s ease; }
 @keyframes flash { from { box-shadow: 0 0 0 3px var(--accent-soft); } to { box-shadow: none; } }
 
@@ -189,7 +190,7 @@ body {
 .item[data-type="推论"] .badge { color: var(--cor); }
 .item[data-type="例"] .badge { color: var(--ex); }
 .item[data-type="反例"] .badge { color: var(--cex); }
-.item[data-type="注"] .badge, .item[data-type="构造"] .badge { color: var(--remark); }
+.item[data-type="注"] .badge, .item[data-type="构造"] .badge, .item[data-type="公理"] .badge { color: var(--remark); }
 .num { font-weight: 700; font-size: 14.5px; font-variant-numeric: tabular-nums; }
 .title { font-family: var(--serif); font-weight: 600; font-size: 15px; }
 .head-right { margin-left: auto; display: flex; align-items: center; gap: 6px; }

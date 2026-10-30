@@ -201,9 +201,415 @@
    "author": "待确认",
    "source": "实变函数2023版.pdf",
    "order": 2,
-   "chapters": [],
-   "empty": true
+   "chapters": [
+    {
+     "no": "1",
+     "title": "R^k 中的集类",
+     "sections": [
+      {
+       "id": "1.1",
+       "title": "集合的势",
+       "pages": "1–11",
+       "items": [
+        {
+         "type": "定义",
+         "number": "1.1.1",
+         "title": "映照",
+         "page": 1,
+         "html": "<p>设 $A,B$ 是两个非空集。如果存在一个规则 $\\varphi$，使得对于 $A$ 中的每一个元素 $x$，按照规则 $\\varphi$，在 $B$ 中都有唯一的一个元素 $y$ 与 $x$ 对应，记为$$\\varphi: x\\mapsto y,$$那么称这个规则 $\\varphi$ 是从 $A$ 到 $B$（中）的<strong>映照</strong>（也称为映射）。</p><p>元素 $y$ 称做元素 $x$（在映照 $\\varphi$ 下）的<strong>象</strong>，记做 $y=\\varphi(x)$；对任一固定 $y$，称适合关系 $y=\\varphi(x)$ 的 $x$ 全体为 $y$（在映照 $\\varphi$ 之下）的<strong>原象</strong>，记为 $\\varphi^{-1}(y)$；集 $A$ 称做为映照 $\\varphi$ 的<strong>定义域</strong>，记为 $\\mathfrak{D}(\\varphi)$。</p><p>设 $C$ 是 $A$ 的子集，$C$ 中所有元素 $x$ 的象 $y$ 的全体记为 $\\varphi(C)$，称它为集 $C$ 的象。称 $\\varphi(A)$ 为映照 $\\varphi$ 的<strong>值域</strong>，常记为 $\\mathfrak{R}(\\varphi)$，也常把从 $\\mathfrak{D}(\\varphi)=A$ 到 $\\mathfrak{R}(\\varphi)\\subset B$ 的映照写成 $\\varphi: A\\to B$。对 $B$ 的一个子集 $D$，称集 $\\{x:\\varphi(x)\\in D,\\ x\\in\\mathfrak{D}(\\varphi)\\}$ 为 $D$（在映照 $\\varphi$ 之下）的原象，记为 $\\varphi^{-1}(D)$。</p><p>设 $\\varphi$ 是 $A$ 到 $B$ 中的映照。若 $A$ 中任意两个不同的元素 $x_1,x_2$，它们的像 $\\varphi(x_1)\\neq\\varphi(x_2)$，那么就称映照 $\\varphi$ 是<strong>单射</strong>。如果 $\\varphi(A)=B$，就称 $\\varphi$ 是 $A$ 到 $B$ <strong>上</strong>的映照，又称为 $A$ 到 $B$ 的<strong>满射</strong>。</p><p>设 $\\varphi_1: A\\to B$，$\\varphi_2: B\\to C$。作 $A$ 到 $C$ 的映照 $\\varphi$ 如下：对任何 $x\\in A$，$\\varphi(x)=\\varphi_2(\\varphi_1(x))$，称 $\\varphi$ 是 $\\varphi_1,\\varphi_2$ 的<strong>复合映照</strong>，记 $\\varphi$ 为 $\\varphi_2\\circ\\varphi_1$。</p><p>特别地，如果值域 $B$ 是数集（实数或复数集），这时映照 $\\varphi$ 就是定义在集 $A$ 上的函数。如果 $A,B$ 都是数集，它们之间的映照就是数学分析中研究的函数。</p>",
+         "anchor": "定义-1.1.1"
+        },
+        {
+         "type": "例",
+         "number": "1.1.2",
+         "title": "恒等映射",
+         "page": 1,
+         "html": "<p>对集合 $X$，对任意 $x\\in X$，令 $x\\mapsto x$。按此规则得到的映射记为 $id_X$。</p>",
+         "anchor": "例-1.1.2"
+        },
+        {
+         "type": "定义",
+         "number": "1.1.3",
+         "title": "一一对应与逆映照",
+         "page": 1,
+         "html": "<p>如果 $\\varphi$ 是集 $A$ 到集 $B$ 上的单射，则称 $\\varphi$ 为 $A$ 到 $B$ 的<strong>一一对应</strong>（或双射）。此时，我们可以定义一个从 $B$ 到 $A$ 的映照：对 $B$ 中每个元素 $b$，在 $A$ 中有唯一的元素 $a$，适合 $\\varphi(a)=b$，则令 $b\\mapsto a$。我们将这个映射记为 $\\varphi^{-1}$，称为 $\\varphi$ 的<strong>逆映照</strong>。那么$$\\varphi^{-1}\\circ\\varphi=id_A,\\qquad \\varphi\\circ\\varphi^{-1}=id_B.$$</p><p>换句话说，$\\varphi$ 是 $A$ 到 $B$ 的一一对应意味着对于 $A$ 中任一元素 $a$，有唯一的 $b=\\varphi(a)\\in B$；而且，对 $B$ 中每个元素 $b$，在 $A$ 中有唯一的元素 $a$，适合 $\\varphi(a)=b$。在这种情况下，我们可以认为集合 $A$ 和集合 $B$ 的元素个数是一样的。</p>",
+         "anchor": "定义-1.1.3"
+        },
+        {
+         "type": "定义",
+         "number": "1.1.4",
+         "title": "对等",
+         "page": 2,
+         "html": "<p>设 $A,B$ 是两个集，如果存在一个 $A$ 到 $B$ 的一一对应 $\\varphi$，那么称集 $A$ 与集 $B$ <strong>对等</strong>（或相似），记为 $A\\stackrel{\\varphi}{\\sim}B$，或简记为 $A\\sim B$。补充规定空集 $\\varnothing$ 和自身对等。</p>",
+         "anchor": "定义-1.1.4"
+        },
+        {
+         "type": "定义",
+         "number": "1.1.5",
+         "title": "相同的势",
+         "page": 2,
+         "html": "<p>设 $A,B$ 是两个集。如果 $A$ 和 $B$ 对等，那么称 $A$ 和 $B$ 具有<strong>相同的势</strong>（或基数），记集 $A$ 的势为 $\\overline{A}$。当 $A$ 和 $B$ 具有相同势时，记为 $\\overline{A}=\\overline{B}$。</p><p>势这个概念的直观背景就是元素的个数。两个集 $A$ 和 $B$，如果有相同的势（也简说成等势）就意味着集 $A$ 和 $B$ 的元素的个数\"一样多\"。但是，在\"无限集\"中往往出现很多违背常识的现象。例如，$A\\supset B$，并且 $B\\neq A$，直观上看 $B$ 中的元素个数似乎少于 $A$，然而此时并不总有 $\\overline{A}\\neq\\overline{B}$。</p>",
+         "anchor": "定义-1.1.5"
+        },
+        {
+         "type": "例",
+         "number": "1.1.6",
+         "title": "",
+         "page": 2,
+         "html": "<p>记奇数集 $O=\\{1,3,5,\\cdots,2n-1,\\cdots\\}$，偶数集 $E=\\{2,4,6,\\cdots,2n,\\cdots\\}$，自然数集 $\\mathbb{N}=\\{1,2,3,\\cdots,n,\\cdots\\}$。显然$$\\varphi_1: n\\mapsto 2n,\\qquad \\varphi_2: 2n\\mapsto 2n-1\\ (n=1,2,3,\\cdots),$$$\\varphi_2\\circ\\varphi_1$ 分别是 $\\mathbb{N}$ 到 $E$、$E$ 到 $O$、$\\mathbb{N}$ 到 $O$ 的一一对应。因此它们彼此对等，$\\overline{\\mathbb{N}}=\\overline{E}=\\overline{O}$。</p>",
+         "anchor": "例-1.1.6"
+        },
+        {
+         "type": "例",
+         "number": "1.1.7",
+         "title": "Hilbert 旅馆悖论",
+         "page": 2,
+         "html": "<p>假设有一个旅馆拥有无限多个房间，并且房间依次标号为 $1,2,3,\\cdots$。当所有的房间均已客满，或许有人会认为此时这一旅馆将无法再接纳新的客人（如同有限个房间的情况），但事实上并非如此。</p><p>设想此时有一个客人想要入住该旅馆。由于旅馆拥有无穷个房间，因而我们可以将原先在 $1$ 号房间原有的客人安置到 $2$ 号房间、$2$ 号房间原有的客人安置到 $3$ 号房间，以此类推，这样就空出了 $1$ 号房间留给新的客人。重复这一过程，我们就能够使任意有限个客人入住到旅馆内。数学上看，这源于 $n\\mapsto n+1$ 给出的 $\\mathbb{N}$ 到它的真子集 $\\{2,3,4,\\cdots\\}$ 的一一对应。</p><p>此外，将 $1$ 号房间原有的客人安置到 $2$ 号房间、$2$ 号房间原有的客人安置到 $4$ 号房间、$n$ 号房间原有的客人安置到 $2n$ 号房间，这样所有的奇数房间就都能够空出来以容纳新的客人。</p><p>这一问题虽然被称作\"悖论\"，但事实上它并不矛盾，而仅仅是与我们直觉相悖而已。而且，它所使用的\"无中生有\"的方式，在集合论的证明中被广泛地使用。</p>",
+         "anchor": "例-1.1.7"
+        },
+        {
+         "type": "定义",
+         "number": "1.1.8",
+         "title": "有限集",
+         "page": 2,
+         "html": "<p>对自然数 $n$，令 $M_n=\\{1,2,\\cdots,n\\}$。如果集 $A$ 与某个 $M_n$ 对等，就称 $A$ 是<strong>有限集</strong>。</p><p>规定有限集 $A$ 的势为集 $A$ 的<strong>计数</strong>，即如果 $A\\sim M_n$，那么规定 $\\overline{A}=n$。补充规定空集为有限集，并且它的计数规定为零。</p><p>我们称不是有限集的集为<strong>无限集</strong>。</p>",
+         "anchor": "定义-1.1.8"
+        },
+        {
+         "type": "定义",
+         "number": "1.1.9",
+         "title": "可列集",
+         "page": 2,
+         "html": "<p>设 $\\mathbb{N}$ 为自然数全体。凡是与集 $\\mathbb{N}$ 对等的集称为<strong>可列集</strong>。通常记可列集的势为 $\\aleph_0$（读作\"阿列夫零\"）。</p><p>如果集合 $A$ 是一个有限集或可列集，就称它是一个<strong>可数集</strong>。这意味着 $A$ 中所有元素可按某种规则依次排列成为（有限长或无限长的）序列。例如，若集合 $A$ 是可列集，那么可取到一一对应 $\\varphi: \\mathbb{N}\\to A$，从而 $A$ 中所有元素可排列为 $\\{\\varphi(1),\\varphi(2),\\cdots\\}$；反之亦然。</p>",
+         "anchor": "定义-1.1.9"
+        },
+        {
+         "type": "命题",
+         "number": "1.1.10",
+         "title": "",
+         "page": 3,
+         "html": "<p>任意无限集必定包含一个可列子集。</p><p>这说明可列集是最\"小\"的无限集。</p>",
+         "anchor": "命题-1.1.10"
+        },
+        {
+         "type": "命题",
+         "number": "1.1.11",
+         "title": "",
+         "page": 3,
+         "html": "<p>可数集的子集是可数集。</p>",
+         "anchor": "命题-1.1.11"
+        },
+        {
+         "type": "命题",
+         "number": "1.1.12",
+         "title": "",
+         "page": 3,
+         "html": "<p>若 $A,B$ 都是可列集，那么它们的笛卡尔积 $A\\times B$ 是可列集。</p>",
+         "anchor": "命题-1.1.12"
+        },
+        {
+         "type": "命题",
+         "number": "1.1.13",
+         "title": "",
+         "page": 3,
+         "html": "<p>设 $\\{A_1,\\cdots,A_n,\\cdots\\}$ 是全集 $X$ 中的子集列。若每个 $A_n$ 都是可数集，且至少有一个是可列集，则$$\\overline{\\bigcup_{n}A_n}=\\aleph_0.$$</p>",
+         "anchor": "命题-1.1.13"
+        },
+        {
+         "type": "例",
+         "number": "1.1.14",
+         "title": "",
+         "page": 4,
+         "html": "<p>整数 $\\mathbb{Z}$ 中的数可按正负号交替排列为 $0,1,-1,2,-2,\\cdots$，故 $\\overline{\\mathbb{Z}}=\\aleph_0$。</p>",
+         "anchor": "例-1.1.14"
+        },
+        {
+         "type": "例",
+         "number": "1.1.15",
+         "title": "",
+         "page": 4,
+         "html": "<p>有理数集 $\\mathbb{Q}$ 是可列集。先考虑 $(0,1)$ 中的有理数全体 $A$，它与可列集 $\\mathbb{N}\\times\\mathbb{N}$ 的一个无限子集$$B=\\{(p,q)\\in\\mathbb{N}\\times\\mathbb{N}: p\\geqslant q,\\ \\gcd(p,q)=1\\}$$之间的映射 $(p,q)\\in B\\mapsto \\dfrac{q}{p}\\in A$ 是一个双射；而 $B$ 是可列集，故 $A$ 也是可列集。再由一一对应 $(n,r)\\in\\mathbb{Z}\\times A\\mapsto n+r\\in\\mathbb{Q}$ 可得 $\\overline{\\mathbb{Q}}=\\overline{\\mathbb{Z}\\times A}=\\aleph_0$。</p>",
+         "anchor": "例-1.1.15"
+        },
+        {
+         "type": "例",
+         "number": "1.1.16",
+         "title": "",
+         "page": 4,
+         "html": "<p>若 $\\mathcal{F}$ 是直线 $\\mathbb{R}$ 上的开区间族，对任意 $(a_1,b_1),(a_2,b_2)\\in\\mathcal{F}$ 有 $(a_1,b_1)\\cap(a_2,b_2)=\\varnothing$，那么 $\\mathcal{F}$ 是可数集。实际上，对任何 $(a,b)\\in\\mathcal{F}$，可取一个有理数 $r\\in(a,b)$，那么就得到了单射$$(a,b)\\in\\mathcal{F}\\mapsto r\\in\\mathbb{Q}.$$也就是说，$\\mathcal{F}$ 和可列集 $\\mathbb{Q}$ 的一个子集对等，所以 $\\mathcal{F}$ 是可数集。</p>",
+         "anchor": "例-1.1.16"
+        },
+        {
+         "type": "定义",
+         "number": "1.1.17",
+         "title": "连续统",
+         "page": 4,
+         "html": "<p>设 $\\mathbb{R}$ 为实数全体。凡是与集 $\\mathbb{R}$ 对等的集称为<strong>连续统</strong>。通常记连续统集的势为 $\\mathfrak{c}$。</p>",
+         "anchor": "定义-1.1.17"
+        },
+        {
+         "type": "例",
+         "number": "1.1.18",
+         "title": "",
+         "page": 4,
+         "html": "<p>映射 $\\tan\\pi\\left(x-\\frac{1}{2}\\right)$ 给出了 $(0,1)$ 到 $\\mathbb{R}$ 的一一对应。故 $\\overline{(0,1)}=\\overline{\\mathbb{R}}=\\mathfrak{c}$。</p>",
+         "anchor": "例-1.1.18"
+        },
+        {
+         "type": "定理",
+         "number": "1.1.19",
+         "title": "",
+         "page": 4,
+         "html": "<p>$(0,1)$ 不是可列集。故 $\\aleph_0\\neq\\mathfrak{c}$。</p>",
+         "anchor": "定理-1.1.19"
+        },
+        {
+         "type": "命题",
+         "number": "1.1.20",
+         "title": "",
+         "page": 5,
+         "html": "<p>对等关系\"$\\sim$\"是一种等价关系，即：</p><p>（i）$A\\sim A$（自反性）；</p><p>（ii）若 $A\\sim B$，则 $B\\sim A$（对称性）；</p><p>（iii）若 $A\\sim B$，$B\\sim C$，则 $A\\sim C$（传递性）。</p><p>若 $\\{A_\\lambda:\\lambda\\in\\Lambda\\}$，$\\{B_\\lambda:\\lambda\\in\\Lambda\\}$ 为两族集，且对每一个 $\\lambda\\in\\Lambda$，$A_\\lambda\\sim B_\\lambda$。假设集族 $\\{A_\\lambda\\}$ 中任何两个集互不相交，即 $A_\\lambda\\cap A_\\mu=\\varnothing\\ (\\lambda\\neq\\mu,\\ \\lambda,\\mu\\in\\Lambda)$，$\\{B_\\lambda\\}$ 中任何两个集也互不相交，那么$$\\bigcup_{\\lambda\\in\\Lambda}A_\\lambda\\sim\\bigcup_{\\lambda\\in\\Lambda}B_\\lambda.$$</p><p>若 $\\{A_\\lambda:\\lambda\\in\\Lambda\\}$，$\\{B_\\lambda:\\lambda\\in\\Lambda\\}$ 为两族集，且对每一个 $\\lambda\\in\\Lambda$，$A_\\lambda\\sim B_\\lambda$，那么它们的笛卡尔积也是对等的，即$$\\prod_{\\lambda\\in\\Lambda}A_\\lambda\\sim\\prod_{\\lambda\\in\\Lambda}B_\\lambda.$$</p>",
+         "anchor": "命题-1.1.20"
+        },
+        {
+         "type": "定理",
+         "number": "1.1.21",
+         "title": "F. Bernstein",
+         "page": 5,
+         "html": "<p>设 $A,B$ 是两个集。如果 $A$ 对等于 $B$ 的一个子集（即存在 $A$ 到 $B$ 的单射），$B$ 对等于 $A$ 的一个子集，那么 $A$ 与 $B$ 对等。</p><p>若 $A$ 对等于 $B$ 的一个子集，即存在 $A$ 到 $B$ 的单射，常记作 $\\overline{A}\\leqslant\\overline{B}$（或 $\\overline{B}\\geqslant\\overline{A}$）；若集合 $A,B$ 还满足 $\\overline{A}\\neq\\overline{B}$，则记作 $\\overline{A}&lt;\\overline{B}$（或 $\\overline{B}&gt;\\overline{A}$）。那么，Bernstein 定理可\"形式的\"陈述为：若集合 $A,B$ 满足 $\\overline{A}\\leqslant\\overline{B}$ 且 $\\overline{A}\\geqslant\\overline{B}$，则 $\\overline{A}=\\overline{B}$。</p>",
+         "anchor": "定理-1.1.21"
+        },
+        {
+         "type": "例",
+         "number": "1.1.22",
+         "title": "",
+         "page": 6,
+         "html": "<p>对于实数 $a,b$，记 $\\langle a,b\\rangle$ 为区间 $[a,b],[a,b),(a,b],(a,b)$ 中的某一个。若 $a&lt;b$，则称 $\\langle a,b\\rangle$ 是<strong>非退化的区间</strong>。此时 $\\overline{\\langle a,b\\rangle}=\\mathfrak{c}$。特别的，$(0,1),(0,1],[0,1),[0,1]$ 都与 $\\mathbb{R}$ 等势。</p>",
+         "anchor": "例-1.1.22"
+        },
+        {
+         "type": "例",
+         "number": "1.1.23",
+         "title": "",
+         "page": 6,
+         "html": "<p>对于实数 $x$，若存在有理系数的多项式 $p$ 使得 $p(x)=0$，则称 $x$ 是<strong>代数数</strong>；若这样的多项式 $p$ 不存在，则称 $x$ 是<strong>超越数</strong>。使用势的观点可以很容易看到超越数是很多的。</p><p>首先，有理系数多项式全体 $\\mathcal{P}$ 的势为 $\\aleph_0$；其次，代数数集 $A$ 的势为 $\\aleph_0$。由此可知超越数集 $T$ 不是可数集：否则 $\\mathbb{R}=A\\cup T$ 也是可数的。</p>",
+         "anchor": "例-1.1.23"
+        },
+        {
+         "type": "定义",
+         "number": "1.1.24",
+         "title": "",
+         "page": 7,
+         "html": "<p>对集合 $A$ 和 $B$，记 $B^A$ 为从 $A$ 到 $B$ 中的映射全体。</p>",
+         "anchor": "定义-1.1.24"
+        },
+        {
+         "type": "注",
+         "number": "1.1.25",
+         "title": "",
+         "page": 7,
+         "html": "<p>设集合 $A$ 的势为 $\\alpha$，集合 $B$ 的势为 $\\beta$，我们用 $\\beta^\\alpha$ 表示集合 $B^A$ 的势。这个记号是合理的：若 $A_1\\sim A_2$，$B_1\\sim B_2$，那么 $B_1^{A_1}\\sim B_2^{A_2}$。</p>",
+         "anchor": "注-1.1.25"
+        },
+        {
+         "type": "例",
+         "number": "1.1.26",
+         "title": "",
+         "page": 7,
+         "html": "<p>$A$ 的子集全体称为 $A$ 的<strong>幂集</strong>，记作 $2^A$。这个符号与定义 1.1.24 是一致的，即 $2^A$ 与 $\\{0,1\\}^A$ 之间有自然的一一对应 $E\\mapsto\\chi_E$，其中示性函数 $\\chi_E$ 定义为$$\\chi_E(x)=\\begin{cases}1, &amp; x\\in E,\\\\ 0, &amp; x\\notin E.\\end{cases}$$</p>",
+         "anchor": "例-1.1.26"
+        },
+        {
+         "type": "例",
+         "number": "1.1.27",
+         "title": "",
+         "page": 7,
+         "html": "<p>对于集合 $A$，$A^{\\mathbb{N}}$ 可视为序列全体$$\\prod_{n=1}^{\\infty}A=\\{\\{a_1,a_2,\\cdots,a_n,\\cdots\\}: a_n\\in A\\},$$它们可由映射 $f\\in A^{\\mathbb{N}}\\mapsto (f(1),f(2),\\cdots,f(n),\\cdots)\\in\\prod_{n=1}^{\\infty}A$ 建立自然的一一对应。</p>",
+         "anchor": "例-1.1.27"
+        },
+        {
+         "type": "命题",
+         "number": "1.1.28",
+         "title": "",
+         "page": 7,
+         "html": "<p>$\\overline{2^{\\mathbb{N}}}=\\overline{\\mathbb{R}}$，也即 $2^{\\aleph_0}=\\mathfrak{c}$。</p>",
+         "anchor": "命题-1.1.28"
+        },
+        {
+         "type": "命题",
+         "number": "1.1.29",
+         "title": "",
+         "page": 7,
+         "html": "<p>对于集合 $A,B,C$，我们有 $\\overline{(A^B)^C}=\\overline{A^{B\\times C}}$。</p>",
+         "anchor": "命题-1.1.29"
+        },
+        {
+         "type": "推论",
+         "number": "1.1.30",
+         "title": "",
+         "page": 7,
+         "html": "<p>若集合 $A$ 的势为 $\\mathfrak{c}$，则 $\\overline{A^{\\mathbb{N}}}=\\mathfrak{c}$。也即 $\\mathfrak{c}^{\\aleph_0}=\\mathfrak{c}$，或 $\\underbrace{\\mathfrak{c}\\times\\mathfrak{c}\\times\\cdots}_{\\text{有限个或可列个}}=\\mathfrak{c}$。</p>",
+         "anchor": "推论-1.1.30"
+        },
+        {
+         "type": "推论",
+         "number": "1.1.31",
+         "title": "",
+         "page": 8,
+         "html": "<p>若集列 $\\{A_\\lambda:\\lambda\\in\\Lambda\\}$ 中的每个 $A_\\lambda$ 的势是 $\\mathfrak{c}$，且 $\\overline{\\Lambda}=\\mathfrak{c}$，那么 $\\overline{\\bigcup_{\\lambda\\in\\Lambda}A_\\lambda}=\\mathfrak{c}$。</p>",
+         "anchor": "推论-1.1.31"
+        },
+        {
+         "type": "推论",
+         "number": "1.1.32",
+         "title": "",
+         "page": 8,
+         "html": "<p>若集合 $A$ 的势为 $\\aleph_0$，则 $\\overline{A^{\\mathbb{N}}}=\\mathfrak{c}$。也即 $\\aleph_0^{\\aleph_0}=\\mathfrak{c}$，或 $\\underbrace{\\aleph_0\\times\\aleph_0\\times\\cdots}_{\\text{可列个}}=\\mathfrak{c}$。</p>",
+         "anchor": "推论-1.1.32"
+        },
+        {
+         "type": "例",
+         "number": "1.1.33",
+         "title": "",
+         "page": 8,
+         "html": "<p>由于 $2^{\\aleph_0}=3^{\\aleph_0}=10^{\\aleph_0}=\\mathfrak{c}$，故 $2$ 进制小数全体、$3$ 进制小数全体或者 $10$ 进制小数全体，乃至 $k$ 进制小数全体势都是 $\\mathfrak{c}$。</p>",
+         "anchor": "例-1.1.33"
+        },
+        {
+         "type": "例",
+         "number": "1.1.34",
+         "title": "",
+         "page": 8,
+         "html": "<p>$\\mathbb{R}$ 上连续函数全体 $C(\\mathbb{R})$ 的势为 $\\mathfrak{c}$。</p><p>对任意 $f\\in C(\\mathbb{R})$，$f$ 由它在有理数集上的函数值唯一确定，即映射 $f\\in C(\\mathbb{R})\\mapsto \\{f(r)\\}_{r\\in\\mathbb{Q}}\\in\\mathbb{R}^{\\mathbb{Q}}$ 给出了 $C(\\mathbb{R})$ 到 $\\mathbb{R}^{\\mathbb{Q}}$ 中的一个单射；而常数函数全体的势为 $\\mathfrak{c}$，故 $\\overline{C(\\mathbb{R})}=\\mathfrak{c}$。</p>",
+         "anchor": "例-1.1.34"
+        },
+        {
+         "type": "例",
+         "number": "1.1.35",
+         "title": "",
+         "page": 8,
+         "html": "<p>$\\mathbb{R}$ 上实值函数全体的势为 $2^{\\mathfrak{c}}$。实际上，$\\mathfrak{c}^{\\mathfrak{c}}=(2^{\\aleph_0})^{\\mathfrak{c}}=2^{\\aleph_0\\times\\mathfrak{c}}=2^{\\mathfrak{c}}$。</p>",
+         "anchor": "例-1.1.35"
+        },
+        {
+         "type": "定理",
+         "number": "1.1.36",
+         "title": "Cantor",
+         "page": 8,
+         "html": "<p>幂集的势严格大于集合的势。即，对于集合 $X$ 我们有 $\\overline{2^X}&gt;\\overline{X}$。</p><p>由此可知，不存在势达到极大的集合，而且我们还可以得到一个不会中止的上升基数列$$\\aleph_0&lt;\\mathfrak{c}&lt;2^{\\mathfrak{c}}&lt;2^{2^{\\mathfrak{c}}}&lt;\\cdots$$</p>",
+         "anchor": "定理-1.1.36"
+        },
+        {
+         "type": "注",
+         "number": "",
+         "title": "Cantor 连续统假设",
+         "page": 9,
+         "html": "<p>$\\aleph_0,\\mathfrak{c}$ 是两个重要的无限势。是否存在一个势 $\\alpha$，使得 $\\aleph_0&lt;\\alpha&lt;\\mathfrak{c}$ 成立？Cantor 首先看到了这个自然而然重要的问题，他并没有解决这个问题，但他相信（从而他假设）没有这个\"中间\"势 $\\alpha$，这就是著名的 <strong>Cantor 连续统假设</strong>。这个假设可以作为一条公理，并且与集合论中其它一些公理是独立的。</p>",
+         "anchor": "注-Cantor-连续统假设"
+        },
+        {
+         "type": "定义",
+         "number": "1.1.37",
+         "title": "偏序集",
+         "page": 10,
+         "html": "<p>设 $A$ 是一集，在其中规定了某些元素之间的关系\"$\\prec$\"，它满足以下的条件：</p><p>（i）自反性：对 $A$ 中的一切元素 $a$ 成立着 $a\\prec a$；</p><p>（ii）反对称性：如果 $a\\prec b$，而且 $b\\prec a$，那么 $a=b$；</p><p>（iii）传递性：如果 $a\\prec b$，而且 $b\\prec c$，就有 $a\\prec c$。</p><p>那么称关系\"$\\prec$\"为 $A$ 中的一个<strong>顺序</strong>，$a\\prec b$ 读作 $a$ 在 $b$ 前（或 $b$ 在 $a$ 后），这时称集 $A$ 是<strong>偏序集</strong>。</p>",
+         "anchor": "定义-1.1.37"
+        },
+        {
+         "type": "例",
+         "number": "1.1.38",
+         "title": "",
+         "page": 10,
+         "html": "<p>设 $B$ 是一个非空集，$\\mathfrak{B}$ 是 $B$ 的所有子集构成的集。如果子集之间用包含关系\"$\\subset$\"作为 $\\mathfrak{B}$ 中某些元素间的顺序，即当 $U,V\\in\\mathfrak{B}$，且 $U\\subset V$ 时，规定 $U\\prec V$，那么显然这是一种顺序（称它是自然顺序），因而 $\\mathfrak{B}$ 按此顺序成为一个偏序集。</p>",
+         "anchor": "例-1.1.38"
+        },
+        {
+         "type": "例",
+         "number": "1.1.39",
+         "title": "",
+         "page": 10,
+         "html": "<p>设 $B$ 是一个集，$A$ 是 $B$ 上的实函数全体。对两个元素 $a,b\\in A$，而且对每个 $t\\in B$ 有 $a(t)\\leqslant b(t)$ 时，则规定 $a\\prec b$。那么 $A$ 按此顺序也成为半序集。</p>",
+         "anchor": "例-1.1.39"
+        },
+        {
+         "type": "例",
+         "number": "1.1.40",
+         "title": "",
+         "page": 10,
+         "html": "<p>设 $A$ 是某些实数所成的集，在 $A$ 中规定当 $a\\leqslant b$ 时为 $a\\prec b$。显然 $A$ 是半序集，这个顺序称作<strong>自然顺序</strong>。</p><p>若在这个集 $A$ 中作另一规定：当 $a\\geqslant b$ 时规定 $a\\prec b$，显然这也是一个顺序关系，称此顺序为<strong>逆自然顺序</strong>。</p>",
+         "anchor": "例-1.1.40"
+        },
+        {
+         "type": "例",
+         "number": "1.1.41",
+         "title": "",
+         "page": 10,
+         "html": "<p>设 $A$ 是所有实数对 $(x,y)$ 全体，规定两对 $(x_1,y_1),(x_2,y_2)$ 当 $x_1&lt;x_2$，或者当 $x_1=x_2$ 而且 $y_1\\leqslant y_2$ 时为 $(x_1,y_1)\\prec(x_2,y_2)$。这是 $A$ 中的一个顺序关系，称为<strong>字典顺序</strong>（因为它和拼音文字字典的字序类似）。</p>",
+         "anchor": "例-1.1.41"
+        },
+        {
+         "type": "定义",
+         "number": "1.1.42",
+         "title": "全序集",
+         "page": 10,
+         "html": "<p>设集 $A$ 中已经定义了顺序关系\"$\\prec$\"。如果对 $A$ 中的任何两个元素 $a,b$ 都可以确定它们之间的顺序，即 $a\\prec b$ 与 $b\\prec a$ 两个关系式中有一个成立，就称 $A$ 是<strong>全序集</strong>。</p><p>在例 1.1.40 中的数集 $A$ 按自然顺序（或逆自然顺序）是全序集，例 1.1.41 的集也是全序集。在例 1.1.38、例 1.1.39 中，当 $B$ 含有多于一个元素时，$A$ 就都不是全序集。</p>",
+         "anchor": "定义-1.1.42"
+        },
+        {
+         "type": "定义",
+         "number": "1.1.43",
+         "title": "上界与下界",
+         "page": 10,
+         "html": "<p>设 $A$ 是偏序集。对 $A$ 的子集 $B$，若存在 $a\\in A$，使得对每个 $b\\in B$ 成立着 $b\\prec a$，即 $a$ 在 $B$ 的所有元素之后，那么称 $a$ 为子集 $B$ 的<strong>上界</strong>。类似地，有<strong>下界</strong>的概念。</p><p>对一个子集，上界、下界不一定是唯一的，也可以没有上界或下界。例如取 $A$ 为实数区间 $(0,1)$，以自然顺序为顺序，取 $B=A$，显然 $B$ 在 $A$ 中就不存在上界，也不存在下界。</p>",
+         "anchor": "定义-1.1.43"
+        },
+        {
+         "type": "例",
+         "number": "1.1.44",
+         "title": "",
+         "page": 11,
+         "html": "<p>对每个自然数 $n$ 作区间 $[0,1]$ 的分法$$D_n: 0&lt;\\frac{1}{n}&lt;\\frac{2}{n}&lt;\\cdots&lt;\\frac{n-1}{n}&lt;1.$$所有这些分法记作 $\\mathfrak{D}$。令 $B$ 表示 $[0,1]$ 中的有理数全体，$\\mathfrak{A}$ 表示 $B$ 的子集全体。于是 $B\\in\\mathfrak{A}$，$\\mathfrak{D}\\subset\\mathfrak{A}$。如同例 1.1.38，在集 $\\mathfrak{A}$ 中以包含关系 $\\subset$ 作为元素间的顺序，$\\mathfrak{A}$ 成为偏序集。显然，对任何 $D_n\\in\\mathfrak{D}$，都有 $D_n\\subset B$，所以 $B$ 是 $\\mathfrak{D}$ 的上界。</p>",
+         "anchor": "例-1.1.44"
+        },
+        {
+         "type": "定义",
+         "number": "1.1.45",
+         "title": "极大元",
+         "page": 11,
+         "html": "<p>设 $A$ 是一个偏序集，$a\\in A$。如果在 $A$ 中不存在别的元素 $b(\\neq a)$ 在 $a$ 后，那么称 $a$ 为 $A$ 的<strong>极大元</strong>。</p><p>换句话说，极大元 $a$ 是具有下面性质的元素：如果 $b\\in A$，而且 $a\\prec b$，那么 $b=a$。偏序集的极大元不一定是唯一的。例如两个元素 $a$ 与 $b$ 所组成的集 $A=\\{a,b\\}$，规定 $a\\prec a$ 及 $b\\prec b$，则 $A$ 是偏序集，而 $a$ 和 $b$ 都是 $A$ 的极大元。但是，在全序集中极大元是唯一的。类似地也有<strong>极小元</strong>的概念。</p>",
+         "anchor": "定义-1.1.45"
+        },
+        {
+         "type": "公理",
+         "number": "",
+         "title": "Zorn 引理",
+         "page": 11,
+         "html": "<p>设 $A$ 是一个偏序集。如果 $A$ 的每个全序子集都有上界，那么 $A$ 有极大元。</p><p>类似地有关于下界和极小元（存在性）的引理。</p>",
+         "anchor": "公理-Zorn-引理"
+        },
+        {
+         "type": "公理",
+         "number": "",
+         "title": "Zermelo 选择公理",
+         "page": 11,
+         "html": "<p>设 $S=\\{M_\\alpha:\\alpha\\in\\Lambda\\}$ 是一族两两不相交的非空集，那么存在集 $L$ 满足下面两个条件：</p><p>1. $L\\subset\\bigcup\\limits_{\\alpha\\in\\Lambda}M_\\alpha$；</p><p>2. 集 $L$ 与 $S$ 中每一个集 $M_\\alpha$ 有一个而且只有一个公共元素。</p><p>选择公理和 Zorn 引理是等价的。尽管选择公理看起来自然，但是否承认选择公理仍无定论。承认选择公理会产生\"Banach–Tarski 悖论\"等大量与\"常理\"不符的结果，但如果放弃这条公理，又有很多美好且重要的结果会同时被放弃。本书将在 ZFC 公理体系下进行讨论。</p>",
+         "anchor": "公理-Zermelo-选择公理"
+        },
+        {
+         "type": "推论",
+         "number": "1.1.46",
+         "title": "",
+         "page": 11,
+         "html": "<p>若映射 $\\varphi: A\\twoheadrightarrow B$ 是集合 $A$ 到集合 $B$ 的满射，则 $\\overline{A}\\geqslant\\overline{B}$。</p>",
+         "anchor": "推论-1.1.46"
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "empty": false
   }
  ],
- "count": 21
+ "count": 70
 }
