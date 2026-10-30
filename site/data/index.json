@@ -1,189 +1,208 @@
 {
- "book": {
-  "title": "泛函分析",
-  "author": "王凯"
+ "site": {
+  "title": "数学命题索引",
+  "subtitle": "教材命题 · 只含陈述，便于自测"
  },
- "chapters": [
+ "books": [
   {
-   "no": "1",
-   "title": "度量空间",
-   "sections": [
+   "id": "fanyan",
+   "title": "泛函分析",
+   "author": "王凯",
+   "source": "泛函王凯.pdf",
+   "order": 1,
+   "chapters": [
     {
-     "id": "1.1",
+     "no": "1",
      "title": "度量空间",
-     "pages": "2–8",
-     "items": [
+     "sections": [
       {
-       "type": "定义",
-       "number": "1.1.1",
+       "id": "1.1",
        "title": "度量空间",
-       "page": 2,
-       "html": "<p>设 $X$ 是一个非空集合，若对于 $X$ 中任意两个元素 $x,y$，都有一个实数 $d(x,y)$ 与它们对应，而且满足下面条件：</p><p>（i）（非负性与正定性）对任意 $x,y\\in X$，$d(x,y)\\geqslant 0$，并且 $d(x,y)=0$ 的充要条件是 $x=y$；</p><p>（ii）（对称性）对任意 $x,y\\in X$，$d(x,y)=d(y,x)$；</p><p>（iii）（三角不等式）对任意 $x,y,z\\in X$，$d(x,y)\\leqslant d(x,z)+d(z,y)$，</p><p>则称 $(X,d)$ 是一个<strong>度量空间</strong>（或距离空间），$d$ 为 $X$ 上的<strong>度量</strong>（或距离），$d(x,y)$ 为点 $x,y$ 之间的距离。</p>",
-       "anchor": "定义-1.1.1"
-      },
-      {
-       "type": "例",
-       "number": "1.1.1",
-       "title": "",
-       "page": 2,
-       "html": "<p>在直线 $\\mathbb{R}$ 上，定义$$d(x,y)=|x-y|,\\quad \\forall x,y\\in\\mathbb{R},$$则 $(\\mathbb{R},d)$ 是度量空间。</p>",
-       "anchor": "例-1.1.1"
-      },
-      {
-       "type": "例",
-       "number": "1.1.2",
-       "title": "",
-       "page": 2,
-       "html": "<p>在 $n$ 个有序实数组 $x=(x_1,x_2,\\cdots,x_n)$ 全体组成的集合 $X$ 中，定义$$d(x,y)=\\sqrt{\\sum_{i=1}^{n}(x_i-y_i)^2},$$则 $(X,d)$ 是度量空间，称为 $n$ 维 <strong>Euclid</strong>（欧几里得）空间，通常记为 $\\mathbb{R}^n$。</p>",
-       "anchor": "例-1.1.2"
-      },
-      {
-       "type": "例",
-       "number": "1.1.3",
-       "title": "",
-       "page": 2,
-       "html": "<p>固定 $p\\geqslant 1$。在 $n$ 个有序实数组构成的集合 $X$ 中，定义$$d_p(x,y)=\\left(\\sum_{i=1}^{n}|x_i-y_i|^p\\right)^{\\frac{1}{p}},\\tag{1.1}$$那么 $(X,d_p)$ 是度量空间，记为 $\\mathbb{R}_p^n$。</p>",
-       "anchor": "例-1.1.3"
-      },
-      {
-       "type": "定理",
-       "number": "",
-       "title": "Hölder 不等式",
-       "page": 3,
-       "html": "<p>设 $1&lt;p,q&lt;\\infty$，$\\dfrac{1}{p}+\\dfrac{1}{q}=1$。对于 Lebesgue 测度空间 $(\\mathbb{R}^n,\\mathrm{d}m)$ 中的可测集 $E$ 及其上的 Lebesgue 可测函数 $f,g$，若 $|f|^p,|g|^q$ 可积，则 $fg$ 可积且$$\\left|\\int_E f(t)g(t)\\,\\mathrm{d}m(t)\\right|\\leqslant\\left(\\int_E|f(t)|^p\\,\\mathrm{d}m(t)\\right)^{\\frac{1}{p}}\\left(\\int_E|g(t)|^q\\,\\mathrm{d}m(t)\\right)^{\\frac{1}{q}}.\\tag{1.4}$$等号成立当且仅当 $fg$ 几乎处处符号不变，且存在不全为零的常数 $a,b$ 使得 $a|f|^p$ 几乎处处等于 $b|g|^q$。</p>",
-       "anchor": "定理-Hölder-不等式"
-      },
-      {
-       "type": "定理",
-       "number": "",
-       "title": "Minkowski 不等式",
-       "page": 4,
-       "html": "<p>对 $p\\geqslant 1$，若 $E$ 上可测函数 $f,g$ 是 $p$ 次可积的，则$$\\left(\\int_E|f(t)+g(t)|^p\\,\\mathrm{d}m(t)\\right)^{\\frac{1}{p}}\\leqslant\\left(\\int_E|f(t)|^p\\,\\mathrm{d}m(t)\\right)^{\\frac{1}{p}}+\\left(\\int_E|g(t)|^p\\,\\mathrm{d}m(t)\\right)^{\\frac{1}{p}}.\\tag{1.6}$$等号成立当且仅当存在非负常数 $a,b$ 使得 $ag\\stackrel{m}{=}bf$（即 $ag$ 几乎处处等于 $bf$）。</p>",
-       "anchor": "定理-Minkowski-不等式"
-      },
-      {
-       "type": "例",
-       "number": "1.1.4",
-       "title": "",
-       "page": 4,
-       "html": "<p>在 $n$ 个有序实数组全体构成的集合 $X$ 中，令$$d_1(x,y)=\\sum_{i=1}^{n}|x_i-y_i|,$$则 $\\mathbb{R}_1^n=(X,d_1)$ 也是度量空间。</p>",
-       "anchor": "例-1.1.4"
-      },
-      {
-       "type": "例",
-       "number": "1.1.5",
-       "title": "",
-       "page": 4,
-       "html": "<p>在 $n$ 个有序实数组全体构成的集合 $X$ 中，令$$d_\\infty(x,y)=\\max_{1\\leqslant i\\leqslant n}|x_i-y_i|,$$则 $\\mathbb{R}_\\infty^n=(X,d_\\infty)$ 是度量空间。</p>",
-       "anchor": "例-1.1.5"
-      },
-      {
-       "type": "例",
-       "number": "1.1.6",
-       "title": "",
-       "page": 4,
-       "html": "<p>在闭区间 $[a,b]$ 上的一切连续实（或复）值函数的集 $C[a,b]$ 中，定义$$d(f,g)=\\max_{a\\leqslant t\\leqslant b}|f(t)-g(t)|.\\tag{1.7}$$它是 $C[a,b]$ 上的度量。此空间在分析学中起着极为重要的作用。</p><p>同一个集合中可以引进不同的度量，得到不同的度量空间。</p>",
-       "anchor": "例-1.1.6"
-      },
-      {
-       "type": "例",
-       "number": "1.1.7",
-       "title": "平凡的例子",
-       "page": 4,
-       "html": "<p>设 $X$ 是一个非空的集合，定义如下的度量：$$d_0(x,y)=\\begin{cases}0, &amp; x=y,\\\\ 1, &amp; x\\neq y.\\end{cases}$$则 $(X,d_0)$ 是度量空间。</p>",
-       "anchor": "例-1.1.7"
-      },
-      {
-       "type": "定义",
-       "number": "",
-       "title": "子空间与乘积度量",
-       "page": 5,
-       "html": "<p>设 $(X,d)$ 是度量空间，$A$ 是 $X$ 的非空子集。若对于 $A$ 中的任意两点 $x,y\\in A$，规定$$d_A(x,y)=d(x,y),$$则 $(A,d_A)$ 是度量空间，称为 $(X,d)$ 的一个<strong>子空间</strong>。</p><p>设 $(X_1,d_1),(X_2,d_2)$ 是两个度量空间，乘积空间 $X=X_1\\times X_2=\\{(x_1,x_2):x_1\\in X_1,x_2\\in X_2\\}$ 上可以用以下三个式子之一来定义度量：$$d_2\\big((x_1,x_2),(y_1,y_2)\\big)=\\sqrt{d_1^2(x_1,y_1)+d_2^2(x_2,y_2)},$$$$d_1\\big((x_1,x_2),(y_1,y_2)\\big)=d_1(x_1,y_1)+d_2(x_2,y_2),$$$$d_\\infty\\big((x_1,x_2),(y_1,y_2)\\big)=\\max\\{d_1(x_1,y_1),d_2(x_2,y_2)\\}.$$</p>",
-       "anchor": "定义-子空间与乘积度量"
-      },
-      {
-       "type": "定义",
-       "number": "1.1.2",
-       "title": "极限",
-       "page": 5,
-       "html": "<p>设 $(X,d)$ 是度量空间，$\\{x_n\\}_{n=1}^{\\infty}$ 是 $X$ 中点列，$x_0\\in X$，若$$\\lim_{n\\to\\infty}d(x_n,x_0)=0,$$则称点列 $\\{x_n\\}_{n=1}^{\\infty}$ <strong>按照度量 $d$ 收敛于</strong> $x_0$，记为 $\\lim\\limits_{n\\to\\infty}x_n=x_0$。</p>",
-       "anchor": "定义-1.1.2"
-      },
-      {
-       "type": "定义",
-       "number": "",
-       "title": "基本点列与完备性",
-       "page": 5,
-       "html": "<p>对于度量空间 $(X,d)$ 中的点列 $\\{x_n\\}_{n=1}^{\\infty}$，如果对于任何正数 $\\varepsilon$，存在正整数 $N$，使得当 $n,m\\geqslant N$ 时$$d(x_n,x_m)&lt;\\varepsilon,$$就称 $\\{x_n\\}_{n=1}^{\\infty}$ 是 $X$ 中的<strong>基本点列</strong>，或者称为 <strong>Cauchy（柯西）点列</strong>。显然收敛点列必然是基本点列。</p><p>如果 $X$ 中任何基本点列都收敛于 $X$ 中的点，就称 $(X,d)$ 为<strong>完备的</strong>度量空间。</p>",
-       "anchor": "定义-基本点列与完备性"
-      },
-      {
-       "type": "例",
-       "number": "1.1.8",
-       "title": "",
-       "page": 5,
-       "html": "<p>例 1.1.1 中的度量空间 $(\\mathbb{R},d)$ 的完备性即为实数理论中的 Cauchy 收敛原理。</p>",
-       "anchor": "例-1.1.8"
-      },
-      {
-       "type": "例",
-       "number": "1.1.9",
-       "title": "",
-       "page": 5,
-       "html": "<p>考虑例 1.1.2、例 1.1.4 及例 1.1.5，在 $n$ 个有序实数组全体构成的集合 $X$ 中，点列 $\\{x^{(k)}\\}$ 按度量 $d,d_1$ 或 $d_\\infty$ 收敛于 $x^{(0)}$ 都等价于 $\\{x^{(k)}\\}$ 按坐标收敛于 $x^{(0)}$，即每个分量 $\\{x_i^{(k)}\\}$ 收敛于 $x_i^{(0)}$（$i=1,2,\\cdots,n$）。同时，点列 $\\{x^{(k)}\\}$ 按度量 $d,d_1$ 或 $d_\\infty$ 是 Cauchy 收敛的，等价于每个分量 $\\{x_i^{(k)}\\}$ 是 $\\mathbb{R}$ 中的 Cauchy 点列。故由例 1.1.8 知，$X$ 在度量 $d,d_1$ 或 $d_\\infty$ 下均是完备的。</p>",
-       "anchor": "例-1.1.9"
-      },
-      {
-       "type": "例",
-       "number": "1.1.10",
-       "title": "",
-       "page": 6,
-       "html": "<p>$C[a,b]$ 是完备的度量空间。</p><p>并且，$C[a,b]$ 中点列按度量 $d$ 收敛等价于区间 $[a,b]$ 上的函数列一致收敛。</p>",
-       "anchor": "例-1.1.10"
-      },
-      {
-       "type": "例",
-       "number": "1.1.11",
-       "title": "",
-       "page": 6,
-       "html": "<p>设 $(X,d)$ 是度量空间，在 $X$ 上还可以定义新的度量$$d'(x,y)=\\frac{d(x,y)}{1+d(x,y)},\\qquad d''(x,y)=\\ln\\big(1+d(x,y)\\big),\\quad \\forall x,y\\in X.$$它们是不同的度量，但容易验证，对于空间 $X$ 中的点列 $\\{x_n\\}$，$$\\lim_{n\\to\\infty}x_n\\stackrel{d}{=}x_0\\iff\\lim_{n\\to\\infty}x_n\\stackrel{d'}{=}x_0\\iff\\lim_{n\\to\\infty}x_n\\stackrel{d''}{=}x_0.$$即三个度量给出相同的收敛性。</p>",
-       "anchor": "例-1.1.11"
-      },
-      {
-       "type": "例",
-       "number": "1.1.12",
-       "title": "",
-       "page": 6,
-       "html": "<p>对于有限区间 $[a,b]$，记 $\\mathfrak{G}=\\{[a,b]\\text{ 上几乎处处有限的 Lebesgue 可测函数}\\}$。$\\mathfrak{G}$ 中两个函数 $f,g$ 是等价的，是指它们满足 $f\\stackrel{m}{=}g$。仍以 $f$ 表示 Lebesgue 可测函数 $f$ 在 $\\mathcal{S}=\\mathfrak{G}/\\sim$ 中对应的等价类。对于 $f,g\\in\\mathcal{S}$，定义$$d(f,g)=\\int_{[a,b]}\\frac{|f(t)-g(t)|}{1+|f(t)-g(t)|}\\,\\mathrm{d}m(t).$$容易验证这是一个度量，并且 $[a,b]$ 上可测函数列的依测度收敛等价于 $\\mathcal{S}$ 中按照度量 $d$ 的收敛；此外，度量空间 $(\\mathcal{S},d)$ 是完备的。</p>",
-       "anchor": "例-1.1.12"
-      },
-      {
-       "type": "例",
-       "number": "1.1.13",
-       "title": "",
-       "page": 7,
-       "html": "<p>在空间$$\\mathbb{R}^{\\infty}=\\{x=(x_1,x_2,\\cdots,x_n,\\cdots):x_n\\in\\mathbb{R},\\ \\forall n\\in\\mathbb{N}_+\\}$$中，定义度量$$d(x,y)=\\sum_{n=1}^{\\infty}\\frac{1}{2^n}\\cdot\\frac{|x_n-y_n|}{1+|x_n-y_n|},$$那么 $(\\mathbb{R}^{\\infty},d)$ 是一个度量空间。并且 $(\\mathbb{R}^{\\infty},d)$ 中的点列 $\\{x^{(k)}\\}$ 收敛于 $\\{x^{(0)}\\}$ 等价于其按坐标收敛，即 $\\lim\\limits_{k\\to\\infty}x_n^{(k)}=x_n^{(0)}$（$n=1,2,\\cdots$）。从而 $(\\mathbb{R}^{\\infty},d)$ 是一个完备的度量空间。</p>",
-       "anchor": "例-1.1.13"
-      },
-      {
-       "type": "例",
-       "number": "1.1.14",
-       "title": "",
-       "page": 8,
-       "html": "<p>设 $\\Omega$ 是复平面中的开集，记 $H(\\Omega)$ 为 $\\Omega$ 上全纯函数全体构成的集合。取 $\\Omega$ 中单调递增的紧集族 $K_n$，使得 $K_n$ 的内部 $U_n$ 满足 $\\bigcup_n U_n=\\Omega$。定义$$d(f,g)=\\sum_{n=0}^{\\infty}\\frac{1}{2^n}\\frac{\\max\\limits_{x\\in K_n}|f(x)-g(x)|}{1+\\max\\limits_{x\\in K_n}|f(x)-g(x)|}.$$则 $d$ 是一个度量，并且 $d(f_n,f)\\to 0$ 当且仅当 $f_n$ 内闭一致收敛于 $f$。</p>",
-       "anchor": "例-1.1.14"
-      },
-      {
-       "type": "命题",
-       "number": "1.1.1",
-       "title": "",
-       "page": 8,
-       "html": "<p>在度量空间 $(X,d)$ 中，收敛点列 $\\{x_n\\}$ 的极限是唯一的。</p><p>这一性质给出了可测函数列依测度收敛、序列按坐标收敛以及解析函数列内闭一致收敛的极限唯一性的统一处理。</p>",
-       "anchor": "命题-1.1.1"
+       "pages": "2–8",
+       "items": [
+        {
+         "type": "定义",
+         "number": "1.1.1",
+         "title": "度量空间",
+         "page": 2,
+         "html": "<p>设 $X$ 是一个非空集合，若对于 $X$ 中任意两个元素 $x,y$，都有一个实数 $d(x,y)$ 与它们对应，而且满足下面条件：</p><p>（i）（非负性与正定性）对任意 $x,y\\in X$，$d(x,y)\\geqslant 0$，并且 $d(x,y)=0$ 的充要条件是 $x=y$；</p><p>（ii）（对称性）对任意 $x,y\\in X$，$d(x,y)=d(y,x)$；</p><p>（iii）（三角不等式）对任意 $x,y,z\\in X$，$d(x,y)\\leqslant d(x,z)+d(z,y)$，</p><p>则称 $(X,d)$ 是一个<strong>度量空间</strong>（或距离空间），$d$ 为 $X$ 上的<strong>度量</strong>（或距离），$d(x,y)$ 为点 $x,y$ 之间的距离。</p>",
+         "anchor": "定义-1.1.1"
+        },
+        {
+         "type": "例",
+         "number": "1.1.1",
+         "title": "",
+         "page": 2,
+         "html": "<p>在直线 $\\mathbb{R}$ 上，定义$$d(x,y)=|x-y|,\\quad \\forall x,y\\in\\mathbb{R},$$则 $(\\mathbb{R},d)$ 是度量空间。</p>",
+         "anchor": "例-1.1.1"
+        },
+        {
+         "type": "例",
+         "number": "1.1.2",
+         "title": "",
+         "page": 2,
+         "html": "<p>在 $n$ 个有序实数组 $x=(x_1,x_2,\\cdots,x_n)$ 全体组成的集合 $X$ 中，定义$$d(x,y)=\\sqrt{\\sum_{i=1}^{n}(x_i-y_i)^2},$$则 $(X,d)$ 是度量空间，称为 $n$ 维 <strong>Euclid</strong>（欧几里得）空间，通常记为 $\\mathbb{R}^n$。</p>",
+         "anchor": "例-1.1.2"
+        },
+        {
+         "type": "例",
+         "number": "1.1.3",
+         "title": "",
+         "page": 2,
+         "html": "<p>固定 $p\\geqslant 1$。在 $n$ 个有序实数组构成的集合 $X$ 中，定义$$d_p(x,y)=\\left(\\sum_{i=1}^{n}|x_i-y_i|^p\\right)^{\\frac{1}{p}},\\tag{1.1}$$那么 $(X,d_p)$ 是度量空间，记为 $\\mathbb{R}_p^n$。</p>",
+         "anchor": "例-1.1.3"
+        },
+        {
+         "type": "定理",
+         "number": "",
+         "title": "Hölder 不等式",
+         "page": 3,
+         "html": "<p>设 $1&lt;p,q&lt;\\infty$，$\\dfrac{1}{p}+\\dfrac{1}{q}=1$。对于 Lebesgue 测度空间 $(\\mathbb{R}^n,\\mathrm{d}m)$ 中的可测集 $E$ 及其上的 Lebesgue 可测函数 $f,g$，若 $|f|^p,|g|^q$ 可积，则 $fg$ 可积且$$\\left|\\int_E f(t)g(t)\\,\\mathrm{d}m(t)\\right|\\leqslant\\left(\\int_E|f(t)|^p\\,\\mathrm{d}m(t)\\right)^{\\frac{1}{p}}\\left(\\int_E|g(t)|^q\\,\\mathrm{d}m(t)\\right)^{\\frac{1}{q}}.\\tag{1.4}$$等号成立当且仅当 $fg$ 几乎处处符号不变，且存在不全为零的常数 $a,b$ 使得 $a|f|^p$ 几乎处处等于 $b|g|^q$。</p>",
+         "anchor": "定理-Hölder-不等式"
+        },
+        {
+         "type": "定理",
+         "number": "",
+         "title": "Minkowski 不等式",
+         "page": 4,
+         "html": "<p>对 $p\\geqslant 1$，若 $E$ 上可测函数 $f,g$ 是 $p$ 次可积的，则$$\\left(\\int_E|f(t)+g(t)|^p\\,\\mathrm{d}m(t)\\right)^{\\frac{1}{p}}\\leqslant\\left(\\int_E|f(t)|^p\\,\\mathrm{d}m(t)\\right)^{\\frac{1}{p}}+\\left(\\int_E|g(t)|^p\\,\\mathrm{d}m(t)\\right)^{\\frac{1}{p}}.\\tag{1.6}$$等号成立当且仅当存在非负常数 $a,b$ 使得 $ag\\stackrel{m}{=}bf$（即 $ag$ 几乎处处等于 $bf$）。</p>",
+         "anchor": "定理-Minkowski-不等式"
+        },
+        {
+         "type": "例",
+         "number": "1.1.4",
+         "title": "",
+         "page": 4,
+         "html": "<p>在 $n$ 个有序实数组全体构成的集合 $X$ 中，令$$d_1(x,y)=\\sum_{i=1}^{n}|x_i-y_i|,$$则 $\\mathbb{R}_1^n=(X,d_1)$ 也是度量空间。</p>",
+         "anchor": "例-1.1.4"
+        },
+        {
+         "type": "例",
+         "number": "1.1.5",
+         "title": "",
+         "page": 4,
+         "html": "<p>在 $n$ 个有序实数组全体构成的集合 $X$ 中，令$$d_\\infty(x,y)=\\max_{1\\leqslant i\\leqslant n}|x_i-y_i|,$$则 $\\mathbb{R}_\\infty^n=(X,d_\\infty)$ 是度量空间。</p>",
+         "anchor": "例-1.1.5"
+        },
+        {
+         "type": "例",
+         "number": "1.1.6",
+         "title": "",
+         "page": 4,
+         "html": "<p>在闭区间 $[a,b]$ 上的一切连续实（或复）值函数的集 $C[a,b]$ 中，定义$$d(f,g)=\\max_{a\\leqslant t\\leqslant b}|f(t)-g(t)|.\\tag{1.7}$$它是 $C[a,b]$ 上的度量。此空间在分析学中起着极为重要的作用。</p><p>同一个集合中可以引进不同的度量，得到不同的度量空间。</p>",
+         "anchor": "例-1.1.6"
+        },
+        {
+         "type": "例",
+         "number": "1.1.7",
+         "title": "平凡的例子",
+         "page": 4,
+         "html": "<p>设 $X$ 是一个非空的集合，定义如下的度量：$$d_0(x,y)=\\begin{cases}0, &amp; x=y,\\\\ 1, &amp; x\\neq y.\\end{cases}$$则 $(X,d_0)$ 是度量空间。</p>",
+         "anchor": "例-1.1.7"
+        },
+        {
+         "type": "定义",
+         "number": "",
+         "title": "子空间与乘积度量",
+         "page": 5,
+         "html": "<p>设 $(X,d)$ 是度量空间，$A$ 是 $X$ 的非空子集。若对于 $A$ 中的任意两点 $x,y\\in A$，规定$$d_A(x,y)=d(x,y),$$则 $(A,d_A)$ 是度量空间，称为 $(X,d)$ 的一个<strong>子空间</strong>。</p><p>设 $(X_1,d_1),(X_2,d_2)$ 是两个度量空间，乘积空间 $X=X_1\\times X_2=\\{(x_1,x_2):x_1\\in X_1,x_2\\in X_2\\}$ 上可以用以下三个式子之一来定义度量：$$d_2\\big((x_1,x_2),(y_1,y_2)\\big)=\\sqrt{d_1^2(x_1,y_1)+d_2^2(x_2,y_2)},$$$$d_1\\big((x_1,x_2),(y_1,y_2)\\big)=d_1(x_1,y_1)+d_2(x_2,y_2),$$$$d_\\infty\\big((x_1,x_2),(y_1,y_2)\\big)=\\max\\{d_1(x_1,y_1),d_2(x_2,y_2)\\}.$$</p>",
+         "anchor": "定义-子空间与乘积度量"
+        },
+        {
+         "type": "定义",
+         "number": "1.1.2",
+         "title": "极限",
+         "page": 5,
+         "html": "<p>设 $(X,d)$ 是度量空间，$\\{x_n\\}_{n=1}^{\\infty}$ 是 $X$ 中点列，$x_0\\in X$，若$$\\lim_{n\\to\\infty}d(x_n,x_0)=0,$$则称点列 $\\{x_n\\}_{n=1}^{\\infty}$ <strong>按照度量 $d$ 收敛于</strong> $x_0$，记为 $\\lim\\limits_{n\\to\\infty}x_n=x_0$。</p>",
+         "anchor": "定义-1.1.2"
+        },
+        {
+         "type": "定义",
+         "number": "",
+         "title": "基本点列与完备性",
+         "page": 5,
+         "html": "<p>对于度量空间 $(X,d)$ 中的点列 $\\{x_n\\}_{n=1}^{\\infty}$，如果对于任何正数 $\\varepsilon$，存在正整数 $N$，使得当 $n,m\\geqslant N$ 时$$d(x_n,x_m)&lt;\\varepsilon,$$就称 $\\{x_n\\}_{n=1}^{\\infty}$ 是 $X$ 中的<strong>基本点列</strong>，或者称为 <strong>Cauchy（柯西）点列</strong>。显然收敛点列必然是基本点列。</p><p>如果 $X$ 中任何基本点列都收敛于 $X$ 中的点，就称 $(X,d)$ 为<strong>完备的</strong>度量空间。</p>",
+         "anchor": "定义-基本点列与完备性"
+        },
+        {
+         "type": "例",
+         "number": "1.1.8",
+         "title": "",
+         "page": 5,
+         "html": "<p>例 1.1.1 中的度量空间 $(\\mathbb{R},d)$ 的完备性即为实数理论中的 Cauchy 收敛原理。</p>",
+         "anchor": "例-1.1.8"
+        },
+        {
+         "type": "例",
+         "number": "1.1.9",
+         "title": "",
+         "page": 5,
+         "html": "<p>考虑例 1.1.2、例 1.1.4 及例 1.1.5，在 $n$ 个有序实数组全体构成的集合 $X$ 中，点列 $\\{x^{(k)}\\}$ 按度量 $d,d_1$ 或 $d_\\infty$ 收敛于 $x^{(0)}$ 都等价于 $\\{x^{(k)}\\}$ 按坐标收敛于 $x^{(0)}$，即每个分量 $\\{x_i^{(k)}\\}$ 收敛于 $x_i^{(0)}$（$i=1,2,\\cdots,n$）。同时，点列 $\\{x^{(k)}\\}$ 按度量 $d,d_1$ 或 $d_\\infty$ 是 Cauchy 收敛的，等价于每个分量 $\\{x_i^{(k)}\\}$ 是 $\\mathbb{R}$ 中的 Cauchy 点列。故由例 1.1.8 知，$X$ 在度量 $d,d_1$ 或 $d_\\infty$ 下均是完备的。</p>",
+         "anchor": "例-1.1.9"
+        },
+        {
+         "type": "例",
+         "number": "1.1.10",
+         "title": "",
+         "page": 6,
+         "html": "<p>$C[a,b]$ 是完备的度量空间。</p><p>并且，$C[a,b]$ 中点列按度量 $d$ 收敛等价于区间 $[a,b]$ 上的函数列一致收敛。</p>",
+         "anchor": "例-1.1.10"
+        },
+        {
+         "type": "例",
+         "number": "1.1.11",
+         "title": "",
+         "page": 6,
+         "html": "<p>设 $(X,d)$ 是度量空间，在 $X$ 上还可以定义新的度量$$d'(x,y)=\\frac{d(x,y)}{1+d(x,y)},\\qquad d''(x,y)=\\ln\\big(1+d(x,y)\\big),\\quad \\forall x,y\\in X.$$它们是不同的度量，但容易验证，对于空间 $X$ 中的点列 $\\{x_n\\}$，$$\\lim_{n\\to\\infty}x_n\\stackrel{d}{=}x_0\\iff\\lim_{n\\to\\infty}x_n\\stackrel{d'}{=}x_0\\iff\\lim_{n\\to\\infty}x_n\\stackrel{d''}{=}x_0.$$即三个度量给出相同的收敛性。</p>",
+         "anchor": "例-1.1.11"
+        },
+        {
+         "type": "例",
+         "number": "1.1.12",
+         "title": "",
+         "page": 6,
+         "html": "<p>对于有限区间 $[a,b]$，记 $\\mathfrak{G}=\\{[a,b]\\text{ 上几乎处处有限的 Lebesgue 可测函数}\\}$。$\\mathfrak{G}$ 中两个函数 $f,g$ 是等价的，是指它们满足 $f\\stackrel{m}{=}g$。仍以 $f$ 表示 Lebesgue 可测函数 $f$ 在 $\\mathcal{S}=\\mathfrak{G}/\\sim$ 中对应的等价类。对于 $f,g\\in\\mathcal{S}$，定义$$d(f,g)=\\int_{[a,b]}\\frac{|f(t)-g(t)|}{1+|f(t)-g(t)|}\\,\\mathrm{d}m(t).$$容易验证这是一个度量，并且 $[a,b]$ 上可测函数列的依测度收敛等价于 $\\mathcal{S}$ 中按照度量 $d$ 的收敛；此外，度量空间 $(\\mathcal{S},d)$ 是完备的。</p>",
+         "anchor": "例-1.1.12"
+        },
+        {
+         "type": "例",
+         "number": "1.1.13",
+         "title": "",
+         "page": 7,
+         "html": "<p>在空间$$\\mathbb{R}^{\\infty}=\\{x=(x_1,x_2,\\cdots,x_n,\\cdots):x_n\\in\\mathbb{R},\\ \\forall n\\in\\mathbb{N}_+\\}$$中，定义度量$$d(x,y)=\\sum_{n=1}^{\\infty}\\frac{1}{2^n}\\cdot\\frac{|x_n-y_n|}{1+|x_n-y_n|},$$那么 $(\\mathbb{R}^{\\infty},d)$ 是一个度量空间。并且 $(\\mathbb{R}^{\\infty},d)$ 中的点列 $\\{x^{(k)}\\}$ 收敛于 $\\{x^{(0)}\\}$ 等价于其按坐标收敛，即 $\\lim\\limits_{k\\to\\infty}x_n^{(k)}=x_n^{(0)}$（$n=1,2,\\cdots$）。从而 $(\\mathbb{R}^{\\infty},d)$ 是一个完备的度量空间。</p>",
+         "anchor": "例-1.1.13"
+        },
+        {
+         "type": "例",
+         "number": "1.1.14",
+         "title": "",
+         "page": 8,
+         "html": "<p>设 $\\Omega$ 是复平面中的开集，记 $H(\\Omega)$ 为 $\\Omega$ 上全纯函数全体构成的集合。取 $\\Omega$ 中单调递增的紧集族 $K_n$，使得 $K_n$ 的内部 $U_n$ 满足 $\\bigcup_n U_n=\\Omega$。定义$$d(f,g)=\\sum_{n=0}^{\\infty}\\frac{1}{2^n}\\frac{\\max\\limits_{x\\in K_n}|f(x)-g(x)|}{1+\\max\\limits_{x\\in K_n}|f(x)-g(x)|}.$$则 $d$ 是一个度量，并且 $d(f_n,f)\\to 0$ 当且仅当 $f_n$ 内闭一致收敛于 $f$。</p>",
+         "anchor": "例-1.1.14"
+        },
+        {
+         "type": "命题",
+         "number": "1.1.1",
+         "title": "",
+         "page": 8,
+         "html": "<p>在度量空间 $(X,d)$ 中，收敛点列 $\\{x_n\\}$ 的极限是唯一的。</p><p>这一性质给出了可测函数列依测度收敛、序列按坐标收敛以及解析函数列内闭一致收敛的极限唯一性的统一处理。</p>",
+         "anchor": "命题-1.1.1"
+        }
+       ]
       }
      ]
     }
-   ]
+   ],
+   "empty": false
+  },
+  {
+   "id": "shibian",
+   "title": "实变函数（2023）",
+   "author": "待确认",
+   "source": "实变函数2023版.pdf",
+   "order": 2,
+   "chapters": [],
+   "empty": true
   }
  ],
  "count": 21

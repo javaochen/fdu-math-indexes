@@ -1,18 +1,32 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""把 content/*.md 解析成 site/data/index.json。
+"""把 content/<书>/*.md 解析成 site/data/index.json（支持多本书）。
 
-条目格式（行首 ###）：
+目录约定：
 
-    ### 定理 1.3.5 (投影定理) @29
-    ### 例 1.1.1 @2
-    ### 定理 (Hölder 不等式) @3
+    content/
+      fanyan/
+        _book.md            # 书级元数据（front matter）
+        01-01-度量空间.md    # 每节一个文件
+      shibian/
+        _book.md
+        01-01-势.md
 
-即：类型 [编号] [(标题)] @书页码。
-正文到下一个 ### 或文件尾；正文中空行分段，段内被硬换行拆开的行会合并。
+_book.md：
+
+    ---
+    id: fanyan
+    title: 泛函分析
+    author: 王凯
+    source: 泛函王凯.pdf
+    order: 1
+    ---
+
+节文件 front matter：chapter / chapter_title / section / section_title / pages。
+条目头：### 类型 [编号] [(标题)] @书页码。
 
 用法：
-    python tools/build.py            # 生成 site/data/index.json
+    python tools/build.py
 """
 from __future__ import annotations
 
@@ -25,8 +39,11 @@ ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 OUT = ROOT / "site" / "data" / "index.json"
 
-TYPE_RE = re.compile(r"^###\s+(?P<type>\S+?)\s*(?P<number>\d+(?:\.\d+)*)?\s*(?:[（(](?P<title>[^（()）]*)[）)])?\s*@(?P<page>\d+)\s*$")
+TYPE_RE = re.compile(
+    r"^###\s+(?P<type>\S+?)\s*(?P<number>\d+(?:\.\d+)*)?\s*(?:[（(](?P<title>[^（()）]*)[）)])?\s*@(?P<page>\d+)\s*$"
+)
 TYPES = {"定义", "定理", "命题", "引理", "推论", "例", "反例", "注", "构造"}
+BIG_NUM = {"一": 1, "二": 2, "三": 3, "四": 4, "五": 5, "六": 6, "七": 7, "八": 8, "九": 9, "十": 10}
 
 
 def parse_front(text: str) -> tuple[dict, str]:
@@ -38,8 +55,7 @@ def parse_front(text: str) -> tuple[dict, str]:
         if not line.strip() or line.lstrip().startswith("#"):
             continue
         k, _, v = line.partition(":")
-        v = v.strip().strip('"').strip("'")
-        meta[k.strip()] = v
+        meta[k.strip()] = v.strip().strip('"').strip("'")
     return meta, body
 
 
@@ -70,8 +86,7 @@ def to_paragraphs(body: str) -> list[str]:
 
 def slugify(item: dict) -> str:
     base = f"{item['type']}-{item['number']}" if item["number"] else f"{item['type']}-{item['title'] or 'x'}"
-    base = re.sub(r"[^\w\u4e00-\u9fff.-]+", "-", base).strip("-")
-    return base
+    return re.sub(r"[^\w\u4e00-\u9fff.-]+", "-", base).strip("-")
 
 
 def check_math(text: str, where: str, problems: list[str]) -> None:
@@ -82,22 +97,39 @@ def check_math(text: str, where: str, problems: list[str]) -> None:
         problems.append(f"{where}: 行内公式 $ 不成对")
 
 
-def main() -> int:
-    files = sorted(CONTENT.glob("*.md"))
+def sort_key(section_id: str) -> list[int]:
+    return [int(x) for x in re.findall(r"\d+", section_id)] or [0]
+
+
+def load_book(book_dir: Path, problems: list[str]) -> dict | None:
+    meta_path = book_dir / "_book.md"
+    if meta_path.exists():
+        meta, _ = parse_front(meta_path.read_text(encoding="utf-8"))
+    else:
+        meta = {}
+    book = {
+        "id": meta.get("id") or book_dir.name,
+        "title": meta.get("title") or book_dir.name,
+        "author": meta.get("author", ""),
+        "source": meta.get("source", ""),
+        "order": int(meta.get("order") or 99),
+        "chapters": [],
+    }
+
+    files = [p for p in sorted(book_dir.glob("*.md")) if not p.name.startswith("_")]
     if not files:
-        print("content/ 下没有 .md 文件", file=sys.stderr)
-        return 1
+        print(f"注意 {book['id']}：还没有节文件，将在站点中显示为“待录入”")
+        book["empty"] = True
+        return book
 
     chapters: dict[str, dict] = {}
-    problems: list[str] = []
-    seen_ids: dict[str, str] = {}
-    total = 0
-
     for path in files:
-        meta, body = parse_front(path.read_text(encoding="utf-8"))
-        ch_no = meta.get("chapter", "?")
-        sec_id = meta.get("section", path.stem)
-        ch = chapters.setdefault(ch_no, {"no": ch_no, "title": meta.get("chapter_title", ""), "sections": []})
+        fm, body = parse_front(path.read_text(encoding="utf-8"))
+        ch_no = fm.get("chapter", "?")
+        sec_id = fm.get("section", path.stem)
+        ch = chapters.setdefault(
+            ch_no, {"no": ch_no, "title": fm.get("chapter_title", ""), "sections": []}
+        )
 
         lines = body.split("\n")
         heads = [(i, m) for i, l in enumerate(lines) if (m := TYPE_RE.match(l))]
@@ -107,11 +139,10 @@ def main() -> int:
 
         section = {
             "id": sec_id,
-            "title": meta.get("section_title", ""),
-            "pages": meta.get("pages", ""),
+            "title": fm.get("section_title", ""),
+            "pages": fm.get("pages", ""),
             "items": [],
         }
-
         for n, (idx, m) in enumerate(heads):
             end = heads[n + 1][0] if n + 1 < len(heads) else len(lines)
             body_txt = "\n".join(lines[idx + 1:end])
@@ -129,28 +160,62 @@ def main() -> int:
                 problems.append(f"{path.name}: {typ} {item['number'] or item['title']} 正文为空")
             item["html"] = html
             item["anchor"] = slugify(item)
-            if item["anchor"] in seen_ids:
-                problems.append(f"重复锚点 {item['anchor']}（{seen_ids[item['anchor']]} 与 {path.name}）")
-            seen_ids[item["anchor"]] = path.name
             check_math(html, f"{path.name} {typ} {item['number'] or item['title']}", problems)
             section["items"].append(item)
-            total += 1
 
         ch["sections"].append(section)
 
+    book["chapters"] = [
+        {**c, "sections": sorted(c["sections"], key=lambda s: sort_key(s["id"]))}
+        for c in sorted(
+            chapters.values(),
+            key=lambda c: (BIG_NUM.get(str(c["no"]), 0), int(c["no"]) if str(c["no"]).isdigit() else 99),
+        )
+    ]
+    book["empty"] = not book["chapters"]
+    return book
+
+
+def main() -> int:
+    if not CONTENT.is_dir():
+        print("没有 content/ 目录", file=sys.stderr)
+        return 1
+
+    problems: list[str] = []
+    books: list[dict] = []
+    for d in sorted(CONTENT.iterdir()):
+        if not d.is_dir():
+            continue
+        b = load_book(d, problems)
+        if b:
+            books.append(b)
+    books.sort(key=lambda b: (b["order"], b["title"]))
+
+    seen: dict[str, str] = {}
+    total = 0
+    for b in books:
+        for ch in b["chapters"]:
+            for s in ch["sections"]:
+                for it in s["items"]:
+                    key = f"{b['id']}/{it['anchor']}"
+                    if key in seen:
+                        problems.append(f"重复锚点 {key}（{seen[key]}）")
+                    seen[key] = s["id"]
+                    total += 1
+
     data = {
-        "book": {"title": "泛函分析", "author": "王凯"},
-        "chapters": [
-            {**ch, "sections": sorted(ch["sections"], key=lambda s: [int(x) for x in re.findall(r"\d+", s["id"])] or [0])}
-            for ch in sorted(chapters.values(), key=lambda c: int(c["no"]) if str(c["no"]).isdigit() else 99)
-        ],
+        "site": {"title": "数学命题索引", "subtitle": "教材命题 · 只含陈述，便于自测"},
+        "books": books,
         "count": total,
     }
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
 
-    print(f"条目 {total} 个 → {OUT.relative_to(ROOT)}")
+    print(f"书 {len(books)} 本，条目 {total} 个 → {OUT.relative_to(ROOT)}")
+    for b in books:
+        n = sum(len(s["items"]) for c in b["chapters"] for s in c["sections"])
+        print(f"  {b['id']:10s} {b['title']}  {n} 条 / {len(b['chapters'])} 章")
     if problems:
         print(f"\n发现问题 {len(problems)} 处：")
         for p in problems:
