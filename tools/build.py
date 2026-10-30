@@ -159,6 +159,8 @@ def load_book(book_dir: Path, problems: list[str]) -> dict | None:
             if not html:
                 problems.append(f"{path.name}: {typ} {item['number'] or item['title']} 正文为空")
             item["html"] = html
+            # 原始 Markdown 源码，供页面切换查看/复制
+            item["src"] = "\n\n".join(to_paragraphs(body_txt))
             item["anchor"] = slugify(item)
             check_math(html, f"{path.name} {typ} {item['number'] or item['title']}", problems)
             section["items"].append(item)

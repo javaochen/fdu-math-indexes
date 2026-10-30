@@ -7,6 +7,9 @@
   let DATA = null;
   let BOOKS = [];              // 每本：{...book, sections: [...]}
   let INDEX = new Map();       // "bookId/anchor" -> {item, section, book}
+  let SRC = new Map();         // "bookId/anchor" -> 原始 Markdown 源码
+  const srcSet = new Set();    // 单条切换为源码的 key
+  let srcAll = false;          // 整页切换为源码
   let mode = "read";
   let currentBook = null;
   let current = null;          // 当前节
@@ -17,6 +20,30 @@
   const stripTags = (h) => h.replace(/<[^>]+>/g, " ").replace(/&[a-z]+;/g, " ");
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const bookItems = (b) => b.sections.flatMap((s) => s.items);
+
+  function copyText(text, btn) {
+    const done = () => {
+      const old = btn.textContent;
+      btn.textContent = "已复制";
+      btn.classList.add("copied");
+      setTimeout(() => { btn.textContent = old; btn.classList.remove("copied"); }, 1400);
+    };
+    const fallback = () => {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); done(); } catch (_) { /* 忽略 */ }
+      ta.remove();
+    };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(done).catch(fallback);
+    } else {
+      fallback();
+    }
+  }
 
   function typeset(el) {
     if (!window.renderMathInElement) return;
@@ -43,7 +70,10 @@
         for (const s of ch.sections) {
           const sec = { ...s, chapter: ch.no, chapterTitle: ch.title, book: b };
           sections.push(sec);
-          for (const it of sec.items) INDEX.set(`${b.id}/${it.anchor}`, { item: it, section: sec, book: b });
+          for (const it of sec.items) {
+            INDEX.set(`${b.id}/${it.anchor}`, { item: it, section: sec, book: b });
+            SRC.set(`${b.id}/${it.anchor}`, it.src || "");
+          }
         }
       }
       return { ...b, sections };
@@ -93,21 +123,45 @@
   }
 
   /* ---------------- 条目渲染 ---------------- */
+  function srcBlock(key) {
+    return `<div class="srcwrap"><button class="copy-btn" type="button" data-copy="${esc(key)}">复制</button><pre class="src">${esc(SRC.get(key) || "")}</pre></div>`;
+  }
+
   function itemHtml(it, opts = {}) {
+    const key = `${it.bookId || ""}/${it.anchor}`;
+    const showSrc = srcAll || srcSet.has(key);
     const head = `
       <div class="item-head">
         <span class="badge">${esc(it.type)}</span>
         ${it.number ? `<span class="num">${esc(it.number)}</span>` : ""}
         ${it.title ? `<span class="title">${esc(it.title)}</span>` : ""}
-        <span class="head-right">${opts.src ? `<span class="sr-src">${esc(opts.src)}</span>` : ""}<span class="pageref">p.${it.page}</span></span>
+        <span class="head-right">${opts.label ? `<span class="sr-src">${esc(opts.label)}</span>` : ""}<span class="pageref">p.${it.page}</span><button
+          class="src-toggle" type="button" data-src-toggle="${esc(key)}"
+          title="在渲染结果与 Markdown/LaTeX 源码之间切换">${showSrc ? "渲染" : "源码"}</button></span>
       </div>`;
+    const inner = showSrc ? srcBlock(key) : it.html;
     const hide = opts.hidden && !!it.title;
     const body = hide
-      ? `<div class="stmt hidden-stmt">${it.html}</div>
+      ? `<div class="stmt hidden-stmt">${inner}</div>
          <div class="reveal">点击或按 <kbd>空格</kbd> 显示陈述</div>`
-      : `<div class="stmt">${it.html}</div>`;
+      : `<div class="stmt">${inner}</div>`;
     return `<article class="item${hide ? "" : " revealed"}"
-      data-type="${esc(it.type)}" data-anchor="${esc(it.anchor)}" id="i-${esc(it.bookId || "")}${esc(it.anchor)}">${head}${body}</article>`;
+      data-type="${esc(it.type)}" data-anchor="${esc(it.anchor)}" data-key="${esc(key)}"
+      id="i-${esc(it.bookId || "")}${esc(it.anchor)}">${head}${body}</article>`;
+  }
+
+  function paintCard(card) {
+    if (!card) return;
+    const key = card.dataset.key;
+    const rec = INDEX.get(key);
+    if (!rec) return;
+    const show = srcAll || srcSet.has(key);
+    const stmt = card.querySelector(".stmt");
+    if (!stmt) return;
+    stmt.innerHTML = show ? srcBlock(key) : rec.item.html;
+    if (!show) typeset(stmt);
+    const btn = card.querySelector("[data-src-toggle]");
+    if (btn) btn.textContent = show ? "渲染" : "源码";
   }
 
   function renderSection(s) {
@@ -177,7 +231,7 @@
       <div class="sec-head"><h1>搜索</h1>
         <div class="meta"><span>“${esc(q)}” 命中 ${hits.length} 条${hits.length > shown.length ? `，显示前 ${shown.length} 条` : ""}</span></div>
       </div>` +
-      (shown.map(({ it, s, b }) => itemHtml({ ...it, bookId: b.id }, { src: `${b.title} ${s.id}` })).join("") ||
+      (shown.map(({ it, s, b }) => itemHtml({ ...it, bookId: b.id }, { label: `${b.title} ${s.id}` })).join("") ||
         `<div class="empty">没有匹配的条目。</div>`);
     typeset($("#view"));
     $("#crumbs").innerHTML = `<b>搜索</b> “${esc(q)}”`;
@@ -220,6 +274,21 @@
 
   /* ---------------- 交互 ---------------- */
   document.addEventListener("click", (e) => {
+    const srcBtn = e.target.closest("[data-src-toggle]");
+    if (srcBtn) {
+      const key = srcBtn.dataset.srcToggle;
+      if (srcSet.has(key)) srcSet.delete(key);
+      else srcSet.add(key);
+      paintCard(srcBtn.closest(".item"));
+      return;
+    }
+
+    const copyBtn = e.target.closest("[data-copy]");
+    if (copyBtn) {
+      copyText(SRC.get(copyBtn.dataset.copy) || "", copyBtn);
+      return;
+    }
+
     const bookBtn = e.target.closest(".book-btn");
     if (bookBtn) {
       const b = BOOKS.find((x) => x.id === bookBtn.dataset.book);
@@ -275,6 +344,7 @@
     }
     if (e.key === "Escape") { $("#modal").hidden = true; return; }
     if (e.key === "/") { e.preventDefault(); searchEl.focus(); return; }
+    if (e.key === "s") { e.preventDefault(); setSrcAll(!srcAll); return; }
     if (e.key === "r") {
       mode = "random";
       document.querySelectorAll(".mode[data-mode]").forEach((x) => x.classList.toggle("active", x.dataset.mode === "random"));
@@ -296,6 +366,20 @@
     }
   });
 
+  const srcBtn = $("#src-btn");
+  function setSrcAll(v) {
+    srcAll = v;
+    srcBtn.classList.toggle("active", v);
+    document.querySelectorAll(".item").forEach(paintCard);
+    try {
+      const u = new URL(location.href);
+      if (v) u.searchParams.set("src", "1");
+      else u.searchParams.delete("src");
+      history.replaceState(null, "", u);
+    } catch (_) { /* file:// 等场景忽略 */ }
+  }
+  srcBtn.addEventListener("click", () => setSrcAll(!srcAll));
+
   $("#about-btn").addEventListener("click", () => { $("#modal").hidden = false; });
   $("#modal-close").addEventListener("click", () => { $("#modal").hidden = true; });
   $("#modal").addEventListener("click", (e) => { if (e.target.id === "modal") $("#modal").hidden = true; });
@@ -307,11 +391,13 @@
   /* ---------------- 启动 ---------------- */
   load()
     .then(() => {
-      const qm = new URLSearchParams(location.search).get("mode");
+      const qs = new URLSearchParams(location.search);
+      const qm = qs.get("mode");
       if (["read", "test", "random"].includes(qm)) mode = qm;
       document.querySelectorAll(".mode[data-mode]").forEach((x) =>
         x.classList.toggle("active", x.dataset.mode === mode));
-      const qb = new URLSearchParams(location.search).get("book");
+      if (qs.get("src") === "1") setSrcAll(true);
+      const qb = qs.get("book");
       if (qb) { const b = BOOKS.find((x) => x.id === qb); if (b) currentBook = b; }
       route();
     })

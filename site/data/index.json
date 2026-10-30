@@ -26,6 +26,7 @@
          "title": "度量空间",
          "page": 2,
          "html": "<p>设 $X$ 是一个非空集合，若对于 $X$ 中任意两个元素 $x,y$，都有一个实数 $d(x,y)$ 与它们对应，而且满足下面条件：</p><p>（i）（非负性与正定性）对任意 $x,y\\in X$，$d(x,y)\\geqslant 0$，并且 $d(x,y)=0$ 的充要条件是 $x=y$；</p><p>（ii）（对称性）对任意 $x,y\\in X$，$d(x,y)=d(y,x)$；</p><p>（iii）（三角不等式）对任意 $x,y,z\\in X$，$d(x,y)\\leqslant d(x,z)+d(z,y)$，</p><p>则称 $(X,d)$ 是一个<strong>度量空间</strong>（或距离空间），$d$ 为 $X$ 上的<strong>度量</strong>（或距离），$d(x,y)$ 为点 $x,y$ 之间的距离。</p>",
+         "src": "设 $X$ 是一个非空集合，若对于 $X$ 中任意两个元素 $x,y$，都有一个实数 $d(x,y)$ 与它们对应，而且满足下面条件：\n\n（i）（非负性与正定性）对任意 $x,y\\in X$，$d(x,y)\\geqslant 0$，并且 $d(x,y)=0$ 的充要条件是 $x=y$；\n\n（ii）（对称性）对任意 $x,y\\in X$，$d(x,y)=d(y,x)$；\n\n（iii）（三角不等式）对任意 $x,y,z\\in X$，$d(x,y)\\leqslant d(x,z)+d(z,y)$，\n\n则称 $(X,d)$ 是一个**度量空间**（或距离空间），$d$ 为 $X$ 上的**度量**（或距离），$d(x,y)$ 为点 $x,y$ 之间的距离。",
          "anchor": "定义-1.1.1"
         },
         {
@@ -34,6 +35,7 @@
          "title": "",
          "page": 2,
          "html": "<p>在直线 $\\mathbb{R}$ 上，定义$$d(x,y)=|x-y|,\\quad \\forall x,y\\in\\mathbb{R},$$则 $(\\mathbb{R},d)$ 是度量空间。</p>",
+         "src": "在直线 $\\mathbb{R}$ 上，定义$$d(x,y)=|x-y|,\\quad \\forall x,y\\in\\mathbb{R},$$则 $(\\mathbb{R},d)$ 是度量空间。",
          "anchor": "例-1.1.1"
         },
         {
@@ -42,6 +44,7 @@
          "title": "",
          "page": 2,
          "html": "<p>在 $n$ 个有序实数组 $x=(x_1,x_2,\\cdots,x_n)$ 全体组成的集合 $X$ 中，定义$$d(x,y)=\\sqrt{\\sum_{i=1}^{n}(x_i-y_i)^2},$$则 $(X,d)$ 是度量空间，称为 $n$ 维 <strong>Euclid</strong>（欧几里得）空间，通常记为 $\\mathbb{R}^n$。</p>",
+         "src": "在 $n$ 个有序实数组 $x=(x_1,x_2,\\cdots,x_n)$ 全体组成的集合 $X$ 中，定义$$d(x,y)=\\sqrt{\\sum_{i=1}^{n}(x_i-y_i)^2},$$则 $(X,d)$ 是度量空间，称为 $n$ 维 **Euclid**（欧几里得）空间，通常记为 $\\mathbb{R}^n$。",
          "anchor": "例-1.1.2"
         },
         {
@@ -50,6 +53,7 @@
          "title": "",
          "page": 2,
          "html": "<p>固定 $p\\geqslant 1$。在 $n$ 个有序实数组构成的集合 $X$ 中，定义$$d_p(x,y)=\\left(\\sum_{i=1}^{n}|x_i-y_i|^p\\right)^{\\frac{1}{p}},\\tag{1.1}$$那么 $(X,d_p)$ 是度量空间，记为 $\\mathbb{R}_p^n$。</p>",
+         "src": "固定 $p\\geqslant 1$。在 $n$ 个有序实数组构成的集合 $X$ 中，定义$$d_p(x,y)=\\left(\\sum_{i=1}^{n}|x_i-y_i|^p\\right)^{\\frac{1}{p}},\\tag{1.1}$$那么 $(X,d_p)$ 是度量空间，记为 $\\mathbb{R}_p^n$。",
          "anchor": "例-1.1.3"
         },
         {
@@ -58,6 +62,7 @@
          "title": "Hölder 不等式",
          "page": 3,
          "html": "<p>设 $1&lt;p,q&lt;\\infty$，$\\dfrac{1}{p}+\\dfrac{1}{q}=1$。对于 Lebesgue 测度空间 $(\\mathbb{R}^n,\\mathrm{d}m)$ 中的可测集 $E$ 及其上的 Lebesgue 可测函数 $f,g$，若 $|f|^p,|g|^q$ 可积，则 $fg$ 可积且$$\\left|\\int_E f(t)g(t)\\,\\mathrm{d}m(t)\\right|\\leqslant\\left(\\int_E|f(t)|^p\\,\\mathrm{d}m(t)\\right)^{\\frac{1}{p}}\\left(\\int_E|g(t)|^q\\,\\mathrm{d}m(t)\\right)^{\\frac{1}{q}}.\\tag{1.4}$$等号成立当且仅当 $fg$ 几乎处处符号不变，且存在不全为零的常数 $a,b$ 使得 $a|f|^p$ 几乎处处等于 $b|g|^q$。</p>",
+         "src": "设 $1<p,q<\\infty$，$\\dfrac{1}{p}+\\dfrac{1}{q}=1$。对于 Lebesgue 测度空间 $(\\mathbb{R}^n,\\mathrm{d}m)$ 中的可测集 $E$ 及其上的 Lebesgue 可测函数 $f,g$，若 $|f|^p,|g|^q$ 可积，则 $fg$ 可积且$$\\left|\\int_E f(t)g(t)\\,\\mathrm{d}m(t)\\right|\\leqslant\\left(\\int_E|f(t)|^p\\,\\mathrm{d}m(t)\\right)^{\\frac{1}{p}}\\left(\\int_E|g(t)|^q\\,\\mathrm{d}m(t)\\right)^{\\frac{1}{q}}.\\tag{1.4}$$等号成立当且仅当 $fg$ 几乎处处符号不变，且存在不全为零的常数 $a,b$ 使得 $a|f|^p$ 几乎处处等于 $b|g|^q$。",
          "anchor": "定理-Hölder-不等式"
         },
         {
@@ -66,6 +71,7 @@
          "title": "Minkowski 不等式",
          "page": 4,
          "html": "<p>对 $p\\geqslant 1$，若 $E$ 上可测函数 $f,g$ 是 $p$ 次可积的，则$$\\left(\\int_E|f(t)+g(t)|^p\\,\\mathrm{d}m(t)\\right)^{\\frac{1}{p}}\\leqslant\\left(\\int_E|f(t)|^p\\,\\mathrm{d}m(t)\\right)^{\\frac{1}{p}}+\\left(\\int_E|g(t)|^p\\,\\mathrm{d}m(t)\\right)^{\\frac{1}{p}}.\\tag{1.6}$$等号成立当且仅当存在非负常数 $a,b$ 使得 $ag\\stackrel{m}{=}bf$（即 $ag$ 几乎处处等于 $bf$）。</p>",
+         "src": "对 $p\\geqslant 1$，若 $E$ 上可测函数 $f,g$ 是 $p$ 次可积的，则$$\\left(\\int_E|f(t)+g(t)|^p\\,\\mathrm{d}m(t)\\right)^{\\frac{1}{p}}\\leqslant\\left(\\int_E|f(t)|^p\\,\\mathrm{d}m(t)\\right)^{\\frac{1}{p}}+\\left(\\int_E|g(t)|^p\\,\\mathrm{d}m(t)\\right)^{\\frac{1}{p}}.\\tag{1.6}$$等号成立当且仅当存在非负常数 $a,b$ 使得 $ag\\stackrel{m}{=}bf$（即 $ag$ 几乎处处等于 $bf$）。",
          "anchor": "定理-Minkowski-不等式"
         },
         {
@@ -74,6 +80,7 @@
          "title": "",
          "page": 4,
          "html": "<p>在 $n$ 个有序实数组全体构成的集合 $X$ 中，令$$d_1(x,y)=\\sum_{i=1}^{n}|x_i-y_i|,$$则 $\\mathbb{R}_1^n=(X,d_1)$ 也是度量空间。</p>",
+         "src": "在 $n$ 个有序实数组全体构成的集合 $X$ 中，令$$d_1(x,y)=\\sum_{i=1}^{n}|x_i-y_i|,$$则 $\\mathbb{R}_1^n=(X,d_1)$ 也是度量空间。",
          "anchor": "例-1.1.4"
         },
         {
@@ -82,6 +89,7 @@
          "title": "",
          "page": 4,
          "html": "<p>在 $n$ 个有序实数组全体构成的集合 $X$ 中，令$$d_\\infty(x,y)=\\max_{1\\leqslant i\\leqslant n}|x_i-y_i|,$$则 $\\mathbb{R}_\\infty^n=(X,d_\\infty)$ 是度量空间。</p>",
+         "src": "在 $n$ 个有序实数组全体构成的集合 $X$ 中，令$$d_\\infty(x,y)=\\max_{1\\leqslant i\\leqslant n}|x_i-y_i|,$$则 $\\mathbb{R}_\\infty^n=(X,d_\\infty)$ 是度量空间。",
          "anchor": "例-1.1.5"
         },
         {
@@ -90,6 +98,7 @@
          "title": "",
          "page": 4,
          "html": "<p>在闭区间 $[a,b]$ 上的一切连续实（或复）值函数的集 $C[a,b]$ 中，定义$$d(f,g)=\\max_{a\\leqslant t\\leqslant b}|f(t)-g(t)|.\\tag{1.7}$$它是 $C[a,b]$ 上的度量。此空间在分析学中起着极为重要的作用。</p><p>同一个集合中可以引进不同的度量，得到不同的度量空间。</p>",
+         "src": "在闭区间 $[a,b]$ 上的一切连续实（或复）值函数的集 $C[a,b]$ 中，定义$$d(f,g)=\\max_{a\\leqslant t\\leqslant b}|f(t)-g(t)|.\\tag{1.7}$$它是 $C[a,b]$ 上的度量。此空间在分析学中起着极为重要的作用。\n\n同一个集合中可以引进不同的度量，得到不同的度量空间。",
          "anchor": "例-1.1.6"
         },
         {
@@ -98,6 +107,7 @@
          "title": "平凡的例子",
          "page": 4,
          "html": "<p>设 $X$ 是一个非空的集合，定义如下的度量：$$d_0(x,y)=\\begin{cases}0, &amp; x=y,\\\\ 1, &amp; x\\neq y.\\end{cases}$$则 $(X,d_0)$ 是度量空间。</p>",
+         "src": "设 $X$ 是一个非空的集合，定义如下的度量：$$d_0(x,y)=\\begin{cases}0, & x=y,\\\\ 1, & x\\neq y.\\end{cases}$$则 $(X,d_0)$ 是度量空间。",
          "anchor": "例-1.1.7"
         },
         {
@@ -106,6 +116,7 @@
          "title": "子空间与乘积度量",
          "page": 5,
          "html": "<p>设 $(X,d)$ 是度量空间，$A$ 是 $X$ 的非空子集。若对于 $A$ 中的任意两点 $x,y\\in A$，规定$$d_A(x,y)=d(x,y),$$则 $(A,d_A)$ 是度量空间，称为 $(X,d)$ 的一个<strong>子空间</strong>。</p><p>设 $(X_1,d_1),(X_2,d_2)$ 是两个度量空间，乘积空间 $X=X_1\\times X_2=\\{(x_1,x_2):x_1\\in X_1,x_2\\in X_2\\}$ 上可以用以下三个式子之一来定义度量：$$d_2\\big((x_1,x_2),(y_1,y_2)\\big)=\\sqrt{d_1^2(x_1,y_1)+d_2^2(x_2,y_2)},$$$$d_1\\big((x_1,x_2),(y_1,y_2)\\big)=d_1(x_1,y_1)+d_2(x_2,y_2),$$$$d_\\infty\\big((x_1,x_2),(y_1,y_2)\\big)=\\max\\{d_1(x_1,y_1),d_2(x_2,y_2)\\}.$$</p>",
+         "src": "设 $(X,d)$ 是度量空间，$A$ 是 $X$ 的非空子集。若对于 $A$ 中的任意两点 $x,y\\in A$，规定$$d_A(x,y)=d(x,y),$$则 $(A,d_A)$ 是度量空间，称为 $(X,d)$ 的一个**子空间**。\n\n设 $(X_1,d_1),(X_2,d_2)$ 是两个度量空间，乘积空间 $X=X_1\\times X_2=\\{(x_1,x_2):x_1\\in X_1,x_2\\in X_2\\}$ 上可以用以下三个式子之一来定义度量：$$d_2\\big((x_1,x_2),(y_1,y_2)\\big)=\\sqrt{d_1^2(x_1,y_1)+d_2^2(x_2,y_2)},$$$$d_1\\big((x_1,x_2),(y_1,y_2)\\big)=d_1(x_1,y_1)+d_2(x_2,y_2),$$$$d_\\infty\\big((x_1,x_2),(y_1,y_2)\\big)=\\max\\{d_1(x_1,y_1),d_2(x_2,y_2)\\}.$$",
          "anchor": "定义-子空间与乘积度量"
         },
         {
@@ -114,6 +125,7 @@
          "title": "极限",
          "page": 5,
          "html": "<p>设 $(X,d)$ 是度量空间，$\\{x_n\\}_{n=1}^{\\infty}$ 是 $X$ 中点列，$x_0\\in X$，若$$\\lim_{n\\to\\infty}d(x_n,x_0)=0,$$则称点列 $\\{x_n\\}_{n=1}^{\\infty}$ <strong>按照度量 $d$ 收敛于</strong> $x_0$，记为 $\\lim\\limits_{n\\to\\infty}x_n=x_0$。</p>",
+         "src": "设 $(X,d)$ 是度量空间，$\\{x_n\\}_{n=1}^{\\infty}$ 是 $X$ 中点列，$x_0\\in X$，若$$\\lim_{n\\to\\infty}d(x_n,x_0)=0,$$则称点列 $\\{x_n\\}_{n=1}^{\\infty}$ **按照度量 $d$ 收敛于** $x_0$，记为 $\\lim\\limits_{n\\to\\infty}x_n=x_0$。",
          "anchor": "定义-1.1.2"
         },
         {
@@ -122,6 +134,7 @@
          "title": "基本点列与完备性",
          "page": 5,
          "html": "<p>对于度量空间 $(X,d)$ 中的点列 $\\{x_n\\}_{n=1}^{\\infty}$，如果对于任何正数 $\\varepsilon$，存在正整数 $N$，使得当 $n,m\\geqslant N$ 时$$d(x_n,x_m)&lt;\\varepsilon,$$就称 $\\{x_n\\}_{n=1}^{\\infty}$ 是 $X$ 中的<strong>基本点列</strong>，或者称为 <strong>Cauchy（柯西）点列</strong>。显然收敛点列必然是基本点列。</p><p>如果 $X$ 中任何基本点列都收敛于 $X$ 中的点，就称 $(X,d)$ 为<strong>完备的</strong>度量空间。</p>",
+         "src": "对于度量空间 $(X,d)$ 中的点列 $\\{x_n\\}_{n=1}^{\\infty}$，如果对于任何正数 $\\varepsilon$，存在正整数 $N$，使得当 $n,m\\geqslant N$ 时$$d(x_n,x_m)<\\varepsilon,$$就称 $\\{x_n\\}_{n=1}^{\\infty}$ 是 $X$ 中的**基本点列**，或者称为 **Cauchy（柯西）点列**。显然收敛点列必然是基本点列。\n\n如果 $X$ 中任何基本点列都收敛于 $X$ 中的点，就称 $(X,d)$ 为**完备的**度量空间。",
          "anchor": "定义-基本点列与完备性"
         },
         {
@@ -130,6 +143,7 @@
          "title": "",
          "page": 5,
          "html": "<p>例 1.1.1 中的度量空间 $(\\mathbb{R},d)$ 的完备性即为实数理论中的 Cauchy 收敛原理。</p>",
+         "src": "例 1.1.1 中的度量空间 $(\\mathbb{R},d)$ 的完备性即为实数理论中的 Cauchy 收敛原理。",
          "anchor": "例-1.1.8"
         },
         {
@@ -138,6 +152,7 @@
          "title": "",
          "page": 5,
          "html": "<p>考虑例 1.1.2、例 1.1.4 及例 1.1.5，在 $n$ 个有序实数组全体构成的集合 $X$ 中，点列 $\\{x^{(k)}\\}$ 按度量 $d,d_1$ 或 $d_\\infty$ 收敛于 $x^{(0)}$ 都等价于 $\\{x^{(k)}\\}$ 按坐标收敛于 $x^{(0)}$，即每个分量 $\\{x_i^{(k)}\\}$ 收敛于 $x_i^{(0)}$（$i=1,2,\\cdots,n$）。同时，点列 $\\{x^{(k)}\\}$ 按度量 $d,d_1$ 或 $d_\\infty$ 是 Cauchy 收敛的，等价于每个分量 $\\{x_i^{(k)}\\}$ 是 $\\mathbb{R}$ 中的 Cauchy 点列。故由例 1.1.8 知，$X$ 在度量 $d,d_1$ 或 $d_\\infty$ 下均是完备的。</p>",
+         "src": "考虑例 1.1.2、例 1.1.4 及例 1.1.5，在 $n$ 个有序实数组全体构成的集合 $X$ 中，点列 $\\{x^{(k)}\\}$ 按度量 $d,d_1$ 或 $d_\\infty$ 收敛于 $x^{(0)}$ 都等价于 $\\{x^{(k)}\\}$ 按坐标收敛于 $x^{(0)}$，即每个分量 $\\{x_i^{(k)}\\}$ 收敛于 $x_i^{(0)}$（$i=1,2,\\cdots,n$）。同时，点列 $\\{x^{(k)}\\}$ 按度量 $d,d_1$ 或 $d_\\infty$ 是 Cauchy 收敛的，等价于每个分量 $\\{x_i^{(k)}\\}$ 是 $\\mathbb{R}$ 中的 Cauchy 点列。故由例 1.1.8 知，$X$ 在度量 $d,d_1$ 或 $d_\\infty$ 下均是完备的。",
          "anchor": "例-1.1.9"
         },
         {
@@ -146,6 +161,7 @@
          "title": "",
          "page": 6,
          "html": "<p>$C[a,b]$ 是完备的度量空间。</p><p>并且，$C[a,b]$ 中点列按度量 $d$ 收敛等价于区间 $[a,b]$ 上的函数列一致收敛。</p>",
+         "src": "$C[a,b]$ 是完备的度量空间。\n\n并且，$C[a,b]$ 中点列按度量 $d$ 收敛等价于区间 $[a,b]$ 上的函数列一致收敛。",
          "anchor": "例-1.1.10"
         },
         {
@@ -154,6 +170,7 @@
          "title": "",
          "page": 6,
          "html": "<p>设 $(X,d)$ 是度量空间，在 $X$ 上还可以定义新的度量$$d'(x,y)=\\frac{d(x,y)}{1+d(x,y)},\\qquad d''(x,y)=\\ln\\big(1+d(x,y)\\big),\\quad \\forall x,y\\in X.$$它们是不同的度量，但容易验证，对于空间 $X$ 中的点列 $\\{x_n\\}$，$$\\lim_{n\\to\\infty}x_n\\stackrel{d}{=}x_0\\iff\\lim_{n\\to\\infty}x_n\\stackrel{d'}{=}x_0\\iff\\lim_{n\\to\\infty}x_n\\stackrel{d''}{=}x_0.$$即三个度量给出相同的收敛性。</p>",
+         "src": "设 $(X,d)$ 是度量空间，在 $X$ 上还可以定义新的度量$$d'(x,y)=\\frac{d(x,y)}{1+d(x,y)},\\qquad d''(x,y)=\\ln\\big(1+d(x,y)\\big),\\quad \\forall x,y\\in X.$$它们是不同的度量，但容易验证，对于空间 $X$ 中的点列 $\\{x_n\\}$，$$\\lim_{n\\to\\infty}x_n\\stackrel{d}{=}x_0\\iff\\lim_{n\\to\\infty}x_n\\stackrel{d'}{=}x_0\\iff\\lim_{n\\to\\infty}x_n\\stackrel{d''}{=}x_0.$$即三个度量给出相同的收敛性。",
          "anchor": "例-1.1.11"
         },
         {
@@ -162,6 +179,7 @@
          "title": "",
          "page": 6,
          "html": "<p>对于有限区间 $[a,b]$，记 $\\mathfrak{G}=\\{[a,b]\\text{ 上几乎处处有限的 Lebesgue 可测函数}\\}$。$\\mathfrak{G}$ 中两个函数 $f,g$ 是等价的，是指它们满足 $f\\stackrel{m}{=}g$。仍以 $f$ 表示 Lebesgue 可测函数 $f$ 在 $\\mathcal{S}=\\mathfrak{G}/\\sim$ 中对应的等价类。对于 $f,g\\in\\mathcal{S}$，定义$$d(f,g)=\\int_{[a,b]}\\frac{|f(t)-g(t)|}{1+|f(t)-g(t)|}\\,\\mathrm{d}m(t).$$容易验证这是一个度量，并且 $[a,b]$ 上可测函数列的依测度收敛等价于 $\\mathcal{S}$ 中按照度量 $d$ 的收敛；此外，度量空间 $(\\mathcal{S},d)$ 是完备的。</p>",
+         "src": "对于有限区间 $[a,b]$，记 $\\mathfrak{G}=\\{[a,b]\\text{ 上几乎处处有限的 Lebesgue 可测函数}\\}$。$\\mathfrak{G}$ 中两个函数 $f,g$ 是等价的，是指它们满足 $f\\stackrel{m}{=}g$。仍以 $f$ 表示 Lebesgue 可测函数 $f$ 在 $\\mathcal{S}=\\mathfrak{G}/\\sim$ 中对应的等价类。对于 $f,g\\in\\mathcal{S}$，定义$$d(f,g)=\\int_{[a,b]}\\frac{|f(t)-g(t)|}{1+|f(t)-g(t)|}\\,\\mathrm{d}m(t).$$容易验证这是一个度量，并且 $[a,b]$ 上可测函数列的依测度收敛等价于 $\\mathcal{S}$ 中按照度量 $d$ 的收敛；此外，度量空间 $(\\mathcal{S},d)$ 是完备的。",
          "anchor": "例-1.1.12"
         },
         {
@@ -170,6 +188,7 @@
          "title": "",
          "page": 7,
          "html": "<p>在空间$$\\mathbb{R}^{\\infty}=\\{x=(x_1,x_2,\\cdots,x_n,\\cdots):x_n\\in\\mathbb{R},\\ \\forall n\\in\\mathbb{N}_+\\}$$中，定义度量$$d(x,y)=\\sum_{n=1}^{\\infty}\\frac{1}{2^n}\\cdot\\frac{|x_n-y_n|}{1+|x_n-y_n|},$$那么 $(\\mathbb{R}^{\\infty},d)$ 是一个度量空间。并且 $(\\mathbb{R}^{\\infty},d)$ 中的点列 $\\{x^{(k)}\\}$ 收敛于 $\\{x^{(0)}\\}$ 等价于其按坐标收敛，即 $\\lim\\limits_{k\\to\\infty}x_n^{(k)}=x_n^{(0)}$（$n=1,2,\\cdots$）。从而 $(\\mathbb{R}^{\\infty},d)$ 是一个完备的度量空间。</p>",
+         "src": "在空间$$\\mathbb{R}^{\\infty}=\\{x=(x_1,x_2,\\cdots,x_n,\\cdots):x_n\\in\\mathbb{R},\\ \\forall n\\in\\mathbb{N}_+\\}$$中，定义度量$$d(x,y)=\\sum_{n=1}^{\\infty}\\frac{1}{2^n}\\cdot\\frac{|x_n-y_n|}{1+|x_n-y_n|},$$那么 $(\\mathbb{R}^{\\infty},d)$ 是一个度量空间。并且 $(\\mathbb{R}^{\\infty},d)$ 中的点列 $\\{x^{(k)}\\}$ 收敛于 $\\{x^{(0)}\\}$ 等价于其按坐标收敛，即 $\\lim\\limits_{k\\to\\infty}x_n^{(k)}=x_n^{(0)}$（$n=1,2,\\cdots$）。从而 $(\\mathbb{R}^{\\infty},d)$ 是一个完备的度量空间。",
          "anchor": "例-1.1.13"
         },
         {
@@ -178,6 +197,7 @@
          "title": "",
          "page": 8,
          "html": "<p>设 $\\Omega$ 是复平面中的开集，记 $H(\\Omega)$ 为 $\\Omega$ 上全纯函数全体构成的集合。取 $\\Omega$ 中单调递增的紧集族 $K_n$，使得 $K_n$ 的内部 $U_n$ 满足 $\\bigcup_n U_n=\\Omega$。定义$$d(f,g)=\\sum_{n=0}^{\\infty}\\frac{1}{2^n}\\frac{\\max\\limits_{x\\in K_n}|f(x)-g(x)|}{1+\\max\\limits_{x\\in K_n}|f(x)-g(x)|}.$$则 $d$ 是一个度量，并且 $d(f_n,f)\\to 0$ 当且仅当 $f_n$ 内闭一致收敛于 $f$。</p>",
+         "src": "设 $\\Omega$ 是复平面中的开集，记 $H(\\Omega)$ 为 $\\Omega$ 上全纯函数全体构成的集合。取 $\\Omega$ 中单调递增的紧集族 $K_n$，使得 $K_n$ 的内部 $U_n$ 满足 $\\bigcup_n U_n=\\Omega$。定义$$d(f,g)=\\sum_{n=0}^{\\infty}\\frac{1}{2^n}\\frac{\\max\\limits_{x\\in K_n}|f(x)-g(x)|}{1+\\max\\limits_{x\\in K_n}|f(x)-g(x)|}.$$则 $d$ 是一个度量，并且 $d(f_n,f)\\to 0$ 当且仅当 $f_n$ 内闭一致收敛于 $f$。",
          "anchor": "例-1.1.14"
         },
         {
@@ -186,6 +206,7 @@
          "title": "",
          "page": 8,
          "html": "<p>在度量空间 $(X,d)$ 中，收敛点列 $\\{x_n\\}$ 的极限是唯一的。</p><p>这一性质给出了可测函数列依测度收敛、序列按坐标收敛以及解析函数列内闭一致收敛的极限唯一性的统一处理。</p>",
+         "src": "在度量空间 $(X,d)$ 中，收敛点列 $\\{x_n\\}$ 的极限是唯一的。\n\n这一性质给出了可测函数列依测度收敛、序列按坐标收敛以及解析函数列内闭一致收敛的极限唯一性的统一处理。",
          "anchor": "命题-1.1.1"
         }
        ]
@@ -201,6 +222,7 @@
          "title": "",
          "page": 10,
          "html": "<p>所有 $n$ 个有序实数组 $x=(x_1,x_2,\\cdots,x_n)$ 构成的集合是线性空间，其中加法与数乘运算按下列公式定义：$$(x_1,x_2,\\cdots,x_n)+(y_1,y_2,\\cdots,y_n)=(x_1+y_1,x_2+y_2,\\cdots,x_n+y_n),$$$$\\alpha(x_1,x_2,\\cdots,x_n)=(\\alpha x_1,\\alpha x_2,\\cdots,\\alpha x_n).$$这个空间记作 $\\mathbb{R}^n$。类似地，复线性空间 $\\mathbb{C}^n$ 定义为所有 $n$ 个有序复数组（具有复数数乘运算）构成的线性空间。</p>",
+         "src": "所有 $n$ 个有序实数组 $x=(x_1,x_2,\\cdots,x_n)$ 构成的集合是线性空间，其中加法与数乘运算按下列公式定义：$$(x_1,x_2,\\cdots,x_n)+(y_1,y_2,\\cdots,y_n)=(x_1+y_1,x_2+y_2,\\cdots,x_n+y_n),$$$$\\alpha(x_1,x_2,\\cdots,x_n)=(\\alpha x_1,\\alpha x_2,\\cdots,\\alpha x_n).$$这个空间记作 $\\mathbb{R}^n$。类似地，复线性空间 $\\mathbb{C}^n$ 定义为所有 $n$ 个有序复数组（具有复数数乘运算）构成的线性空间。",
          "anchor": "例-1.2.1"
         },
         {
@@ -209,6 +231,7 @@
          "title": "函数空间",
          "page": 11,
          "html": "<p>设 $S$ 是集合，$\\mathcal{F}$ 是 $S$ 上某些实（或复）函数所成的函数族。在函数族中，我们按通常方法规定加法运算及数乘运算如下：$$(f+g)(s)=f(s)+g(s),\\quad \\forall f,g\\in\\mathcal{F},\\ s\\in S;$$$$(\\alpha f)(s)=\\alpha f(s),\\quad \\forall f\\in\\mathcal{F},\\ s\\in S,\\ \\alpha\\ \\text{是数}.$$如果当 $f,g\\in\\mathcal{F}$，$\\alpha,\\beta$ 是任意实（或复）数时，$\\alpha f+\\beta g\\in\\mathcal{F}$，那么 $\\mathcal{F}$ 成为一个线性空间。以后如果不另外说明，函数空间总是采取上述的加法及数乘运算。$S$ 上的实值函数全体成为实空间，而复值函数全体成为复空间。</p>",
+         "src": "设 $S$ 是集合，$\\mathcal{F}$ 是 $S$ 上某些实（或复）函数所成的函数族。在函数族中，我们按通常方法规定加法运算及数乘运算如下：$$(f+g)(s)=f(s)+g(s),\\quad \\forall f,g\\in\\mathcal{F},\\ s\\in S;$$$$(\\alpha f)(s)=\\alpha f(s),\\quad \\forall f\\in\\mathcal{F},\\ s\\in S,\\ \\alpha\\ \\text{是数}.$$如果当 $f,g\\in\\mathcal{F}$，$\\alpha,\\beta$ 是任意实（或复）数时，$\\alpha f+\\beta g\\in\\mathcal{F}$，那么 $\\mathcal{F}$ 成为一个线性空间。以后如果不另外说明，函数空间总是采取上述的加法及数乘运算。$S$ 上的实值函数全体成为实空间，而复值函数全体成为复空间。",
          "anchor": "例-1.2.2"
         },
         {
@@ -217,6 +240,7 @@
          "title": "",
          "page": 11,
          "html": "<p>（i）$C(E)$：$\\mathbb{R}^n$ 中子集 $E$ 上的连续实（或复）函数全体，这是分析学中最重要的空间之一。</p><p>（ii）$P[x]$：一元多项式 $p(x)$ 全体。</p><p>（iii）$B[a,b]$：区间 $[a,b]$ 上有界函数全体。</p><p>（iv）$C^{\\infty}(U)$，$C_c(U)$ 与 $C_c^{\\infty}(U)$：对于 $\\mathbb{R}^n$ 中开集 $U$，其上的无限次可微函数全体记为 $C^{\\infty}(U)$。对于 $U$ 中函数 $f$，若它的<strong>支撑集</strong>$$\\operatorname{supp} f \\stackrel{\\text{def}}{=} \\text{子集 } \\{x\\in U: f(x)\\neq 0\\}\\ \\text{在}\\ \\mathbb{R}^n\\ \\text{中的闭包}$$是 $U$ 的一个紧子集，则称 $f$ 是<strong>紧支撑</strong>的。$U$ 上紧支撑的连续函数全体记作 $C_c(U)$。对于 $C_c(U)$ 中一个函数 $f$，如果延拓定义 $f$ 在 $U$ 外的值总为零，那么可以将其视为 $C_c(\\mathbb{R}^n)$ 中的一个元素。令 $C_c^{\\infty}(U)=C_c(U)\\cap C^{\\infty}(U)$ 为无限次可微的紧支撑函数。利用零延拓可将 $C_c^{\\infty}(U)$ 视为 $C^{\\infty}(\\mathbb{R}^n)$ 的一个线性子空间。</p>",
+         "src": "（i）$C(E)$：$\\mathbb{R}^n$ 中子集 $E$ 上的连续实（或复）函数全体，这是分析学中最重要的空间之一。\n\n（ii）$P[x]$：一元多项式 $p(x)$ 全体。\n\n（iii）$B[a,b]$：区间 $[a,b]$ 上有界函数全体。\n\n（iv）$C^{\\infty}(U)$，$C_c(U)$ 与 $C_c^{\\infty}(U)$：对于 $\\mathbb{R}^n$ 中开集 $U$，其上的无限次可微函数全体记为 $C^{\\infty}(U)$。对于 $U$ 中函数 $f$，若它的**支撑集**$$\\operatorname{supp} f \\stackrel{\\text{def}}{=} \\text{子集 } \\{x\\in U: f(x)\\neq 0\\}\\ \\text{在}\\ \\mathbb{R}^n\\ \\text{中的闭包}$$是 $U$ 的一个紧子集，则称 $f$ 是**紧支撑**的。$U$ 上紧支撑的连续函数全体记作 $C_c(U)$。对于 $C_c(U)$ 中一个函数 $f$，如果延拓定义 $f$ 在 $U$ 外的值总为零，那么可以将其视为 $C_c(\\mathbb{R}^n)$ 中的一个元素。令 $C_c^{\\infty}(U)=C_c(U)\\cap C^{\\infty}(U)$ 为无限次可微的紧支撑函数。利用零延拓可将 $C_c^{\\infty}(U)$ 视为 $C^{\\infty}(\\mathbb{R}^n)$ 的一个线性子空间。",
          "anchor": "例-1.2.3"
         },
         {
@@ -225,6 +249,7 @@
          "title": "",
          "page": 11,
          "html": "<p>（i）$\\mathbb{R}^{\\infty}$：数列 $(x_1,x_2,\\cdots,x_n,\\cdots)$ 全体，按坐标进行加法和数乘运算，即$$(x_1,x_2,\\cdots)+(y_1,y_2,\\cdots)=(x_1+y_1,x_2+y_2,\\cdots);\\qquad \\alpha(x_1,x_2,\\cdots)=(\\alpha x_1,\\alpha x_2,\\cdots),$$是线性空间。我们也可以将它看成正整数集合 $\\mathbb{N}_+$ 上的函数空间。如果 $f$ 是 $\\mathbb{N}_+$ 上的一个函数，那么它对应一个数列 $(f(1),f(2),\\cdots,f(n),\\cdots)$；反之，数列 $(x_1,x_2,\\cdots,x_n,\\cdots)$ 可以看成 $\\mathbb{N}_+$ 上的函数 $f: n\\mapsto x_n$。</p><p>（ii）$l^{\\infty}$：有界数列全体。</p><p>（iii）$c$：收敛数列 $x=(x_1,x_2,\\cdots,x_n,\\cdots)$（即 $\\lim\\limits_{n\\to\\infty}x_n$ 存在）的全体。</p><p>（iv）$c_0$：收敛于 $0$ 的数列全体。</p><p>（v）$c_{00}$：只有有限项非零的数列全体。</p><p>（vi）$l^p$：$l^p=\\left\\{x: x=(x_1,x_2,\\cdots),\\ \\sum\\limits_{n=1}^{\\infty}|x_n|^p&lt;\\infty\\right\\}\\ (1\\leqslant p&lt;\\infty)$。</p><p>显然，$c_{00}\\subset l^p\\subset c_0\\subset c\\subset l^{\\infty}\\subset\\mathbb{R}^{\\infty}$。</p>",
+         "src": "（i）$\\mathbb{R}^{\\infty}$：数列 $(x_1,x_2,\\cdots,x_n,\\cdots)$ 全体，按坐标进行加法和数乘运算，即$$(x_1,x_2,\\cdots)+(y_1,y_2,\\cdots)=(x_1+y_1,x_2+y_2,\\cdots);\\qquad \\alpha(x_1,x_2,\\cdots)=(\\alpha x_1,\\alpha x_2,\\cdots),$$是线性空间。我们也可以将它看成正整数集合 $\\mathbb{N}_+$ 上的函数空间。如果 $f$ 是 $\\mathbb{N}_+$ 上的一个函数，那么它对应一个数列 $(f(1),f(2),\\cdots,f(n),\\cdots)$；反之，数列 $(x_1,x_2,\\cdots,x_n,\\cdots)$ 可以看成 $\\mathbb{N}_+$ 上的函数 $f: n\\mapsto x_n$。\n\n（ii）$l^{\\infty}$：有界数列全体。\n\n（iii）$c$：收敛数列 $x=(x_1,x_2,\\cdots,x_n,\\cdots)$（即 $\\lim\\limits_{n\\to\\infty}x_n$ 存在）的全体。\n\n（iv）$c_0$：收敛于 $0$ 的数列全体。\n\n（v）$c_{00}$：只有有限项非零的数列全体。\n\n（vi）$l^p$：$l^p=\\left\\{x: x=(x_1,x_2,\\cdots),\\ \\sum\\limits_{n=1}^{\\infty}|x_n|^p<\\infty\\right\\}\\ (1\\leqslant p<\\infty)$。\n\n显然，$c_{00}\\subset l^p\\subset c_0\\subset c\\subset l^{\\infty}\\subset\\mathbb{R}^{\\infty}$。",
          "anchor": "例-1.2.4"
         },
         {
@@ -233,6 +258,7 @@
          "title": "Hamel 基",
          "page": 12,
          "html": "<p>对于线性空间 $X$，$X$ 中的<strong>线性无关组</strong>是指 $X$ 中的一些元素构成的子集 $A$，使得子集 $A$ 中任意一个元素都不能被 $A$ 中其他有限个元素线性表出。这也是说，子集 $\\{x_\\lambda\\}$ 是 $X$ 的线性无关组当且仅当 $\\{x_\\lambda\\}$ 的任意有限子集 $\\{x_{\\lambda_1},x_{\\lambda_2},\\cdots,x_{\\lambda_n}\\}$ 是线性无关组。</p><p>我们称线性空间 $X$ 上的一个极大线性无关组为空间 $X$ 的一组 <strong>Hamel（哈梅尔）基</strong>。若 $X$ 的某个 Hamel 基中只有有限个元素，则称 $X$ 是<strong>有限维线性空间</strong>，否则称其为<strong>无限维线性空间</strong>。</p>",
+         "src": "对于线性空间 $X$，$X$ 中的**线性无关组**是指 $X$ 中的一些元素构成的子集 $A$，使得子集 $A$ 中任意一个元素都不能被 $A$ 中其他有限个元素线性表出。这也是说，子集 $\\{x_\\lambda\\}$ 是 $X$ 的线性无关组当且仅当 $\\{x_\\lambda\\}$ 的任意有限子集 $\\{x_{\\lambda_1},x_{\\lambda_2},\\cdots,x_{\\lambda_n}\\}$ 是线性无关组。\n\n我们称线性空间 $X$ 上的一个极大线性无关组为空间 $X$ 的一组 **Hamel（哈梅尔）基**。若 $X$ 的某个 Hamel 基中只有有限个元素，则称 $X$ 是**有限维线性空间**，否则称其为**无限维线性空间**。",
          "anchor": "定义-1.2.1"
         },
         {
@@ -241,6 +267,7 @@
          "title": "",
          "page": 12,
          "html": "<p>$\\mathcal{F}=\\{1,x,\\cdots,x^n,\\cdots\\}$ 是多项式空间 $P[x]$ 的一个线性无关组，并且可以表示 $P[x]$ 的所有元素，因此 $\\mathcal{F}$ 是 $P[x]$ 的一个 Hamel 基。同样地，$\\mathcal{F}$ 也是 $C[a,b]$ 的线性无关组，但不能线性表示形如 $e^x$ 等大量函数，因此在 $C[a,b]$ 中不是极大的。</p>",
+         "src": "$\\mathcal{F}=\\{1,x,\\cdots,x^n,\\cdots\\}$ 是多项式空间 $P[x]$ 的一个线性无关组，并且可以表示 $P[x]$ 的所有元素，因此 $\\mathcal{F}$ 是 $P[x]$ 的一个 Hamel 基。同样地，$\\mathcal{F}$ 也是 $C[a,b]$ 的线性无关组，但不能线性表示形如 $e^x$ 等大量函数，因此在 $C[a,b]$ 中不是极大的。",
          "anchor": "例-1.2.5"
         },
         {
@@ -249,6 +276,7 @@
          "title": "半范数与范数",
          "page": 12,
          "html": "<p>记 $\\mathbb{K}$ 是实数域 $\\mathbb{R}$ 或复数域 $\\mathbb{C}$。对于 $\\mathbb{K}$ 上的线性空间 $X$，若 $X$ 中的每个向量 $x$ 都对应一个实数 $\\|x\\|$，且满足如下条件：</p><p>（i）对任意 $x\\in X$，$\\|x\\|\\geqslant 0$；</p><p>（ii）对数 $\\alpha$ 与 $x\\in X$，$\\|\\alpha x\\|=|\\alpha|\\,\\|x\\|$；</p><p>（iii）对任意 $x,y\\in X$，$\\|x+y\\|\\leqslant\\|x\\|+\\|y\\|$，</p><p>则称 $\\|\\cdot\\|$ 为 $X$ 上的<strong>半范数</strong>，$X$ 称为<strong>半赋范空间</strong>。若 $\\|\\cdot\\|$ 还满足$$\\|x\\|=0\\quad\\text{当且仅当}\\quad x=0,$$则称 $\\|\\cdot\\|$ 为 $X$ 上的<strong>范数</strong>，$(X,\\|\\cdot\\|)$ 称为<strong>赋范线性空间</strong>。</p><p>线性空间上的范数诱导了这个空间上的度量 $d(x,y)=\\|x-y\\|$。显然这个度量具有平移不变性，即 $d(x,y)=d(x+z,y+z)$。而且，若 $x_n$ 按度量 $d$ 收敛于 $x_0$，由三角不等式可得 $\\|x_n\\|\\to\\|x_0\\|$。换言之，$\\|\\cdot\\|$ 在度量 $d$ 给出的拓扑下是连续的。</p>",
+         "src": "记 $\\mathbb{K}$ 是实数域 $\\mathbb{R}$ 或复数域 $\\mathbb{C}$。对于 $\\mathbb{K}$ 上的线性空间 $X$，若 $X$ 中的每个向量 $x$ 都对应一个实数 $\\|x\\|$，且满足如下条件：\n\n（i）对任意 $x\\in X$，$\\|x\\|\\geqslant 0$；\n\n（ii）对数 $\\alpha$ 与 $x\\in X$，$\\|\\alpha x\\|=|\\alpha|\\,\\|x\\|$；\n\n（iii）对任意 $x,y\\in X$，$\\|x+y\\|\\leqslant\\|x\\|+\\|y\\|$，\n\n则称 $\\|\\cdot\\|$ 为 $X$ 上的**半范数**，$X$ 称为**半赋范空间**。若 $\\|\\cdot\\|$ 还满足$$\\|x\\|=0\\quad\\text{当且仅当}\\quad x=0,$$则称 $\\|\\cdot\\|$ 为 $X$ 上的**范数**，$(X,\\|\\cdot\\|)$ 称为**赋范线性空间**。\n\n线性空间上的范数诱导了这个空间上的度量 $d(x,y)=\\|x-y\\|$。显然这个度量具有平移不变性，即 $d(x,y)=d(x+z,y+z)$。而且，若 $x_n$ 按度量 $d$ 收敛于 $x_0$，由三角不等式可得 $\\|x_n\\|\\to\\|x_0\\|$。换言之，$\\|\\cdot\\|$ 在度量 $d$ 给出的拓扑下是连续的。",
          "anchor": "定义-1.2.2"
         },
         {
@@ -257,6 +285,7 @@
          "title": "",
          "page": 12,
          "html": "<p>$C[a,b]$ 是有界闭区间 $[a,b]$ 上连续的实（或复）值函数 $f(x)$ 全体。定义范数$$\\|f\\|=\\max_{x\\in[a,b]}|f(x)|.$$容易验证，它是 $C[a,b]$ 上的范数。这个范数诱导了 $C[a,b]$ 上的度量（见例 1.1.6）$$d(f,g)=\\max_{x\\in[a,b]}|f(x)-g(x)|.$$</p>",
+         "src": "$C[a,b]$ 是有界闭区间 $[a,b]$ 上连续的实（或复）值函数 $f(x)$ 全体。定义范数$$\\|f\\|=\\max_{x\\in[a,b]}|f(x)|.$$容易验证，它是 $C[a,b]$ 上的范数。这个范数诱导了 $C[a,b]$ 上的度量（见例 1.1.6）$$d(f,g)=\\max_{x\\in[a,b]}|f(x)-g(x)|.$$",
          "anchor": "例-1.2.6"
         },
         {
@@ -265,6 +294,7 @@
          "title": "",
          "page": 13,
          "html": "<p>$C^{(k)}[a,b]$ 是区间 $[a,b]$ 中具有连续的 $k$ 阶导函数的函数全体，以$$\\|x\\|=\\max_{0\\leqslant j\\leqslant k}\\max_{t\\in[a,b]}|x^{(j)}(t)|$$为范数。</p>",
+         "src": "$C^{(k)}[a,b]$ 是区间 $[a,b]$ 中具有连续的 $k$ 阶导函数的函数全体，以$$\\|x\\|=\\max_{0\\leqslant j\\leqslant k}\\max_{t\\in[a,b]}|x^{(j)}(t)|$$为范数。",
          "anchor": "例-1.2.7"
         },
         {
@@ -273,6 +303,7 @@
          "title": "",
          "page": 13,
          "html": "<p>设 $E$ 是 Euclid 空间 $\\mathbb{R}^k$ 的 Lebesgue 可测集。对 $1\\leqslant p&lt;\\infty$，定义$$\\mathcal{L}^p(E)=\\left\\{f: f\\ \\text{是}\\ E\\ \\text{上 Lebesgue 可测函数},\\ \\|f\\|_p=\\left(\\int_E|f|^p\\,\\mathrm{d}m\\right)^{\\frac{1}{p}}&lt;+\\infty\\right\\}.$$容易验证，$\\|\\cdot\\|_p$ 满足定义 1.2.2 的（i）和（ii），由 Minkowski 不等式得 $\\|\\cdot\\|_p$ 也满足定义中的（iii）。那么 $\\|\\cdot\\|_p$ 是 $\\mathcal{L}^p(E)$ 的半范数，但不是范数。因为 $\\|f\\|_p=0$ 时并不能得到 $f=0$，而只能得出 $f\\stackrel{m}{=}0$。</p><p>如果把满足 $f\\stackrel{m}{=}g$ 的两个函数 $f,g$ 视为同一个函数（即把 $f\\stackrel{m}{=}0$ 的函数 $f$ 视为恒等于零的函数），那么我们就得到 $\\mathcal{L}^p(E)$ 上的一个等价关系 $\\sim$。我们仍以 $f$ 来表示函数 $f$ 在 $L^p(E)=\\mathcal{L}^p(E)/\\sim$ 中对应的等价类，$\\|\\cdot\\|_p$ 便是 $L^p(E)$ 上的一个范数。</p><p>由范数诱导的度量$$d(f,g)=\\|f-g\\|_p=\\left(\\int_E|f-g|^p\\,\\mathrm{d}m\\right)^{\\frac{1}{p}}$$也是完备的：对于 $L^p(E)$ 中的 Cauchy 点列 $\\{f_n\\}$，则对任意 $\\varepsilon&gt;0$，存在 $N$，当 $n,m&gt;N$ 时 $\\|f_n-f_m\\|_p^p=\\int_E|f_n(x)-f_m(x)|^p\\,\\mathrm{d}m(x)\\leqslant\\varepsilon$。由 Chebyshev（切比雪夫）不等式，这个函数序列也是依测度 Cauchy 收敛的。由实变函数的理论，可取可测函数 $f_0$ 为 $\\{f_n\\}$ 的依测度收敛极限。由 Fatou（法图）引理，$\\|f_n-f_0\\|_p^p\\leqslant\\varliminf\\limits_{m\\to\\infty}\\int_E|f_n(x)-f_m(x)|^p\\,\\mathrm{d}m(x)\\leqslant\\varepsilon$，从而 $f_0\\in L^p(E)$ 且为 $\\{f_n\\}$ 的极限（另一个更完整的证明可见例 1.4.13）。</p>",
+         "src": "设 $E$ 是 Euclid 空间 $\\mathbb{R}^k$ 的 Lebesgue 可测集。对 $1\\leqslant p<\\infty$，定义$$\\mathcal{L}^p(E)=\\left\\{f: f\\ \\text{是}\\ E\\ \\text{上 Lebesgue 可测函数},\\ \\|f\\|_p=\\left(\\int_E|f|^p\\,\\mathrm{d}m\\right)^{\\frac{1}{p}}<+\\infty\\right\\}.$$容易验证，$\\|\\cdot\\|_p$ 满足定义 1.2.2 的（i）和（ii），由 Minkowski 不等式得 $\\|\\cdot\\|_p$ 也满足定义中的（iii）。那么 $\\|\\cdot\\|_p$ 是 $\\mathcal{L}^p(E)$ 的半范数，但不是范数。因为 $\\|f\\|_p=0$ 时并不能得到 $f=0$，而只能得出 $f\\stackrel{m}{=}0$。\n\n如果把满足 $f\\stackrel{m}{=}g$ 的两个函数 $f,g$ 视为同一个函数（即把 $f\\stackrel{m}{=}0$ 的函数 $f$ 视为恒等于零的函数），那么我们就得到 $\\mathcal{L}^p(E)$ 上的一个等价关系 $\\sim$。我们仍以 $f$ 来表示函数 $f$ 在 $L^p(E)=\\mathcal{L}^p(E)/\\sim$ 中对应的等价类，$\\|\\cdot\\|_p$ 便是 $L^p(E)$ 上的一个范数。\n\n由范数诱导的度量$$d(f,g)=\\|f-g\\|_p=\\left(\\int_E|f-g|^p\\,\\mathrm{d}m\\right)^{\\frac{1}{p}}$$也是完备的：对于 $L^p(E)$ 中的 Cauchy 点列 $\\{f_n\\}$，则对任意 $\\varepsilon>0$，存在 $N$，当 $n,m>N$ 时 $\\|f_n-f_m\\|_p^p=\\int_E|f_n(x)-f_m(x)|^p\\,\\mathrm{d}m(x)\\leqslant\\varepsilon$。由 Chebyshev（切比雪夫）不等式，这个函数序列也是依测度 Cauchy 收敛的。由实变函数的理论，可取可测函数 $f_0$ 为 $\\{f_n\\}$ 的依测度收敛极限。由 Fatou（法图）引理，$\\|f_n-f_0\\|_p^p\\leqslant\\varliminf\\limits_{m\\to\\infty}\\int_E|f_n(x)-f_m(x)|^p\\,\\mathrm{d}m(x)\\leqslant\\varepsilon$，从而 $f_0\\in L^p(E)$ 且为 $\\{f_n\\}$ 的极限（另一个更完整的证明可见例 1.4.13）。",
          "anchor": "例-1.2.8"
         },
         {
@@ -281,6 +312,7 @@
          "title": "",
          "page": 13,
          "html": "<p>设 $E$ 是 Euclid 空间 $\\mathbb{R}^k$ 中的 Lebesgue 可测集。定义$$\\mathcal{L}^{\\infty}(E)=\\{f: f\\ \\text{是}\\ E\\ \\text{上 Lebesgue 可测函数},\\ \\text{存在实数}\\ M\\ \\text{使得}\\ m(|f|&gt;M)=0\\}.$$我们常称 $\\mathcal{L}^{\\infty}(E)$ 中的函数为<strong>本性有界函数</strong>。如果定义等价关系 $f\\sim g$ 为 $f\\stackrel{m}{=}g$，那么$$\\|f\\|_{\\infty}=\\inf_{m(E_0)=0}\\ \\sup_{x\\in E\\setminus E_0}|f(x)|$$是 $L^{\\infty}(E)=\\mathcal{L}^{\\infty}(E)/\\sim$ 上的一个范数。对它的完备性的证明留作练习。</p>",
+         "src": "设 $E$ 是 Euclid 空间 $\\mathbb{R}^k$ 中的 Lebesgue 可测集。定义$$\\mathcal{L}^{\\infty}(E)=\\{f: f\\ \\text{是}\\ E\\ \\text{上 Lebesgue 可测函数},\\ \\text{存在实数}\\ M\\ \\text{使得}\\ m(|f|>M)=0\\}.$$我们常称 $\\mathcal{L}^{\\infty}(E)$ 中的函数为**本性有界函数**。如果定义等价关系 $f\\sim g$ 为 $f\\stackrel{m}{=}g$，那么$$\\|f\\|_{\\infty}=\\inf_{m(E_0)=0}\\ \\sup_{x\\in E\\setminus E_0}|f(x)|$$是 $L^{\\infty}(E)=\\mathcal{L}^{\\infty}(E)/\\sim$ 上的一个范数。对它的完备性的证明留作练习。",
          "anchor": "例-1.2.9"
         },
         {
@@ -289,6 +321,7 @@
          "title": "空间 $V[a,b]$",
          "page": 14,
          "html": "<p>设 $V[a,b]$ 是区间 $[a,b]$ 上的实（或复）有界变差函数的全体，依照通常的线性运算，它是一个线性空间。对于 $f\\in V[a,b]$，规定$$\\|f\\|=|f(a)|+\\bigvee_{a}^{b}(f),$$那么 $V[a,b]$ 按范数 $\\|f\\|$ 成为赋范线性空间。我们令$$V_0[a,b]=\\{f: f\\in V[a,b],\\ f(a)=0,\\ f\\ \\text{在}\\ (a,b)\\ \\text{中任一点是右连续的}\\},$$它是 $V[a,b]$ 的线性子空间。在 $V_0[a,b]$ 上，范数 $\\|f\\|$ 等于全变差 $\\bigvee_a^b(f)$。</p><p>实（或复）值有界变差函数与广义（复）测度有密切联系。设 $\\mathfrak{B}$ 是 $[a,b]$ 中的 Borel（博雷尔）集全体，$M([a,b])$ 是 $([a,b],\\mathfrak{B})$ 上有限值广义（复）测度全体。在它上定义加法和数乘为$$(\\mu+\\nu)(A)=\\mu(A)+\\nu(A),\\quad \\forall\\mu,\\nu\\in M([a,b]),\\ A\\in\\mathfrak{B};$$$$(\\alpha\\mu)(A)=\\alpha\\mu(A),\\quad \\forall\\mu\\in M([a,b]),\\ A\\in\\mathfrak{B},\\ \\alpha\\ \\text{为数},$$并规定$$\\|\\mu\\|=\\sup\\left\\{\\sum_{i=1}^{\\infty}|\\mu(E_i)|: E_i\\in\\mathfrak{B},\\ \\text{当}\\ i\\neq j\\ \\text{时},\\ E_i\\cap E_j=\\varnothing,\\ \\bigcup_{i=1}^{\\infty}E_i=[a,b]\\right\\},$$则 $\\|\\cdot\\|$ 是 $M([a,b])$ 上的范数。</p><p>由实变函数的理论知，对于 $\\mu\\in M([a,b])$，令$$f_\\mu(x)=\\begin{cases}0, &amp; x=a,\\\\ \\mu([a,x]), &amp; a&lt;x\\leqslant b,\\end{cases}$$则 $\\mu\\to f_\\mu$ 为 $M([a,b])$ 到 $V_0[a,b]$ 上保持范数的线性空间同构。</p>",
+         "src": "设 $V[a,b]$ 是区间 $[a,b]$ 上的实（或复）有界变差函数的全体，依照通常的线性运算，它是一个线性空间。对于 $f\\in V[a,b]$，规定$$\\|f\\|=|f(a)|+\\bigvee_{a}^{b}(f),$$那么 $V[a,b]$ 按范数 $\\|f\\|$ 成为赋范线性空间。我们令$$V_0[a,b]=\\{f: f\\in V[a,b],\\ f(a)=0,\\ f\\ \\text{在}\\ (a,b)\\ \\text{中任一点是右连续的}\\},$$它是 $V[a,b]$ 的线性子空间。在 $V_0[a,b]$ 上，范数 $\\|f\\|$ 等于全变差 $\\bigvee_a^b(f)$。\n\n实（或复）值有界变差函数与广义（复）测度有密切联系。设 $\\mathfrak{B}$ 是 $[a,b]$ 中的 Borel（博雷尔）集全体，$M([a,b])$ 是 $([a,b],\\mathfrak{B})$ 上有限值广义（复）测度全体。在它上定义加法和数乘为$$(\\mu+\\nu)(A)=\\mu(A)+\\nu(A),\\quad \\forall\\mu,\\nu\\in M([a,b]),\\ A\\in\\mathfrak{B};$$$$(\\alpha\\mu)(A)=\\alpha\\mu(A),\\quad \\forall\\mu\\in M([a,b]),\\ A\\in\\mathfrak{B},\\ \\alpha\\ \\text{为数},$$并规定$$\\|\\mu\\|=\\sup\\left\\{\\sum_{i=1}^{\\infty}|\\mu(E_i)|: E_i\\in\\mathfrak{B},\\ \\text{当}\\ i\\neq j\\ \\text{时},\\ E_i\\cap E_j=\\varnothing,\\ \\bigcup_{i=1}^{\\infty}E_i=[a,b]\\right\\},$$则 $\\|\\cdot\\|$ 是 $M([a,b])$ 上的范数。\n\n由实变函数的理论知，对于 $\\mu\\in M([a,b])$，令$$f_\\mu(x)=\\begin{cases}0, & x=a,\\\\ \\mu([a,x]), & a<x\\leqslant b,\\end{cases}$$则 $\\mu\\to f_\\mu$ 为 $M([a,b])$ 到 $V_0[a,b]$ 上保持范数的线性空间同构。",
          "anchor": "例-1.2.10"
         },
         {
@@ -297,6 +330,7 @@
          "title": "Banach 空间",
          "page": 14,
          "html": "<p>若赋范线性空间 $X$ 在诱导度量 $d(x,y)=\\|x-y\\|$ 下是完备的，则称 $X$ 是 <strong>Banach（巴拿赫）空间</strong>。</p>",
+         "src": "若赋范线性空间 $X$ 在诱导度量 $d(x,y)=\\|x-y\\|$ 下是完备的，则称 $X$ 是 **Banach（巴拿赫）空间**。",
          "anchor": "定义-Banach-空间"
         },
         {
@@ -305,6 +339,7 @@
          "title": "",
          "page": 14,
          "html": "<p>$n$ 维 Euclid 空间 $\\mathbb{R}^n$ 是 Banach 空间。</p>",
+         "src": "$n$ 维 Euclid 空间 $\\mathbb{R}^n$ 是 Banach 空间。",
          "anchor": "例-1.2.11"
         },
         {
@@ -313,6 +348,7 @@
          "title": "",
          "page": 14,
          "html": "<p>由例 1.1.6，$C[a,b]$ 是 Banach 空间。</p>",
+         "src": "由例 1.1.6，$C[a,b]$ 是 Banach 空间。",
          "anchor": "例-1.2.12"
         },
         {
@@ -321,6 +357,7 @@
          "title": "",
          "page": 14,
          "html": "<p>令 $1\\leqslant p&lt;\\infty$。对于 $x=(x_1,x_2,\\cdots,x_n,\\cdots)\\in l^p$，定义 $\\|x\\|_p=\\left(\\sum\\limits_{n=1}^{\\infty}|x_n|^p\\right)^{\\frac{1}{p}}$。由此易得 $\\|\\cdot\\|_p$ 是 $l^p$ 上的范数。下面我们来说明 $l^p$ 是完备的。</p>",
+         "src": "令 $1\\leqslant p<\\infty$。对于 $x=(x_1,x_2,\\cdots,x_n,\\cdots)\\in l^p$，定义 $\\|x\\|_p=\\left(\\sum\\limits_{n=1}^{\\infty}|x_n|^p\\right)^{\\frac{1}{p}}$。由此易得 $\\|\\cdot\\|_p$ 是 $l^p$ 上的范数。下面我们来说明 $l^p$ 是完备的。",
          "anchor": "例-1.2.13"
         },
         {
@@ -329,6 +366,7 @@
          "title": "",
          "page": 15,
          "html": "<p>令 $p=\\infty$。对于 $x=(x_1,x_2,\\cdots,x_n,\\cdots)\\in l^{\\infty}$，定义$$\\|x\\|_{\\infty}=\\sup_{n\\in\\mathbb{N}_+}|x_n|,$$则 $\\|\\cdot\\|_{\\infty}$ 是 $l^{\\infty}$ 上的范数。容易说明 $l^{\\infty}$ 也是完备的。</p>",
+         "src": "令 $p=\\infty$。对于 $x=(x_1,x_2,\\cdots,x_n,\\cdots)\\in l^{\\infty}$，定义$$\\|x\\|_{\\infty}=\\sup_{n\\in\\mathbb{N}_+}|x_n|,$$则 $\\|\\cdot\\|_{\\infty}$ 是 $l^{\\infty}$ 上的范数。容易说明 $l^{\\infty}$ 也是完备的。",
          "anchor": "例-1.2.14"
         },
         {
@@ -337,6 +375,7 @@
          "title": "",
          "page": 15,
          "html": "<p>设 $A$ 为完备的度量空间 $(X,d)$ 的一个子集。度量空间 $(A,d)$ 是完备的当且仅当 $A$ 是 $X$ 的一个闭子集，即：若 $A$ 中点列 $\\{x_n\\}$ 收敛于 $X$ 中点 $x_0$，则 $x_0\\in A$。</p>",
+         "src": "设 $A$ 为完备的度量空间 $(X,d)$ 的一个子集。度量空间 $(A,d)$ 是完备的当且仅当 $A$ 是 $X$ 的一个闭子集，即：若 $A$ 中点列 $\\{x_n\\}$ 收敛于 $X$ 中点 $x_0$，则 $x_0\\in A$。",
          "anchor": "引理-1.2.1"
         },
         {
@@ -345,6 +384,7 @@
          "title": "",
          "page": 16,
          "html": "<p>由于 $c_0$ 可视为 $l^{\\infty}$ 的线性子空间，$\\|\\cdot\\|_{\\infty}$ 同样给出了 $c_0$ 上的一个范数。赋范线性空间 $(c_0,\\|\\cdot\\|_{\\infty})$ 也是 Banach 空间。</p>",
+         "src": "由于 $c_0$ 可视为 $l^{\\infty}$ 的线性子空间，$\\|\\cdot\\|_{\\infty}$ 同样给出了 $c_0$ 上的一个范数。赋范线性空间 $(c_0,\\|\\cdot\\|_{\\infty})$ 也是 Banach 空间。",
          "anchor": "例-1.2.15"
         },
         {
@@ -353,6 +393,7 @@
          "title": "内积",
          "page": 16,
          "html": "<p>记 $\\mathbb{K}$ 是实数域 $\\mathbb{R}$ 或复数域 $\\mathbb{C}$。对于 $\\mathbb{K}$ 上的线性空间 $H$，如果 $H$ 中任何两个向量 $x,y$ 都对应着一个数 $\\langle x,y\\rangle\\in\\mathbb{K}$，满足条件：</p><p>（i）（共轭对称性）对任意 $x,y\\in H$，$\\langle x,y\\rangle=\\overline{\\langle y,x\\rangle}$；</p><p>（ii）（对第一变元的线性）对任意 $x,y,z\\in H$，$\\alpha,\\beta\\in\\mathbb{K}$，$\\langle\\alpha x+\\beta y,z\\rangle=\\alpha\\langle x,z\\rangle+\\beta\\langle y,z\\rangle$；</p><p>（iii）（正定性）对任意 $x\\in H$，$\\langle x,x\\rangle\\geqslant 0$，且 $\\langle x,x\\rangle=0$ 的充要条件是 $x=0$，</p><p>那么称 $\\langle\\cdot,\\cdot\\rangle$ 是 $H$ 中的<strong>内积</strong>，称 $H$ 是实（或复）<strong>内积空间</strong>。</p>",
+         "src": "记 $\\mathbb{K}$ 是实数域 $\\mathbb{R}$ 或复数域 $\\mathbb{C}$。对于 $\\mathbb{K}$ 上的线性空间 $H$，如果 $H$ 中任何两个向量 $x,y$ 都对应着一个数 $\\langle x,y\\rangle\\in\\mathbb{K}$，满足条件：\n\n（i）（共轭对称性）对任意 $x,y\\in H$，$\\langle x,y\\rangle=\\overline{\\langle y,x\\rangle}$；\n\n（ii）（对第一变元的线性）对任意 $x,y,z\\in H$，$\\alpha,\\beta\\in\\mathbb{K}$，$\\langle\\alpha x+\\beta y,z\\rangle=\\alpha\\langle x,z\\rangle+\\beta\\langle y,z\\rangle$；\n\n（iii）（正定性）对任意 $x\\in H$，$\\langle x,x\\rangle\\geqslant 0$，且 $\\langle x,x\\rangle=0$ 的充要条件是 $x=0$，\n\n那么称 $\\langle\\cdot,\\cdot\\rangle$ 是 $H$ 中的**内积**，称 $H$ 是实（或复）**内积空间**。",
          "anchor": "定义-1.2.3"
         },
         {
@@ -361,6 +402,7 @@
          "title": "",
          "page": 16,
          "html": "<p>设 $\\mathbb{C}^n$ 是 $n$ 维的复 Euclid 空间，对于 $\\mathbb{C}^n$ 中任意两个向量 $x=(x_1,x_2,\\cdots,x_n)$，$y=(y_1,y_2,\\cdots,y_n)$，定义$$\\langle x,y\\rangle=x_1\\bar{y}_1+x_2\\bar{y}_2+\\cdots+x_n\\bar{y}_n.$$显然 $\\langle\\cdot,\\cdot\\rangle$ 构成一个内积。并且 $\\mathbb{C}^n$ 上的范数满足$$\\|x\\|^2=\\left(\\sum_{i=1}^{n}|x_i|^2\\right)^{\\frac{1}{2}}=\\langle x,x\\rangle^{\\frac{1}{2}}.$$</p>",
+         "src": "设 $\\mathbb{C}^n$ 是 $n$ 维的复 Euclid 空间，对于 $\\mathbb{C}^n$ 中任意两个向量 $x=(x_1,x_2,\\cdots,x_n)$，$y=(y_1,y_2,\\cdots,y_n)$，定义$$\\langle x,y\\rangle=x_1\\bar{y}_1+x_2\\bar{y}_2+\\cdots+x_n\\bar{y}_n.$$显然 $\\langle\\cdot,\\cdot\\rangle$ 构成一个内积。并且 $\\mathbb{C}^n$ 上的范数满足$$\\|x\\|^2=\\left(\\sum_{i=1}^{n}|x_i|^2\\right)^{\\frac{1}{2}}=\\langle x,x\\rangle^{\\frac{1}{2}}.$$",
          "anchor": "例-1.2.16"
         },
         {
@@ -369,6 +411,7 @@
          "title": "$l^2$ 空间",
          "page": 16,
          "html": "<p>在 $l^2$ 中，对于 $x=(x_1,x_2,\\cdots)$，$y=(y_1,y_2,\\cdots)\\in l^2$，规定$$\\langle x,y\\rangle=\\sum_{n=1}^{\\infty}x_n\\bar{y}_n.$$容易证明 $\\langle\\cdot,\\cdot\\rangle$ 满足内积的三个条件，今后在 $l^2$ 中都取这个内积。同样，我们有 $\\|x\\|_2^2=\\langle x,x\\rangle$。</p>",
+         "src": "在 $l^2$ 中，对于 $x=(x_1,x_2,\\cdots)$，$y=(y_1,y_2,\\cdots)\\in l^2$，规定$$\\langle x,y\\rangle=\\sum_{n=1}^{\\infty}x_n\\bar{y}_n.$$容易证明 $\\langle\\cdot,\\cdot\\rangle$ 满足内积的三个条件，今后在 $l^2$ 中都取这个内积。同样，我们有 $\\|x\\|_2^2=\\langle x,x\\rangle$。",
          "anchor": "例-1.2.17"
         },
         {
@@ -377,6 +420,7 @@
          "title": "$L^2$ 空间",
          "page": 16,
          "html": "<p>设 $E$ 是 $\\mathbb{R}^n$ 的一个 Lebesgue 可测子集。对于 $f,g\\in L^2(E)$，定义$$\\langle f,g\\rangle=\\int_E f(t)\\overline{g(t)}\\,\\mathrm{d}t.$$容易验证这是一个内积。</p>",
+         "src": "设 $E$ 是 $\\mathbb{R}^n$ 的一个 Lebesgue 可测子集。对于 $f,g\\in L^2(E)$，定义$$\\langle f,g\\rangle=\\int_E f(t)\\overline{g(t)}\\,\\mathrm{d}t.$$容易验证这是一个内积。",
          "anchor": "例-1.2.18"
         },
         {
@@ -385,6 +429,7 @@
          "title": "对第二变元的共轭线性",
          "page": 17,
          "html": "<p>设 $x,y_1,y_2\\in H$，则$$\\langle x,\\lambda y_1+\\mu y_2\\rangle=\\bar{\\lambda}\\langle x,y_1\\rangle+\\bar{\\mu}\\langle x,y_2\\rangle.$$</p>",
+         "src": "设 $x,y_1,y_2\\in H$，则$$\\langle x,\\lambda y_1+\\mu y_2\\rangle=\\bar{\\lambda}\\langle x,y_1\\rangle+\\bar{\\mu}\\langle x,y_2\\rangle.$$",
          "anchor": "引理-1.2.2"
         },
         {
@@ -393,6 +438,7 @@
          "title": "Cauchy–Schwarz 不等式",
          "page": 17,
          "html": "<p>设 $x,y\\in H$，则成立不等式$$|\\langle x,y\\rangle|^2\\leqslant\\langle x,x\\rangle\\langle y,y\\rangle.\\tag{1.10}$$</p>",
+         "src": "设 $x,y\\in H$，则成立不等式$$|\\langle x,y\\rangle|^2\\leqslant\\langle x,x\\rangle\\langle y,y\\rangle.\\tag{1.10}$$",
          "anchor": "引理-1.2.3"
         },
         {
@@ -401,6 +447,7 @@
          "title": "",
          "page": 17,
          "html": "<p>在空间 $L^2(E)$ 中，根据 Cauchy–Schwarz 不等式，我们有$$\\left|\\int_E f\\bar{g}\\,\\mathrm{d}m\\right|\\leqslant\\left(\\int_E|f|^2\\,\\mathrm{d}m\\right)^{\\frac{1}{2}}\\left(\\int_E|g|^2\\,\\mathrm{d}m\\right)^{\\frac{1}{2}}.$$同理，在空间 $l^2$ 中，我们有$$\\left|\\sum_{i=1}^{\\infty}x_i\\bar{y}_i\\right|^2\\leqslant\\sum_{i=1}^{\\infty}|x_i|^2\\sum_{i=1}^{\\infty}|y_i|^2.$$</p>",
+         "src": "在空间 $L^2(E)$ 中，根据 Cauchy–Schwarz 不等式，我们有$$\\left|\\int_E f\\bar{g}\\,\\mathrm{d}m\\right|\\leqslant\\left(\\int_E|f|^2\\,\\mathrm{d}m\\right)^{\\frac{1}{2}}\\left(\\int_E|g|^2\\,\\mathrm{d}m\\right)^{\\frac{1}{2}}.$$同理，在空间 $l^2$ 中，我们有$$\\left|\\sum_{i=1}^{\\infty}x_i\\bar{y}_i\\right|^2\\leqslant\\sum_{i=1}^{\\infty}|x_i|^2\\sum_{i=1}^{\\infty}|y_i|^2.$$",
          "anchor": "例-1.2.19"
         },
         {
@@ -409,6 +456,7 @@
          "title": "",
          "page": 17,
          "html": "<p>设 $x\\in H$，定义 $\\|x\\|=\\sqrt{\\langle x,x\\rangle}$，那么 $\\|\\cdot\\|$ 是 $H$ 上的一个范数。</p><p>我们称 $\\|x\\|=\\sqrt{\\langle x,x\\rangle}$ 是由内积导出的范数。于是 $H$ 在这个范数下成为赋范线性空间，进而这个范数又导出了空间上的度量。之后，内积空间中的极限、收敛等拓扑概念，如无特殊申明都是指在这个度量的意义下。</p>",
+         "src": "设 $x\\in H$，定义 $\\|x\\|=\\sqrt{\\langle x,x\\rangle}$，那么 $\\|\\cdot\\|$ 是 $H$ 上的一个范数。\n\n我们称 $\\|x\\|=\\sqrt{\\langle x,x\\rangle}$ 是由内积导出的范数。于是 $H$ 在这个范数下成为赋范线性空间，进而这个范数又导出了空间上的度量。之后，内积空间中的极限、收敛等拓扑概念，如无特殊申明都是指在这个度量的意义下。",
          "anchor": "定理-1.2.1"
         },
         {
@@ -417,6 +465,7 @@
          "title": "Hilbert 空间",
          "page": 18,
          "html": "<p>若内积空间 $H$ 所导出的度量是完备的，则称 $H$ 是一个 <strong>Hilbert（希尔伯特）空间</strong>。</p><p>Cauchy–Schwarz 不等式的一个直接的推论是，若 $x$ 和 $y$ 均非零，则$$\\frac{|\\langle x,y\\rangle|}{\\|x\\|\\,\\|y\\|}\\leqslant 1.$$因此，存在唯一角度 $\\theta\\in\\left[0,\\frac{\\pi}{2}\\right]$ 使得 $\\cos\\theta=\\dfrac{|\\langle x,y\\rangle|}{\\|x\\|\\,\\|y\\|}$，我们称 $\\theta$ 为 $x$ 和 $y$ 的 <strong>Hermite（埃尔米特）夹角</strong>。$\\theta=\\frac{\\pi}{2}$ 即为最要紧的垂直情形。</p>",
+         "src": "若内积空间 $H$ 所导出的度量是完备的，则称 $H$ 是一个 **Hilbert（希尔伯特）空间**。\n\nCauchy–Schwarz 不等式的一个直接的推论是，若 $x$ 和 $y$ 均非零，则$$\\frac{|\\langle x,y\\rangle|}{\\|x\\|\\,\\|y\\|}\\leqslant 1.$$因此，存在唯一角度 $\\theta\\in\\left[0,\\frac{\\pi}{2}\\right]$ 使得 $\\cos\\theta=\\dfrac{|\\langle x,y\\rangle|}{\\|x\\|\\,\\|y\\|}$，我们称 $\\theta$ 为 $x$ 和 $y$ 的 **Hermite（埃尔米特）夹角**。$\\theta=\\frac{\\pi}{2}$ 即为最要紧的垂直情形。",
          "anchor": "定义-Hilbert-空间"
         },
         {
@@ -425,6 +474,7 @@
          "title": "正交",
          "page": 18,
          "html": "<p>如果内积空间 $(H,\\langle\\cdot,\\cdot\\rangle)$ 中两个向量 $x,y$ 满足 $\\langle x,y\\rangle=0$，就说 $x$ 与 $y$ <strong>正交</strong>，记作 $x\\perp y$。</p>",
+         "src": "如果内积空间 $(H,\\langle\\cdot,\\cdot\\rangle)$ 中两个向量 $x,y$ 满足 $\\langle x,y\\rangle=0$，就说 $x$ 与 $y$ **正交**，记作 $x\\perp y$。",
          "anchor": "定义-1.2.4"
         },
         {
@@ -433,6 +483,7 @@
          "title": "勾股定理",
          "page": 18,
          "html": "<p>对内积空间 $H$ 中两个元素 $x,y$，若 $x\\perp y$，则有$$\\|x+y\\|^2=\\|x\\|^2+\\|y\\|^2.$$</p>",
+         "src": "对内积空间 $H$ 中两个元素 $x,y$，若 $x\\perp y$，则有$$\\|x+y\\|^2=\\|x\\|^2+\\|y\\|^2.$$",
          "anchor": "定理-1.2.2"
         },
         {
@@ -441,6 +492,7 @@
          "title": "",
          "page": 18,
          "html": "<p>设 $H$ 是内积空间，那么内积关于两个变元是连续的。即：当 $x_n\\to x$，$y_n\\to y$ 时，有 $\\langle x_n,y_n\\rangle\\to\\langle x,y\\rangle$。</p>",
+         "src": "设 $H$ 是内积空间，那么内积关于两个变元是连续的。即：当 $x_n\\to x$，$y_n\\to y$ 时，有 $\\langle x_n,y_n\\rangle\\to\\langle x,y\\rangle$。",
          "anchor": "引理-1.2.4"
         },
         {
@@ -449,6 +501,7 @@
          "title": "极化恒等式",
          "page": 18,
          "html": "<p>当 $H$ 是内积空间，$\\|\\cdot\\|$ 是由内积所导出的范数时，内积也可以用范数来表达。设 $x,y\\in H$。当 $H$ 是实内积空间时，成立$$\\langle x,y\\rangle=\\frac{1}{4}\\left(\\|x+y\\|^2-\\|x-y\\|^2\\right).\\tag{1.12}$$而当 $H$ 是复内积空间时，成立$$\\langle x,y\\rangle=\\frac{1}{4}\\left(\\|x+y\\|^2+\\mathrm{i}\\|x+\\mathrm{i}y\\|^2-\\|x-y\\|^2-\\mathrm{i}\\|x-\\mathrm{i}y\\|^2\\right).\\tag{1.13}$$等式（1.12）及（1.13）称为<strong>极化恒等式</strong>，是非常重要的等式。</p>",
+         "src": "当 $H$ 是内积空间，$\\|\\cdot\\|$ 是由内积所导出的范数时，内积也可以用范数来表达。设 $x,y\\in H$。当 $H$ 是实内积空间时，成立$$\\langle x,y\\rangle=\\frac{1}{4}\\left(\\|x+y\\|^2-\\|x-y\\|^2\\right).\\tag{1.12}$$而当 $H$ 是复内积空间时，成立$$\\langle x,y\\rangle=\\frac{1}{4}\\left(\\|x+y\\|^2+\\mathrm{i}\\|x+\\mathrm{i}y\\|^2-\\|x-y\\|^2-\\mathrm{i}\\|x-\\mathrm{i}y\\|^2\\right).\\tag{1.13}$$等式（1.12）及（1.13）称为**极化恒等式**，是非常重要的等式。",
          "anchor": "定理-极化恒等式"
         },
         {
@@ -457,6 +510,7 @@
          "title": "平行四边形公式",
          "page": 18,
          "html": "<p>设 $H$ 是内积空间，$\\|\\cdot\\|$ 是由内积决定的范数，则对任何 $x,y\\in H$，成立$$\\|x+y\\|^2+\\|x-y\\|^2=2(\\|x\\|^2+\\|y\\|^2).\\tag{1.14}$$若 $H$ 是二维实空间，则等式（1.14）的几何意义是，平行四边形中对角线长度的平方和等于四边的长度平方和，称其为平行四边形公式。对一般的内积空间，等式（1.14）也称为平行四边形公式。引理 1.2.5 说明，由内积决定的范数必须适合平行四边形公式。</p>",
+         "src": "设 $H$ 是内积空间，$\\|\\cdot\\|$ 是由内积决定的范数，则对任何 $x,y\\in H$，成立$$\\|x+y\\|^2+\\|x-y\\|^2=2(\\|x\\|^2+\\|y\\|^2).\\tag{1.14}$$若 $H$ 是二维实空间，则等式（1.14）的几何意义是，平行四边形中对角线长度的平方和等于四边的长度平方和，称其为平行四边形公式。对一般的内积空间，等式（1.14）也称为平行四边形公式。引理 1.2.5 说明，由内积决定的范数必须适合平行四边形公式。",
          "anchor": "引理-1.2.5"
         },
         {
@@ -465,6 +519,7 @@
          "title": "",
          "page": 19,
          "html": "<p>设 $(X,\\|\\cdot\\|)$ 是赋范线性空间。如果对 $X$ 中任何元素 $x,y$，都成立平行四边形公式（1.14），那么可以在 $X$ 中定义内积 $\\langle\\cdot,\\cdot\\rangle$ 使得 $\\|\\cdot\\|$ 是由内积 $\\langle\\cdot,\\cdot\\rangle$ 诱导的范数。</p><p>平行四边形公式是内积空间中范数的特征性质。</p>",
+         "src": "设 $(X,\\|\\cdot\\|)$ 是赋范线性空间。如果对 $X$ 中任何元素 $x,y$，都成立平行四边形公式（1.14），那么可以在 $X$ 中定义内积 $\\langle\\cdot,\\cdot\\rangle$ 使得 $\\|\\cdot\\|$ 是由内积 $\\langle\\cdot,\\cdot\\rangle$ 诱导的范数。\n\n平行四边形公式是内积空间中范数的特征性质。",
          "anchor": "定理-1.2.3"
         },
         {
@@ -473,6 +528,7 @@
          "title": "",
          "page": 19,
          "html": "<p>考虑空间 $L^{\\infty}[0,1]$。取 $f=1+x$，$g=1-x$，则$$\\|f+g\\|_{\\infty}^2+\\|f-g\\|_{\\infty}^2\\neq 2(\\|f\\|_{\\infty}^2+\\|g\\|_{\\infty}^2).$$从而空间 $L^{\\infty}[0,1]$ 不满足平行四边形法则，其范数不能由内积诱导。</p>",
+         "src": "考虑空间 $L^{\\infty}[0,1]$。取 $f=1+x$，$g=1-x$，则$$\\|f+g\\|_{\\infty}^2+\\|f-g\\|_{\\infty}^2\\neq 2(\\|f\\|_{\\infty}^2+\\|g\\|_{\\infty}^2).$$从而空间 $L^{\\infty}[0,1]$ 不满足平行四边形法则，其范数不能由内积诱导。",
          "anchor": "例-1.2.20"
         }
        ]
@@ -488,6 +544,7 @@
          "title": "正交系",
          "page": 21,
          "html": "<p>设 $\\mathcal{E}$ 是 Hilbert 空间 $H$ 中的一族非零向量。</p><p>（i）如果 $\\mathcal{E}$ 中任何两个不同的向量都正交，就称 $\\mathcal{E}$ 是 $H$ 的<strong>正交系</strong>。</p><p>（ii）如果正交系 $\\mathcal{E}$ 中每个向量的范数都等于 $1$，就称 $\\mathcal{E}$ 是<strong>标准正交系</strong>（或规范正交系）。</p><p>由定义立即可知，如果 $\\mathcal{E}$ 是 Hilbert 空间 $H$ 中的正交系（标准正交系），那么 $\\mathcal{E}$ 的任何子集也是 $H$ 中的正交系（标准正交系）。</p>",
+         "src": "设 $\\mathcal{E}$ 是 Hilbert 空间 $H$ 中的一族非零向量。\n\n（i）如果 $\\mathcal{E}$ 中任何两个不同的向量都正交，就称 $\\mathcal{E}$ 是 $H$ 的**正交系**。\n\n（ii）如果正交系 $\\mathcal{E}$ 中每个向量的范数都等于 $1$，就称 $\\mathcal{E}$ 是**标准正交系**（或规范正交系）。\n\n由定义立即可知，如果 $\\mathcal{E}$ 是 Hilbert 空间 $H$ 中的正交系（标准正交系），那么 $\\mathcal{E}$ 的任何子集也是 $H$ 中的正交系（标准正交系）。",
          "anchor": "定义-1.3.1"
         },
         {
@@ -496,6 +553,7 @@
          "title": "",
          "page": 21,
          "html": "<p>在 $n$ 维 Euclid 空间 $\\mathbb{R}^n$ 中，$$e_1=(1,0,\\cdots,0),\\quad e_2=(0,1,0,\\cdots,0),\\cdots,e_n=(0,0,0,\\cdots,1)$$组成标准正交系。</p>",
+         "src": "在 $n$ 维 Euclid 空间 $\\mathbb{R}^n$ 中，$$e_1=(1,0,\\cdots,0),\\quad e_2=(0,1,0,\\cdots,0),\\cdots,e_n=(0,0,0,\\cdots,1)$$组成标准正交系。",
          "anchor": "例-1.3.1"
         },
         {
@@ -504,6 +562,7 @@
          "title": "",
          "page": 21,
          "html": "<p>在 $l^2$ 中，令 $e_n$ 为在位置 $n$ 取 $1$ 其他位置取 $0$ 的点列，则 $\\{e_1,e_2,\\cdots,e_n,\\cdots\\}$ 为 $l^2$ 的标准正交系。</p>",
+         "src": "在 $l^2$ 中，令 $e_n$ 为在位置 $n$ 取 $1$ 其他位置取 $0$ 的点列，则 $\\{e_1,e_2,\\cdots,e_n,\\cdots\\}$ 为 $l^2$ 的标准正交系。",
          "anchor": "例-1.3.2"
         },
         {
@@ -512,6 +571,7 @@
          "title": "",
          "page": 21,
          "html": "<p>在实（或复）周期函数空间 $L^2[0,2\\pi]$ 中，规定内积为$$\\langle f,g\\rangle=\\frac{1}{2\\pi}\\int_0^{2\\pi}f(x)\\overline{g(x)}\\,\\mathrm{d}x,\\quad \\forall f,g\\in L^2[0,2\\pi].$$这时 $\\{1,\\sqrt{2}\\cos x,\\sqrt{2}\\sin x,\\sqrt{2}\\cos 2x,\\sqrt{2}\\sin 2x,\\cdots,\\sqrt{2}\\cos nx,\\sqrt{2}\\sin nx,\\cdots\\}$ 组成 $L^2[0,2\\pi]$ 的标准正交系。</p>",
+         "src": "在实（或复）周期函数空间 $L^2[0,2\\pi]$ 中，规定内积为$$\\langle f,g\\rangle=\\frac{1}{2\\pi}\\int_0^{2\\pi}f(x)\\overline{g(x)}\\,\\mathrm{d}x,\\quad \\forall f,g\\in L^2[0,2\\pi].$$这时 $\\{1,\\sqrt{2}\\cos x,\\sqrt{2}\\sin x,\\sqrt{2}\\cos 2x,\\sqrt{2}\\sin 2x,\\cdots,\\sqrt{2}\\cos nx,\\sqrt{2}\\sin nx,\\cdots\\}$ 组成 $L^2[0,2\\pi]$ 的标准正交系。",
          "anchor": "例-1.3.3"
         },
         {
@@ -520,6 +580,7 @@
          "title": "",
          "page": 21,
          "html": "<p>在复空间 $L^2[0,2\\pi]$ 中，直接计算可得 $\\{\\mathrm{e}^{\\mathrm{i}nx}: n\\in\\mathbb{Z}\\}$ 组成一组标准正交系。</p><p>另一个常用的研究周期函数的模型是圆周 $\\mathbb{T}=\\{z=\\mathrm{e}^{\\mathrm{i}x}: 0\\leqslant x&lt;2\\pi\\}$ 上的函数理论。取 $\\mathbb{T}$ 上标准化的弧长测度 $\\dfrac{\\mathrm{d}x}{2\\pi}$，容易证明 $L^2\\left(\\mathbb{T},\\dfrac{\\mathrm{d}x}{2\\pi}\\right)$ 按内积$$\\langle f,g\\rangle\\overset{\\text{def}}{=}\\int_{x\\in[0,2\\pi)}f(\\mathrm{e}^{\\mathrm{i}x})\\overline{g(\\mathrm{e}^{\\mathrm{i}x})}\\,\\frac{\\mathrm{d}x}{2\\pi},\\quad \\forall f,g\\in L^2\\left(\\mathbb{T},\\frac{\\mathrm{d}x}{2\\pi}\\right)$$构成 Hilbert 空间，且 $\\{z^n=\\mathrm{e}^{\\mathrm{i}nx}: n\\in\\mathbb{Z}\\}$ 是标准正交系。</p>",
+         "src": "在复空间 $L^2[0,2\\pi]$ 中，直接计算可得 $\\{\\mathrm{e}^{\\mathrm{i}nx}: n\\in\\mathbb{Z}\\}$ 组成一组标准正交系。\n\n另一个常用的研究周期函数的模型是圆周 $\\mathbb{T}=\\{z=\\mathrm{e}^{\\mathrm{i}x}: 0\\leqslant x<2\\pi\\}$ 上的函数理论。取 $\\mathbb{T}$ 上标准化的弧长测度 $\\dfrac{\\mathrm{d}x}{2\\pi}$，容易证明 $L^2\\left(\\mathbb{T},\\dfrac{\\mathrm{d}x}{2\\pi}\\right)$ 按内积$$\\langle f,g\\rangle\\overset{\\text{def}}{=}\\int_{x\\in[0,2\\pi)}f(\\mathrm{e}^{\\mathrm{i}x})\\overline{g(\\mathrm{e}^{\\mathrm{i}x})}\\,\\frac{\\mathrm{d}x}{2\\pi},\\quad \\forall f,g\\in L^2\\left(\\mathbb{T},\\frac{\\mathrm{d}x}{2\\pi}\\right)$$构成 Hilbert 空间，且 $\\{z^n=\\mathrm{e}^{\\mathrm{i}nx}: n\\in\\mathbb{Z}\\}$ 是标准正交系。",
          "anchor": "例-1.3.4"
         },
         {
@@ -528,6 +589,7 @@
          "title": "Fourier 系数",
          "page": 22,
          "html": "<p>设 $\\mathcal{E}$ 是 Hilbert 空间 $H$ 的一组标准正交系，$x\\in H$，数集$$\\{\\langle x,e\\rangle: e\\in\\mathcal{E}\\}$$称为向量 $x$ 关于标准正交系 $\\mathcal{E}$ 的 <strong>Fourier 系数集</strong>，而 $\\langle x,e\\rangle$ 称为 $x$ 关于 $e\\ (e\\in\\mathcal{E})$ 的 <strong>Fourier 系数</strong>。</p><p>在数学分析中，对于函数 $f\\in L^2[0,2\\pi]$，$$a_0(f)=\\frac{1}{2\\pi}\\int_0^{2\\pi}f(t)\\,\\mathrm{d}t=\\langle f,1\\rangle,$$$$a_n(f)=\\frac{1}{2\\pi}\\int_0^{2\\pi}f(t)\\sqrt{2}\\cos nt\\,\\mathrm{d}t=\\langle f,\\sqrt{2}\\cos nx\\rangle,$$$$b_n(f)=\\frac{1}{2\\pi}\\int_0^{2\\pi}f(t)\\sqrt{2}\\sin nt\\,\\mathrm{d}t=\\langle f,\\sqrt{2}\\sin nx\\rangle$$就是 $f$ 关于三角函数系的 Fourier 系数，而部分和 $(S_nf)(x)=a_0(f)+\\sum\\limits_{k=1}^{n}\\left(a_k(f)\\sqrt{2}\\cos kx+b_k(f)\\sqrt{2}\\sin kx\\right)$ 的收敛性正是 Fourier 级数的中心问题。</p>",
+         "src": "设 $\\mathcal{E}$ 是 Hilbert 空间 $H$ 的一组标准正交系，$x\\in H$，数集$$\\{\\langle x,e\\rangle: e\\in\\mathcal{E}\\}$$称为向量 $x$ 关于标准正交系 $\\mathcal{E}$ 的 **Fourier 系数集**，而 $\\langle x,e\\rangle$ 称为 $x$ 关于 $e\\ (e\\in\\mathcal{E})$ 的 **Fourier 系数**。\n\n在数学分析中，对于函数 $f\\in L^2[0,2\\pi]$，$$a_0(f)=\\frac{1}{2\\pi}\\int_0^{2\\pi}f(t)\\,\\mathrm{d}t=\\langle f,1\\rangle,$$$$a_n(f)=\\frac{1}{2\\pi}\\int_0^{2\\pi}f(t)\\sqrt{2}\\cos nt\\,\\mathrm{d}t=\\langle f,\\sqrt{2}\\cos nx\\rangle,$$$$b_n(f)=\\frac{1}{2\\pi}\\int_0^{2\\pi}f(t)\\sqrt{2}\\sin nt\\,\\mathrm{d}t=\\langle f,\\sqrt{2}\\sin nx\\rangle$$就是 $f$ 关于三角函数系的 Fourier 系数，而部分和 $(S_nf)(x)=a_0(f)+\\sum\\limits_{k=1}^{n}\\left(a_k(f)\\sqrt{2}\\cos kx+b_k(f)\\sqrt{2}\\sin kx\\right)$ 的收敛性正是 Fourier 级数的中心问题。",
          "anchor": "定义-1.3.2"
         },
         {
@@ -536,6 +598,7 @@
          "title": "Bessel 不等式",
          "page": 22,
          "html": "<p>设 $\\mathcal{E}=\\{e_\\lambda:\\lambda\\in\\Lambda\\}$ 是 Hilbert 空间 $H$ 中的标准正交系。那么，对于每个 $x\\in H$，它的 Fourier 系数 $\\{\\langle x,e_\\lambda\\rangle:\\lambda\\in\\Lambda\\}$ 中最多只有可列个不为零，并且还成立如下的 <strong>Bessel 不等式</strong>：$$\\sum_{\\lambda\\in\\Lambda}|\\langle x,e_\\lambda\\rangle|^2\\leqslant\\|x\\|^2.\\tag{1.15}$$</p><p>Bessel 不等式表示向量 $x$ 在 $\\mathcal{E}$ 中每个标准向量 $e_\\lambda$ 上投影 $\\langle x,e_\\lambda\\rangle e_\\lambda$ 的\"长度\"平方的和不超过 $x$ 的\"长度\"平方。</p>",
+         "src": "设 $\\mathcal{E}=\\{e_\\lambda:\\lambda\\in\\Lambda\\}$ 是 Hilbert 空间 $H$ 中的标准正交系。那么，对于每个 $x\\in H$，它的 Fourier 系数 $\\{\\langle x,e_\\lambda\\rangle:\\lambda\\in\\Lambda\\}$ 中最多只有可列个不为零，并且还成立如下的 **Bessel 不等式**：$$\\sum_{\\lambda\\in\\Lambda}|\\langle x,e_\\lambda\\rangle|^2\\leqslant\\|x\\|^2.\\tag{1.15}$$\n\nBessel 不等式表示向量 $x$ 在 $\\mathcal{E}$ 中每个标准向量 $e_\\lambda$ 上投影 $\\langle x,e_\\lambda\\rangle e_\\lambda$ 的\"长度\"平方的和不超过 $x$ 的\"长度\"平方。",
          "anchor": "定理-1.3.1"
         },
         {
@@ -544,6 +607,7 @@
          "title": "",
          "page": 23,
          "html": "<p>设 $\\{e_n\\}$ 是 Hilbert 空间 $H$ 中的标准正交系，那么对任何 $x\\in H$，有$$\\lim_{n\\to\\infty}\\langle x,e_n\\rangle=0.$$这个推论在 $L^2[0,2\\pi]$ 中用于标准正交三角函数系的情况下，就是 <strong>Riemann–Lebesgue（黎曼–勒贝格）引理</strong>。</p>",
+         "src": "设 $\\{e_n\\}$ 是 Hilbert 空间 $H$ 中的标准正交系，那么对任何 $x\\in H$，有$$\\lim_{n\\to\\infty}\\langle x,e_n\\rangle=0.$$这个推论在 $L^2[0,2\\pi]$ 中用于标准正交三角函数系的情况下，就是 **Riemann–Lebesgue（黎曼–勒贝格）引理**。",
          "anchor": "推论-1.3.1"
         },
         {
@@ -552,6 +616,7 @@
          "title": "Fourier 级数",
          "page": 23,
          "html": "<p>设 $\\mathcal{E}=\\{e_\\lambda:\\lambda\\in\\Lambda\\}$ 是 Hilbert 空间 $H$ 中的标准正交系，对于 $x\\in H$，级数 $\\sum\\limits_{\\lambda\\in\\Lambda}\\langle x,e_\\lambda\\rangle e_\\lambda$ 称为向量 $x$ 关于 $\\mathcal{E}$ 的 <strong>Fourier 级数</strong>，或 Fourier 展开式。当 $x=\\sum\\limits_{\\lambda\\in\\Lambda}\\langle x,e_\\lambda\\rangle e_\\lambda$ 成立时，就称 $x$ 关于 $\\mathcal{E}$ <strong>可以展开成 Fourier 级数</strong>。</p>",
+         "src": "设 $\\mathcal{E}=\\{e_\\lambda:\\lambda\\in\\Lambda\\}$ 是 Hilbert 空间 $H$ 中的标准正交系，对于 $x\\in H$，级数 $\\sum\\limits_{\\lambda\\in\\Lambda}\\langle x,e_\\lambda\\rangle e_\\lambda$ 称为向量 $x$ 关于 $\\mathcal{E}$ 的 **Fourier 级数**，或 Fourier 展开式。当 $x=\\sum\\limits_{\\lambda\\in\\Lambda}\\langle x,e_\\lambda\\rangle e_\\lambda$ 成立时，就称 $x$ 关于 $\\mathcal{E}$ **可以展开成 Fourier 级数**。",
          "anchor": "定义-1.3.3"
         },
         {
@@ -560,6 +625,7 @@
          "title": "任意指标的和",
          "page": 23,
          "html": "<p>对于任意指标的求和 $\\sum\\limits_{\\lambda\\in\\Lambda}c_\\lambda$，一般性的定义为：取定向集 $A=\\{\\Lambda\\text{ 中的有限子集}\\}$ 以及定义 $A$ 上的序关系\"$F_1\\prec F_2$\"为 $F_1\\subseteq F_2$，那么$$\\sum_{\\lambda\\in\\Lambda}c_\\lambda=\\lim_{F\\in A}\\sum_{\\lambda\\in F}c_\\lambda.$$在定义 1.3.3 的使用中，为避免使用太多定向集和网的讨论，注意到 $\\{e_\\lambda:\\langle x,e_\\lambda\\rangle\\neq 0\\}$ 是可数集，将其排列为一个序列 $\\{e_{\\lambda_1},e_{\\lambda_2},\\cdots,e_{\\lambda_n},\\cdots\\}$。根据 Bessel 不等式 $\\sum\\limits_{n=1}^{\\infty}|\\langle x,e_{\\lambda_n}\\rangle|^2&lt;\\infty$，可知 $\\left\\{\\sum\\limits_{k=1}^{n}\\langle x,e_{\\lambda_k}\\rangle e_{\\lambda_k}\\right\\}_n$ 是 $H$ 中的基本点列，因此其极限存在，并且这个极限与可数集 $\\{e_\\lambda:\\langle x,e_\\lambda\\rangle\\neq 0\\}$ 所取的排列顺序无关。</p>",
+         "src": "对于任意指标的求和 $\\sum\\limits_{\\lambda\\in\\Lambda}c_\\lambda$，一般性的定义为：取定向集 $A=\\{\\Lambda\\text{ 中的有限子集}\\}$ 以及定义 $A$ 上的序关系\"$F_1\\prec F_2$\"为 $F_1\\subseteq F_2$，那么$$\\sum_{\\lambda\\in\\Lambda}c_\\lambda=\\lim_{F\\in A}\\sum_{\\lambda\\in F}c_\\lambda.$$在定义 1.3.3 的使用中，为避免使用太多定向集和网的讨论，注意到 $\\{e_\\lambda:\\langle x,e_\\lambda\\rangle\\neq 0\\}$ 是可数集，将其排列为一个序列 $\\{e_{\\lambda_1},e_{\\lambda_2},\\cdots,e_{\\lambda_n},\\cdots\\}$。根据 Bessel 不等式 $\\sum\\limits_{n=1}^{\\infty}|\\langle x,e_{\\lambda_n}\\rangle|^2<\\infty$，可知 $\\left\\{\\sum\\limits_{k=1}^{n}\\langle x,e_{\\lambda_k}\\rangle e_{\\lambda_k}\\right\\}_n$ 是 $H$ 中的基本点列，因此其极限存在，并且这个极限与可数集 $\\{e_\\lambda:\\langle x,e_\\lambda\\rangle\\neq 0\\}$ 所取的排列顺序无关。",
          "anchor": "注-1.3.1"
         },
         {
@@ -568,6 +634,7 @@
          "title": "标准正交基的等价刻画",
          "page": 24,
          "html": "<p>设 $\\mathcal{E}=\\{e_\\lambda:\\lambda\\in\\Lambda\\}$ 是 Hilbert 空间 $H$ 中的标准正交系，下列命题等价：</p><p>（i）对 $H$ 中任意元素 $x$，有 $x=\\sum\\limits_{\\lambda\\in\\Lambda}\\langle x,e_\\lambda\\rangle e_\\lambda$；</p><p>（ii）$\\overline{\\operatorname{span}}\\{e_\\lambda:\\lambda\\in\\Lambda\\}=H$；</p><p>（iii）$\\{e_\\lambda:\\lambda\\in\\Lambda\\}$ 是<strong>完全的</strong>，即：若 $x\\in H$ 满足 $x\\perp e_\\lambda\\ (\\forall\\lambda\\in\\Lambda)$，则 $x=0$；</p><p>（iv）$\\{e_\\lambda:\\lambda\\in\\Lambda\\}$ 是完备的，即：对 $H$ 中任意元素 $x$，<strong>Parseval（帕塞瓦尔）等式</strong> $\\|x\\|^2=\\sum\\limits_{\\lambda\\in\\Lambda}|\\langle x,e_\\lambda\\rangle|^2$ 成立。</p><p>我们称满足上述条件之一的标准正交系为 Hilbert 空间 $H$ 中的一组<strong>标准正交基</strong>（或规范正交基）。</p>",
+         "src": "设 $\\mathcal{E}=\\{e_\\lambda:\\lambda\\in\\Lambda\\}$ 是 Hilbert 空间 $H$ 中的标准正交系，下列命题等价：\n\n（i）对 $H$ 中任意元素 $x$，有 $x=\\sum\\limits_{\\lambda\\in\\Lambda}\\langle x,e_\\lambda\\rangle e_\\lambda$；\n\n（ii）$\\overline{\\operatorname{span}}\\{e_\\lambda:\\lambda\\in\\Lambda\\}=H$；\n\n（iii）$\\{e_\\lambda:\\lambda\\in\\Lambda\\}$ 是**完全的**，即：若 $x\\in H$ 满足 $x\\perp e_\\lambda\\ (\\forall\\lambda\\in\\Lambda)$，则 $x=0$；\n\n（iv）$\\{e_\\lambda:\\lambda\\in\\Lambda\\}$ 是完备的，即：对 $H$ 中任意元素 $x$，**Parseval（帕塞瓦尔）等式** $\\|x\\|^2=\\sum\\limits_{\\lambda\\in\\Lambda}|\\langle x,e_\\lambda\\rangle|^2$ 成立。\n\n我们称满足上述条件之一的标准正交系为 Hilbert 空间 $H$ 中的一组**标准正交基**（或规范正交基）。",
          "anchor": "定理-1.3.2"
         },
         {
@@ -576,6 +643,7 @@
          "title": "",
          "page": 25,
          "html": "<p>在 $l^2$ 中，令 $e_n$ 为在位置 $n$ 取 $1$ 其他位置取 $0$ 的数列，则标准正交系 $\\{e_1,e_2,\\cdots,e_n,\\cdots\\}$ 是完全的，因此为 $l^2$ 的一组标准正交基。实际上，若 $x$ 垂直于这组标准正交系，则对任意正整数 $n$，有 $x_n=\\langle x,e_n\\rangle=0$，即 $x=0$。</p>",
+         "src": "在 $l^2$ 中，令 $e_n$ 为在位置 $n$ 取 $1$ 其他位置取 $0$ 的数列，则标准正交系 $\\{e_1,e_2,\\cdots,e_n,\\cdots\\}$ 是完全的，因此为 $l^2$ 的一组标准正交基。实际上，若 $x$ 垂直于这组标准正交系，则对任意正整数 $n$，有 $x_n=\\langle x,e_n\\rangle=0$，即 $x=0$。",
          "anchor": "例-1.3.5"
         },
         {
@@ -584,6 +652,7 @@
          "title": "",
          "page": 25,
          "html": "<p>$L^2[0,2\\pi]$ 中 $\\mathcal{E}=\\{1,\\cdots,\\sqrt{2}\\sin nx,\\sqrt{2}\\cos nx,\\cdots\\}$ 是一组标准正交基。从而，我们有$$\\|f\\|^2=\\sum_{e\\in\\mathcal{E}}|\\langle f,e\\rangle|^2,\\quad \\forall f\\in L^2[0,2\\pi]$$成立，这就是数学分析中所陈述的 Parseval 等式。而右端和的通项收敛于 $0$，就是 Fourier 级数的 Riemann–Lebesgue 引理：$$\\lim_{n\\to\\infty}\\int_0^{2\\pi}f(x)\\sin nx\\,\\mathrm{d}x=0;\\qquad \\lim_{n\\to\\infty}\\int_0^{2\\pi}f(x)\\cos nx\\,\\mathrm{d}x=0.\\tag{1.17}$$</p>",
+         "src": "$L^2[0,2\\pi]$ 中 $\\mathcal{E}=\\{1,\\cdots,\\sqrt{2}\\sin nx,\\sqrt{2}\\cos nx,\\cdots\\}$ 是一组标准正交基。从而，我们有$$\\|f\\|^2=\\sum_{e\\in\\mathcal{E}}|\\langle f,e\\rangle|^2,\\quad \\forall f\\in L^2[0,2\\pi]$$成立，这就是数学分析中所陈述的 Parseval 等式。而右端和的通项收敛于 $0$，就是 Fourier 级数的 Riemann–Lebesgue 引理：$$\\lim_{n\\to\\infty}\\int_0^{2\\pi}f(x)\\sin nx\\,\\mathrm{d}x=0;\\qquad \\lim_{n\\to\\infty}\\int_0^{2\\pi}f(x)\\cos nx\\,\\mathrm{d}x=0.\\tag{1.17}$$",
          "anchor": "例-1.3.6"
         },
         {
@@ -592,6 +661,7 @@
          "title": "Luzin 猜想",
          "page": 26,
          "html": "<p>根据定理 1.3.2，对任何 $f\\in L^2[0,2\\pi]$，有$$f=a_0+\\sqrt{2}\\sum_{n=1}^{\\infty}(a_n\\cos nt+b_n\\sin nt).\\tag{1.18}$$（1.18）式右边级数的部分和是按照 Hilbert 空间 $L^2[0,2\\pi]$ 中的范数收敛于 $f$ 的，换言之，$f$ 的 Fourier 级数的部分和<strong>平方平均收敛</strong>于 $f$。按定义，这并不意味着下式成立：$$\\lim_{n\\to\\infty}\\left[a_0+\\sqrt{2}\\sum_{k=1}^{n}(a_k\\cos kt+b_k\\sin kt)\\right]\\stackrel{m}{=}f.\\tag{1.19}$$1915 年，Luzin（卢津）猜测：对 $L^2(\\mathbb{T})$ 中的函数 $f$，（1.19）式是成立的。Kolmogorov（科尔莫哥罗夫）首先于 1923 年构造性地给出了一个 $L^1(\\mathbb{T})$ 的函数，它的部分和是几乎处处点发散的。1966 年，L. Carleson（卡勒松）证明了 Luzin 猜测是正确的。紧接着在 1967 年，R. A. Hunt（亨特）证明：对于 $L^p[0,2\\pi]\\ (p&gt;1)$ 中的函数，它的 Fourier 级数也是几乎处处收敛的。</p>",
+         "src": "根据定理 1.3.2，对任何 $f\\in L^2[0,2\\pi]$，有$$f=a_0+\\sqrt{2}\\sum_{n=1}^{\\infty}(a_n\\cos nt+b_n\\sin nt).\\tag{1.18}$$（1.18）式右边级数的部分和是按照 Hilbert 空间 $L^2[0,2\\pi]$ 中的范数收敛于 $f$ 的，换言之，$f$ 的 Fourier 级数的部分和**平方平均收敛**于 $f$。按定义，这并不意味着下式成立：$$\\lim_{n\\to\\infty}\\left[a_0+\\sqrt{2}\\sum_{k=1}^{n}(a_k\\cos kt+b_k\\sin kt)\\right]\\stackrel{m}{=}f.\\tag{1.19}$$1915 年，Luzin（卢津）猜测：对 $L^2(\\mathbb{T})$ 中的函数 $f$，（1.19）式是成立的。Kolmogorov（科尔莫哥罗夫）首先于 1923 年构造性地给出了一个 $L^1(\\mathbb{T})$ 的函数，它的部分和是几乎处处点发散的。1966 年，L. Carleson（卡勒松）证明了 Luzin 猜测是正确的。紧接着在 1967 年，R. A. Hunt（亨特）证明：对于 $L^p[0,2\\pi]\\ (p>1)$ 中的函数，它的 Fourier 级数也是几乎处处收敛的。",
          "anchor": "注-Luzin-猜想"
         },
         {
@@ -600,6 +670,7 @@
          "title": "",
          "page": 26,
          "html": "<p>由例 1.3.6 与 Euler（欧拉）公式，在复空间 $L^2[0,2\\pi]$ 中，$\\{\\mathrm{e}^{\\mathrm{i}nx}: n\\in\\mathbb{Z}\\}$ 是一组标准正交基。这也就是说，$\\{z^n=\\mathrm{e}^{\\mathrm{i}nx}: n\\in\\mathbb{Z}\\}$ 也是 $L^2\\left(\\mathbb{T},\\dfrac{\\mathrm{d}x}{2\\pi}\\right)$ 的标准正交基。</p><p>对于 $f\\in L^2[0,2\\pi]$，若令$$\\hat{f}(n)=\\langle f,\\mathrm{e}^{\\mathrm{i}nx}\\rangle=\\int_0^{2\\pi}f(x)\\mathrm{e}^{-\\mathrm{i}nx}\\,\\frac{\\mathrm{d}x}{2\\pi},$$则有 $\\|f\\|^2=\\sum\\limits_{n=-\\infty}^{\\infty}|\\hat{f}(n)|^2$。这说明 $f\\mapsto\\{\\hat{f}(n): n\\in\\mathbb{Z}\\}$ 是 $L^2[0,2\\pi]$ 到 $l^2(\\mathbb{Z})$ 上的一个同构。</p>",
+         "src": "由例 1.3.6 与 Euler（欧拉）公式，在复空间 $L^2[0,2\\pi]$ 中，$\\{\\mathrm{e}^{\\mathrm{i}nx}: n\\in\\mathbb{Z}\\}$ 是一组标准正交基。这也就是说，$\\{z^n=\\mathrm{e}^{\\mathrm{i}nx}: n\\in\\mathbb{Z}\\}$ 也是 $L^2\\left(\\mathbb{T},\\dfrac{\\mathrm{d}x}{2\\pi}\\right)$ 的标准正交基。\n\n对于 $f\\in L^2[0,2\\pi]$，若令$$\\hat{f}(n)=\\langle f,\\mathrm{e}^{\\mathrm{i}nx}\\rangle=\\int_0^{2\\pi}f(x)\\mathrm{e}^{-\\mathrm{i}nx}\\,\\frac{\\mathrm{d}x}{2\\pi},$$则有 $\\|f\\|^2=\\sum\\limits_{n=-\\infty}^{\\infty}|\\hat{f}(n)|^2$。这说明 $f\\mapsto\\{\\hat{f}(n): n\\in\\mathbb{Z}\\}$ 是 $L^2[0,2\\pi]$ 到 $l^2(\\mathbb{Z})$ 上的一个同构。",
          "anchor": "例-1.3.7"
         },
         {
@@ -608,6 +679,7 @@
          "title": "Legendre 多项式",
          "page": 26,
          "html": "<p>在 $L^2[-1,1]$ 中，函数列 $g_k(x)=x^k\\ (k=0,1,2,\\cdots)$ 是线性无关的。因此可以用 Gram–Schmidt（格拉姆–施密特）方法将 $\\{g_k\\}$ 化成标准正交的：$$h_0=\\frac{g_0}{\\|g_0\\|},\\qquad h_1=\\frac{g_1-\\langle g_1,h_0\\rangle h_0}{\\|g_1-\\langle g_1,h_0\\rangle h_0\\|},\\cdots.$$显然 $h_k$ 依旧是 $k$ 次的多项式。</p><p>实际上，可以证明 <strong>Legendre 多项式</strong>$$P_0(x)=1,\\quad P_n(x)=\\frac{1}{2^nn!}\\frac{\\mathrm{d}^n}{\\mathrm{d}x^n}(x^2-1)^n,\\quad n=1,2,\\cdots$$是 $L^2[-1,1]$ 中的正交多项式系。将 Legendre 多项式单位化得到$$h_0(x)=\\frac{1}{\\sqrt{2}},\\qquad h_n(x)=\\frac{1}{2^nn!}\\sqrt{\\frac{2n+1}{2}}\\frac{\\mathrm{d}^n}{\\mathrm{d}x^n}(x^2-1)^n,\\quad n=1,2,\\cdots$$就是 $\\{g_n\\}$ 经过 Gram–Schmidt 过程得到的正交向量系。又由于多项式全体在 $L^2[-1,1]$ 中稠密，因此 $\\{h_n: n=0,1,\\cdots\\}$ 构成了一组标准正交基。</p>",
+         "src": "在 $L^2[-1,1]$ 中，函数列 $g_k(x)=x^k\\ (k=0,1,2,\\cdots)$ 是线性无关的。因此可以用 Gram–Schmidt（格拉姆–施密特）方法将 $\\{g_k\\}$ 化成标准正交的：$$h_0=\\frac{g_0}{\\|g_0\\|},\\qquad h_1=\\frac{g_1-\\langle g_1,h_0\\rangle h_0}{\\|g_1-\\langle g_1,h_0\\rangle h_0\\|},\\cdots.$$显然 $h_k$ 依旧是 $k$ 次的多项式。\n\n实际上，可以证明 **Legendre 多项式**$$P_0(x)=1,\\quad P_n(x)=\\frac{1}{2^nn!}\\frac{\\mathrm{d}^n}{\\mathrm{d}x^n}(x^2-1)^n,\\quad n=1,2,\\cdots$$是 $L^2[-1,1]$ 中的正交多项式系。将 Legendre 多项式单位化得到$$h_0(x)=\\frac{1}{\\sqrt{2}},\\qquad h_n(x)=\\frac{1}{2^nn!}\\sqrt{\\frac{2n+1}{2}}\\frac{\\mathrm{d}^n}{\\mathrm{d}x^n}(x^2-1)^n,\\quad n=1,2,\\cdots$$就是 $\\{g_n\\}$ 经过 Gram–Schmidt 过程得到的正交向量系。又由于多项式全体在 $L^2[-1,1]$ 中稠密，因此 $\\{h_n: n=0,1,\\cdots\\}$ 构成了一组标准正交基。",
          "anchor": "例-1.3.8"
         },
         {
@@ -616,6 +688,7 @@
          "title": "Hermite 与 Laguerre 多项式",
          "page": 27,
          "html": "<p>令 $H_n$ 为 Hermite 多项式 $(-1)^n\\mathrm{e}^{t^2}\\dfrac{\\mathrm{d}^n}{\\mathrm{d}t^n}\\mathrm{e}^{-t^2}$，作$$\\psi_n(t)=(2^nn!\\sqrt{\\pi})^{-\\frac{1}{2}}\\mathrm{e}^{-\\frac{t^2}{2}}H_n(t),$$则 $\\psi_n(t)\\ (n=0,1,2,\\cdots)$ 组成 $L^2(\\mathbb{R},\\mathrm{e}^{-x^2}\\mathrm{d}m(x))$ 中的完备标准正交系。</p><p>令 $L_n(t)$ 为 Laguerre（拉盖尔）多项式 $\\mathrm{e}^{t}\\dfrac{\\mathrm{d}^n}{\\mathrm{d}t^n}(t^n\\mathrm{e}^{-t})$，则$$\\frac{1}{n!}\\mathrm{e}^{-\\frac{t}{2}}L_n(t)\\quad(n=0,1,\\cdots)$$组成 $L^2((0,\\infty),\\mathrm{e}^{-x}\\mathrm{d}m(x))$ 中的完备标准正交系。</p>",
+         "src": "令 $H_n$ 为 Hermite 多项式 $(-1)^n\\mathrm{e}^{t^2}\\dfrac{\\mathrm{d}^n}{\\mathrm{d}t^n}\\mathrm{e}^{-t^2}$，作$$\\psi_n(t)=(2^nn!\\sqrt{\\pi})^{-\\frac{1}{2}}\\mathrm{e}^{-\\frac{t^2}{2}}H_n(t),$$则 $\\psi_n(t)\\ (n=0,1,2,\\cdots)$ 组成 $L^2(\\mathbb{R},\\mathrm{e}^{-x^2}\\mathrm{d}m(x))$ 中的完备标准正交系。\n\n令 $L_n(t)$ 为 Laguerre（拉盖尔）多项式 $\\mathrm{e}^{t}\\dfrac{\\mathrm{d}^n}{\\mathrm{d}t^n}(t^n\\mathrm{e}^{-t})$，则$$\\frac{1}{n!}\\mathrm{e}^{-\\frac{t}{2}}L_n(t)\\quad(n=0,1,\\cdots)$$组成 $L^2((0,\\infty),\\mathrm{e}^{-x}\\mathrm{d}m(x))$ 中的完备标准正交系。",
          "anchor": "例-1.3.9"
         },
         {
@@ -624,6 +697,7 @@
          "title": "正交系的扩张",
          "page": 27,
          "html": "<p>设 $A$ 是 Hilbert 空间 $H$ 的标准正交系，则 $A$ 可扩张为 $H$ 的一组标准正交基。</p><p>一个 Hilbert 空间上可以有很多组不同的标准正交基，但是由集合论的知识可知，两组标准正交基的势总是一样的。而且，Hilbert 空间本质上由标准正交基的势唯一确定。具体来说，两个 Hilbert 空间 $H_1$ 与 $H_2$ 是（保持内积线性）空间同构的充要条件是它们的标准正交基的势是相同的。</p>",
+         "src": "设 $A$ 是 Hilbert 空间 $H$ 的标准正交系，则 $A$ 可扩张为 $H$ 的一组标准正交基。\n\n一个 Hilbert 空间上可以有很多组不同的标准正交基，但是由集合论的知识可知，两组标准正交基的势总是一样的。而且，Hilbert 空间本质上由标准正交基的势唯一确定。具体来说，两个 Hilbert 空间 $H_1$ 与 $H_2$ 是（保持内积线性）空间同构的充要条件是它们的标准正交基的势是相同的。",
          "anchor": "定理-1.3.3"
         },
         {
@@ -632,6 +706,7 @@
          "title": "投影定理",
          "page": 28,
          "html": "<p>设 $M$ 是 Hilbert 空间 $H$ 的闭线性子空间，那么，对任何 $x\\in H$，存在唯一 $x_0\\in M$，$x_1\\perp M$ 使 $x=x_0+x_1$。这种分解称为<strong>正交分解</strong>，$x_0$ 称为 $x$ 在 $M$ 上的<strong>正交投影</strong>。特别地，当 $x\\in M$ 时，$x_0=x$。</p><p>由投影定理，我们可以得到：Hilbert 空间 $H$ 可以分解成正交和 $H=M\\oplus M^{\\perp}$。</p><p>$M$ 在 $H$ 中的正交补空间 $M^{\\perp}$ 经常记为 $H\\ominus M$。更一般地，如果 $M,N$ 为 $H$ 的两个闭线性子空间，$M\\subset N$，定义 $N\\ominus M=N\\cap M^{\\perp}$，那么我们有 $N=M\\oplus(N\\ominus M)$。</p>",
+         "src": "设 $M$ 是 Hilbert 空间 $H$ 的闭线性子空间，那么，对任何 $x\\in H$，存在唯一 $x_0\\in M$，$x_1\\perp M$ 使 $x=x_0+x_1$。这种分解称为**正交分解**，$x_0$ 称为 $x$ 在 $M$ 上的**正交投影**。特别地，当 $x\\in M$ 时，$x_0=x$。\n\n由投影定理，我们可以得到：Hilbert 空间 $H$ 可以分解成正交和 $H=M\\oplus M^{\\perp}$。\n\n$M$ 在 $H$ 中的正交补空间 $M^{\\perp}$ 经常记为 $H\\ominus M$。更一般地，如果 $M,N$ 为 $H$ 的两个闭线性子空间，$M\\subset N$，定义 $N\\ominus M=N\\cap M^{\\perp}$，那么我们有 $N=M\\oplus(N\\ominus M)$。",
          "anchor": "定理-1.3.4"
         },
         {
@@ -640,6 +715,7 @@
          "title": "",
          "page": 28,
          "html": "<p>设 $M$ 是 Hilbert 空间 $H$ 中的闭线性子空间，而且 $M\\neq H$，那么 $M^{\\perp}$ 中有非零元素。</p>",
+         "src": "设 $M$ 是 Hilbert 空间 $H$ 中的闭线性子空间，而且 $M\\neq H$，那么 $M^{\\perp}$ 中有非零元素。",
          "anchor": "推论-1.3.2"
         },
         {
@@ -648,6 +724,7 @@
          "title": "",
          "page": 28,
          "html": "<p>设 $H$ 是 Hilbert 空间，$M$ 是 $H$ 的线性子空间，那么 $\\overline{M}=(M^{\\perp})^{\\perp}$。特别地，$M^{\\perp}=\\{0\\}$ 的充要条件是 $M$ 在 $H$ 中稠密。</p>",
+         "src": "设 $H$ 是 Hilbert 空间，$M$ 是 $H$ 的线性子空间，那么 $\\overline{M}=(M^{\\perp})^{\\perp}$。特别地，$M^{\\perp}=\\{0\\}$ 的充要条件是 $M$ 在 $H$ 中稠密。",
          "anchor": "推论-1.3.3"
         },
         {
@@ -656,6 +733,7 @@
          "title": "凸集",
          "page": 29,
          "html": "<p>设 $A$ 是线性空间 $X$ 的一个子集，若对于任意的 $x,y\\in A$ 以及 $0&lt;t&lt;1$，都有 $tx+(1-t)y\\in A$，则称 $A$ 是一个<strong>凸集</strong>。</p>",
+         "src": "设 $A$ 是线性空间 $X$ 的一个子集，若对于任意的 $x,y\\in A$ 以及 $0<t<1$，都有 $tx+(1-t)y\\in A$，则称 $A$ 是一个**凸集**。",
          "anchor": "定义-1.3.4"
         },
         {
@@ -664,6 +742,7 @@
          "title": "闭凸集的最佳逼近",
          "page": 29,
          "html": "<p>设 $M$ 是 Hilbert 空间 $H$ 的一个闭凸子集，则对任意 $x\\in H$，存在唯一的 $x_0\\in M$，使得$$\\|x-x_0\\|=\\inf_{y\\in M}\\|x-y\\|.$$</p>",
+         "src": "设 $M$ 是 Hilbert 空间 $H$ 的一个闭凸子集，则对任意 $x\\in H$，存在唯一的 $x_0\\in M$，使得$$\\|x-x_0\\|=\\inf_{y\\in M}\\|x-y\\|.$$",
          "anchor": "定理-1.3.5"
         },
         {
@@ -672,6 +751,7 @@
          "title": "投影定理",
          "page": 29,
          "html": "<p>设 $M$ 是 Hilbert 空间 $\\mathcal{H}$ 的一个闭线性子空间，则对于任意的 $x\\in\\mathcal{H}$，存在唯一的 $x_0\\in M$，使得 $\\|x-x_0\\|=d(x,M)$，并且 $x_0\\perp x-x_0$。</p><p>推论 1.3.4 说明用 $M$ 中的元 $y$ 来逼近 $x$ 时，当且仅当 $y$ 等于 $x$ 在 $M$ 上的投影 $x_0$ 时，逼近的程度最好。投影的这个性质常常被用来研究最佳逼近问题，也是凸分析理论的基础之一。</p>",
+         "src": "设 $M$ 是 Hilbert 空间 $\\mathcal{H}$ 的一个闭线性子空间，则对于任意的 $x\\in\\mathcal{H}$，存在唯一的 $x_0\\in M$，使得 $\\|x-x_0\\|=d(x,M)$，并且 $x_0\\perp x-x_0$。\n\n推论 1.3.4 说明用 $M$ 中的元 $y$ 来逼近 $x$ 时，当且仅当 $y$ 等于 $x$ 在 $M$ 上的投影 $x_0$ 时，逼近的程度最好。投影的这个性质常常被用来研究最佳逼近问题，也是凸分析理论的基础之一。",
          "anchor": "推论-1.3.4"
         }
        ]
@@ -687,6 +767,7 @@
          "title": "内点、内部与开集",
          "page": 31,
          "html": "<p>设 $A$ 是度量空间 $(X,d)$ 中的点集，$x_0\\in A$。</p><p>（i）如果存在 $r&gt;0$ 使得 $\\{x\\in X: d(x,x_0)&lt;r\\}\\subseteq A$，则称 $x_0$ 是 $A$ 的<strong>内点</strong>。</p><p>（ii）$A$ 的内点全体构成的点集称为 $A$ 的（拓扑）<strong>内部</strong>，记作 $A^\\circ$。</p><p>（iii）如果 $A$ 中每一点都是 $A$ 的内点，就称 $A$ 是<strong>开集</strong>。</p><p>（iv）规定空集也是开集。</p>",
+         "src": "设 $A$ 是度量空间 $(X,d)$ 中的点集，$x_0\\in A$。\n\n（i）如果存在 $r>0$ 使得 $\\{x\\in X: d(x,x_0)<r\\}\\subseteq A$，则称 $x_0$ 是 $A$ 的**内点**。\n\n（ii）$A$ 的内点全体构成的点集称为 $A$ 的（拓扑）**内部**，记作 $A^\\circ$。\n\n（iii）如果 $A$ 中每一点都是 $A$ 的内点，就称 $A$ 是**开集**。\n\n（iv）规定空集也是开集。",
          "anchor": "定义-1.4.1"
         },
         {
@@ -695,6 +776,7 @@
          "title": "开球",
          "page": 32,
          "html": "<p>在度量空间 $(X,d)$ 中，对于 $x_0\\in X$，$r&gt;0$，集 $O(x_0,r)=\\{x\\in X: d(x,x_0)&lt;r\\}$ 称为<strong>开球</strong>，也叫做 $x_0$ 的 $r$-邻域。容易看出，开球 $O(x_0,r)$ 是开集。</p>",
+         "src": "在度量空间 $(X,d)$ 中，对于 $x_0\\in X$，$r>0$，集 $O(x_0,r)=\\{x\\in X: d(x,x_0)<r\\}$ 称为**开球**，也叫做 $x_0$ 的 $r$-邻域。容易看出，开球 $O(x_0,r)$ 是开集。",
          "anchor": "例-1.4.1"
         },
         {
@@ -703,6 +785,7 @@
          "title": "邻域",
          "page": 32,
          "html": "<p>设 $(X,d)$ 是度量空间，$x_0\\in X$。$X$ 中包含 $x_0$ 的任何开集 $G$ 都称为 $x_0$ 的<strong>邻域</strong>。</p><p>用邻域的概念，我们可把收敛点列的概念改述如下：点列 $\\{x_n\\}_{n=1}^{\\infty}$ 收敛于点 $x_0$ 等价于对于 $x_0$ 的任何 $\\varepsilon$-邻域 $O(x_0,\\varepsilon)$，存在自然数 $N$，使得当 $n\\geqslant N$ 时，$x_n\\in O(x_0,\\varepsilon)$。</p>",
+         "src": "设 $(X,d)$ 是度量空间，$x_0\\in X$。$X$ 中包含 $x_0$ 的任何开集 $G$ 都称为 $x_0$ 的**邻域**。\n\n用邻域的概念，我们可把收敛点列的概念改述如下：点列 $\\{x_n\\}_{n=1}^{\\infty}$ 收敛于点 $x_0$ 等价于对于 $x_0$ 的任何 $\\varepsilon$-邻域 $O(x_0,\\varepsilon)$，存在自然数 $N$，使得当 $n\\geqslant N$ 时，$x_n\\in O(x_0,\\varepsilon)$。",
          "anchor": "定义-1.4.2"
         },
         {
@@ -711,6 +794,7 @@
          "title": "可数邻域基",
          "page": 32,
          "html": "<p>对度量空间 $(X,d)$ 中点 $x_0$，容易看出 $\\left\\{O\\left(x_0,\\dfrac{1}{n}\\right): n=1,2,\\cdots\\right\\}$ 是 $x_0$ 的一组<strong>邻域基</strong>，即任何含有点 $x_0$ 的开集都包含了一个半径足够小的开球 $O\\left(x_0,\\dfrac{1}{n}\\right)$。特别地，度量空间的任意一点均存在一个可数的邻域基，这是度量空间区别于一般拓扑空间的主要特性。例如，$C[a,b]$ 按点态收敛诱导的拓扑就不存在可数邻域基，因此这个拓扑是不可度量化的。</p>",
+         "src": "对度量空间 $(X,d)$ 中点 $x_0$，容易看出 $\\left\\{O\\left(x_0,\\dfrac{1}{n}\\right): n=1,2,\\cdots\\right\\}$ 是 $x_0$ 的一组**邻域基**，即任何含有点 $x_0$ 的开集都包含了一个半径足够小的开球 $O\\left(x_0,\\dfrac{1}{n}\\right)$。特别地，度量空间的任意一点均存在一个可数的邻域基，这是度量空间区别于一般拓扑空间的主要特性。例如，$C[a,b]$ 按点态收敛诱导的拓扑就不存在可数邻域基，因此这个拓扑是不可度量化的。",
          "anchor": "注-可数邻域基"
         },
         {
@@ -719,6 +803,7 @@
          "title": "极限点、导集、闭包与闭集",
          "page": 32,
          "html": "<p>设 $X$ 是度量空间，$A$ 是 $X$ 的子集。</p><p>（i）设 $x_0\\in X$，如果存在一点列 $\\{x_n\\}_{n=1}^{\\infty}$ 使得 $x_n\\neq x_0$ 且 $x_n\\to x_0$，那么称 $x_0$ 是点集 $A$ 的<strong>极限点</strong>。</p><p>（ii）$A$ 的极限点全体构成的集称为 $A$ 的<strong>导集</strong>，记作 $A'$。称 $\\overline{A}=A\\cup A'$ 是 $A$ 的<strong>闭包</strong>。</p><p>（iii）如果集合 $A$ 的极限点全体 $A'$ 都包含在 $A$ 中，就称 $A$ 为<strong>闭集</strong>。</p>",
+         "src": "设 $X$ 是度量空间，$A$ 是 $X$ 的子集。\n\n（i）设 $x_0\\in X$，如果存在一点列 $\\{x_n\\}_{n=1}^{\\infty}$ 使得 $x_n\\neq x_0$ 且 $x_n\\to x_0$，那么称 $x_0$ 是点集 $A$ 的**极限点**。\n\n（ii）$A$ 的极限点全体构成的集称为 $A$ 的**导集**，记作 $A'$。称 $\\overline{A}=A\\cup A'$ 是 $A$ 的**闭包**。\n\n（iii）如果集合 $A$ 的极限点全体 $A'$ 都包含在 $A$ 中，就称 $A$ 为**闭集**。",
          "anchor": "定义-1.4.3"
         },
         {
@@ -727,6 +812,7 @@
          "title": "闭球",
          "page": 32,
          "html": "<p>在度量空间 $(X,d)$ 中，对于 $x_0\\in X$，$r&gt;0$，集 $B(x_0,r)=\\{x\\in X: d(x,x_0)\\leqslant r\\}$ 称为<strong>闭球</strong>。显然闭球 $B(x_0,r)$ 是闭集。</p>",
+         "src": "在度量空间 $(X,d)$ 中，对于 $x_0\\in X$，$r>0$，集 $B(x_0,r)=\\{x\\in X: d(x,x_0)\\leqslant r\\}$ 称为**闭球**。显然闭球 $B(x_0,r)$ 是闭集。",
          "anchor": "例-1.4.2"
         },
         {
@@ -735,6 +821,7 @@
          "title": "连续映射",
          "page": 32,
          "html": "<p>设 $X$ 和 $Y$ 是度量空间，$f$ 是 $X$ 到 $Y$ 中的映射。</p><p>（i）对于 $X$ 中任意收敛于 $x_0$ 的点列 $\\{x_n\\}_{n=1}^{\\infty}$，成立$$\\lim_{n\\to\\infty}f(x_n)=f(x_0),$$则称映射 $f$ 在点 $x_0$ 是<strong>连续的</strong>。</p><p>（ii）假如映射 $f$ 在 $X$ 的每一点都连续，就称 $f$ 是 $X$ 上的<strong>连续映射</strong>。</p><p>特别地，当空间 $Y$ 是实数域 $\\mathbb{R}$（或复数域 $\\mathbb{C}$）时，称 $f$ 为连续实（复）函数。</p>",
+         "src": "设 $X$ 和 $Y$ 是度量空间，$f$ 是 $X$ 到 $Y$ 中的映射。\n\n（i）对于 $X$ 中任意收敛于 $x_0$ 的点列 $\\{x_n\\}_{n=1}^{\\infty}$，成立$$\\lim_{n\\to\\infty}f(x_n)=f(x_0),$$则称映射 $f$ 在点 $x_0$ 是**连续的**。\n\n（ii）假如映射 $f$ 在 $X$ 的每一点都连续，就称 $f$ 是 $X$ 上的**连续映射**。\n\n特别地，当空间 $Y$ 是实数域 $\\mathbb{R}$（或复数域 $\\mathbb{C}$）时，称 $f$ 为连续实（复）函数。",
          "anchor": "定义-1.4.4"
         },
         {
@@ -743,6 +830,7 @@
          "title": "距离函数",
          "page": 32,
          "html": "<p>设 $F$ 是度量空间 $(X,d)$ 的非空子集，定义<strong>距离函数</strong>$$d(x,F)=\\inf_{z\\in F}d(x,z).$$由度量的三角不等式可得$$|d(x_1,F)-d(x_2,F)|\\leqslant d(x_1,x_2),$$故 $x\\mapsto d(x,F)$ 是 $X$ 上的连续函数。显然它还是一致连续的，即对于任意 $\\varepsilon&gt;0$，存在一致的 $\\delta&gt;0$（此处取 $\\delta=\\varepsilon$ 即可），使得当 $d(x_1,x_2)&lt;\\delta$ 时，$|d(x_1,F)-d(x_2,F)|&lt;\\varepsilon$。</p>",
+         "src": "设 $F$ 是度量空间 $(X,d)$ 的非空子集，定义**距离函数**$$d(x,F)=\\inf_{z\\in F}d(x,z).$$由度量的三角不等式可得$$|d(x_1,F)-d(x_2,F)|\\leqslant d(x_1,x_2),$$故 $x\\mapsto d(x,F)$ 是 $X$ 上的连续函数。显然它还是一致连续的，即对于任意 $\\varepsilon>0$，存在一致的 $\\delta>0$（此处取 $\\delta=\\varepsilon$ 即可），使得当 $d(x_1,x_2)<\\delta$ 时，$|d(x_1,F)-d(x_2,F)|<\\varepsilon$。",
          "anchor": "例-1.4.3"
         },
         {
@@ -751,6 +839,7 @@
          "title": "连续映射的等价刻画",
          "page": 33,
          "html": "<p>设 $f$ 是度量空间 $X$ 到度量空间 $Y$ 中的映射，那么下面条件等价：</p><p>（i）映射 $f$ 是连续的。</p><p>（ii）对于任意 $x_0\\in X$，$\\varepsilon&gt;0$，存在 $\\delta&gt;0$，使得对 $x_0$ 在 $X$ 中的邻域 $O(x_0,\\delta)$，有$$f(O(x_0,\\delta))\\subset O(f(x_0),\\varepsilon).$$</p><p>（iii）空间 $Y$ 中的任一开集 $O$ 的原像 $f^{-1}(O)$ 是 $X$ 中的开集。</p><p>（iv）空间 $Y$ 中的任一闭集 $F$ 的原像 $f^{-1}(F)$ 是 $X$ 中的闭集。</p>",
+         "src": "设 $f$ 是度量空间 $X$ 到度量空间 $Y$ 中的映射，那么下面条件等价：\n\n（i）映射 $f$ 是连续的。\n\n（ii）对于任意 $x_0\\in X$，$\\varepsilon>0$，存在 $\\delta>0$，使得对 $x_0$ 在 $X$ 中的邻域 $O(x_0,\\delta)$，有$$f(O(x_0,\\delta))\\subset O(f(x_0),\\varepsilon).$$\n\n（iii）空间 $Y$ 中的任一开集 $O$ 的原像 $f^{-1}(O)$ 是 $X$ 中的开集。\n\n（iv）空间 $Y$ 中的任一闭集 $F$ 的原像 $f^{-1}(F)$ 是 $X$ 中的闭集。",
          "anchor": "定理-1.4.1"
         },
         {
@@ -759,6 +848,7 @@
          "title": "稠密",
          "page": 33,
          "html": "<p>在度量空间 $(X,d)$ 中，对于 $B$ 中一个子集 $A$，我们称 $A$ 在 $B$ 中<strong>稠密</strong>是指 $B\\subseteq\\overline{A}$。</p>",
+         "src": "在度量空间 $(X,d)$ 中，对于 $B$ 中一个子集 $A$，我们称 $A$ 在 $B$ 中**稠密**是指 $B\\subseteq\\overline{A}$。",
          "anchor": "定义-1.4.5"
         },
         {
@@ -767,6 +857,7 @@
          "title": "",
          "page": 33,
          "html": "<p>$\\mathbb{Q}$ 是 $\\mathbb{R}$ 中的稠密子集。</p>",
+         "src": "$\\mathbb{Q}$ 是 $\\mathbb{R}$ 中的稠密子集。",
          "anchor": "例-1.4.4"
         },
         {
@@ -775,6 +866,7 @@
          "title": "Weierstrass 第一逼近定理",
          "page": 33,
          "html": "<p>对直线上的有界闭区间 $[a,b]$，由数学分析中的 Weierstrass（魏尔斯特拉斯）第一逼近定理，多项式全体 $P$ 在 $C[a,b]$ 中是稠密的。</p>",
+         "src": "对直线上的有界闭区间 $[a,b]$，由数学分析中的 Weierstrass（魏尔斯特拉斯）第一逼近定理，多项式全体 $P$ 在 $C[a,b]$ 中是稠密的。",
          "anchor": "例-1.4.5"
         },
         {
@@ -783,6 +875,7 @@
          "title": "",
          "page": 33,
          "html": "<p>对直线上有界闭区间 $[a,b]$ 及 $1\\leqslant p&lt;\\infty$，$L^p[a,b]$ 中的简单函数全体、阶梯函数全体、$C_c^{\\infty}(a,b)$、$C[a,b]$ 以及多项式全体 $P$ 均是 $L^p[a,b]$ 的稠密子集。</p>",
+         "src": "对直线上有界闭区间 $[a,b]$ 及 $1\\leqslant p<\\infty$，$L^p[a,b]$ 中的简单函数全体、阶梯函数全体、$C_c^{\\infty}(a,b)$、$C[a,b]$ 以及多项式全体 $P$ 均是 $L^p[a,b]$ 的稠密子集。",
          "anchor": "例-1.4.6"
         },
         {
@@ -791,6 +884,7 @@
          "title": "",
          "page": 34,
          "html": "<p>（i）类似地，可得 $L^p(\\mathbb{R})\\ (1\\leqslant p&lt;\\infty)$ 中的简单函数全体、阶梯函数全体以及 $C_c^{\\infty}(\\mathbb{R})$ 均是稠密子集。</p><p>（ii）然而，在 $L^{\\infty}[a,b]$ 中，只有简单函数全体是稠密子集。</p>",
+         "src": "（i）类似地，可得 $L^p(\\mathbb{R})\\ (1\\leqslant p<\\infty)$ 中的简单函数全体、阶梯函数全体以及 $C_c^{\\infty}(\\mathbb{R})$ 均是稠密子集。\n\n（ii）然而，在 $L^{\\infty}[a,b]$ 中，只有简单函数全体是稠密子集。",
          "anchor": "注-1.4.1"
         },
         {
@@ -799,6 +893,7 @@
          "title": "可分空间",
          "page": 34,
          "html": "<p>设 $X$ 是度量空间。如果存在某个可数子集在 $X$ 中稠密，就称 $X$ 是<strong>可分空间</strong>。</p>",
+         "src": "设 $X$ 是度量空间。如果存在某个可数子集在 $X$ 中稠密，就称 $X$ 是**可分空间**。",
          "anchor": "定义-1.4.6"
         },
         {
@@ -807,6 +902,7 @@
          "title": "",
          "page": 34,
          "html": "<p>$n$ 维 Euclid 空间 $\\mathbb{R}^n$ 按通常度量是可分空间。这是因为坐标为有理数的点的全体是可列集，并且在 $\\mathbb{R}^n$ 中稠密。</p>",
+         "src": "$n$ 维 Euclid 空间 $\\mathbb{R}^n$ 按通常度量是可分空间。这是因为坐标为有理数的点的全体是可列集，并且在 $\\mathbb{R}^n$ 中稠密。",
          "anchor": "例-1.4.7"
         },
         {
@@ -815,6 +911,7 @@
          "title": "",
          "page": 34,
          "html": "<p>空间 $l^p\\ (1\\leqslant p&lt;\\infty)$ 是可分的。因为集合$$A=\\{(x_1,x_2,\\cdots,x_n,0,0,\\cdots): x_i\\in\\mathbb{Q},\\ i=1,2,\\cdots,n\\}$$是可列集，它在 $l^p$ 中稠密。</p>",
+         "src": "空间 $l^p\\ (1\\leqslant p<\\infty)$ 是可分的。因为集合$$A=\\{(x_1,x_2,\\cdots,x_n,0,0,\\cdots): x_i\\in\\mathbb{Q},\\ i=1,2,\\cdots,n\\}$$是可列集，它在 $l^p$ 中稠密。",
          "anchor": "例-1.4.8"
         },
         {
@@ -823,6 +920,7 @@
          "title": "",
          "page": 35,
          "html": "<p>$C[a,b]$ 和 $L^p[a,b]\\ (1\\leqslant p&lt;\\infty)$ 是可分空间。这是因为多项式全体在 $C[a,b]$ 和 $L^p[a,b]$ 中稠密，而对任意的多项式 $P(x)$，存在以有理数为系数的多项式 $p(x)$ 满足 $\\|P-p\\|_{\\infty}&lt;\\varepsilon$ 或者 $\\|P-p\\|_p&lt;\\varepsilon$。</p>",
+         "src": "$C[a,b]$ 和 $L^p[a,b]\\ (1\\leqslant p<\\infty)$ 是可分空间。这是因为多项式全体在 $C[a,b]$ 和 $L^p[a,b]$ 中稠密，而对任意的多项式 $P(x)$，存在以有理数为系数的多项式 $p(x)$ 满足 $\\|P-p\\|_{\\infty}<\\varepsilon$ 或者 $\\|P-p\\|_p<\\varepsilon$。",
          "anchor": "例-1.4.9"
         },
         {
@@ -831,6 +929,7 @@
          "title": "",
          "page": 35,
          "html": "<p>设度量空间 $(X,d)$ 是可分的，$A$ 为 $X$ 的子集，则度量空间 $(A,d)$ 也是可分的。</p>",
+         "src": "设度量空间 $(X,d)$ 是可分的，$A$ 为 $X$ 的子集，则度量空间 $(A,d)$ 也是可分的。",
          "anchor": "命题-1.4.1"
         },
         {
@@ -839,6 +938,7 @@
          "title": "",
          "page": 35,
          "html": "<p>有界数列全体组成的空间 $l^{\\infty}$ 是不可分的。</p>",
+         "src": "有界数列全体组成的空间 $l^{\\infty}$ 是不可分的。",
          "anchor": "例-1.4.10"
         },
         {
@@ -847,6 +947,7 @@
          "title": "",
          "page": 35,
          "html": "<p>空间 $L^{\\infty}[a,b]$ 是不可分的。</p>",
+         "src": "空间 $L^{\\infty}[a,b]$ 是不可分的。",
          "anchor": "例-1.4.11"
         },
         {
@@ -855,6 +956,7 @@
          "title": "完备性",
          "page": 35,
          "html": "<p>设 $(X,d)$ 是度量空间。</p><p>（i）设 $\\{x_n\\}_{n=1}^{\\infty}$ 是 $X$ 中的点列。如果对于任一正数 $\\varepsilon$，存在正整数 $N$，使得当 $n,m\\geqslant N$ 时，$$d(x_n,x_m)&lt;\\varepsilon,$$就称 $\\{x_n\\}_{n=1}^{\\infty}$ 是 $X$ 中的<strong>基本点列</strong>，或者称为 <strong>Cauchy 点列</strong>。</p><p>（ii）若度量空间 $X$ 中每个基本点列都收敛，则称 $X$ 是<strong>完备度量空间</strong>。</p><p>（iii）完备的赋范线性空间称为 <strong>Banach 空间</strong>。</p><p>（iv）完备的内积空间称为 <strong>Hilbert 空间</strong>。</p><p>（v）设 $A$ 是 $X$ 的子空间，如果 $A$ 作为度量空间是完备的，那么称 $A$ 是 $X$ 的<strong>完备子空间</strong>。</p>",
+         "src": "设 $(X,d)$ 是度量空间。\n\n（i）设 $\\{x_n\\}_{n=1}^{\\infty}$ 是 $X$ 中的点列。如果对于任一正数 $\\varepsilon$，存在正整数 $N$，使得当 $n,m\\geqslant N$ 时，$$d(x_n,x_m)<\\varepsilon,$$就称 $\\{x_n\\}_{n=1}^{\\infty}$ 是 $X$ 中的**基本点列**，或者称为 **Cauchy 点列**。\n\n（ii）若度量空间 $X$ 中每个基本点列都收敛，则称 $X$ 是**完备度量空间**。\n\n（iii）完备的赋范线性空间称为 **Banach 空间**。\n\n（iv）完备的内积空间称为 **Hilbert 空间**。\n\n（v）设 $A$ 是 $X$ 的子空间，如果 $A$ 作为度量空间是完备的，那么称 $A$ 是 $X$ 的**完备子空间**。",
          "anchor": "定义-1.4.7"
         },
         {
@@ -863,6 +965,7 @@
          "title": "",
          "page": 36,
          "html": "<p>（i）有理数集作为直线的子空间不是完备的。例如 $\\left\\{\\left(1+\\dfrac{1}{n}\\right)^n\\right\\}$ 是基本列，但是在有理数空间中它不收敛。</p><p>（ii）作为直线的子空间，集合 $\\left\\{\\dfrac{1}{n}: n=1,2,\\cdots\\right\\}$ 不是完备的度量空间。而集合 $\\left\\{\\dfrac{1}{n}: n=1,2,\\cdots\\right\\}\\cup\\{0\\}$ 是完备的度量空间。</p><p>（iii）作为直线 $(\\mathbb{R},d_1)$ 的子空间，正整数集 $\\mathbb{N}_+$ 是完备的度量空间。然而，若在 $\\mathbb{N}_+$ 上定义新度量 $d(n,m)=\\left|\\dfrac{1}{n}-\\dfrac{1}{m}\\right|$，容易看出在 $(\\mathbb{N}_+,d_1)$ 和 $(\\mathbb{N}_+,d)$ 中收敛性是一致的，但 $(\\mathbb{N}_+,d)$ 不是完备的。</p>",
+         "src": "（i）有理数集作为直线的子空间不是完备的。例如 $\\left\\{\\left(1+\\dfrac{1}{n}\\right)^n\\right\\}$ 是基本列，但是在有理数空间中它不收敛。\n\n（ii）作为直线的子空间，集合 $\\left\\{\\dfrac{1}{n}: n=1,2,\\cdots\\right\\}$ 不是完备的度量空间。而集合 $\\left\\{\\dfrac{1}{n}: n=1,2,\\cdots\\right\\}\\cup\\{0\\}$ 是完备的度量空间。\n\n（iii）作为直线 $(\\mathbb{R},d_1)$ 的子空间，正整数集 $\\mathbb{N}_+$ 是完备的度量空间。然而，若在 $\\mathbb{N}_+$ 上定义新度量 $d(n,m)=\\left|\\dfrac{1}{n}-\\dfrac{1}{m}\\right|$，容易看出在 $(\\mathbb{N}_+,d_1)$ 和 $(\\mathbb{N}_+,d)$ 中收敛性是一致的，但 $(\\mathbb{N}_+,d)$ 不是完备的。",
          "anchor": "例-1.4.12"
         },
         {
@@ -871,6 +974,7 @@
          "title": "",
          "page": 36,
          "html": "<p>（i）度量空间 $X$ 中收敛点列是基本点列。</p><p>（ii）设 $\\{x_n\\}_{n=1}^{\\infty}$ 是度量空间 $X$ 中基本点列，如果 $\\{x_n\\}_{n=1}^{\\infty}$ 有子列 $\\{x_{n_k}\\}_{k=1}^{\\infty}$ 收敛于 $X$ 中的点 $x$，那么 $\\{x_n\\}_{n=1}^{\\infty}$ 也收敛于 $x$。</p><p>（iii）完备度量空间的闭子集是完备子空间。</p><p>（iv）任何度量空间的完备子空间是闭子集。</p>",
+         "src": "（i）度量空间 $X$ 中收敛点列是基本点列。\n\n（ii）设 $\\{x_n\\}_{n=1}^{\\infty}$ 是度量空间 $X$ 中基本点列，如果 $\\{x_n\\}_{n=1}^{\\infty}$ 有子列 $\\{x_{n_k}\\}_{k=1}^{\\infty}$ 收敛于 $X$ 中的点 $x$，那么 $\\{x_n\\}_{n=1}^{\\infty}$ 也收敛于 $x$。\n\n（iii）完备度量空间的闭子集是完备子空间。\n\n（iv）任何度量空间的完备子空间是闭子集。",
          "anchor": "引理-1.4.1"
         },
         {
@@ -879,6 +983,7 @@
          "title": "",
          "page": 36,
          "html": "<p>一个不完备的度量空间可以有完备的子空间。例如，有理数组成的度量空间 $\\mathbb{Q}$ 不是完备的，但是其中的子空间 $\\mathbb{Z}$ 是完备的。再如，区间 $[0,1]$ 上的多项式全体 $P$，以最大模为范数，是一个不完备的赋范线性空间，但是由 $n$ 个向量 $1,x,x^2,\\cdots,x^{n-1}$ 生成的 $n$ 维子空间是完备的。</p>",
+         "src": "一个不完备的度量空间可以有完备的子空间。例如，有理数组成的度量空间 $\\mathbb{Q}$ 不是完备的，但是其中的子空间 $\\mathbb{Z}$ 是完备的。再如，区间 $[0,1]$ 上的多项式全体 $P$，以最大模为范数，是一个不完备的赋范线性空间，但是由 $n$ 个向量 $1,x,x^2,\\cdots,x^{n-1}$ 生成的 $n$ 维子空间是完备的。",
          "anchor": "注-1.4.2"
         },
         {
@@ -887,6 +992,7 @@
          "title": "",
          "page": 36,
          "html": "<p>设 $E$ 是 $\\mathbb{R}^n$ 的一个 Lebesgue 可测集，则空间 $L^p(E)\\ (1\\leqslant p&lt;\\infty)$ 是 Banach 空间。特别地，$L^2(E)$ 是 Hilbert 空间。</p>",
+         "src": "设 $E$ 是 $\\mathbb{R}^n$ 的一个 Lebesgue 可测集，则空间 $L^p(E)\\ (1\\leqslant p<\\infty)$ 是 Banach 空间。特别地，$L^2(E)$ 是 Hilbert 空间。",
          "anchor": "例-1.4.13"
         },
         {
@@ -895,6 +1001,7 @@
          "title": "商空间",
          "page": 37,
          "html": "<p>设 $X$ 是线性空间，$M$ 是 $X$ 的一个线性子空间。对 $x\\in X$，我们考虑 $X$ 的子集 $\\{x+y: y\\in M\\}$，这个子集随着 $x$ 变化而变化。记 $X$ 中这种子集的全体构成的集合为 $X/M$。将子集 $\\{x+y: y\\in M\\}$ 记为 $[x]$，称 $x$ 为子集 $[x]$ 的代表元。那么，$[x]=[x']$ 的充要条件是 $x-x'\\in M$。</p><p>在 $X/M$ 中可自然地规定线性运算如下：$$[x]+[y]=[x+y],\\quad \\forall x,y\\in X,$$$$\\alpha[x]=[\\alpha x],\\quad \\forall \\alpha \\text{ 是数}.$$容易验证，这样定义的线性运算是有确定的意义的，$X/M$ 按这样规定的线性运算成为线性空间，称 $X/M$ 为 $X$ 关于 $M$ 的<strong>商空间</strong>。如果定义从 $X$ 到 $X/M$ 的映射 $\\pi: x\\mapsto[x]$，容易验证 $\\pi$ 是线性空间 $X$ 到商空间 $X/M$ 的线性映射，这个映射称为<strong>商映射</strong>。</p><p>设 $M$ 是赋范线性空间 $X$ 的闭的线性子空间。在商空间 $X/M$ 上定义范数为：对 $X/M$ 中的元素 $[x]$，任取代表元 $x\\in[x]$，定义$$\\|[x]\\|=d(x,M)=\\inf_{y\\in M}\\|x+y\\|,$$显然这一定义与 $x$ 的选取无关，是良定义的。容易验证 $\\|\\cdot\\|$ 满足范数的条件，从而 $(X/M,\\|\\cdot\\|)$ 构成了一个赋范线性空间。特别地，当 $X$ 是 Banach 空间时，商空间 $(X/M,\\|\\cdot\\|)$ 也是一个 Banach 空间。而且，容易验证商映射 $\\pi(x)=[x]: X\\to X/M$ 将 $X$ 的开单位球映为商空间 $X/M$ 的开单位球，从而将 $X$ 中的开集映为开集，故它是一个开映射。</p>",
+         "src": "设 $X$ 是线性空间，$M$ 是 $X$ 的一个线性子空间。对 $x\\in X$，我们考虑 $X$ 的子集 $\\{x+y: y\\in M\\}$，这个子集随着 $x$ 变化而变化。记 $X$ 中这种子集的全体构成的集合为 $X/M$。将子集 $\\{x+y: y\\in M\\}$ 记为 $[x]$，称 $x$ 为子集 $[x]$ 的代表元。那么，$[x]=[x']$ 的充要条件是 $x-x'\\in M$。\n\n在 $X/M$ 中可自然地规定线性运算如下：$$[x]+[y]=[x+y],\\quad \\forall x,y\\in X,$$$$\\alpha[x]=[\\alpha x],\\quad \\forall \\alpha \\text{ 是数}.$$容易验证，这样定义的线性运算是有确定的意义的，$X/M$ 按这样规定的线性运算成为线性空间，称 $X/M$ 为 $X$ 关于 $M$ 的**商空间**。如果定义从 $X$ 到 $X/M$ 的映射 $\\pi: x\\mapsto[x]$，容易验证 $\\pi$ 是线性空间 $X$ 到商空间 $X/M$ 的线性映射，这个映射称为**商映射**。\n\n设 $M$ 是赋范线性空间 $X$ 的闭的线性子空间。在商空间 $X/M$ 上定义范数为：对 $X/M$ 中的元素 $[x]$，任取代表元 $x\\in[x]$，定义$$\\|[x]\\|=d(x,M)=\\inf_{y\\in M}\\|x+y\\|,$$显然这一定义与 $x$ 的选取无关，是良定义的。容易验证 $\\|\\cdot\\|$ 满足范数的条件，从而 $(X/M,\\|\\cdot\\|)$ 构成了一个赋范线性空间。特别地，当 $X$ 是 Banach 空间时，商空间 $(X/M,\\|\\cdot\\|)$ 也是一个 Banach 空间。而且，容易验证商映射 $\\pi(x)=[x]: X\\to X/M$ 将 $X$ 的开单位球映为商空间 $X/M$ 的开单位球，从而将 $X$ 中的开集映为开集，故它是一个开映射。",
          "anchor": "例-1.4.14"
         },
         {
@@ -903,6 +1010,7 @@
          "title": "有限维赋范空间完备",
          "page": 38,
          "html": "<p>有限维的赋范线性空间是完备的。</p><p>设 $X$ 是 $n$ 维的赋范线性空间，取其一组线性无关基 $e_1,e_2,\\cdots,e_n$，则存在正实数 $c_1,c_2$，使得对于 $X$ 中的每个 $x=\\sum\\limits_{i=1}^{n}x_ie_i$，成立$$c_1\\sqrt{\\sum_{i=1}^{n}|x_i|^2}\\leqslant\\|x\\|\\leqslant c_2\\sqrt{\\sum_{i=1}^{n}|x_i|^2}.\\tag{1.21}$$</p>",
+         "src": "有限维的赋范线性空间是完备的。\n\n设 $X$ 是 $n$ 维的赋范线性空间，取其一组线性无关基 $e_1,e_2,\\cdots,e_n$，则存在正实数 $c_1,c_2$，使得对于 $X$ 中的每个 $x=\\sum\\limits_{i=1}^{n}x_ie_i$，成立$$c_1\\sqrt{\\sum_{i=1}^{n}|x_i|^2}\\leqslant\\|x\\|\\leqslant c_2\\sqrt{\\sum_{i=1}^{n}|x_i|^2}.\\tag{1.21}$$",
          "anchor": "定理-1.4.2"
         },
         {
@@ -911,6 +1019,7 @@
          "title": "",
          "page": 38,
          "html": "<p>赋范线性空间 $X$ 的有限维线性子空间在 $X$ 中是闭的。</p>",
+         "src": "赋范线性空间 $X$ 的有限维线性子空间在 $X$ 中是闭的。",
          "anchor": "推论-1.4.1"
         },
         {
@@ -919,6 +1028,7 @@
          "title": "",
          "page": 38,
          "html": "<p>如果在连续函数空间 $C[0,1]$ 上定义范数$$\\|f\\|_1=\\int_0^1|f(x)|\\,\\mathrm{d}x,$$就是把 $C[a,b]$ 看成 $L^1[a,b]$ 的子空间，那么 $(C[a,b],\\|\\cdot\\|_1)$ 不是完备的空间。</p>",
+         "src": "如果在连续函数空间 $C[0,1]$ 上定义范数$$\\|f\\|_1=\\int_0^1|f(x)|\\,\\mathrm{d}x,$$就是把 $C[a,b]$ 看成 $L^1[a,b]$ 的子空间，那么 $(C[a,b],\\|\\cdot\\|_1)$ 不是完备的空间。",
          "anchor": "例-1.4.15"
         },
         {
@@ -927,6 +1037,7 @@
          "title": "完备化空间",
          "page": 39,
          "html": "<p>设 $(X,d)$ 是度量空间，称 $(Y,\\tilde{d})$ 是 $X$ 的一个<strong>完备化空间</strong>，是指：$Y$ 是完备度量空间，且存在一个嵌入单射 $j: X\\hookrightarrow Y$，满足下列条件：</p><p>（i）嵌入 $j$ 是等距：对于任意 $x_1,x_2\\in X$，$\\tilde{d}(j(x_1),j(x_2))=d(x_1,x_2)$；</p><p>（ii）$j(X)$ 在 $Y$ 中稠密。</p>",
+         "src": "设 $(X,d)$ 是度量空间，称 $(Y,\\tilde{d})$ 是 $X$ 的一个**完备化空间**，是指：$Y$ 是完备度量空间，且存在一个嵌入单射 $j: X\\hookrightarrow Y$，满足下列条件：\n\n（i）嵌入 $j$ 是等距：对于任意 $x_1,x_2\\in X$，$\\tilde{d}(j(x_1),j(x_2))=d(x_1,x_2)$；\n\n（ii）$j(X)$ 在 $Y$ 中稠密。",
          "anchor": "定义-1.4.8"
         },
         {
@@ -935,6 +1046,7 @@
          "title": "度量空间的完备化定理",
          "page": 39,
          "html": "<p>任意的度量空间 $(X,d)$ 都有唯一（在等距同构意义下）的完备化度量空间。</p>",
+         "src": "任意的度量空间 $(X,d)$ 都有唯一（在等距同构意义下）的完备化度量空间。",
          "anchor": "定理-1.4.3"
         },
         {
@@ -943,6 +1055,7 @@
          "title": "",
          "page": 40,
          "html": "<p>由例 1.4.15 知，$C[a,b]$ 按 $\\|\\cdot\\|_1$ 不是完备的。此时，将 $C[a,b]$ 自然嵌入到 $L^1[a,b]$，那么这个嵌入是一个等距映射，而且像集在 $L^1[a,b]$ 中稠密。因此 $(C[a,b],\\|\\cdot\\|_1)$ 的完备化空间就是 $L^1[a,b]$。</p>",
+         "src": "由例 1.4.15 知，$C[a,b]$ 按 $\\|\\cdot\\|_1$ 不是完备的。此时，将 $C[a,b]$ 自然嵌入到 $L^1[a,b]$，那么这个嵌入是一个等距映射，而且像集在 $L^1[a,b]$ 中稠密。因此 $(C[a,b],\\|\\cdot\\|_1)$ 的完备化空间就是 $L^1[a,b]$。",
          "anchor": "例-1.4.16"
         },
         {
@@ -951,6 +1064,7 @@
          "title": "闭球套定理",
          "page": 41,
          "html": "<p>设 $X$ 是完备的度量空间，$B_n=\\{x\\in X: d(x,x_n)\\leqslant\\varepsilon_n\\}$ 是 $X$ 中的一列单调下降的闭球：$$B_1\\supset B_2\\supset\\cdots\\supset B_n\\supset\\cdots.$$如果球的半径 $\\varepsilon_n\\to 0$，则有唯一的点 $x\\in\\bigcap\\limits_{n=1}^{\\infty}B_n$。</p>",
+         "src": "设 $X$ 是完备的度量空间，$B_n=\\{x\\in X: d(x,x_n)\\leqslant\\varepsilon_n\\}$ 是 $X$ 中的一列单调下降的闭球：$$B_1\\supset B_2\\supset\\cdots\\supset B_n\\supset\\cdots.$$如果球的半径 $\\varepsilon_n\\to 0$，则有唯一的点 $x\\in\\bigcap\\limits_{n=1}^{\\infty}B_n$。",
          "anchor": "定理-1.4.4"
         },
         {
@@ -959,6 +1073,7 @@
          "title": "",
          "page": 41,
          "html": "<p>条件中 $\\varepsilon_n\\to 0$ 是必须的。考虑 $l^2$ 的子空间$$X=\\left\\{x_n=\\left(0,0,\\cdots,0,\\frac{n+1}{n},0,\\cdots\\right): n=1,2,\\cdots\\right\\}.$$于是当 $n\\neq m$ 时，$$d(x_n,x_m)=\\sqrt{\\left(\\frac{n+1}{n}\\right)^2+\\left(\\frac{m+1}{m}\\right)^2}\\geqslant\\sqrt{2}.$$因此 $X$ 中没有非平凡的基本点列，当然 $X$ 就成为完备的度量空间。取 $\\varepsilon_n=\\sqrt{2}\\,\\dfrac{n+1}{n}$，在 $X$ 中作闭球$$B_n=\\{x\\in X: d(x_n,x)\\leqslant\\varepsilon_n\\},\\quad n=1,2,\\cdots,$$那么 $B_n=\\{x_n,x_{n+1},\\cdots\\}$，所以 $B_1\\supset B_2\\supset\\cdots$，但是，交集 $\\bigcap\\limits_{n=1}^{\\infty}B_n$ 是空集。</p>",
+         "src": "条件中 $\\varepsilon_n\\to 0$ 是必须的。考虑 $l^2$ 的子空间$$X=\\left\\{x_n=\\left(0,0,\\cdots,0,\\frac{n+1}{n},0,\\cdots\\right): n=1,2,\\cdots\\right\\}.$$于是当 $n\\neq m$ 时，$$d(x_n,x_m)=\\sqrt{\\left(\\frac{n+1}{n}\\right)^2+\\left(\\frac{m+1}{m}\\right)^2}\\geqslant\\sqrt{2}.$$因此 $X$ 中没有非平凡的基本点列，当然 $X$ 就成为完备的度量空间。取 $\\varepsilon_n=\\sqrt{2}\\,\\dfrac{n+1}{n}$，在 $X$ 中作闭球$$B_n=\\{x\\in X: d(x_n,x)\\leqslant\\varepsilon_n\\},\\quad n=1,2,\\cdots,$$那么 $B_n=\\{x_n,x_{n+1},\\cdots\\}$，所以 $B_1\\supset B_2\\supset\\cdots$，但是，交集 $\\bigcap\\limits_{n=1}^{\\infty}B_n$ 是空集。",
          "anchor": "例-1.4.17"
         },
         {
@@ -967,6 +1082,7 @@
          "title": "",
          "page": 42,
          "html": "<p>设 $X$ 是度量空间。如果在 $X$ 上闭球套定理成立，那么 $X$ 是完备的。</p><p>其实，闭球套定理是与度量空间的完备性等价的，定理 1.4.4 与定理 1.4.5 合起来给出了这一等价性。</p>",
+         "src": "设 $X$ 是度量空间。如果在 $X$ 上闭球套定理成立，那么 $X$ 是完备的。\n\n其实，闭球套定理是与度量空间的完备性等价的，定理 1.4.4 与定理 1.4.5 合起来给出了这一等价性。",
          "anchor": "定理-1.4.5"
         }
        ]
@@ -982,6 +1098,7 @@
          "title": "不动点",
          "page": 45,
          "html": "<p>设 $X$ 为一集合，$\\phi$ 是 $X$ 到自身的映射。如果 $x^*\\in X$，使得 $\\phi(x^*)=x^*$，那么称 $x^*$ 为映射 $\\phi$ 的一个<strong>不动点</strong>。</p>",
+         "src": "设 $X$ 为一集合，$\\phi$ 是 $X$ 到自身的映射。如果 $x^*\\in X$，使得 $\\phi(x^*)=x^*$，那么称 $x^*$ 为映射 $\\phi$ 的一个**不动点**。",
          "anchor": "定义-1.5.1"
         },
         {
@@ -990,6 +1107,7 @@
          "title": "压缩映射",
          "page": 45,
          "html": "<p>设 $(X,d)$ 是度量空间，$\\phi$ 是 $X$ 到它自身的一个映射。如果存在数 $\\alpha$，$0\\leqslant\\alpha&lt;1$，使得对一切 $x,y\\in X$，成立$$d(\\phi(x),\\phi(y))\\leqslant\\alpha d(x,y),$$就称 $\\phi$ 是 $X$ 上的<strong>压缩映射</strong>，对于线性空间 $X$ 上的情况往往称之为<strong>压缩算子</strong>。</p><p>经压缩映射后，集合中任意两点的距离被缩短了，至多等于原像距离的 $\\alpha\\ (\\alpha&lt;1)$ 倍。</p>",
+         "src": "设 $(X,d)$ 是度量空间，$\\phi$ 是 $X$ 到它自身的一个映射。如果存在数 $\\alpha$，$0\\leqslant\\alpha<1$，使得对一切 $x,y\\in X$，成立$$d(\\phi(x),\\phi(y))\\leqslant\\alpha d(x,y),$$就称 $\\phi$ 是 $X$ 上的**压缩映射**，对于线性空间 $X$ 上的情况往往称之为**压缩算子**。\n\n经压缩映射后，集合中任意两点的距离被缩短了，至多等于原像距离的 $\\alpha\\ (\\alpha<1)$ 倍。",
          "anchor": "定义-1.5.2"
         },
         {
@@ -998,6 +1116,7 @@
          "title": "压缩映射的连续性",
          "page": 46,
          "html": "<p>压缩映射是连续的，即对任何收敛点列 $x_n\\to x_0$，有 $\\phi(x_n)\\to\\phi(x_0)$。事实上，由压缩映射定义有$$d(\\phi(x_n),\\phi(x_0))\\leqslant\\alpha d(x_n,x_0),$$当 $n\\to\\infty$ 时，由 $d(x_n,x_0)\\to 0$ 就得到 $d(\\phi(x_n),\\phi(x_0))\\to 0$。</p><p>对于 $X$ 上的映射 $\\phi$，$\\phi^2$ 表示 $x\\mapsto\\phi(\\phi(x))$，由此可以逐次定义映射 $\\phi^n$。</p>",
+         "src": "压缩映射是连续的，即对任何收敛点列 $x_n\\to x_0$，有 $\\phi(x_n)\\to\\phi(x_0)$。事实上，由压缩映射定义有$$d(\\phi(x_n),\\phi(x_0))\\leqslant\\alpha d(x_n,x_0),$$当 $n\\to\\infty$ 时，由 $d(x_n,x_0)\\to 0$ 就得到 $d(\\phi(x_n),\\phi(x_0))\\to 0$。\n\n对于 $X$ 上的映射 $\\phi$，$\\phi^2$ 表示 $x\\mapsto\\phi(\\phi(x))$，由此可以逐次定义映射 $\\phi^n$。",
          "anchor": "注-压缩映射的连续性"
         },
         {
@@ -1006,6 +1125,7 @@
          "title": "Banach",
          "page": 46,
          "html": "<p>完备度量空间 $X$ 到自身的压缩映射 $\\phi$ 有唯一不动点。</p>",
+         "src": "完备度量空间 $X$ 到自身的压缩映射 $\\phi$ 有唯一不动点。",
          "anchor": "定理-1.5.1"
         },
         {
@@ -1014,6 +1134,7 @@
          "title": "",
          "page": 47,
          "html": "<p>不动点定理的证明不仅给出了压缩映射的不动点的存在性和唯一性，同时也提供了求不动点的一种方法——<strong>迭代法</strong>。就是说，在完备度量空间中，从任取的\"初值\" $x_0$ 出发，逐次作点列 $x_n=\\phi^n(x_0),\\ n=1,2,\\cdots$，它收敛到方程 $\\phi(x)=x$ 的解。这种方法也称为<strong>逐次逼近法</strong>。在迭代估计式中令 $p\\to\\infty$，得到$$d(x^*,x_n)\\leqslant\\frac{\\alpha^n}{1-\\alpha}d(x_1,x_0).\\tag{1.25}$$</p><p>上式告诉我们\"近似解\" $x_n$ 与所求准确解 $x^*$ 的逼近程度，以及方程 $\\phi(x)=x$ 的解可能坐落的范围。例如当 $n=0$ 时，由（1.25）式得到$$d(x^*,x_0)\\leqslant\\frac{1}{1-\\alpha}d(x_1,x_0).$$</p>",
+         "src": "不动点定理的证明不仅给出了压缩映射的不动点的存在性和唯一性，同时也提供了求不动点的一种方法——**迭代法**。就是说，在完备度量空间中，从任取的\"初值\" $x_0$ 出发，逐次作点列 $x_n=\\phi^n(x_0),\\ n=1,2,\\cdots$，它收敛到方程 $\\phi(x)=x$ 的解。这种方法也称为**逐次逼近法**。在迭代估计式中令 $p\\to\\infty$，得到$$d(x^*,x_n)\\leqslant\\frac{\\alpha^n}{1-\\alpha}d(x_1,x_0).\\tag{1.25}$$\n\n上式告诉我们\"近似解\" $x_n$ 与所求准确解 $x^*$ 的逼近程度，以及方程 $\\phi(x)=x$ 的解可能坐落的范围。例如当 $n=0$ 时，由（1.25）式得到$$d(x^*,x_0)\\leqslant\\frac{1}{1-\\alpha}d(x_1,x_0).$$",
          "anchor": "注-1.5.1"
         },
         {
@@ -1022,6 +1143,7 @@
          "title": "",
          "page": 47,
          "html": "<p>应该注意，上述定理 1.5.1 中，空间 $X$ 的完备性条件不能除去。例如考察 $\\mathbb{R}$ 的子空间 $(0,\\infty)$ 到它自身的映射$$\\phi(x)=\\alpha x,$$其中 $\\alpha$ 是小于 $1$ 的正数。$\\phi$ 显然是压缩映射，但是它在 $(0,\\infty)$ 中没有不动点。</p>",
+         "src": "应该注意，上述定理 1.5.1 中，空间 $X$ 的完备性条件不能除去。例如考察 $\\mathbb{R}$ 的子空间 $(0,\\infty)$ 到它自身的映射$$\\phi(x)=\\alpha x,$$其中 $\\alpha$ 是小于 $1$ 的正数。$\\phi$ 显然是压缩映射，但是它在 $(0,\\infty)$ 中没有不动点。",
          "anchor": "注-1.5.2"
         },
         {
@@ -1030,6 +1152,7 @@
          "title": "",
          "page": 47,
          "html": "<p>条件 $0\\leqslant\\alpha&lt;1$ 不能减弱为 $\\alpha=1$。例如在 $\\mathbb{R}$ 的闭子空间 $[0,\\infty)$ 中$$\\phi(x)=x+\\frac{1}{1+x},$$容易验证这个映射 $\\phi$ 满足$$d(\\phi(x),\\phi(y))&lt;d(x,y),\\qquad\\text{对于 } x\\neq y.\\tag{1.26}$$但 $\\phi$ 在 $[0,\\infty)$ 中没有不动点。</p>",
+         "src": "条件 $0\\leqslant\\alpha<1$ 不能减弱为 $\\alpha=1$。例如在 $\\mathbb{R}$ 的闭子空间 $[0,\\infty)$ 中$$\\phi(x)=x+\\frac{1}{1+x},$$容易验证这个映射 $\\phi$ 满足$$d(\\phi(x),\\phi(y))<d(x,y),\\qquad\\text{对于 } x\\neq y.\\tag{1.26}$$但 $\\phi$ 在 $[0,\\infty)$ 中没有不动点。",
          "anchor": "注-1.5.3"
         },
         {
@@ -1038,6 +1161,7 @@
          "title": "",
          "page": 47,
          "html": "<p>设度量空间 $X$ 是完备的，$\\phi$ 是 $X$ 到自身的映射。如果存在一个自然数 $n$ 使得 $\\phi^n$ 是 $X$ 上的压缩映射，那么映射 $\\phi$ 在 $X$ 中有唯一的不动点。</p>",
+         "src": "设度量空间 $X$ 是完备的，$\\phi$ 是 $X$ 到自身的映射。如果存在一个自然数 $n$ 使得 $\\phi^n$ 是 $X$ 上的压缩映射，那么映射 $\\phi$ 在 $X$ 中有唯一的不动点。",
          "anchor": "定理-1.5.2"
         },
         {
@@ -1046,6 +1170,7 @@
          "title": "隐函数存在定理",
          "page": 48,
          "html": "<p>设函数 $f(x,y)$ 在条形闭区域$$\\{(x,y): a\\leqslant x\\leqslant b,\\ -\\infty&lt;y&lt;\\infty\\}$$上处处连续，关于 $y$ 的偏导数 $f_y'(x,y)$ 有常数 $m&lt;M$ 使得在上述条形区域中$$0&lt;m\\leqslant f_y'(x,y)\\leqslant M.$$那么方程 $f(x,y)=0$ 在闭区间 $[a,b]$ 上有唯一的连续解 $y=\\varphi(x)$。</p>",
+         "src": "设函数 $f(x,y)$ 在条形闭区域$$\\{(x,y): a\\leqslant x\\leqslant b,\\ -\\infty<y<\\infty\\}$$上处处连续，关于 $y$ 的偏导数 $f_y'(x,y)$ 有常数 $m<M$ 使得在上述条形区域中$$0<m\\leqslant f_y'(x,y)\\leqslant M.$$那么方程 $f(x,y)=0$ 在闭区间 $[a,b]$ 上有唯一的连续解 $y=\\varphi(x)$。",
          "anchor": "例-1.5.1"
         },
         {
@@ -1054,6 +1179,7 @@
          "title": "",
          "page": 49,
          "html": "<p>假设 $f(x,y)$ 是平面上某单连通区域 $\\mathcal{D}$ 上的二元连续函数，我们考虑一阶常微分方程初值问题$$\\begin{cases}\\dfrac{\\mathrm{d}y}{\\mathrm{d}x}=f(x,y),\\\\[4pt] y|_{x=x_0}=y_0.\\end{cases}\\tag{1.28}$$</p><p>假设 $f(x,y)$ 在 $\\mathcal{D}$ 的一个矩形子集 $D=\\{(x,y): |x-x_0|\\leqslant a,\\ |y-y_0|\\leqslant\\lambda\\}$ 上对 $y$ 满足 Lipschitz 条件，即存在常数 $L&gt;0$，使得当 $(x,y_i)\\in D\\ (i=1,2)$ 时，$$|f(x,y_1)-f(x,y_2)|\\leqslant L|y_1-y_2|.\\tag{1.29}$$记 $M=\\max\\limits_{(x,y)\\in D}|f(x,y)|$，则当 $h&lt;\\min\\left\\{a,\\dfrac{\\lambda}{M},\\dfrac{1}{L}\\right\\}$ 时，初值问题（1.28）在区间 $[x_0-h,x_0+h]$ 上有唯一解。</p>",
+         "src": "假设 $f(x,y)$ 是平面上某单连通区域 $\\mathcal{D}$ 上的二元连续函数，我们考虑一阶常微分方程初值问题$$\\begin{cases}\\dfrac{\\mathrm{d}y}{\\mathrm{d}x}=f(x,y),\\\\[4pt] y|_{x=x_0}=y_0.\\end{cases}\\tag{1.28}$$\n\n假设 $f(x,y)$ 在 $\\mathcal{D}$ 的一个矩形子集 $D=\\{(x,y): |x-x_0|\\leqslant a,\\ |y-y_0|\\leqslant\\lambda\\}$ 上对 $y$ 满足 Lipschitz 条件，即存在常数 $L>0$，使得当 $(x,y_i)\\in D\\ (i=1,2)$ 时，$$|f(x,y_1)-f(x,y_2)|\\leqslant L|y_1-y_2|.\\tag{1.29}$$记 $M=\\max\\limits_{(x,y)\\in D}|f(x,y)|$，则当 $h<\\min\\left\\{a,\\dfrac{\\lambda}{M},\\dfrac{1}{L}\\right\\}$ 时，初值问题（1.28）在区间 $[x_0-h,x_0+h]$ 上有唯一解。",
          "anchor": "定理-1.5.3"
         },
         {
@@ -1062,6 +1188,7 @@
          "title": "",
          "page": 50,
          "html": "<p>设 $f(s)$ 为 $[a,b]$ 上的连续函数，$K(s,t)$ 为正方形 $[a,b]\\times[a,b]$ 上的连续函数，令$$M=\\sup_{a\\leqslant s\\leqslant b}\\int_a^b|K(s,t)|\\,\\mathrm{d}t&lt;\\infty,$$则当 $|\\lambda|&lt;\\dfrac{1}{M}$ 时，有唯一的 $\\varphi\\in C[a,b]$ 适合方程$$\\varphi(s)=f(s)+\\lambda\\int_a^b K(s,t)\\varphi(t)\\,\\mathrm{d}t.\\tag{1.32}$$</p>",
+         "src": "设 $f(s)$ 为 $[a,b]$ 上的连续函数，$K(s,t)$ 为正方形 $[a,b]\\times[a,b]$ 上的连续函数，令$$M=\\sup_{a\\leqslant s\\leqslant b}\\int_a^b|K(s,t)|\\,\\mathrm{d}t<\\infty,$$则当 $|\\lambda|<\\dfrac{1}{M}$ 时，有唯一的 $\\varphi\\in C[a,b]$ 适合方程$$\\varphi(s)=f(s)+\\lambda\\int_a^b K(s,t)\\varphi(t)\\,\\mathrm{d}t.\\tag{1.32}$$",
          "anchor": "定理-1.5.4"
         },
         {
@@ -1070,6 +1197,7 @@
          "title": "",
          "page": 50,
          "html": "<p>设 $f(x)$ 是区间 $[a,b]$ 上的连续函数，$K(x,y)$ 是三角形 $D=\\{(x,y): a\\leqslant x\\leqslant b,\\ a\\leqslant y\\leqslant x\\}$ 上的连续函数，那么对于任何常数 $\\lambda$，方程$$\\varphi(x)=f(x)+\\lambda\\int_a^x K(x,y)\\varphi(y)\\,\\mathrm{d}y\\tag{1.33}$$在 $[a,b]$ 上有唯一的连续函数解 $\\varphi(x)$。</p><p>形如（1.33）的方程称为 <strong>Volterra（沃尔泰拉）型积分方程</strong>。某些数学物理问题和某些变分问题均可归结为解这种积分方程。</p>",
+         "src": "设 $f(x)$ 是区间 $[a,b]$ 上的连续函数，$K(x,y)$ 是三角形 $D=\\{(x,y): a\\leqslant x\\leqslant b,\\ a\\leqslant y\\leqslant x\\}$ 上的连续函数，那么对于任何常数 $\\lambda$，方程$$\\varphi(x)=f(x)+\\lambda\\int_a^x K(x,y)\\varphi(y)\\,\\mathrm{d}y\\tag{1.33}$$在 $[a,b]$ 上有唯一的连续函数解 $\\varphi(x)$。\n\n形如（1.33）的方程称为 **Volterra（沃尔泰拉）型积分方程**。某些数学物理问题和某些变分问题均可归结为解这种积分方程。",
          "anchor": "定理-1.5.5"
         }
        ]
@@ -1085,6 +1213,7 @@
          "title": "相对列紧集",
          "page": 54,
          "html": "<p>设 $X$ 是度量空间，$A$ 是 $X$ 的子集。如果 $A$ 中的任何点列都有在 $X$ 中收敛的子列，就称 $A$ 是（$X$ 中的）<strong>相对列紧集</strong>。如果 $X$ 自身是相对列紧集，就称 $X$ 是<strong>列紧空间</strong>。</p>",
+         "src": "设 $X$ 是度量空间，$A$ 是 $X$ 的子集。如果 $A$ 中的任何点列都有在 $X$ 中收敛的子列，就称 $A$ 是（$X$ 中的）**相对列紧集**。如果 $X$ 自身是相对列紧集，就称 $X$ 是**列紧空间**。",
          "anchor": "定义-1.6.1"
         },
         {
@@ -1093,6 +1222,7 @@
          "title": "列紧集",
          "page": 54,
          "html": "<p>度量空间中闭的相对列紧集，即 $A$ 中任一点列有收敛子点列收敛到 $A$ 中的一点，称为<strong>列紧集</strong>。</p>",
+         "src": "度量空间中闭的相对列紧集，即 $A$ 中任一点列有收敛子点列收敛到 $A$ 中的一点，称为**列紧集**。",
          "anchor": "定义-1.6.2"
         },
         {
@@ -1101,6 +1231,7 @@
          "title": "相对列紧集的基本性质",
          "page": 54,
          "html": "<p>容易看出相对列紧集有下面的几点性质：</p><p>（1）有限点集是相对列紧集。</p><p>（2）有限个相对列紧集的并集是相对列紧集。</p><p>（3）相对列紧集的子集是相对列紧集，因此，任意一族相对列紧集的交集是相对列紧集。</p><p>（4）相对列紧集的闭包是相对列紧集，从而是列紧集。</p><p>（5）相对列紧集中的基本点列都收敛。因此，列紧的度量空间是完备的。</p>",
+         "src": "容易看出相对列紧集有下面的几点性质：\n\n（1）有限点集是相对列紧集。\n\n（2）有限个相对列紧集的并集是相对列紧集。\n\n（3）相对列紧集的子集是相对列紧集，因此，任意一族相对列紧集的交集是相对列紧集。\n\n（4）相对列紧集的闭包是相对列紧集，从而是列紧集。\n\n（5）相对列紧集中的基本点列都收敛。因此，列紧的度量空间是完备的。",
          "anchor": "命题-相对列紧集的基本性质"
         },
         {
@@ -1109,6 +1240,7 @@
          "title": "",
          "page": 55,
          "html": "<p>由 Bolzano–Weierstrass 定理，$\\mathbb{R}^n$（或 $\\mathbb{C}^n$）中的子集 $A$ 是相对列紧集等价于 $A$ 是有界的。再由定理 1.4.2 的讨论知，对任意的有限维赋范线性空间 $X$，它的子集 $A$ 是相对列紧等价于 $A$ 是有界集。</p><p>然而，对于无穷维的赋范线性空间，情况就变得非常复杂了。</p>",
+         "src": "由 Bolzano–Weierstrass 定理，$\\mathbb{R}^n$（或 $\\mathbb{C}^n$）中的子集 $A$ 是相对列紧集等价于 $A$ 是有界的。再由定理 1.4.2 的讨论知，对任意的有限维赋范线性空间 $X$，它的子集 $A$ 是相对列紧等价于 $A$ 是有界集。\n\n然而，对于无穷维的赋范线性空间，情况就变得非常复杂了。",
          "anchor": "例-1.6.1"
         },
         {
@@ -1117,6 +1249,7 @@
          "title": "",
          "page": 55,
          "html": "<p>空间 $l^2$ 中的一列向量 $\\{e_n: e_n=(0,0,\\cdots,0,1,0,\\cdots)\\}$ 构成的子集 $X$，其中的任何两个不同的元素之间的距离都等于 $\\sqrt{2}$，这是 $l^2$ 中的有界点列。但是，点列 $\\{e_n\\}$ 没有收敛的子点列。</p><p>另外，开集族 $\\left\\{O\\left(e_n,\\dfrac{1}{2}\\right): n=1,2,\\cdots\\right\\}$ 显然覆盖 $X$，但是每个开集 $O\\left(e_n,\\dfrac{1}{2}\\right)$ 都只包含一个元素 $e_n$，因此它没有包含 $X$ 的任何有限子覆盖。</p>",
+         "src": "空间 $l^2$ 中的一列向量 $\\{e_n: e_n=(0,0,\\cdots,0,1,0,\\cdots)\\}$ 构成的子集 $X$，其中的任何两个不同的元素之间的距离都等于 $\\sqrt{2}$，这是 $l^2$ 中的有界点列。但是，点列 $\\{e_n\\}$ 没有收敛的子点列。\n\n另外，开集族 $\\left\\{O\\left(e_n,\\dfrac{1}{2}\\right): n=1,2,\\cdots\\right\\}$ 显然覆盖 $X$，但是每个开集 $O\\left(e_n,\\dfrac{1}{2}\\right)$ 都只包含一个元素 $e_n$，因此它没有包含 $X$ 的任何有限子覆盖。",
          "anchor": "例-1.6.2"
         },
         {
@@ -1125,6 +1258,7 @@
          "title": "F. Riesz",
          "page": 55,
          "html": "<p>设 $A$ 是赋范线性空间 $X$ 的闭线性子空间，并且 $A\\neq X$。那么对于任一 $\\varepsilon\\ (0&lt;\\varepsilon&lt;1)$，存在 $X$ 中的单位向量 $x_0$，$\\|x_0\\|=1$，使得$$d(x_0,A)&gt;\\varepsilon.$$</p>",
+         "src": "设 $A$ 是赋范线性空间 $X$ 的闭线性子空间，并且 $A\\neq X$。那么对于任一 $\\varepsilon\\ (0<\\varepsilon<1)$，存在 $X$ 中的单位向量 $x_0$，$\\|x_0\\|=1$，使得$$d(x_0,A)>\\varepsilon.$$",
          "anchor": "引理-1.6.1"
         },
         {
@@ -1133,6 +1267,7 @@
          "title": "",
          "page": 56,
          "html": "<p>如果赋范线性空间 $X$ 是无限维的，那么 $X$ 的单位球不是相对列紧的。</p>",
+         "src": "如果赋范线性空间 $X$ 是无限维的，那么 $X$ 的单位球不是相对列紧的。",
          "anchor": "定理-1.6.1"
         },
         {
@@ -1141,6 +1276,7 @@
          "title": "",
          "page": 56,
          "html": "<p>设 $A$ 是度量空间 $X$ 中的点集。$A$ 是列紧的充要条件是 $X$ 中每个覆盖 $A$ 的开集族中都有有限个开集覆盖 $A$。</p><p>这就是说，在度量空间中（覆盖）紧集和列紧集是等价的。因此，在度量空间中，不需再区分列紧集和（覆盖）紧集。</p>",
+         "src": "设 $A$ 是度量空间 $X$ 中的点集。$A$ 是列紧的充要条件是 $X$ 中每个覆盖 $A$ 的开集族中都有有限个开集覆盖 $A$。\n\n这就是说，在度量空间中（覆盖）紧集和列紧集是等价的。因此，在度量空间中，不需再区分列紧集和（覆盖）紧集。",
          "anchor": "定理-1.6.2"
         },
         {
@@ -1149,6 +1285,7 @@
          "title": "$\\varepsilon$ 网与完全有界集",
          "page": 56,
          "html": "<p>设 $A$ 是度量空间 $X$ 中点集，$B$ 是 $A$ 的子集。</p><p>（i）如果有正数 $\\varepsilon$，使得以 $B$ 中各点为球心，以 $\\varepsilon$ 为半径的开球全体覆盖 $A$，即$$\\bigcup_{x\\in B}O(x,\\varepsilon)\\supset A,$$那么称 $B$ 是 $A$ 的 <strong>$\\varepsilon$ 网</strong>。</p><p>（ii）如果对任何 $\\varepsilon&gt;0$，集 $A$ 总有有限的 $\\varepsilon$ 网 $\\{x_1,x_2,\\cdots,x_n\\}\\subset A$（点的个数 $n$ 随 $\\varepsilon$ 而变），那么称 $A$ 是<strong>完全有界的集</strong>。</p>",
+         "src": "设 $A$ 是度量空间 $X$ 中点集，$B$ 是 $A$ 的子集。\n\n（i）如果有正数 $\\varepsilon$，使得以 $B$ 中各点为球心，以 $\\varepsilon$ 为半径的开球全体覆盖 $A$，即$$\\bigcup_{x\\in B}O(x,\\varepsilon)\\supset A,$$那么称 $B$ 是 $A$ 的 **$\\varepsilon$ 网**。\n\n（ii）如果对任何 $\\varepsilon>0$，集 $A$ 总有有限的 $\\varepsilon$ 网 $\\{x_1,x_2,\\cdots,x_n\\}\\subset A$（点的个数 $n$ 随 $\\varepsilon$ 而变），那么称 $A$ 是**完全有界的集**。",
          "anchor": "定义-1.6.3"
         },
         {
@@ -1157,6 +1294,7 @@
          "title": "",
          "page": 56,
          "html": "<p>在完全有界集定义中的 $B$ 要求是 $A$ 的子集，但实际上无须这个条件。这一事实留作读者练习。</p>",
+         "src": "在完全有界集定义中的 $B$ 要求是 $A$ 的子集，但实际上无须这个条件。这一事实留作读者练习。",
          "anchor": "注-1.6.1"
         },
         {
@@ -1165,6 +1303,7 @@
          "title": "",
          "page": 56,
          "html": "<p>$n$ 维 Euclid 空间 $\\mathbb{R}^n$ 中的有界集是完全有界的。从而，我们也可得到有限维赋范线性空间中的有界集是完全有界的。</p>",
+         "src": "$n$ 维 Euclid 空间 $\\mathbb{R}^n$ 中的有界集是完全有界的。从而，我们也可得到有限维赋范线性空间中的有界集是完全有界的。",
          "anchor": "例-1.6.3"
         },
         {
@@ -1173,6 +1312,7 @@
          "title": "Hausdorff",
          "page": 57,
          "html": "<p>（i）度量空间中相对列紧集是完全有界集。</p><p>（ii）在完备度量空间中，完全有界集是相对列紧集。因此，在完备度量空间中，完全有界集和相对列紧集是相同的。</p>",
+         "src": "（i）度量空间中相对列紧集是完全有界集。\n\n（ii）在完备度量空间中，完全有界集是相对列紧集。因此，在完备度量空间中，完全有界集和相对列紧集是相同的。",
          "anchor": "定理-1.6.3"
         },
         {
@@ -1181,6 +1321,7 @@
          "title": "完备性条件不可去",
          "page": 57,
          "html": "<p>定理 1.6.3 中（ii）的完备性条件能否除去？即在赋范线性空间 $(C[0,1],\\|\\cdot\\|_1)$ 中，是否存在完全有界但却不是相对列紧的集？</p>",
+         "src": "定理 1.6.3 中（ii）的完备性条件能否除去？即在赋范线性空间 $(C[0,1],\\|\\cdot\\|_1)$ 中，是否存在完全有界但却不是相对列紧的集？",
          "anchor": "反例-完备性条件不可去"
         },
         {
@@ -1189,6 +1330,7 @@
          "title": "",
          "page": 57,
          "html": "<p>如果度量空间 $X$ 中每个完全有界集都是相对列紧集，那么 $X$ 是完备的。</p>",
+         "src": "如果度量空间 $X$ 中每个完全有界集都是相对列紧集，那么 $X$ 是完备的。",
          "anchor": "定理-1.6.4"
         },
         {
@@ -1197,6 +1339,7 @@
          "title": "",
          "page": 57,
          "html": "<p>相对列紧集是可分的有界集。</p>",
+         "src": "相对列紧集是可分的有界集。",
          "anchor": "推论-1.6.1"
         },
         {
@@ -1205,6 +1348,7 @@
          "title": "等度连续的函数族",
          "page": 57,
          "html": "<p>设 $A$ 是 $[a,b]$ 上的一族连续函数，$A\\subset C[a,b]$。若对任何一个正数 $\\varepsilon$，有 $\\delta&gt;0$，使得对于区间 $[a,b]$ 中任何两点 $x,x'\\in[a,b]$，当 $|x-x'|&lt;\\delta$ 时，对 $A$ 中每个函数 $f$，都成立$$|f(x)-f(x')|&lt;\\varepsilon$$（即 $\\delta$ 不依赖于 $A$ 中个别的 $f$），那么称 $A$ 是<strong>等度连续的函数族</strong>。</p><p>\"等度\"的意思是族 $A$ 中各个函数的连续程度是同等的。</p>",
+         "src": "设 $A$ 是 $[a,b]$ 上的一族连续函数，$A\\subset C[a,b]$。若对任何一个正数 $\\varepsilon$，有 $\\delta>0$，使得对于区间 $[a,b]$ 中任何两点 $x,x'\\in[a,b]$，当 $|x-x'|<\\delta$ 时，对 $A$ 中每个函数 $f$，都成立$$|f(x)-f(x')|<\\varepsilon$$（即 $\\delta$ 不依赖于 $A$ 中个别的 $f$），那么称 $A$ 是**等度连续的函数族**。\n\n\"等度\"的意思是族 $A$ 中各个函数的连续程度是同等的。",
          "anchor": "定义-1.6.4"
         },
         {
@@ -1213,6 +1357,7 @@
          "title": "",
          "page": 58,
          "html": "<p>设 $L$ 和 $\\alpha$ 是两个正数，$A$ 是 $C[a,b]$ 中满足 Hölder 连续性条件：$$|f(x)-f(y)|\\leqslant L|x-y|^{\\alpha},\\qquad x,y\\in[a,b]$$的函数 $f$ 所成的函数族，$A$ 是等度连续的函数族。</p>",
+         "src": "设 $L$ 和 $\\alpha$ 是两个正数，$A$ 是 $C[a,b]$ 中满足 Hölder 连续性条件：$$|f(x)-f(y)|\\leqslant L|x-y|^{\\alpha},\\qquad x,y\\in[a,b]$$的函数 $f$ 所成的函数族，$A$ 是等度连续的函数族。",
          "anchor": "例-1.6.4"
         },
         {
@@ -1221,6 +1366,7 @@
          "title": "",
          "page": 58,
          "html": "<p>设 $K(s,t)$ 是 $[a,b]\\times[a,b]$ 上的连续函数，设 $C[a,b]$ 的子集$$A=\\left\\{\\int_a^b K(s,t)\\varphi(t)\\,\\mathrm{d}t:\\ \\varphi\\in C[a,b],\\ \\|\\varphi\\|\\leqslant 1\\right\\},$$则 $A$ 是等度连续的。</p>",
+         "src": "设 $K(s,t)$ 是 $[a,b]\\times[a,b]$ 上的连续函数，设 $C[a,b]$ 的子集$$A=\\left\\{\\int_a^b K(s,t)\\varphi(t)\\,\\mathrm{d}t:\\ \\varphi\\in C[a,b],\\ \\|\\varphi\\|\\leqslant 1\\right\\},$$则 $A$ 是等度连续的。",
          "anchor": "例-1.6.5"
         },
         {
@@ -1229,6 +1375,7 @@
          "title": "Arzelà–Ascoli",
          "page": 58,
          "html": "<p>$C[a,b]$ 的子集 $A$ 为相对列紧的充要条件是 $A$ 为有界的、等度连续的函数族。</p>",
+         "src": "$C[a,b]$ 的子集 $A$ 为相对列紧的充要条件是 $A$ 为有界的、等度连续的函数族。",
          "anchor": "定理-1.6.5"
         },
         {
@@ -1237,6 +1384,7 @@
          "title": "",
          "page": 59,
          "html": "<p>对 $1\\leqslant p&lt;\\infty$，空间 $l^p$ 中的集 $A$ 成为相对列紧的充要条件是 $A$ 为有界集且对任何正数 $\\varepsilon$，存在正整数 $N$，使得对一切 $x=(x_1,x_2,\\cdots,x_n,\\cdots)\\in A$，$$\\sum_{n=N+1}^{\\infty}|x_n|^p&lt;\\varepsilon.\\tag{1.36}$$</p><p>条件（1.36）对应于 $C[a,b]$ 中的等度连续性，可以称为\"等度收敛\"。</p>",
+         "src": "对 $1\\leqslant p<\\infty$，空间 $l^p$ 中的集 $A$ 成为相对列紧的充要条件是 $A$ 为有界集且对任何正数 $\\varepsilon$，存在正整数 $N$，使得对一切 $x=(x_1,x_2,\\cdots,x_n,\\cdots)\\in A$，$$\\sum_{n=N+1}^{\\infty}|x_n|^p<\\varepsilon.\\tag{1.36}$$\n\n条件（1.36）对应于 $C[a,b]$ 中的等度连续性，可以称为\"等度收敛\"。",
          "anchor": "定理-1.6.6"
         },
         {
@@ -1245,6 +1393,7 @@
          "title": "Kolmogorov–Riesz–Frèchet",
          "page": 61,
          "html": "<p>空间 $L^p(\\mathbb{R})$ 中的集 $A$ 是完全有界集的充要条件是</p><p>（i）$A$ 为有界集。</p><p>（ii）（等度 $L^p$ 胎紧）对于任意的 $\\varepsilon&gt;0$，存在正数 $M$，使得对于任意的 $f\\in A$，都有$$\\int_{|x|&gt;M}|f(x)|^p\\,\\mathrm{d}m(x)&lt;\\varepsilon^p.\\tag{1.37}$$</p><p>（iii）（等度 $L^p$ 范数连续）对于任意的 $\\varepsilon&gt;0$，存在 $\\delta&gt;0$，对于任意的 $f\\in A$，当 $|h|&lt;\\delta$ 时，一定有$$\\|f(\\cdot+h)-f(\\cdot)\\|_p\\leqslant\\varepsilon.\\tag{1.38}$$</p>",
+         "src": "空间 $L^p(\\mathbb{R})$ 中的集 $A$ 是完全有界集的充要条件是\n\n（i）$A$ 为有界集。\n\n（ii）（等度 $L^p$ 胎紧）对于任意的 $\\varepsilon>0$，存在正数 $M$，使得对于任意的 $f\\in A$，都有$$\\int_{|x|>M}|f(x)|^p\\,\\mathrm{d}m(x)<\\varepsilon^p.\\tag{1.37}$$\n\n（iii）（等度 $L^p$ 范数连续）对于任意的 $\\varepsilon>0$，存在 $\\delta>0$，对于任意的 $f\\in A$，当 $|h|<\\delta$ 时，一定有$$\\|f(\\cdot+h)-f(\\cdot)\\|_p\\leqslant\\varepsilon.\\tag{1.38}$$",
          "anchor": "定理-1.6.7"
         },
         {
@@ -1253,6 +1402,7 @@
          "title": "",
          "page": 61,
          "html": "<p>设 $K$ 是紧集，$f$ 是 $K$ 上的连续映射，那么 $K$ 的像 $E=f(K)$ 也是紧集。</p>",
+         "src": "设 $K$ 是紧集，$f$ 是 $K$ 上的连续映射，那么 $K$ 的像 $E=f(K)$ 也是紧集。",
          "anchor": "定理-1.6.8"
         },
         {
@@ -1261,6 +1411,7 @@
          "title": "",
          "page": 61,
          "html": "<p>度量空间 $X$ 上的连续映射把相对列紧集映射成相对列紧集。</p>",
+         "src": "度量空间 $X$ 上的连续映射把相对列紧集映射成相对列紧集。",
          "anchor": "推论-1.6.2"
         },
         {
@@ -1269,6 +1420,7 @@
          "title": "",
          "page": 61,
          "html": "<p>度量空间 $X$ 的紧子集 $K$ 上的连续函数 $f$ 是有界的，且上、下确界可达。</p>",
+         "src": "度量空间 $X$ 的紧子集 $K$ 上的连续函数 $f$ 是有界的，且上、下确界可达。",
          "anchor": "推论-1.6.3"
         },
         {
@@ -1277,6 +1429,7 @@
          "title": "",
          "page": 61,
          "html": "<p>紧集之间一对一的、到上的连续映射是拓扑同胚。</p>",
+         "src": "紧集之间一对一的、到上的连续映射是拓扑同胚。",
          "anchor": "推论-1.6.4"
         },
         {
@@ -1285,6 +1438,7 @@
          "title": "一致连续与等度连续",
          "page": 62,
          "html": "<p>设 $X$ 是度量空间。</p><p>（i）设 $f$ 是定义在 $X$ 上的函数。如果对于任意的 $\\varepsilon&gt;0$，存在 $\\delta&gt;0$，使得当 $d(x,y)&lt;\\delta$ 时，有 $|f(x)-f(y)|&lt;\\varepsilon$，则称 $f$ 在 $X$ 上<strong>一致连续</strong>。</p><p>（ii）$X$ 上连续函数的全体记为 $C(X)$，设 $A\\subset C(X)$。如果对于任意的 $\\varepsilon&gt;0$，存在 $\\delta&gt;0$，使得当 $d(x,x')&lt;\\delta$ 时，有$$|f(x)-f(x')|&lt;\\varepsilon,\\qquad \\forall f\\in A,$$则称集合 $A$ 是<strong>等度连续的</strong>。</p>",
+         "src": "设 $X$ 是度量空间。\n\n（i）设 $f$ 是定义在 $X$ 上的函数。如果对于任意的 $\\varepsilon>0$，存在 $\\delta>0$，使得当 $d(x,y)<\\delta$ 时，有 $|f(x)-f(y)|<\\varepsilon$，则称 $f$ 在 $X$ 上**一致连续**。\n\n（ii）$X$ 上连续函数的全体记为 $C(X)$，设 $A\\subset C(X)$。如果对于任意的 $\\varepsilon>0$，存在 $\\delta>0$，使得当 $d(x,x')<\\delta$ 时，有$$|f(x)-f(x')|<\\varepsilon,\\qquad \\forall f\\in A,$$则称集合 $A$ 是**等度连续的**。",
          "anchor": "定义-1.6.5"
         },
         {
@@ -1293,6 +1447,7 @@
          "title": "",
          "page": 62,
          "html": "<p>设 $X$ 是紧度量空间。</p><p>（i）如果 $f$ 是定义在 $X$ 上的连续函数，那么 $f$ 在 $X$ 上是一致连续的。</p><p>（ii）对于任意的 $f\\in C(X)$，定义 $\\|f\\|=\\max\\limits_{x\\in X}|f(x)|$，那么 $C(X)$ 是 Banach 空间。</p><p>（iii）（Arzelà–Ascoli）$C(X)$ 中的子集 $A$ 是相对列紧的充要条件为 $A$ 是等度连续的有界集。</p>",
+         "src": "设 $X$ 是紧度量空间。\n\n（i）如果 $f$ 是定义在 $X$ 上的连续函数，那么 $f$ 在 $X$ 上是一致连续的。\n\n（ii）对于任意的 $f\\in C(X)$，定义 $\\|f\\|=\\max\\limits_{x\\in X}|f(x)|$，那么 $C(X)$ 是 Banach 空间。\n\n（iii）（Arzelà–Ascoli）$C(X)$ 中的子集 $A$ 是相对列紧的充要条件为 $A$ 是等度连续的有界集。",
          "anchor": "定理-1.6.9"
         },
         {
@@ -1301,6 +1456,7 @@
          "title": "子代数",
          "page": 62,
          "html": "<p>对 $C(X)$ 中子集 $A$，如果 $A$ 对数乘运算和函数加法及乘法都是封闭的，则称 $A$ 是一个<strong>子代数</strong>，此时若 $A$ 还含有常数函数 $f(x)\\equiv 1$，则称 $A$ 是<strong>带单位元的子代数</strong>。若对任意 $f\\in A$ 都有 $\\bar{f}\\in A$，则称 $A$ 是<strong>自伴的</strong>。而 $A$ <strong>分离</strong> $X$ 中的点，则意味着：对任意 $x\\neq y\\in X$，可找到函数 $f\\in A$ 使得 $f(x)\\neq f(y)$。</p>",
+         "src": "对 $C(X)$ 中子集 $A$，如果 $A$ 对数乘运算和函数加法及乘法都是封闭的，则称 $A$ 是一个**子代数**，此时若 $A$ 还含有常数函数 $f(x)\\equiv 1$，则称 $A$ 是**带单位元的子代数**。若对任意 $f\\in A$ 都有 $\\bar{f}\\in A$，则称 $A$ 是**自伴的**。而 $A$ **分离** $X$ 中的点，则意味着：对任意 $x\\neq y\\in X$，可找到函数 $f\\in A$ 使得 $f(x)\\neq f(y)$。",
          "anchor": "定义-子代数"
         },
         {
@@ -1309,6 +1465,7 @@
          "title": "Stone–Weierstrass",
          "page": 62,
          "html": "<p>设 $X$ 是紧度量空间。若带单位元的子代数 $A$ 是自伴的，且 $A$ 分离 $X$ 中点，则 $A$ 在 $C(X)$ 中稠密。</p>",
+         "src": "设 $X$ 是紧度量空间。若带单位元的子代数 $A$ 是自伴的，且 $A$ 分离 $X$ 中点，则 $A$ 在 $C(X)$ 中稠密。",
          "anchor": "定理-1.6.10"
         },
         {
@@ -1317,6 +1474,7 @@
          "title": "Weierstrass 第二逼近定理",
          "page": 62,
          "html": "<p>在单位圆周 $\\mathbb{T}=\\{z=\\mathrm{e}^{\\mathrm{i}x}:0\\leqslant x&lt;2\\pi\\}$ 上，三角多项式$$\\mathcal{P}=\\left\\{\\sum_{k=-n}^{n}a_n\\mathrm{e}^{\\mathrm{i}nx}:\\ n\\in\\mathbb{N},\\ a_n\\in\\mathbb{C}\\right\\}$$在 Banach 空间 $C(\\mathbb{T})$ 中稠密。</p>",
+         "src": "在单位圆周 $\\mathbb{T}=\\{z=\\mathrm{e}^{\\mathrm{i}x}:0\\leqslant x<2\\pi\\}$ 上，三角多项式$$\\mathcal{P}=\\left\\{\\sum_{k=-n}^{n}a_n\\mathrm{e}^{\\mathrm{i}nx}:\\ n\\in\\mathbb{N},\\ a_n\\in\\mathbb{C}\\right\\}$$在 Banach 空间 $C(\\mathbb{T})$ 中稠密。",
          "anchor": "定理-1.6.11"
         },
         {
@@ -1325,6 +1483,7 @@
          "title": "",
          "page": 62,
          "html": "<p>利用 Weierstrass 第二逼近定理，也可以证明例 1.3.6、例 1.3.7 的结果。即 $\\{z^n=\\mathrm{e}^{\\mathrm{i}nx}: n\\in\\mathbb{Z}\\}$ 是 $L^2\\left(\\mathbb{T},\\dfrac{\\mathrm{d}x}{2\\pi}\\right)$ 的标准正交基。</p>",
+         "src": "利用 Weierstrass 第二逼近定理，也可以证明例 1.3.6、例 1.3.7 的结果。即 $\\{z^n=\\mathrm{e}^{\\mathrm{i}nx}: n\\in\\mathbb{Z}\\}$ 是 $L^2\\left(\\mathbb{T},\\dfrac{\\mathrm{d}x}{2\\pi}\\right)$ 的标准正交基。",
          "anchor": "例-1.6.6"
         },
         {
@@ -1333,6 +1492,7 @@
          "title": "Schauder 不动点定理",
          "page": 63,
          "html": "<p>设 $X$ 是 Banach 空间，$K\\subset X$ 是空间中的紧凸集。若 $f:K\\to K$ 是连续函数，则存在不动点 $x\\in K$ 使得 $f(x)=x$。</p>",
+         "src": "设 $X$ 是 Banach 空间，$K\\subset X$ 是空间中的紧凸集。若 $f:K\\to K$ 是连续函数，则存在不动点 $x\\in K$ 使得 $f(x)=x$。",
          "anchor": "定理-1.6.12"
         }
        ]
@@ -1364,6 +1524,7 @@
          "title": "映照",
          "page": 1,
          "html": "<p>设 $A,B$ 是两个非空集。如果存在一个规则 $\\varphi$，使得对于 $A$ 中的每一个元素 $x$，按照规则 $\\varphi$，在 $B$ 中都有唯一的一个元素 $y$ 与 $x$ 对应，记为$$\\varphi: x\\mapsto y,$$那么称这个规则 $\\varphi$ 是从 $A$ 到 $B$（中）的<strong>映照</strong>（也称为映射）。</p><p>元素 $y$ 称做元素 $x$（在映照 $\\varphi$ 下）的<strong>象</strong>，记做 $y=\\varphi(x)$；对任一固定 $y$，称适合关系 $y=\\varphi(x)$ 的 $x$ 全体为 $y$（在映照 $\\varphi$ 之下）的<strong>原象</strong>，记为 $\\varphi^{-1}(y)$；集 $A$ 称做为映照 $\\varphi$ 的<strong>定义域</strong>，记为 $\\mathfrak{D}(\\varphi)$。</p><p>设 $C$ 是 $A$ 的子集，$C$ 中所有元素 $x$ 的象 $y$ 的全体记为 $\\varphi(C)$，称它为集 $C$ 的象。称 $\\varphi(A)$ 为映照 $\\varphi$ 的<strong>值域</strong>，常记为 $\\mathfrak{R}(\\varphi)$，也常把从 $\\mathfrak{D}(\\varphi)=A$ 到 $\\mathfrak{R}(\\varphi)\\subset B$ 的映照写成 $\\varphi: A\\to B$。对 $B$ 的一个子集 $D$，称集 $\\{x:\\varphi(x)\\in D,\\ x\\in\\mathfrak{D}(\\varphi)\\}$ 为 $D$（在映照 $\\varphi$ 之下）的原象，记为 $\\varphi^{-1}(D)$。</p><p>设 $\\varphi$ 是 $A$ 到 $B$ 中的映照。若 $A$ 中任意两个不同的元素 $x_1,x_2$，它们的像 $\\varphi(x_1)\\neq\\varphi(x_2)$，那么就称映照 $\\varphi$ 是<strong>单射</strong>。如果 $\\varphi(A)=B$，就称 $\\varphi$ 是 $A$ 到 $B$ <strong>上</strong>的映照，又称为 $A$ 到 $B$ 的<strong>满射</strong>。</p><p>设 $\\varphi_1: A\\to B$，$\\varphi_2: B\\to C$。作 $A$ 到 $C$ 的映照 $\\varphi$ 如下：对任何 $x\\in A$，$\\varphi(x)=\\varphi_2(\\varphi_1(x))$，称 $\\varphi$ 是 $\\varphi_1,\\varphi_2$ 的<strong>复合映照</strong>，记 $\\varphi$ 为 $\\varphi_2\\circ\\varphi_1$。</p><p>特别地，如果值域 $B$ 是数集（实数或复数集），这时映照 $\\varphi$ 就是定义在集 $A$ 上的函数。如果 $A,B$ 都是数集，它们之间的映照就是数学分析中研究的函数。</p>",
+         "src": "设 $A,B$ 是两个非空集。如果存在一个规则 $\\varphi$，使得对于 $A$ 中的每一个元素 $x$，按照规则 $\\varphi$，在 $B$ 中都有唯一的一个元素 $y$ 与 $x$ 对应，记为$$\\varphi: x\\mapsto y,$$那么称这个规则 $\\varphi$ 是从 $A$ 到 $B$（中）的**映照**（也称为映射）。\n\n元素 $y$ 称做元素 $x$（在映照 $\\varphi$ 下）的**象**，记做 $y=\\varphi(x)$；对任一固定 $y$，称适合关系 $y=\\varphi(x)$ 的 $x$ 全体为 $y$（在映照 $\\varphi$ 之下）的**原象**，记为 $\\varphi^{-1}(y)$；集 $A$ 称做为映照 $\\varphi$ 的**定义域**，记为 $\\mathfrak{D}(\\varphi)$。\n\n设 $C$ 是 $A$ 的子集，$C$ 中所有元素 $x$ 的象 $y$ 的全体记为 $\\varphi(C)$，称它为集 $C$ 的象。称 $\\varphi(A)$ 为映照 $\\varphi$ 的**值域**，常记为 $\\mathfrak{R}(\\varphi)$，也常把从 $\\mathfrak{D}(\\varphi)=A$ 到 $\\mathfrak{R}(\\varphi)\\subset B$ 的映照写成 $\\varphi: A\\to B$。对 $B$ 的一个子集 $D$，称集 $\\{x:\\varphi(x)\\in D,\\ x\\in\\mathfrak{D}(\\varphi)\\}$ 为 $D$（在映照 $\\varphi$ 之下）的原象，记为 $\\varphi^{-1}(D)$。\n\n设 $\\varphi$ 是 $A$ 到 $B$ 中的映照。若 $A$ 中任意两个不同的元素 $x_1,x_2$，它们的像 $\\varphi(x_1)\\neq\\varphi(x_2)$，那么就称映照 $\\varphi$ 是**单射**。如果 $\\varphi(A)=B$，就称 $\\varphi$ 是 $A$ 到 $B$ **上**的映照，又称为 $A$ 到 $B$ 的**满射**。\n\n设 $\\varphi_1: A\\to B$，$\\varphi_2: B\\to C$。作 $A$ 到 $C$ 的映照 $\\varphi$ 如下：对任何 $x\\in A$，$\\varphi(x)=\\varphi_2(\\varphi_1(x))$，称 $\\varphi$ 是 $\\varphi_1,\\varphi_2$ 的**复合映照**，记 $\\varphi$ 为 $\\varphi_2\\circ\\varphi_1$。\n\n特别地，如果值域 $B$ 是数集（实数或复数集），这时映照 $\\varphi$ 就是定义在集 $A$ 上的函数。如果 $A,B$ 都是数集，它们之间的映照就是数学分析中研究的函数。",
          "anchor": "定义-1.1.1"
         },
         {
@@ -1372,6 +1533,7 @@
          "title": "恒等映射",
          "page": 1,
          "html": "<p>对集合 $X$，对任意 $x\\in X$，令 $x\\mapsto x$。按此规则得到的映射记为 $id_X$。</p>",
+         "src": "对集合 $X$，对任意 $x\\in X$，令 $x\\mapsto x$。按此规则得到的映射记为 $id_X$。",
          "anchor": "例-1.1.2"
         },
         {
@@ -1380,6 +1542,7 @@
          "title": "一一对应与逆映照",
          "page": 1,
          "html": "<p>如果 $\\varphi$ 是集 $A$ 到集 $B$ 上的单射，则称 $\\varphi$ 为 $A$ 到 $B$ 的<strong>一一对应</strong>（或双射）。此时，我们可以定义一个从 $B$ 到 $A$ 的映照：对 $B$ 中每个元素 $b$，在 $A$ 中有唯一的元素 $a$，适合 $\\varphi(a)=b$，则令 $b\\mapsto a$。我们将这个映射记为 $\\varphi^{-1}$，称为 $\\varphi$ 的<strong>逆映照</strong>。那么$$\\varphi^{-1}\\circ\\varphi=id_A,\\qquad \\varphi\\circ\\varphi^{-1}=id_B.$$</p><p>换句话说，$\\varphi$ 是 $A$ 到 $B$ 的一一对应意味着对于 $A$ 中任一元素 $a$，有唯一的 $b=\\varphi(a)\\in B$；而且，对 $B$ 中每个元素 $b$，在 $A$ 中有唯一的元素 $a$，适合 $\\varphi(a)=b$。在这种情况下，我们可以认为集合 $A$ 和集合 $B$ 的元素个数是一样的。</p>",
+         "src": "如果 $\\varphi$ 是集 $A$ 到集 $B$ 上的单射，则称 $\\varphi$ 为 $A$ 到 $B$ 的**一一对应**（或双射）。此时，我们可以定义一个从 $B$ 到 $A$ 的映照：对 $B$ 中每个元素 $b$，在 $A$ 中有唯一的元素 $a$，适合 $\\varphi(a)=b$，则令 $b\\mapsto a$。我们将这个映射记为 $\\varphi^{-1}$，称为 $\\varphi$ 的**逆映照**。那么$$\\varphi^{-1}\\circ\\varphi=id_A,\\qquad \\varphi\\circ\\varphi^{-1}=id_B.$$\n\n换句话说，$\\varphi$ 是 $A$ 到 $B$ 的一一对应意味着对于 $A$ 中任一元素 $a$，有唯一的 $b=\\varphi(a)\\in B$；而且，对 $B$ 中每个元素 $b$，在 $A$ 中有唯一的元素 $a$，适合 $\\varphi(a)=b$。在这种情况下，我们可以认为集合 $A$ 和集合 $B$ 的元素个数是一样的。",
          "anchor": "定义-1.1.3"
         },
         {
@@ -1388,6 +1551,7 @@
          "title": "对等",
          "page": 2,
          "html": "<p>设 $A,B$ 是两个集，如果存在一个 $A$ 到 $B$ 的一一对应 $\\varphi$，那么称集 $A$ 与集 $B$ <strong>对等</strong>（或相似），记为 $A\\stackrel{\\varphi}{\\sim}B$，或简记为 $A\\sim B$。补充规定空集 $\\varnothing$ 和自身对等。</p>",
+         "src": "设 $A,B$ 是两个集，如果存在一个 $A$ 到 $B$ 的一一对应 $\\varphi$，那么称集 $A$ 与集 $B$ **对等**（或相似），记为 $A\\stackrel{\\varphi}{\\sim}B$，或简记为 $A\\sim B$。补充规定空集 $\\varnothing$ 和自身对等。",
          "anchor": "定义-1.1.4"
         },
         {
@@ -1396,6 +1560,7 @@
          "title": "相同的势",
          "page": 2,
          "html": "<p>设 $A,B$ 是两个集。如果 $A$ 和 $B$ 对等，那么称 $A$ 和 $B$ 具有<strong>相同的势</strong>（或基数），记集 $A$ 的势为 $\\overline{A}$。当 $A$ 和 $B$ 具有相同势时，记为 $\\overline{A}=\\overline{B}$。</p><p>势这个概念的直观背景就是元素的个数。两个集 $A$ 和 $B$，如果有相同的势（也简说成等势）就意味着集 $A$ 和 $B$ 的元素的个数\"一样多\"。但是，在\"无限集\"中往往出现很多违背常识的现象。例如，$A\\supset B$，并且 $B\\neq A$，直观上看 $B$ 中的元素个数似乎少于 $A$，然而此时并不总有 $\\overline{A}\\neq\\overline{B}$。</p>",
+         "src": "设 $A,B$ 是两个集。如果 $A$ 和 $B$ 对等，那么称 $A$ 和 $B$ 具有**相同的势**（或基数），记集 $A$ 的势为 $\\overline{A}$。当 $A$ 和 $B$ 具有相同势时，记为 $\\overline{A}=\\overline{B}$。\n\n势这个概念的直观背景就是元素的个数。两个集 $A$ 和 $B$，如果有相同的势（也简说成等势）就意味着集 $A$ 和 $B$ 的元素的个数\"一样多\"。但是，在\"无限集\"中往往出现很多违背常识的现象。例如，$A\\supset B$，并且 $B\\neq A$，直观上看 $B$ 中的元素个数似乎少于 $A$，然而此时并不总有 $\\overline{A}\\neq\\overline{B}$。",
          "anchor": "定义-1.1.5"
         },
         {
@@ -1404,6 +1569,7 @@
          "title": "",
          "page": 2,
          "html": "<p>记奇数集 $O=\\{1,3,5,\\cdots,2n-1,\\cdots\\}$，偶数集 $E=\\{2,4,6,\\cdots,2n,\\cdots\\}$，自然数集 $\\mathbb{N}=\\{1,2,3,\\cdots,n,\\cdots\\}$。显然$$\\varphi_1: n\\mapsto 2n,\\qquad \\varphi_2: 2n\\mapsto 2n-1\\ (n=1,2,3,\\cdots),$$$\\varphi_2\\circ\\varphi_1$ 分别是 $\\mathbb{N}$ 到 $E$、$E$ 到 $O$、$\\mathbb{N}$ 到 $O$ 的一一对应。因此它们彼此对等，$\\overline{\\mathbb{N}}=\\overline{E}=\\overline{O}$。</p>",
+         "src": "记奇数集 $O=\\{1,3,5,\\cdots,2n-1,\\cdots\\}$，偶数集 $E=\\{2,4,6,\\cdots,2n,\\cdots\\}$，自然数集 $\\mathbb{N}=\\{1,2,3,\\cdots,n,\\cdots\\}$。显然$$\\varphi_1: n\\mapsto 2n,\\qquad \\varphi_2: 2n\\mapsto 2n-1\\ (n=1,2,3,\\cdots),$$$\\varphi_2\\circ\\varphi_1$ 分别是 $\\mathbb{N}$ 到 $E$、$E$ 到 $O$、$\\mathbb{N}$ 到 $O$ 的一一对应。因此它们彼此对等，$\\overline{\\mathbb{N}}=\\overline{E}=\\overline{O}$。",
          "anchor": "例-1.1.6"
         },
         {
@@ -1412,6 +1578,7 @@
          "title": "Hilbert 旅馆悖论",
          "page": 2,
          "html": "<p>假设有一个旅馆拥有无限多个房间，并且房间依次标号为 $1,2,3,\\cdots$。当所有的房间均已客满，或许有人会认为此时这一旅馆将无法再接纳新的客人（如同有限个房间的情况），但事实上并非如此。</p><p>设想此时有一个客人想要入住该旅馆。由于旅馆拥有无穷个房间，因而我们可以将原先在 $1$ 号房间原有的客人安置到 $2$ 号房间、$2$ 号房间原有的客人安置到 $3$ 号房间，以此类推，这样就空出了 $1$ 号房间留给新的客人。重复这一过程，我们就能够使任意有限个客人入住到旅馆内。数学上看，这源于 $n\\mapsto n+1$ 给出的 $\\mathbb{N}$ 到它的真子集 $\\{2,3,4,\\cdots\\}$ 的一一对应。</p><p>此外，将 $1$ 号房间原有的客人安置到 $2$ 号房间、$2$ 号房间原有的客人安置到 $4$ 号房间、$n$ 号房间原有的客人安置到 $2n$ 号房间，这样所有的奇数房间就都能够空出来以容纳新的客人。</p><p>这一问题虽然被称作\"悖论\"，但事实上它并不矛盾，而仅仅是与我们直觉相悖而已。而且，它所使用的\"无中生有\"的方式，在集合论的证明中被广泛地使用。</p>",
+         "src": "假设有一个旅馆拥有无限多个房间，并且房间依次标号为 $1,2,3,\\cdots$。当所有的房间均已客满，或许有人会认为此时这一旅馆将无法再接纳新的客人（如同有限个房间的情况），但事实上并非如此。\n\n设想此时有一个客人想要入住该旅馆。由于旅馆拥有无穷个房间，因而我们可以将原先在 $1$ 号房间原有的客人安置到 $2$ 号房间、$2$ 号房间原有的客人安置到 $3$ 号房间，以此类推，这样就空出了 $1$ 号房间留给新的客人。重复这一过程，我们就能够使任意有限个客人入住到旅馆内。数学上看，这源于 $n\\mapsto n+1$ 给出的 $\\mathbb{N}$ 到它的真子集 $\\{2,3,4,\\cdots\\}$ 的一一对应。\n\n此外，将 $1$ 号房间原有的客人安置到 $2$ 号房间、$2$ 号房间原有的客人安置到 $4$ 号房间、$n$ 号房间原有的客人安置到 $2n$ 号房间，这样所有的奇数房间就都能够空出来以容纳新的客人。\n\n这一问题虽然被称作\"悖论\"，但事实上它并不矛盾，而仅仅是与我们直觉相悖而已。而且，它所使用的\"无中生有\"的方式，在集合论的证明中被广泛地使用。",
          "anchor": "例-1.1.7"
         },
         {
@@ -1420,6 +1587,7 @@
          "title": "有限集",
          "page": 2,
          "html": "<p>对自然数 $n$，令 $M_n=\\{1,2,\\cdots,n\\}$。如果集 $A$ 与某个 $M_n$ 对等，就称 $A$ 是<strong>有限集</strong>。</p><p>规定有限集 $A$ 的势为集 $A$ 的<strong>计数</strong>，即如果 $A\\sim M_n$，那么规定 $\\overline{A}=n$。补充规定空集为有限集，并且它的计数规定为零。</p><p>我们称不是有限集的集为<strong>无限集</strong>。</p>",
+         "src": "对自然数 $n$，令 $M_n=\\{1,2,\\cdots,n\\}$。如果集 $A$ 与某个 $M_n$ 对等，就称 $A$ 是**有限集**。\n\n规定有限集 $A$ 的势为集 $A$ 的**计数**，即如果 $A\\sim M_n$，那么规定 $\\overline{A}=n$。补充规定空集为有限集，并且它的计数规定为零。\n\n我们称不是有限集的集为**无限集**。",
          "anchor": "定义-1.1.8"
         },
         {
@@ -1428,6 +1596,7 @@
          "title": "可列集",
          "page": 2,
          "html": "<p>设 $\\mathbb{N}$ 为自然数全体。凡是与集 $\\mathbb{N}$ 对等的集称为<strong>可列集</strong>。通常记可列集的势为 $\\aleph_0$（读作\"阿列夫零\"）。</p><p>如果集合 $A$ 是一个有限集或可列集，就称它是一个<strong>可数集</strong>。这意味着 $A$ 中所有元素可按某种规则依次排列成为（有限长或无限长的）序列。例如，若集合 $A$ 是可列集，那么可取到一一对应 $\\varphi: \\mathbb{N}\\to A$，从而 $A$ 中所有元素可排列为 $\\{\\varphi(1),\\varphi(2),\\cdots\\}$；反之亦然。</p>",
+         "src": "设 $\\mathbb{N}$ 为自然数全体。凡是与集 $\\mathbb{N}$ 对等的集称为**可列集**。通常记可列集的势为 $\\aleph_0$（读作\"阿列夫零\"）。\n\n如果集合 $A$ 是一个有限集或可列集，就称它是一个**可数集**。这意味着 $A$ 中所有元素可按某种规则依次排列成为（有限长或无限长的）序列。例如，若集合 $A$ 是可列集，那么可取到一一对应 $\\varphi: \\mathbb{N}\\to A$，从而 $A$ 中所有元素可排列为 $\\{\\varphi(1),\\varphi(2),\\cdots\\}$；反之亦然。",
          "anchor": "定义-1.1.9"
         },
         {
@@ -1436,6 +1605,7 @@
          "title": "",
          "page": 3,
          "html": "<p>任意无限集必定包含一个可列子集。</p><p>这说明可列集是最\"小\"的无限集。</p>",
+         "src": "任意无限集必定包含一个可列子集。\n\n这说明可列集是最\"小\"的无限集。",
          "anchor": "命题-1.1.10"
         },
         {
@@ -1444,6 +1614,7 @@
          "title": "",
          "page": 3,
          "html": "<p>可数集的子集是可数集。</p>",
+         "src": "可数集的子集是可数集。",
          "anchor": "命题-1.1.11"
         },
         {
@@ -1452,6 +1623,7 @@
          "title": "",
          "page": 3,
          "html": "<p>若 $A,B$ 都是可列集，那么它们的笛卡尔积 $A\\times B$ 是可列集。</p>",
+         "src": "若 $A,B$ 都是可列集，那么它们的笛卡尔积 $A\\times B$ 是可列集。",
          "anchor": "命题-1.1.12"
         },
         {
@@ -1460,6 +1632,7 @@
          "title": "",
          "page": 3,
          "html": "<p>设 $\\{A_1,\\cdots,A_n,\\cdots\\}$ 是全集 $X$ 中的子集列。若每个 $A_n$ 都是可数集，且至少有一个是可列集，则$$\\overline{\\bigcup_{n}A_n}=\\aleph_0.$$</p>",
+         "src": "设 $\\{A_1,\\cdots,A_n,\\cdots\\}$ 是全集 $X$ 中的子集列。若每个 $A_n$ 都是可数集，且至少有一个是可列集，则$$\\overline{\\bigcup_{n}A_n}=\\aleph_0.$$",
          "anchor": "命题-1.1.13"
         },
         {
@@ -1468,6 +1641,7 @@
          "title": "",
          "page": 4,
          "html": "<p>整数 $\\mathbb{Z}$ 中的数可按正负号交替排列为 $0,1,-1,2,-2,\\cdots$，故 $\\overline{\\mathbb{Z}}=\\aleph_0$。</p>",
+         "src": "整数 $\\mathbb{Z}$ 中的数可按正负号交替排列为 $0,1,-1,2,-2,\\cdots$，故 $\\overline{\\mathbb{Z}}=\\aleph_0$。",
          "anchor": "例-1.1.14"
         },
         {
@@ -1476,6 +1650,7 @@
          "title": "",
          "page": 4,
          "html": "<p>有理数集 $\\mathbb{Q}$ 是可列集。先考虑 $(0,1)$ 中的有理数全体 $A$，它与可列集 $\\mathbb{N}\\times\\mathbb{N}$ 的一个无限子集$$B=\\{(p,q)\\in\\mathbb{N}\\times\\mathbb{N}: p\\geqslant q,\\ \\gcd(p,q)=1\\}$$之间的映射 $(p,q)\\in B\\mapsto \\dfrac{q}{p}\\in A$ 是一个双射；而 $B$ 是可列集，故 $A$ 也是可列集。再由一一对应 $(n,r)\\in\\mathbb{Z}\\times A\\mapsto n+r\\in\\mathbb{Q}$ 可得 $\\overline{\\mathbb{Q}}=\\overline{\\mathbb{Z}\\times A}=\\aleph_0$。</p>",
+         "src": "有理数集 $\\mathbb{Q}$ 是可列集。先考虑 $(0,1)$ 中的有理数全体 $A$，它与可列集 $\\mathbb{N}\\times\\mathbb{N}$ 的一个无限子集$$B=\\{(p,q)\\in\\mathbb{N}\\times\\mathbb{N}: p\\geqslant q,\\ \\gcd(p,q)=1\\}$$之间的映射 $(p,q)\\in B\\mapsto \\dfrac{q}{p}\\in A$ 是一个双射；而 $B$ 是可列集，故 $A$ 也是可列集。再由一一对应 $(n,r)\\in\\mathbb{Z}\\times A\\mapsto n+r\\in\\mathbb{Q}$ 可得 $\\overline{\\mathbb{Q}}=\\overline{\\mathbb{Z}\\times A}=\\aleph_0$。",
          "anchor": "例-1.1.15"
         },
         {
@@ -1484,6 +1659,7 @@
          "title": "",
          "page": 4,
          "html": "<p>若 $\\mathcal{F}$ 是直线 $\\mathbb{R}$ 上的开区间族，对任意 $(a_1,b_1),(a_2,b_2)\\in\\mathcal{F}$ 有 $(a_1,b_1)\\cap(a_2,b_2)=\\varnothing$，那么 $\\mathcal{F}$ 是可数集。实际上，对任何 $(a,b)\\in\\mathcal{F}$，可取一个有理数 $r\\in(a,b)$，那么就得到了单射$$(a,b)\\in\\mathcal{F}\\mapsto r\\in\\mathbb{Q}.$$也就是说，$\\mathcal{F}$ 和可列集 $\\mathbb{Q}$ 的一个子集对等，所以 $\\mathcal{F}$ 是可数集。</p>",
+         "src": "若 $\\mathcal{F}$ 是直线 $\\mathbb{R}$ 上的开区间族，对任意 $(a_1,b_1),(a_2,b_2)\\in\\mathcal{F}$ 有 $(a_1,b_1)\\cap(a_2,b_2)=\\varnothing$，那么 $\\mathcal{F}$ 是可数集。实际上，对任何 $(a,b)\\in\\mathcal{F}$，可取一个有理数 $r\\in(a,b)$，那么就得到了单射$$(a,b)\\in\\mathcal{F}\\mapsto r\\in\\mathbb{Q}.$$也就是说，$\\mathcal{F}$ 和可列集 $\\mathbb{Q}$ 的一个子集对等，所以 $\\mathcal{F}$ 是可数集。",
          "anchor": "例-1.1.16"
         },
         {
@@ -1492,6 +1668,7 @@
          "title": "连续统",
          "page": 4,
          "html": "<p>设 $\\mathbb{R}$ 为实数全体。凡是与集 $\\mathbb{R}$ 对等的集称为<strong>连续统</strong>。通常记连续统集的势为 $\\mathfrak{c}$。</p>",
+         "src": "设 $\\mathbb{R}$ 为实数全体。凡是与集 $\\mathbb{R}$ 对等的集称为**连续统**。通常记连续统集的势为 $\\mathfrak{c}$。",
          "anchor": "定义-1.1.17"
         },
         {
@@ -1500,6 +1677,7 @@
          "title": "",
          "page": 4,
          "html": "<p>映射 $\\tan\\pi\\left(x-\\frac{1}{2}\\right)$ 给出了 $(0,1)$ 到 $\\mathbb{R}$ 的一一对应。故 $\\overline{(0,1)}=\\overline{\\mathbb{R}}=\\mathfrak{c}$。</p>",
+         "src": "映射 $\\tan\\pi\\left(x-\\frac{1}{2}\\right)$ 给出了 $(0,1)$ 到 $\\mathbb{R}$ 的一一对应。故 $\\overline{(0,1)}=\\overline{\\mathbb{R}}=\\mathfrak{c}$。",
          "anchor": "例-1.1.18"
         },
         {
@@ -1508,6 +1686,7 @@
          "title": "",
          "page": 4,
          "html": "<p>$(0,1)$ 不是可列集。故 $\\aleph_0\\neq\\mathfrak{c}$。</p>",
+         "src": "$(0,1)$ 不是可列集。故 $\\aleph_0\\neq\\mathfrak{c}$。",
          "anchor": "定理-1.1.19"
         },
         {
@@ -1516,6 +1695,7 @@
          "title": "",
          "page": 5,
          "html": "<p>对等关系\"$\\sim$\"是一种等价关系，即：</p><p>（i）$A\\sim A$（自反性）；</p><p>（ii）若 $A\\sim B$，则 $B\\sim A$（对称性）；</p><p>（iii）若 $A\\sim B$，$B\\sim C$，则 $A\\sim C$（传递性）。</p><p>若 $\\{A_\\lambda:\\lambda\\in\\Lambda\\}$，$\\{B_\\lambda:\\lambda\\in\\Lambda\\}$ 为两族集，且对每一个 $\\lambda\\in\\Lambda$，$A_\\lambda\\sim B_\\lambda$。假设集族 $\\{A_\\lambda\\}$ 中任何两个集互不相交，即 $A_\\lambda\\cap A_\\mu=\\varnothing\\ (\\lambda\\neq\\mu,\\ \\lambda,\\mu\\in\\Lambda)$，$\\{B_\\lambda\\}$ 中任何两个集也互不相交，那么$$\\bigcup_{\\lambda\\in\\Lambda}A_\\lambda\\sim\\bigcup_{\\lambda\\in\\Lambda}B_\\lambda.$$</p><p>若 $\\{A_\\lambda:\\lambda\\in\\Lambda\\}$，$\\{B_\\lambda:\\lambda\\in\\Lambda\\}$ 为两族集，且对每一个 $\\lambda\\in\\Lambda$，$A_\\lambda\\sim B_\\lambda$，那么它们的笛卡尔积也是对等的，即$$\\prod_{\\lambda\\in\\Lambda}A_\\lambda\\sim\\prod_{\\lambda\\in\\Lambda}B_\\lambda.$$</p>",
+         "src": "对等关系\"$\\sim$\"是一种等价关系，即：\n\n（i）$A\\sim A$（自反性）；\n\n（ii）若 $A\\sim B$，则 $B\\sim A$（对称性）；\n\n（iii）若 $A\\sim B$，$B\\sim C$，则 $A\\sim C$（传递性）。\n\n若 $\\{A_\\lambda:\\lambda\\in\\Lambda\\}$，$\\{B_\\lambda:\\lambda\\in\\Lambda\\}$ 为两族集，且对每一个 $\\lambda\\in\\Lambda$，$A_\\lambda\\sim B_\\lambda$。假设集族 $\\{A_\\lambda\\}$ 中任何两个集互不相交，即 $A_\\lambda\\cap A_\\mu=\\varnothing\\ (\\lambda\\neq\\mu,\\ \\lambda,\\mu\\in\\Lambda)$，$\\{B_\\lambda\\}$ 中任何两个集也互不相交，那么$$\\bigcup_{\\lambda\\in\\Lambda}A_\\lambda\\sim\\bigcup_{\\lambda\\in\\Lambda}B_\\lambda.$$\n\n若 $\\{A_\\lambda:\\lambda\\in\\Lambda\\}$，$\\{B_\\lambda:\\lambda\\in\\Lambda\\}$ 为两族集，且对每一个 $\\lambda\\in\\Lambda$，$A_\\lambda\\sim B_\\lambda$，那么它们的笛卡尔积也是对等的，即$$\\prod_{\\lambda\\in\\Lambda}A_\\lambda\\sim\\prod_{\\lambda\\in\\Lambda}B_\\lambda.$$",
          "anchor": "命题-1.1.20"
         },
         {
@@ -1524,6 +1704,7 @@
          "title": "F. Bernstein",
          "page": 5,
          "html": "<p>设 $A,B$ 是两个集。如果 $A$ 对等于 $B$ 的一个子集（即存在 $A$ 到 $B$ 的单射），$B$ 对等于 $A$ 的一个子集，那么 $A$ 与 $B$ 对等。</p><p>若 $A$ 对等于 $B$ 的一个子集，即存在 $A$ 到 $B$ 的单射，常记作 $\\overline{A}\\leqslant\\overline{B}$（或 $\\overline{B}\\geqslant\\overline{A}$）；若集合 $A,B$ 还满足 $\\overline{A}\\neq\\overline{B}$，则记作 $\\overline{A}&lt;\\overline{B}$（或 $\\overline{B}&gt;\\overline{A}$）。那么，Bernstein 定理可\"形式的\"陈述为：若集合 $A,B$ 满足 $\\overline{A}\\leqslant\\overline{B}$ 且 $\\overline{A}\\geqslant\\overline{B}$，则 $\\overline{A}=\\overline{B}$。</p>",
+         "src": "设 $A,B$ 是两个集。如果 $A$ 对等于 $B$ 的一个子集（即存在 $A$ 到 $B$ 的单射），$B$ 对等于 $A$ 的一个子集，那么 $A$ 与 $B$ 对等。\n\n若 $A$ 对等于 $B$ 的一个子集，即存在 $A$ 到 $B$ 的单射，常记作 $\\overline{A}\\leqslant\\overline{B}$（或 $\\overline{B}\\geqslant\\overline{A}$）；若集合 $A,B$ 还满足 $\\overline{A}\\neq\\overline{B}$，则记作 $\\overline{A}<\\overline{B}$（或 $\\overline{B}>\\overline{A}$）。那么，Bernstein 定理可\"形式的\"陈述为：若集合 $A,B$ 满足 $\\overline{A}\\leqslant\\overline{B}$ 且 $\\overline{A}\\geqslant\\overline{B}$，则 $\\overline{A}=\\overline{B}$。",
          "anchor": "定理-1.1.21"
         },
         {
@@ -1532,6 +1713,7 @@
          "title": "",
          "page": 6,
          "html": "<p>对于实数 $a,b$，记 $\\langle a,b\\rangle$ 为区间 $[a,b],[a,b),(a,b],(a,b)$ 中的某一个。若 $a&lt;b$，则称 $\\langle a,b\\rangle$ 是<strong>非退化的区间</strong>。此时 $\\overline{\\langle a,b\\rangle}=\\mathfrak{c}$。特别的，$(0,1),(0,1],[0,1),[0,1]$ 都与 $\\mathbb{R}$ 等势。</p>",
+         "src": "对于实数 $a,b$，记 $\\langle a,b\\rangle$ 为区间 $[a,b],[a,b),(a,b],(a,b)$ 中的某一个。若 $a<b$，则称 $\\langle a,b\\rangle$ 是**非退化的区间**。此时 $\\overline{\\langle a,b\\rangle}=\\mathfrak{c}$。特别的，$(0,1),(0,1],[0,1),[0,1]$ 都与 $\\mathbb{R}$ 等势。",
          "anchor": "例-1.1.22"
         },
         {
@@ -1540,6 +1722,7 @@
          "title": "",
          "page": 6,
          "html": "<p>对于实数 $x$，若存在有理系数的多项式 $p$ 使得 $p(x)=0$，则称 $x$ 是<strong>代数数</strong>；若这样的多项式 $p$ 不存在，则称 $x$ 是<strong>超越数</strong>。使用势的观点可以很容易看到超越数是很多的。</p><p>首先，有理系数多项式全体 $\\mathcal{P}$ 的势为 $\\aleph_0$；其次，代数数集 $A$ 的势为 $\\aleph_0$。由此可知超越数集 $T$ 不是可数集：否则 $\\mathbb{R}=A\\cup T$ 也是可数的。</p>",
+         "src": "对于实数 $x$，若存在有理系数的多项式 $p$ 使得 $p(x)=0$，则称 $x$ 是**代数数**；若这样的多项式 $p$ 不存在，则称 $x$ 是**超越数**。使用势的观点可以很容易看到超越数是很多的。\n\n首先，有理系数多项式全体 $\\mathcal{P}$ 的势为 $\\aleph_0$；其次，代数数集 $A$ 的势为 $\\aleph_0$。由此可知超越数集 $T$ 不是可数集：否则 $\\mathbb{R}=A\\cup T$ 也是可数的。",
          "anchor": "例-1.1.23"
         },
         {
@@ -1548,6 +1731,7 @@
          "title": "",
          "page": 7,
          "html": "<p>对集合 $A$ 和 $B$，记 $B^A$ 为从 $A$ 到 $B$ 中的映射全体。</p>",
+         "src": "对集合 $A$ 和 $B$，记 $B^A$ 为从 $A$ 到 $B$ 中的映射全体。",
          "anchor": "定义-1.1.24"
         },
         {
@@ -1556,6 +1740,7 @@
          "title": "",
          "page": 7,
          "html": "<p>设集合 $A$ 的势为 $\\alpha$，集合 $B$ 的势为 $\\beta$，我们用 $\\beta^\\alpha$ 表示集合 $B^A$ 的势。这个记号是合理的：若 $A_1\\sim A_2$，$B_1\\sim B_2$，那么 $B_1^{A_1}\\sim B_2^{A_2}$。</p>",
+         "src": "设集合 $A$ 的势为 $\\alpha$，集合 $B$ 的势为 $\\beta$，我们用 $\\beta^\\alpha$ 表示集合 $B^A$ 的势。这个记号是合理的：若 $A_1\\sim A_2$，$B_1\\sim B_2$，那么 $B_1^{A_1}\\sim B_2^{A_2}$。",
          "anchor": "注-1.1.25"
         },
         {
@@ -1564,6 +1749,7 @@
          "title": "",
          "page": 7,
          "html": "<p>$A$ 的子集全体称为 $A$ 的<strong>幂集</strong>，记作 $2^A$。这个符号与定义 1.1.24 是一致的，即 $2^A$ 与 $\\{0,1\\}^A$ 之间有自然的一一对应 $E\\mapsto\\chi_E$，其中示性函数 $\\chi_E$ 定义为$$\\chi_E(x)=\\begin{cases}1, &amp; x\\in E,\\\\ 0, &amp; x\\notin E.\\end{cases}$$</p>",
+         "src": "$A$ 的子集全体称为 $A$ 的**幂集**，记作 $2^A$。这个符号与定义 1.1.24 是一致的，即 $2^A$ 与 $\\{0,1\\}^A$ 之间有自然的一一对应 $E\\mapsto\\chi_E$，其中示性函数 $\\chi_E$ 定义为$$\\chi_E(x)=\\begin{cases}1, & x\\in E,\\\\ 0, & x\\notin E.\\end{cases}$$",
          "anchor": "例-1.1.26"
         },
         {
@@ -1572,6 +1758,7 @@
          "title": "",
          "page": 7,
          "html": "<p>对于集合 $A$，$A^{\\mathbb{N}}$ 可视为序列全体$$\\prod_{n=1}^{\\infty}A=\\{\\{a_1,a_2,\\cdots,a_n,\\cdots\\}: a_n\\in A\\},$$它们可由映射 $f\\in A^{\\mathbb{N}}\\mapsto (f(1),f(2),\\cdots,f(n),\\cdots)\\in\\prod_{n=1}^{\\infty}A$ 建立自然的一一对应。</p>",
+         "src": "对于集合 $A$，$A^{\\mathbb{N}}$ 可视为序列全体$$\\prod_{n=1}^{\\infty}A=\\{\\{a_1,a_2,\\cdots,a_n,\\cdots\\}: a_n\\in A\\},$$它们可由映射 $f\\in A^{\\mathbb{N}}\\mapsto (f(1),f(2),\\cdots,f(n),\\cdots)\\in\\prod_{n=1}^{\\infty}A$ 建立自然的一一对应。",
          "anchor": "例-1.1.27"
         },
         {
@@ -1580,6 +1767,7 @@
          "title": "",
          "page": 7,
          "html": "<p>$\\overline{2^{\\mathbb{N}}}=\\overline{\\mathbb{R}}$，也即 $2^{\\aleph_0}=\\mathfrak{c}$。</p>",
+         "src": "$\\overline{2^{\\mathbb{N}}}=\\overline{\\mathbb{R}}$，也即 $2^{\\aleph_0}=\\mathfrak{c}$。",
          "anchor": "命题-1.1.28"
         },
         {
@@ -1588,6 +1776,7 @@
          "title": "",
          "page": 7,
          "html": "<p>对于集合 $A,B,C$，我们有 $\\overline{(A^B)^C}=\\overline{A^{B\\times C}}$。</p>",
+         "src": "对于集合 $A,B,C$，我们有 $\\overline{(A^B)^C}=\\overline{A^{B\\times C}}$。",
          "anchor": "命题-1.1.29"
         },
         {
@@ -1596,6 +1785,7 @@
          "title": "",
          "page": 7,
          "html": "<p>若集合 $A$ 的势为 $\\mathfrak{c}$，则 $\\overline{A^{\\mathbb{N}}}=\\mathfrak{c}$。也即 $\\mathfrak{c}^{\\aleph_0}=\\mathfrak{c}$，或 $\\underbrace{\\mathfrak{c}\\times\\mathfrak{c}\\times\\cdots}_{\\text{有限个或可列个}}=\\mathfrak{c}$。</p>",
+         "src": "若集合 $A$ 的势为 $\\mathfrak{c}$，则 $\\overline{A^{\\mathbb{N}}}=\\mathfrak{c}$。也即 $\\mathfrak{c}^{\\aleph_0}=\\mathfrak{c}$，或 $\\underbrace{\\mathfrak{c}\\times\\mathfrak{c}\\times\\cdots}_{\\text{有限个或可列个}}=\\mathfrak{c}$。",
          "anchor": "推论-1.1.30"
         },
         {
@@ -1604,6 +1794,7 @@
          "title": "",
          "page": 8,
          "html": "<p>若集列 $\\{A_\\lambda:\\lambda\\in\\Lambda\\}$ 中的每个 $A_\\lambda$ 的势是 $\\mathfrak{c}$，且 $\\overline{\\Lambda}=\\mathfrak{c}$，那么 $\\overline{\\bigcup_{\\lambda\\in\\Lambda}A_\\lambda}=\\mathfrak{c}$。</p>",
+         "src": "若集列 $\\{A_\\lambda:\\lambda\\in\\Lambda\\}$ 中的每个 $A_\\lambda$ 的势是 $\\mathfrak{c}$，且 $\\overline{\\Lambda}=\\mathfrak{c}$，那么 $\\overline{\\bigcup_{\\lambda\\in\\Lambda}A_\\lambda}=\\mathfrak{c}$。",
          "anchor": "推论-1.1.31"
         },
         {
@@ -1612,6 +1803,7 @@
          "title": "",
          "page": 8,
          "html": "<p>若集合 $A$ 的势为 $\\aleph_0$，则 $\\overline{A^{\\mathbb{N}}}=\\mathfrak{c}$。也即 $\\aleph_0^{\\aleph_0}=\\mathfrak{c}$，或 $\\underbrace{\\aleph_0\\times\\aleph_0\\times\\cdots}_{\\text{可列个}}=\\mathfrak{c}$。</p>",
+         "src": "若集合 $A$ 的势为 $\\aleph_0$，则 $\\overline{A^{\\mathbb{N}}}=\\mathfrak{c}$。也即 $\\aleph_0^{\\aleph_0}=\\mathfrak{c}$，或 $\\underbrace{\\aleph_0\\times\\aleph_0\\times\\cdots}_{\\text{可列个}}=\\mathfrak{c}$。",
          "anchor": "推论-1.1.32"
         },
         {
@@ -1620,6 +1812,7 @@
          "title": "",
          "page": 8,
          "html": "<p>由于 $2^{\\aleph_0}=3^{\\aleph_0}=10^{\\aleph_0}=\\mathfrak{c}$，故 $2$ 进制小数全体、$3$ 进制小数全体或者 $10$ 进制小数全体，乃至 $k$ 进制小数全体势都是 $\\mathfrak{c}$。</p>",
+         "src": "由于 $2^{\\aleph_0}=3^{\\aleph_0}=10^{\\aleph_0}=\\mathfrak{c}$，故 $2$ 进制小数全体、$3$ 进制小数全体或者 $10$ 进制小数全体，乃至 $k$ 进制小数全体势都是 $\\mathfrak{c}$。",
          "anchor": "例-1.1.33"
         },
         {
@@ -1628,6 +1821,7 @@
          "title": "",
          "page": 8,
          "html": "<p>$\\mathbb{R}$ 上连续函数全体 $C(\\mathbb{R})$ 的势为 $\\mathfrak{c}$。</p><p>对任意 $f\\in C(\\mathbb{R})$，$f$ 由它在有理数集上的函数值唯一确定，即映射 $f\\in C(\\mathbb{R})\\mapsto \\{f(r)\\}_{r\\in\\mathbb{Q}}\\in\\mathbb{R}^{\\mathbb{Q}}$ 给出了 $C(\\mathbb{R})$ 到 $\\mathbb{R}^{\\mathbb{Q}}$ 中的一个单射；而常数函数全体的势为 $\\mathfrak{c}$，故 $\\overline{C(\\mathbb{R})}=\\mathfrak{c}$。</p>",
+         "src": "$\\mathbb{R}$ 上连续函数全体 $C(\\mathbb{R})$ 的势为 $\\mathfrak{c}$。\n\n对任意 $f\\in C(\\mathbb{R})$，$f$ 由它在有理数集上的函数值唯一确定，即映射 $f\\in C(\\mathbb{R})\\mapsto \\{f(r)\\}_{r\\in\\mathbb{Q}}\\in\\mathbb{R}^{\\mathbb{Q}}$ 给出了 $C(\\mathbb{R})$ 到 $\\mathbb{R}^{\\mathbb{Q}}$ 中的一个单射；而常数函数全体的势为 $\\mathfrak{c}$，故 $\\overline{C(\\mathbb{R})}=\\mathfrak{c}$。",
          "anchor": "例-1.1.34"
         },
         {
@@ -1636,6 +1830,7 @@
          "title": "",
          "page": 8,
          "html": "<p>$\\mathbb{R}$ 上实值函数全体的势为 $2^{\\mathfrak{c}}$。实际上，$\\mathfrak{c}^{\\mathfrak{c}}=(2^{\\aleph_0})^{\\mathfrak{c}}=2^{\\aleph_0\\times\\mathfrak{c}}=2^{\\mathfrak{c}}$。</p>",
+         "src": "$\\mathbb{R}$ 上实值函数全体的势为 $2^{\\mathfrak{c}}$。实际上，$\\mathfrak{c}^{\\mathfrak{c}}=(2^{\\aleph_0})^{\\mathfrak{c}}=2^{\\aleph_0\\times\\mathfrak{c}}=2^{\\mathfrak{c}}$。",
          "anchor": "例-1.1.35"
         },
         {
@@ -1644,6 +1839,7 @@
          "title": "Cantor",
          "page": 8,
          "html": "<p>幂集的势严格大于集合的势。即，对于集合 $X$ 我们有 $\\overline{2^X}&gt;\\overline{X}$。</p><p>由此可知，不存在势达到极大的集合，而且我们还可以得到一个不会中止的上升基数列$$\\aleph_0&lt;\\mathfrak{c}&lt;2^{\\mathfrak{c}}&lt;2^{2^{\\mathfrak{c}}}&lt;\\cdots$$</p>",
+         "src": "幂集的势严格大于集合的势。即，对于集合 $X$ 我们有 $\\overline{2^X}>\\overline{X}$。\n\n由此可知，不存在势达到极大的集合，而且我们还可以得到一个不会中止的上升基数列$$\\aleph_0<\\mathfrak{c}<2^{\\mathfrak{c}}<2^{2^{\\mathfrak{c}}}<\\cdots$$",
          "anchor": "定理-1.1.36"
         },
         {
@@ -1652,6 +1848,7 @@
          "title": "Cantor 连续统假设",
          "page": 9,
          "html": "<p>$\\aleph_0,\\mathfrak{c}$ 是两个重要的无限势。是否存在一个势 $\\alpha$，使得 $\\aleph_0&lt;\\alpha&lt;\\mathfrak{c}$ 成立？Cantor 首先看到了这个自然而然重要的问题，他并没有解决这个问题，但他相信（从而他假设）没有这个\"中间\"势 $\\alpha$，这就是著名的 <strong>Cantor 连续统假设</strong>。这个假设可以作为一条公理，并且与集合论中其它一些公理是独立的。</p>",
+         "src": "$\\aleph_0,\\mathfrak{c}$ 是两个重要的无限势。是否存在一个势 $\\alpha$，使得 $\\aleph_0<\\alpha<\\mathfrak{c}$ 成立？Cantor 首先看到了这个自然而然重要的问题，他并没有解决这个问题，但他相信（从而他假设）没有这个\"中间\"势 $\\alpha$，这就是著名的 **Cantor 连续统假设**。这个假设可以作为一条公理，并且与集合论中其它一些公理是独立的。",
          "anchor": "注-Cantor-连续统假设"
         },
         {
@@ -1660,6 +1857,7 @@
          "title": "偏序集",
          "page": 10,
          "html": "<p>设 $A$ 是一集，在其中规定了某些元素之间的关系\"$\\prec$\"，它满足以下的条件：</p><p>（i）自反性：对 $A$ 中的一切元素 $a$ 成立着 $a\\prec a$；</p><p>（ii）反对称性：如果 $a\\prec b$，而且 $b\\prec a$，那么 $a=b$；</p><p>（iii）传递性：如果 $a\\prec b$，而且 $b\\prec c$，就有 $a\\prec c$。</p><p>那么称关系\"$\\prec$\"为 $A$ 中的一个<strong>顺序</strong>，$a\\prec b$ 读作 $a$ 在 $b$ 前（或 $b$ 在 $a$ 后），这时称集 $A$ 是<strong>偏序集</strong>。</p>",
+         "src": "设 $A$ 是一集，在其中规定了某些元素之间的关系\"$\\prec$\"，它满足以下的条件：\n\n（i）自反性：对 $A$ 中的一切元素 $a$ 成立着 $a\\prec a$；\n\n（ii）反对称性：如果 $a\\prec b$，而且 $b\\prec a$，那么 $a=b$；\n\n（iii）传递性：如果 $a\\prec b$，而且 $b\\prec c$，就有 $a\\prec c$。\n\n那么称关系\"$\\prec$\"为 $A$ 中的一个**顺序**，$a\\prec b$ 读作 $a$ 在 $b$ 前（或 $b$ 在 $a$ 后），这时称集 $A$ 是**偏序集**。",
          "anchor": "定义-1.1.37"
         },
         {
@@ -1668,6 +1866,7 @@
          "title": "",
          "page": 10,
          "html": "<p>设 $B$ 是一个非空集，$\\mathfrak{B}$ 是 $B$ 的所有子集构成的集。如果子集之间用包含关系\"$\\subset$\"作为 $\\mathfrak{B}$ 中某些元素间的顺序，即当 $U,V\\in\\mathfrak{B}$，且 $U\\subset V$ 时，规定 $U\\prec V$，那么显然这是一种顺序（称它是自然顺序），因而 $\\mathfrak{B}$ 按此顺序成为一个偏序集。</p>",
+         "src": "设 $B$ 是一个非空集，$\\mathfrak{B}$ 是 $B$ 的所有子集构成的集。如果子集之间用包含关系\"$\\subset$\"作为 $\\mathfrak{B}$ 中某些元素间的顺序，即当 $U,V\\in\\mathfrak{B}$，且 $U\\subset V$ 时，规定 $U\\prec V$，那么显然这是一种顺序（称它是自然顺序），因而 $\\mathfrak{B}$ 按此顺序成为一个偏序集。",
          "anchor": "例-1.1.38"
         },
         {
@@ -1676,6 +1875,7 @@
          "title": "",
          "page": 10,
          "html": "<p>设 $B$ 是一个集，$A$ 是 $B$ 上的实函数全体。对两个元素 $a,b\\in A$，而且对每个 $t\\in B$ 有 $a(t)\\leqslant b(t)$ 时，则规定 $a\\prec b$。那么 $A$ 按此顺序也成为半序集。</p>",
+         "src": "设 $B$ 是一个集，$A$ 是 $B$ 上的实函数全体。对两个元素 $a,b\\in A$，而且对每个 $t\\in B$ 有 $a(t)\\leqslant b(t)$ 时，则规定 $a\\prec b$。那么 $A$ 按此顺序也成为半序集。",
          "anchor": "例-1.1.39"
         },
         {
@@ -1684,6 +1884,7 @@
          "title": "",
          "page": 10,
          "html": "<p>设 $A$ 是某些实数所成的集，在 $A$ 中规定当 $a\\leqslant b$ 时为 $a\\prec b$。显然 $A$ 是半序集，这个顺序称作<strong>自然顺序</strong>。</p><p>若在这个集 $A$ 中作另一规定：当 $a\\geqslant b$ 时规定 $a\\prec b$，显然这也是一个顺序关系，称此顺序为<strong>逆自然顺序</strong>。</p>",
+         "src": "设 $A$ 是某些实数所成的集，在 $A$ 中规定当 $a\\leqslant b$ 时为 $a\\prec b$。显然 $A$ 是半序集，这个顺序称作**自然顺序**。\n\n若在这个集 $A$ 中作另一规定：当 $a\\geqslant b$ 时规定 $a\\prec b$，显然这也是一个顺序关系，称此顺序为**逆自然顺序**。",
          "anchor": "例-1.1.40"
         },
         {
@@ -1692,6 +1893,7 @@
          "title": "",
          "page": 10,
          "html": "<p>设 $A$ 是所有实数对 $(x,y)$ 全体，规定两对 $(x_1,y_1),(x_2,y_2)$ 当 $x_1&lt;x_2$，或者当 $x_1=x_2$ 而且 $y_1\\leqslant y_2$ 时为 $(x_1,y_1)\\prec(x_2,y_2)$。这是 $A$ 中的一个顺序关系，称为<strong>字典顺序</strong>（因为它和拼音文字字典的字序类似）。</p>",
+         "src": "设 $A$ 是所有实数对 $(x,y)$ 全体，规定两对 $(x_1,y_1),(x_2,y_2)$ 当 $x_1<x_2$，或者当 $x_1=x_2$ 而且 $y_1\\leqslant y_2$ 时为 $(x_1,y_1)\\prec(x_2,y_2)$。这是 $A$ 中的一个顺序关系，称为**字典顺序**（因为它和拼音文字字典的字序类似）。",
          "anchor": "例-1.1.41"
         },
         {
@@ -1700,6 +1902,7 @@
          "title": "全序集",
          "page": 10,
          "html": "<p>设集 $A$ 中已经定义了顺序关系\"$\\prec$\"。如果对 $A$ 中的任何两个元素 $a,b$ 都可以确定它们之间的顺序，即 $a\\prec b$ 与 $b\\prec a$ 两个关系式中有一个成立，就称 $A$ 是<strong>全序集</strong>。</p><p>在例 1.1.40 中的数集 $A$ 按自然顺序（或逆自然顺序）是全序集，例 1.1.41 的集也是全序集。在例 1.1.38、例 1.1.39 中，当 $B$ 含有多于一个元素时，$A$ 就都不是全序集。</p>",
+         "src": "设集 $A$ 中已经定义了顺序关系\"$\\prec$\"。如果对 $A$ 中的任何两个元素 $a,b$ 都可以确定它们之间的顺序，即 $a\\prec b$ 与 $b\\prec a$ 两个关系式中有一个成立，就称 $A$ 是**全序集**。\n\n在例 1.1.40 中的数集 $A$ 按自然顺序（或逆自然顺序）是全序集，例 1.1.41 的集也是全序集。在例 1.1.38、例 1.1.39 中，当 $B$ 含有多于一个元素时，$A$ 就都不是全序集。",
          "anchor": "定义-1.1.42"
         },
         {
@@ -1708,6 +1911,7 @@
          "title": "上界与下界",
          "page": 10,
          "html": "<p>设 $A$ 是偏序集。对 $A$ 的子集 $B$，若存在 $a\\in A$，使得对每个 $b\\in B$ 成立着 $b\\prec a$，即 $a$ 在 $B$ 的所有元素之后，那么称 $a$ 为子集 $B$ 的<strong>上界</strong>。类似地，有<strong>下界</strong>的概念。</p><p>对一个子集，上界、下界不一定是唯一的，也可以没有上界或下界。例如取 $A$ 为实数区间 $(0,1)$，以自然顺序为顺序，取 $B=A$，显然 $B$ 在 $A$ 中就不存在上界，也不存在下界。</p>",
+         "src": "设 $A$ 是偏序集。对 $A$ 的子集 $B$，若存在 $a\\in A$，使得对每个 $b\\in B$ 成立着 $b\\prec a$，即 $a$ 在 $B$ 的所有元素之后，那么称 $a$ 为子集 $B$ 的**上界**。类似地，有**下界**的概念。\n\n对一个子集，上界、下界不一定是唯一的，也可以没有上界或下界。例如取 $A$ 为实数区间 $(0,1)$，以自然顺序为顺序，取 $B=A$，显然 $B$ 在 $A$ 中就不存在上界，也不存在下界。",
          "anchor": "定义-1.1.43"
         },
         {
@@ -1716,6 +1920,7 @@
          "title": "",
          "page": 11,
          "html": "<p>对每个自然数 $n$ 作区间 $[0,1]$ 的分法$$D_n: 0&lt;\\frac{1}{n}&lt;\\frac{2}{n}&lt;\\cdots&lt;\\frac{n-1}{n}&lt;1.$$所有这些分法记作 $\\mathfrak{D}$。令 $B$ 表示 $[0,1]$ 中的有理数全体，$\\mathfrak{A}$ 表示 $B$ 的子集全体。于是 $B\\in\\mathfrak{A}$，$\\mathfrak{D}\\subset\\mathfrak{A}$。如同例 1.1.38，在集 $\\mathfrak{A}$ 中以包含关系 $\\subset$ 作为元素间的顺序，$\\mathfrak{A}$ 成为偏序集。显然，对任何 $D_n\\in\\mathfrak{D}$，都有 $D_n\\subset B$，所以 $B$ 是 $\\mathfrak{D}$ 的上界。</p>",
+         "src": "对每个自然数 $n$ 作区间 $[0,1]$ 的分法$$D_n: 0<\\frac{1}{n}<\\frac{2}{n}<\\cdots<\\frac{n-1}{n}<1.$$所有这些分法记作 $\\mathfrak{D}$。令 $B$ 表示 $[0,1]$ 中的有理数全体，$\\mathfrak{A}$ 表示 $B$ 的子集全体。于是 $B\\in\\mathfrak{A}$，$\\mathfrak{D}\\subset\\mathfrak{A}$。如同例 1.1.38，在集 $\\mathfrak{A}$ 中以包含关系 $\\subset$ 作为元素间的顺序，$\\mathfrak{A}$ 成为偏序集。显然，对任何 $D_n\\in\\mathfrak{D}$，都有 $D_n\\subset B$，所以 $B$ 是 $\\mathfrak{D}$ 的上界。",
          "anchor": "例-1.1.44"
         },
         {
@@ -1724,6 +1929,7 @@
          "title": "极大元",
          "page": 11,
          "html": "<p>设 $A$ 是一个偏序集，$a\\in A$。如果在 $A$ 中不存在别的元素 $b(\\neq a)$ 在 $a$ 后，那么称 $a$ 为 $A$ 的<strong>极大元</strong>。</p><p>换句话说，极大元 $a$ 是具有下面性质的元素：如果 $b\\in A$，而且 $a\\prec b$，那么 $b=a$。偏序集的极大元不一定是唯一的。例如两个元素 $a$ 与 $b$ 所组成的集 $A=\\{a,b\\}$，规定 $a\\prec a$ 及 $b\\prec b$，则 $A$ 是偏序集，而 $a$ 和 $b$ 都是 $A$ 的极大元。但是，在全序集中极大元是唯一的。类似地也有<strong>极小元</strong>的概念。</p>",
+         "src": "设 $A$ 是一个偏序集，$a\\in A$。如果在 $A$ 中不存在别的元素 $b(\\neq a)$ 在 $a$ 后，那么称 $a$ 为 $A$ 的**极大元**。\n\n换句话说，极大元 $a$ 是具有下面性质的元素：如果 $b\\in A$，而且 $a\\prec b$，那么 $b=a$。偏序集的极大元不一定是唯一的。例如两个元素 $a$ 与 $b$ 所组成的集 $A=\\{a,b\\}$，规定 $a\\prec a$ 及 $b\\prec b$，则 $A$ 是偏序集，而 $a$ 和 $b$ 都是 $A$ 的极大元。但是，在全序集中极大元是唯一的。类似地也有**极小元**的概念。",
          "anchor": "定义-1.1.45"
         },
         {
@@ -1732,6 +1938,7 @@
          "title": "Zorn 引理",
          "page": 11,
          "html": "<p>设 $A$ 是一个偏序集。如果 $A$ 的每个全序子集都有上界，那么 $A$ 有极大元。</p><p>类似地有关于下界和极小元（存在性）的引理。</p>",
+         "src": "设 $A$ 是一个偏序集。如果 $A$ 的每个全序子集都有上界，那么 $A$ 有极大元。\n\n类似地有关于下界和极小元（存在性）的引理。",
          "anchor": "公理-Zorn-引理"
         },
         {
@@ -1740,6 +1947,7 @@
          "title": "Zermelo 选择公理",
          "page": 11,
          "html": "<p>设 $S=\\{M_\\alpha:\\alpha\\in\\Lambda\\}$ 是一族两两不相交的非空集，那么存在集 $L$ 满足下面两个条件：</p><p>1. $L\\subset\\bigcup\\limits_{\\alpha\\in\\Lambda}M_\\alpha$；</p><p>2. 集 $L$ 与 $S$ 中每一个集 $M_\\alpha$ 有一个而且只有一个公共元素。</p><p>选择公理和 Zorn 引理是等价的。尽管选择公理看起来自然，但是否承认选择公理仍无定论。承认选择公理会产生\"Banach–Tarski 悖论\"等大量与\"常理\"不符的结果，但如果放弃这条公理，又有很多美好且重要的结果会同时被放弃。本书将在 ZFC 公理体系下进行讨论。</p>",
+         "src": "设 $S=\\{M_\\alpha:\\alpha\\in\\Lambda\\}$ 是一族两两不相交的非空集，那么存在集 $L$ 满足下面两个条件：\n\n1. $L\\subset\\bigcup\\limits_{\\alpha\\in\\Lambda}M_\\alpha$；\n\n2. 集 $L$ 与 $S$ 中每一个集 $M_\\alpha$ 有一个而且只有一个公共元素。\n\n选择公理和 Zorn 引理是等价的。尽管选择公理看起来自然，但是否承认选择公理仍无定论。承认选择公理会产生\"Banach–Tarski 悖论\"等大量与\"常理\"不符的结果，但如果放弃这条公理，又有很多美好且重要的结果会同时被放弃。本书将在 ZFC 公理体系下进行讨论。",
          "anchor": "公理-Zermelo-选择公理"
         },
         {
@@ -1748,6 +1956,7 @@
          "title": "",
          "page": 11,
          "html": "<p>若映射 $\\varphi: A\\twoheadrightarrow B$ 是集合 $A$ 到集合 $B$ 的满射，则 $\\overline{A}\\geqslant\\overline{B}$。</p>",
+         "src": "若映射 $\\varphi: A\\twoheadrightarrow B$ 是集合 $A$ 到集合 $B$ 的满射，则 $\\overline{A}\\geqslant\\overline{B}$。",
          "anchor": "推论-1.1.46"
         }
        ]

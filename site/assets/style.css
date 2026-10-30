@@ -150,6 +150,35 @@ body {
 .mode:hover:not(.active) { background: var(--accent-soft); color: var(--accent); }
 .icon-btn { display: none; background: none; border: 1px solid var(--line); border-radius: 6px; padding: 2px 8px; font-size: 16px; color: var(--ink); }
 
+.ghost-toggle {
+  background: transparent; border: 1px solid var(--line); border-radius: 8px;
+  color: var(--muted); font: inherit; font-size: 12px; padding: 5px 10px;
+  cursor: pointer; white-space: nowrap;
+}
+.ghost-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.ghost-toggle.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+.src-toggle {
+  background: none; border: 1px solid var(--line); border-radius: 6px;
+  font-size: 11px; color: var(--muted); padding: 1px 6px; cursor: pointer; white-space: nowrap;
+}
+.src-toggle:hover { border-color: var(--accent); color: var(--accent); }
+
+.srcwrap { position: relative; margin-top: 4px; }
+pre.src {
+  font-family: ui-monospace, SFMono-Regular, Consolas, "Courier New", monospace;
+  font-size: 13px; line-height: 1.75; white-space: pre-wrap; word-break: break-word;
+  background: var(--bg); border: 1px solid var(--line); border-radius: 8px;
+  padding: 12px 72px 12px 14px; margin: 0; color: var(--ink); tab-size: 2;
+}
+.copy-btn {
+  position: absolute; top: 6px; right: 6px;
+  background: var(--panel); border: 1px solid var(--line); border-radius: 6px;
+  color: var(--muted); font: inherit; font-size: 11.5px; padding: 2px 8px; cursor: pointer;
+}
+.copy-btn:hover { color: var(--accent); border-color: var(--accent); }
+.copy-btn.copied { color: #fff; background: var(--accent); border-color: var(--accent); }
+
 #view { padding: 26px 26px 90px; max-width: 880px; width: 100%; }
 
 .sec-head { margin: 0 0 22px; }
