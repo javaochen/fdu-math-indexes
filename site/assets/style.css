@@ -510,3 +510,40 @@ kbd {
   content: ""; position: absolute; left: 3px; top: 6px; bottom: 6px; width: 3px; border-radius: 2px;
   background: linear-gradient(180deg, var(--accent), var(--accent-2));
 }
+
+/* 发亮的条带：卡片顶部一条渐变高光 */
+.item { position: relative; overflow: hidden; }
+.item::before {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 2px;
+  background: linear-gradient(90deg,
+      transparent 0%,
+      color-mix(in srgb, var(--accent-2) 55%, #fff) 28%,
+      #fff 46%,
+      color-mix(in srgb, var(--accent-2) 45%, transparent) 68%,
+      transparent 86%);
+  opacity: .75;
+  pointer-events: none;
+}
+/* 节头渐变线加一段白色核心 */
+.sec-head::after {
+  background: linear-gradient(90deg,
+      #fff 0%,
+      var(--accent-2) 12%,
+      var(--accent) 26%,
+      transparent 70%);
+  opacity: .9;
+}
+
+/* 条带加强：更宽、更亮，深色下带辉光 */
+.item::before { height: 3px; opacity: .95; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .item::before {
+    box-shadow: 0 0 16px color-mix(in srgb, #fff 55%, transparent);
+  }
+}
+:root[data-theme="dark"] .item::before {
+  box-shadow: 0 0 16px color-mix(in srgb, #fff 55%, transparent);
+}
+
+.item::before { height: 4px; opacity: 1; }
+:root[data-theme="dark"] .item::before { box-shadow: 0 0 16px color-mix(in srgb, #fff 55%, transparent); }
