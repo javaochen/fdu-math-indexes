@@ -197,7 +197,7 @@
       ? `<div class="stmt hidden-stmt">${inner}</div>
          <div class="reveal">点击或按 <kbd>空格</kbd> 显示陈述</div>`
       : `<div class="stmt">${inner}</div>${foldable ? `<div class="fold-hint">点击条目或“展开”查看陈述</div>` : ""}`;
-    return `<article class="item${hide ? "" : " revealed"}${folded ? " folded" : ""}"
+    return `<article class="item${hide ? "" : " revealed"}${folded ? " folded" : ""}"${foldable ? ' data-foldable="1"' : ""}
       data-type="${esc(it.type)}" data-anchor="${esc(it.anchor)}" data-key="${esc(key)}"
       id="i-${esc(it.bookId || "")}-${esc(it.secId || "")}-${esc(it.anchor)}">${head}${body}</article>`;
   }
@@ -467,13 +467,18 @@
     const foldBtn = e.target.closest("[data-fold]");
     if (foldBtn) { toggleFold(foldBtn.closest(".item")); return; }
 
-    const foldedCard = e.target.closest(".item.folded");
-    if (foldedCard && !e.target.closest("button, a")) { toggleFold(foldedCard); return; }
+    const foldableCard = e.target.closest(".item[data-foldable]");
+    if (foldableCard && !e.target.closest("button, a")) {
+      const sel = window.getSelection();
+      if (!sel || sel.isCollapsed) { toggleFold(foldableCard); return; }
+    }
 
     const defsBtn = e.target.closest("[data-defs]");
     if (defsBtn) {
+      const y = window.scrollY;
       defsOpen = !defsOpen;
       if (current) { if (mode === "card") renderCard(cardIdx); else renderSection(current); }
+      window.scrollTo({ top: y });
       return;
     }
 
