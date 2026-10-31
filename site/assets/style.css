@@ -267,6 +267,7 @@ mark { background: rgba(255, 210, 90, .45); color: inherit; padding: 0 1px; bord
 .item[data-type="反例"] { border-left-color: var(--cex); }
 .item[data-type="注"],
 .item[data-type="构造"],
+.item[data-type="附录"],
 .item[data-type="公理"] { border-left-color: var(--remark); }
 .item.flash { animation: flash 1.1s ease; }
 @keyframes flash { from { box-shadow: 0 0 0 3px var(--accent-soft); } to { box-shadow: none; } }
