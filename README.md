@@ -30,6 +30,7 @@
 
 ```powershell
 python tools/build.py                 # 生成 site/data/：books.json + <书>.json + search.json
+python tools/lint.py [书id]           # 录入质量检查：页码范围、跨页缺漏、公式编号、公式内中文
 python -m http.server 8000 -d site    # 本地预览 http://127.0.0.1:8000/
 ```
 
