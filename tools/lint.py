@@ -26,7 +26,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 
 PAGES_RE = re.compile(r"^\s*(\d+)\s*[–\-~]\s*(\d+)\s*$")
-TAG_RE = re.compile(r"\\tag\{([\d.]+)\}")
+TAG_RE = re.compile(r"\\tag\{([A-Z0-9.]+)\}")
 MATH_RE = re.compile(r"\$\$(.+?)\$\$|\$([^$]+)\$", re.S)
 CJK_RE = re.compile(r"[\u4e00-\u9fff]")
 
@@ -68,6 +68,8 @@ def lint_file(path: Path, sec_id: str, chapter: str, tag_style: str) -> list[str
         for t in TAG_RE.findall(chunk):
             tags.append(t)
             parts = t.split(".")
+            if parts and parts[0][:1].isalpha():
+                continue  # 附录编号（A.1、B.4）不按章校验
             if chapter and str(chapter) != "?" and parts and parts[0] != str(chapter):
                 warn.append(f"{label}: 公式编号 ({t}) 不属于第 {chapter} 章")
             elif tag_style == "section" and sec_id and len(parts) >= 2:
