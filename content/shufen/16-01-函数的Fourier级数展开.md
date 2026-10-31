@@ -41,7 +41,7 @@ $$b_n=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin nx\,\mathrm{d}x,\qquad n=1,2,\cdots
 $$f(x)\sim\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos nx+b_n\sin nx\right),$$
 则右端的三角级数称为 $f(x)$ 的 **Fourier 级数**，相应的 $a_n$ 和 $b_n$ 称为 $f(x)$ 的 **Fourier 系数**。由于目前不知道右端三角级数是否收敛、即使收敛也不知道是否收敛到 $f(x)$ 本身，所以在 $f(x)$ 与它的 Fourier 级数之间不能用等号而只能用“$\sim$”。
 
-### 例 16.1.1 @726
+### 例 16.1.1 (分段函数的傅里叶级数) @726
 
 求
 $$f(x)=\begin{cases}1, & x\in[-\pi,0),\\ 0, & x\in[0,\pi)\end{cases}$$
@@ -78,7 +78,7 @@ $$f(x)\sim\frac{a_0}{2}+\sum_{n=1}^{\infty}a_n\cos nx.$$
 
 形如 $\displaystyle\sum_{n=1}^{\infty}b_n\sin nx$ 的三角级数称为**正弦级数**，形如 $\displaystyle\frac{a_0}{2}+\sum_{n=1}^{\infty}a_n\cos nx$ 的三角级数称为**余弦级数**。在实际问题中，出于某种特殊的用途，也经常需要将一个函数展开成正弦级数或余弦级数。
 
-### 例 16.1.2 @727
+### 例 16.1.2 (余弦级数与正弦级数) @727
 
 将 $f(x)=x\ (x\in[0,\pi])$ 分别展开为余弦级数和正弦级数。
 
@@ -112,7 +112,7 @@ $$f(x)\sim\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\frac{n\pi}{T}x+b_n\sin\
 $$a_n=\frac{1}{\pi}\int_{-\pi}^{\pi}\varphi(t)\cos nt\,\mathrm{d}t=\frac{1}{T}\int_{-T}^{T}f(x)\cos\frac{n\pi}{T}x\,\mathrm{d}x,\qquad n=0,1,2,\cdots,$$
 $$b_n=\frac{1}{\pi}\int_{-\pi}^{\pi}\varphi(t)\sin nt\,\mathrm{d}t=\frac{1}{T}\int_{-T}^{T}f(x)\sin\frac{n\pi}{T}x\,\mathrm{d}x,\qquad n=1,2,\cdots.$$
 
-### 例 16.1.3 @729
+### 例 16.1.3 (周期函数的傅里叶级数) @729
 
 求
 $$f(x)=\begin{cases}0, & x\in[-1,0),\\ x^2, & x\in[0,1]\end{cases}$$

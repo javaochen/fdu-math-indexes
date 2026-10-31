@@ -21,7 +21,7 @@ $$A\begin{pmatrix}i_1&i_2&\cdots&i_s\\j_1&j_2&\cdots&j_s\end{pmatrix}$$
 (2) 若 $m\leqslant n$，则必有
 $$|AB|=\sum_{1\leqslant j_1<j_2<\cdots<j_m\leqslant n}A\begin{pmatrix}1&2&\cdots&m\\j_1&j_2&\cdots&j_m\end{pmatrix}B\begin{pmatrix}j_1&j_2&\cdots&j_m\\1&2&\cdots&m\end{pmatrix}.$$
 
-### 定理 2.7.2 @107
+### 定理 2.7.2 (乘积矩阵的子式展开) @107
 
 设 $A=(a_{ij})$ 是 $m\times n$ 矩阵，$B=(b_{ij})$ 是 $n\times m$ 矩阵，$r$ 是一个正整数且 $r\leqslant m$。
 
@@ -36,7 +36,7 @@ $$AB\begin{pmatrix}i_1&i_2&\cdots&i_r\\j_1&j_2&\cdots&j_r\end{pmatrix}=\sum_{1\l
 $$A\begin{pmatrix}i_1&i_2&\cdots&i_r\\j_1&j_2&\cdots&j_r\end{pmatrix}$$
 如果满足条件 $i_1=j_1$，$i_2=j_2$，$\cdots$，$i_r=j_r$，则称为**主子式**。
 
-### 推论 2.7.1 @108
+### 推论 2.7.1 (乘积矩阵的主子式非负) @108
 
 设 $A$ 是 $m\times n$ 实矩阵，则矩阵 $AA'$ 的任一主子式都非负。
 

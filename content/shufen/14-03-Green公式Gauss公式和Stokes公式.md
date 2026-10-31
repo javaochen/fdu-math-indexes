@@ -71,7 +71,7 @@ $$S=\int_{\partial D}x\,\mathrm{d}y=-\int_{\partial D}y\,\mathrm{d}x=\frac12\int
 
 其中 $\partial D$ 取正向。
 
-### 例 14.3.1 @661
+### 例 14.3.1 (用格林公式求椭圆面积) @661
 
 计算椭圆 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$（$a,b>0$）所围图形的面积（见图 14.3.7）。
 
@@ -83,7 +83,7 @@ $$x=a\cos\theta,\qquad y=b\sin\theta,\qquad 0\leqslant\theta\leqslant2\pi.$$
 
 $$S=\frac12\int_L x\,\mathrm{d}y-y\,\mathrm{d}x=\frac12\int_0^{2\pi}\left(ab\cos^2\theta+ab\sin^2\theta\right)\mathrm{d}\theta=\frac{ab}{2}\int_0^{2\pi}\mathrm{d}\theta=\pi ab.$$
 
-### 例 14.3.2 @661
+### 例 14.3.2 (格林公式计算曲线积分) @661
 
 计算 $I=\displaystyle\int_L\sqrt{x^2+y^2}\,\mathrm{d}x+y\bigl[xy+\ln\bigl(x+\sqrt{x^2+y^2}\bigr)\bigr]\mathrm{d}y$，其中 $L$ 为曲线 $y=\sin x$，$0\leqslant x\leqslant\pi$ 与直线段 $y=0$，$0\leqslant x\leqslant\pi$ 所围区域 $D$ 的正向边界（见图 14.3.8）。
 
@@ -97,7 +97,7 @@ $$I=\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\rig
 
 注意，在这个例子中，$P$ 和 $Q$ 在 $D$ 的边界点 $(0,0)$ 并不可偏导。请读者想想为什么可以这样直接计算。
 
-### 例 14.3.3 @661
+### 例 14.3.3 (补线后用格林公式) @661
 
 计算 $I=\displaystyle\int_L\left(\mathrm{e}^x\sin y-my\right)\mathrm{d}x+\left(\mathrm{e}^x\cos y-m\right)\mathrm{d}y$，其中 $L$ 为圆 $(x-a)^2+y^2=a^2$（$a>0$）的上半圆周，方向为从点 $A(2a,0)$ 到原点 $O(0,0)$。
 
@@ -167,7 +167,7 @@ U(x,y)&=\int_{(x_0,y_0)}^{(x,y)}P\,\mathrm{d}x+Q\,\mathrm{d}y+U(x_0,y_0)\\
 
 $$U(x,y)=\int_{y_0}^{y}Q(x_0,y)\,\mathrm{d}y+\int_{x_0}^{x}P(x,y)\,\mathrm{d}x+c.$$
 
-### 例 14.3.4 @665
+### 例 14.3.4 (全微分与路径无关) @665
 
 证明：在整个 $xy$ 平面上，$\left(\mathrm{e}^x\sin y-my\right)\mathrm{d}x+\left(\mathrm{e}^x\cos y-mx\right)\mathrm{d}y$ 是某个函数的全微分，求这样一个函数，并计算
 
@@ -193,7 +193,7 @@ U(x,y)&=\int_{(0,0)}^{(x,y)}\left(\mathrm{e}^x\sin y-my\right)\mathrm{d}x+\left(
 
 $$I=\int_L\left(\mathrm{e}^x\sin y-my\right)\mathrm{d}x+\left(\mathrm{e}^x\cos y-mx\right)\mathrm{d}y=U(1,1)-U(0,0)=\mathrm{e}\sin1-m.$$
 
-### 例 14.3.5 @665
+### 例 14.3.5 (绕原点的闭曲线积分) @665
 
 计算 $\displaystyle\int_L\frac{x\,\mathrm{d}y-y\,\mathrm{d}x}{x^2+y^2}$，其中 $L$ 为一条不经过原点的简单闭曲线，方向为逆时针方向。
 
@@ -245,7 +245,7 @@ $$V=\iiint_{\Omega}\mathrm{d}x\mathrm{d}y\mathrm{d}z=\iint_{\partial\Omega}x\,\m
 
 其中 $\partial\Omega$ 的定向为外侧。
 
-### 例 14.3.6 @667
+### 例 14.3.6 (用高斯公式求椭球体积) @667
 
 用上述公式计算椭球面 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}+\dfrac{z^2}{c^2}=1$ 所围椭球的体积。
 
@@ -266,7 +266,7 @@ V&=\iint_{\partial\Omega}z\,\mathrm{d}x\mathrm{d}y=\iint_{\substack{0\leqslant\t
 
 请读者想想，为什么在运算中第一步到第二步时积分号前取“$+$”号。
 
-### 例 14.3.7 @668
+### 例 14.3.7 (高斯公式计算曲面积分) @668
 
 求 $\displaystyle\iint_{\Sigma}x^3\,\mathrm{d}y\mathrm{d}z+y^3\,\mathrm{d}z\mathrm{d}x+z^3\,\mathrm{d}x\mathrm{d}y$，其中 $\Sigma$ 为球面 $x^2+y^2+z^2=a^2$，方向取外侧。
 
@@ -277,7 +277,7 @@ $$\begin{aligned}
 &=3\int_0^{2\pi}\mathrm{d}\theta\int_0^{\pi}\mathrm{d}\varphi\int_0^ar^4\sin\varphi\,\mathrm{d}r=\frac{12}{5}\pi a^5.
 \end{aligned}$$
 
-### 例 14.3.8 @668
+### 例 14.3.8 (用高斯公式求流量) @668
 
 设某种流体的速度为 $\boldsymbol{v}=x\mathbf{i}+y\mathbf{j}+z\mathbf{k}$，求单位时间内流体流过曲面 $\Sigma:y=x^2+z^2$（$0\leqslant y\leqslant h$）的流量，其中 $\Sigma$ 的方向取左侧（见图 14.3.17）。
 
@@ -326,7 +326,7 @@ $$\int_{\partial\Sigma}P\,\mathrm{d}x+Q\,\mathrm{d}y+R\,\mathrm{d}z=\iint_{\Sigm
 
 Stokes 定理说明了沿曲面 $\Sigma$ 的曲面积分与沿其边界 $\partial\Sigma$ 的曲线积分间的内在关系，它也是 Green 公式的一个自然推广（这时在 Green 公式中，平面区域的定向为指向读者）。
 
-### 例 14.3.9 @670
+### 例 14.3.9 (斯托克斯公式计算) @670
 
 计算 $I=\displaystyle\int_L\left(y^2-z^2\right)\mathrm{d}x+\left(z^2-x^2\right)\mathrm{d}y+\left(x^2-y^2\right)\mathrm{d}z$，其中 $L$ 为平面 $x+y+z=1$ 被三个坐标平面所截三角形 $\Sigma$ 的边界，若从 $x$ 轴的正向看去，定向为逆时针方向（见图 14.3.19）。
 
@@ -346,7 +346,7 @@ $$\cos\alpha=\cos\beta=\cos\gamma=\frac{1}{\sqrt3}.$$
 
 $$I=-\frac{4}{\sqrt3}\iint_{\Sigma}(x+y+z)\,\mathrm{d}S=-\frac{4}{\sqrt3}\iint_{\Sigma}\mathrm{d}S=-2.$$
 
-### 例 14.3.10 @671
+### 例 14.3.10 (交线上的斯托克斯公式) @671
 
 计算 $I=\displaystyle\int_L\left(y^2+z^2\right)\mathrm{d}x+\left(z^2+x^2\right)\mathrm{d}y+\left(x^2+y^2\right)\mathrm{d}z$，其中 $L$ 是上半球面 $x^2+y^2+z^2=2Rx$（$z\geqslant0$）与圆柱面 $x^2+y^2=2rx$（$R>r>0$）的交线，从 $z$ 轴的正向看去，是逆时针方向（见图 14.3.20）。
 

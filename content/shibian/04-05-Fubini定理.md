@@ -12,21 +12,21 @@ pages: "123–128"
 
 设 $(X,\mathcal{S},\mu)$，$(Y,\mathcal{T},\nu)$ 是两个测度空间。为简化讨论，本节中总设 $\mu$，$\nu$ 分别是 $\sigma$-代数 $\mathcal{S}$，$\mathcal{T}$ 上的 $\sigma$-有限测度。首先我们先给出它们的 Cartesian 乘积 $X\times Y=\{(x,y):\ x\in X,\ y\in Y\}$ 上的乘积测度。
 
-### 定义 4.5.1 @123
+### 定义 4.5.1 (矩形与乘积 σ-环) @123
 
 对两个集 $X$，$Y$，设 $A\subset X$，$B\subset Y$，称 $A\times B$ 为 $X\times Y$ 中的**矩形**，$A$，$B$ 称为这个矩形的边。令
 $$\mathcal{S}\times\mathcal{T}=\{A\times B:\ A\in\mathcal{S},\ B\in\mathcal{T}\},$$
 $\mathcal{S}\times\mathcal{T}$ 生成的 $\sigma$-环记做 $\mathcal{S}\otimes\mathcal{T}$。
 
-### 例 4.5.2 @124
+### 例 4.5.2 (Borel 代数的乘积) @124
 
 $k+l$ 维的 Euclid 空间 $\mathbb{R}^{k+l}$ 可以看作 $k$ 维空间 $\mathbb{R}^k$ 和 $l$ 维空间 $\mathbb{R}^l$ 的乘积空间。由于 Borel 代数 $\mathfrak{B}_{k+l}$ 与 $\mathfrak{B}_k\otimes\mathfrak{B}_l$ 都可由 $k+l$ 维左开右闭矩体生成，所以这两个 $\sigma$-代数是一致的。
 
-### 引理 4.5.3 @124
+### 引理 4.5.3 (可测矩形构成半环) @124
 
 如果 $\mathcal{S}$，$\mathcal{T}$ 分别是 $X$，$Y$ 中的 $\sigma$-代数，那么子集类 $\mathcal{S}\times\mathcal{T}$ 是一个半环。
 
-### 定理 4.5.4 @124
+### 定理 4.5.4 (乘积测度的存在性) @124
 
 设 $\mu$ 是集 $X$ 上的 $\sigma$-代数 $\mathcal{S}$ 上的 $\sigma$-有限测度，$\nu$ 是集 $Y$ 上的 $\sigma$-代数 $\mathcal{T}$ 上的 $\sigma$-有限测度。对于任何矩形 $A\times B\in\mathcal{S}\times\mathcal{T}$，我们规定
 $$\lambda(A\times B)=\mu(A)\nu(B).$$
@@ -36,7 +36,7 @@ $$\lambda(A\times B)=\mu(A)\nu(B).$$
 
 由定理 2.2.12，定理 2.3.1 和定理 2.3.3，我们可以将测度 $\lambda$ 唯一的延拓为 $X\times Y$ 上的一个完备测度，记可测集全体为 $\mathcal{R}$，那么 $\mathcal{S}\otimes\mathcal{T}\subset\mathcal{R}$。
 
-### 例 4.5.5 @125
+### 例 4.5.5 (乘积测度与 Lebesgue 测度) @125
 
 对于 $k$ 维 Lebesgue 测度空间 $(\mathbb{R}^k,\mathcal{L}_k,m_k)$ 与 $l$ 维 Lebesgue 测度空间 $(\mathbb{R}^l,\mathcal{L}_l,m_l)$，我们得到了 $\mathbb{R}^{k+l}$ 上的 $\sigma$-代数 $\mathcal{R}$ 上一个完备的乘积测度 $\lambda$。
 
@@ -60,7 +60,7 @@ $$(\mathbb{R}^{k+l},\mathcal{R},\lambda)=(\mathbb{R}^{k+l},\mathcal{L}_{k+l},m_{
 - 固定 $x\in X$ 时，若 $E_x\neq\varnothing$，称 $E_x$ 上的函数 $f_x(y)=f(x,y)$ 为 $f$ 的 **$x$-截口**。
 - 固定 $y\in Y$，若 $E^y\neq\varnothing$，称在 $E^y$ 上的函数 $f^y(x)=f(x,y)$ 为 $f$ 的 **$y$-截口**。
 
-### 定理 4.5.6 @125
+### 定理 4.5.6 (截口的可测性) @125
 
 设 $\mu$ 是集 $X$ 上的 $\sigma$-代数 $\mathcal{S}$ 上的 $\sigma$-有限测度，$\nu$ 是集 $Y$ 上的 $\sigma$-代数 $\mathcal{T}$ 上的 $\sigma$-有限测度，$(X\times Y,\mathcal{R},\lambda)$ 是乘积测度。对于 $E\in\mathcal{S}\otimes\mathcal{T}$，我们有如下结论：
 
@@ -70,18 +70,18 @@ $$(\mathbb{R}^{k+l},\mathcal{R},\lambda)=(\mathbb{R}^{k+l},\mathcal{L}_{k+l},m_{
 
 3. $$\lambda(E)=\int_X \nu(E_x)\,d\mu(x)=\int_X\left[\int_Y \chi_E(x,y)\,d\nu(y)\right]d\mu(x).$$
 
-### 例 4.5.7 @126
+### 例 4.5.7 (截口性质的失效) @126
 
 考虑由 $(\mathbb{R}^k,\mathcal{L}_k,m_k)$ 与 $(\mathbb{R}^l,\mathcal{L}_l,m_l)$ 所得乘积空间 $(\mathbb{R}^{k+l},\mathcal{L}_{k+l},m_{k+l})$，对任何 $E\in\mathcal{L}_k\otimes\mathcal{L}_l$，它的每个截口 $E_x\in\mathcal{L}_l$。然而，$\mathcal{L}_{k+l}$ 中的集合并不会满足这个性质。
 
 例如，考虑 $k=l=1$ 的情况。设 $E=\{0\}\times A\subset\mathbb{R}^2$，其中 $A$ 是直线上的一个 Lebesgue 不可测集。由于 $E\subset\{0\}\times\mathbb{R}$，所以 $E$ 是 $\mathcal{L}_2$ 中的零测集。但是，它的截口 $E_0=A\notin\mathcal{L}$。这个例子也说明 $\mathcal{L}_2$ 中集 $E$ 不满足定理 4.5.6 结论。
 
-### 推论 4.5.8 @126
+### 推论 4.5.8 (零测集的截口) @126
 
 设 $\mu$ 是集 $X$ 上的 $\sigma$-代数 $\mathcal{S}$ 上完备的 $\sigma$-有限测度，$\nu$ 是集 $Y$ 上的 $\sigma$-代数 $\mathcal{T}$ 上完备的 $\sigma$-有限测度，$(X\times Y,\mathcal{R},\lambda)$ 是乘积测度。若 $E$ 是 $\lambda$-零测集，则对几乎处处的 $x$，$E_x$ 是 $\nu$-零测集，从而
 $$\lambda(E)=0=\int_X \nu(E_x)\,d\mu(x).$$
 
-### 推论 4.5.9 @127
+### 推论 4.5.9 (截口与积分表示) @127
 
 设 $\mu$ 是集 $X$ 上的 $\sigma$-代数 $\mathcal{S}$ 上完备的 $\sigma$-有限测度，$\nu$ 是集 $Y$ 上的 $\sigma$-代数 $\mathcal{T}$ 上完备的 $\sigma$-有限测度，$(X\times Y,\mathcal{R},\lambda)$ 是乘积测度。对于 $E\in\mathcal{R}$，则对几乎处处的 $x$，$E_x\in\mathcal{T}$；$x\mapsto\nu(E_x)$ 是 $X$ 上的可测函数；且
 $$\lambda(E)=\int_X \nu(E_x)\,d\mu(x).$$
@@ -108,7 +108,7 @@ $$\int_X\left[\int_Y f(x,y)\,d\nu(y)\right]d\mu(x)=\int_Y\left[\int_X f(x,y)\,d\
 3. 下面的等式成立：
 $$\int_X\left[\int_Y f(x,y)\,d\nu(y)\right]d\mu(x)=\int_Y\left[\int_X f(x,y)\,d\mu(x)\right]d\nu(y)=\int_{X\times Y} f(x,y)\,d\lambda(x,y).$$
 
-### 例 4.5.12 @128
+### 例 4.5.12 (Fubini 定理的应用) @128
 
 若 $f(x,y)$ 是 $\mathbb{R}^{k+l}$ 上的 Lebesgue 可积函数（或非负 Lebesgue 可测函数），那么我们有
 $$\int_{\mathbb{R}^{k+l}} f(x,y)\,dm_{k+l}(x,y)=\int_{\mathbb{R}^k}\left[\int_{\mathbb{R}^l} f(x,y)\,dm_l(y)\right]dm_k(x).$$

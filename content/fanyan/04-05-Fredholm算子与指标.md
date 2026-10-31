@@ -13,20 +13,20 @@ Fredholm 算子及其指标有着广泛的应用，为简化叙述，我们只�
 对于 Hilbert 空间 $H$ 上算子 $T$，如果它的值域 $\mathfrak{R}(T)$ 是闭的，并且 $\ker T$ 和 $H\ominus\mathfrak{R}(T)$ 都是有限维空间，则称它是一个 **Fredholm 算子**。此时，定义它的**指标**
 $$\operatorname{ind}T=\dim\ker T-\dim H\ominus\mathfrak{R}(T).$$
 
-### 注 4.5.1 @177
+### 注 4.5.1 (指标的另一表示) @177
 
 此时由于 $\ker T^*=H\ominus\mathfrak{R}(T)$，因此也经常使用 $\operatorname{ind}T=\dim\ker T-\dim\ker T^*$。
 
-### 例 4.5.1 @177
+### 例 4.5.1 (可逆算子指标为零) @177
 
 设 $T$ 是 Hilbert 空间 $H$ 上的可逆算子，则 $T$ 是 Fredholm 算子，并且 $\operatorname{ind}T=0$。
 
-### 例 4.5.2 @177
+### 例 4.5.2 (紧扰动指标为零) @177
 
 设 $T$ 是 Hilbert 空间 $H$ 上的紧算子。由 Riesz-Schauder 定理可知，若 $\lambda\neq 0$，则 $\lambda I-T$ 是 Fredholm 算子，且
 $$\operatorname{ind}(\lambda I-T)=\dim\ker(\lambda I-T)-\dim\ker(\lambda I-T)^*=0.$$
 
-### 例 4.5.3 @177
+### 例 4.5.3 (移位算子指标) @177
 
 设 $S,T$ 是 Hilbert 空间 $l^2$ 上的左移位算子与右移位算子：
 $$S(x_1,x_2,\cdots,x_n,\cdots)=(x_2,x_3,\cdots,x_n,\cdots);$$
@@ -43,7 +43,7 @@ $$T(x_1,x_2,\cdots,x_n,\cdots)=(0,x_1,x_2,\cdots,x_n,\cdots).$$
 
 （ii）若存在 $S\in\mathfrak{B}(H)$ 使得 $I-TS$ 和 $I-ST$ 都是紧算子，那么 $T$ 是 Fredholm 算子。
 
-### 注 4.5.2 @178
+### 注 4.5.2 (广义逆与紧扰动) @178
 
 在（i）证明中出现的算子 $S$ 也是 Fredholm 算子，在计算数学中经常称之为 $T$ 的**广义逆**。又由（ii）的证明知，如果存在 $S_1,S_2\in\mathfrak{B}(H)$ 使得 $I-TS_1$ 和 $I-S_2T$ 都是紧算子，那么 $T$ 是 Fredholm 算子。
 
@@ -81,7 +81,7 @@ $$T_f(g)=P(fg),\qquad \forall g\in H^2(\mathbb{T}),$$
 $$\|T_f\|=\sup_{\|g\|=1}\|P(fg)\|\leqslant\sup_{\|g\|=1}\|fg\|=\sup_{\|g\|=1}\left(\int_{[0,2\pi]}|f(\mathrm{e}^{\mathrm{i}\theta})g(\mathrm{e}^{\mathrm{i}\theta})|^2\,\frac{\mathrm{d}\theta}{2\pi}\right)^{1/2}$$
 $$\leqslant\|f\|_\infty\sup_{\|g\|=1}\left(\int_{[0,2\pi]}|g(\mathrm{e}^{\mathrm{i}\theta})|^2\,\frac{\mathrm{d}\theta}{2\pi}\right)^{1/2}=\|f\|_\infty.\tag{4.19}$$
 
-### 例 4.5.4 @181
+### 例 4.5.4 (常值函数算子为单位) @181
 
 对常值函数 $f(z)=1\in C(\mathbb{T})$，显然有
 $$T_1\mathrm{e}^{\mathrm{i}n\theta}=P(\mathrm{e}^{\mathrm{i}n\theta})=\mathrm{e}^{\mathrm{i}n\theta},\qquad n=0,1,2,\cdots,$$
@@ -107,7 +107,7 @@ $T_{z^k}$ 的 Fredholm 性也可通过
 $$T_{\bar{z}^k}T_{z^k}=I,\qquad T_{z^k}T_{\bar{z}^k}=I-P_0-\cdots-P_{k-1}$$
 得到，这里 $P_n$ 是到 $\mathbb{C}\mathrm{e}^{\mathrm{i}n\theta}$ 的秩 $1$ 投影。
 
-### 引理 4.5.1 @182
+### 引理 4.5.1 (托普利茨算子交换子紧) @182
 
 设 $f,g\in C(\mathbb{T})$，则 $T_fT_g-T_{fg}$ 是 $H^2(\mathbb{T})$ 上的紧算子。
 

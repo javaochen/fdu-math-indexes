@@ -16,23 +16,23 @@ pages: "21–29"
 
 由定义立即可知，如果 $\mathcal{E}$ 是 Hilbert 空间 $H$ 中的正交系（标准正交系），那么 $\mathcal{E}$ 的任何子集也是 $H$ 中的正交系（标准正交系）。
 
-### 例 1.3.1 @21
+### 例 1.3.1 (标准正交系) @21
 
 在 $n$ 维 Euclid 空间 $\mathbb{R}^n$ 中，
 $$e_1=(1,0,\cdots,0),\quad e_2=(0,1,0,\cdots,0),\cdots,e_n=(0,0,0,\cdots,1)$$
 组成标准正交系。
 
-### 例 1.3.2 @21
+### 例 1.3.2 (平方和空间标准正交系) @21
 
 在 $l^2$ 中，令 $e_n$ 为在位置 $n$ 取 $1$ 其他位置取 $0$ 的点列，则 $\{e_1,e_2,\cdots,e_n,\cdots\}$ 为 $l^2$ 的标准正交系。
 
-### 例 1.3.3 @21
+### 例 1.3.3 (三角函数标准正交系) @21
 
 在实（或复）周期函数空间 $L^2[0,2\pi]$ 中，规定内积为
 $$\langle f,g\rangle=\frac{1}{2\pi}\int_0^{2\pi}f(x)\overline{g(x)}\,\mathrm{d}x,\quad \forall f,g\in L^2[0,2\pi].$$
 这时 $\{1,\sqrt{2}\cos x,\sqrt{2}\sin x,\sqrt{2}\cos 2x,\sqrt{2}\sin 2x,\cdots,\sqrt{2}\cos nx,\sqrt{2}\sin nx,\cdots\}$ 组成 $L^2[0,2\pi]$ 的标准正交系。
 
-### 例 1.3.4 @21
+### 例 1.3.4 (复指数标准正交系) @21
 
 在复空间 $L^2[0,2\pi]$ 中，直接计算可得 $\{\mathrm{e}^{\mathrm{i}nx}: n\in\mathbb{Z}\}$ 组成一组标准正交系。
 
@@ -59,7 +59,7 @@ $$\sum_{\lambda\in\Lambda}|\langle x,e_\lambda\rangle|^2\leqslant\|x\|^2.\tag{1.
 
 Bessel 不等式表示向量 $x$ 在 $\mathcal{E}$ 中每个标准向量 $e_\lambda$ 上投影 $\langle x,e_\lambda\rangle e_\lambda$ 的"长度"平方的和不超过 $x$ 的"长度"平方。
 
-### 推论 1.3.1 @23
+### 推论 1.3.1 (黎曼勒贝格引理) @23
 
 设 $\{e_n\}$ 是 Hilbert 空间 $H$ 中的标准正交系，那么对任何 $x\in H$，有
 $$\lim_{n\to\infty}\langle x,e_n\rangle=0.$$
@@ -89,11 +89,11 @@ $$\sum_{\lambda\in\Lambda}c_\lambda=\lim_{F\in A}\sum_{\lambda\in F}c_\lambda.$$
 
 我们称满足上述条件之一的标准正交系为 Hilbert 空间 $H$ 中的一组**标准正交基**（或规范正交基）。
 
-### 例 1.3.5 @25
+### 例 1.3.5 (完全标准正交系) @25
 
 在 $l^2$ 中，令 $e_n$ 为在位置 $n$ 取 $1$ 其他位置取 $0$ 的数列，则标准正交系 $\{e_1,e_2,\cdots,e_n,\cdots\}$ 是完全的，因此为 $l^2$ 的一组标准正交基。实际上，若 $x$ 垂直于这组标准正交系，则对任意正整数 $n$，有 $x_n=\langle x,e_n\rangle=0$，即 $x=0$。
 
-### 例 1.3.6 @25
+### 例 1.3.6 (三角函数标准正交基) @25
 
 $L^2[0,2\pi]$ 中 $\mathcal{E}=\{1,\cdots,\sqrt{2}\sin nx,\sqrt{2}\cos nx,\cdots\}$ 是一组标准正交基。从而，我们有
 $$\|f\|^2=\sum_{e\in\mathcal{E}}|\langle f,e\rangle|^2,\quad \forall f\in L^2[0,2\pi]$$
@@ -108,7 +108,7 @@ $$f=a_0+\sqrt{2}\sum_{n=1}^{\infty}(a_n\cos nt+b_n\sin nt).\tag{1.18}$$
 $$\lim_{n\to\infty}\left[a_0+\sqrt{2}\sum_{k=1}^{n}(a_k\cos kt+b_k\sin kt)\right]\stackrel{m}{=}f.\tag{1.19}$$
 1915 年，Luzin（卢津）猜测：对 $L^2(\mathbb{T})$ 中的函数 $f$，（1.19）式是成立的。Kolmogorov（科尔莫哥罗夫）首先于 1923 年构造性地给出了一个 $L^1(\mathbb{T})$ 的函数，它的部分和是几乎处处点发散的。1966 年，L. Carleson（卡勒松）证明了 Luzin 猜测是正确的。紧接着在 1967 年，R. A. Hunt（亨特）证明：对于 $L^p[0,2\pi]\ (p>1)$ 中的函数，它的 Fourier 级数也是几乎处处收敛的。
 
-### 例 1.3.7 @26
+### 例 1.3.7 (复指数标准正交基) @26
 
 由例 1.3.6 与 Euler（欧拉）公式，在复空间 $L^2[0,2\pi]$ 中，$\{\mathrm{e}^{\mathrm{i}nx}: n\in\mathbb{Z}\}$ 是一组标准正交基。这也就是说，$\{z^n=\mathrm{e}^{\mathrm{i}nx}: n\in\mathbb{Z}\}$ 也是 $L^2\left(\mathbb{T},\dfrac{\mathrm{d}x}{2\pi}\right)$ 的标准正交基。
 
@@ -152,11 +152,11 @@ $$\frac{1}{n!}\mathrm{e}^{-\frac{t}{2}}L_n(t)\quad(n=0,1,\cdots)$$
 
 $M$ 在 $H$ 中的正交补空间 $M^{\perp}$ 经常记为 $H\ominus M$。更一般地，如果 $M,N$ 为 $H$ 的两个闭线性子空间，$M\subset N$，定义 $N\ominus M=N\cap M^{\perp}$，那么我们有 $N=M\oplus(N\ominus M)$。
 
-### 推论 1.3.2 @28
+### 推论 1.3.2 (真子空间正交补非零) @28
 
 设 $M$ 是 Hilbert 空间 $H$ 中的闭线性子空间，而且 $M\neq H$，那么 $M^{\perp}$ 中有非零元素。
 
-### 推论 1.3.3 @28
+### 推论 1.3.3 (正交补的闭包) @28
 
 设 $H$ 是 Hilbert 空间，$M$ 是 $H$ 的线性子空间，那么 $\overline{M}=(M^{\perp})^{\perp}$。特别地，$M^{\perp}=\{0\}$ 的充要条件是 $M$ 在 $H$ 中稠密。
 

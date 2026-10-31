@@ -53,7 +53,7 @@ $$\lim_{p\to+\infty}\int_a^b\psi(x)\sin px\,\mathrm{d}x=\lim_{p\to+\infty}\int_a
 
 可积或绝对可积函数 $f(x)$ 的 Fourier 级数在 $x$ 点是否收敛，只与 $f(x)$ 在 $(x-\delta,x+\delta)$ 的性质有关，这里 $\delta$ 是任意小的正常数。
 
-### 推论 16.2.2 @734
+### 推论 16.2.2 (两个积分极限相等) @734
 
 设函数 $\psi(u)$ 在 $[0,\delta]$ 上可积或绝对可积，则成立
 $$\lim_{m\to\infty}\int_0^{\delta}\psi(u)\,\frac{\sin\dfrac{2m+1}{2}u}{2\sin\dfrac{u}{2}}\,\mathrm{d}u=\lim_{m\to\infty}\int_0^{\delta}\psi(u)\,\frac{\sin\dfrac{2m+1}{2}u}{u}\,\mathrm{d}u.$$
@@ -74,7 +74,7 @@ $$\lim_{p\to+\infty}\int_0^{\delta}\left[f(x+u)+f(x-u)-2\,\frac{f(x+)+f(x-)}{2}\
 
 德国数学家 Dirichlet 在 1829 年——Fourier 级数问世约四分之一个世纪之后，首先得到了一个函数的 Fourier 级数的收敛条件；又过了约半个世纪，另一位德国数学家 Lipschitz 得到了与之不同的收敛条件。他们的结果经后人完善，可以表述为如下定理。
 
-### 定理 16.2.2 @735
+### 定理 16.2.2 (傅里叶级数的收敛判别) @735
 
 设函数 $f(x)$ 在 $[-\pi,\pi]$ 上可积或绝对可积，且满足下列两个条件之一，则 $f(x)$ 的 Fourier 级数在点 $x$ 处收敛于 $\dfrac{f(x+)+f(x-)}{2}$。
 
@@ -105,7 +105,7 @@ Dirichlet 引理也经常表达为等价形式
 $$\lim_{p\to+\infty}\int_0^{\delta}\psi(u)\,\frac{\sin pu}{u}\,\mathrm{d}u=\frac{\pi}{2}\psi(0+).$$
 如果 $\psi(u)$ 是分段单调有界函数，易知 Dirichlet 引理依然成立。
 
-### 推论 16.2.3 @737
+### 推论 16.2.3 (单侧导数与收敛性) @737
 
 若 $f(x)$ 在 $[-\pi,\pi]$ 上可积或绝对可积，在点 $x$ 处两个单侧导数 $f'_+(x)$ 和 $f'_-(x)$ 都存在，或更进一步，只要两个拟单侧导数
 $$\lim_{h\to 0+}\frac{f(x\pm h)-f(x\pm)}{h}$$

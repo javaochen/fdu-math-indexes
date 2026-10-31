@@ -96,7 +96,7 @@ $$\Gamma(s)=\frac{\Gamma(s+1)}{s}$$
 $$(-\infty,+\infty)\setminus\{0,-1,-2,-3,\cdots\}$$
 上去。$\Gamma(s)$ 的图像如图 15.3.1 所示。易证明 $\lim_{s\to-\infty}\Gamma(s)=+\infty$（留作习题）。
 
-### 例 15.3.1 @716
+### 例 15.3.1 (伽马函数计算积分) @716
 
 计算 $\displaystyle I=\int_0^{+\infty}x^{2n}\mathrm{e}^{-x^2}\,\mathrm{d}x$。
 
@@ -110,7 +110,7 @@ $$I=\frac{(2n-1)!!}{2^{n+1}}\Gamma\left(\frac{1}{2}\right)=\frac{(2n-1)!!}{2^{n+
 Beta 函数与 Gamma 函数之间具有如下关系：
 $$\mathrm{B}(p,q)=\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)},\qquad p>0,\ q>0.$$
 
-### 例 15.3.2 @716
+### 例 15.3.2 (贝塔函数计算积分) @716
 
 计算 $\displaystyle I=\int_0^{\frac{\pi}{2}}\sin^6 x\cos^4 x\,\mathrm{d}x$。
 
@@ -118,7 +118,7 @@ $$\mathrm{B}(p,q)=\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)},\qquad p>0,\ q>0.$$
 $$I=\int_0^{\frac{\pi}{2}}\sin^6 x\cos^4 x\,\mathrm{d}x=\frac{1}{2}\mathrm{B}\left(\frac{5}{2},\frac{7}{2}\right)=\frac{1}{2}\frac{\Gamma\left(\frac{5}{2}\right)\Gamma\left(\frac{7}{2}\right)}{\Gamma(6)}$$
 $$=\frac{1}{2\cdot 5!}\left(\frac{3}{2}\cdot\frac{1}{2}\sqrt{\pi}\right)\left(\frac{5}{2}\cdot\frac{3}{2}\cdot\frac{1}{2}\sqrt{\pi}\right)=\frac{3\pi}{512}.$$
 
-### 例 15.3.3 @716
+### 例 15.3.3 (变量代换后用贝塔函数) @716
 
 计算 $\displaystyle I=\int_0^1 x^8\sqrt{1-x^3}\,\mathrm{d}x$。
 
@@ -126,7 +126,7 @@ $$=\frac{1}{2\cdot 5!}\left(\frac{3}{2}\cdot\frac{1}{2}\sqrt{\pi}\right)\left(\f
 $$I=\int_0^1 x^8\sqrt{1-x^3}\,\mathrm{d}x=\frac{1}{3}\int_0^1 t^2\sqrt{1-t}\,\mathrm{d}t=\frac{1}{3}\mathrm{B}\left(3,\frac{3}{2}\right)$$
 $$=\frac{1}{3}\cdot\frac{\Gamma(3)\Gamma\left(\frac{3}{2}\right)}{\Gamma\left(\frac{9}{2}\right)}=\frac{2!\,\Gamma\left(\frac{3}{2}\right)}{3\cdot\frac{7}{2}\cdot\frac{5}{2}\cdot\frac{3}{2}\cdot\Gamma\left(\frac{3}{2}\right)}=\frac{16}{315}.$$
 
-### 例 15.3.4 @717
+### 例 15.3.4 (用伽马函数表示球体积) @717
 
 设 $\alpha>-1$，计算 $\displaystyle\int_0^{\frac{\pi}{2}}\sin^\alpha x\,\mathrm{d}x$ 与 $\displaystyle\int_0^{\frac{\pi}{2}}\cos^\alpha x\,\mathrm{d}x$，并用 Gamma 函数表示 $n$ 维球体 $B_n=\left\{(x_1,x_2,\cdots,x_n)\mid x_1^2+x_2^2+\cdots+x_n^2\leqslant R^2\right\}$ 的体积 $V_n$。
 
@@ -153,7 +153,7 @@ $$\Gamma(s)\Gamma(1-s)=\frac{\pi}{\sin\pi s},\qquad 0<s<1.$$
 
 在证明这个定理之前，我们先给出一个一般性的结果。
 
-### 引理 15.3.1 @718
+### 引理 15.3.1 (积分与极限交换) @718
 
 设连续可积函数序列 $\{u_n(x)\}$ 在区间 $[a,b)$ 上收敛于 $u(x)$，函数 $\varphi(x)$ 在 $[a,b)$ 上可积（即 $\displaystyle\int_a^b\varphi(x)\,\mathrm{d}x$ 收敛）。进一步设
 
@@ -169,7 +169,7 @@ $$\lim_{n\to\infty}\int_a^b u_n(x)\,\mathrm{d}x=\int_a^b u(x)\,\mathrm{d}x,$$
 
 在这个引理中，把 $[a,b)$ 换为 $(a,b]$ 或 $(a,b)$ 时，相应的结论也成立。
 
-### 引理 15.3.2 @719
+### 引理 15.3.2 (正弦函数的倒数展开) @719
 
 对于 $x\in(0,1)$，成立
 $$\frac{\pi}{\sin\pi x}=\frac{1}{x}+\sum_{n=1}^{\infty}(-1)^n\left(\frac{1}{x+n}+\frac{1}{x-n}\right).$$
@@ -183,7 +183,7 @@ $$n!=\sqrt{2\pi n}\left(\frac{n}{\mathrm{e}}\right)^n\mathrm{e}^{\frac{\theta}{1
 
 这个定理的证明比较复杂，在此从略。
 
-### 例 15.3.5 @720
+### 例 15.3.5 (贝塔函数计算反常积分) @720
 
 计算 $\displaystyle I=\int_0^{+\infty}\frac{\sqrt[4]{x}}{(1+x)^2}\,\mathrm{d}x$。
 
@@ -191,7 +191,7 @@ $$n!=\sqrt{2\pi n}\left(\frac{n}{\mathrm{e}}\right)^n\mathrm{e}^{\frac{\theta}{1
 $$I=\int_0^{+\infty}\frac{\sqrt[4]{x}}{(1+x)^2}\,\mathrm{d}x=\int_0^{+\infty}\frac{x^{\frac{5}{4}-1}}{(1+x)^{\frac{5}{4}+\frac{3}{4}}}\,\mathrm{d}x=\mathrm{B}\left(\frac{3}{4},\frac{5}{4}\right)$$
 $$=\frac{\Gamma\left(\frac{3}{4}\right)\Gamma\left(\frac{5}{4}\right)}{\Gamma(2)}=\frac{\frac{1}{4}\Gamma\left(\frac{1}{4}\right)\Gamma\left(\frac{3}{4}\right)}{1!}=\frac{1}{4}\cdot\frac{\pi}{\sin\frac{\pi}{4}}=\frac{\sqrt{2}\pi}{4}.$$
 
-### 例 15.3.6 @721
+### 例 15.3.6 (极坐标曲线围成面积) @721
 
 计算曲线 $r^4=\sin^3\theta\cos\theta$ 所围图形的面积 $A$。
 
@@ -199,7 +199,7 @@ $$=\frac{\Gamma\left(\frac{3}{4}\right)\Gamma\left(\frac{5}{4}\right)}{\Gamma(2)
 $$A=2\cdot\frac{1}{2}\int_0^{\frac{\pi}{2}}\sin^{\frac{3}{2}}\theta\cos^{\frac{1}{2}}\theta\,\mathrm{d}\theta=\frac{1}{2}\mathrm{B}\left(\frac{3}{4},\frac{5}{4}\right)$$
 $$=\frac{\Gamma\left(\frac{3}{4}\right)\Gamma\left(\frac{5}{4}\right)}{2\Gamma(2)}=\frac{1}{8}\Gamma\left(\frac{3}{4}\right)\Gamma\left(\frac{1}{4}\right)=\frac{\sqrt{2}\pi}{8}.$$
 
-### 例 15.3.7 @721
+### 例 15.3.7 (确定反常重积分收敛参数) @721
 
 设区域 $D=\{(x,y)\mid x\geqslant 0,\ y\geqslant 0\}$。确定正数 $\alpha,\beta$，使得反常重积分
 $$I=\iint_D\frac{\mathrm{d}x\,\mathrm{d}y}{1+x^\alpha+y^\beta}$$

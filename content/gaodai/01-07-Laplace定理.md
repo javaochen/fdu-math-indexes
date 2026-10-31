@@ -44,17 +44,17 @@ $$\widehat{A}\begin{pmatrix}2&3\\1&2\end{pmatrix}=-7,\quad \widehat{A}\begin{pma
 $$|A|=28\times(-7)+52\times1+11\times5+(-20)\times(-2)+(-8)\times(-3)+(-7)\times(-1)=-18.$$
 通过行列式计算，也得到原行列式的值为 $-18$。
 
-### 引理 1.7.1 @47
+### 引理 1.7.1 (子式展开项的归属) @47
 
 $n$ 阶行列式 $|A|$ 的任一 $k$ 阶子式与其代数余子式之积的展开式中的每一项都属于 $|A|$ 的展开式。
 
-### 例 1.7.1 @49
+### 例 1.7.1 (五阶行列式的展开) @49
 
 计算行列式：
 $$|A|=\begin{vmatrix}-1&1&1&2&-1\\0&-1&0&1&2\\2&1&1&3&-1\\1&2&2&1&0\\0&3&0&1&3\end{vmatrix}.$$
 解：因为第一、第三列含有较多的零，因此在这两列上作 Laplace 展开（共三项），得 $|A|=-132$。
 
-### 例 1.7.2 @50
+### 例 1.7.2 (分块三角行列式) @50
 
 设 $n$ 阶行列式前 $k$ 行和后 $n-k$ 列的交点上的元素都是零，即
 $$|A|=\begin{vmatrix}a_{11}&\cdots&a_{1k}&0&\cdots&0\\\vdots&&\vdots&\vdots&&\vdots\\a_{k1}&\cdots&a_{kk}&0&\cdots&0\\a_{k+1,1}&\cdots&a_{k+1,k}&a_{k+1,k+1}&\cdots&a_{k+1,n}\\\vdots&&\vdots&\vdots&&\vdots\\a_{n1}&\cdots&a_{nk}&a_{n,k+1}&\cdots&a_{nn}\end{vmatrix},$$

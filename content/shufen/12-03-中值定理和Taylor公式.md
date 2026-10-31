@@ -26,11 +26,11 @@ $$D=\{(x,y)\in\mathbf{R}^2\mid (x-a)^2+(y-b)^2<r^2\}$$
 
 $$f(x_0+\Delta x,y_0+\Delta y)-f(x_0,y_0)=f_x(x_0+\theta\Delta x,y_0+\theta\Delta y)\Delta x+f_y(x_0+\theta\Delta x,y_0+\theta\Delta y)\Delta y.$$
 
-### 推论 12.3.1 @529
+### 推论 12.3.1 (偏导为零则为常值) @529
 
 如果函数 $f(x,y)$ 在区域 $D\subset\mathbf{R}^2$ 上的偏导数恒为零，那么它在 $D$ 上必是常值函数。
 
-### 定理 12.3.2 @530
+### 定理 12.3.2 (多元函数的中值定理) @530
 
 设 $n$ 元函数 $f(x_1,x_2,\cdots,x_n)$ 在凸区域 $D\subset\mathbf{R}^n$ 上可微，则对于 $D$ 内任意两点 $(x_1^0,x_2^0,\cdots,x_n^0)$ 和 $(x_1^0+\Delta x_1,x_2^0+\Delta x_2,\cdots,x_n^0+\Delta x_n)$，至少存在一个 $\theta\ (0<\theta<1)$，使得
 
@@ -80,7 +80,7 @@ f(x_0+\Delta x,y_0+\Delta y)={}&f(x_0,y_0)+\left(\Delta x\frac{\partial}{\partia
 \end{aligned}
 $$
 
-### 例 12.3.1 @531
+### 例 12.3.1 (用泰勒公式近似计算) @531
 
 近似计算 $(1.08)^{3.96}$。
 
@@ -153,7 +153,7 @@ $$f(x,y\pm h)=f(x,y)\pm hf_y(x,y)+\frac{h^2}{2}f_{yy}(x,y)\pm\frac{h^3}{6}f_{yyy
 
 $$\Delta_hf(x,y)-\left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}\right)f(x,y)=\frac{h^2}{12}\left(\frac{\partial^4}{\partial x^4}+\frac{\partial^4}{\partial y^4}\right)f(x,y)+o(h^2)=O(h^2).$$
 
-### 定理 12.3.4 @532
+### 定理 12.3.4 (多元函数的泰勒公式) @532
 
 设 $n$ 元函数 $f(x_1,x_2,\cdots,x_n)$ 在点 $(x_1^0,x_2^0,\cdots,x_n^0)$ 附近具有 $k+1$ 阶连续偏导数，那么在这点附近成立如下的 Taylor 公式：
 
