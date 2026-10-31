@@ -16,6 +16,7 @@
   let mode = "read";
   let cardIdx = 0;
   let defsOpen = false;
+  let lastFoldCard = null;
   let typeFilter = "all";
   let currentMeta = null;
   let current = null;
@@ -205,8 +206,27 @@
   function toggleFold(card) {
     if (!card) return;
     card.classList.toggle("folded");
+    lastFoldCard = card;
     const btn = card.querySelector("[data-fold]");
     if (btn) btn.textContent = card.classList.contains("folded") ? "展开" : "收起";
+  }
+
+  function spaceTarget() {
+    if (mode === "card") return document.querySelector(".item[data-foldable]");
+    if (lastFoldCard && document.contains(lastFoldCard)) {
+      const r = lastFoldCard.getBoundingClientRect();
+      if (r.bottom > 8 && r.top < window.innerHeight - 8) return lastFoldCard;
+    }
+    const cards = [...document.querySelectorAll(".item[data-foldable]")];
+    if (!cards.length) return document.querySelector(".item:not(.revealed)");
+    const mid = window.innerHeight / 2;
+    let best = cards[0], bestD = Infinity;
+    for (const el of cards) {
+      const r = el.getBoundingClientRect();
+      const d = Math.abs((r.top + r.bottom) / 2 - mid);
+      if (d < bestD) { best = el; bestD = d; }
+    }
+    return best;
   }
 
   function paintCard(card) {
@@ -537,8 +557,6 @@
     }, 160);
   });
 
-  function firstHidden() { return document.querySelector(".item.folded, .item:not(.revealed)"); }
-
   function jumpSection(dir) {
     if (!current || !currentMeta) return;
     const book = CACHE.get(currentMeta.id);
@@ -571,14 +589,13 @@
       return;
     }
     if (e.key === " ") {
-      const card = firstHidden();
-      if (card) {
-        e.preventDefault();
-        if (card.classList.contains("folded")) { toggleFold(card); return; }
-        card.classList.add("revealed");
-        card.querySelector(".reveal")?.remove();
-        if (!card.classList.contains("math-done")) { typeset(card); card.classList.add("math-done"); }
-      }
+      const card = spaceTarget();
+      if (!card) return;
+      e.preventDefault();
+      if (card.hasAttribute("data-foldable")) { toggleFold(card); return; }
+      card.classList.add("revealed");
+      card.querySelector(".reveal")?.remove();
+      if (!card.classList.contains("math-done")) { typeset(card); card.classList.add("math-done"); }
       return;
     }
     if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
