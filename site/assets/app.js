@@ -71,8 +71,8 @@
           const sec = { ...s, chapter: ch.no, chapterTitle: ch.title, book: b };
           sections.push(sec);
           for (const it of sec.items) {
-            INDEX.set(`${b.id}/${it.anchor}`, { item: it, section: sec, book: b });
-            SRC.set(`${b.id}/${it.anchor}`, it.src || "");
+            INDEX.set(`${b.id}/${s.id}/${it.anchor}`, { item: it, section: sec, book: b });
+            SRC.set(`${b.id}/${s.id}/${it.anchor}`, it.src || "");
           }
         }
       }
@@ -128,7 +128,7 @@
   }
 
   function itemHtml(it, opts = {}) {
-    const key = `${it.bookId || ""}/${it.anchor}`;
+    const key = `${it.bookId || ""}/${it.secId || ""}/${it.anchor}`;
     const showSrc = srcAll || srcSet.has(key);
     const head = `
       <div class="item-head">
@@ -147,7 +147,7 @@
       : `<div class="stmt">${inner}</div>`;
     return `<article class="item${hide ? "" : " revealed"}"
       data-type="${esc(it.type)}" data-anchor="${esc(it.anchor)}" data-key="${esc(key)}"
-      id="i-${esc(it.bookId || "")}${esc(it.anchor)}">${head}${body}</article>`;
+      id="i-${esc(it.bookId || "")}-${esc(it.secId || "")}-${esc(it.anchor)}">${head}${body}</article>`;
   }
 
   function paintCard(card) {
@@ -177,7 +177,7 @@
         </div>
         ${b.note ? `<p class="book-note">${esc(b.note)}</p>` : ""}
       </div>`;
-    const body = s.items.map((it) => itemHtml({ ...it, bookId: b.id }, { hidden: mode === "test" })).join("");
+    const body = s.items.map((it) => itemHtml({ ...it, bookId: b.id, secId: s.id }, { hidden: mode === "test" })).join("");
     $("#view").innerHTML = head + body;
     typeset($("#view"));
     $("#crumbs").innerHTML = `<b>${esc(b.title)}</b> · ${esc(s.id)} ${esc(s.title)}`;
@@ -200,7 +200,7 @@
     if (!pool.length) { renderEmptyBook(currentBook || BOOKS[0]); return; }
     const it = pool[Math.floor(Math.random() * pool.length)];
     randomItem = it;
-    const rec = INDEX.get(`${currentBook ? currentBook.id : BOOKS[0].id}/${it.anchor}`);
+    const rec = INDEX.get(`${currentBook ? currentBook.id : BOOKS[0].id}/${s.id}/${it.anchor}`);
     const s = (rec && rec.section) || current;
     const b = (rec && rec.book) || currentBook;
     $("#view").innerHTML = `
@@ -208,7 +208,7 @@
         <h1>随机自测</h1>
         <div class="meta"><span>来自 ${esc(b.title)} ${esc(s.id)} ${esc(s.title)}</span><span>共 ${pool.length} 个条目</span></div>
       </div>
-      ${itemHtml({ ...it, bookId: b.id }, { hidden: true })}
+      ${itemHtml({ ...it, bookId: b.id, secId: s.id }, { hidden: true })}
       <p style="margin-top:18px"><button id="again" class="ghost-btn" type="button">换一条（r）</button></p>`;
     typeset($("#view"));
     $("#crumbs").innerHTML = `<b>随机</b> · ${esc(b.title)} ${esc(s.id)}`;
@@ -232,7 +232,7 @@
       <div class="sec-head"><h1>搜索</h1>
         <div class="meta"><span>“${esc(q)}” 命中 ${hits.length} 条${hits.length > shown.length ? `，显示前 ${shown.length} 条` : ""}</span></div>
       </div>` +
-      (shown.map(({ it, s, b }) => itemHtml({ ...it, bookId: b.id }, { label: `${b.title} ${s.id}` })).join("") ||
+      (shown.map(({ it, s, b }) => itemHtml({ ...it, bookId: b.id, secId: s.id }, { label: `${b.title} ${s.id}` })).join("") ||
         `<div class="empty">没有匹配的条目。</div>`);
     typeset($("#view"));
     $("#crumbs").innerHTML = `<b>搜索</b> “${esc(q)}”`;
@@ -257,11 +257,11 @@
     setBook(book);
 
     if (anchor) {
-      const rec = INDEX.get(`${book.id}/${anchor}`);
+      const rec = INDEX.get(`${book.id}/${secId}/${anchor}`);
       if (rec) {
         current = rec.section;
         renderSection(rec.section);
-        const el = document.getElementById(`i-${book.id}${anchor}`);
+        const el = document.getElementById(`i-${book.id}-${secId}-${anchor}`);
         if (el) { el.classList.add("revealed", "flash"); el.scrollIntoView({ block: "center" }); }
         return;
       }

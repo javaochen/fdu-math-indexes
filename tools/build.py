@@ -152,6 +152,7 @@ def load_book(book_dir: Path, problems: list[str]) -> dict | None:
             "pages": fm.get("pages", ""),
             "items": [],
         }
+        used_anchors: dict[str, int] = {}
         for n, (idx, m) in enumerate(heads):
             end = heads[n + 1][0] if n + 1 < len(heads) else len(lines)
             body_txt = "\n".join(lines[idx + 1:end])
@@ -170,7 +171,10 @@ def load_book(book_dir: Path, problems: list[str]) -> dict | None:
             item["html"] = html
             # 原始 Markdown 源码，供页面切换查看/复制
             item["src"] = "\n\n".join(to_paragraphs(body_txt))
-            item["anchor"] = slugify(item)
+            base = slugify(item)
+            k = used_anchors.get(base, 0) + 1
+            used_anchors[base] = k
+            item["anchor"] = base if k == 1 else f"{base}-{k}"
             check_math(html, f"{path.name} {typ} {item['number'] or item['title']}", problems)
             section["items"].append(item)
 
@@ -208,7 +212,7 @@ def main() -> int:
         for ch in b["chapters"]:
             for s in ch["sections"]:
                 for it in s["items"]:
-                    key = f"{b['id']}/{it['anchor']}"
+                    key = f"{b['id']}/{s['id']}/{it['anchor']}"
                     if key in seen:
                         problems.append(f"重复锚点 {key}（{seen[key]}）")
                     seen[key] = s["id"]
