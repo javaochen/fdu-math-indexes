@@ -106,7 +106,7 @@ def main() -> int:
         if bpath.exists():
             bmeta, _ = build.parse_front(bpath.read_text(encoding="utf-8"))
         tag_style = bmeta.get("tag_style", "chapter")
-        sections_by_chapter: dict[str, list[float]] = {}
+        sections_by_chapter: dict[str, list[tuple[int, int]]] = {}
         for path in files:
             fm, _ = build.parse_front(path.read_text(encoding="utf-8"))
             sec_id = fm.get("section", "")
@@ -125,16 +125,16 @@ def main() -> int:
             if sec_id:
                 parts = sec_id.split(".")
                 if len(parts) == 2:
-                    sections_by_chapter.setdefault(parts[0], []).append(float(sec_id))
+                    sections_by_chapter.setdefault(parts[0], []).append((int(parts[0]), int(parts[1])))
 
         for ch, ids in sections_by_chapter.items():
             ids = sorted(ids)
             for a, b in zip(ids, ids[1:]):
-                if round(b - a, 1) > 1.0:
-                    print(f"  [章 {ch}] 节号从 {a} 跳到 {b}，中间可能有未录入的节")
+                if b[1] - a[1] > 1:
+                    print(f"  [章 {ch}] 节号从 {a[1]} 跳到 {b[1]}，中间可能有未录入的节")
                     total_warn += 1
                 if b == a:
-                    print(f"  [章 {ch}] 节 {a} 重复")
+                    print(f"  [章 {ch}] 节 {a[1]} 重复")
                     total_warn += 1
 
     print(f"\n共 {total_warn} 条提示")
