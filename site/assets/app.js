@@ -282,7 +282,7 @@
           <span class="card-count">${cardIdx + 1} / ${items.length}</span>
           <button class="card-nav" type="button" data-card="1" ${cardIdx === items.length - 1 ? "disabled" : ""}>下一条 →</button>
         </div>
-        ${itemHtml({ ...it, bookId: b.id, secId: current.id }, { hidden: true, force: true })}
+        ${itemHtml({ ...it, bookId: b.id, secId: current.id }, { foldable: true, folded: true })}
         <p class="card-hint">← → 翻动 · 空格 显示/隐藏 · Esc 回到阅读</p>
       </div>`;
     typesetLazy($("#view"));
