@@ -87,13 +87,22 @@ def slugify(item: dict) -> str:
     return re.sub(r"[^\w\u4e00-\u9fff.′]+", "-", base).strip("-")
 
 
-def plain_text(html: str, limit: int = 240) -> str:
+def plain_text(html: str, limit: int = 240, strip_math: bool = True) -> str:
     t = re.sub(r"<[^>]+>", " ", html)
     t = html_lib.unescape(t)
-    # 摘要里去掉块级公式，避免整段 LaTeX 占满结果；行内公式保留
-    t = re.sub(r"\$\$.*?\$\$", " … ", t, flags=re.S)
+    if strip_math:
+        # 摘要里只去掉块级公式，行内公式保留并在页面渲染
+        t = re.sub(r"\$\$.*?\$\$", " ⋯ ", t, flags=re.S)
     t = re.sub(r"\s+", " ", t).strip()
-    return t[:limit]
+    if len(t) > limit:
+        t = t[:limit]
+        if t.count("$") % 2:          # 截断落在公式中间时，退回到公式开头
+            t = t[:t.rfind("$")].rstrip() + " …"
+    return t
+
+
+def search_key(*parts: str) -> str:
+    return re.sub(r"\s+", " ", " ".join(parts).lower().replace("\\", "").replace("$", " ")).strip()[:2000]
 
 
 def check_math(text: str, where: str, problems: list[str]) -> None:
@@ -245,9 +254,14 @@ def main() -> int:
             secs = []
             for s in ch["sections"]:
                 for it in s["items"]:
+                    disp = plain_text(it["html"], 180)
+                    if len(disp) < 24:
+                        disp = plain_text(it["html"], 180, strip_math=False)
                     search.append([
                         b["id"], s["id"], it["anchor"], it["type"],
-                        it["number"], it["title"], plain_text(it["html"]),
+                        it["number"], it["title"], disp,
+                        search_key(it["type"], it["number"], it["title"],
+                                   plain_text(it["html"], 1200, strip_math=False)),
                     ])
                     count += 1
                 secs.append({"id": s["id"], "title": s["title"], "pages": s["pages"], "count": len(s["items"])})

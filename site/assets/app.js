@@ -45,10 +45,10 @@
   }
 
   // 只渲染视口附近的条目，长节首屏更快
-  function typesetLazy(root) {
+  function typesetLazy(root, sel = ".item") {
     if (!window.renderMathInElement) return;
     if (mathObserver) { mathObserver.disconnect(); mathObserver = null; }
-    const items = [...root.querySelectorAll(".item")];
+    const items = [...root.querySelectorAll(sel)];
     if (!items.length) return;
     mathObserver = new IntersectionObserver((entries, ob) => {
       entries.forEach((en) => {
@@ -123,7 +123,7 @@
     const res = await fetch("data/search.json", { cache: "no-cache" });
     if (!res.ok) throw new Error("无法加载 search.json");
     SEARCH = await res.json();
-    SEARCH_N = SEARCH.map((e) => norm(`${e[3]} ${e[4]} ${e[5]} ${e[6]}`));
+    SEARCH_N = SEARCH.map((e) => e[7] || norm(`${e[3]} ${e[4]} ${e[5]} ${e[6]}`));
   }
 
   /* ---------------- 侧栏 ---------------- */
@@ -279,12 +279,16 @@
   }
 
   function highlight(text, terms) {
-    const safe = esc(text);
     const t = terms.filter(Boolean).map((x) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
-    if (!t.length) return safe;
-    try {
-      return safe.replace(new RegExp(`(${t.join("|")})`, "gi"), "<mark>$1</mark>");
-    } catch (_) { return safe; }
+    // 切成"普通文本/公式"交替的片段，只在普通文本里加高亮，避免破坏 KaTeX
+    const parts = String(text).split(/(\$\$[\s\S]*?\$\$|\$[^$]*\$)/g);
+    return parts.map((p, i) => {
+      if (i % 2) return esc(p);
+      const safe = esc(p);
+      if (!t.length) return safe;
+      try { return safe.replace(new RegExp(`(${t.join("|")})`, "gi"), "<mark>$1</mark>"); }
+      catch (_) { return safe; }
+    }).join("");
   }
 
   async function renderSearch(q) {
@@ -311,6 +315,7 @@
         <div class="meta"><span>“${esc(q)}” 命中 ${hitIdx.length} 条${hitIdx.length > shown.length ? `（显示前 ${shown.length} 条）` : ""}</span></div>
       </div>` + (rows || `<div class="empty">没有匹配的条目。</div>`);
     $("#crumbs").innerHTML = `<b>搜索</b> “${esc(q)}”`;
+    typesetLazy($("#view"), ".hit");
     markActive();
   }
 
