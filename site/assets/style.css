@@ -180,6 +180,39 @@ pre.src {
 .copy-btn:hover { color: var(--accent); border-color: var(--accent); }
 .copy-btn.copied { color: #fff; background: var(--accent); border-color: var(--accent); }
 
+.src-copy {
+  background: none; border: 1px solid var(--line); border-radius: 6px;
+  font-size: 11px; color: var(--muted); padding: 1px 6px; cursor: pointer; white-space: nowrap;
+}
+.src-copy:hover { border-color: var(--accent); color: var(--accent); }
+.src-copy.copied { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+/* 首页 */
+.brand { cursor: pointer; }
+.brand:hover .brand-title { color: var(--accent); }
+.crumb-home { color: var(--muted); text-decoration: none; }
+.crumb-home:hover { color: var(--accent); }
+.home { max-width: 920px; }
+.home-head h1 { font-family: var(--serif); font-size: 34px; margin: 6px 0 6px; letter-spacing: .02em; }
+.home-sub { color: var(--muted); margin: 0 0 6px; }
+.home-stat { color: var(--muted); font-size: 13px; margin: 0 0 24px; }
+.book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+.book-card {
+  display: block; background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+  padding: 16px 18px; text-decoration: none; color: inherit;
+  transition: border-color .15s, transform .15s;
+}
+.book-card:hover { border-color: var(--accent); transform: translateY(-1px); }
+.book-card.empty { opacity: .7; }
+.bc-head { display: flex; align-items: baseline; gap: 8px; }
+.bc-title { font-family: var(--serif); font-size: 18px; font-weight: 700; }
+.bc-count { margin-left: auto; font-size: 11.5px; color: var(--accent); background: var(--accent-soft); border-radius: 9px; padding: 1px 8px; white-space: nowrap; }
+.bc-author { font-size: 12px; color: var(--muted); margin-top: 3px; }
+.bc-meta { font-size: 12px; color: var(--muted); margin-top: 8px; }
+.bc-note { font-size: 12px; color: var(--muted); line-height: 1.65; margin: 10px 0 0; border-top: 1px dashed var(--line); padding-top: 8px; }
+.home-tip { margin-top: 24px; font-size: 12.5px; color: var(--muted); }
+.home-mode .modes, .home-mode #src-btn { display: none; }
+
 /* 类型筛选 */
 .filters { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
 .chip {

@@ -165,7 +165,7 @@
 
   /* ---------------- 条目 ---------------- */
   function srcBlock(key) {
-    return `<div class="srcwrap"><button class="copy-btn" type="button" data-copy="${esc(key)}">复制</button><pre class="src">${esc(SRC.get(key) || "")}</pre></div>`;
+    return `<pre class="src">${esc(SRC.get(key) || "")}</pre>`;
   }
 
   function itemHtml(it, opts = {}) {
@@ -179,6 +179,8 @@
         <span class="head-right">
           ${opts.label ? `<span class="sr-src">${esc(opts.label)}</span>` : ""}
           <span class="pageref">p.${it.page}</span>
+          <button class="src-copy" type="button" data-copy-src="${esc(key)}"
+            title="复制该条的 Markdown/LaTeX 源码">复制</button>
           <button class="src-toggle" type="button" data-src-toggle="${esc(key)}"
             title="在渲染结果与 Markdown/LaTeX 源码之间切换">${showSrc ? "渲染" : "源码"}</button>
         </span>
@@ -215,6 +217,7 @@
   }
 
   function sectionHead(s, items) {
+    document.body.classList.remove("home-mode");
     const b = s.book;
     const chips = FILTERS.map(([key, label, types]) => {
       const n = types ? s.items.filter((it) => types.includes(it.type)).length : s.items.length;
@@ -242,12 +245,13 @@
       : `<div class="empty">这一节没有该类型的条目。</div>`;
     $("#view").innerHTML = sectionHead(s, items) + body;
     typesetLazy($("#view"));
-    $("#crumbs").innerHTML = `<b>${esc(b.short || b.title)}</b> · ${esc(s.id)} ${esc(s.title)}`;
+    $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <b>${esc(b.short || b.title)}</b> · ${esc(s.id)} ${esc(s.title)}`;
     markActive();
     window.scrollTo({ top: 0 });
   }
 
   function renderEmptyBook(meta) {
+    document.body.classList.remove("home-mode");
     $("#view").innerHTML = `
       <div class="sec-head"><h1>${esc(meta.title)}</h1>
         <div class="meta"><span>${esc(meta.author || "")}</span></div>
@@ -259,6 +263,7 @@
   }
 
   async function renderRandom() {
+    document.body.classList.remove("home-mode");
     const meta = currentMeta || BOOKS[0];
     if (!meta) return;
     const book = await ensureBook(meta.id);
@@ -273,8 +278,7 @@
       ${itemHtml({ ...it, bookId: book.id, secId: s.id }, { hidden: true })}
       <p style="margin-top:18px"><button id="again" class="ghost-btn" type="button">换一条（r）</button></p>`;
     typesetLazy($("#view"));
-    $("#crumbs").innerHTML = `<b>随机</b> · ${esc(book.short || book.title)} ${esc(s.id)}`;
-    $("#again").onclick = renderRandom;
+    $("#crumbs").innerHTML = `<b>随机</b> · ${esc(book.short || book.title)} ${esc(s.id)}`;    $("#again").onclick = renderRandom;
     markActive();
   }
 
@@ -292,6 +296,7 @@
   }
 
   async function renderSearch(q) {
+    document.body.classList.remove("home-mode");
     await loadSearch();
     const terms = norm(q).split(" ").filter(Boolean);
     const hitIdx = [];
@@ -314,9 +319,41 @@
       <div class="sec-head"><h1>搜索</h1>
         <div class="meta"><span>“${esc(q)}” 命中 ${hitIdx.length} 条${hitIdx.length > shown.length ? `（显示前 ${shown.length} 条）` : ""}</span></div>
       </div>` + (rows || `<div class="empty">没有匹配的条目。</div>`);
-    $("#crumbs").innerHTML = `<b>搜索</b> “${esc(q)}”`;
+    $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <b>搜索</b> “${esc(q)}”`;
     typesetLazy($("#view"), ".hit");
     markActive();
+  }
+
+  function renderHome() {
+    document.body.classList.add("home-mode");
+    document.title = SITE.title || "数学命题索引";
+    const total = BOOKS.reduce((a, b) => a + b.count, 0);
+    const cards = BOOKS.map((b) => {
+      const first = b.chapters && b.chapters[0] && b.chapters[0].sections[0];
+      const href = b.count && first ? `#/${b.id}/${encodeURIComponent(first.id)}` : `#/${b.id}`;
+      const secCount = (b.chapters || []).reduce((a, c) => a + c.sections.length, 0);
+      return `<a class="book-card${b.count ? "" : " empty"}" href="${href}">
+        <div class="bc-head"><span class="bc-title">${esc(b.title)}</span>
+          <span class="bc-count">${b.count ? `${b.count} 条` : "待录入"}</span></div>
+        <div class="bc-author">${esc(b.author || "")}</div>
+        <div class="bc-meta">${b.chapters.length} 章 · ${secCount} 节</div>
+        ${b.note ? `<p class="bc-note">${esc(b.note)}</p>` : ""}
+      </a>`;
+    }).join("");
+    $("#view").innerHTML = `
+      <div class="home">
+        <div class="home-head">
+          <h1>${esc(SITE.title || "数学命题索引")}</h1>
+          <p class="home-sub">${esc(SITE.subtitle || "")}</p>
+          <p class="home-stat">共 ${BOOKS.length} 本书 · ${total} 条命题 · 只含陈述，不含证明与习题</p>
+        </div>
+        <div class="book-grid">${cards}</div>
+        <p class="home-tip">点击书名进入。<kbd>/</kbd> 搜索全部条目，<kbd>s</kbd> 切换源码，条目右上角“复制”直接取走 Markdown/LaTeX。</p>
+      </div>`;
+    $("#crumbs").innerHTML = `<b>全部书目</b>`;
+    document.querySelectorAll(".book-btn").forEach((x) => x.classList.remove("active"));
+    document.querySelectorAll(".sec-link").forEach((x) => x.classList.remove("active"));
+    window.scrollTo({ top: 0 });
   }
 
   function showLoading() {
@@ -336,6 +373,8 @@
       $("#view").innerHTML = `<div class="empty">还没有任何书。请在 content/ 下新建书目录。</div>`;
       return;
     }
+    const raw = location.hash.replace(/^#\/?/, "");
+    if (!raw) { renderHome(); return; }
     const token = ++loadToken;
     const { bookId, secId, anchor } = parseHash();
     const meta = BOOKS.find((b) => b.id === bookId) || BOOKS[0];
@@ -376,6 +415,9 @@
 
     const copyBtn = e.target.closest("[data-copy]");
     if (copyBtn) { copyText(SRC.get(copyBtn.dataset.copy) || "", copyBtn); return; }
+
+    const copySrc = e.target.closest("[data-copy-src]");
+    if (copySrc) { copyText(SRC.get(copySrc.dataset.copySrc) || "", copySrc); return; }
 
     const chip = e.target.closest("[data-filter]");
     if (chip) {
@@ -481,6 +523,13 @@
   srcBtn.addEventListener("click", () => setSrcAll(!srcAll));
 
   $("#about-btn").addEventListener("click", () => { $("#modal").hidden = false; });
+  $(".brand").addEventListener("click", () => {
+    if (location.hash === "#/" || !location.hash) { renderHome(); } else { location.hash = "#/"; }
+  });
+  $("#home-btn").addEventListener("click", () => {
+    $("#sidebar").classList.remove("open");
+    if (location.hash === "#/" || !location.hash) { renderHome(); } else { location.hash = "#/"; }
+  });
   $("#modal-close").addEventListener("click", () => { $("#modal").hidden = true; });
   $("#modal").addEventListener("click", (e) => { if (e.target.id === "modal") $("#modal").hidden = true; });
   $("#menu-btn").addEventListener("click", () => $("#sidebar").classList.toggle("open"));
