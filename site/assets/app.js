@@ -173,6 +173,8 @@
   function itemHtml(it, opts = {}) {
     const key = `${it.bookId || ""}/${it.secId || ""}/${it.anchor}`;
     const showSrc = srcAll || srcSet.has(key);
+    const foldable = !!opts.foldable;
+    const folded = foldable && !!opts.folded;
     const head = `
       <div class="item-head">
         <span class="badge">${esc(it.type)}</span>
@@ -181,6 +183,8 @@
         <span class="head-right">
           ${opts.label ? `<span class="sr-src">${esc(opts.label)}</span>` : ""}
           <span class="pageref">p.${it.page}</span>
+          ${foldable ? `<button class="src-toggle fold-btn" type="button" data-fold="${esc(key)}"
+            title="展开/收起该条">${folded ? "展开" : "收起"}</button>` : ""}
           <button class="src-copy" type="button" data-copy-src="${esc(key)}"
             title="复制该条的 Markdown/LaTeX 源码">复制</button>
           <button class="src-toggle" type="button" data-src-toggle="${esc(key)}"
@@ -192,10 +196,17 @@
     const body = hide
       ? `<div class="stmt hidden-stmt">${inner}</div>
          <div class="reveal">点击或按 <kbd>空格</kbd> 显示陈述</div>`
-      : `<div class="stmt">${inner}</div>`;
-    return `<article class="item${hide ? "" : " revealed"}"
+      : `<div class="stmt">${inner}</div>${foldable ? `<div class="fold-hint">点击条目或“展开”查看陈述</div>` : ""}`;
+    return `<article class="item${hide ? "" : " revealed"}${folded ? " folded" : ""}"
       data-type="${esc(it.type)}" data-anchor="${esc(it.anchor)}" data-key="${esc(key)}"
       id="i-${esc(it.bookId || "")}-${esc(it.secId || "")}-${esc(it.anchor)}">${head}${body}</article>`;
+  }
+
+  function toggleFold(card) {
+    if (!card) return;
+    card.classList.toggle("folded");
+    const btn = card.querySelector("[data-fold]");
+    if (btn) btn.textContent = card.classList.contains("folded") ? "展开" : "收起";
   }
 
   function paintCard(card) {
@@ -245,7 +256,8 @@
     const b = s.book;
     const items = filterItems(s.items);
     const body = items.length
-      ? items.map((it) => itemHtml({ ...it, bookId: b.id, secId: s.id }, { hidden: !defsOpen && it.type === "定义", force: true })).join("")
+      ? items.map((it) => itemHtml({ ...it, bookId: b.id, secId: s.id },
+          { foldable: it.type === "定义", folded: !defsOpen && it.type === "定义" })).join("")
       : `<div class="empty">这一节没有该类型的条目。</div>`;
     $("#view").innerHTML = sectionHead(s, items) + body;
     typesetLazy($("#view"));
@@ -452,6 +464,12 @@
     const cardBtn = e.target.closest("[data-card]");
     if (cardBtn) { renderCard(cardIdx + Number(cardBtn.dataset.card)); return; }
 
+    const foldBtn = e.target.closest("[data-fold]");
+    if (foldBtn) { toggleFold(foldBtn.closest(".item")); return; }
+
+    const foldedCard = e.target.closest(".item.folded");
+    if (foldedCard && !e.target.closest("button, a")) { toggleFold(foldedCard); return; }
+
     const defsBtn = e.target.closest("[data-defs]");
     if (defsBtn) {
       defsOpen = !defsOpen;
@@ -514,7 +532,7 @@
     }, 160);
   });
 
-  function firstHidden() { return document.querySelector(".item:not(.revealed)"); }
+  function firstHidden() { return document.querySelector(".item.folded, .item:not(.revealed)"); }
 
   function jumpSection(dir) {
     if (!current || !currentMeta) return;
@@ -551,6 +569,7 @@
       const card = firstHidden();
       if (card) {
         e.preventDefault();
+        if (card.classList.contains("folded")) { toggleFold(card); return; }
         card.classList.add("revealed");
         card.querySelector(".reveal")?.remove();
         if (!card.classList.contains("math-done")) { typeset(card); card.classList.add("math-done"); }
@@ -656,6 +675,8 @@
       } catch (_) { /* 忽略 */ }
       const qt = qs.get("theme");
       applyTheme(THEMES.includes(qt) ? qt : savedTheme);
+      const qtype = qs.get("type");
+      if (["定理", "定义", "例", "其他"].includes(qtype)) typeFilter = qtype;
       applyAccent(qs.get("accent") || savedAccent);
       applyCardSize(qs.get("card") || savedCard);
       if (qs.get("src") === "1") setSrcAll(true);
