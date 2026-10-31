@@ -44,10 +44,12 @@ content/
   fanyan/01-01-度量空间.md      每节一个文件
   shibian/_book.md
 tools/
-  build.py                     解析 + 校验 + 生成 JSON
+  build.py                     解析 + 校验 + 生成按书拆分的 JSON
+  lint.py                      录入质量检查（页码、公式编号、公式内中文）
   pdf_pages.py                 按页渲染扫描 PDF
-site/                          index.html + assets/ + vendor/katex/ + data/index.json
+site/                          index.html + assets/ + vendor/katex/ + data/
 docs/提取规范.md                收录范围、页码偏移、校对清单
+docs/提取模板.md                派活给子代理时复制的提示词模板
 ```
 
 ## 条目格式
