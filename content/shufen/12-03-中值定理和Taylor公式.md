@@ -3,10 +3,10 @@ chapter: 12
 chapter_title: 多元函数的微分学
 section: "12.3"
 section_title: 中值定理和 Taylor 公式
-pages: "528–532"
+pages: "146–150"
 ---
 
-### 定义 12.3.1 (凸区域) @528
+### 定义 12.3.1 (凸区域) @146
 
 设 $D\subset\mathbf{R}^n$ 是区域。若联结 $D$ 中任意两点的线段都完全属于 $D$，即对于任意两点 $x_0,x_1\in D$ 和一切 $\lambda\in[0,1]$，恒有
 
@@ -20,23 +20,23 @@ $$D=\{(x,y)\in\mathbf{R}^2\mid (x-a)^2+(y-b)^2<r^2\}$$
 
 就是凸区域。
 
-### 定理 12.3.1 (中值定理) @529
+### 定理 12.3.1 (中值定理) @147
 
 设二元函数 $f(x,y)$ 在凸区域 $D\subset\mathbf{R}^2$ 上可微，则对于 $D$ 内任意两点 $(x_0,y_0)$ 和 $(x_0+\Delta x,y_0+\Delta y)$，至少存在一个 $\theta\ (0<\theta<1)$，使得
 
 $$f(x_0+\Delta x,y_0+\Delta y)-f(x_0,y_0)=f_x(x_0+\theta\Delta x,y_0+\theta\Delta y)\Delta x+f_y(x_0+\theta\Delta x,y_0+\theta\Delta y)\Delta y.$$
 
-### 推论 12.3.1 (偏导为零则为常值) @529
+### 推论 12.3.1 (偏导为零则为常值) @147
 
 如果函数 $f(x,y)$ 在区域 $D\subset\mathbf{R}^2$ 上的偏导数恒为零，那么它在 $D$ 上必是常值函数。
 
-### 定理 12.3.2 (多元函数的中值定理) @530
+### 定理 12.3.2 (多元函数的中值定理) @148
 
 设 $n$ 元函数 $f(x_1,x_2,\cdots,x_n)$ 在凸区域 $D\subset\mathbf{R}^n$ 上可微，则对于 $D$ 内任意两点 $(x_1^0,x_2^0,\cdots,x_n^0)$ 和 $(x_1^0+\Delta x_1,x_2^0+\Delta x_2,\cdots,x_n^0+\Delta x_n)$，至少存在一个 $\theta\ (0<\theta<1)$，使得
 
 $$f(x_1^0+\Delta x_1,x_2^0+\Delta x_2,\cdots,x_n^0+\Delta x_n)-f(x_1^0,x_2^0,\cdots,x_n^0)=\sum_{i=1}^{n}f_{x_i}(x_1^0+\theta\Delta x_1,x_2^0+\theta\Delta x_2,\cdots,x_n^0+\theta\Delta x_n)\Delta x_i.$$
 
-### 定理 12.3.3 (Taylor 公式) @530
+### 定理 12.3.3 (Taylor 公式) @148
 
 设函数 $f(x,y)$ 在点 $(x_0,y_0)$ 的邻域 $U=O((x_0,y_0),r)$ 上具有 $k+1$ 阶连续偏导数，那么对于 $U$ 内每一点 $(x_0+\Delta x,y_0+\Delta y)$ 都成立
 
@@ -54,13 +54,13 @@ $$R_k=\frac{1}{(k+1)!}\left(\Delta x\frac{\partial}{\partial x}+\Delta y\frac{\p
 
 称为 Lagrange 余项。
 
-### 注 (算子记号的含义) @530
+### 注 (算子记号的含义) @148
 
 同本章第一节的定义一样，这里
 
 $$\left(\Delta x\frac{\partial}{\partial x}+\Delta y\frac{\partial}{\partial y}\right)^p f(x_0,y_0)=\sum_{i=0}^{p}C_p^i\frac{\partial^pf}{\partial x^{p-i}\partial y^i}(x_0,y_0)(\Delta x)^{p-i}(\Delta y)^i\quad(p\ge 1).$$
 
-### 注 (k = 0 时的中值定理) @531
+### 注 (k = 0 时的中值定理) @149
 
 当 $k=0$ 时，就得到在 $U=O((x_0,y_0),r)$ 上成立的中值定理
 
@@ -68,7 +68,7 @@ $$f(x_0+\Delta x,y_0+\Delta y)-f(x_0,y_0)=f_x(x_0+\theta\Delta x,y_0+\theta\Delt
 
 这就是定理 12.3.1 在 $U$ 上的形式。
 
-### 推论 12.3.2 (Peano 余项) @531
+### 推论 12.3.2 (Peano 余项) @149
 
 设 $f(x,y)$ 在点 $(x_0,y_0)$ 的某个邻域上具有 $k+1$ 阶连续偏导数，那么在点 $(x_0,y_0)$ 附近成立
 
@@ -80,7 +80,7 @@ f(x_0+\Delta x,y_0+\Delta y)={}&f(x_0,y_0)+\left(\Delta x\frac{\partial}{\partia
 \end{aligned}
 $$
 
-### 例 12.3.1 (用泰勒公式近似计算) @531
+### 例 12.3.1 (用泰勒公式近似计算) @149
 
 近似计算 $(1.08)^{3.96}$。
 
@@ -108,7 +108,7 @@ $$(1.08)^{3.96}\approx 1+4\times0.08+6\times0.08^2-0.08\times0.04=1.3552.$$
 
 它与精确值 $1.356\,307\,21\cdots$ 的误差已小于千分之二。
 
-### 例 12.3.2 (五点差分格式) @531
+### 例 12.3.2 (五点差分格式) @149
 
 在计算机上求 $\dfrac{\partial f}{\partial x}$ 在点 $(x,y)$ 的值，通常选取一个很小的 $h$，然后用中心差商
 
@@ -153,7 +153,7 @@ $$f(x,y\pm h)=f(x,y)\pm hf_y(x,y)+\frac{h^2}{2}f_{yy}(x,y)\pm\frac{h^3}{6}f_{yyy
 
 $$\Delta_hf(x,y)-\left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}\right)f(x,y)=\frac{h^2}{12}\left(\frac{\partial^4}{\partial x^4}+\frac{\partial^4}{\partial y^4}\right)f(x,y)+o(h^2)=O(h^2).$$
 
-### 定理 12.3.4 (多元函数的泰勒公式) @532
+### 定理 12.3.4 (多元函数的泰勒公式) @150
 
 设 $n$ 元函数 $f(x_1,x_2,\cdots,x_n)$ 在点 $(x_1^0,x_2^0,\cdots,x_n^0)$ 附近具有 $k+1$ 阶连续偏导数，那么在这点附近成立如下的 Taylor 公式：
 

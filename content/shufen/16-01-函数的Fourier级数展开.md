@@ -3,18 +3,18 @@ chapter: 16
 chapter_title: Fourier 级数
 section: "16.1"
 section_title: 函数的 Fourier 级数展开
-pages: "724–730"
+pages: "342–348"
 ---
 
 Taylor 展开要求函数有足够高阶的导数，且只在展开点附近与函数吻合，只有局部性质。为了找到对函数要求更宽、在整个区间上都与函数吻合的展开方法，考察用三角函数的线性组合表示一般函数。
 
-### 定义 (三角级数) @724
+### 定义 (三角级数) @342
 
 形如
 $$\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos nx+b_n\sin nx\right)$$
 的函数项级数称为**三角级数**，其中 $a_0,a_n$ 和 $b_n\ (n=1,2,\cdots)$ 为常数。
 
-### 命题 (三角函数系的正交性) @725
+### 命题 (三角函数系的正交性) @343
 
 函数族
 $$\{1,\ \sin x,\ \cos x,\ \sin 2x,\ \cos 2x,\ \cdots,\ \sin nx,\ \cos nx,\ \cdots\}$$
@@ -25,7 +25,7 @@ $$\int_{-\pi}^{\pi}1\cdot\cos mx\,\mathrm{d}x=2\pi\cdot\delta_{m,0},\qquad m=0,1
 其中
 $$\delta_{m,n}=\begin{cases}1, & m=n;\\ 0, & m\neq n.\end{cases}$$
 
-### 命题 (Euler–Fourier 公式) @725
+### 命题 (Euler–Fourier 公式) @343
 
 设 $f(x)$ 在 $[-\pi,\pi]$ 上可积或绝对可积，并已按 $2\pi$ 为周期延拓到 $(-\infty,+\infty)$。若
 $$f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos nx+b_n\sin nx\right),$$
@@ -35,13 +35,13 @@ $$b_n=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin nx\,\mathrm{d}x,\qquad n=1,2,\cdots
 
 常数项写成 $\dfrac{a_0}{2}$ 而不是 $a_0$，是为了使 $a_n\ (n=0,1,2,\cdots)$ 有上述统一的表达式。
 
-### 定义 (Fourier 系数与 Fourier 级数) @726
+### 定义 (Fourier 系数与 Fourier 级数) @344
 
 设周期为 $2\pi$ 的函数 $f(x)$ 在 $[-\pi,\pi]$ 上可积或绝对可积，由 Euler–Fourier 公式求出 $a_n,b_n$，并记
 $$f(x)\sim\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos nx+b_n\sin nx\right),$$
 则右端的三角级数称为 $f(x)$ 的 **Fourier 级数**，相应的 $a_n$ 和 $b_n$ 称为 $f(x)$ 的 **Fourier 系数**。由于目前不知道右端三角级数是否收敛、即使收敛也不知道是否收敛到 $f(x)$ 本身，所以在 $f(x)$ 与它的 Fourier 级数之间不能用等号而只能用“$\sim$”。
 
-### 例 16.1.1 (分段函数的傅里叶级数) @726
+### 例 16.1.1 (分段函数的傅里叶级数) @344
 
 求
 $$f(x)=\begin{cases}1, & x\in[-\pi,0),\\ 0, & x\in[0,\pi)\end{cases}$$
@@ -57,13 +57,13 @@ $$f(x)\sim\frac{1}{2}+\frac{1}{\pi}\sum_{n=1}^{\infty}\frac{(-1)^n-1}{n}\sin nx=
 
 $f(x)$ 的图形在电工学中称为**方波**（见图 16.1.1(a)），上式表明它可以由一系列的正弦波叠加得到。但显然，当 $x=0$ 和 $\pm\pi$ 时，右端级数的和为 $\dfrac{1}{2}$，不等于 $f(x)$ 的值。
 
-### 注 (Fourier 级数的部分和) @727
+### 注 (Fourier 级数的部分和) @345
 
 图 16.1.1(b) 给出了在 $[-\pi,\pi]$ 上 $f(x)$ 的 Fourier 级数前若干项之和的逼近情况，图中 $S_m$ 表示
 $$S_m(x)=\frac{a_0}{2}+\sum_{n=1}^{m}\left(a_n\cos nx+b_n\sin nx\right),$$
 它就是 $f(x)$ 的 Fourier 级数的**部分和**。
 
-### 命题 (奇偶函数的 Fourier 系数) @727
+### 命题 (奇偶函数的 Fourier 系数) @345
 
 由定积分的性质，若 $f(x)$ 是奇函数，则显然有 $a_n=0$，而
 $$b_n=\frac{2}{\pi}\int_{0}^{\pi}f(x)\sin nx\,\mathrm{d}x,\qquad n=1,2,\cdots,$$
@@ -74,11 +74,11 @@ $$a_n=\frac{2}{\pi}\int_{0}^{\pi}f(x)\cos nx\,\mathrm{d}x,\qquad n=1,2,\cdots,$$
 相应的 Fourier 级数为
 $$f(x)\sim\frac{a_0}{2}+\sum_{n=1}^{\infty}a_n\cos nx.$$
 
-### 定义 (正弦级数与余弦级数) @727
+### 定义 (正弦级数与余弦级数) @345
 
 形如 $\displaystyle\sum_{n=1}^{\infty}b_n\sin nx$ 的三角级数称为**正弦级数**，形如 $\displaystyle\frac{a_0}{2}+\sum_{n=1}^{\infty}a_n\cos nx$ 的三角级数称为**余弦级数**。在实际问题中，出于某种特殊的用途，也经常需要将一个函数展开成正弦级数或余弦级数。
 
-### 例 16.1.2 (余弦级数与正弦级数) @727
+### 例 16.1.2 (余弦级数与正弦级数) @345
 
 将 $f(x)=x\ (x\in[0,\pi])$ 分别展开为余弦级数和正弦级数。
 
@@ -100,7 +100,7 @@ $$f(x)\sim 2\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin nx=2\left(\sin x-\frac{\
 
 这两种级数的表达形式虽然大相径庭，但若限制在 $[0,\pi]$ 上，它们确实表示同一个函数。
 
-### 命题 (任意周期函数的 Fourier 展开) @729
+### 命题 (任意周期函数的 Fourier 展开) @347
 
 如果 $f(x)$ 的周期为 $2T$，作变换 $x=\dfrac{T}{\pi}t$，则
 $$\varphi(t)=f\left(\frac{T}{\pi}t\right)=f(x)$$
@@ -112,7 +112,7 @@ $$f(x)\sim\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\frac{n\pi}{T}x+b_n\sin\
 $$a_n=\frac{1}{\pi}\int_{-\pi}^{\pi}\varphi(t)\cos nt\,\mathrm{d}t=\frac{1}{T}\int_{-T}^{T}f(x)\cos\frac{n\pi}{T}x\,\mathrm{d}x,\qquad n=0,1,2,\cdots,$$
 $$b_n=\frac{1}{\pi}\int_{-\pi}^{\pi}\varphi(t)\sin nt\,\mathrm{d}t=\frac{1}{T}\int_{-T}^{T}f(x)\sin\frac{n\pi}{T}x\,\mathrm{d}x,\qquad n=1,2,\cdots.$$
 
-### 例 16.1.3 (周期函数的傅里叶级数) @729
+### 例 16.1.3 (周期函数的傅里叶级数) @347
 
 求
 $$f(x)=\begin{cases}0, & x\in[-1,0),\\ x^2, & x\in[0,1]\end{cases}$$

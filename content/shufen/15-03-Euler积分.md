@@ -3,10 +3,10 @@ chapter: 15
 chapter_title: 含参变量积分
 section: "15.3"
 section_title: Euler 积分
-pages: "712–723"
+pages: "330–341"
 ---
 
-### 定义 (Beta 函数) @712
+### 定义 (Beta 函数) @330
 
 形如
 $$\mathrm{B}(p,q)=\int_0^1 x^{p-1}(1-x)^{q-1}\,\mathrm{d}x$$
@@ -16,22 +16,22 @@ $$\mathrm{B}(p,q)=\int_0^1 x^{p-1}(1-x)^{q-1}\,\mathrm{d}x$$
 $$\mathrm{B}(p,q)=\int_0^{\frac{1}{2}}x^{p-1}(1-x)^{q-1}\,\mathrm{d}x+\int_{\frac{1}{2}}^1 x^{p-1}(1-x)^{q-1}\,\mathrm{d}x,$$
 当 $x\to 0$ 时，$x^{p-1}(1-x)^{q-1}\sim x^{p-1}$，所以只有当 $p>0$ 时右边第一个反常积分收敛。而当 $x\to 1$ 时，$x^{p-1}(1-x)^{q-1}\sim(1-x)^{q-1}$，所以只有当 $q>0$ 时右边第二个反常积分收敛。这说明了 $\int_0^1 x^{p-1}(1-x)^{q-1}\,\mathrm{d}x$ 对于每对 $(p,q)\in(0,+\infty)\times(0,+\infty)$ 收敛，即 Beta 函数 $\mathrm{B}(p,q)$ 的定义域为 $(0,+\infty)\times(0,+\infty)$。
 
-### 命题 (Beta 函数的连续性) @713
+### 命题 (Beta 函数的连续性) @331
 
 $\mathrm{B}(p,q)$ 在 $(0,+\infty)\times(0,+\infty)$ 上连续。
 
-### 命题 (Beta 函数的对称性) @713
+### 命题 (Beta 函数的对称性) @331
 
 $$\mathrm{B}(p,q)=\mathrm{B}(q,p),\qquad p>0,\ q>0.$$
 
-### 命题 (Beta 函数的递推公式) @713
+### 命题 (Beta 函数的递推公式) @331
 
 $$\mathrm{B}(p,q)=\frac{q-1}{p+q-1}\mathrm{B}(p,q-1),\qquad p>0,\ q>1.$$
 
 由 $\mathrm{B}(p,q)$ 的对称性并结合递推公式可得到，当 $p>1,\ q>1$ 时成立
 $$\mathrm{B}(p,q)=\frac{(p-1)(q-1)}{(p+q-1)(p+q-2)}\mathrm{B}(p-1,q-1).$$
 
-### 命题 (Beta 函数的其他表示) @713
+### 命题 (Beta 函数的其他表示) @331
 
 (1) 作变量代换 $x=\cos^2\varphi$，得到
 $$\mathrm{B}(p,q)=2\int_0^{\frac{\pi}{2}}\cos^{2p-1}\varphi\sin^{2q-1}\varphi\,\mathrm{d}\varphi.$$
@@ -45,7 +45,7 @@ $$\int_1^{+\infty}\frac{t^{q-1}}{(1+t)^{p+q}}\,\mathrm{d}t=\int_0^1\frac{u^{p-1}
 于是
 $$\mathrm{B}(p,q)=\int_0^1\frac{t^{p-1}+t^{q-1}}{(1+t)^{p+q}}\,\mathrm{d}t\ (=\mathrm{B}(q,p)).$$
 
-### 定义 (Gamma 函数) @714
+### 定义 (Gamma 函数) @332
 
 形如
 $$\Gamma(s)=\int_0^{+\infty}x^{s-1}\mathrm{e}^{-x}\,\mathrm{d}x$$
@@ -55,7 +55,7 @@ $$\Gamma(s)=\int_0^{+\infty}x^{s-1}\mathrm{e}^{-x}\,\mathrm{d}x$$
 $$\Gamma(s)=\int_0^1 x^{s-1}\mathrm{e}^{-x}\,\mathrm{d}x+\int_1^{+\infty}x^{s-1}\mathrm{e}^{-x}\,\mathrm{d}x,$$
 由反常积分的收敛判别法，当 $s\leqslant 0$ 时，右边第一个反常积分发散，而当 $s>0$ 时，两个反常积分都收敛，因此 Gamma 函数 $\Gamma(s)$ 的定义域为 $(0,+\infty)$。
 
-### 命题 (Gamma 函数的连续性与可导性) @714
+### 命题 (Gamma 函数的连续性与可导性) @332
 
 $\Gamma(s)$ 在 $(0,+\infty)$ 上连续且可导，且
 $$\Gamma'(s)=\int_0^{+\infty}x^{s-1}\mathrm{e}^{-x}\ln x\,\mathrm{d}x,\qquad s>0.$$
@@ -63,11 +63,11 @@ $$\Gamma'(s)=\int_0^{+\infty}x^{s-1}\mathrm{e}^{-x}\ln x\,\mathrm{d}x,\qquad s>0
 事实上，仿照以上的方法还可得到 $\Gamma(s)$ 在 $(0,+\infty)$ 上任意阶可导，且成立
 $$\Gamma^{(n)}(s)=\int_0^{+\infty}x^{s-1}\mathrm{e}^{-x}(\ln x)^n\,\mathrm{d}x,\qquad s>0.$$
 
-### 命题 (Gamma 函数的递推公式) @714
+### 命题 (Gamma 函数的递推公式) @332
 
 $$\Gamma(s+1)=s\Gamma(s),\qquad s>0.$$
 
-### 命题 (Gamma 函数与阶乘) @715
+### 命题 (Gamma 函数与阶乘) @333
 
 特别地，当 $s=n$ 为正整数时，
 $$\Gamma(n+1)=n\Gamma(n)=n(n-1)\Gamma(n-1)=\cdots=n!\,\Gamma(1),$$
@@ -78,7 +78,7 @@ $$\Gamma(n+1)=n!.$$
 由于 $\Gamma(s)=\dfrac{\Gamma(s+1)}{s}$ 以及 $\Gamma(1)=1$，所以
 $$\lim_{s\to 0^+}\Gamma(s)=+\infty.$$
 
-### 命题 (Gamma 函数的其他表示) @715
+### 命题 (Gamma 函数的其他表示) @333
 
 (1) 在 $\Gamma(s)$ 的表示式中作变量代换 $x=t^2$，那么
 $$\Gamma(s)=2\int_0^{+\infty}t^{2s-1}\mathrm{e}^{-t^2}\,\mathrm{d}t.$$
@@ -88,7 +88,7 @@ $$\Gamma\left(\frac{1}{2}\right)=2\int_0^{+\infty}\mathrm{e}^{-t^2}\,\mathrm{d}t
 (2) 作变量代换 $x=\alpha t\ (\alpha>0)$ 可得
 $$\Gamma(s)=\alpha^s\int_0^{+\infty}t^{s-1}\mathrm{e}^{-\alpha t}\,\mathrm{d}t.$$
 
-### 命题 (Gamma 函数定义域的延拓) @715
+### 命题 (Gamma 函数定义域的延拓) @333
 
 由于等式
 $$\Gamma(s)=\frac{\Gamma(s+1)}{s}$$
@@ -96,7 +96,7 @@ $$\Gamma(s)=\frac{\Gamma(s+1)}{s}$$
 $$(-\infty,+\infty)\setminus\{0,-1,-2,-3,\cdots\}$$
 上去。$\Gamma(s)$ 的图像如图 15.3.1 所示。易证明 $\lim_{s\to-\infty}\Gamma(s)=+\infty$（留作习题）。
 
-### 例 15.3.1 (伽马函数计算积分) @716
+### 例 15.3.1 (伽马函数计算积分) @334
 
 计算 $\displaystyle I=\int_0^{+\infty}x^{2n}\mathrm{e}^{-x^2}\,\mathrm{d}x$。
 
@@ -105,12 +105,12 @@ $$I=\frac{1}{2}\Gamma\left(n+\frac{1}{2}\right)=\frac{1}{2}\Gamma\left(\frac{2n-
 反复利用递推公式即得到
 $$I=\frac{(2n-1)!!}{2^{n+1}}\Gamma\left(\frac{1}{2}\right)=\frac{(2n-1)!!}{2^{n+1}}\sqrt{\pi}.$$
 
-### 定理 15.3.1 (Beta 函数与 Gamma 函数的关系) @716
+### 定理 15.3.1 (Beta 函数与 Gamma 函数的关系) @334
 
 Beta 函数与 Gamma 函数之间具有如下关系：
 $$\mathrm{B}(p,q)=\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)},\qquad p>0,\ q>0.$$
 
-### 例 15.3.2 (贝塔函数计算积分) @716
+### 例 15.3.2 (贝塔函数计算积分) @334
 
 计算 $\displaystyle I=\int_0^{\frac{\pi}{2}}\sin^6 x\cos^4 x\,\mathrm{d}x$。
 
@@ -118,7 +118,7 @@ $$\mathrm{B}(p,q)=\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)},\qquad p>0,\ q>0.$$
 $$I=\int_0^{\frac{\pi}{2}}\sin^6 x\cos^4 x\,\mathrm{d}x=\frac{1}{2}\mathrm{B}\left(\frac{5}{2},\frac{7}{2}\right)=\frac{1}{2}\frac{\Gamma\left(\frac{5}{2}\right)\Gamma\left(\frac{7}{2}\right)}{\Gamma(6)}$$
 $$=\frac{1}{2\cdot 5!}\left(\frac{3}{2}\cdot\frac{1}{2}\sqrt{\pi}\right)\left(\frac{5}{2}\cdot\frac{3}{2}\cdot\frac{1}{2}\sqrt{\pi}\right)=\frac{3\pi}{512}.$$
 
-### 例 15.3.3 (变量代换后用贝塔函数) @716
+### 例 15.3.3 (变量代换后用贝塔函数) @334
 
 计算 $\displaystyle I=\int_0^1 x^8\sqrt{1-x^3}\,\mathrm{d}x$。
 
@@ -126,7 +126,7 @@ $$=\frac{1}{2\cdot 5!}\left(\frac{3}{2}\cdot\frac{1}{2}\sqrt{\pi}\right)\left(\f
 $$I=\int_0^1 x^8\sqrt{1-x^3}\,\mathrm{d}x=\frac{1}{3}\int_0^1 t^2\sqrt{1-t}\,\mathrm{d}t=\frac{1}{3}\mathrm{B}\left(3,\frac{3}{2}\right)$$
 $$=\frac{1}{3}\cdot\frac{\Gamma(3)\Gamma\left(\frac{3}{2}\right)}{\Gamma\left(\frac{9}{2}\right)}=\frac{2!\,\Gamma\left(\frac{3}{2}\right)}{3\cdot\frac{7}{2}\cdot\frac{5}{2}\cdot\frac{3}{2}\cdot\Gamma\left(\frac{3}{2}\right)}=\frac{16}{315}.$$
 
-### 例 15.3.4 (用伽马函数表示球体积) @717
+### 例 15.3.4 (用伽马函数表示球体积) @335
 
 设 $\alpha>-1$，计算 $\displaystyle\int_0^{\frac{\pi}{2}}\sin^\alpha x\,\mathrm{d}x$ 与 $\displaystyle\int_0^{\frac{\pi}{2}}\cos^\alpha x\,\mathrm{d}x$，并用 Gamma 函数表示 $n$ 维球体 $B_n=\left\{(x_1,x_2,\cdots,x_n)\mid x_1^2+x_2^2+\cdots+x_n^2\leqslant R^2\right\}$ 的体积 $V_n$。
 
@@ -143,17 +143,17 @@ $$=\frac{2\pi R^n(\sqrt{\pi})^{n-2}}{n}\cdot\frac{\Gamma(1)}{\Gamma\left(\frac{n
 
 这是 $n$ 维球体体积的一种常用表示。
 
-### 定理 15.3.2 (Legendre 公式) @717
+### 定理 15.3.2 (Legendre 公式) @335
 
 $$\Gamma(s)\Gamma\left(s+\frac{1}{2}\right)=\frac{\sqrt{\pi}}{2^{2s-1}}\Gamma(2s),\qquad s>0.$$
 
-### 定理 15.3.3 (余元公式) @718
+### 定理 15.3.3 (余元公式) @336
 
 $$\Gamma(s)\Gamma(1-s)=\frac{\pi}{\sin\pi s},\qquad 0<s<1.$$
 
 在证明这个定理之前，我们先给出一个一般性的结果。
 
-### 引理 15.3.1 (积分与极限交换) @718
+### 引理 15.3.1 (积分与极限交换) @336
 
 设连续可积函数序列 $\{u_n(x)\}$ 在区间 $[a,b)$ 上收敛于 $u(x)$，函数 $\varphi(x)$ 在 $[a,b)$ 上可积（即 $\displaystyle\int_a^b\varphi(x)\,\mathrm{d}x$ 收敛）。进一步设
 
@@ -165,16 +165,16 @@ $$\Gamma(s)\Gamma(1-s)=\frac{\pi}{\sin\pi s},\qquad 0<s<1.$$
 $$\lim_{n\to\infty}\int_a^b u_n(x)\,\mathrm{d}x=\int_a^b u(x)\,\mathrm{d}x,$$
 即极限运算与积分运算可交换。
 
-### 注 (引理 15.3.1 的推广) @719
+### 注 (引理 15.3.1 的推广) @337
 
 在这个引理中，把 $[a,b)$ 换为 $(a,b]$ 或 $(a,b)$ 时，相应的结论也成立。
 
-### 引理 15.3.2 (正弦函数的倒数展开) @719
+### 引理 15.3.2 (正弦函数的倒数展开) @337
 
 对于 $x\in(0,1)$，成立
 $$\frac{\pi}{\sin\pi x}=\frac{1}{x}+\sum_{n=1}^{\infty}(-1)^n\left(\frac{1}{x+n}+\frac{1}{x-n}\right).$$
 
-### 定理 15.3.4 (Stirling 公式) @720
+### 定理 15.3.4 (Stirling 公式) @338
 
 Gamma 函数有如下的渐近估计：
 $$\Gamma(s+1)=\sqrt{2\pi s}\left(\frac{s}{\mathrm{e}}\right)^s\mathrm{e}^{\frac{\theta}{12s}},\qquad s>0,$$
@@ -183,7 +183,7 @@ $$n!=\sqrt{2\pi n}\left(\frac{n}{\mathrm{e}}\right)^n\mathrm{e}^{\frac{\theta}{1
 
 这个定理的证明比较复杂，在此从略。
 
-### 例 15.3.5 (贝塔函数计算反常积分) @720
+### 例 15.3.5 (贝塔函数计算反常积分) @338
 
 计算 $\displaystyle I=\int_0^{+\infty}\frac{\sqrt[4]{x}}{(1+x)^2}\,\mathrm{d}x$。
 
@@ -191,7 +191,7 @@ $$n!=\sqrt{2\pi n}\left(\frac{n}{\mathrm{e}}\right)^n\mathrm{e}^{\frac{\theta}{1
 $$I=\int_0^{+\infty}\frac{\sqrt[4]{x}}{(1+x)^2}\,\mathrm{d}x=\int_0^{+\infty}\frac{x^{\frac{5}{4}-1}}{(1+x)^{\frac{5}{4}+\frac{3}{4}}}\,\mathrm{d}x=\mathrm{B}\left(\frac{3}{4},\frac{5}{4}\right)$$
 $$=\frac{\Gamma\left(\frac{3}{4}\right)\Gamma\left(\frac{5}{4}\right)}{\Gamma(2)}=\frac{\frac{1}{4}\Gamma\left(\frac{1}{4}\right)\Gamma\left(\frac{3}{4}\right)}{1!}=\frac{1}{4}\cdot\frac{\pi}{\sin\frac{\pi}{4}}=\frac{\sqrt{2}\pi}{4}.$$
 
-### 例 15.3.6 (极坐标曲线围成面积) @721
+### 例 15.3.6 (极坐标曲线围成面积) @339
 
 计算曲线 $r^4=\sin^3\theta\cos\theta$ 所围图形的面积 $A$。
 
@@ -199,7 +199,7 @@ $$=\frac{\Gamma\left(\frac{3}{4}\right)\Gamma\left(\frac{5}{4}\right)}{\Gamma(2)
 $$A=2\cdot\frac{1}{2}\int_0^{\frac{\pi}{2}}\sin^{\frac{3}{2}}\theta\cos^{\frac{1}{2}}\theta\,\mathrm{d}\theta=\frac{1}{2}\mathrm{B}\left(\frac{3}{4},\frac{5}{4}\right)$$
 $$=\frac{\Gamma\left(\frac{3}{4}\right)\Gamma\left(\frac{5}{4}\right)}{2\Gamma(2)}=\frac{1}{8}\Gamma\left(\frac{3}{4}\right)\Gamma\left(\frac{1}{4}\right)=\frac{\sqrt{2}\pi}{8}.$$
 
-### 例 15.3.7 (确定反常重积分收敛参数) @721
+### 例 15.3.7 (确定反常重积分收敛参数) @339
 
 设区域 $D=\{(x,y)\mid x\geqslant 0,\ y\geqslant 0\}$。确定正数 $\alpha,\beta$，使得反常重积分
 $$I=\iint_D\frac{\mathrm{d}x\,\mathrm{d}y}{1+x^\alpha+y^\beta}$$

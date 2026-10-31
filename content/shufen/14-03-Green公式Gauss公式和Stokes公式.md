@@ -3,22 +3,22 @@ chapter: 14
 chapter_title: 曲线积分、曲面积分与场论
 section: "14.3"
 section_title: Green 公式、Gauss 公式和 Stokes 公式
-pages: "658–673"
+pages: "276–291"
 ---
 
-### 定义 (简单闭曲线与 Jordan 曲线) @658
+### 定义 (简单闭曲线与 Jordan 曲线) @276
 
 设 $L$ 为平面上的一条曲线，它的方程是 $\boldsymbol{r}(t)=x(t)\mathbf{i}+y(t)\mathbf{j}$，$\alpha\leqslant t\leqslant\beta$。如果 $\boldsymbol{r}(\alpha)=\boldsymbol{r}(\beta)$，而且当 $t_1,t_2\in(\alpha,\beta)$，$t_1\neq t_2$ 时总成立 $\boldsymbol{r}(t_1)\neq\boldsymbol{r}(t_2)$，则称 $L$ 为**简单闭曲线**（或 **Jordan 曲线**）。这就是说，简单闭曲线除两个端点相重合外，曲线自身不相交。
 
-### 定义 (单连通区域与复连通区域) @658
+### 定义 (单连通区域与复连通区域) @276
 
 设 $D$ 为平面上的一个区域。如果 $D$ 内的任意一条封闭曲线都可以不经过 $D$ 外的点而连续地收缩成 $D$ 中一点，那么 $D$ 称为**单连通区域**，否则它称为**复连通区域**。例如，圆盘 $\{(x,y)\mid x^2+y^2<1\}$ 是单连通区域，而圆环 $\left\{(x,y)\ \middle|\ \frac12<x^2+y^2<1\right\}$ 是复连通区域。单连通区域 $D$ 也可以这样叙述：$D$ 内的任何一条封闭曲线所围的点集仍属于 $D$。因此，通俗地说，单连通区域之中不含有“洞”，而复连通区域之中会有“洞”。
 
-### 注 (区域边界的诱导定向) @659
+### 注 (区域边界的诱导定向) @277
 
 对于平面区域 $D$，我们给它的边界 $\partial D$ 规定一个正向：如果一个人沿 $\partial D$ 的这个方向行走时，$D$ 总是在他左边。这个定向也称为 $D$ 的**诱导定向**，带有这样定向的 $\partial D$ 称为 $D$ 的**正向边界**。例如，如图 14.3.1 所示的区域 $D$ 由 $L$ 与 $l$ 所围成，那么在我们规定的正向下，$L$ 为逆时针方向，而 $l$ 为顺时针方向。
 
-### 定理 14.3.1 (Green 公式) @659
+### 定理 14.3.1 (Green 公式) @277
 
 设 $D$ 为平面上由光滑或分段光滑的简单闭曲线所围的单连通闭区域。如果函数 $P(x,y)$，$Q(x,y)$ 在 $D$ 上具有连续偏导数，那么
 
@@ -26,7 +26,7 @@ $$\int_{\partial D}P\,\mathrm{d}x+Q\,\mathrm{d}y=\iint_D\left(\frac{\partial Q}{
 
 其中 $\partial D$ 取正向，即诱导定向。
 
-### 注 (Green 公式在复连通区域上的推广) @660
+### 注 (Green 公式在复连通区域上的推广) @278
 
 Green 公式还可以推广到具有有限个“洞”的复连通区域上去。以只有一个洞为例（见图 14.3.4），用光滑曲线联结其外边界 $L$ 上一点 $M$ 与内边界 $l$ 上一点 $N$，将 $D$ 割为单连通区域。由定理 14.3.1 得
 
@@ -34,7 +34,7 @@ $$\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right
 
 其中 $L$ 为逆时针方向，$l$ 为顺时针方向，这与 $\partial D$ 的诱导定向相同。
 
-### 注 (Green 公式的切向量与外法向量形式) @660
+### 注 (Green 公式的切向量与外法向量形式) @278
 
 记取诱导定向的 $\partial D$ 上的单位切向量为 $\boldsymbol{\tau}$，单位外法向量为 $\boldsymbol{n}$（见图 14.3.5），那么显然
 
@@ -49,7 +49,7 @@ $$\begin{aligned}
 
 这个形式便于记忆和推广。
 
-### 注 (Green 公式是 Newton–Leibniz 公式的推广) @660
+### 注 (Green 公式是 Newton–Leibniz 公式的推广) @278
 
 设 $f(x)$ 在 $[a,b]$ 上具有连续导数，取 $D=[a,b]\times[0,1]$（见图 14.3.6）。在 Green 公式中取 $P=0$，$Q=f(x)$，就得到
 
@@ -63,7 +63,7 @@ $$\left(\int_{\overline{AB}}+\int_{\overline{BC}}+\int_{\overline{CD}}+\int_{\ov
 
 $$\int_a^b f'(x)\,\mathrm{d}x=f(b)-f(a).$$
 
-### 注 (用曲线积分求区域面积) @661
+### 注 (用曲线积分求区域面积) @279
 
 设 $D$ 为平面上的有界闭区域，其边界为分段光滑的简单闭曲线，则它的面积为
 
@@ -71,7 +71,7 @@ $$S=\int_{\partial D}x\,\mathrm{d}y=-\int_{\partial D}y\,\mathrm{d}x=\frac12\int
 
 其中 $\partial D$ 取正向。
 
-### 例 14.3.1 (用格林公式求椭圆面积) @661
+### 例 14.3.1 (用格林公式求椭圆面积) @279
 
 计算椭圆 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$（$a,b>0$）所围图形的面积（见图 14.3.7）。
 
@@ -83,7 +83,7 @@ $$x=a\cos\theta,\qquad y=b\sin\theta,\qquad 0\leqslant\theta\leqslant2\pi.$$
 
 $$S=\frac12\int_L x\,\mathrm{d}y-y\,\mathrm{d}x=\frac12\int_0^{2\pi}\left(ab\cos^2\theta+ab\sin^2\theta\right)\mathrm{d}\theta=\frac{ab}{2}\int_0^{2\pi}\mathrm{d}\theta=\pi ab.$$
 
-### 例 14.3.2 (格林公式计算曲线积分) @661
+### 例 14.3.2 (格林公式计算曲线积分) @279
 
 计算 $I=\displaystyle\int_L\sqrt{x^2+y^2}\,\mathrm{d}x+y\bigl[xy+\ln\bigl(x+\sqrt{x^2+y^2}\bigr)\bigr]\mathrm{d}y$，其中 $L$ 为曲线 $y=\sin x$，$0\leqslant x\leqslant\pi$ 与直线段 $y=0$，$0\leqslant x\leqslant\pi$ 所围区域 $D$ 的正向边界（见图 14.3.8）。
 
@@ -97,7 +97,7 @@ $$I=\iint_D\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\rig
 
 注意，在这个例子中，$P$ 和 $Q$ 在 $D$ 的边界点 $(0,0)$ 并不可偏导。请读者想想为什么可以这样直接计算。
 
-### 例 14.3.3 (补线后用格林公式) @661
+### 例 14.3.3 (补线后用格林公式) @279
 
 计算 $I=\displaystyle\int_L\left(\mathrm{e}^x\sin y-my\right)\mathrm{d}x+\left(\mathrm{e}^x\cos y-m\right)\mathrm{d}y$，其中 $L$ 为圆 $(x-a)^2+y^2=a^2$（$a>0$）的上半圆周，方向为从点 $A(2a,0)$ 到原点 $O(0,0)$。
 
@@ -117,7 +117,7 @@ $$\int_{\overline{OA}}\left(\mathrm{e}^x\sin y-my\right)\mathrm{d}x+\left(\mathr
 
 $$\int_L\left(\mathrm{e}^x\sin y-my\right)\mathrm{d}x+\left(\mathrm{e}^x\cos y-m\right)\mathrm{d}y=\frac{m\pi a^2}{2}.$$
 
-### 定义 14.3.1 (曲线积分与路径无关) @662
+### 定义 14.3.1 (曲线积分与路径无关) @280
 
 设 $D$ 为平面区域，$P(x,y)$，$Q(x,y)$ 为 $D$ 上的连续函数。如果对于 $D$ 内任意两点 $A,B$，积分值
 
@@ -125,7 +125,7 @@ $$\int_L P\,\mathrm{d}x+Q\,\mathrm{d}y$$
 
 只与 $A,B$ 两点有关，而与从 $A$ 到 $B$ 的路径 $L$（这里只考虑光滑或分段光滑曲线）无关，就称曲线积分 $\displaystyle\int_L P\,\mathrm{d}x+Q\,\mathrm{d}y$ **与路径无关**，否则称为**与路径有关**。
 
-### 定理 14.3.2 (Green 定理) @662
+### 定理 14.3.2 (Green 定理) @280
 
 设 $D$ 为平面上的单连通区域，$P(x,y)$，$Q(x,y)$ 在 $D$ 上具有连续偏导数。则下面的四个命题等价：
 
@@ -145,7 +145,7 @@ $$\mathrm{d}U=P\,\mathrm{d}x+Q\,\mathrm{d}y,$$
 
 $$\frac{\partial P}{\partial y}=\frac{\partial Q}{\partial x}.$$
 
-### 定理 14.3.3 (原函数存在与 Newton–Leibniz 型计算公式) @664
+### 定理 14.3.3 (原函数存在与 Newton–Leibniz 型计算公式) @282
 
 设 $D$ 为平面单连通区域，$P(x,y)$ 和 $Q(x,y)$ 为 $D$ 上的连续函数。那么曲线积分 $\displaystyle\int_L P\,\mathrm{d}x+Q\,\mathrm{d}y$ 与路径无关的充分必要条件是在 $D$ 上存在 $P\,\mathrm{d}x+Q\,\mathrm{d}y$ 的一个原函数 $U(x,y)$。这时，对于 $D$ 内任意两点 $A(x_A,y_A)$，$B(x_B,y_B)$，计算公式
 
@@ -153,7 +153,7 @@ $$\int_{\widehat{AB}}P\,\mathrm{d}x+Q\,\mathrm{d}y=U(x_B,y_B)-U(x_A,y_A)$$
 
 成立，其中 $\widehat{AB}$ 为任意从 $A$ 到 $B$ 的路径。
 
-### 注 (用折线路径求原函数) @664
+### 注 (用折线路径求原函数) @282
 
 求 $P\,\mathrm{d}x+Q\,\mathrm{d}y$ 的原函数常用的是如图 14.3.11 所示的两个积分路径。由于 $U(x,y)-U(x_0,y_0)=\displaystyle\int_{(x_0,y_0)}^{(x,y)}P\,\mathrm{d}x+Q\,\mathrm{d}y$，那么如果积分路径取 $ANB$，则
 
@@ -167,7 +167,7 @@ U(x,y)&=\int_{(x_0,y_0)}^{(x,y)}P\,\mathrm{d}x+Q\,\mathrm{d}y+U(x_0,y_0)\\
 
 $$U(x,y)=\int_{y_0}^{y}Q(x_0,y)\,\mathrm{d}y+\int_{x_0}^{x}P(x,y)\,\mathrm{d}x+c.$$
 
-### 例 14.3.4 (全微分与路径无关) @665
+### 例 14.3.4 (全微分与路径无关) @283
 
 证明：在整个 $xy$ 平面上，$\left(\mathrm{e}^x\sin y-my\right)\mathrm{d}x+\left(\mathrm{e}^x\cos y-mx\right)\mathrm{d}y$ 是某个函数的全微分，求这样一个函数，并计算
 
@@ -193,7 +193,7 @@ U(x,y)&=\int_{(0,0)}^{(x,y)}\left(\mathrm{e}^x\sin y-my\right)\mathrm{d}x+\left(
 
 $$I=\int_L\left(\mathrm{e}^x\sin y-my\right)\mathrm{d}x+\left(\mathrm{e}^x\cos y-mx\right)\mathrm{d}y=U(1,1)-U(0,0)=\mathrm{e}\sin1-m.$$
 
-### 例 14.3.5 (绕原点的闭曲线积分) @665
+### 例 14.3.5 (绕原点的闭曲线积分) @283
 
 计算 $\displaystyle\int_L\frac{x\,\mathrm{d}y-y\,\mathrm{d}x}{x^2+y^2}$，其中 $L$ 为一条不经过原点的简单闭曲线，方向为逆时针方向。
 
@@ -217,15 +217,15 @@ $$x=r\cos\theta,\qquad y=r\sin\theta\qquad(0\leqslant\theta\leqslant2\pi),$$
 
 $$\int_L\frac{x\,\mathrm{d}y-y\,\mathrm{d}x}{x^2+y^2}=\int_l\frac{x\,\mathrm{d}y-y\,\mathrm{d}x}{x^2+y^2}=\int_0^{2\pi}\frac{r^2\cos^2\theta+r^2\sin^2\theta}{r^2}\,\mathrm{d}\theta=2\pi.$$
 
-### 注 (定理 14.3.2 中两个条件的必要性) @666
+### 注 (定理 14.3.2 中两个条件的必要性) @284
 
 上面的例子说明，定理 14.3.2 中对于区域是单连通和函数 $P,Q$ 具有连续偏导数的要求是必要的。
 
-### 定义 (二维单连通区域与二维复连通区域) @666
+### 定义 (二维单连通区域与二维复连通区域) @284
 
 设 $\Omega$ 为空间上的一个区域。如果 $\Omega$ 内的任何一张封闭曲面所围的立体仍属于 $\Omega$，那么称 $\Omega$ 为**二维单连通区域**，否则称 $\Omega$ 为**二维复连通区域**。通俗地说，二维单连通区域之中不含有“洞”，而二维复连通区域之中含有“洞”。例如，单位球 $\{(x,y,z)\mid x^2+y^2+z^2<1\}$ 是二维单连通区域，而空心球 $\left\{(x,y,z)\ \middle|\ \frac12<x^2+y^2+z^2<1\right\}$ 是二维复连通区域。
 
-### 定理 14.3.4 (Gauss 公式) @666
+### 定理 14.3.4 (Gauss 公式) @284
 
 设 $\Omega$ 是 $\mathbf{R}^3$ 上由光滑（或分片光滑）的封闭曲面所围成的二维单连通闭区域，函数 $P(x,y,z)$，$Q(x,y,z)$ 和 $R(x,y,z)$ 在 $\Omega$ 上具有连续偏导数，则成立
 
@@ -233,11 +233,11 @@ $$\iiint_{\Omega}\left(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial 
 
 这里 $\partial\Omega$ 的定向为外侧，它称为 $\Omega$ 的**诱导定向**。
 
-### 注 (Gauss 公式在二维复连通区域上的推广) @667
+### 注 (Gauss 公式在二维复连通区域上的推广) @285
 
 Gauss 公式也可以推广到具有有限个“洞”的二维复连通区域上去。如对图 14.3.16 所示的有一个“洞”的区域，用适当的曲面将它分割成两个二维单连通区域后分别应用 Gauss 公式，再相加，即可推出 Gauss 公式依然成立。注意，这时区域外面的边界还是取外侧，但内部的边界却取内侧，但相对于区域，它们事实上都是外侧。
 
-### 注 (用曲面积分求体积) @667
+### 注 (用曲面积分求体积) @285
 
 Gauss 公式说明了在空间中一个区域 $\Omega$ 上的三重积分与沿其边界 $\partial\Omega$ 的曲面积分间的内在关系，可视为 Green 公式的一个推广。与 Green 公式一样，Gauss 公式的一个直接应用就是可用沿区域 $\Omega$ 的边界的曲面积分来计算 $\Omega$ 的体积，具体地说就是
 
@@ -245,7 +245,7 @@ $$V=\iiint_{\Omega}\mathrm{d}x\mathrm{d}y\mathrm{d}z=\iint_{\partial\Omega}x\,\m
 
 其中 $\partial\Omega$ 的定向为外侧。
 
-### 例 14.3.6 (用高斯公式求椭球体积) @667
+### 例 14.3.6 (用高斯公式求椭球体积) @285
 
 用上述公式计算椭球面 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}+\dfrac{z^2}{c^2}=1$ 所围椭球的体积。
 
@@ -266,7 +266,7 @@ V&=\iint_{\partial\Omega}z\,\mathrm{d}x\mathrm{d}y=\iint_{\substack{0\leqslant\t
 
 请读者想想，为什么在运算中第一步到第二步时积分号前取“$+$”号。
 
-### 例 14.3.7 (高斯公式计算曲面积分) @668
+### 例 14.3.7 (高斯公式计算曲面积分) @286
 
 求 $\displaystyle\iint_{\Sigma}x^3\,\mathrm{d}y\mathrm{d}z+y^3\,\mathrm{d}z\mathrm{d}x+z^3\,\mathrm{d}x\mathrm{d}y$，其中 $\Sigma$ 为球面 $x^2+y^2+z^2=a^2$，方向取外侧。
 
@@ -277,7 +277,7 @@ $$\begin{aligned}
 &=3\int_0^{2\pi}\mathrm{d}\theta\int_0^{\pi}\mathrm{d}\varphi\int_0^ar^4\sin\varphi\,\mathrm{d}r=\frac{12}{5}\pi a^5.
 \end{aligned}$$
 
-### 例 14.3.8 (用高斯公式求流量) @668
+### 例 14.3.8 (用高斯公式求流量) @286
 
 设某种流体的速度为 $\boldsymbol{v}=x\mathbf{i}+y\mathbf{j}+z\mathbf{k}$，求单位时间内流体流过曲面 $\Sigma:y=x^2+z^2$（$0\leqslant y\leqslant h$）的流量，其中 $\Sigma$ 的方向取左侧（见图 14.3.17）。
 
@@ -303,11 +303,11 @@ $$\iint_{\sigma}x\,\mathrm{d}y\mathrm{d}z+y\,\mathrm{d}z\mathrm{d}x+z\,\mathrm{d
 
 $$\Phi=\iint_{\Sigma}x\,\mathrm{d}y\mathrm{d}z+y\,\mathrm{d}z\mathrm{d}x+z\,\mathrm{d}x\mathrm{d}y=\frac{3\pi}{2}h^2-\pi h^2=\frac{\pi}{2}h^2.$$
 
-### 注 (曲面边界的诱导定向与右手定则) @668
+### 注 (曲面边界的诱导定向与右手定则) @286
 
 设 $\Sigma$ 为具有分段光滑边界的非封闭光滑双侧曲面。选定曲面的一侧，并如下规定 $\Sigma$ 的边界 $\partial\Sigma$ 的一个正向：如果一个人保持与曲面选定一侧的法向量同向站立，当他沿 $\partial\Sigma$ 的这个方向行走时，曲面 $\Sigma$ 总是在他左边。$\partial\Sigma$ 的这个定向也称为 $\Sigma$ 的**诱导定向**，这种定向方法称为**右手定则**。
 
-### 定理 14.3.5 (Stokes 公式) @668
+### 定理 14.3.5 (Stokes 公式) @286
 
 设 $\Sigma$ 为光滑曲面，其边界 $\partial\Sigma$ 为分段光滑闭曲线。若函数 $P(x,y,z)$，$Q(x,y,z)$，$R(x,y,z)$ 在 $\Sigma$ 及其边界 $\partial\Sigma$ 上具有连续偏导数，则成立
 
@@ -318,7 +318,7 @@ $$\begin{aligned}
 
 其中 $\partial\Sigma$ 取诱导定向。
 
-### 注 (Stokes 公式的行列式记法) @670
+### 注 (Stokes 公式的行列式记法) @288
 
 利用行列式记号，可以将 Stokes 公式写成
 
@@ -326,7 +326,7 @@ $$\int_{\partial\Sigma}P\,\mathrm{d}x+Q\,\mathrm{d}y+R\,\mathrm{d}z=\iint_{\Sigm
 
 Stokes 定理说明了沿曲面 $\Sigma$ 的曲面积分与沿其边界 $\partial\Sigma$ 的曲线积分间的内在关系，它也是 Green 公式的一个自然推广（这时在 Green 公式中，平面区域的定向为指向读者）。
 
-### 例 14.3.9 (斯托克斯公式计算) @670
+### 例 14.3.9 (斯托克斯公式计算) @288
 
 计算 $I=\displaystyle\int_L\left(y^2-z^2\right)\mathrm{d}x+\left(z^2-x^2\right)\mathrm{d}y+\left(x^2-y^2\right)\mathrm{d}z$，其中 $L$ 为平面 $x+y+z=1$ 被三个坐标平面所截三角形 $\Sigma$ 的边界，若从 $x$ 轴的正向看去，定向为逆时针方向（见图 14.3.19）。
 
@@ -346,7 +346,7 @@ $$\cos\alpha=\cos\beta=\cos\gamma=\frac{1}{\sqrt3}.$$
 
 $$I=-\frac{4}{\sqrt3}\iint_{\Sigma}(x+y+z)\,\mathrm{d}S=-\frac{4}{\sqrt3}\iint_{\Sigma}\mathrm{d}S=-2.$$
 
-### 例 14.3.10 (交线上的斯托克斯公式) @671
+### 例 14.3.10 (交线上的斯托克斯公式) @289
 
 计算 $I=\displaystyle\int_L\left(y^2+z^2\right)\mathrm{d}x+\left(z^2+x^2\right)\mathrm{d}y+\left(x^2+y^2\right)\mathrm{d}z$，其中 $L$ 是上半球面 $x^2+y^2+z^2=2Rx$（$z\geqslant0$）与圆柱面 $x^2+y^2=2rx$（$R>r>0$）的交线，从 $z$ 轴的正向看去，是逆时针方向（见图 14.3.20）。
 

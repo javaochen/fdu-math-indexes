@@ -3,10 +3,10 @@ chapter: 16
 chapter_title: Fourier 级数
 section: "16.2"
 section_title: Fourier 级数的收敛判别法
-pages: "731–740"
+pages: "349–358"
 ---
 
-### 注 (Dirichlet 积分的引入) @731
+### 注 (Dirichlet 积分的引入) @349
 
 仔细观察上一节中的几幅图像后可能会产生这样的直觉：对于一般的以 $2\pi$ 为周期的函数 $f(x)$，除了个别点之外（看来是不连续点），当 $m\to\infty$ 时，它的 Fourier 级数的部分和函数序列 $\{S_m(x)\}$，
 $$S_m(x)=\frac{a_0}{2}+\sum_{n=1}^{m}(a_n\cos nx+b_n\sin nx)$$
@@ -36,7 +36,7 @@ $$\frac{2}{\pi}\int_0^{\pi}\frac{\sin\dfrac{2m+1}{2}u}{2\sin\dfrac{u}{2}}\,\math
 因此，对任意给定的函数 $\sigma(x)$，有
 $$S_m(x)-\sigma(x)=\frac{1}{\pi}\int_0^{\pi}\bigl[f(x+u)+f(x-u)-2\sigma(x)\bigr]\,\frac{\sin\dfrac{2m+1}{2}u}{2\sin\dfrac{u}{2}}\,\mathrm{d}u.$$
 
-### 注 (收敛性的等价表述) @732
+### 注 (收敛性的等价表述) @350
 
 记
 $$\varphi_\sigma(u,x)=f(x+u)+f(x-u)-2\sigma(x),$$
@@ -44,21 +44,21 @@ $$\varphi_\sigma(u,x)=f(x+u)+f(x-u)-2\sigma(x),$$
 $$\lim_{m\to\infty}\int_0^{\pi}\varphi_\sigma(u,x)\,\frac{\sin\dfrac{2m+1}{2}u}{2\sin\dfrac{u}{2}}\,\mathrm{d}u$$
 是否存在且等于 $0$。
 
-### 定理 16.2.1 (Riemann 引理) @733
+### 定理 16.2.1 (Riemann 引理) @351
 
 设函数 $\psi(x)$ 在 $[a,b]$ 上可积或绝对可积，则成立
 $$\lim_{p\to+\infty}\int_a^b\psi(x)\sin px\,\mathrm{d}x=\lim_{p\to+\infty}\int_a^b\psi(x)\cos px\,\mathrm{d}x=0.$$
 
-### 推论 16.2.1 (局部性原理) @734
+### 推论 16.2.1 (局部性原理) @352
 
 可积或绝对可积函数 $f(x)$ 的 Fourier 级数在 $x$ 点是否收敛，只与 $f(x)$ 在 $(x-\delta,x+\delta)$ 的性质有关，这里 $\delta$ 是任意小的正常数。
 
-### 推论 16.2.2 (两个积分极限相等) @734
+### 推论 16.2.2 (两个积分极限相等) @352
 
 设函数 $\psi(u)$ 在 $[0,\delta]$ 上可积或绝对可积，则成立
 $$\lim_{m\to\infty}\int_0^{\delta}\psi(u)\,\frac{\sin\dfrac{2m+1}{2}u}{2\sin\dfrac{u}{2}}\,\mathrm{d}u=\lim_{m\to\infty}\int_0^{\delta}\psi(u)\,\frac{\sin\dfrac{2m+1}{2}u}{u}\,\mathrm{d}u.$$
 
-### 注 (Dini 条件) @735
+### 注 (Dini 条件) @353
 
 以上推论进一步告诉我们：如果对点 $x$，能找到适当的 $\sigma(x)$，使得对于充分小的定数 $\delta>0$，有
 $$\lim_{m\to\infty}\int_0^{\delta}\frac{\varphi_\sigma(u,x)}{u}\cdot\sin\frac{2m+1}{2}u\,\mathrm{d}u=0,$$
@@ -74,7 +74,7 @@ $$\lim_{p\to+\infty}\int_0^{\delta}\left[f(x+u)+f(x-u)-2\,\frac{f(x+)+f(x-)}{2}\
 
 德国数学家 Dirichlet 在 1829 年——Fourier 级数问世约四分之一个世纪之后，首先得到了一个函数的 Fourier 级数的收敛条件；又过了约半个世纪，另一位德国数学家 Lipschitz 得到了与之不同的收敛条件。他们的结果经后人完善，可以表述为如下定理。
 
-### 定理 16.2.2 (傅里叶级数的收敛判别) @735
+### 定理 16.2.2 (傅里叶级数的收敛判别) @353
 
 设函数 $f(x)$ 在 $[-\pi,\pi]$ 上可积或绝对可积，且满足下列两个条件之一，则 $f(x)$ 的 Fourier 级数在点 $x$ 处收敛于 $\dfrac{f(x+)+f(x-)}{2}$。
 
@@ -82,42 +82,42 @@ $$\lim_{p\to+\infty}\int_0^{\delta}\left[f(x+u)+f(x-u)-2\,\frac{f(x+)+f(x-)}{2}\
 
 （2）（**Dini–Lipschitz 判别法**）$f(x)$ 在点 $x$ 处满足指数为 $\alpha\in(0,1]$ 的 Hölder 条件。
 
-### 定义 16.2.1 (分段单调函数) @736
+### 定义 16.2.1 (分段单调函数) @354
 
 设函数 $f$ 在 $[a,b]$（或 $(a,b)$）上有定义。如果在 $[a,b]$（或 $(a,b)$）上存在有限个点
 $$a=x_0<x_1<x_2<\cdots<x_N=b,$$
 使得 $f$ 在每个区间 $(x_{i-1},x_i)$（$i=1,2,\cdots,N$）上是单调函数，则称 $f$ 在 $[a,b]$（或 $(a,b)$）上**分段单调**。
 
-### 定义 16.2.2 (Hölder 条件) @736
+### 定义 16.2.2 (Hölder 条件) @354
 
 设点 $x$ 是函数 $f(x)$ 的连续点或第一类不连续点，若对于充分小的正数 $\delta$，存在常数 $L>0$ 和 $\alpha\in(0,1]$，使得成立
 $$|f(x\pm u)-f(x\pm)|<Lu^{\alpha}\qquad(0<u<\delta),$$
 则称 $f(x)$ 在点 $x$ 处满足指数为 $\alpha\in(0,1]$ 的 **Hölder 条件**（当 $\alpha=1$ 也称为 **Lipschitz 条件**）。
 
-### 定理 16.2.3 (Dirichlet 引理) @736
+### 定理 16.2.3 (Dirichlet 引理) @354
 
 设函数 $\psi(u)$ 在 $[0,\delta]$ 上单调，则成立
 $$\lim_{p\to+\infty}\int_0^{\delta}\frac{\psi(u)-\psi(0+)}{u}\sin pu\,\mathrm{d}u=0.$$
 
-### 注 (Dirichlet 引理的等价形式) @737
+### 注 (Dirichlet 引理的等价形式) @355
 
 Dirichlet 引理也经常表达为等价形式
 $$\lim_{p\to+\infty}\int_0^{\delta}\psi(u)\,\frac{\sin pu}{u}\,\mathrm{d}u=\frac{\pi}{2}\psi(0+).$$
 如果 $\psi(u)$ 是分段单调有界函数，易知 Dirichlet 引理依然成立。
 
-### 推论 16.2.3 (单侧导数与收敛性) @737
+### 推论 16.2.3 (单侧导数与收敛性) @355
 
 若 $f(x)$ 在 $[-\pi,\pi]$ 上可积或绝对可积，在点 $x$ 处两个单侧导数 $f'_+(x)$ 和 $f'_-(x)$ 都存在，或更进一步，只要两个拟单侧导数
 $$\lim_{h\to 0+}\frac{f(x\pm h)-f(x\pm)}{h}$$
 存在，则 $f(x)$ 的 Fourier 级数在点 $x$ 处收敛于 $\dfrac{f(x+)+f(x-)}{2}$。
 
-### 注 (判别法的适用范围) @738
+### 注 (判别法的适用范围) @356
 
 Dirichlet–Jordan 判别法和 Dini–Lipschitz 判别法都是 Fourier 级数收敛的充分条件。尽管在物理、化学、工程等领域的实际问题中，出现的函数一般都同时满足这两个判别法的条件（上节例子和习题中的 $f(x)$ 均是如此），但可以构造例子说明它们确实是互不包含的。附带指出，直至今天，还没有找到一个判别 Fourier 级数敛散性的既充分又必要的条件。
 
 定理 16.2.2 告诉我们，若收敛条件满足，则 $f(x)$ 的 Fourier 级数在连续点收敛于函数值本身，而在第一类不连续点收敛于它左右极限的算术平均值。所以对于连续的周期函数 $f(x)$，应将 $f(x)$ 与它的（收敛的）Fourier 级数间的“$\sim$”改为“$=$”。若周期函数 $f(x)$ 有第一类不连续点，那么展成 Fourier 级数后，要对这些点予以特别说明，画图时也要将它们的函数值标为其左右极限的算术平均值。
 
-### 例 (由收敛性求数项级数) @738
+### 例 (由收敛性求数项级数) @356
 
 如例 16.1.2 中 $f(x)$ 的余弦级数可以直接了当地写成
 $$\frac{\pi}{2}-\frac{4}{\pi}\left(\cos x+\frac{\cos 3x}{3^2}+\frac{\cos 5x}{5^2}+\cdots+\frac{\cos(2k+1)x}{(2k+1)^2}+\cdots\right)=x,\qquad x\in[0,\pi].$$
@@ -142,7 +142,7 @@ $$f(x)\sim\frac{1}{6}+\frac{2}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^n}{n^2}\cos n
 $$=\begin{cases}0, & x\in(-1,0],\\ \dfrac{1}{2}, & x=\pm 1,\\ x^2, & x\in(0,1).\end{cases}$$
 Fourier 级数的图像如图 16.2.3 所示。
 
-### 注 (由 Fourier 级数导出 $\zeta(2)$ 等) @739
+### 注 (由 Fourier 级数导出 $\zeta(2)$ 等) @357
 
 在证实了这个 Fourier 级数收敛的前提下，可以导出一个非常重要的结果。令 $x=1$，注意到这个点是 $f(x)$ 的不连续点，其 Fourier 级数应收敛于 $\dfrac{f(1+)+f(1-)}{2}=\dfrac{1}{2}$；而在上面级数的第一个和式中有 $\cos n\pi=(-1)^n$，第二个和式显然为零。因此稍加整理就可得到
 $$\sum_{n=1}^{\infty}\frac{1}{n^2}=1+\frac{1}{2^2}+\frac{1}{3^2}+\frac{1}{4^2}+\cdots=\frac{\pi^2}{6}.$$
@@ -160,7 +160,7 @@ $$\left.\left[\frac{\pi}{2}-\frac{4}{\pi}\left(\cos x+\frac{\cos 3x}{3^2}+\frac{
 即上面的最后一个等式
 $$\sum_{k=1}^{\infty}\frac{1}{(2k-1)^2}=\frac{\pi^2}{8}.$$
 
-### 注 ($\cos x$ 零点倒数的平方和) @740
+### 注 ($\cos x$ 零点倒数的平方和) @358
 
 还可以获得一些其他的有趣结果。如 $\cos x$ 的全部零点为
 $$\pm\frac{\pi}{2},\ \pm\frac{3\pi}{2},\ \cdots,\ \pm\frac{(2k-1)\pi}{2},\ \cdots,$$

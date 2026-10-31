@@ -3,10 +3,10 @@ chapter: 16
 chapter_title: Fourier 级数
 section: "16.4"
 section_title: Fourier 变换和 Fourier 积分
-pages: "749–756"
+pages: "367–374"
 ---
 
-### 定义 (Fourier 变换) @749
+### 定义 (Fourier 变换) @367
 
 以上关于 Fourier 级数的论述都是对周期函数而言的。对于不具备周期性的函数，处理思路是这样的：在 $(-\infty,+\infty)$ 上可积的非周期函数 $f(x)$ 可以看成是周期函数的极限情况。
 
@@ -41,7 +41,7 @@ $$\hat{f}(\omega)=\int_{-\infty}^{+\infty}f(x)\mathrm{e}^{-\mathrm{i}\omega x}\,
 为 $f$ 的 **Fourier 变换**（或像函数），记为 $F[f]$，即
 $$F[f](\omega)=\hat{f}(\omega)=\int_{-\infty}^{+\infty}f(x)\mathrm{e}^{-\mathrm{i}\omega x}\,\mathrm{d}x.$$
 
-### 定义 (Fourier 逆变换) @751
+### 定义 (Fourier 逆变换) @369
 
 称函数
 $$\frac{1}{2\pi}\int_{-\infty}^{+\infty}\hat{f}(\omega)\mathrm{e}^{\mathrm{i}\omega x}\,\mathrm{d}\omega\qquad(x\in(-\infty,+\infty))$$
@@ -49,20 +49,20 @@ $$\frac{1}{2\pi}\int_{-\infty}^{+\infty}\hat{f}(\omega)\mathrm{e}^{\mathrm{i}\om
 $$F^{-1}[\hat{f}](x)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}\hat{f}(\omega)\mathrm{e}^{\mathrm{i}\omega x}\,\mathrm{d}\omega.$$
 注意这里假设了像函数与像原函数的存在性。
 
-### 定义 (Fourier 积分) @751
+### 定义 (Fourier 积分) @369
 
 称函数
 $$\frac{1}{2\pi}\int_{-\infty}^{+\infty}\left[\int_{-\infty}^{+\infty}f(t)\mathrm{e}^{-\mathrm{i}\omega t}\,\mathrm{d}t\right]\mathrm{e}^{\mathrm{i}\omega x}\,\mathrm{d}\omega=\frac{1}{2\pi}\int_{-\infty}^{+\infty}\mathrm{d}\omega\int_{-\infty}^{+\infty}f(t)\mathrm{e}^{\mathrm{i}\omega(x-t)}\,\mathrm{d}t$$
 为 $f$ 的 **Fourier 积分**。在一定条件下，它应与 $f(x)$ 相等，但研究这些条件已超出本课程的要求，下面不加证明地给出充分条件。
 
-### 定理 16.4.1 (Fourier 积分定理) @751
+### 定理 16.4.1 (Fourier 积分定理) @369
 
 设函数 $f$ 在 $(-\infty,+\infty)$ 上绝对可积，且在 $(-\infty,+\infty)$ 中的任何闭区间上分段可导，则 $f$ 的 Fourier 积分满足：对于任意 $x\in(-\infty,+\infty)$ 成立
 $$\frac{1}{2\pi}\int_{-\infty}^{+\infty}\mathrm{d}\omega\int_{-\infty}^{+\infty}f(t)\mathrm{e}^{\mathrm{i}\omega(x-t)}\,\mathrm{d}t=\frac{f(x+)+f(x-)}{2}.$$
 注意，若 $x$ 是 $f$ 的连续点，定理 16.4.1 已蕴含了
 $$\frac{1}{2\pi}\int_{-\infty}^{+\infty}\mathrm{d}\omega\int_{-\infty}^{+\infty}f(t)\mathrm{e}^{\mathrm{i}\omega(x-t)}\,\mathrm{d}t=f(x).$$
 
-### 定义 16.4.1 (分段可导) @751
+### 定义 16.4.1 (分段可导) @369
 
 设函数 $f$ 在 $[a,b]$ 上除有限个点
 $$a=x_0<x_1<x_2<\cdots<x_N=b$$
@@ -72,7 +72,7 @@ $$\lim_{h\to0-}\frac{f(x_i+h)-f(x_i-)}{h}$$
 $$\lim_{h\to0+}\frac{f(x_i+h)-f(x_i+)}{h}$$
 都存在（在 $x_0=a$ 只要求上述第二个极限存在，在 $x_N=b$ 只要求上述第一个极限存在），那么称 $f$ 在 $[a,b]$ 上**分段可导**。
 
-### 例 16.4.1 (孤立矩形波) @751
+### 例 16.4.1 (孤立矩形波) @369
 
 求孤立矩形波
 $$f(x)=\begin{cases}h, & |x|\le\delta,\\ 0, & |x|>\delta\end{cases}$$
@@ -86,7 +86,7 @@ $$\hat{f}(0)=\int_{-\infty}^{+\infty}f(x)\,\mathrm{d}x=2h\delta\left(=\lim_{\ome
 $$F^{-1}[\hat{f}]=\frac{1}{2\pi}\int_{-\infty}^{+\infty}\hat{f}(\omega)\mathrm{e}^{\mathrm{i}\omega x}\,\mathrm{d}\omega=\frac{h}{\pi}\int_{-\infty}^{+\infty}\frac{\sin(\omega\delta)}{\omega}\mathrm{e}^{\mathrm{i}\omega x}\,\mathrm{d}\omega=\frac{2h}{\pi}\int_0^{+\infty}\frac{\sin(\omega\delta)}{\omega}\cos(\omega x)\,\mathrm{d}\omega$$
 $$=\begin{cases}h, & |x|<\delta,\\ \dfrac{h}{2}, & x=\pm\delta,\\ 0, & |x|>\delta.\end{cases}$$
 
-### 命题 (Fourier 积分的三角形式) @752
+### 命题 (Fourier 积分的三角形式) @370
 
 设 $f(x)$ 在 $(-\infty,+\infty)$ 上连续，且满足定理 16.4.1 的条件，则将 $f$ 的 Fourier 积分的实部和虚部分开，得到
 $$f(x)=\frac{1}{2\pi}\int_{-\infty}^{+\infty}\mathrm{d}\omega\int_{-\infty}^{+\infty}f(t)\cos\omega(x-t)\,\mathrm{d}t+\frac{\mathrm{i}}{2\pi}\int_{-\infty}^{+\infty}\mathrm{d}\omega\int_{-\infty}^{+\infty}f(t)\sin\omega(x-t)\,\mathrm{d}t.$$
@@ -97,7 +97,7 @@ $$g_c(\omega)\overset{\text{def}}{=}\int_{-\infty}^{+\infty}f(t)\cos\omega(x-t)\
 是偶函数，由此得到 $f(x)$ 的 **Fourier 积分的三角形式**（也称为实形式）
 $$f(x)=\frac{1}{\pi}\int_0^{+\infty}\mathrm{d}\omega\int_{-\infty}^{+\infty}f(t)\cos\omega(x-t)\,\mathrm{d}t.$$
 
-### 定义 (Fourier 余弦变换) @752
+### 定义 (Fourier 余弦变换) @370
 
 当 $f(x)$ 本身是偶函数时，Fourier 积分的三角形式又可化成
 $$f(x)=\frac{2}{\pi}\int_0^{+\infty}\left[\int_0^{+\infty}f(t)\cos\omega t\,\mathrm{d}t\right]\cos\omega x\,\mathrm{d}\omega,$$
@@ -107,7 +107,7 @@ $$F_c[f]=\hat{f}_c(\omega)=\int_0^{+\infty}f(x)\cos\omega x\,\mathrm{d}x$$
 $$F_c^{-1}[\hat{f}_c]=\frac{2}{\pi}\int_0^{+\infty}\hat{f}_c(\omega)\cos\omega x\,\mathrm{d}\omega$$
 复合而成的。
 
-### 定义 (Fourier 正弦变换) @753
+### 定义 (Fourier 正弦变换) @371
 
 当 $f(x)$ 本身是奇函数时，可以类似地得到
 $$f(x)=\frac{2}{\pi}\int_0^{+\infty}\left[\int_0^{+\infty}f(t)\sin\omega t\,\mathrm{d}t\right]\sin\omega x\,\mathrm{d}\omega,$$
@@ -117,7 +117,7 @@ $$F_s[f]=\hat{f}_s(\omega)=\int_0^{+\infty}f(x)\sin\omega x\,\mathrm{d}x$$
 $$F_s^{-1}[\hat{f}_s]=\frac{2}{\pi}\int_0^{+\infty}\hat{f}_s(\omega)\sin\omega x\,\mathrm{d}\omega$$
 复合而成的。
 
-### 例 16.4.2 (余弦变换) @753
+### 例 16.4.2 (余弦变换) @371
 
 求 $f(x)=\mathrm{e}^{-x}\sin x\ (x\in[0,+\infty))$ 的余弦变换。
 
@@ -126,14 +126,14 @@ $$\int_0^{+\infty}\mathrm{e}^{-x}\sin x\cos\omega x\,\mathrm{d}x=\frac{1}{2}\int
 $$=\frac{1}{2}\left\{\left.\frac{\mathrm{e}^{-x}\left[\sin(1+\omega)x+(1+\omega)\cos(1+\omega)x\right]}{1+(1+\omega)^2}-\frac{\mathrm{e}^{-x}\left[\sin(1-\omega)x+(1-\omega)\cos(1-\omega)x\right]}{1+(1-\omega)^2}\right\}\right|_0^{+\infty}$$
 $$=\frac{1}{2}\left[\frac{1+\omega}{1+(1+\omega)^2}+\frac{1-\omega}{1+(1-\omega)^2}\right]=\frac{2-\omega}{4+\omega^4}.$$
 
-### 命题 (线性性质) @753
+### 命题 (线性性质) @371
 
 设 $c_1,c_2$ 是常数。若 $f,g$ 的 Fourier 变换存在，则
 $$F[c_1f+c_2g]=c_1F[f]+c_2F[g];$$
 若 $\hat{f}=F[f]$，$\hat{g}=F[g]$ 的 Fourier 逆变换存在，则
 $$F^{-1}[c_1\hat{f}+c_2\hat{g}]=c_1F^{-1}[\hat{f}]+c_2F^{-1}[\hat{g}].$$
 
-### 命题 (位移性质) @753
+### 命题 (位移性质) @371
 
 若函数 $f$ 的 Fourier 变换存在，则
 $$F[f(x\pm x_0)](\omega)=F[f](\omega)\mathrm{e}^{\pm\mathrm{i}\omega x_0};$$
@@ -142,43 +142,43 @@ $$F^{-1}[\hat{f}(\omega\pm\omega_0)](x)=F^{-1}[\hat{f}](x)\mathrm{e}^{\mp\mathrm
 以上两式常简记为
 $$F[f(x\pm x_0)]=F[f]\mathrm{e}^{\pm\mathrm{i}\omega x_0};\qquad F^{-1}[\hat{f}(\omega\pm\omega_0)]=F^{-1}[\hat{f}]\mathrm{e}^{\mp\mathrm{i}\omega_0 x}.$$
 
-### 命题 (尺度性质) @754
+### 命题 (尺度性质) @372
 
 时间尺度性
 $$F[f(ax)]=\frac{1}{|a|}\hat{f}\left(\frac{\omega}{a}\right);$$
 频率尺度性
 $$F\left[\frac{1}{a}f\left(\frac{x}{a}\right)\right]=\hat{f}(a\omega).$$
 
-### 命题 (微分性质) @754
+### 命题 (微分性质) @372
 
 1）设函数 $f(x)$ 在 $(-\infty,+\infty)$ 上有连续的导数，且 $f(x)$ 与 $f'(x)$ 在 $(-\infty,+\infty)$ 上绝对可积，若 $\lim\limits_{x\to\infty}f(x)=0$，则有
 $$F[f']=\mathrm{i}\omega\cdot F[f];$$
 2）若 $f(x)$ 和 $xf(x)$ 在 $(-\infty,+\infty)$ 上绝对可积，则
 $$F[-\mathrm{i}x\cdot f]=(F[f])'.$$
 
-### 命题 (积分性质) @754
+### 命题 (积分性质) @372
 
 设函数 $f(x)$ 和 $\displaystyle\int_{-\infty}^{x}f(t)\,\mathrm{d}t$ 在 $(-\infty,+\infty)$ 上绝对可积，则
 $$F\left[\int_{-\infty}^{x}f(t)\,\mathrm{d}t\right]=\frac{1}{\mathrm{i}\omega}F[f].$$
 
-### 定义 16.4.2 (卷积) @755
+### 定义 16.4.2 (卷积) @373
 
 设函数 $f$ 和 $g$ 在 $(-\infty,+\infty)$ 上定义，且积分
 $$(f*g)(x)=\int_{-\infty}^{+\infty}f(t)g(x-t)\,\mathrm{d}t$$
 存在，则称函数 $f*g$ 为 $f$ 和 $g$ 的**卷积**。显然，卷积具有对称性，即 $f*g=g*f$。
 
-### 定理 16.4.2 (卷积的 Fourier 变换) @755
+### 定理 16.4.2 (卷积的 Fourier 变换) @373
 
 设函数 $f$ 和 $g$ 在 $(-\infty,+\infty)$ 上绝对可积，则有
 $$F[f*g]=F[f]\cdot F[g].$$
 
-### 定理 16.4.3 (Parseval 等式) @755
+### 定理 16.4.3 (Parseval 等式) @373
 
 设函数 $f$ 在 $(-\infty,+\infty)$ 上绝对可积，且 $\displaystyle\int_{-\infty}^{+\infty}[f(x)]^2\,\mathrm{d}x$ 收敛。记 $f$ 的 Fourier 变换为 $\hat{f}$，则
 $$\int_{-\infty}^{+\infty}[f(x)]^2\,\mathrm{d}x=\frac{1}{2\pi}\int_{-\infty}^{+\infty}|\hat{f}(\omega)|^2\,\mathrm{d}\omega.$$
 今后学习其他课程（如偏微分方程、控制理论、计算方法等）时会知道，以上的性质和定理非常重要。
 
-### 例 16.4.3 (解微分方程) @755
+### 例 16.4.3 (解微分方程) @373
 
 求解微分方程
 $$u''(x)-a^2u(x)+2af(x)=0\qquad(a>0\ \text{为常数},\ x\in(-\infty,+\infty)).$$
@@ -191,11 +191,11 @@ $$F[u]=\frac{2a}{a^2+\omega^2}F[f].$$
 $$u(x)=F^{-1}\left[\frac{2a}{a^2+\omega^2}\cdot F[f]\right]=F^{-1}\left[\frac{2a}{a^2+\omega^2}\right]*F^{-1}[F[f]]$$
 $$=f*\mathrm{e}^{-a|x|}=\int_{-\infty}^{+\infty}f(t)\mathrm{e}^{-a|x-t|}\,\mathrm{d}t.$$
 
-### 注 (例 16.4.3 的前提) @755
+### 注 (例 16.4.3 的前提) @373
 
 在这个例题中假设了 $f(x)$ 和 $u(x)$ 满足使运算过程成立的一切条件。Fourier 积分的三角形式本可以由实数形式的 Fourier 级数按上述思想直接导出，这里之所以舍近求远，先化成复数形式再兜回来，是因为复数形式的 Fourier 级数和 Fourier 积分具有重要的实际应用价值。在许多领域，如热学、声学、光学、电工学、核物理学等，都需要对复函数的频率 $\omega_n=\dfrac{n\pi}{T}$ 和振幅 $|c_n|=\sqrt{a_n^2+b_n^2}$ 进行计算、分析（称为频谱分析）、叠加、滤波等处理，因而复数表达形式对于简化处理过程有着独到的优越性。
 
-### 注 (Fourier 变换的物理意义) @756
+### 注 (Fourier 变换的物理意义) @374
 
 周期函数实际上就是频率为 $\omega=\dfrac{\pi}{T}$ 的振荡函数。Fourier 级数
 $$f(x)\sim\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos n\omega x+b_n\sin n\omega x\right)=\frac{1}{2}\sum_{n=-\infty}^{+\infty}c_n\mathrm{e}^{\mathrm{i}n\omega x}$$
