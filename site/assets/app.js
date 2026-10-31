@@ -270,7 +270,7 @@
           <span class="card-count">${cardIdx + 1} / ${items.length}</span>
           <button class="card-nav" type="button" data-card="1" ${cardIdx === items.length - 1 ? "disabled" : ""}>下一条 →</button>
         </div>
-        ${itemHtml({ ...it, bookId: b.id, secId: current.id }, { hidden: true })}
+        ${itemHtml({ ...it, bookId: b.id, secId: current.id }, { hidden: true, force: true })}
         <p class="card-hint">← → 翻动 · 空格 显示/隐藏 · Esc 回到阅读</p>
       </div>`;
     typesetLazy($("#view"));
@@ -569,18 +569,42 @@
     }
   });
 
-  const themeBtn = $("#theme-btn");
+  const lookBtn = $("#look-btn");
+  const lookPanel = $("#look-panel");
   const THEMES = ["auto", "light", "dark"];
-  const THEME_LABEL = { auto: "主题：自动", light: "主题：浅色", dark: "主题：深色" };
   function applyTheme(t) {
     if (t === "auto") delete document.documentElement.dataset.theme;
     else document.documentElement.dataset.theme = t;
     try { localStorage.setItem("fa.theme", t); } catch (_) { /* 忽略 */ }
-    themeBtn.textContent = THEME_LABEL[t] || THEME_LABEL.auto;
+    document.querySelectorAll("[data-theme-opt]").forEach((b) => b.classList.toggle("active", b.dataset.themeOpt === t));
   }
-  themeBtn.addEventListener("click", () => {
-    const cur = document.documentElement.dataset.theme || "auto";
-    applyTheme(THEMES[(THEMES.indexOf(cur) + 1) % THEMES.length]);
+  function applyAccent(a) {
+    document.documentElement.dataset.accent = a;
+    try { localStorage.setItem("fa.accent", a); } catch (_) { /* 忽略 */ }
+    document.querySelectorAll("[data-accent-opt]").forEach((b) => b.classList.toggle("active", b.dataset.accentOpt === a));
+  }
+  function applyCardSize(s) {
+    document.documentElement.dataset.cardSize = s;
+    try { localStorage.setItem("fa.cardSize", s); } catch (_) { /* 忽略 */ }
+    document.querySelectorAll("[data-card-size]").forEach((b) => b.classList.toggle("active", b.dataset.cardSize === s));
+  }
+  lookBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    lookPanel.hidden = !lookPanel.hidden;
+    lookBtn.setAttribute("aria-expanded", String(!lookPanel.hidden));
+  });
+  lookPanel.addEventListener("click", (e) => {
+    const t = e.target.closest("[data-theme-opt]");
+    const a = e.target.closest("[data-accent-opt]");
+    const c = e.target.closest("[data-card-size]");
+    if (t) applyTheme(t.dataset.themeOpt);
+    else if (a) applyAccent(a.dataset.accentOpt);
+    else if (c) applyCardSize(c.dataset.cardSize);
+    else return;
+    e.stopPropagation();
+  });
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".look")) lookPanel.hidden = true;
   });
 
   const srcBtn = $("#src-btn");
@@ -624,10 +648,16 @@
       if (qm === "test") mode = "read";
       document.querySelectorAll(".mode[data-mode]").forEach((x) =>
         x.classList.toggle("active", x.dataset.mode === mode));
-      let savedTheme = "auto";
-      try { savedTheme = localStorage.getItem("fa.theme") || "auto"; } catch (_) { /* 忽略 */ }
+      let savedTheme = "auto", savedAccent = "red", savedCard = "l";
+      try {
+        savedTheme = localStorage.getItem("fa.theme") || "auto";
+        savedAccent = localStorage.getItem("fa.accent") || "red";
+        savedCard = localStorage.getItem("fa.cardSize") || "l";
+      } catch (_) { /* 忽略 */ }
       const qt = qs.get("theme");
       applyTheme(THEMES.includes(qt) ? qt : savedTheme);
+      applyAccent(qs.get("accent") || savedAccent);
+      applyCardSize(qs.get("card") || savedCard);
       if (qs.get("src") === "1") setSrcAll(true);
       const qq = qs.get("q");
       if (qq) { searchEl.value = qq; query = qq; renderSearch(qq); return; }
