@@ -1,25 +1,69 @@
-/* 数学命题索引 —— 纯静态前端（支持多本书） */
+/* 数学命题索引 —— 纯静态前端（按书懒加载） */
 (function () {
   "use strict";
 
   const $ = (s) => document.querySelector(s);
 
-  let DATA = null;
-  let BOOKS = [];              // 每本：{...book, sections: [...]}
-  let INDEX = new Map();       // "bookId/anchor" -> {item, section, book}
-  let SRC = new Map();         // "bookId/anchor" -> 原始 Markdown 源码
-  const srcSet = new Set();    // 单条切换为源码的 key
-  let srcAll = false;          // 整页切换为源码
+  let SITE = { title: "数学命题索引" };
+  let BOOKS = [];              // 目录元数据（不含正文）
+  let CACHE = new Map();       // bookId -> { ...meta, sections: [含 items] }
+  let INDEX = new Map();       // "book/section/anchor" -> {item, section, book}
+  let SRC = new Map();         // 同上 -> Markdown 源码
+  let SEARCH = null;           // search.json 原始数组
+  let SEARCH_N = null;         // 归一化后的检索串
+  let srcSet = new Set();
+  let srcAll = false;
   let mode = "read";
-  let currentBook = null;
-  let current = null;          // 当前节
+  let typeFilter = "all";
+  let currentMeta = null;
+  let current = null;
   let query = "";
-  let randomItem = null;
+  let mathObserver = null;
+  let loadToken = 0;
 
   /* ---------------- 工具 ---------------- */
-  const stripTags = (h) => h.replace(/<[^>]+>/g, " ").replace(/&[a-z]+;/g, " ");
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  const bookItems = (b) => b.sections.flatMap((s) => s.items);
+  const norm = (s) => String(s).toLowerCase().replace(/\\/g, "").replace(/\$/g, "").replace(/\s+/g, " ");
+  const FILTERS = [
+    ["all", "全部", null],
+    ["定理", "定理", ["定理"]],
+    ["定义", "定义", ["定义"]],
+    ["例", "例", ["例", "反例"]],
+    ["其他", "其他", ["命题", "引理", "推论", "注", "构造", "公理"]],
+  ];
+
+  function typeset(el) {
+    if (!window.renderMathInElement) return;
+    renderMathInElement(el, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+      ],
+      throwOnError: false, strict: false, trust: true,
+    });
+  }
+
+  // 只渲染视口附近的条目，长节首屏更快
+  function typesetLazy(root) {
+    if (!window.renderMathInElement) return;
+    if (mathObserver) { mathObserver.disconnect(); mathObserver = null; }
+    const items = [...root.querySelectorAll(".item")];
+    if (!items.length) return;
+    mathObserver = new IntersectionObserver((entries, ob) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) {
+          typeset(en.target);
+          en.target.classList.add("math-done");
+          ob.unobserve(en.target);
+        }
+      });
+    }, { rootMargin: "400px 0px" });
+    items.forEach((el, i) => {
+      if (i < 6) { typeset(el); el.classList.add("math-done"); }
+      else mathObserver.observe(el);
+    });
+  }
 
   function copyText(text, btn) {
     const done = () => {
@@ -30,99 +74,96 @@
     };
     const fallback = () => {
       const ta = document.createElement("textarea");
-      ta.value = text;
-      ta.style.position = "fixed";
-      ta.style.opacity = "0";
-      document.body.appendChild(ta);
-      ta.select();
+      ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select();
       try { document.execCommand("copy"); done(); } catch (_) { /* 忽略 */ }
       ta.remove();
     };
     if (navigator.clipboard && window.isSecureContext) {
       navigator.clipboard.writeText(text).then(done).catch(fallback);
-    } else {
-      fallback();
-    }
-  }
-
-  function typeset(el) {
-    if (!window.renderMathInElement) return;
-    renderMathInElement(el, {
-      delimiters: [
-        { left: "$$", right: "$$", display: true },
-        { left: "$", right: "$", display: false },
-        { left: "\\(", right: "\\)", display: false },
-      ],
-      throwOnError: false,
-      strict: false,
-      trust: true,
-    });
+    } else fallback();
   }
 
   /* ---------------- 数据 ---------------- */
-  async function load() {
-    const res = await fetch("data/index.json", { cache: "no-cache" });
-    if (!res.ok) throw new Error("无法加载 data/index.json");
-    DATA = await res.json();
-    BOOKS = (DATA.books || []).map((b) => {
-      const sections = [];
-      for (const ch of b.chapters) {
-        for (const s of ch.sections) {
-          const sec = { ...s, chapter: ch.no, chapterTitle: ch.title, book: b };
-          sections.push(sec);
-          for (const it of sec.items) {
-            INDEX.set(`${b.id}/${s.id}/${it.anchor}`, { item: it, section: sec, book: b });
-            SRC.set(`${b.id}/${s.id}/${it.anchor}`, it.src || "");
-          }
-        }
-      }
-      return { ...b, sections };
-    });
-    if (DATA.site && DATA.site.title) document.title = DATA.site.title;
+  async function loadBooks() {
+    const res = await fetch("data/books.json", { cache: "no-cache" });
+    if (!res.ok) throw new Error("无法加载 data/books.json");
+    const data = await res.json();
+    SITE = data.site || SITE;
+    BOOKS = data.books || [];
+    document.title = SITE.title;
     buildBooks();
   }
 
+  async function ensureBook(id) {
+    if (CACHE.has(id)) return CACHE.get(id);
+    const meta = BOOKS.find((b) => b.id === id);
+    if (!meta) throw new Error(`未知的书 ${id}`);
+    const res = await fetch(`data/${id}.json`, { cache: "no-cache" });
+    if (!res.ok) throw new Error(`无法加载 ${id}.json`);
+    const data = await res.json();
+    const sections = [];
+    for (const ch of data.chapters) {
+      for (const s of ch.sections) {
+        const sec = { ...s, chapter: ch.no, chapterTitle: ch.title, book: meta };
+        sections.push(sec);
+        for (const it of sec.items) {
+          INDEX.set(`${id}/${sec.id}/${it.anchor}`, { item: it, section: sec, book: meta });
+          SRC.set(`${id}/${sec.id}/${it.anchor}`, it.src || "");
+        }
+      }
+    }
+    const loaded = { ...meta, chapters: data.chapters, sections };
+    CACHE.set(id, loaded);
+    return loaded;
+  }
+
+  async function loadSearch() {
+    if (SEARCH) return;
+    const res = await fetch("data/search.json", { cache: "no-cache" });
+    if (!res.ok) throw new Error("无法加载 search.json");
+    SEARCH = await res.json();
+    SEARCH_N = SEARCH.map((e) => norm(`${e[3]} ${e[4]} ${e[5]} ${e[6]}`));
+  }
+
+  /* ---------------- 侧栏 ---------------- */
   function buildBooks() {
-    $("#books").innerHTML = BOOKS.map((b) => {
-      const n = bookItems(b).length;
-      return `<button class="book-btn" type="button" data-book="${esc(b.id)}" title="${esc(b.title)}">
-        ${esc(b.short || b.title)}<span class="cnt">${n || "待录入"}</span></button>`;
-    }).join("");
+    $("#books").innerHTML = BOOKS.map((b) => `
+      <button class="book-btn" type="button" data-book="${esc(b.id)}" title="${esc(b.title)}">
+        <span class="bk-name">${esc(b.short || b.title)}</span><span class="cnt">${b.count || "待录入"}</span></button>`).join("");
   }
 
-  function setBook(b) {
-    currentBook = b;
-    document.querySelectorAll(".book-btn").forEach((x) => x.classList.toggle("active", x.dataset.book === b.id));
-    buildToc();
-  }
-
-  function buildToc() {
+  function buildToc(meta) {
     const nav = $("#toc");
-    if (!currentBook) { nav.innerHTML = ""; return; }
-    if (!currentBook.sections.length) {
+    if (!meta) { nav.innerHTML = ""; return; }
+    if (!meta.chapters || !meta.chapters.length) {
       nav.innerHTML = `<div class="toc-empty">本书尚未录入条目。</div>`;
       return;
     }
-    let html = "";
-    let lastCh = null;
-    for (const s of currentBook.sections) {
-      if (s.chapterTitle !== lastCh) {
-        html += `<div class="chap-title">${esc(s.chapterTitle)}</div>`;
-        lastCh = s.chapterTitle;
+    let html = "", lastCh = null;
+    for (const ch of meta.chapters) {
+      for (const s of ch.sections) {
+        if (ch.title !== lastCh) { html += `<div class="chap-title">${esc(ch.title)}</div>`; lastCh = ch.title; }
+        html += `<a class="sec-link" href="#/${esc(meta.id)}/${esc(s.id)}" data-sec="${esc(s.id)}">
+          <span>${esc(s.id)}&nbsp;${esc(s.title)}</span><span class="n">${s.count}</span></a>`;
       }
-      html += `<a class="sec-link" href="#/${esc(currentBook.id)}/${esc(s.id)}" data-sec="${esc(s.id)}">
-        <span>${esc(s.id)}&nbsp;${esc(s.title)}</span><span class="n">${s.items.length}</span></a>`;
     }
     nav.innerHTML = html;
   }
 
+  function setBook(meta) {
+    currentMeta = meta;
+    document.querySelectorAll(".book-btn").forEach((x) => x.classList.toggle("active", x.dataset.book === meta.id));
+    buildToc(meta);
+  }
+
   function markActive() {
     document.querySelectorAll(".sec-link").forEach((a) => {
-      a.classList.toggle("active", !!(current && currentBook && a.dataset.sec === current.id && a.getAttribute("href").includes(`/${currentBook.id}/`)));
+      a.classList.toggle("active", !!(current && a.dataset.sec === current.id && a.getAttribute("href").includes(`/${currentMeta.id}/`)));
     });
   }
 
-  /* ---------------- 条目渲染 ---------------- */
+  /* ---------------- 条目 ---------------- */
   function srcBlock(key) {
     return `<div class="srcwrap"><button class="copy-btn" type="button" data-copy="${esc(key)}">复制</button><pre class="src">${esc(SRC.get(key) || "")}</pre></div>`;
   }
@@ -135,9 +176,12 @@
         <span class="badge">${esc(it.type)}</span>
         ${it.number ? `<span class="num">${esc(it.number)}</span>` : ""}
         ${it.title ? `<span class="title">${esc(it.title)}</span>` : ""}
-        <span class="head-right">${opts.label ? `<span class="sr-src">${esc(opts.label)}</span>` : ""}<span class="pageref">p.${it.page}</span><button
-          class="src-toggle" type="button" data-src-toggle="${esc(key)}"
-          title="在渲染结果与 Markdown/LaTeX 源码之间切换">${showSrc ? "渲染" : "源码"}</button></span>
+        <span class="head-right">
+          ${opts.label ? `<span class="sr-src">${esc(opts.label)}</span>` : ""}
+          <span class="pageref">p.${it.page}</span>
+          <button class="src-toggle" type="button" data-src-toggle="${esc(key)}"
+            title="在渲染结果与 Markdown/LaTeX 源码之间切换">${showSrc ? "渲染" : "源码"}</button>
+        </span>
       </div>`;
     const inner = showSrc ? srcBlock(key) : it.html;
     const hide = opts.hidden && !!it.title;
@@ -164,129 +208,174 @@
     if (btn) btn.textContent = show ? "渲染" : "源码";
   }
 
-  function renderSection(s) {
+  function filterItems(items) {
+    const f = FILTERS.find((x) => x[0] === typeFilter);
+    if (!f || !f[2]) return items;
+    return items.filter((it) => f[2].includes(it.type));
+  }
+
+  function sectionHead(s, items) {
     const b = s.book;
-    const head = `
+    const chips = FILTERS.map(([key, label, types]) => {
+      const n = types ? s.items.filter((it) => types.includes(it.type)).length : s.items.length;
+      return `<button class="chip${typeFilter === key ? " active" : ""}" type="button" data-filter="${key}">${label}<em>${n}</em></button>`;
+    }).join("");
+    return `
       <div class="sec-head">
         <h1>${esc(s.id)}&nbsp;&nbsp;${esc(s.title)}</h1>
         <div class="meta">
-          <span>${esc(b.title)}${b.author && b.author !== "待确认" ? ` · ${esc(b.author)}` : ""}</span>
+          <span>${esc(b.title)}${b.author ? ` · ${esc(b.author)}` : ""}</span>
           <span>${esc(s.chapterTitle)}</span>
-          <span>${s.items.length} 个条目</span>
+          <span>${s.items.length} 个条目${items.length !== s.items.length ? `（当前显示 ${items.length}）` : ""}</span>
           ${s.pages ? `<span>原书 p.${esc(s.pages)}</span>` : ""}
         </div>
         ${b.note ? `<p class="book-note">${esc(b.note)}</p>` : ""}
+        <div class="filters">${chips}</div>
       </div>`;
-    const body = s.items.map((it) => itemHtml({ ...it, bookId: b.id, secId: s.id }, { hidden: mode === "test" })).join("");
-    $("#view").innerHTML = head + body;
-    typeset($("#view"));
-    $("#crumbs").innerHTML = `<b>${esc(b.title)}</b> · ${esc(s.id)} ${esc(s.title)}`;
+  }
+
+  function renderSection(s) {
+    const b = s.book;
+    const items = filterItems(s.items);
+    const body = items.length
+      ? items.map((it) => itemHtml({ ...it, bookId: b.id, secId: s.id }, { hidden: mode === "test" })).join("")
+      : `<div class="empty">这一节没有该类型的条目。</div>`;
+    $("#view").innerHTML = sectionHead(s, items) + body;
+    typesetLazy($("#view"));
+    $("#crumbs").innerHTML = `<b>${esc(b.short || b.title)}</b> · ${esc(s.id)} ${esc(s.title)}`;
     markActive();
     window.scrollTo({ top: 0 });
   }
 
-  function renderEmptyBook(b) {
+  function renderEmptyBook(meta) {
     $("#view").innerHTML = `
-      <div class="sec-head"><h1>${esc(b.title)}</h1>
-        <div class="meta"><span>${esc(b.source || "")}</span></div>
+      <div class="sec-head"><h1>${esc(meta.title)}</h1>
+        <div class="meta"><span>${esc(meta.author || "")}</span></div>
+        ${meta.note ? `<p class="book-note">${esc(meta.note)}</p>` : ""}
       </div>
-      <div class="empty">这本书还没有录入条目。录入时在 <code>content/${esc(b.id)}/</code> 下按节新建 Markdown 文件即可。</div>`;
-    $("#crumbs").innerHTML = `<b>${esc(b.title)}</b>`;
+      <div class="empty">这本书还没有录入条目。录入时在 <code>content/${esc(meta.id)}/</code> 下按节新建 Markdown 文件即可。</div>`;
+    $("#crumbs").innerHTML = `<b>${esc(meta.short || meta.title)}</b>`;
     markActive();
   }
 
-  function renderRandom() {
-    let pool = currentBook ? bookItems(currentBook) : BOOKS.flatMap(bookItems);
-    if (!pool.length) { renderEmptyBook(currentBook || BOOKS[0]); return; }
-    const it = pool[Math.floor(Math.random() * pool.length)];
-    randomItem = it;
-    const rec = INDEX.get(`${currentBook ? currentBook.id : BOOKS[0].id}/${s.id}/${it.anchor}`);
-    const s = (rec && rec.section) || current;
-    const b = (rec && rec.book) || currentBook;
+  async function renderRandom() {
+    const meta = currentMeta || BOOKS[0];
+    if (!meta) return;
+    const book = await ensureBook(meta.id);
+    const pool = book.sections.flatMap((s) => s.items.map((it) => ({ it, s })));
+    if (!pool.length) { renderEmptyBook(meta); return; }
+    const { it, s } = pool[Math.floor(Math.random() * pool.length)];
     $("#view").innerHTML = `
       <div class="sec-head">
         <h1>随机自测</h1>
-        <div class="meta"><span>来自 ${esc(b.title)} ${esc(s.id)} ${esc(s.title)}</span><span>共 ${pool.length} 个条目</span></div>
+        <div class="meta"><span>来自 ${esc(book.short || book.title)} ${esc(s.id)} ${esc(s.title)}</span><span>本节书共 ${pool.length} 个条目</span></div>
       </div>
-      ${itemHtml({ ...it, bookId: b.id, secId: s.id }, { hidden: true })}
+      ${itemHtml({ ...it, bookId: book.id, secId: s.id }, { hidden: true })}
       <p style="margin-top:18px"><button id="again" class="ghost-btn" type="button">换一条（r）</button></p>`;
-    typeset($("#view"));
-    $("#crumbs").innerHTML = `<b>随机</b> · ${esc(b.title)} ${esc(s.id)}`;
+    typesetLazy($("#view"));
+    $("#crumbs").innerHTML = `<b>随机</b> · ${esc(book.short || book.title)} ${esc(s.id)}`;
     $("#again").onclick = renderRandom;
     markActive();
   }
 
-  function renderSearch(q) {
-    const needle = q.trim().toLowerCase();
-    const hits = [];
-    for (const b of BOOKS) {
-      for (const s of b.sections) {
-        for (const it of s.items) {
-          const hay = `${it.type} ${it.number} ${it.title} ${stripTags(it.html)}`.toLowerCase();
-          if (hay.includes(needle)) hits.push({ it, s, b });
-        }
-      }
+  function highlight(text, terms) {
+    const safe = esc(text);
+    const t = terms.filter(Boolean).map((x) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+    if (!t.length) return safe;
+    try {
+      return safe.replace(new RegExp(`(${t.join("|")})`, "gi"), "<mark>$1</mark>");
+    } catch (_) { return safe; }
+  }
+
+  async function renderSearch(q) {
+    await loadSearch();
+    const terms = norm(q).split(" ").filter(Boolean);
+    const hitIdx = [];
+    for (let i = 0; i < SEARCH.length && hitIdx.length < 200; i++) {
+      if (terms.every((t) => SEARCH_N[i].includes(t))) hitIdx.push(i);
     }
-    const shown = hits.slice(0, 60);
+    const shown = hitIdx.slice(0, 80);
+    const rows = shown.map((i) => {
+      const e = SEARCH[i];
+      const book = BOOKS.find((b) => b.id === e[0]);
+      return `<a class="hit" href="#/${esc(e[0])}/${esc(e[1])}/${esc(e[2])}">
+        <span class="badge" data-type="${esc(e[3])}">${esc(e[3])}</span>
+        <b>${esc(e[4] || "")}</b>
+        <span class="hit-title">${esc(e[5] || "")}</span>
+        <span class="hit-src">${esc(book ? book.short || book.title : e[0])} · ${esc(e[1])}</span>
+        <p class="hit-text">${highlight(e[6], terms)}</p>
+      </a>`;
+    }).join("");
     $("#view").innerHTML = `
       <div class="sec-head"><h1>搜索</h1>
-        <div class="meta"><span>“${esc(q)}” 命中 ${hits.length} 条${hits.length > shown.length ? `，显示前 ${shown.length} 条` : ""}</span></div>
-      </div>` +
-      (shown.map(({ it, s, b }) => itemHtml({ ...it, bookId: b.id, secId: s.id }, { label: `${b.title} ${s.id}` })).join("") ||
-        `<div class="empty">没有匹配的条目。</div>`);
-    typeset($("#view"));
+        <div class="meta"><span>“${esc(q)}” 命中 ${hitIdx.length} 条${hitIdx.length > shown.length ? `（显示前 ${shown.length} 条）` : ""}</span></div>
+      </div>` + (rows || `<div class="empty">没有匹配的条目。</div>`);
     $("#crumbs").innerHTML = `<b>搜索</b> “${esc(q)}”`;
     markActive();
+  }
+
+  function showLoading() {
+    $("#view").innerHTML = `<div class="empty">加载中…</div>`;
   }
 
   /* ---------------- 路由 ---------------- */
   function parseHash() {
     const parts = decodeURIComponent(location.hash.replace(/^#\/?/, "")).split("/").filter(Boolean);
-    let book = BOOKS.find((b) => b.id === parts[0]);
-    if (book) return { book, secId: parts[1], anchor: parts[2] };
-    return { book: null, secId: parts[0], anchor: parts[1] };
+    const book = BOOKS.find((b) => b.id === parts[0]);
+    if (book) return { bookId: book.id, secId: parts[1], anchor: parts[2] };
+    return { bookId: (BOOKS[0] || {}).id, secId: parts[0], anchor: parts[1] };
   }
 
-  function route() {
+  async function route() {
     if (!BOOKS.length) {
       $("#view").innerHTML = `<div class="empty">还没有任何书。请在 content/ 下新建书目录。</div>`;
       return;
     }
-    const { book: hb, secId, anchor } = parseHash();
-    const book = hb || currentBook || BOOKS[0];
-    setBook(book);
-
-    if (anchor) {
-      const rec = INDEX.get(`${book.id}/${secId}/${anchor}`);
-      if (rec) {
-        current = rec.section;
-        renderSection(rec.section);
-        const el = document.getElementById(`i-${book.id}-${secId}-${anchor}`);
-        if (el) { el.classList.add("revealed", "flash"); el.scrollIntoView({ block: "center" }); }
-        return;
+    const token = ++loadToken;
+    const { bookId, secId, anchor } = parseHash();
+    const meta = BOOKS.find((b) => b.id === bookId) || BOOKS[0];
+    setBook(meta);
+    if (!meta.count) { current = null; renderEmptyBook(meta); return; }
+    showLoading();
+    try {
+      const book = await ensureBook(meta.id);
+      if (token !== loadToken) return;
+      if (anchor) {
+        const rec = INDEX.get(`${meta.id}/${secId}/${anchor}`);
+        if (rec) {
+          current = rec.section;
+          renderSection(rec.section);
+          const el = document.getElementById(`i-${meta.id}-${secId}-${anchor}`);
+          if (el) { el.classList.add("revealed", "flash"); el.scrollIntoView({ block: "center" }); }
+          return;
+        }
       }
+      const s = book.sections.find((x) => x.id === secId) || book.sections[0];
+      current = s;
+      if (mode === "random") await renderRandom();
+      else renderSection(s);
+    } catch (err) {
+      if (token === loadToken) $("#view").innerHTML = `<div class="empty">加载失败：${esc(err.message)}</div>`;
     }
-    const s = book.sections.find((x) => x.id === secId) || book.sections[0];
-    if (!s) { current = null; renderEmptyBook(book); return; }
-    current = s;
-    if (mode === "random") renderRandom();
-    else renderSection(s);
   }
 
   /* ---------------- 交互 ---------------- */
-  document.addEventListener("click", (e) => {
+  document.addEventListener("click", async (e) => {
     const srcBtn = e.target.closest("[data-src-toggle]");
     if (srcBtn) {
       const key = srcBtn.dataset.srcToggle;
-      if (srcSet.has(key)) srcSet.delete(key);
-      else srcSet.add(key);
+      if (srcSet.has(key)) srcSet.delete(key); else srcSet.add(key);
       paintCard(srcBtn.closest(".item"));
       return;
     }
 
     const copyBtn = e.target.closest("[data-copy]");
-    if (copyBtn) {
-      copyText(SRC.get(copyBtn.dataset.copy) || "", copyBtn);
+    if (copyBtn) { copyText(SRC.get(copyBtn.dataset.copy) || "", copyBtn); return; }
+
+    const chip = e.target.closest("[data-filter]");
+    if (chip) {
+      typeFilter = chip.dataset.filter;
+      if (current) renderSection(current);
       return;
     }
 
@@ -294,9 +383,11 @@
     if (bookBtn) {
       const b = BOOKS.find((x) => x.id === bookBtn.dataset.book);
       if (b) {
-        const first = b.sections[0];
-        location.hash = first ? `#/${b.id}/${encodeURIComponent(first.id)}` : `#/${b.id}`;
-        if (!first) { setBook(b); current = null; renderEmptyBook(b); }
+        $("#sidebar").classList.remove("open");
+        if (!b.count) { setBook(b); current = null; renderEmptyBook(b); location.hash = `#/${b.id}`; return; }
+        const first = b.chapters[0].sections[0];
+        location.hash = `#/${b.id}/${encodeURIComponent(first.id)}`;
+        if (decodeURIComponent(location.hash) === `#/${b.id}/${first.id}`) route();
       }
       return;
     }
@@ -306,6 +397,7 @@
       const card = reveal.closest(".item");
       card.classList.add("revealed");
       reveal.remove();
+      if (!card.classList.contains("math-done")) { typeset(card); card.classList.add("math-done"); }
     }
   });
 
@@ -331,12 +423,10 @@
       query = v.trim();
       if (!query) { route(); return; }
       renderSearch(query);
-    }, 140);
+    }, 160);
   });
 
-  function firstHidden() {
-    return document.querySelector(".item:not(.revealed)");
-  }
+  function firstHidden() { return document.querySelector(".item:not(.revealed)"); }
 
   document.addEventListener("keydown", (e) => {
     if (e.target.matches("input, textarea")) {
@@ -354,7 +444,12 @@
     }
     if (e.key === " ") {
       const card = firstHidden();
-      if (card) { e.preventDefault(); card.classList.add("revealed"); card.querySelector(".reveal")?.remove(); }
+      if (card) {
+        e.preventDefault();
+        card.classList.add("revealed");
+        card.querySelector(".reveal")?.remove();
+        if (!card.classList.contains("math-done")) { typeset(card); card.classList.add("math-done"); }
+      }
       return;
     }
     if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
@@ -374,8 +469,7 @@
     document.querySelectorAll(".item").forEach(paintCard);
     try {
       const u = new URL(location.href);
-      if (v) u.searchParams.set("src", "1");
-      else u.searchParams.delete("src");
+      if (v) u.searchParams.set("src", "1"); else u.searchParams.delete("src");
       history.replaceState(null, "", u);
     } catch (_) { /* file:// 等场景忽略 */ }
   }
@@ -387,10 +481,14 @@
   $("#menu-btn").addEventListener("click", () => $("#sidebar").classList.toggle("open"));
   $("#toc").addEventListener("click", () => $("#sidebar").classList.remove("open"));
 
-  window.addEventListener("hashchange", () => { query = ""; searchEl.value = ""; route(); });
+  window.addEventListener("hashchange", () => {
+    query = "";
+    searchEl.value = "";
+    route();
+  });
 
   /* ---------------- 启动 ---------------- */
-  load()
+  loadBooks()
     .then(() => {
       const qs = new URLSearchParams(location.search);
       const qm = qs.get("mode");
@@ -398,8 +496,13 @@
       document.querySelectorAll(".mode[data-mode]").forEach((x) =>
         x.classList.toggle("active", x.dataset.mode === mode));
       if (qs.get("src") === "1") setSrcAll(true);
+      const qq = qs.get("q");
+      if (qq) { searchEl.value = qq; query = qq; renderSearch(qq); return; }
       const qb = qs.get("book");
-      if (qb) { const b = BOOKS.find((x) => x.id === qb); if (b) currentBook = b; }
+      if (qb) {
+        const b = BOOKS.find((x) => x.id === qb);
+        if (b && !location.hash) { location.hash = `#/${b.id}`; return; }
+      }
       route();
     })
     .catch((err) => {

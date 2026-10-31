@@ -19,18 +19,20 @@
 ## 功能
 
 - 阅读 / 自测 / 随机三种模式；自测时先隐藏陈述，按空格展开。
-- 搜索跨书全站，结果显示来源书与节。
+- **类型筛选**：每节顶部可按 定理 / 定义 / 例 / 其他 过滤，按钮上带条目数。
+- 搜索跨书全站，结果显示来源书名、节号与正文摘要；匹配时忽略 `\` 与 `$`，可以直接搜 `limsup` 这类记号。搜索结果可用 `?q=` 分享。
 - **源码切换**：条目右上角“源码”换成 Markdown/LaTeX 原文，可整段选中复制；顶栏按钮或 `s` 键整页切换。
 - 深链接 `#/书/节`、`#/书/节/锚点`；快捷键 `/`、`空格`、`←→`、`r`、`s`。
+- 公式按视口懒渲染，长节（60+ 条）首屏只渲染可见部分。
 
 ## 用法
 
 ```powershell
-python tools/build.py                 # 生成 site/data/index.json
+python tools/build.py                 # 生成 site/data/：books.json + <书>.json + search.json
 python -m http.server 8000 -d site    # 本地预览 http://127.0.0.1:8000/
 ```
 
-`site/` 下没有构建步骤，改完 JSON 直接刷新即可；推 `main` 后 GitHub Actions 自动发布。
+数据按书拆分：`books.json` 只含目录与条目数（首屏用），`<书>.json` 在切换书籍时按需加载，`search.json` 在第一次搜索时才加载。推 `main` 后 GitHub Actions 自动发布。
 
 ## 目录结构
 

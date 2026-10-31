@@ -1,24 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""把 content/<书>/*.md 解析成 site/data/index.json（支持多本书）。
+"""把 content/<书>/*.md 解析成站点数据（按书拆分，避免首屏加载全量）。
 
-目录约定：
+输出（site/data/）：
+    books.json       目录元数据：书、章、节、条目数（不含正文）
+    <book>.json      单本书的全部章节与条目（含渲染 HTML 与 Markdown 源码）
+    search.json      检索索引：[书, 节, 锚点, 类型, 编号, 标题, 正文摘要]
 
-    content/
-      fanyan/
-        _book.md            # 书级元数据（front matter）
-        01-01-度量空间.md    # 每节一个文件
-      shibian/
-        _book.md
-        01-01-势.md
-
-_book.md：
+content/<书>/_book.md：
 
     ---
     id: fanyan
     title: 泛函分析
+    short: 泛函          # 侧栏短名，可省
     author: 王凯
     source: 泛函王凯.pdf
+    note: 书页说明，可省
     order: 1
     ---
 
@@ -30,6 +27,7 @@ _book.md：
 """
 from __future__ import annotations
 
+import html as html_lib
 import json
 import re
 import sys
@@ -37,7 +35,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
-OUT = ROOT / "site" / "data" / "index.json"
+DATA = ROOT / "site" / "data"
 
 TYPE_RE = re.compile(
     r"^###\s+(?P<type>\S+?)\s*(?P<number>\d+(?:\.\d+)*)?\s*(?:[（(](?P<title>.*)[）)])?\s*@(?P<page>\d+)\s*$"
@@ -86,7 +84,16 @@ def to_paragraphs(body: str) -> list[str]:
 
 def slugify(item: dict) -> str:
     base = f"{item['type']}-{item['number']}" if item["number"] else f"{item['type']}-{item['title'] or 'x'}"
-    return re.sub(r"[^\w\u4e00-\u9fff.-]+", "-", base).strip("-")
+    return re.sub(r"[^\w\u4e00-\u9fff.′]+", "-", base).strip("-")
+
+
+def plain_text(html: str, limit: int = 240) -> str:
+    t = re.sub(r"<[^>]+>", " ", html)
+    t = html_lib.unescape(t)
+    # 摘要里去掉块级公式，避免整段 LaTeX 占满结果；行内公式保留
+    t = re.sub(r"\$\$.*?\$\$", " … ", t, flags=re.S)
+    t = re.sub(r"\s+", " ", t).strip()
+    return t[:limit]
 
 
 def check_math(text: str, where: str, problems: list[str]) -> None:
@@ -166,17 +173,17 @@ def load_book(book_dir: Path, problems: list[str]) -> dict | None:
                 "title": (m.group("title") or "").strip(),
                 "page": int(m.group("page")),
             }
-            html = "".join(f"<p>{inline(p)}</p>" for p in to_paragraphs(body_txt))
+            paras = to_paragraphs(body_txt)
+            html = "".join(f"<p>{inline(p)}</p>" for p in paras)
             if not html:
                 problems.append(f"{path.name}: {typ} {item['number'] or item['title']} 正文为空")
             item["html"] = html
-            # 原始 Markdown 源码，供页面切换查看/复制
-            item["src"] = "\n\n".join(to_paragraphs(body_txt))
+            item["src"] = "\n\n".join(paras)
+            check_math(html, f"{path.name} {typ} {item['number'] or item['title']}", problems)
             base = slugify(item)
             k = used_anchors.get(base, 0) + 1
             used_anchors[base] = k
             item["anchor"] = base if k == 1 else f"{base}-{k}"
-            check_math(html, f"{path.name} {typ} {item['number'] or item['title']}", problems)
             section["items"].append(item)
 
         ch["sections"].append(section)
@@ -190,6 +197,11 @@ def load_book(book_dir: Path, problems: list[str]) -> dict | None:
     ]
     book["empty"] = not book["chapters"]
     return book
+
+
+def write_json(path: Path, obj) -> int:
+    path.write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    return path.stat().st_size
 
 
 def main() -> int:
@@ -219,19 +231,45 @@ def main() -> int:
                     seen[key] = s["id"]
                     total += 1
 
-    data = {
-        "site": {"title": "数学命题索引", "subtitle": "教材命题 · 只含陈述，便于自测"},
-        "books": books,
-        "count": total,
-    }
+    DATA.mkdir(parents=True, exist_ok=True)
+    stale = DATA / "index.json"
+    if stale.exists():
+        stale.unlink()
 
-    OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(data, ensure_ascii=False, indent=1), encoding="utf-8")
-
-    print(f"书 {len(books)} 本，条目 {total} 个 → {OUT.relative_to(ROOT)}")
+    search: list[list] = []
+    meta_books: list[dict] = []
     for b in books:
-        n = sum(len(s["items"]) for c in b["chapters"] for s in c["sections"])
-        print(f"  {b['id']:10s} {b['title']}  {n} 条 / {len(b['chapters'])} 章")
+        count = 0
+        chapters_meta = []
+        for ch in b["chapters"]:
+            secs = []
+            for s in ch["sections"]:
+                for it in s["items"]:
+                    search.append([
+                        b["id"], s["id"], it["anchor"], it["type"],
+                        it["number"], it["title"], plain_text(it["html"]),
+                    ])
+                    count += 1
+                secs.append({"id": s["id"], "title": s["title"], "pages": s["pages"], "count": len(s["items"])})
+            chapters_meta.append({"no": ch["no"], "title": ch["title"], "sections": secs})
+        size = write_json(DATA / f"{b['id']}.json", {"id": b["id"], "chapters": b["chapters"]})
+        meta_books.append({
+            "id": b["id"], "title": b["title"], "short": b["short"], "author": b["author"],
+            "note": b["note"], "order": b["order"], "count": count, "chapters": chapters_meta,
+            "size": size,
+        })
+
+    books_size = write_json(DATA / "books.json", {
+        "site": {"title": "数学命题索引", "subtitle": "教材命题 · 只含陈述，便于自测"},
+        "books": meta_books,
+        "count": total,
+    })
+    search_size = write_json(DATA / "search.json", search)
+
+    print(f"书 {len(books)} 本，条目 {total} 个 → {DATA.relative_to(ROOT)}")
+    print(f"  books.json {books_size // 1024} KB，search.json {search_size // 1024} KB")
+    for b in meta_books:
+        print(f"  {b['id']:12s} {b['title']:12s} {b['count']:4d} 条  {b['size'] // 1024:4d} KB")
     if problems:
         print(f"\n发现问题 {len(problems)} 处：")
         for p in problems:
