@@ -85,8 +85,8 @@
   function buildBooks() {
     $("#books").innerHTML = BOOKS.map((b) => {
       const n = bookItems(b).length;
-      return `<button class="book-btn" type="button" data-book="${esc(b.id)}">
-        ${esc(b.title)}<span class="cnt">${n || "待录入"}</span></button>`;
+      return `<button class="book-btn" type="button" data-book="${esc(b.id)}" title="${esc(b.title)}">
+        ${esc(b.short || b.title)}<span class="cnt">${n || "待录入"}</span></button>`;
     }).join("");
   }
 
