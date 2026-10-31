@@ -589,6 +589,7 @@
       return;
     }
     if (e.key === " ") {
+      if (e.repeat) return;
       const card = spaceTarget();
       if (!card) return;
       e.preventDefault();
@@ -646,6 +647,8 @@
   });
   document.addEventListener("click", (e) => {
     if (!e.target.closest(".look")) lookPanel.hidden = true;
+    const b = e.target.closest("button");
+    if (b && !b.closest("#look-panel")) b.blur();
   });
 
   const srcBtn = $("#src-btn");
