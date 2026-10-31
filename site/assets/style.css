@@ -20,7 +20,7 @@
   --sans: "Source Han Sans SC", "Noto Sans CJK SC", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #14140f;
     --panel: #1c1c17;
     --ink: #eae6dc;
@@ -37,6 +37,23 @@
     --cex: #e3899d;
     --remark: #b6b2a6;
   }
+}
+:root[data-theme="dark"] {
+  --bg: #14140f;
+  --panel: #1c1c17;
+  --ink: #eae6dc;
+  --muted: #a29b8c;
+  --line: #33322b;
+  --accent: #e08b76;
+  --accent-soft: #33221d;
+  --def: #7db3dd;
+  --thm: #e08b76;
+  --prop: #a8c977;
+  --lem: #b9a2e0;
+  --cor: #6fc6b8;
+  --ex: #d9b968;
+  --cex: #e3899d;
+  --remark: #b6b2a6;
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; height: 100%; }
@@ -341,3 +358,58 @@ kbd {
   #view { padding: 18px 16px 80px; }
   #topbar { padding: 8px 14px; }
 }
+
+/* ---------- 紧凑化 ---------- */
+#view { padding: 14px 22px 64px; max-width: 820px; }
+.sec-head {
+  position: sticky; top: 46px; z-index: 3;
+  margin: 0 -2px 10px; padding: 8px 2px 8px;
+  background: color-mix(in srgb, var(--bg) 94%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.sec-head h1 { font-size: 21px; margin: 0 0 3px; }
+.sec-head .meta { font-size: 12px; gap: 10px; }
+.book-note { margin: 6px 0 0; padding: 5px 8px; font-size: 12px; }
+.filters { margin-top: 6px; gap: 5px; }
+.chip { padding: 2px 9px; font-size: 11.5px; }
+.item { padding: 10px 14px 8px; margin: 0 0 6px; border-radius: 8px; }
+.item-head { margin-bottom: 3px; gap: 6px; }
+.badge { font-size: 11px; padding: 1px 6px; }
+.num { font-size: 13.5px; }
+.title { font-size: 14.5px; }
+.stmt { font-size: 15px; line-height: 1.85; }
+.stmt p { margin: 0 0 .45em; }
+.mode { padding: 4px 10px; font-size: 12px; }
+
+/* ---------- 单条卡片视图 ---------- */
+.card-bar { display: flex; align-items: center; gap: 10px; margin: 4px 0 10px; }
+.card-nav {
+  border: 1px solid var(--line); background: var(--panel); color: var(--ink);
+  border-radius: 8px; padding: 4px 12px; font: inherit; font-size: 13px; cursor: pointer;
+}
+.card-nav:hover:not(:disabled) { border-color: var(--accent); color: var(--accent); }
+.card-nav:disabled { opacity: .35; cursor: default; }
+.card-count { font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.card-item { padding: 18px 20px 16px; }
+.card-item .stmt { font-size: 16px; line-height: 1.95; }
+.card-hint { font-size: 12.5px; color: var(--muted); margin-top: 10px; }
+
+.card-mode .book-note { display: none; }
+.card-mode .sec-head h1 { font-size: 18px; margin-bottom: 2px; }
+.card-mode #view { max-width: 780px; }
+.card-mode .filters { margin-top: 4px; }
+
+/* 深色下实心按钮改用深色文字，保证对比度 */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .mode.active,
+  :root:not([data-theme="light"]) .book-btn.active,
+  :root:not([data-theme="light"]) .chip.active,
+  :root:not([data-theme="light"]) .copy-btn.copied,
+  :root:not([data-theme="light"]) .src-copy.copied { color: #14140f; }
+}
+:root[data-theme="dark"] .mode.active,
+:root[data-theme="dark"] .book-btn.active,
+:root[data-theme="dark"] .chip.active,
+:root[data-theme="dark"] .copy-btn.copied,
+:root[data-theme="dark"] .src-copy.copied { color: #14140f; }

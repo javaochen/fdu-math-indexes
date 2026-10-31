@@ -14,6 +14,7 @@
   let srcSet = new Set();
   let srcAll = false;
   let mode = "read";
+  let cardIdx = 0;
   let typeFilter = "all";
   let currentMeta = null;
   let current = null;
@@ -218,6 +219,7 @@
 
   function sectionHead(s, items) {
     document.body.classList.remove("home-mode");
+    document.body.classList.remove("card-mode");
     const b = s.book;
     const chips = FILTERS.map(([key, label, types]) => {
       const n = types ? s.items.filter((it) => types.includes(it.type)).length : s.items.length;
@@ -246,6 +248,31 @@
     $("#view").innerHTML = sectionHead(s, items) + body;
     typesetLazy($("#view"));
     $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <b>${esc(b.short || b.title)}</b> · ${esc(s.id)} ${esc(s.title)}`;
+    markActive();
+    window.scrollTo({ top: 0 });
+  }
+
+  function renderCard(idx) {
+    if (!current) { route(); return; }
+    const items = filterItems(current.items);
+    if (!items.length) { renderSection(current); return; }
+    cardIdx = Math.max(0, Math.min(items.length - 1, idx | 0));
+    const it = items[cardIdx];
+    const b = current.book;
+    const head = sectionHead(current, items);
+    document.body.classList.add("card-mode");
+    $("#view").innerHTML = head + `
+      <div class="card-view">
+        <div class="card-bar">
+          <button class="card-nav" type="button" data-card="-1" ${cardIdx === 0 ? "disabled" : ""}>← 上一条</button>
+          <span class="card-count">${cardIdx + 1} / ${items.length}</span>
+          <button class="card-nav" type="button" data-card="1" ${cardIdx === items.length - 1 ? "disabled" : ""}>下一条 →</button>
+        </div>
+        ${itemHtml({ ...it, bookId: b.id, secId: current.id }, { hidden: true })}
+        <p class="card-hint">← → 翻动 · 空格 显示/隐藏 · Esc 回到阅读</p>
+      </div>`;
+    typesetLazy($("#view"));
+    $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <b>${esc(b.short || b.title)}</b> · ${esc(current.id)} 卡片`;
     markActive();
     window.scrollTo({ top: 0 });
   }
@@ -396,7 +423,8 @@
       }
       const s = book.sections.find((x) => x.id === secId) || book.sections[0];
       current = s;
-      if (mode === "random") await renderRandom();
+      if (mode === "card") renderCard(0);
+      else if (mode === "random") await renderRandom();
       else renderSection(s);
     } catch (err) {
       if (token === loadToken) $("#view").innerHTML = `<div class="empty">加载失败：${esc(err.message)}</div>`;
@@ -419,10 +447,13 @@
     const copySrc = e.target.closest("[data-copy-src]");
     if (copySrc) { copyText(SRC.get(copySrc.dataset.copySrc) || "", copySrc); return; }
 
+    const cardBtn = e.target.closest("[data-card]");
+    if (cardBtn) { renderCard(cardIdx + Number(cardBtn.dataset.card)); return; }
+
     const chip = e.target.closest("[data-filter]");
     if (chip) {
       typeFilter = chip.dataset.filter;
-      if (current) renderSection(current);
+      if (current) { if (mode === "card") renderCard(0); else renderSection(current); }
       return;
     }
 
@@ -456,8 +487,9 @@
       document.querySelectorAll(".mode[data-mode]").forEach((x) => x.classList.toggle("active", x.dataset.mode === m));
       if (m === "random") renderRandom();
       else if (query) renderSearch(query);
-      else if (current) renderSection(current);
-      else route();
+      else if (!current) route();
+      else if (m === "card") renderCard(0);
+      else renderSection(current);
     });
   });
 
@@ -475,12 +507,29 @@
 
   function firstHidden() { return document.querySelector(".item:not(.revealed)"); }
 
+  function jumpSection(dir) {
+    if (!current || !currentMeta) return;
+    const book = CACHE.get(currentMeta.id);
+    if (!book) return;
+    const i = book.sections.findIndex((s) => s.id === current.id);
+    const j = Math.max(0, Math.min(book.sections.length - 1, i + dir));
+    if (j !== i) location.hash = `#/${currentMeta.id}/${encodeURIComponent(book.sections[j].id)}`;
+  }
+
   document.addEventListener("keydown", (e) => {
     if (e.target.matches("input, textarea")) {
       if (e.key === "Escape") { searchEl.value = ""; query = ""; searchEl.blur(); route(); }
       return;
     }
-    if (e.key === "Escape") { $("#modal").hidden = true; return; }
+    if (e.key === "Escape") {
+      $("#modal").hidden = true;
+      if (mode === "card" && current) {
+        mode = "read";
+        document.querySelectorAll(".mode[data-mode]").forEach((x) => x.classList.toggle("active", x.dataset.mode === "read"));
+        renderSection(current);
+      }
+      return;
+    }
     if (e.key === "/") { e.preventDefault(); searchEl.focus(); return; }
     if (e.key === "s") { e.preventDefault(); setSrcAll(!srcAll); return; }
     if (e.key === "r") {
@@ -500,6 +549,8 @@
       return;
     }
     if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+      if (e.shiftKey) { e.preventDefault(); jumpSection(e.key === "ArrowRight" ? 1 : -1); return; }
+      if (mode === "card" && current) { e.preventDefault(); renderCard(cardIdx + (e.key === "ArrowRight" ? 1 : -1)); return; }
       const cards = [...document.querySelectorAll(".item")];
       if (!cards.length) return;
       const vis = cards.findIndex((c) => c.getBoundingClientRect().top > 40);
@@ -507,6 +558,20 @@
       cards[i].scrollIntoView({ block: "center", behavior: "smooth" });
       cards[i].classList.add("flash");
     }
+  });
+
+  const themeBtn = $("#theme-btn");
+  const THEMES = ["auto", "light", "dark"];
+  const THEME_LABEL = { auto: "主题：自动", light: "主题：浅色", dark: "主题：深色" };
+  function applyTheme(t) {
+    if (t === "auto") delete document.documentElement.dataset.theme;
+    else document.documentElement.dataset.theme = t;
+    try { localStorage.setItem("fa.theme", t); } catch (_) { /* 忽略 */ }
+    themeBtn.textContent = THEME_LABEL[t] || THEME_LABEL.auto;
+  }
+  themeBtn.addEventListener("click", () => {
+    const cur = document.documentElement.dataset.theme || "auto";
+    applyTheme(THEMES[(THEMES.indexOf(cur) + 1) % THEMES.length]);
   });
 
   const srcBtn = $("#src-btn");
@@ -546,9 +611,13 @@
     .then(() => {
       const qs = new URLSearchParams(location.search);
       const qm = qs.get("mode");
-      if (["read", "test", "random"].includes(qm)) mode = qm;
+      if (["read", "card", "test", "random"].includes(qm)) mode = qm;
       document.querySelectorAll(".mode[data-mode]").forEach((x) =>
         x.classList.toggle("active", x.dataset.mode === mode));
+      let savedTheme = "auto";
+      try { savedTheme = localStorage.getItem("fa.theme") || "auto"; } catch (_) { /* 忽略 */ }
+      const qt = qs.get("theme");
+      applyTheme(THEMES.includes(qt) ? qt : savedTheme);
       if (qs.get("src") === "1") setSrcAll(true);
       const qq = qs.get("q");
       if (qq) { searchEl.value = qq; query = qq; renderSearch(qq); return; }
