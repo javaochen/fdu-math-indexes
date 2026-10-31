@@ -175,6 +175,7 @@
           <span>${s.items.length} 个条目</span>
           ${s.pages ? `<span>原书 p.${esc(s.pages)}</span>` : ""}
         </div>
+        ${b.note ? `<p class="book-note">${esc(b.note)}</p>` : ""}
       </div>`;
     const body = s.items.map((it) => itemHtml({ ...it, bookId: b.id }, { hidden: mode === "test" })).join("");
     $("#view").innerHTML = head + body;

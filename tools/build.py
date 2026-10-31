@@ -112,6 +112,7 @@ def load_book(book_dir: Path, problems: list[str]) -> dict | None:
         "title": meta.get("title") or book_dir.name,
         "author": meta.get("author", ""),
         "source": meta.get("source", ""),
+        "note": meta.get("note", ""),
         "order": int(meta.get("order") or 99),
         "chapters": [],
     }
