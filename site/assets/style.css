@@ -413,3 +413,5 @@ kbd {
 :root[data-theme="dark"] .chip.active,
 :root[data-theme="dark"] .copy-btn.copied,
 :root[data-theme="dark"] .src-copy.copied { color: #14140f; }
+
+.card-mode .filters [data-defs] { display: none; }

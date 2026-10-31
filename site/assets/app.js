@@ -15,6 +15,7 @@
   let srcAll = false;
   let mode = "read";
   let cardIdx = 0;
+  let defsOpen = false;
   let typeFilter = "all";
   let currentMeta = null;
   let current = null;
@@ -187,7 +188,7 @@
         </span>
       </div>`;
     const inner = showSrc ? srcBlock(key) : it.html;
-    const hide = opts.hidden && !!it.title;
+    const hide = opts.hidden && (opts.force || !!it.title);
     const body = hide
       ? `<div class="stmt hidden-stmt">${inner}</div>
          <div class="reveal">点击或按 <kbd>空格</kbd> 显示陈述</div>`
@@ -225,6 +226,7 @@
       const n = types ? s.items.filter((it) => types.includes(it.type)).length : s.items.length;
       return `<button class="chip${typeFilter === key ? " active" : ""}" type="button" data-filter="${key}">${label}<em>${n}</em></button>`;
     }).join("");
+    const defsBtn = `<button class="chip${defsOpen ? " active" : ""}" type="button" data-defs>${defsOpen ? "收起定义" : "展开定义"}</button>`;
     return `
       <div class="sec-head">
         <h1>${esc(s.id)}&nbsp;&nbsp;${esc(s.title)}</h1>
@@ -235,7 +237,7 @@
           ${s.pages ? `<span>原书 p.${esc(s.pages)}</span>` : ""}
         </div>
         ${b.note ? `<p class="book-note">${esc(b.note)}</p>` : ""}
-        <div class="filters">${chips}</div>
+        <div class="filters">${chips}${defsBtn}</div>
       </div>`;
   }
 
@@ -243,7 +245,7 @@
     const b = s.book;
     const items = filterItems(s.items);
     const body = items.length
-      ? items.map((it) => itemHtml({ ...it, bookId: b.id, secId: s.id }, { hidden: mode === "test" })).join("")
+      ? items.map((it) => itemHtml({ ...it, bookId: b.id, secId: s.id }, { hidden: !defsOpen && it.type === "定义", force: true })).join("")
       : `<div class="empty">这一节没有该类型的条目。</div>`;
     $("#view").innerHTML = sectionHead(s, items) + body;
     typesetLazy($("#view"));
@@ -450,6 +452,13 @@
     const cardBtn = e.target.closest("[data-card]");
     if (cardBtn) { renderCard(cardIdx + Number(cardBtn.dataset.card)); return; }
 
+    const defsBtn = e.target.closest("[data-defs]");
+    if (defsBtn) {
+      defsOpen = !defsOpen;
+      if (current) { if (mode === "card") renderCard(cardIdx); else renderSection(current); }
+      return;
+    }
+
     const chip = e.target.closest("[data-filter]");
     if (chip) {
       typeFilter = chip.dataset.filter;
@@ -611,7 +620,8 @@
     .then(() => {
       const qs = new URLSearchParams(location.search);
       const qm = qs.get("mode");
-      if (["read", "card", "test", "random"].includes(qm)) mode = qm;
+      if (["read", "card", "random"].includes(qm)) mode = qm;
+      if (qm === "test") mode = "read";
       document.querySelectorAll(".mode[data-mode]").forEach((x) =>
         x.classList.toggle("active", x.dataset.mode === mode));
       let savedTheme = "auto";
