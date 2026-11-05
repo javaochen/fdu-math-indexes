@@ -422,8 +422,12 @@
   }
 
   /* ---------------- 路由 ---------------- */
+  /* 旧 id 别名：fanyan 是早期拼写错误（泛函 = fanhan），保留以兼容已分享的链接 */
+  const BOOK_ALIAS = { fanyan: "fanhan" };
+
   function parseHash() {
     const parts = decodeURIComponent(location.hash.replace(/^#\/?/, "")).split("/").filter(Boolean);
+    if (parts[0] && BOOK_ALIAS[parts[0]]) parts[0] = BOOK_ALIAS[parts[0]];
     const book = BOOKS.find((b) => b.id === parts[0]);
     if (book) return { bookId: book.id, secId: parts[1], anchor: parts[2] };
     return { bookId: (BOOKS[0] || {}).id, secId: parts[0], anchor: parts[1] };

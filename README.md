@@ -44,8 +44,8 @@ python -m http.server 8000 -d site    # 本地预览 http://127.0.0.1:8000/
 
 ```
 content/
-  fanyan/_book.md              书级元数据（id / title / author / source / order）
-  fanyan/01-01-度量空间.md      每节一个文件
+  fanhan/_book.md              书级元数据（id / title / author / source / order）
+  fanhan/01-01-度量空间.md      每节一个文件
   shibian/_book.md
 tools/
   build.py                     解析 + 校验 + 生成按书拆分的 JSON

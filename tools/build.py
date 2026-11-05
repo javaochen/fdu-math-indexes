@@ -10,7 +10,7 @@
 content/<书>/_book.md：
 
     ---
-    id: fanyan
+    id: fanhan
     title: 泛函分析
     short: 泛函          # 侧栏短名，可省
     author: 王凯
