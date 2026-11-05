@@ -381,6 +381,41 @@
     window.scrollTo({ top: 0 });
   }
 
+  function renderBookHome(meta) {
+    document.body.classList.remove("home-mode", "card-mode");
+    const secs = (meta.chapters || []).flatMap((c) => c.sections);
+    const first = secs[0];
+    const blocks = (meta.chapters || []).map((ch) => `
+      <section class="bh-chap">
+        <h2 class="bh-chap-head"><span class="bh-chap-no">${esc(String(ch.no))}</span>
+          <span class="bh-chap-name">${esc(ch.title || "未命名章")}</span>
+          <span class="bh-chap-count">${ch.sections.length} 节</span></h2>
+        <ul class="bh-secs">
+          ${ch.sections.map((s) => `<li><a href="#/${esc(meta.id)}/${esc(s.id)}">
+            <span class="bh-sec-id">${esc(s.id)}</span>
+            <span class="bh-sec-title">${esc(s.title)}</span>
+            <span class="bh-sec-count">${s.count}</span></a></li>`).join("")}
+        </ul>
+      </section>`).join("");
+    $("#view").innerHTML = `
+      <div class="book-home">
+        <header class="bh-head">
+          ${avatar(meta, "avatar-xl")}
+          <div class="bh-info">
+            <h1>${esc(meta.title)}</h1>
+            <div class="bh-meta">${esc(meta.author || "作者待确认")} · ${(meta.chapters || []).length} 章 · ${secs.length} 节 · ${meta.count || 0} 条</div>
+            ${meta.note ? `<p class="book-note">${esc(meta.note)}</p>` : ""}
+          </div>
+        </header>
+        ${first ? `<p class="bh-start"><a href="#/${esc(meta.id)}/${esc(first.id)}">开始阅读 →</a></p>` : `<div class="empty">这本书还没有录入条目。</div>`}
+        <div class="bh-index">${blocks}</div>
+      </div>`;
+    $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <b>${esc(meta.short || meta.title)}</b>`;
+    document.querySelectorAll(".book-btn").forEach((x) => x.classList.toggle("active", x.dataset.book === meta.id));
+    document.querySelectorAll(".sec-link").forEach((x) => x.classList.remove("active"));
+    window.scrollTo({ top: 0 });
+  }
+
   function renderEmptyBook(meta) {
     document.body.classList.remove("home-mode");
     $("#view").innerHTML = `
@@ -461,7 +496,7 @@
     const total = BOOKS.reduce((a, b) => a + b.count, 0);
     const cards = BOOKS.map((b) => {
       const first = b.chapters && b.chapters[0] && b.chapters[0].sections[0];
-      const href = b.count && first ? `#/${b.id}/${encodeURIComponent(first.id)}` : `#/${b.id}`;
+      const href = `#/${b.id}`;
       const secCount = (b.chapters || []).reduce((a, c) => a + c.sections.length, 0);
       return `<a class="book-card${b.count ? "" : " empty"}" href="${href}" title="${esc(b.title)} ${b.author ? "· " + esc(b.author) : ""}">
         <div class="bc-head">${avatar(b)}<span class="bc-title">${esc(b.title)}</span></div>
@@ -513,6 +548,7 @@
     const { bookId, secId, anchor } = parseHash();
     const meta = BOOKS.find((b) => b.id === bookId) || BOOKS[0];
     setBook(meta);
+    if (!secId) { current = null; renderBookHome(meta); return; }
     if (!meta.count) { current = null; renderEmptyBook(meta); return; }
     showLoading();
     try {
@@ -587,10 +623,14 @@
       const b = BOOKS.find((x) => x.id === bookBtn.dataset.book);
       if (b) {
         $("#sidebar").classList.remove("open");
-        if (!b.count) { setBook(b); current = null; renderEmptyBook(b); location.hash = `#/${b.id}`; return; }
-        const first = b.chapters[0].sections[0];
-        location.hash = `#/${b.id}/${encodeURIComponent(first.id)}`;
-        if (decodeURIComponent(location.hash) === `#/${b.id}/${first.id}`) route();
+        const target = `#/${b.id}`;
+        if (location.hash === target) {
+          current = null;
+          setBook(b);
+          renderBookHome(b);
+        } else {
+          location.hash = target;
+        }
       }
       return;
     }
