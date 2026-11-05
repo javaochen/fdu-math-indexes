@@ -128,6 +128,7 @@ def load_book(book_dir: Path, problems: list[str]) -> dict | None:
         "title": meta.get("title") or book_dir.name,
         "short": meta.get("short") or meta.get("title") or book_dir.name,
         "author": meta.get("author", ""),
+        "author_img": meta.get("author_img", ""),
         "source": meta.get("source", ""),
         "note": meta.get("note", ""),
         "order": int(meta.get("order") or 99),
@@ -269,6 +270,7 @@ def main() -> int:
         size = write_json(DATA / f"{b['id']}.json", {"id": b["id"], "chapters": b["chapters"]})
         meta_books.append({
             "id": b["id"], "title": b["title"], "short": b["short"], "author": b["author"],
+        "author_img": b["author_img"],
             "note": b["note"], "order": b["order"], "count": count, "chapters": chapters_meta,
             "size": size,
         })

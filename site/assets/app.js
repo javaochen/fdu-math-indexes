@@ -28,6 +28,20 @@
   /* ---------------- 工具 ---------------- */
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const norm = (s) => String(s).toLowerCase().replace(/\\/g, "").replace(/\$/g, "").replace(/\s+/g, " ");
+
+  // 作者头像：有图用图，无图用姓氏首字做字母徽标
+  function authorInitial(name) {
+    const first = String(name || "").split(/[、，,·\s]/)[0].trim();
+    return first ? first.slice(0, 1) : "?";
+  }
+  function avatar(b, cls = "") {
+    const src = b && b.author_img ? b.author_img : "";
+    const name = (b && b.author) || "";
+    return `<span class="avatar ${cls}" title="${esc(name)}" aria-label="${esc(name)}">
+      <span class="avatar-txt">${esc(authorInitial(name))}</span>
+      ${src ? `<img src="${esc(src)}" alt="" loading="lazy" onerror="this.remove()">` : ""}
+    </span>`;
+  }
   const FILTERS = [
     ["all", "全部", null],
     ["定理", "定理", ["定理"]],
@@ -317,7 +331,7 @@
       <div class="sec-head">
         <h1>${esc(s.id)}&nbsp;&nbsp;${esc(s.title)}</h1>
         <div class="meta">
-          <span>${esc(b.title)}${b.author ? ` · ${esc(b.author)}` : ""}</span>
+          ${avatar(b, "avatar-sm")}<span>${esc(b.title)}${b.author ? ` · ${esc(b.author)}` : ""}</span>
           <span>${esc(s.chapterTitle)}</span>
           <span>${s.items.length} 个条目${items.length !== s.items.length ? `（当前显示 ${items.length}）` : ""}</span>
           ${s.pages ? `<span>原书 p.${esc(s.pages)}</span>` : ""}
@@ -449,7 +463,7 @@
       const href = b.count && first ? `#/${b.id}/${encodeURIComponent(first.id)}` : `#/${b.id}`;
       const secCount = (b.chapters || []).reduce((a, c) => a + c.sections.length, 0);
       return `<a class="book-card${b.count ? "" : " empty"}" href="${href}">
-        <div class="bc-head"><span class="bc-title">${esc(b.title)}</span>
+        <div class="bc-head">${avatar(b)}<span class="bc-title">${esc(b.title)}</span>
           <span class="bc-count">${b.count ? `${b.count} 条` : "待录入"}</span></div>
         <div class="bc-author">${esc(b.author || "")}</div>
         <div class="bc-meta">${b.chapters.length} 章 · ${secCount} 节</div>
