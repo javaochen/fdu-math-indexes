@@ -23,6 +23,7 @@
   let query = "";
   let mathObserver = null;
   let loadToken = 0;
+  const collapsedChapters = new Set(); // `${bookId}/${chapterNo}`
 
   /* ---------------- 工具 ---------------- */
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
@@ -143,15 +144,48 @@
       nav.innerHTML = `<div class="toc-empty">本书尚未录入条目。</div>`;
       return;
     }
-    let html = "", lastCh = null;
+    let html = "";
     for (const ch of meta.chapters) {
+      const key = `${meta.id}/${ch.no}`;
+      const holdsCurrent = !!(current && currentMeta && currentMeta.id === meta.id &&
+        ch.sections.some((s) => s.id === current.id));
+      const collapsed = !holdsCurrent && collapsedChapters.has(key);
+      html += `<div class="chap${collapsed ? " collapsed" : ""}" data-ch="${esc(String(ch.no))}">
+        <div class="chap-title" role="button" tabindex="0" aria-expanded="${collapsed ? "false" : "true"}">
+          <span class="ch-name">${esc(ch.title || "未命名章")}</span><span class="ch-meta">${ch.sections.length} 节</span>
+        </div><div class="chap-secs">`;
       for (const s of ch.sections) {
-        if (ch.title !== lastCh) { html += `<div class="chap-title">${esc(ch.title)}</div>`; lastCh = ch.title; }
         html += `<a class="sec-link" href="#/${esc(meta.id)}/${esc(s.id)}" data-sec="${esc(s.id)}">
           <span>${esc(s.id)}&nbsp;${esc(s.title)}</span><span class="n">${s.count}</span></a>`;
       }
+      html += `</div></div>`;
     }
     nav.innerHTML = html;
+    nav.scrollTop = 0;
+  }
+
+  function toggleChapter(head) {
+    const chap = head.parentElement;
+    chap.classList.toggle("collapsed");
+    const on = !chap.classList.contains("collapsed");
+    head.setAttribute("aria-expanded", on ? "true" : "false");
+    const key = `${currentMeta ? currentMeta.id : ""}/${chap.dataset.ch}`;
+    if (on) collapsedChapters.delete(key); else collapsedChapters.add(key);
+  }
+
+  function bindToc() {
+    const nav = $("#toc");
+    nav.addEventListener("click", (e) => {
+      const head = e.target.closest(".chap-title");
+      if (head) toggleChapter(head);
+    });
+    nav.addEventListener("keydown", (e) => {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      const head = e.target.closest(".chap-title");
+      if (!head) return;
+      e.preventDefault();
+      toggleChapter(head);
+    });
   }
 
   function setBook(meta) {
@@ -161,9 +195,30 @@
   }
 
   function markActive() {
+    let active = null;
     document.querySelectorAll(".sec-link").forEach((a) => {
-      a.classList.toggle("active", !!(current && a.dataset.sec === current.id && a.getAttribute("href").includes(`/${currentMeta.id}/`)));
+      const on = !!(current && a.dataset.sec === current.id && a.getAttribute("href").includes(`/${currentMeta.id}/`));
+      a.classList.toggle("active", on);
+      if (on) active = a;
     });
+    if (!active) return;
+
+    // 当前节所在章若被折叠，自动展开
+    const chap = active.closest(".chap");
+    if (chap && chap.classList.contains("collapsed")) {
+      chap.classList.remove("collapsed");
+      const head = chap.querySelector(".chap-title");
+      if (head) head.setAttribute("aria-expanded", "true");
+      collapsedChapters.delete(`${currentMeta.id}/${chap.dataset.ch}`);
+    }
+
+    // 当前节不在滑动窗可视范围时，滚到中间
+    const nav = $("#toc");
+    const r = active.getBoundingClientRect();
+    const nr = nav.getBoundingClientRect();
+    if (r.top < nr.top + 24 || r.bottom > nr.bottom - 8) {
+      nav.scrollTo({ top: nav.scrollTop + (r.top - nr.top) - nav.clientHeight / 2 + r.height / 2, behavior: "auto" });
+    }
   }
 
   /* ---------------- 条目 ---------------- */
@@ -679,7 +734,10 @@
   $("#modal-close").addEventListener("click", () => { $("#modal").hidden = true; });
   $("#modal").addEventListener("click", (e) => { if (e.target.id === "modal") $("#modal").hidden = true; });
   $("#menu-btn").addEventListener("click", () => $("#sidebar").classList.toggle("open"));
-  $("#toc").addEventListener("click", () => $("#sidebar").classList.remove("open"));
+  $("#toc").addEventListener("click", (e) => {
+    if (e.target.closest(".sec-link")) $("#sidebar").classList.remove("open");
+  });
+  bindToc();
 
   window.addEventListener("hashchange", () => {
     query = "";
