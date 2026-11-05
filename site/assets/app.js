@@ -462,11 +462,10 @@
       const first = b.chapters && b.chapters[0] && b.chapters[0].sections[0];
       const href = b.count && first ? `#/${b.id}/${encodeURIComponent(first.id)}` : `#/${b.id}`;
       const secCount = (b.chapters || []).reduce((a, c) => a + c.sections.length, 0);
-      return `<a class="book-card${b.count ? "" : " empty"}" href="${href}">
-        <div class="bc-head">${avatar(b)}<span class="bc-title">${esc(b.title)}</span>
-          <span class="bc-count">${b.count ? `${b.count} 条` : "待录入"}</span></div>
+      return `<a class="book-card${b.count ? "" : " empty"}" href="${href}" title="${esc(b.title)} ${b.author ? "· " + esc(b.author) : ""}">
+        <div class="bc-head">${avatar(b)}<span class="bc-title">${esc(b.title)}</span></div>
         <div class="bc-author">${esc(b.author || "")}</div>
-        <div class="bc-meta">${b.chapters.length} 章 · ${secCount} 节</div>
+        <div class="bc-meta">${b.chapters.length} 章 · ${secCount} 节 · ${b.count ? `${b.count} 条` : "待录入"}</div>
         ${b.note ? `<p class="bc-note">${esc(b.note)}</p>` : ""}
       </a>`;
     }).join("");

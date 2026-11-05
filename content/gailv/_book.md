@@ -2,6 +2,7 @@
 id: gailv
 title: 概率论
 author: 应坚刚、何萍
+author_img: assets/authors/ying-jiangang.jpg
 source: 概率论(书签) (应坚刚何萍).pdf
 note: 212 页、10 章。1.1 概率简史不属命题，跳过；(*) 小节照收；例题一律改写为问句，不附解答。
 order: 10
