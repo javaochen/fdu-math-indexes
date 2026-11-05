@@ -29,17 +29,13 @@
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const norm = (s) => String(s).toLowerCase().replace(/\\/g, "").replace(/\$/g, "").replace(/\s+/g, " ");
 
-  // 作者头像：有图用图，无图用姓氏首字做字母徽标
-  function authorInitial(name) {
-    const first = String(name || "").split(/[、，,·\s]/)[0].trim();
-    return first ? first.slice(0, 1) : "?";
-  }
+  // 作者头像：只显示有图的作者，无图不占位、不显示文字
   function avatar(b, cls = "") {
     const src = b && b.author_img ? b.author_img : "";
+    if (!src) return "";
     const name = (b && b.author) || "";
-    return `<span class="avatar ${cls}${src ? "" : " is-mono"}" title="${esc(name)}" aria-label="${esc(name)}">
-      <span class="avatar-txt">${esc(authorInitial(name))}</span>
-      ${src ? `<img src="${esc(src)}" alt="" loading="lazy" onerror="this.remove()">` : ""}
+    return `<span class="avatar ${cls}" title="${esc(name)}" aria-label="${esc(name)}">
+      <img src="${esc(src)}" alt="" loading="lazy" onerror="this.parentNode.remove()">
     </span>`;
   }
   const FILTERS = [
@@ -341,7 +337,7 @@
             ${b.note ? `<p class="book-note">${esc(b.note)}</p>` : ""}
             <div class="filters">${chips}${defsBtn}</div>
           </div>
-          ${b.author ? `<div class="sec-avatar">${avatar(b, "avatar-xl")}</div>` : ""}
+          ${b.author_img ? `<div class="sec-avatar">${avatar(b, "avatar-xl")}</div>` : ""}
         </div>
       </div>`;
   }

@@ -12,4 +12,4 @@
 | `chen-wenbin.jpg` | 陈文斌 | 同上（`fa/5c/c30607a326236/page.htm`） | 学院官网公开照片；仅用于身份标识 |
 | `su-buqing.jpg` | 苏步青 | Wikimedia Commons，`File:年轻苏步青.png` <https://commons.wikimedia.org/wiki/File:年轻苏步青.png> | Public domain（公有领域） |
 
-其余作者（陈纪修、李元熹、丁同仁等）在学院师资页无公开照片，站点显示姓氏首字徽标。如作者本人或权利人要求下架，删除对应文件并从 `_book.md` 移除 `author_img` 一行即可。
+其余作者（陈纪修、李元熹、丁同仁等）在学院师资页无公开照片，站点不显示头像（不留空位、不显示文字）。如作者本人或权利人要求下架，删除对应文件并从 `_book.md` 移除 `author_img` 一行即可。

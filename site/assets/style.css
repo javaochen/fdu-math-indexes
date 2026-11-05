@@ -308,7 +308,6 @@ mark { background: rgba(255, 210, 90, .45); color: inherit; padding: 0 1px; bord
   border: 1px solid var(--line);
   box-shadow: 0 4px 16px rgba(0, 0, 0, .18);
 }
-.avatar-xl.is-mono { width: 74px; height: 74px; font-size: 30px; }
 .sec-head h1 {
   font-family: var(--serif); font-size: 26px; margin: 0 0 6px; font-weight: 700; letter-spacing: .02em;
 }
