@@ -37,7 +37,7 @@
   function avatar(b, cls = "") {
     const src = b && b.author_img ? b.author_img : "";
     const name = (b && b.author) || "";
-    return `<span class="avatar ${cls}" title="${esc(name)}" aria-label="${esc(name)}">
+    return `<span class="avatar ${cls}${src ? "" : " is-mono"}" title="${esc(name)}" aria-label="${esc(name)}">
       <span class="avatar-txt">${esc(authorInitial(name))}</span>
       ${src ? `<img src="${esc(src)}" alt="" loading="lazy" onerror="this.remove()">` : ""}
     </span>`;
@@ -329,15 +329,20 @@
     const defsBtn = `<button class="chip${defsOpen ? " active" : ""}" type="button" data-defs>${defsOpen ? "收起定义" : "展开定义"}</button>`;
     return `
       <div class="sec-head">
-        <h1>${esc(s.id)}&nbsp;&nbsp;${esc(s.title)}</h1>
-        <div class="meta">
-          ${avatar(b, "avatar-sm")}<span>${esc(b.title)}${b.author ? ` · ${esc(b.author)}` : ""}</span>
-          <span>${esc(s.chapterTitle)}</span>
-          <span>${s.items.length} 个条目${items.length !== s.items.length ? `（当前显示 ${items.length}）` : ""}</span>
-          ${s.pages ? `<span>原书 p.${esc(s.pages)}</span>` : ""}
+        <div class="sec-body">
+          <div class="sec-main">
+            <h1>${esc(s.id)}&nbsp;&nbsp;${esc(s.title)}</h1>
+            <div class="meta">
+              <span>${esc(b.title)}${b.author ? ` · ${esc(b.author)}` : ""}</span>
+              <span>${esc(s.chapterTitle)}</span>
+              <span>${s.items.length} 个条目${items.length !== s.items.length ? `（当前显示 ${items.length}）` : ""}</span>
+              ${s.pages ? `<span>原书 p.${esc(s.pages)}</span>` : ""}
+            </div>
+            ${b.note ? `<p class="book-note">${esc(b.note)}</p>` : ""}
+            <div class="filters">${chips}${defsBtn}</div>
+          </div>
+          ${b.author ? `<div class="sec-avatar">${avatar(b, "avatar-xl")}</div>` : ""}
         </div>
-        ${b.note ? `<p class="book-note">${esc(b.note)}</p>` : ""}
-        <div class="filters">${chips}${defsBtn}</div>
       </div>`;
   }
 
