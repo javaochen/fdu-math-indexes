@@ -103,8 +103,9 @@ def plain_text(html: str, limit: int = 240, strip_math: bool = True) -> str:
     return t
 
 
-def search_key(*parts: str) -> str:
-    return re.sub(r"\s+", " ", " ".join(parts).lower().replace("\\", "").replace("$", " ")).strip()[:2000]
+def search_key(*parts: str, limit: int | None = 2000) -> str:
+    value = re.sub(r"\s+", " ", " ".join(parts).lower().replace("\\", "").replace("$", " ")).strip()
+    return value[:limit] if limit is not None else value
 
 
 def check_math(text: str, where: str, problems: list[str]) -> None:
@@ -231,7 +232,7 @@ def main() -> int:
             books.append(b)
     books.sort(key=lambda b: (b["order"], b["title"]))
 
-    # 习题独立存储，不混入正文条目、搜索或随机自测。
+    # 习题独立存储，不混入正文条目或随机自测。
     exercise_books = {}
     for b in books:
         ids = {s["id"] for c in b["chapters"] for s in c["sections"]}
@@ -295,6 +296,12 @@ def main() -> int:
         ex_data = exercise_books[b["id"]]
         if ex_data is not None:
             write_json(DATA / f"{b['id']}-exercises.json", ex_data)
+            for sid, record in ex_data["sections"].items():
+                for it in record["items"]:
+                    search.append([
+                        b["id"], sid, "exercises/" + it["anchor"], "习题", it["number"], it["title"],
+                        plain_text(it["html"], 180), search_key("习题", it["number"], it["title"], it["src"], limit=None),
+                    ])
         else:
             (DATA / f"{b['id']}-exercises.json").unlink(missing_ok=True)
         meta_books.append({

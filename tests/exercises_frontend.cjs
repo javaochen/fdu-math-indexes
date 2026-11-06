@@ -118,6 +118,7 @@ async function start({ hash = "#/fanhan/1.1/exercises", search = "" } = {}) {
 async function main() {
   assert.equal(ready.length, 24, "Expected all 24 exercise groups in Functional Analysis");
   assert.equal(ready.reduce((sum, section) => sum + section.exercises.count, 0), 315);
+  assert.equal(readJSON("search.json").filter((entry) => entry[0] === 'fanhan' && entry[3] === '习题').length, 315);
   for (const [id, count] of [["C", 5], ["D", 3], ["E", 11]]) {
     assert.equal(records[id].status, "ready");
     assert.equal(records[id].count, count);
@@ -126,26 +127,31 @@ async function main() {
     const record = records[section.id];
     assert.equal(record.count, section.exercises.count);
     assert.equal(record.pages, section.exercises.pages);
-    for (const scan of record.scans) {
-      assert.ok(fs.existsSync(path.join(site, scan.src)), `Missing scan: ${scan.src}`);
-      assert.ok(scan.width > 0 && scan.height > 0);
+    assert.equal(record.items.length, record.count);
+    assert.ok(!('scans' in record));
+    for (const item of record.items) {
+      assert.ok(item.src && item.html && item.page > 0);
+      assert.ok(!/assets\/exercises|<img|pdf_page/.test(item.src));
     }
   }
 
   const app = await start();
-  assert.match(app.html(), /class="exercise-scans"/);
-  assert.match(app.html(), /loading="lazy"/);
+  assert.match(app.html(), /class="exercise-items"/);
+  assert.match(app.html(), /data-copy-src=/);
+  assert.ok(!/<img|查看原图|扫描图/.test(app.html()));
   assert.ok(app.document.body.classList.contains("exercise-mode"));
   assert.ok(app.modes.every((el) => el.disabled) && app.src.disabled);
   assert.deepEqual(app.requests, ["data/books.json", "data/fanhan-exercises.json"]);
   await app.key("r");
-  assert.match(app.html(), /class="exercise-scans"/);
+  assert.match(app.html(), /class="exercise-items"/);
   await app.navigate("#/fanhan/1.1/exercises/p9");
-  assert.ok(app.jumps.includes("exercise-p9"));
+  assert.ok(app.jumps.some((id) => id.startsWith("i-fanhan-1.1/exercises-")));
+  await app.navigate("#/fanhan/1.1/exercises/习题-2");
+  assert.ok(app.jumps.includes("i-fanhan-1.1/exercises-习题-2"));
 
   for (const section of ready) {
     await app.navigate(`#/fanhan/${section.id}/exercises`);
-    assert.equal((app.html().match(/class="exercise-scan"/g) || []).length, records[section.id].scans.length);
+    assert.equal((app.html().match(/class="item(?:\s|")/g) || []).length, records[section.id].items.length);
     assert.ok(app.document.body.classList.contains("exercise-mode"));
   }
   assert.equal(app.requests.filter((url) => url === "data/fanhan-exercises.json").length, 1);
@@ -167,7 +173,7 @@ async function main() {
   assert.ok(!app.document.body.classList.contains("exercise-mode"));
   assert.ok(app.modes.every((el) => !el.disabled) && !app.src.disabled);
   await app.search("");
-  assert.match(app.html(), /class="exercise-scans"/);
+  assert.match(app.html(), /class="exercise-items"/);
   assert.ok(app.document.body.classList.contains("exercise-mode"));
   await app.search(searchEntry[5]);
   await app.navigate(`#/${searchEntry[0]}/${searchEntry[1]}/${searchEntry[2]}`);
@@ -187,7 +193,15 @@ async function main() {
   assert.ok(!/class="empty"/.test(cardApp.html()),
     "Escape after searching from exercises rendered an empty statement section (current.items was empty)");
 
-  console.log("PASS: actual data (24 groups / 315 questions, appendices C/D/E), scan assets, lazy loading, deep links, empty states, search/clear/statement navigation, controls and card-mode regression.");
+  const exerciseHit = readJSON("search.json").find((entry) => entry[3] === "习题" && entry[5]);
+  assert.ok(exerciseHit, 'Exercises must be searchable');
+  await app.search(exerciseHit[5]);
+  assert.ok(app.html().includes(`href="#/${exerciseHit[0]}/${exerciseHit[1]}/${exerciseHit[2]}"`),
+    'Searching an exercise title should link to its independent exercise page');
+  await app.navigate(`#/${exerciseHit[0]}/${exerciseHit[1]}/${exerciseHit[2]}`);
+  assert.match(app.html(), /class="exercise-items"/);
+  assert.ok(app.jumps.some((id) => id.endsWith(exerciseHit[2].split('/').pop())));
+  console.log("PASS: actual text data (24 groups / 315 questions), printed pages, no scan images, lazy loading, question deep links, empty states, search/clear/statement navigation, controls and card-mode regression.");
 }
 
 main().catch((error) => { console.error(error); process.exitCode = 1; });

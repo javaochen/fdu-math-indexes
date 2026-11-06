@@ -148,6 +148,13 @@
     const res = await fetch(`data/${id}-exercises.json`, { cache: "no-cache" });
     if (!res.ok) throw new Error("无法加载本书习题，请稍后重试");
     const data = await res.json();
+    for (const [sid, record] of Object.entries(data.sections || {})) {
+      for (const it of record.items || []) {
+        const key = `${id}/${sid}/exercises/${it.anchor}`;
+        INDEX.set(key, { item: it });
+        SRC.set(key, it.src || "");
+      }
+    }
     EXERCISES.set(id, data.sections || {});
     return data.sections || {};
   }
@@ -593,7 +600,7 @@
     document.body.classList.remove("home-mode", "card-mode");
     if (mathObserver) { mathObserver.disconnect(); mathObserver = null; }
     const info = exerciseInfo(s);
-    const scans = record && record.scans || [];
+    const items = record && record.items || [];
     const sections = (s.book.chapters || []).flatMap((ch) => ch.sections);
     const i = sections.findIndex((sec) => sec.id === s.id);
     const previous = sections[i - 1], next = sections[i + 1];
@@ -609,29 +616,26 @@
       body = `<div class="empty">已核对原书，本节没有独立习题。</div>`;
     } else if (info.status !== "ready") {
       body = `<div class="empty">本节习题尚未录入。</div>`;
-    } else if (!scans.length) {
+    } else if (!items.length) {
       body = `<div class="empty" role="alert">习题数据暂不可用，请稍后重试。</div>`;
     } else {
-      body = `<p class="exercise-note">以下为原书习题扫描图，保留题号与小问，不附解答。点击图片可查看原图；扫描题干暂不支持全文搜索与文字复制。</p>
-        <nav class="exercise-page-links" aria-label="习题原书页码">${scans.map((scan) =>
-          `<a href="${esc(sectionUrl(s.book.id, s.id, true))}/p${scan.page}">p.${scan.page}</a>`).join("")}</nav>
-        <div class="exercise-scans">${scans.map((scan, n) => `<figure class="exercise-scan" id="exercise-p${scan.page}">
-          <figcaption>原书 p.${scan.page} <a href="${esc(scan.src)}" target="_blank" rel="noopener">查看原图 ↗</a></figcaption>
-          <a href="${esc(scan.src)}" target="_blank" rel="noopener" aria-label="查看 ${esc(s.id)} 习题原书第 ${scan.page} 页原图">
-            <img src="${esc(scan.src)}" alt="${esc(s.book.title)} ${esc(s.id)} 习题，原书第 ${scan.page} 页"${scan.width && scan.height ? ` width="${scan.width}" height="${scan.height}"` : ""} loading="${n ? "lazy" : "eager"}" decoding="async">
-          </a>
-        </figure>`).join("")}</div>`;
+      body = `<p class="exercise-note">保留原书题号与小问，只录题目，不附解答。页码均为书内印刷页码。</p>
+        <nav class="exercise-question-links" aria-label="本节习题">${items.map((it) =>
+          `<a href="${esc(sectionUrl(s.book.id, s.id, true))}/${esc(it.anchor)}">${esc(it.number)}</a>`).join("")}</nav>
+        <div class="exercise-items">${items.map((it) => itemHtml({ ...it, bookId: s.book.id, secId: `${s.id}/exercises` })).join("")}</div>`;
     }
     $("#view").innerHTML = `<div class="sec-head">
       <h1>${esc(s.id)}&nbsp;&nbsp;${esc(s.title)} · 习题</h1>
       <div class="meta"><span>${esc(s.book.title)}</span><span>${esc(s.chapterTitle || "")}</span>
         <span>${esc(exerciseLabel(s))}</span>${info.pages ? `<span>原书 p.${esc(info.pages)}</span>` : ""}</div>
       ${sectionTabs(s, true)}
-    </div>${navigation}${body}${scans.length ? navigation : ""}`;
+    </div>${navigation}${body}${items.length ? navigation : ""}`;
     $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <a class="crumb-home" href="#/${esc(s.book.id)}">${esc(s.book.short || s.book.title)}</a> · ${esc(s.id)} 习题`;
     markActive();
-    const page = /^p\d+$/.test(anchor) ? document.getElementById(`exercise-${anchor}`) : null;
-    if (page) page.scrollIntoView({ block: "start" });
+    typesetLazy($("#view"));
+    const target = /^p\d+$/.test(anchor) ? items.find((it) => it.page === Number(anchor.slice(1))) : items.find((it) => it.anchor === anchor);
+    const el = target && document.getElementById(`i-${s.book.id}-${s.id}/exercises-${target.anchor}`);
+    if (el) { el.classList.add("flash"); el.scrollIntoView({ block: "start" }); }
     else window.scrollTo({ top: 0 });
   }
 

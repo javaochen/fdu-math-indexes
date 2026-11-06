@@ -1,72 +1,11 @@
-"""习题清单读取与校验；没有清单表示未录入，不能推断原书无习题。"""
+"""读取每节习题 Markdown；校对来源只使用书内印刷页码。"""
 from __future__ import annotations
 
-import json
-import hashlib
-import math
 import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-
-
-def image_path(book_id: str, section_id: str, pdf_page: int) -> str:
-    return f"assets/exercises/{book_id}/{section_id}-p{pdf_page:03d}.webp"
-
-
-def load_manifest(book_id: str, section_ids: set[str] | None = None) -> dict | None:
-    path = ROOT / "exercises" / f"{book_id}.json"
-    if not path.exists():
-        return None
-    data = json.loads(path.read_text(encoding="utf-8"))
-    if data.get("book") != book_id or not re.fullmatch(r"[A-Za-z0-9_-]+", book_id):
-        raise ValueError(f"{path.name}: book 与书 id 不一致或不安全")
-    if not isinstance(data.get("source"), str) or not data["source"]:
-        raise ValueError(f"{path.name}: 缺少 source")
-    offset = data.get("page_offset")
-    if type(offset) is not int or offset < 0:
-        raise ValueError(f"{path.name}: page_offset 必须是非负整数")
-    if not isinstance(data.get("sections"), dict):
-        raise ValueError(f"{path.name}: 缺少 sections 对象")
-    for sid, section in data["sections"].items():
-        where = f"{path.name}/{sid}"
-        if not re.fullmatch(r"[A-Za-z0-9.]+", sid):
-            raise ValueError(f"{where}: 不安全的节 id")
-        if section_ids is not None and sid not in section_ids:
-            raise ValueError(f"{where}: 找不到对应正文节")
-        if not isinstance(section, dict):
-            raise ValueError(f"{where}: 节记录必须是对象")
-        status, count, scans = section.get("status"), section.get("count"), section.get("scans")
-        if status not in {"ready", "none"}:
-            raise ValueError(f"{where}: status 只能为 ready 或 none；未录入请省略记录")
-        if type(count) is not int or count < 0 or not isinstance(scans, list):
-            raise ValueError(f"{where}: count 或 scans 格式错误")
-        if status == "none":
-            if count or scans or section.get("pages"):
-                raise ValueError(f"{where}: 无习题记录的题数、页码和图片必须为空")
-            continue
-        if not count or not scans:
-            raise ValueError(f"{where}: 已录入习题必须有题数和图片")
-        pages = section.get("pages", "")
-        if not isinstance(pages, str) or not re.fullmatch(r"\d+(?:[–-]\d+)?", pages):
-            raise ValueError(f"{where}: pages 必须为印刷页码或范围")
-        prev = 0
-        for scan in scans:
-            page, crop = scan.get("pdf_page"), scan.get("crop")
-            if type(page) is not int or page <= offset or page <= prev:
-                raise ValueError(f"{where}: PDF 页码必须递增且大于偏移")
-            if prev and page != prev + 1:
-                raise ValueError(f"{where}: 习题扫描页不连续，可能漏掉跨页题")
-            prev = page
-            if not isinstance(crop, list) or len(crop) != 4 or not all(
-                type(n) in (int, float) and math.isfinite(n) for n in crop
-            ) or not (0 <= crop[0] < crop[2] <= 1 and 0 <= crop[1] < crop[3] <= 1):
-                raise ValueError(f"{where}: crop 必须为归一化 [左,上,右,下]")
-        lo, *rest = re.split("[–-]", pages)
-        hi = rest[0] if rest else lo
-        if (int(lo), int(hi)) != (scans[0]["pdf_page"] - offset, scans[-1]["pdf_page"] - offset):
-            raise ValueError(f"{where}: 印刷页范围与 PDF 页码/偏移不一致")
-    return data
+HEAD_RE = re.compile(r"^###\s+习题\s+(?P<number>\d+\*?)\s*(?:[（(](?P<title>.*)[）)])?\s*@(?P<page>\d+)\s*$")
 
 
 def summary(section: dict | None) -> dict:
@@ -76,26 +15,64 @@ def summary(section: dict | None) -> dict:
 
 
 def build_data(book_id: str, section_ids: set[str]) -> dict | None:
-    """只使用已生成的图片，无需 CI 访问本地 PDF 或安装 PDF 库。"""
-    manifest = load_manifest(book_id, section_ids)
-    if manifest is None:
+    import build
+
+    files = sorted((ROOT / "exercises" / book_id).glob("*.md"))
+    if not files:
         return None
     sections = {}
-    for sid, section in manifest["sections"].items():
-        scans = []
-        for scan in section["scans"]:
-            src = image_path(book_id, sid, scan["pdf_page"])
-            image = ROOT / "site" / src
-            if not image.is_file():
-                raise ValueError(f"习题图片缺失：{src}，请运行 tools/export_exercises.py")
-            # VP8X/VP8L/VP8 WebP 的尺寸由导出侧记录；这里只需 stdlib。
-            size_path = image.with_suffix(".json")
-            size = json.loads(size_path.read_text(encoding="utf-8"))
-            if any(type(size.get(key)) is not int or size[key] <= 0 for key in ("width", "height")):
-                raise ValueError(f"图片尺寸无效：{size_path}")
-            if size.get("crop") != scan["crop"] or size.get("sha256") != hashlib.sha256(image.read_bytes()).hexdigest():
-                raise ValueError(f"裁切清单或图片已变更，请重新导出：{src}")
-            scans.append({"src": src, "page": scan["pdf_page"] - manifest["page_offset"],
-                          "pdf_page": scan["pdf_page"], "width": size["width"], "height": size["height"]})
-        sections[sid] = {**summary(section), "scans": scans}
-    return {"book": book_id, "source": manifest["source"], "sections": sections}
+    for path in files:
+        fm, body = build.parse_front(path.read_text(encoding="utf-8"))
+        sid, status, pages = fm.get("section", ""), fm.get("status", ""), fm.get("pages", "")
+        where = str(path.relative_to(ROOT))
+        if sid not in section_ids:
+            raise ValueError(f"{where}: 找不到对应正文节 {sid!r}")
+        if sid in sections:
+            raise ValueError(f"{where}: 重复的习题节 {sid}")
+        if status not in {"ready", "none"}:
+            raise ValueError(f"{where}: status 只能为 ready 或 none；未录入请省略文件")
+        if status == "none":
+            if body.strip() or pages:
+                raise ValueError(f"{where}: 无独立习题的正文与页码必须为空")
+            sections[sid] = {"status": status, "count": 0, "pages": "", "items": []}
+            continue
+        match = re.fullmatch(r"(\d+)(?:[–-](\d+))?", pages)
+        if not match:
+            raise ValueError(f"{where}: pages 必须为书内印刷页码或范围")
+        lo, hi = int(match[1]), int(match[2] or match[1])
+        if lo > hi:
+            raise ValueError(f"{where}: 印刷页码范围倒置")
+        lines = body.splitlines()
+        heads = []
+        for i, line in enumerate(lines):
+            if line.startswith("### "):
+                head = HEAD_RE.fullmatch(line)
+                if not head:
+                    raise ValueError(f"{where}: 无法解析习题头 {line}")
+                heads.append((i, head))
+        if not heads or "\n".join(lines[:heads[0][0]]).strip():
+            raise ValueError(f"{where}: 必须有题目，且必要定义应放入对应题干")
+        items, previous = [], lo
+        for n, (start, head) in enumerate(heads):
+            number, title, page = head["number"], (head["title"] or "").strip(), int(head["page"])
+            if int(number.rstrip("*")) != n + 1:
+                raise ValueError(f"{where}: 题号缺漏或重复，期望 {n+1}，实际 {number}")
+            if not (previous <= page <= hi):
+                raise ValueError(f"{where}: 习题 {number} 印刷页码越界或倒退")
+            previous = page
+            end = heads[n+1][0] if n+1 < len(heads) else len(lines)
+            paras = build.to_paragraphs("\n".join(lines[start+1:end]))
+            if not paras:
+                raise ValueError(f"{where}: 习题 {number} 题干为空")
+            src = "\n\n".join(paras)
+            problems = []
+            build.check_math(src, f"{where} 习题 {number}", problems)
+            if problems:
+                raise ValueError("；".join(problems))
+            if re.search(r"!\[|<img\b|pdf_page|assets/exercises", src):
+                raise ValueError(f"{where}: 习题应为文字与公式，来源只保留书内页码")
+            items.append({"type": "习题", "number": number, "title": title, "page": page,
+                          "anchor": "习题-" + number.replace("*", "-star"),
+                          "src": src, "html": "".join(f"<p>{build.inline(p)}</p>" for p in paras)})
+        sections[sid] = {"status": status, "count": len(items), "pages": pages, "items": items}
+    return {"book": book_id, "sections": sections}

@@ -27,7 +27,7 @@
 
 - **首页**：书目卡片总览（作者、条目数、章/节数、备注），书名为空的书标“待录入”。
 - 阅读 / 卡片 / 随机三种模式。**阅读模式**下定义默认折叠，条目上的“展开/收起”可单条切换，节头“展开定义”可一键全部展开；定理与例直接显示。**卡片模式**一次只显示一条，← → 翻动，空格显示陈述。
-- **独立习题页**：每节可进入对应习题页。泛函分析先使用原书裁切图，保留题号、小问和跨页题；已核对无独立习题与尚未录入分别显示。习题按需加载，不并入正文的卡片、随机和搜索；扫描题干暂不支持全文搜索或文字复制。
+- **独立习题页**：每节可进入对应习题页。习题以 Markdown/LaTeX 转写，保留题号、小问、完整跨页题干及书内印刷页码，不附解答；支持公式渲染、搜索和复制。已核对无独立习题与尚未录入分别显示，不并入正文卡片和随机自测。
 - **类型筛选**：每节顶部可按 定理 / 定义 / 例 / 其他 过滤，按钮上带条目数；可用 `?type=定义` 直接分享筛选视图。
 - 搜索跨书全站，结果显示来源书名、节号与正文摘要；匹配时忽略 `\` 与 `$`，可以直接搜 `limsup` 这类记号。搜索结果可用 `?q=` 分享。
 - **源码与复制**：条目右上角“复制”随时可取走该条的 Markdown/LaTeX（渲染模式下也可用）；“源码”换成原文查看，顶栏或 `s` 整页切换。
@@ -38,20 +38,13 @@
 ## 用法
 
 ```powershell
-python tools/build.py                 # 生成正文、习题与目录 JSON；已有习题图片须先导出
+python tools/build.py                 # 从 Markdown 生成正文、习题、目录及搜索 JSON
 python tools/lint.py [书id]           # 录入质量检查：页码范围、跨页缺漏、公式编号、公式内中文
 python tools/status.py [书id]         # 打印各书/各章录入进度（读 books.json，不写文件）
 python -m http.server 8000 -d site    # 本地预览 http://127.0.0.1:8000/
 ```
 
-首次整理或调整泛函习题裁切范围时，先运行：
-
-```powershell
-python tools/export_exercises.py fanhan --pdf "../泛函王凯.pdf"
-python tools/build.py
-```
-
-数据按书拆分：`books.json` 只含目录、正文条目数与习题状态/题数（首屏用），`<书>.json` 在切换书籍时按需加载，`<书>-exercises.json` 在打开已整理的习题页时加载，`search.json` 在第一次正文搜索时才加载。习题图片随仓库保存，普通构建与发布不需要原始 PDF。推 `main` 后 GitHub Actions 自动发布。
+数据按书拆分：`books.json` 只含目录、正文条目数与习题状态/题数（首屏用），`<书>.json` 在切换书籍时按需加载，`<书>-exercises.json` 在打开已整理的习题页时加载，`search.json` 在第一次搜索时加载，包含正文和习题。校对只需书内页码，仓库不保存习题扫描图；构建与发布不需要原始 PDF。推 `main` 后 GitHub Actions 自动发布。
 
 ## 目录结构
 
@@ -61,14 +54,12 @@ content/
   fanhan/01-01-度量空间.md      每节一个文件
   shibian/_book.md
 exercises/
-  fanhan.json                  习题状态、题数、页码与裁切范围；按原书大题计数
+  fanhan/01-01.md              每节一个习题 Markdown 文件，保留书内页码
 tools/
   build.py                     解析 + 校验 + 生成按书拆分的 JSON
   lint.py                      录入质量检查（页码、公式编号、公式内中文）
   pdf_pages.py                 按页渲染扫描 PDF
-  export_exercises.py          按习题清单导出原书裁切图
 site/                          index.html + assets/ + vendor/katex/ + data/
-  assets/exercises/fanhan/     泛函习题图片（不含书后提示、解答）
 docs/提取规范.md                收录范围、页码偏移、校对清单
 docs/提取模板.md                派活给子代理时复制的提示词模板
 docs/习题整理.md                独立习题页的数据格式、状态与校对流程
@@ -115,9 +106,9 @@ pages: "2–8"
 2. 按节放 Markdown，front matter 填 chapter / section / pages。
 3. `python tools/build.py`，推 `main`。
 
-习题可以之后补充。未建立习题清单或缺少某节记录时，该节为“未录入”；只有核对过原书才能标为“无独立习题”。具体格式见 [习题整理](docs/习题整理.md)。
+习题可以之后补充。未建立某节习题文件时，该节为“未录入”；只有核对过原书才能标为“无独立习题”。具体格式见 [习题整理](docs/习题整理.md)。
 
-习题相关校验可运行 `python -m unittest discover -s tests -v` 和 `node tests/exercises_frontend.cjs`。前者检查清单与裁切产物，后者使用模拟 DOM 检查实际数据和路由，不替代浏览器排版检查。
+习题相关校验可运行 `python -m unittest discover -s tests -v`、`node tests/exercises_math.cjs` 和 `node tests/exercises_frontend.cjs`，分别检查题号/页码/题干、KaTeX 公式渲染和页面路由。路由测试使用模拟 DOM，不替代浏览器排版检查。
 
 ## 版权
 
@@ -125,4 +116,4 @@ pages: "2–8"
 
 ## 声明
 
-正文由扫描页经视觉识别后校对，可能存在公式或文字错误；习题裁切图也可能存在边界或归属错误。发现错误请提 issue。页面与数据由 AI 辅助生成。
+正文与习题由原书逐页转写并校对，可能存在公式或文字错误；可根据条目中的书内页码核对原书。发现错误请提 issue。页面与数据由 AI 辅助生成。
