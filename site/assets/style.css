@@ -264,6 +264,9 @@ pre.src {
 .bh-sec-id { color: var(--muted); font-size: 11.5px; min-width: 2.4em; font-variant-numeric: tabular-nums; }
 .bh-sec-title { flex: 1; min-width: 0; }
 .bh-sec-count { color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.bh-secs li { display: flex; align-items: baseline; gap: 4px; flex-wrap: wrap; }
+.bh-secs li > a:first-child { flex: 1 1 210px; min-width: 0; }
+.bh-secs .bh-exercises { flex: 0 0 auto; color: var(--accent); font-size: 11.5px; white-space: nowrap; }
 .book-card {
   display: block; background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
   padding: 16px 18px; text-decoration: none; color: inherit;
@@ -619,3 +622,33 @@ kbd {
 
 .item::before { height: 4px; opacity: 1; }
 :root[data-theme="dark"] .item::before { box-shadow: 0 0 16px color-mix(in srgb, #fff 55%, transparent); }
+
+/* 每节独立习题页：扫描图保留白底，避免深色模式反转数学符号。 */
+.section-tabs { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+.section-tabs a {
+  display: inline-block; padding: 4px 12px; border: 1px solid var(--line);
+  border-radius: 6px; color: var(--muted); text-decoration: none; font-size: 12.5px;
+}
+.section-tabs a:hover { border-color: var(--accent); color: var(--accent); }
+.section-tabs a[aria-current="page"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); }
+.sec-link.toc-exercises { padding-left: 28px; font-size: 11.5px; color: var(--muted); }
+.exercise-mode .modes, .exercise-mode #src-btn, .exercise-mode .card-size-row { display: none; }
+.exercise-navigation {
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+  gap: 12px; padding: 8px 0; margin: 12px 0 20px; font-size: 12.5px;
+}
+.exercise-navigation a, .exercise-page-links a { color: var(--accent); text-decoration: none; }
+.exercise-navigation a:hover, .exercise-page-links a:hover { text-decoration: underline; }
+.exercise-note { color: var(--muted); font-size: 12.5px; line-height: 1.8; margin: 0 0 12px; }
+.exercise-page-links { display: flex; gap: 8px 16px; flex-wrap: wrap; margin: 12px 0 20px; font-size: 12px; }
+.exercise-scan { margin: 0 0 28px; scroll-margin-top: 78px; }
+.exercise-scan figcaption { display: flex; gap: 15px; align-items: center; padding: 8px 0; color: var(--muted); font-size: 12px; }
+.exercise-scan figcaption a { color: var(--accent); text-decoration: none; }
+.exercise-scan > a { display: block; border: 1px solid var(--line); background: #fff; border-radius: 6px; overflow: hidden; cursor: zoom-in; }
+.exercise-scan img { display: block; width: 100%; height: auto; background: #fff; }
+@media (max-width: 600px) {
+  .exercise-navigation { gap: 8px; font-size: 11.5px; }
+  .exercise-scan { margin-left: -8px; margin-right: -8px; }
+  .exercise-scan figcaption { padding-left: 8px; padding-right: 8px; }
+  .bh-secs .bh-exercises { margin-left: 3.1em; }
+}

@@ -23,6 +23,8 @@
   let query = "";
   let mathObserver = null;
   let loadToken = 0;
+  let exerciseView = false;
+  const EXERCISES = new Map(); // 单独懒加载，正文与搜索无需读取习题图片
   const collapsedChapters = new Set(); // `${bookId}/${chapterNo}`
 
   /* ---------------- 工具 ---------------- */
@@ -119,7 +121,8 @@
     const sections = [];
     for (const ch of data.chapters) {
       for (const s of ch.sections) {
-        const sec = { ...s, chapter: ch.no, chapterTitle: ch.title, book: meta };
+        const listed = (meta.chapters || []).flatMap((c) => c.sections).find((x) => x.id === s.id);
+        const sec = { ...s, exercises: listed && listed.exercises, chapter: ch.no, chapterTitle: ch.title, book: meta };
         sections.push(sec);
         for (const it of sec.items) {
           INDEX.set(`${id}/${sec.id}/${it.anchor}`, { item: it, section: sec, book: meta });
@@ -138,6 +141,42 @@
     if (!res.ok) throw new Error("无法加载 search.json");
     SEARCH = await res.json();
     SEARCH_N = SEARCH.map((e) => e[7] || norm(`${e[3]} ${e[4]} ${e[5]} ${e[6]}`));
+  }
+
+  async function ensureExercises(id) {
+    if (EXERCISES.has(id)) return EXERCISES.get(id);
+    const res = await fetch(`data/${id}-exercises.json`, { cache: "no-cache" });
+    if (!res.ok) throw new Error("无法加载本书习题，请稍后重试");
+    const data = await res.json();
+    EXERCISES.set(id, data.sections || {});
+    return data.sections || {};
+  }
+
+  function setExerciseView(on) {
+    exerciseView = on;
+    document.body.classList.toggle("exercise-mode", on);
+    document.querySelectorAll(".mode, #src-btn").forEach((el) => { el.disabled = on; });
+  }
+
+  function sectionUrl(bookId, sectionId, exercises = false) {
+    return `#/${encodeURIComponent(bookId)}/${encodeURIComponent(sectionId)}${exercises ? "/exercises" : ""}`;
+  }
+
+  function exerciseInfo(s) {
+    return s.exercises || { status: "unrecorded", count: 0, pages: "" };
+  }
+
+  function exerciseLabel(s) {
+    const info = exerciseInfo(s);
+    return info.status === "ready" ? `习题 ${info.count} 题`
+      : info.status === "none" ? "无独立习题" : "习题未录入";
+  }
+
+  function sectionTabs(s, exercises = false) {
+    return `<nav class="section-tabs" aria-label="本节内容">
+      <a href="${esc(sectionUrl(s.book.id, s.id))}"${exercises ? "" : ' aria-current="page"'}>正文</a>
+      <a href="${esc(sectionUrl(s.book.id, s.id, true))}"${exercises ? ' aria-current="page"' : ""}>${esc(exerciseLabel(s))}</a>
+    </nav>`;
   }
 
   /* ---------------- 侧栏 ---------------- */
@@ -167,6 +206,10 @@
       for (const s of ch.sections) {
         html += `<a class="sec-link" href="#/${esc(meta.id)}/${esc(s.id)}" data-sec="${esc(s.id)}">
           <span>${esc(s.id)}&nbsp;${esc(s.title)}</span><span class="n">${s.count}</span></a>`;
+        if (exerciseInfo(s).status === "ready") {
+          html += `<a class="sec-link toc-exercises" href="${esc(sectionUrl(meta.id, s.id, true))}" data-sec="${esc(s.id)}" data-exercises="1">
+            <span>${esc(s.id)} 习题</span><span class="n">${exerciseInfo(s).count} 题</span></a>`;
+        }
       }
       html += `</div></div>`;
     }
@@ -206,8 +249,11 @@
 
   function markActive() {
     let active = null;
+    const markExercises = exerciseView && current && exerciseInfo(current).status === "ready";
     document.querySelectorAll(".sec-link").forEach((a) => {
-      const on = !!(current && a.dataset.sec === current.id && a.getAttribute("href").includes(`/${currentMeta.id}/`));
+      const on = !!(current && a.dataset.sec === current.id &&
+        a.getAttribute("href").includes(`/${currentMeta.id}/`) &&
+        Boolean(a.dataset.exercises) === Boolean(markExercises));
       a.classList.toggle("active", on);
       if (on) active = a;
     });
@@ -315,6 +361,7 @@
   }
 
   function sectionHead(s, items) {
+    setExerciseView(false);
     document.body.classList.remove("home-mode");
     document.body.classList.remove("card-mode");
     const b = s.book;
@@ -335,6 +382,7 @@
               ${s.pages ? `<span>原书 p.${esc(s.pages)}</span>` : ""}
             </div>
             ${b.note ? `<p class="book-note">${esc(b.note)}</p>` : ""}
+            ${sectionTabs(s)}
             <div class="filters">${chips}${defsBtn}</div>
           </div>
           ${b.author_img ? `<div class="sec-avatar">${avatar(b, "avatar-xl")}</div>` : ""}
@@ -382,8 +430,10 @@
   }
 
   function renderBookHome(meta) {
+    setExerciseView(false);
     document.body.classList.remove("home-mode", "card-mode");
     const secs = (meta.chapters || []).flatMap((c) => c.sections);
+    const exerciseCount = secs.reduce((sum, s) => sum + (exerciseInfo(s).count || 0), 0);
     const first = secs[0];
     const blocks = (meta.chapters || []).map((ch) => `
       <section class="bh-chap">
@@ -394,7 +444,8 @@
           ${ch.sections.map((s) => `<li><a href="#/${esc(meta.id)}/${esc(s.id)}">
             <span class="bh-sec-id">${esc(s.id)}</span>
             <span class="bh-sec-title">${esc(s.title)}</span>
-            <span class="bh-sec-count">${s.count}</span></a></li>`).join("")}
+            <span class="bh-sec-count">${s.count}</span></a>
+            ${exerciseInfo(s).status === "ready" ? `<a class="bh-exercises" href="${esc(sectionUrl(meta.id, s.id, true))}">${esc(exerciseLabel(s))} →</a>` : ""}</li>`).join("")}
         </ul>
       </section>`).join("");
     $("#view").innerHTML = `
@@ -403,7 +454,7 @@
           ${avatar(meta, "avatar-xl")}
           <div class="bh-info">
             <h1>${esc(meta.title)}</h1>
-            <div class="bh-meta">${esc(meta.author || "作者待确认")} · ${(meta.chapters || []).length} 章 · ${secs.length} 节 · ${meta.count || 0} 条</div>
+            <div class="bh-meta">${esc(meta.author || "作者待确认")} · ${(meta.chapters || []).length} 章 · ${secs.length} 节 · ${meta.count || 0} 条${exerciseCount ? ` · 习题 ${exerciseCount} 题` : ""}</div>
             ${meta.note ? `<p class="book-note">${esc(meta.note)}</p>` : ""}
           </div>
         </header>
@@ -417,6 +468,7 @@
   }
 
   function renderEmptyBook(meta) {
+    setExerciseView(false);
     document.body.classList.remove("home-mode");
     $("#view").innerHTML = `
       <div class="sec-head"><h1>${esc(meta.title)}</h1>
@@ -429,6 +481,7 @@
   }
 
   async function renderRandom() {
+    setExerciseView(false);
     document.body.classList.remove("home-mode");
     const meta = currentMeta || BOOKS[0];
     if (!meta) return;
@@ -462,8 +515,12 @@
   }
 
   async function renderSearch(q) {
+    const token = ++loadToken;
+    if (exerciseView) current = null;
+    setExerciseView(false);
     document.body.classList.remove("home-mode");
     await loadSearch();
+    if (token !== loadToken) return;
     const terms = norm(q).split(" ").filter(Boolean);
     const hitIdx = [];
     for (let i = 0; i < SEARCH.length && hitIdx.length < 200; i++) {
@@ -491,17 +548,23 @@
   }
 
   function renderHome() {
+    ++loadToken;
+    setExerciseView(false);
     document.body.classList.add("home-mode");
     document.title = SITE.title || "数学命题索引";
     const total = BOOKS.reduce((a, b) => a + b.count, 0);
+    const exerciseTotal = BOOKS.flatMap((b) => b.chapters || []).flatMap((ch) => ch.sections)
+      .reduce((sum, s) => sum + (exerciseInfo(s).count || 0), 0);
     const cards = BOOKS.map((b) => {
       const first = b.chapters && b.chapters[0] && b.chapters[0].sections[0];
       const href = `#/${b.id}`;
       const secCount = (b.chapters || []).reduce((a, c) => a + c.sections.length, 0);
+      const exerciseCount = (b.chapters || []).flatMap((ch) => ch.sections)
+        .reduce((sum, s) => sum + (exerciseInfo(s).count || 0), 0);
       return `<a class="book-card${b.count ? "" : " empty"}" href="${href}" title="${esc(b.title)} ${b.author ? "· " + esc(b.author) : ""}">
         <div class="bc-head">${avatar(b)}<span class="bc-title">${esc(b.title)}</span></div>
         <div class="bc-author">${esc(b.author || "")}</div>
-        <div class="bc-meta">${b.chapters.length} 章 · ${secCount} 节 · ${b.count ? `${b.count} 条` : "待录入"}</div>
+        <div class="bc-meta">${b.chapters.length} 章 · ${secCount} 节 · ${b.count ? `${b.count} 条` : "待录入"}${exerciseCount ? ` · 习题 ${exerciseCount} 题` : ""}</div>
         ${b.note ? `<p class="bc-note">${esc(b.note)}</p>` : ""}
       </a>`;
     }).join("");
@@ -510,7 +573,7 @@
         <div class="home-head">
           <h1>${esc(SITE.title || "数学命题索引")}</h1>
           <p class="home-sub">${esc(SITE.subtitle || "")}</p>
-          <p class="home-stat">共 ${BOOKS.length} 本书 · ${total} 条命题 · 只含陈述，不含证明与习题</p>
+          <p class="home-stat">共 ${BOOKS.length} 本书 · ${total} 条命题${exerciseTotal ? ` · ${exerciseTotal} 道习题` : ""} · 正文只含陈述，习题按节独立阅读</p>
         </div>
         <div class="book-grid">${cards}</div>
         <p class="home-tip">点击书名进入。<kbd>/</kbd> 搜索全部条目，<kbd>s</kbd> 切换源码，条目右上角“复制”直接取走 Markdown/LaTeX。</p>
@@ -525,6 +588,53 @@
     $("#view").innerHTML = `<div class="empty">加载中…</div>`;
   }
 
+  function renderExercises(s, record, anchor = "", error = "") {
+    setExerciseView(true);
+    document.body.classList.remove("home-mode", "card-mode");
+    if (mathObserver) { mathObserver.disconnect(); mathObserver = null; }
+    const info = exerciseInfo(s);
+    const scans = record && record.scans || [];
+    const sections = (s.book.chapters || []).flatMap((ch) => ch.sections);
+    const i = sections.findIndex((sec) => sec.id === s.id);
+    const previous = sections[i - 1], next = sections[i + 1];
+    const navigation = `<nav class="exercise-navigation" aria-label="习题节导航">
+      ${previous ? `<a href="${esc(sectionUrl(s.book.id, previous.id, true))}">← ${esc(previous.id)} 习题</a>` : "<span></span>"}
+      <a href="${esc(sectionUrl(s.book.id, s.id))}">返回本节正文</a>
+      ${next ? `<a href="${esc(sectionUrl(s.book.id, next.id, true))}">${esc(next.id)} 习题 →</a>` : "<span></span>"}
+    </nav>`;
+    let body;
+    if (error) {
+      body = `<div class="empty" role="alert">${esc(error)} <button type="button" class="ghost-btn" data-exercise-retry>重新加载</button></div>`;
+    } else if (info.status === "none") {
+      body = `<div class="empty">已核对原书，本节没有独立习题。</div>`;
+    } else if (info.status !== "ready") {
+      body = `<div class="empty">本节习题尚未录入。</div>`;
+    } else if (!scans.length) {
+      body = `<div class="empty" role="alert">习题数据暂不可用，请稍后重试。</div>`;
+    } else {
+      body = `<p class="exercise-note">以下为原书习题扫描图，保留题号与小问，不附解答。点击图片可查看原图；扫描题干暂不支持全文搜索与文字复制。</p>
+        <nav class="exercise-page-links" aria-label="习题原书页码">${scans.map((scan) =>
+          `<a href="${esc(sectionUrl(s.book.id, s.id, true))}/p${scan.page}">p.${scan.page}</a>`).join("")}</nav>
+        <div class="exercise-scans">${scans.map((scan, n) => `<figure class="exercise-scan" id="exercise-p${scan.page}">
+          <figcaption>原书 p.${scan.page} <a href="${esc(scan.src)}" target="_blank" rel="noopener">查看原图 ↗</a></figcaption>
+          <a href="${esc(scan.src)}" target="_blank" rel="noopener" aria-label="查看 ${esc(s.id)} 习题原书第 ${scan.page} 页原图">
+            <img src="${esc(scan.src)}" alt="${esc(s.book.title)} ${esc(s.id)} 习题，原书第 ${scan.page} 页"${scan.width && scan.height ? ` width="${scan.width}" height="${scan.height}"` : ""} loading="${n ? "lazy" : "eager"}" decoding="async">
+          </a>
+        </figure>`).join("")}</div>`;
+    }
+    $("#view").innerHTML = `<div class="sec-head">
+      <h1>${esc(s.id)}&nbsp;&nbsp;${esc(s.title)} · 习题</h1>
+      <div class="meta"><span>${esc(s.book.title)}</span><span>${esc(s.chapterTitle || "")}</span>
+        <span>${esc(exerciseLabel(s))}</span>${info.pages ? `<span>原书 p.${esc(info.pages)}</span>` : ""}</div>
+      ${sectionTabs(s, true)}
+    </div>${navigation}${body}${scans.length ? navigation : ""}`;
+    $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <a class="crumb-home" href="#/${esc(s.book.id)}">${esc(s.book.short || s.book.title)}</a> · ${esc(s.id)} 习题`;
+    markActive();
+    const page = /^p\d+$/.test(anchor) ? document.getElementById(`exercise-${anchor}`) : null;
+    if (page) page.scrollIntoView({ block: "start" });
+    else window.scrollTo({ top: 0 });
+  }
+
   /* ---------------- 路由 ---------------- */
   /* 旧 id 别名：fanyan 是早期拼写错误（泛函 = fanhan），保留以兼容已分享的链接 */
   const BOOK_ALIAS = { fanyan: "fanhan" };
@@ -533,22 +643,44 @@
     const parts = decodeURIComponent(location.hash.replace(/^#\/?/, "")).split("/").filter(Boolean);
     if (parts[0] && BOOK_ALIAS[parts[0]]) parts[0] = BOOK_ALIAS[parts[0]];
     const book = BOOKS.find((b) => b.id === parts[0]);
-    if (book) return { bookId: book.id, secId: parts[1], anchor: parts[2] };
+    if (book) return { bookId: book.id, secId: parts[1], exercises: parts[2] === "exercises", anchor: parts[2] === "exercises" ? parts[3] : parts[2] };
     return { bookId: (BOOKS[0] || {}).id, secId: parts[0], anchor: parts[1] };
   }
 
   async function route() {
+    const token = ++loadToken;
     if (!BOOKS.length) {
       $("#view").innerHTML = `<div class="empty">还没有任何书。请在 content/ 下新建书目录。</div>`;
       return;
     }
     const raw = location.hash.replace(/^#\/?/, "");
     if (!raw) { renderHome(); return; }
-    const token = ++loadToken;
-    const { bookId, secId, anchor } = parseHash();
+    const { bookId, secId, anchor, exercises } = parseHash();
     const meta = BOOKS.find((b) => b.id === bookId) || BOOKS[0];
     setBook(meta);
     if (!secId) { current = null; renderBookHome(meta); return; }
+    if (exercises) {
+      const chapter = (meta.chapters || []).find((ch) => ch.sections.some((s) => s.id === secId));
+      const listed = chapter && chapter.sections.find((s) => s.id === secId);
+      setExerciseView(true);
+      if (!listed) {
+        current = null;
+        $("#view").innerHTML = `<div class="empty">没有找到这一节。<a href="#/${esc(meta.id)}">返回书目索引</a></div>`;
+        return;
+      }
+      const section = { ...listed, book: meta, chapter: chapter.no, chapterTitle: chapter.title, items: [] };
+      current = section;
+      if (exerciseInfo(section).status !== "ready") { renderExercises(section, null); return; }
+      showLoading();
+      try {
+        const records = await ensureExercises(meta.id);
+        if (token === loadToken) renderExercises(section, records[secId], anchor);
+      } catch (err) {
+        if (token === loadToken) renderExercises(section, null, "", err.message);
+      }
+      return;
+    }
+    setExerciseView(false);
     if (!meta.count) { current = null; renderEmptyBook(meta); return; }
     showLoading();
     try {
@@ -576,6 +708,7 @@
 
   /* ---------------- 交互 ---------------- */
   document.addEventListener("click", async (e) => {
+    if (e.target.closest("[data-exercise-retry]")) { route(); return; }
     const srcBtn = e.target.closest("[data-src-toggle]");
     if (srcBtn) {
       const key = srcBtn.dataset.srcToggle;
@@ -646,6 +779,7 @@
 
   document.querySelectorAll(".mode").forEach((b) => {
     b.addEventListener("click", () => {
+      if (exerciseView) return;
       const m = b.dataset.mode;
       if (!m) return;
       mode = m;
@@ -672,11 +806,10 @@
 
   function jumpSection(dir) {
     if (!current || !currentMeta) return;
-    const book = CACHE.get(currentMeta.id);
-    if (!book) return;
-    const i = book.sections.findIndex((s) => s.id === current.id);
-    const j = Math.max(0, Math.min(book.sections.length - 1, i + dir));
-    if (j !== i) location.hash = `#/${currentMeta.id}/${encodeURIComponent(book.sections[j].id)}`;
+    const sections = (currentMeta.chapters || []).flatMap((ch) => ch.sections);
+    const i = sections.findIndex((s) => s.id === current.id);
+    const j = Math.max(0, Math.min(sections.length - 1, i + dir));
+    if (i >= 0 && j !== i) location.hash = sectionUrl(currentMeta.id, sections[j].id, exerciseView);
   }
 
   document.addEventListener("keydown", (e) => {
@@ -686,7 +819,7 @@
     }
     if (e.key === "Escape") {
       $("#modal").hidden = true;
-      if (mode === "card" && current) {
+      if (!exerciseView && mode === "card" && current) {
         mode = "read";
         document.querySelectorAll(".mode[data-mode]").forEach((x) => x.classList.toggle("active", x.dataset.mode === "read"));
         renderSection(current);
@@ -694,6 +827,12 @@
       return;
     }
     if (e.key === "/") { e.preventDefault(); searchEl.focus(); return; }
+    if (exerciseView) {
+      if (e.shiftKey && (e.key === "ArrowRight" || e.key === "ArrowLeft")) {
+        e.preventDefault(); jumpSection(e.key === "ArrowRight" ? 1 : -1);
+      }
+      return;
+    }
     if (e.key === "s") { e.preventDefault(); setSrcAll(!srcAll); return; }
     if (e.key === "r") {
       mode = "random";
@@ -766,6 +905,7 @@
 
   const srcBtn = $("#src-btn");
   function setSrcAll(v) {
+    if (exerciseView) return;
     srcAll = v;
     srcBtn.classList.toggle("active", v);
     document.querySelectorAll(".item").forEach(paintCard);

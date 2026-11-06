@@ -24,6 +24,9 @@ def main() -> int:
         secs = [s for c in b["chapters"] for s in c["sections"]]
         total += b["count"]
         print(f"\n{b['title']}（{b['id']}）  {b['count']} 条 / {len(b['chapters'])} 章 / {len(secs)} 节")
+        ready = sum(s.get("exercises", {}).get("status") == "ready" for s in secs)
+        none = sum(s.get("exercises", {}).get("status") == "none" for s in secs)
+        print(f"  习题：{b.get('exercise_count', 0)} 题，{ready} 节已整理 / {none} 节无独立习题 / {len(secs)-ready-none} 节未录入")
         for c in b["chapters"]:
             got = [s for s in c["sections"] if s["count"]]
             print(f"  {c['no']:>3} {c['title']}：{sum(s['count'] for s in c['sections'])} 条，{len(got)}/{len(c['sections'])} 节有内容")

@@ -33,6 +33,8 @@ import re
 import sys
 from pathlib import Path
 
+import exercises
+
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
 DATA = ROOT / "site" / "data"
@@ -229,6 +231,21 @@ def main() -> int:
             books.append(b)
     books.sort(key=lambda b: (b["order"], b["title"]))
 
+    # 习题独立存储，不混入正文条目、搜索或随机自测。
+    exercise_books = {}
+    for b in books:
+        ids = {s["id"] for c in b["chapters"] for s in c["sections"]}
+        try:
+            data = exercises.build_data(b["id"], ids)
+        except (ValueError, OSError, KeyError, TypeError) as err:
+            print(f"习题校验失败：{err}", file=sys.stderr)
+            return 1
+        exercise_books[b["id"]] = data
+        for c in b["chapters"]:
+            for s in c["sections"]:
+                record = data["sections"].get(s["id"]) if data else None
+                s["exercises"] = exercises.summary(record)
+
     seen: dict[str, str] = {}
     total = 0
     for b in books:
@@ -240,6 +257,12 @@ def main() -> int:
                         problems.append(f"重复锚点 {key}（{seen[key]}）")
                     seen[key] = s["id"]
                     total += 1
+
+    if problems:
+        print("构建校验失败，未写入站点数据：", file=sys.stderr)
+        for problem in problems:
+            print(f"  - {problem}", file=sys.stderr)
+        return 1
 
     DATA.mkdir(parents=True, exist_ok=True)
     stale = DATA / "index.json"
@@ -265,14 +288,21 @@ def main() -> int:
                                    plain_text(it["html"], 1200, strip_math=False)),
                     ])
                     count += 1
-                secs.append({"id": s["id"], "title": s["title"], "pages": s["pages"], "count": len(s["items"])})
+                secs.append({"id": s["id"], "title": s["title"], "pages": s["pages"], "count": len(s["items"]),
+                             "exercises": s["exercises"]})
             chapters_meta.append({"no": ch["no"], "title": ch["title"], "sections": secs})
         size = write_json(DATA / f"{b['id']}.json", {"id": b["id"], "chapters": b["chapters"]})
+        ex_data = exercise_books[b["id"]]
+        if ex_data is not None:
+            write_json(DATA / f"{b['id']}-exercises.json", ex_data)
+        else:
+            (DATA / f"{b['id']}-exercises.json").unlink(missing_ok=True)
         meta_books.append({
             "id": b["id"], "title": b["title"], "short": b["short"], "author": b["author"],
         "author_img": b["author_img"],
             "note": b["note"], "order": b["order"], "count": count, "chapters": chapters_meta,
             "size": size,
+            "exercise_count": sum(s["exercises"]["count"] for ch in b["chapters"] for s in ch["sections"]),
         })
 
     books_size = write_json(DATA / "books.json", {

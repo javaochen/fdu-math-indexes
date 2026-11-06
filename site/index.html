@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>数学命题索引</title>
-<meta name="description" content="本科数学教材中有讲解的定义、定理、命题与例的索引，只含陈述，便于随时自测。">
+<meta name="description" content="本科数学教材中定义、定理、命题与例的索引，正文只含陈述，习题按节独立阅读，不附解答。">
 <link rel="stylesheet" href="vendor/katex/katex.min.css">
 <link rel="stylesheet" href="assets/style.css">
 </head>
@@ -54,7 +54,7 @@
             <button class="swatch" data-accent-opt="indigo" type="button" title="靛蓝"></button>
             <button class="swatch" data-accent-opt="plum" type="button" title="紫棠"></button>
           </div>
-          <div class="look-row">
+          <div class="look-row card-size-row">
             <span class="look-label">卡片字号</span>
             <button class="look-opt" data-card-size="s" type="button">小</button>
             <button class="look-opt" data-card-size="m" type="button">中</button>
@@ -73,8 +73,9 @@
   <div class="modal-card">
     <button id="modal-close" class="modal-close" type="button" aria-label="关闭">×</button>
     <h2>关于本索引</h2>
-    <p>收录本科数学教材正文中有讲解的定义、定理、命题、推论与例，只保留陈述，不含证明、不含习题与解答，并标注原书页码。</p>
-    <p>目前收录：泛函分析、实变函数、数学分析（上/下）、高等代数、拓扑学、概率论。内容由扫描页逐页提取并人工校对，可能存在识别错误；发现错误请在仓库提 issue。</p>
+    <p>收录本科数学教材正文中有讲解的定义、定理、命题、推论与例，正文只保留陈述，不含证明，并标注原书页码。习题按节独立成页，暂不附解答。</p>
+    <p>书目及各节录入情况见首页和书目索引。泛函分析习题采用原书扫描图，保留原题号、小问和公式；点击图片可查看原图，扫描题干暂不支持全文搜索与文字复制。已核对无独立习题与尚未录入会分别标明。</p>
+    <p>正文内容由扫描页提取，可能存在公式或文字错误；发现错误请在仓库提 issue。</p>
     <p>操作：<kbd>/</kbd> 搜索，<kbd>空格</kbd> 显示/隐藏，<kbd>←</kbd> <kbd>→</kbd> 切换条目，<kbd>Shift</kbd>+<kbd>←</kbd>/<kbd>→</kbd> 切换上/下一节，<kbd>r</kbd> 随机，<kbd>s</kbd> 源码，<kbd>Esc</kbd> 退出卡片。</p>
     <p>阅读模式下定义默认折叠（点“展开定义”可全部展开），定理与例直接显示；卡片模式每次只显示一条，左右翻动，字号可在“外观”里调小/中/大/特大；顶栏“外观”还可切换主题与配色（赭红、竹青、靛蓝、紫棠）。</p>
     <p>页面不记录任何使用数据，也不保存进度。</p>
