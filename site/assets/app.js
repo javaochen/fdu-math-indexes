@@ -160,6 +160,7 @@
   }
 
   function setExerciseView(on) {
+    document.body.classList.remove("network-home");
     exerciseView = on;
     document.body.classList.toggle("exercise-mode", on);
     document.querySelectorAll(".mode, #src-btn").forEach((el) => { el.disabled = on; });
@@ -464,6 +465,13 @@
   function renderBookHome(meta, chapterNo = "") {
     setExerciseView(false);
     document.body.classList.remove("home-mode", "card-mode");
+    if (meta.id === "gailv" && !chapterNo && window.ProbabilityNetwork) {
+      document.body.classList.add("network-home");
+      window.ProbabilityNetwork.mount($("#view"), meta);
+      $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <b>${esc(meta.title)}</b>`;
+      window.scrollTo({ top: 0 });
+      return;
+    }
     const secs = (meta.chapters || []).flatMap((c) => c.sections);
     const exerciseCount = meta.exercise_count || 0;
     const first = secs[0];
@@ -735,6 +743,7 @@
 
   async function route() {
     const token = ++loadToken;
+    document.body.classList.remove("network-home");
     if (!BOOKS.length) {
       $("#view").innerHTML = `<div class="empty">还没有任何书。请在 content/ 下新建书目录。</div>`;
       return;

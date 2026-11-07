@@ -106,6 +106,8 @@ async function start({ hash = "#/fanhan/1.1/exercises", search = "" } = {}) {
       return { ok: exists, json: async () => JSON.parse(fs.readFileSync(target, "utf8")) };
     },
   };
+  vm.runInNewContext(fs.readFileSync(path.join(site, 'assets/probability-network.js'), 'utf8'), context,
+    { filename: 'site/assets/probability-network.js' });
   vm.runInNewContext(source, context, { filename: "site/assets/app.js" });
   await settle();
   return {
