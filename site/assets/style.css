@@ -710,8 +710,14 @@ body.network-home { background: #f5f2e9; }
 .pn-map-scroll { width: 100%; min-width: 0; max-width: 100%; overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: thin; scrollbar-color: #59746a #102b2b; }
 .pn-map { display: block; width: 100%; height: auto; max-height: 780px; }
 .pn-map .pn-cluster-label { fill: #839f91; font-family: var(--sans); font-size: 11px; letter-spacing: .12em; pointer-events: none; }
-.pn-map .pn-edge { fill: none; stroke: #628b7b; stroke-width: 1; stroke-opacity: .31; transition: stroke .2s ease, stroke-opacity .2s ease; }
+.pn-map .pn-edge { fill: none; stroke: #628b7b; stroke-width: 1; stroke-opacity: .16; transition: stroke .2s ease, stroke-opacity .2s ease; }
 .pn-map .pn-edge.is-active { stroke: #b8d6c2; stroke-width: 1.7; stroke-opacity: .84; }
+.pn-map .pn-edge.is-neighbor { stroke: #d4b16c; stroke-width: 1.8; stroke-opacity: .88; }
+.pn-connections { margin-top: 25px; }
+.pn-connections button { display: block; width: 100%; padding: 12px 0; border: 0; border-top: 1px solid var(--pn-rule); background: transparent; color: var(--pn-ink); text-align: left; font-family: var(--sans); cursor: pointer; }
+.pn-connections button strong { display: flex; justify-content: space-between; gap: 8px; font-size: 12px; font-weight: 500; }
+.pn-connections button > span { display: block; margin-top: 6px; color: var(--pn-muted); font-size: 11px; line-height: 1.8; }
+.pn-connections button:hover strong { color: var(--pn-focus); }
 .pn-map .pn-node { cursor: pointer; outline: none; }
 .pn-map .pn-node circle { fill: #153732; stroke: #6d9d86; stroke-width: 1.2; transition: fill .2s ease, stroke .2s ease, opacity .2s ease; }
 .pn-map .pn-node text { fill: #d1e4d7; font-family: var(--sans); font-size: 13px; font-weight: 400; pointer-events: none; transition: opacity .2s ease; }
