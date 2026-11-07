@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>数学命题索引</title>
+  <defs>
+    <linearGradient id="spectrum" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#57bfc0"/><stop offset=".35" stop-color="#9a83d7"/>
+      <stop offset=".65" stop-color="#dc8c9c"/><stop offset="1" stop-color="#d8ba68"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="#143832" stroke="url(#spectrum)" stroke-width="2"/>
+  <path d="M45 17H20L34 32 20 47H45" fill="none" stroke="#fffaf0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="45" cy="17" r="3.5" fill="#78d3c4"/>
+  <circle cx="45" cy="47" r="3.5" fill="#e0bc70"/>
+</svg>
