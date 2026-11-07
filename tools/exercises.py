@@ -1,6 +1,7 @@
-"""读取每节习题 Markdown；校对来源只使用书内印刷页码。"""
+"""读取节/章习题 Markdown 与章内主题分组；来源只使用书内印刷页码。"""
 from __future__ import annotations
 
+import json
 import re
 from pathlib import Path
 
@@ -11,21 +12,72 @@ HEAD_RE = re.compile(r"^###\s+习题\s+(?P<number>\d+\*?)\s*(?:[（(](?P<title>.
 def summary(section: dict | None) -> dict:
     if section is None:
         return {"status": "unrecorded", "count": 0, "pages": ""}
-    return {key: section[key] for key in ("status", "count", "pages")}
+    result = {key: section[key] for key in ("status", "count", "pages")}
+    if section.get("scope") == "chapter":
+        result.update({"scope": "chapter", "chapter": section["chapter"],
+                       "id": "chapter-" + section["chapter"], "groups": section["groups"]})
+    return result
 
 
-def build_data(book_id: str, section_ids: set[str]) -> dict | None:
+def chapter_groups(config: object, chapter: str, items: list[dict], where: str) -> list[dict]:
+    """主题仅引用原题号；不复制题目，也不改变原题顺序。"""
+    if not isinstance(config, list) or not config:
+        raise ValueError(f"{where}: 第 {chapter} 章必须有非空主题分组")
+    known = {int(item["number"].rstrip("*")) for item in items}
+    seen_numbers, seen_ids, groups = set(), set(), []
+    for group in config:
+        if not isinstance(group, dict):
+            raise ValueError(f"{where}: 第 {chapter} 章主题必须为对象")
+        gid, title, numbers = group.get("id"), group.get("title"), group.get("numbers")
+        if not isinstance(gid, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]*", gid):
+            raise ValueError(f"{where}: 第 {chapter} 章主题 id 格式无效")
+        if gid in seen_ids:
+            raise ValueError(f"{where}: 第 {chapter} 章重复主题 id {gid}")
+        seen_ids.add(gid)
+        if not isinstance(title, str) or not title.strip():
+            raise ValueError(f"{where}: 第 {chapter} 章主题 {gid} 标题为空")
+        if not isinstance(numbers, list) or not numbers:
+            raise ValueError(f"{where}: 第 {chapter} 章主题 {gid} 不能是空组")
+        for number in numbers:
+            if type(number) is not int or number not in known:
+                raise ValueError(f"{where}: 第 {chapter} 章主题 {gid} 引用未知题号 {number!r}")
+            if number in seen_numbers:
+                raise ValueError(f"{where}: 第 {chapter} 章题号 {number} 重复分组")
+            seen_numbers.add(number)
+        groups.append({"id": gid, "title": title.strip(), "numbers": sorted(numbers), "count": len(numbers)})
+    missing = sorted(known - seen_numbers)
+    if missing:
+        raise ValueError(f"{where}: 第 {chapter} 章主题分组未覆盖题号 {missing}")
+    return groups
+
+
+def build_data(book_id: str, section_ids: set[str], chapter_ids: set[str] | None = None) -> dict | None:
     import build
 
-    files = sorted((ROOT / "exercises" / book_id).glob("*.md"))
+    directory = ROOT / "exercises" / book_id
+    files = sorted(directory.glob("*.md"))
+    groups_path = directory / "_groups.json"
     if not files:
+        if groups_path.exists():
+            raise ValueError(f"{groups_path.relative_to(ROOT)}: 分组配置没有对应的章习题")
         return None
     sections = {}
     for path in files:
         fm, body = build.parse_front(path.read_text(encoding="utf-8"))
-        sid, status, pages = fm.get("section", ""), fm.get("status", ""), fm.get("pages", "")
+        sid, chapter = fm.get("section", ""), fm.get("chapter", "")
+        status, pages = fm.get("status", ""), fm.get("pages", "")
         where = str(path.relative_to(ROOT))
-        if sid not in section_ids:
+        if bool(sid) == bool(chapter):
+            raise ValueError(f"{where}: 必须且只能填写 section 或 chapter")
+        extra = {}
+        if chapter:
+            if not re.fullmatch(r"[\w.-]+", chapter) or chapter_ids is not None and chapter not in chapter_ids:
+                raise ValueError(f"{where}: 找不到对应正文章 {chapter!r}")
+            sid = "chapter-" + chapter
+            if sid in section_ids:
+                raise ValueError(f"{where}: 章习题 id {sid} 与正文节冲突")
+            extra = {"scope": "chapter", "chapter": chapter, "groups": []}
+        elif sid not in section_ids:
             raise ValueError(f"{where}: 找不到对应正文节 {sid!r}")
         if sid in sections:
             raise ValueError(f"{where}: 重复的习题节 {sid}")
@@ -34,7 +86,7 @@ def build_data(book_id: str, section_ids: set[str]) -> dict | None:
         if status == "none":
             if body.strip() or pages:
                 raise ValueError(f"{where}: 无独立习题的正文与页码必须为空")
-            sections[sid] = {"status": status, "count": 0, "pages": "", "items": []}
+            sections[sid] = {"status": status, "count": 0, "pages": "", "items": [], **extra}
             continue
         match = re.fullmatch(r"(\d+)(?:[–-](\d+))?", pages)
         if not match:
@@ -74,5 +126,16 @@ def build_data(book_id: str, section_ids: set[str]) -> dict | None:
             items.append({"type": "习题", "number": number, "title": title, "page": page,
                           "anchor": "习题-" + number.replace("*", "-star"),
                           "src": src, "html": "".join(f"<p>{build.inline(p)}</p>" for p in paras)})
-        sections[sid] = {"status": status, "count": len(items), "pages": pages, "items": items}
+        sections[sid] = {"status": status, "count": len(items), "pages": pages, "items": items, **extra}
+    config = json.loads(groups_path.read_text(encoding="utf-8")) if groups_path.exists() else {}
+    group_where = str(groups_path.relative_to(ROOT))
+    if not isinstance(config, dict):
+        raise ValueError(f"{group_where}: 顶层必须是按章编号索引的对象")
+    ready_chapters = {record["chapter"]: record for record in sections.values()
+                      if record.get("scope") == "chapter" and record["status"] == "ready"}
+    for chapter in config:
+        if chapter not in ready_chapters:
+            raise ValueError(f"{group_where}: 第 {chapter} 章分组没有对应的已录入章习题")
+    for chapter, record in ready_chapters.items():
+        record["groups"] = chapter_groups(config.get(chapter), chapter, record["items"], group_where)
     return {"book": book_id, "sections": sections}

@@ -173,6 +173,19 @@
     return s.exercises || { status: "unrecorded", count: 0, pages: "" };
   }
 
+  function chapterExerciseId(chapter) {
+    return chapter.exercises && chapter.exercises.id || `chapter-${chapter.no}`;
+  }
+
+  function chapterExerciseForSection(s) {
+    const id = exerciseInfo(s).chapter_id;
+    return id && (s.book.chapters || []).find((ch) => chapterExerciseId(ch) === id);
+  }
+
+  function topicUrl(bookId, chapterId, groupId) {
+    return `${sectionUrl(bookId, chapterId, true)}/topic-${encodeURIComponent(groupId)}`;
+  }
+
   function exerciseLabel(s) {
     const info = exerciseInfo(s);
     return info.status === "ready" ? `习题 ${info.count} 题`
@@ -180,9 +193,13 @@
   }
 
   function sectionTabs(s, exercises = false) {
+    const chapter = chapterExerciseForSection(s);
+    const chapterInfo = chapter && chapter.exercises;
+    const exerciseId = chapterInfo ? chapterExerciseId(chapter) : s.id;
+    const label = chapterInfo ? `本章习题 ${chapterInfo.count} 题` : exerciseLabel(s);
     return `<nav class="section-tabs" aria-label="本节内容">
       <a href="${esc(sectionUrl(s.book.id, s.id))}"${exercises ? "" : ' aria-current="page"'}>正文</a>
-      <a href="${esc(sectionUrl(s.book.id, s.id, true))}"${exercises ? ' aria-current="page"' : ""}>${esc(exerciseLabel(s))}</a>
+      <a href="${esc(sectionUrl(s.book.id, exerciseId, true))}"${exercises ? ' aria-current="page"' : ""}>${esc(label)}</a>
     </nav>`;
   }
 
@@ -204,7 +221,7 @@
     for (const ch of meta.chapters) {
       const key = `${meta.id}/${ch.no}`;
       const holdsCurrent = !!(current && currentMeta && currentMeta.id === meta.id &&
-        ch.sections.some((s) => s.id === current.id));
+        (ch.sections.some((s) => s.id === current.id) || current.scope === "chapter" && String(current.chapter) === String(ch.no)));
       const collapsed = !holdsCurrent && collapsedChapters.has(key);
       html += `<div class="chap${collapsed ? " collapsed" : ""}" data-ch="${esc(String(ch.no))}">
         <div class="chap-title" role="button" tabindex="0" aria-expanded="${collapsed ? "false" : "true"}">
@@ -217,6 +234,13 @@
           html += `<a class="sec-link toc-exercises" href="${esc(sectionUrl(meta.id, s.id, true))}" data-sec="${esc(s.id)}" data-exercises="1">
             <span>${esc(s.id)} 习题</span><span class="n">${exerciseInfo(s).count} 题</span></a>`;
         }
+      }
+      if (ch.exercises && ch.exercises.status === "ready") {
+        const id = chapterExerciseId(ch);
+        html += `<a class="sec-link toc-exercises chapter-exercises" href="${esc(sectionUrl(meta.id, id, true))}" data-sec="${esc(id)}" data-exercises="1">
+          <span>本章习题</span><span class="n">${ch.exercises.count} 题</span></a>`;
+        html += (ch.exercises.groups || []).map((group) => `<a class="sec-link toc-exercise-topic" href="${esc(topicUrl(meta.id, id, group.id))}" data-sec="${esc(id)}" data-exercises="1" data-topic="${esc(group.id)}">
+          <span>${esc(group.title)}</span><span class="n">${group.count} 题</span></a>`).join("");
       }
       html += `</div></div>`;
     }
@@ -260,7 +284,8 @@
     document.querySelectorAll(".sec-link").forEach((a) => {
       const on = !!(current && a.dataset.sec === current.id &&
         a.getAttribute("href").includes(`/${currentMeta.id}/`) &&
-        Boolean(a.dataset.exercises) === Boolean(markExercises));
+        Boolean(a.dataset.exercises) === Boolean(markExercises) &&
+        (a.dataset.topic || "") === (current.exerciseGroup || ""));
       a.classList.toggle("active", on);
       if (on) active = a;
     });
@@ -436,14 +461,14 @@
     window.scrollTo({ top: 0 });
   }
 
-  function renderBookHome(meta) {
+  function renderBookHome(meta, chapterNo = "") {
     setExerciseView(false);
     document.body.classList.remove("home-mode", "card-mode");
     const secs = (meta.chapters || []).flatMap((c) => c.sections);
-    const exerciseCount = secs.reduce((sum, s) => sum + (exerciseInfo(s).count || 0), 0);
+    const exerciseCount = meta.exercise_count || 0;
     const first = secs[0];
     const blocks = (meta.chapters || []).map((ch) => `
-      <section class="bh-chap">
+      <section class="bh-chap" id="chapter-${esc(String(ch.no))}">
         <h2 class="bh-chap-head"><span class="bh-chap-no">${esc(String(ch.no))}</span>
           <span class="bh-chap-name">${esc(ch.title || "未命名章")}</span>
           <span class="bh-chap-count">${ch.sections.length} 节</span></h2>
@@ -454,6 +479,10 @@
             <span class="bh-sec-count">${s.count}</span></a>
             ${exerciseInfo(s).status === "ready" ? `<a class="bh-exercises" href="${esc(sectionUrl(meta.id, s.id, true))}">${esc(exerciseLabel(s))} →</a>` : ""}</li>`).join("")}
         </ul>
+        ${ch.exercises && ch.exercises.status === "ready" ? `<div class="bh-chapter-exercises">
+          <a class="bh-exercises" href="${esc(sectionUrl(meta.id, chapterExerciseId(ch), true))}">本章习题 · ${ch.exercises.count} 题 →</a>
+          <ul class="bh-exercise-topics">${(ch.exercises.groups || []).map((group) => `<li><a href="${esc(topicUrl(meta.id, chapterExerciseId(ch), group.id))}"><span>${esc(group.title)}</span><span>${group.count} 题</span></a></li>`).join("")}</ul>
+        </div>` : ""}
       </section>`).join("");
     $("#view").innerHTML = `
       <div class="book-home">
@@ -471,7 +500,9 @@
     $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <b>${esc(meta.short || meta.title)}</b>`;
     document.querySelectorAll(".book-btn").forEach((x) => x.classList.toggle("active", x.dataset.book === meta.id));
     document.querySelectorAll(".sec-link").forEach((x) => x.classList.remove("active"));
-    window.scrollTo({ top: 0 });
+    const chapterElement = chapterNo && document.getElementById(`chapter-${chapterNo}`);
+    if (chapterElement) chapterElement.scrollIntoView({ block: "start" });
+    else window.scrollTo({ top: 0 });
   }
 
   function renderEmptyBook(meta) {
@@ -537,11 +568,13 @@
     const rows = shown.map((i) => {
       const e = SEARCH[i];
       const book = BOOKS.find((b) => b.id === e[0]);
+      const sourceChapter = book && (book.chapters || []).find((ch) => chapterExerciseId(ch) === e[1]);
+      const sourceLocation = sourceChapter ? `第${sourceChapter.no}章` : e[1];
       return `<a class="hit" href="#/${esc(e[0])}/${esc(e[1])}/${esc(e[2])}">
         <span class="badge" data-type="${esc(e[3])}">${esc(e[3])}</span>
         <b>${esc(e[4] || "")}</b>
         <span class="hit-title">${esc(e[5] || "")}</span>
-        <span class="hit-src">${esc(book ? book.short || book.title : e[0])} · ${esc(e[1])}</span>
+        <span class="hit-src">${esc(book ? book.short || book.title : e[0])} · ${esc(sourceLocation)}</span>
         <p class="hit-text">${highlight(e[6], terms)}</p>
       </a>`;
     }).join("");
@@ -560,14 +593,12 @@
     document.body.classList.add("home-mode");
     document.title = SITE.title || "数学命题索引";
     const total = BOOKS.reduce((a, b) => a + b.count, 0);
-    const exerciseTotal = BOOKS.flatMap((b) => b.chapters || []).flatMap((ch) => ch.sections)
-      .reduce((sum, s) => sum + (exerciseInfo(s).count || 0), 0);
+    const exerciseTotal = BOOKS.reduce((sum, b) => sum + (b.exercise_count || 0), 0);
     const cards = BOOKS.map((b) => {
       const first = b.chapters && b.chapters[0] && b.chapters[0].sections[0];
       const href = `#/${b.id}`;
       const secCount = (b.chapters || []).reduce((a, c) => a + c.sections.length, 0);
-      const exerciseCount = (b.chapters || []).flatMap((ch) => ch.sections)
-        .reduce((sum, s) => sum + (exerciseInfo(s).count || 0), 0);
+      const exerciseCount = b.exercise_count || 0;
       return `<a class="book-card${b.count ? "" : " empty"}" href="${href}" title="${esc(b.title)} ${b.author ? "· " + esc(b.author) : ""}">
         <div class="bc-head">${avatar(b)}<span class="bc-title">${esc(b.title)}</span></div>
         <div class="bc-author">${esc(b.author || "")}</div>
@@ -580,7 +611,7 @@
         <div class="home-head">
           <h1>${esc(SITE.title || "数学命题索引")}</h1>
           <p class="home-sub">${esc(SITE.subtitle || "")}</p>
-          <p class="home-stat">共 ${BOOKS.length} 本书 · ${total} 条命题${exerciseTotal ? ` · ${exerciseTotal} 道习题` : ""} · 正文只含陈述，习题按节独立阅读</p>
+          <p class="home-stat">共 ${BOOKS.length} 本书 · ${total} 条命题${exerciseTotal ? ` · ${exerciseTotal} 道习题` : ""} · 正文只含陈述，习题独立阅读</p>
         </div>
         <div class="book-grid">${cards}</div>
         <p class="home-tip">点击书名进入。<kbd>/</kbd> 搜索全部条目，<kbd>s</kbd> 切换源码，条目右上角“复制”直接取走 Markdown/LaTeX。</p>
@@ -596,6 +627,7 @@
   }
 
   function renderExercises(s, record, anchor = "", error = "") {
+    if (s.scope === "chapter") { renderChapterExercises(s, record, anchor, error); return; }
     setExerciseView(true);
     document.body.classList.remove("home-mode", "card-mode");
     if (mathObserver) { mathObserver.disconnect(); mathObserver = null; }
@@ -639,6 +671,56 @@
     else window.scrollTo({ top: 0 });
   }
 
+  function renderChapterExercises(s, record, anchor = "", error = "") {
+    setExerciseView(true);
+    document.body.classList.remove("home-mode", "card-mode");
+    if (mathObserver) { mathObserver.disconnect(); mathObserver = null; }
+    const info = exerciseInfo(s);
+    const allItems = record && record.items || [];
+    const groups = record && record.groups || info.groups || [];
+    const target = /^p\d+$/.test(anchor) ? allItems.find((it) => it.page === Number(anchor.slice(1)))
+      : allItems.find((it) => it.anchor === anchor);
+    const group = anchor.startsWith("topic-") ? groups.find((g) => g.id === anchor.slice(6)) || groups[0]
+      : target ? groups.find((g) => g.numbers.includes(parseInt(target.number, 10))) || groups[0] : groups[0];
+    const numbers = new Set(group && group.numbers || []);
+    const items = group ? allItems.filter((it) => numbers.has(parseInt(it.number, 10))) : allItems;
+    s.exerciseGroup = group ? group.id : "";
+    const index = groups.indexOf(group);
+    const previous = groups[index - 1], next = groups[index + 1];
+    const navigation = `<nav class="exercise-navigation" aria-label="习题主题导航">
+      ${previous ? `<a href="${esc(topicUrl(s.book.id, s.id, previous.id))}">← ${esc(previous.title)}</a>` : "<span></span>"}
+      <a href="${esc(sectionUrl(s.book.id, s.id))}">返回本章</a>
+      ${next ? `<a href="${esc(topicUrl(s.book.id, s.id, next.id))}">${esc(next.title)} →</a>` : "<span></span>"}
+    </nav>`;
+    let body;
+    if (error) {
+      body = `<div class="empty" role="alert">${esc(error)} <button type="button" class="ghost-btn" data-exercise-retry>重新加载</button></div>`;
+    } else if (info.status === "none") {
+      body = `<div class="empty">已核对原书，本章没有独立习题。</div>`;
+    } else if (info.status !== "ready") {
+      body = `<div class="empty">本章习题尚未录入。</div>`;
+    } else if (!items.length) {
+      body = `<div class="empty" role="alert">习题数据暂不可用，请稍后重试。</div>`;
+    } else {
+      body = `<p class="exercise-note">本章习题按主题分组，保留原书题号与小问，不附解答。页码均为书内印刷页码。</p>
+        <nav class="exercise-topic-links" aria-label="本章习题主题">${groups.map((g) => `<a href="${esc(topicUrl(s.book.id, s.id, g.id))}"${g === group ? ' aria-current="page"' : ""}>${esc(g.title)}<span>${g.count} 题</span></a>`).join("")}</nav>
+        <nav class="exercise-question-links" aria-label="本章全部习题题号">${allItems.map((it) => `<a href="${esc(sectionUrl(s.book.id, s.id, true))}/${esc(it.anchor)}"${numbers.has(parseInt(it.number, 10)) ? ' class="in-topic"' : ""}>${esc(it.number)}</a>`).join("")}</nav>
+        <div class="exercise-items">${items.map((it) => itemHtml({ ...it, bookId: s.book.id, secId: `${s.id}/exercises` })).join("")}</div>`;
+    }
+    $("#view").innerHTML = `<div class="sec-head">
+      <h1>第${esc(s.chapter)}章${group ? ` · ${esc(group.title)}` : ""} · 习题</h1>
+      <div class="meta"><span>${esc(s.book.title)}</span><span>${esc(s.chapterTitle || "")}</span>
+        <span>${group ? `本主题 ${items.length} 题 · ` : ""}全章 ${info.count} 题</span>${info.pages ? `<span>原书 p.${esc(info.pages)}</span>` : ""}</div>
+      <nav class="section-tabs" aria-label="本章内容"><a href="${esc(sectionUrl(s.book.id, s.id))}">本章正文</a><a href="${esc(sectionUrl(s.book.id, s.id, true))}" aria-current="page">本章习题</a></nav>
+    </div>${navigation}${body}${items.length ? navigation : ""}`;
+    $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <a class="crumb-home" href="#/${esc(s.book.id)}">${esc(s.book.short || s.book.title)}</a> · 第${esc(s.chapter)}章${group ? ` · ${esc(group.title)}` : ""}`;
+    markActive();
+    typesetLazy($("#view"));
+    const el = target && document.getElementById(`i-${s.book.id}-${s.id}/exercises-${target.anchor}`);
+    if (el) { el.classList.add("flash"); el.scrollIntoView({ block: "start" }); }
+    else window.scrollTo({ top: 0 });
+  }
+
   /* ---------------- 路由 ---------------- */
   /* 旧 id 别名：fanyan 是早期拼写错误（泛函 = fanhan），保留以兼容已分享的链接 */
   const BOOK_ALIAS = { fanyan: "fanhan" };
@@ -663,9 +745,14 @@
     const meta = BOOKS.find((b) => b.id === bookId) || BOOKS[0];
     setBook(meta);
     if (!secId) { current = null; renderBookHome(meta); return; }
+    const exerciseChapter = (meta.chapters || []).find((ch) => chapterExerciseId(ch) === secId);
+    if (exerciseChapter && !exercises) {
+      current = null; renderBookHome(meta, exerciseChapter.no); return;
+    }
     if (exercises) {
-      const chapter = (meta.chapters || []).find((ch) => ch.sections.some((s) => s.id === secId));
-      const listed = chapter && chapter.sections.find((s) => s.id === secId);
+      const chapter = exerciseChapter || (meta.chapters || []).find((ch) => ch.sections.some((s) => s.id === secId));
+      const listed = exerciseChapter ? { id: secId, scope: "chapter", exercises: chapter.exercises }
+        : chapter && chapter.sections.find((s) => s.id === secId);
       setExerciseView(true);
       if (!listed) {
         current = null;
@@ -673,6 +760,11 @@
         return;
       }
       const section = { ...listed, book: meta, chapter: chapter.no, chapterTitle: chapter.title, items: [] };
+      if (!exerciseChapter && exerciseInfo(section).chapter_id) {
+        location.hash = `${sectionUrl(meta.id, exerciseInfo(section).chapter_id, true)}${anchor ? `/${encodeURIComponent(anchor)}` : ""}`;
+        route();
+        return;
+      }
       current = section;
       if (exerciseInfo(section).status !== "ready") { renderExercises(section, null); return; }
       showLoading();
@@ -810,6 +902,13 @@
 
   function jumpSection(dir) {
     if (!current || !currentMeta) return;
+    if (exerciseView && current.scope === "chapter") {
+      const groups = exerciseInfo(current).groups || [];
+      const i = groups.findIndex((group) => group.id === current.exerciseGroup);
+      const j = Math.max(0, Math.min(groups.length - 1, i + dir));
+      if (i >= 0 && j !== i) location.hash = topicUrl(currentMeta.id, current.id, groups[j].id);
+      return;
+    }
     const sections = (currentMeta.chapters || []).flatMap((ch) => ch.sections);
     const i = sections.findIndex((s) => s.id === current.id);
     const j = Math.max(0, Math.min(sections.length - 1, i + dir));

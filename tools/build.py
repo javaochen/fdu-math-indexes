@@ -237,15 +237,20 @@ def main() -> int:
     for b in books:
         ids = {s["id"] for c in b["chapters"] for s in c["sections"]}
         try:
-            data = exercises.build_data(b["id"], ids)
+            data = exercises.build_data(b["id"], ids, {str(c["no"]) for c in b["chapters"]})
         except (ValueError, OSError, KeyError, TypeError) as err:
             print(f"习题校验失败：{err}", file=sys.stderr)
             return 1
         exercise_books[b["id"]] = data
         for c in b["chapters"]:
+            chapter_id = "chapter-" + str(c["no"])
+            chapter_record = data["sections"].get(chapter_id) if data else None
+            c["exercises"] = exercises.summary(chapter_record)
             for s in c["sections"]:
                 record = data["sections"].get(s["id"]) if data else None
                 s["exercises"] = exercises.summary(record)
+                if chapter_record is not None:
+                    s["exercises"]["chapter_id"] = chapter_id
 
     seen: dict[str, str] = {}
     total = 0
@@ -291,7 +296,8 @@ def main() -> int:
                     count += 1
                 secs.append({"id": s["id"], "title": s["title"], "pages": s["pages"], "count": len(s["items"]),
                              "exercises": s["exercises"]})
-            chapters_meta.append({"no": ch["no"], "title": ch["title"], "sections": secs})
+            chapters_meta.append({"no": ch["no"], "title": ch["title"], "sections": secs,
+                                  "exercises": ch["exercises"]})
         size = write_json(DATA / f"{b['id']}.json", {"id": b["id"], "chapters": b["chapters"]})
         ex_data = exercise_books[b["id"]]
         if ex_data is not None:
@@ -309,7 +315,7 @@ def main() -> int:
         "author_img": b["author_img"],
             "note": b["note"], "order": b["order"], "count": count, "chapters": chapters_meta,
             "size": size,
-            "exercise_count": sum(s["exercises"]["count"] for ch in b["chapters"] for s in ch["sections"]),
+            "exercise_count": sum(record["count"] for record in ex_data["sections"].values()) if ex_data else 0,
         })
 
     books_size = write_json(DATA / "books.json", {

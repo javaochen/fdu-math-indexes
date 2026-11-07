@@ -642,6 +642,21 @@ kbd {
 .exercise-note { color: var(--muted); font-size: 12.5px; line-height: 1.8; margin: 0 0 12px; }
 .exercise-question-links { display: flex; gap: 8px 16px; flex-wrap: wrap; margin: 12px 0 20px; font-size: 12px; }
 .exercise-items .item { scroll-margin-top: 78px; }
+.bh-chap { scroll-margin-top: 78px; }
+.sec-link.toc-exercise-topic { padding-left: 36px; font-size: 11.5px; }
+.sec-link.toc-exercise-topic > span:first-child { min-width: 0; overflow-wrap: anywhere; }
+.bh-chapter-exercises { margin: 8px 0 14px; padding: 10px; border-top: 1px solid var(--line); }
+.bh-chapter-exercises > a { color: var(--accent); text-decoration: none; font-size: 12.5px; }
+.bh-exercise-topics { list-style: none; padding: 0; margin: 8px 0 0; }
+.bh-exercise-topics a { display: flex; gap: 12px; justify-content: space-between; padding: 5px 0; color: var(--ink); text-decoration: none; font-size: 12px; }
+.bh-exercise-topics a:hover { color: var(--accent); }
+.bh-exercise-topics a > span:last-child { flex: 0 0 auto; color: var(--muted); }
+.exercise-topic-links { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+.exercise-topic-links a { display: flex; align-items: baseline; gap: 10px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 6px; color: var(--muted); text-decoration: none; font-size: 12px; }
+.exercise-topic-links a:hover { color: var(--accent); border-color: var(--accent); }
+.exercise-topic-links a[aria-current="page"] { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+.exercise-topic-links a > span { flex: 0 0 auto; font-size: 11px; }
+.exercise-question-links a.in-topic { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 600px) {
   .exercise-navigation { gap: 8px; font-size: 11.5px; }
   .bh-secs .bh-exercises { margin-left: 3.1em; }

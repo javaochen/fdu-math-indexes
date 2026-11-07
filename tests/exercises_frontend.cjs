@@ -67,14 +67,17 @@ async function start({ hash = "#/fanhan/1.1/exercises", search = "" } = {}) {
   const src = element("#src-btn");
   const jumps = [];
   const document = {
-    body: new Element(), documentElement: new Element(), events: {},
+    body: new Element(), documentElement: new Element(), events: {}, listeners: {},
     querySelector: element,
     querySelectorAll(selector) {
       if (selector === ".mode" || selector === ".mode[data-mode]") return modes;
       if (selector === ".mode, #src-btn") return [...modes, src];
       return [];
     },
-    addEventListener(name, callback) { this.events[name] = callback; },
+    addEventListener(name, callback) {
+      (this.listeners[name] ||= []).push(callback);
+      this.events[name] = (event) => Promise.all(this.listeners[name].map((listener) => listener(event)));
+    },
     getElementById(id) {
       const escaped = id.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       if (!new RegExp(`id="${escaped}"`).test(element("#view").innerHTML)) return null;
@@ -83,15 +86,17 @@ async function start({ hash = "#/fanhan/1.1/exercises", search = "" } = {}) {
   };
   const window = {
     events: {}, addEventListener(name, callback) { this.events[name] = callback; },
-    scrollTo() {},
+    scrollTo() {}, isSecureContext: true,
   };
   const location = { hash, search, href: `http://localhost/${search}${hash}` };
   const requests = [];
+  const clipboard = [];
   const context = {
     document, window, location, URLSearchParams, URL, Map, Set, console,
     // Execute the search debounce without sleeping for wall-clock time.
     setTimeout(callback) { queueMicrotask(callback); return 1; }, clearTimeout() {},
     localStorage: { getItem() { return null; }, setItem() {} },
+    navigator: { clipboard: { async writeText(text) { clipboard.push(text); } } },
     history: { replaceState() {} },
     async fetch(url) {
       requests.push(url);
@@ -104,13 +109,18 @@ async function start({ hash = "#/fanhan/1.1/exercises", search = "" } = {}) {
   vm.runInNewContext(source, context, { filename: "site/assets/app.js" });
   await settle();
   return {
-    element, modes, src, document, location, requests, jumps,
+    element, modes, src, document, location, requests, jumps, clipboard,
     html: () => element("#view").innerHTML,
     async navigate(hash) { location.hash = hash; window.events.hashchange(); await settle(); },
     async search(value) { element("#search").value = value; element("#search").events.input(); await settle(); },
     async key(key, { shiftKey = false, input = false } = {}) {
-      document.events.keydown({ key, shiftKey, target: { matches: () => input }, preventDefault() {} });
+      await document.events.keydown({ key, shiftKey, target: { matches: () => input }, preventDefault() {} });
       await settle();
+    },
+    async copy(key) {
+      const button = new Element(); button.dataset.copySrc = key;
+      button.closest = (selector) => selector === "[data-copy-src]" || selector === "button" ? button : null;
+      await document.events.click({ target: button }); await settle();
     },
   };
 }
@@ -201,7 +211,107 @@ async function main() {
   await app.navigate(`#/${exerciseHit[0]}/${exerciseHit[1]}/${exerciseHit[2]}`);
   assert.match(app.html(), /class="exercise-items"/);
   assert.ok(app.jumps.some((id) => id.endsWith(exerciseHit[2].split('/').pop())));
-  console.log("PASS: actual text data (24 groups / 315 questions), printed pages, no scan images, lazy loading, question deep links, empty states, search/clear/statement navigation, controls and card-mode regression.");
+  await checkProbabilityChapters();
+  console.log("PASS: Functional Analysis 315 questions; Probability 46 questions in 2 chapters / 6 topics; original numbering, topic/question routes, cross-topic search/copy, chapter links/counts, lazy loading, empty states, controls and card-mode regression.");
+}
+
+async function checkProbabilityChapters() {
+  const probability = bookData.books.find((book) => book.id === "gailv");
+  const data = readJSON("gailv-exercises.json").sections;
+  const chapters = probability.chapters.filter((chapter) => chapter.exercises && chapter.exercises.scope === "chapter");
+  assert.equal(chapters.length, 2);
+  assert.equal(probability.exercise_count, 46);
+  assert.equal(fanhan.exercise_count, 315);
+  assert.equal(chapters.reduce((sum, chapter) => sum + chapter.exercises.count, 0), 46);
+  assert.equal(chapters.reduce((sum, chapter) => sum + chapter.exercises.groups.length, 0), 6);
+  assert.equal(readJSON("search.json").filter((entry) => entry[0] === "gailv" && entry[3] === "习题").length, 46);
+
+  const app = await start({ hash: "#/gailv/chapter-2/exercises" });
+  assert.deepEqual(app.requests, ["data/books.json", "data/gailv-exercises.json"]);
+  const itemAnchors = () => Array.from(app.html().matchAll(/data-anchor="([^"]+)"/g), (match) => match[1]);
+  for (const chapter of chapters) {
+    const info = chapter.exercises;
+    const record = data[info.id];
+    assert.equal(record.count, info.count);
+    assert.deepEqual(record.groups, info.groups);
+    assert.equal(record.items.length, info.count);
+    assert.ok(!chapter.sections.some((section) => section.id === info.id), "Chapter exercises must not create a fake statement section");
+    for (const section of chapter.sections) assert.equal(section.exercises.chapter_id, info.id);
+    const numbers = record.groups.flatMap((group) => group.numbers);
+    assert.equal(new Set(numbers).size, record.count, "Each question must belong to exactly one topic");
+    assert.deepEqual([...numbers].sort((a, b) => a - b), record.items.map((item) => parseInt(item.number, 10)));
+
+    await app.navigate(`#/gailv/${info.id}/exercises`);
+    assert.deepEqual(itemAnchors(), record.items.filter((item) => record.groups[0].numbers.includes(parseInt(item.number, 10))).map((item) => item.anchor), "Chapter entry defaults to the first topic");
+    for (const [i, group] of record.groups.entries()) {
+      await app.navigate(`#/gailv/${info.id}/exercises/topic-${group.id}`);
+      const expected = record.items.filter((item) => group.numbers.includes(parseInt(item.number, 10)));
+      assert.equal(expected.length, group.count);
+      assert.deepEqual(itemAnchors(), expected.map((item) => item.anchor));
+      assert.ok(app.html().includes(`第${chapter.no}章 · ${group.title} · 习题`));
+      assert.equal((app.html().match(/class="in-topic"/g) || []).length, group.count);
+      for (const item of record.items) assert.ok(app.html().includes(`/exercises/${item.anchor}\"`), "All chapter question numbers remain navigable");
+      assert.ok(app.html().includes(`href="#/gailv/${info.id}\">返回本章`));
+      if (i) assert.ok(app.html().includes(`/exercises/topic-${record.groups[i - 1].id}\"`));
+      if (i + 1 < record.groups.length) assert.ok(app.html().includes(`/exercises/topic-${record.groups[i + 1].id}\"`));
+    }
+    for (const item of record.items) {
+      await app.navigate(`#/gailv/${info.id}/exercises/${item.anchor}`);
+      const group = record.groups.find((group) => group.numbers.includes(parseInt(item.number, 10)));
+      assert.ok(app.html().includes(`第${chapter.no}章 · ${group.title} · 习题`));
+      assert.ok(app.jumps.includes(`i-gailv-${info.id}/exercises-${item.anchor}`));
+      assert.deepEqual(itemAnchors(), record.items.filter((it) => group.numbers.includes(parseInt(it.number, 10))).map((it) => it.anchor));
+    }
+
+    const lastItem = record.items[record.items.length - 1];
+    await app.copy(`gailv/${info.id}/exercises/${lastItem.anchor}`);
+    assert.equal(app.clipboard.at(-1), lastItem.src, "Copy must use original Markdown/LaTeX after topic switching");
+    await app.navigate(`#/gailv/${info.id}`);
+    assert.match(app.html(), /class="book-home"/);
+    assert.ok(app.jumps.includes(info.id), "Returning to a chapter scrolls to its real book index entry");
+    for (const group of record.groups) assert.ok(app.html().includes(`#/gailv/${info.id}/exercises/topic-${group.id}`));
+
+    const section = chapter.sections[0];
+    await app.navigate(`#/gailv/${section.id}`);
+    assert.ok(app.html().includes(`href="#/gailv/${info.id}/exercises\"`));
+    assert.ok(app.html().includes(`本章习题 ${info.count} 题`));
+    await app.navigate(`#/gailv/${section.id}/exercises`);
+    assert.equal(app.location.hash, `#/gailv/${info.id}/exercises`);
+    assert.match(app.html(), /class="exercise-items"/);
+  }
+
+  // Chapter 5's density group contains nonconsecutive original numbers.
+  const density = data["chapter-5"].groups.find((group) => group.id === "density");
+  assert.ok(density.numbers.some((number, i) => i && number !== density.numbers[i - 1] + 1));
+  await app.navigate("#/gailv/chapter-5/exercises/topic-density");
+  assert.deepEqual(itemAnchors(), data["chapter-5"].items.filter((item) => density.numbers.includes(parseInt(item.number, 10))).map((item) => item.anchor));
+  assert.equal(itemAnchors().length, 11, "One topic is a whole page without secondary pagination");
+
+  const hit = readJSON("search.json").find((entry) => entry[0] === "gailv" && entry[1] === "chapter-2" && entry[4] === "21");
+  assert.ok(hit);
+  const question21 = data["chapter-2"].items.find((item) => item.number === "21");
+  await app.navigate("#/gailv/chapter-2/exercises/topic-events");
+  const searchTerm = hit[7].slice(-50);
+  await app.search(searchTerm);
+  assert.ok(app.html().includes(`href="#/${hit[0]}/${hit[1]}/${hit[2]}\"`));
+  const sourceLabels = Array.from(app.html().matchAll(/<span class="hit-src">([^<]*)<\/span>/g), (match) => match[1]);
+  assert.ok(sourceLabels.some((label) => label.includes("第2章")));
+  assert.ok(sourceLabels.every((label) => !label.includes("chapter-")), "Search results must display chapter names, not technical route IDs");
+  await app.navigate(`#/${hit[0]}/${hit[1]}/${hit[2]}`);
+  assert.ok(app.html().includes("/exercises/topic-distributions\" aria-current=\"page\""));
+  assert.ok(app.jumps.includes("i-gailv-chapter-2/exercises-习题-21"));
+  await app.search(searchTerm);
+  await app.search("");
+  assert.ok(app.html().includes("/exercises/topic-distributions\" aria-current=\"page\""));
+  assert.ok(app.document.body.classList.contains("exercise-mode"));
+  await app.key("r");
+  assert.match(app.html(), /class="exercise-items"/);
+  await app.navigate("#/gailv");
+  assert.ok(app.html().includes("习题 46 题"));
+  assert.ok(!app.html().includes("习题 138 题"), "Chapter summaries must not be counted once per section");
+  await app.navigate("#/");
+  const expectedTotal = bookData.books.reduce((sum, book) => sum + (book.exercise_count || 0), 0);
+  assert.ok(app.html().includes(`${expectedTotal} 道习题`));
 }
 
 main().catch((error) => { console.error(error); process.exitCode = 1; });
