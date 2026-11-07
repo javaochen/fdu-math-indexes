@@ -984,11 +984,6 @@
     try { localStorage.setItem("fa.theme", t); } catch (_) { /* 忽略 */ }
     document.querySelectorAll("[data-theme-opt]").forEach((b) => b.classList.toggle("active", b.dataset.themeOpt === t));
   }
-  function applyAccent(a) {
-    document.documentElement.dataset.accent = a;
-    try { localStorage.setItem("fa.accent", a); } catch (_) { /* 忽略 */ }
-    document.querySelectorAll("[data-accent-opt]").forEach((b) => b.classList.toggle("active", b.dataset.accentOpt === a));
-  }
   function applyCardSize(s) {
     document.documentElement.dataset.cardSize = s;
     try { localStorage.setItem("fa.cardSize", s); } catch (_) { /* 忽略 */ }
@@ -1001,10 +996,8 @@
   });
   lookPanel.addEventListener("click", (e) => {
     const t = e.target.closest("[data-theme-opt]");
-    const a = e.target.closest("[data-accent-opt]");
     const c = e.target.closest("[data-card-size]");
     if (t) applyTheme(t.dataset.themeOpt);
-    else if (a) applyAccent(a.dataset.accentOpt);
     else if (c) applyCardSize(c.dataset.cardSize);
     else return;
     e.stopPropagation();
@@ -1060,17 +1053,15 @@
       if (qm === "test") mode = "read";
       document.querySelectorAll(".mode[data-mode]").forEach((x) =>
         x.classList.toggle("active", x.dataset.mode === mode));
-      let savedTheme = "auto", savedAccent = "red", savedCard = "l";
+      let savedTheme = "auto", savedCard = "l";
       try {
         savedTheme = localStorage.getItem("fa.theme") || "auto";
-        savedAccent = localStorage.getItem("fa.accent") || "red";
         savedCard = localStorage.getItem("fa.cardSize") || "l";
       } catch (_) { /* 忽略 */ }
       const qt = qs.get("theme");
       applyTheme(THEMES.includes(qt) ? qt : savedTheme);
       const qtype = qs.get("type");
       if (["定理", "定义", "例", "其他"].includes(qtype)) typeFilter = qtype;
-      applyAccent(qs.get("accent") || savedAccent);
       applyCardSize(qs.get("card") || savedCard);
       if (qs.get("src") === "1") setSrcAll(true);
       const qq = qs.get("q");

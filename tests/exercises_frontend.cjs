@@ -128,6 +128,12 @@ async function start({ hash = "#/fanhan/1.1/exercises", search = "" } = {}) {
 }
 
 async function main() {
+  const appearanceHTML = fs.readFileSync(path.join(site, 'index.html'), 'utf8');
+  assert.ok(!/data-accent-opt|class="swatch"/.test(appearanceHTML), 'Retired accent controls must not appear');
+  const legacyPalette = await start({search:'?accent=plum&theme=dark'});
+  assert.equal(legacyPalette.document.documentElement.dataset.theme, 'dark');
+  assert.equal(legacyPalette.document.documentElement.dataset.accent, undefined,
+    'Old accent parameters must not re-enable retired palettes');
   assert.equal(ready.length, 24, "Expected all 24 exercise groups in Functional Analysis");
   assert.equal(ready.reduce((sum, section) => sum + section.exercises.count, 0), 315);
   assert.equal(readJSON("search.json").filter((entry) => entry[0] === 'fanhan' && entry[3] === '习题').length, 315);
