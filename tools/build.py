@@ -48,7 +48,7 @@ TYPE_RE = re.compile(
 HEADING_RE = re.compile(r"^(?:##|####)\s+(?P<title>.+?)(?:\s+@(?P<page>\d+))?\s*$")
 HEADING_NUM_RE = re.compile(
     r"^(?P<number>"
-    r"[A-Z](?:\.(?:[IVX]+|\d+))?"       # A / A.I / A.1
+    r"[A-Z](?:\.(?:[IVX]+|\d+))?(?=\s)"  # A / A.I / A.1，单字母后须有空白
     r"|\d+(?:\.\d+)*"                    # 1 / 1.2 / 1.2.3
     r"|[一二三四五六七八九十]+、"          # 一、
     r")\s*(?P<title>.+)$"

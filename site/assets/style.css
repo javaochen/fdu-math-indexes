@@ -417,20 +417,25 @@ mark { background: rgba(255, 210, 90, .45); color: inherit; padding: 0 1px; bord
 .katex-display { margin: .55em 0; overflow-x: auto; overflow-y: hidden; padding: 2px 0; }
 
 /* ---------- 原书小标题与导语 ---------- */
+/* 小标题是结构分隔而非控件：标题居中，两侧编号/页码绝对定位，白底彩框与重点入口一致。 */
 .subhead {
-  display: flex; align-items: baseline; gap: 9px; flex-wrap: wrap;
-  margin: 22px 2px 9px; padding: 0 0 0 10px;
-  border-left: 3px solid var(--accent);
-  font-family: var(--serif); font-size: 17px; font-weight: 700; line-height: 1.5;
+  position: relative; display: block;
+  margin: 26px 2px 12px; padding: 10px 84px;
+  border: 2px solid transparent; border-radius: 9px;
+  background: linear-gradient(#fff, #fff) padding-box, var(--spectrum-frame) border-box;
+  color: #193832; text-align: center;
+  font-family: var(--serif); font-size: 17px; font-weight: 700; line-height: 1.45;
   scroll-margin-top: 64px;
 }
 .subhead-no {
-  color: var(--accent); font-size: 14.5px; font-variant-numeric: tabular-nums;
-  letter-spacing: .02em;
+  position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+  color: #5f7a6d; font-size: 13.5px; font-weight: 600;
+  font-variant-numeric: tabular-nums; letter-spacing: .02em;
 }
-.subhead-title { color: var(--ink); }
+.subhead-title { color: #193832; overflow-wrap: anywhere; }
 .subhead-page {
-  margin-left: auto; color: var(--muted); font-family: var(--sans);
+  position: absolute; right: 16px; top: 50%; transform: translateY(-50%);
+  color: #61756a; font-family: var(--sans);
   font-size: 11.5px; font-weight: 400; font-variant-numeric: tabular-nums;
 }
 .prose {
@@ -489,7 +494,9 @@ kbd {
   .bh-head { gap: 12px; }
   .bh-info h1 { font-size: 22px; }
   .bh-index { grid-template-columns: 1fr; }
-  .subhead { margin-top: 16px; font-size: 16px; }
+  .subhead { margin-top: 18px; padding: 9px 58px; font-size: 16px; }
+  .subhead-no { left: 10px; font-size: 12px; }
+  .subhead-page { right: 10px; font-size: 10.5px; }
   .prose { font-size: 14px; }
 }
 
@@ -776,7 +783,8 @@ body.network-home { background: #f5f2e9; }
 }
 :root :is(.mode.active, .book-btn.active, .chip.active, .look-opt.active,
     .ghost-toggle.active, .copy-btn.copied, .src-copy.copied,
-    .section-tabs a[aria-current="page"], .exercise-topic-links a[aria-current="page"]) {
+    .section-tabs a[aria-current="page"], .exercise-topic-links a[aria-current="page"],
+    .subhead) {
   border: 2px solid transparent;
   background: linear-gradient(#fff, #fff) padding-box, var(--spectrum-frame) border-box;
   color: #193832;
@@ -802,7 +810,8 @@ body.network-home { background: #f5f2e9; }
 @media (forced-colors: active) {
   :root :is(.mode.active, .book-btn.active, .chip.active, .look-opt.active,
       .ghost-toggle.active, .copy-btn.copied, .src-copy.copied,
-      .section-tabs a[aria-current="page"], .exercise-topic-links a[aria-current="page"]),
+      .section-tabs a[aria-current="page"], .exercise-topic-links a[aria-current="page"],
+      .subhead),
   .pn-home .pn-app[aria-pressed="true"], .pn-home .pn-detail {
     border-color: Highlight; background: Canvas; color: CanvasText;
   }
