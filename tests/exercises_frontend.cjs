@@ -79,6 +79,7 @@ async function start({ hash = "#/fanhan/1.1/exercises", search = "" } = {}) {
       this.events[name] = (event) => Promise.all(this.listeners[name].map((listener) => listener(event)));
     },
     getElementById(id) {
+      if (id === "data-btn") return element("#data-btn");
       const escaped = id.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
       if (!new RegExp(`id="${escaped}"`).test(element("#view").innerHTML)) return null;
       const el = new Element(); el.scrollIntoView = () => jumps.push(id); return el;
@@ -318,8 +319,10 @@ async function checkProbabilityChapters() {
   assert.match(app.html(), /class="exercise-items"/);
   await app.navigate("#/gailv");
   assert.ok(app.html().includes("习题 46 题"));
+  assert.match(app.element("#data-btn").href, /\/site\/data\/gailv\.json$/, "Footer data link must follow the current book");
   assert.ok(!app.html().includes("习题 138 题"), "Chapter summaries must not be counted once per section");
   await app.navigate("#/");
+  assert.match(app.element("#data-btn").href, /\/site\/data\/books\.json$/, "Home must fall back to the catalog data");
   const expectedTotal = bookData.books.reduce((sum, book) => sum + (book.exercise_count || 0), 0);
   assert.ok(app.html().includes(`${expectedTotal} 道习题`));
 }

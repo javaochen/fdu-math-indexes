@@ -35,6 +35,18 @@
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const norm = (s) => String(s).toLowerCase().replace(/\\/g, "").replace(/\$/g, "").replace(/\s+/g, " ");
 
+  // 与 tools/build.py 的 src_from_html 对应：书数据只存 html，源码按需还原。
+  function srcFromHtml(html) {
+    const paras = [];
+    const re = /<p>([\s\S]*?)<\/p>/g;
+    let m;
+    while ((m = re.exec(String(html || "")))) paras.push(m[1]);
+    return paras.map((p) => p
+      .replace(/<strong>/g, "**").replace(/<\/strong>/g, "**")
+      .replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+      .replace(/&amp;/g, "&")).join("\n\n");
+  }
+
   // 作者头像：只显示有图的作者，无图不占位、不显示文字
   function avatar(b, cls = "") {
     const src = b && b.author_img ? b.author_img : "";
@@ -131,7 +143,7 @@
         sections.push(sec);
         for (const it of sec.items) {
           INDEX.set(`${id}/${sec.id}/${it.anchor}`, { item: it, section: sec, book: meta });
-          SRC.set(`${id}/${sec.id}/${it.anchor}`, it.src || "");
+          SRC.set(`${id}/${sec.id}/${it.anchor}`, it.src || srcFromHtml(it.html));
         }
       }
     }
@@ -157,7 +169,7 @@
       for (const it of record.items || []) {
         const key = `${id}/${sid}/exercises/${it.anchor}`;
         INDEX.set(key, { item: it });
-        SRC.set(key, it.src || "");
+        SRC.set(key, it.src || srcFromHtml(it.html));
       }
     }
     EXERCISES.set(id, data.sections || {});
@@ -353,6 +365,17 @@
       id="i-${esc(it.bookId || "")}-${esc(it.secId || "")}-${esc(it.anchor)}">${head}${body}</article>`;
   }
 
+  function blockHtml(block) {
+    if (block.kind === "heading") {
+      return `<h2 class="subhead">
+        ${block.number ? `<span class="subhead-no">${esc(block.number)}</span>` : ""}
+        <span class="subhead-title">${block.html_title || esc(block.title)}</span>
+        ${block.page ? `<span class="subhead-page">p.${block.page}</span>` : ""}
+      </h2>`;
+    }
+    return `<div class="prose">${block.html || ""}</div>`;
+  }
+
   function toggleFold(card) {
     if (!card) return;
     card.classList.toggle("folded");
@@ -432,12 +455,30 @@
   function renderSection(s) {
     const b = s.book;
     const items = filterItems(s.items);
-    const body = items.length
-      ? items.map((it) => itemHtml({ ...it, bookId: b.id, secId: s.id },
-          { foldable: it.type === "定义", folded: !defsOpen && it.type === "定义" })).join("")
-      : `<div class="empty">这一节没有该类型的条目。</div>`;
+    const blocks = typeFilter === "all" && Array.isArray(s.blocks) ? s.blocks : null;
+    const itemNode = (it) => itemHtml({ ...it, bookId: b.id, secId: s.id },
+      { foldable: it.type === "定义", folded: !defsOpen && it.type === "定义" });
+    let body;
+    if (!items.length) {
+      body = `<div class="empty">这一节没有该类型的条目。</div>`;
+    } else if (!blocks) {
+      body = items.map(itemNode).join("");
+    } else {
+      const byItem = new Map();
+      for (const block of blocks) {
+        const at = Math.max(0, Math.min(items.length, block.before | 0));
+        if (!byItem.has(at)) byItem.set(at, []);
+        byItem.get(at).push(block);
+      }
+      const parts = [];
+      for (let i = 0; i <= items.length; i++) {
+        for (const block of byItem.get(i) || []) parts.push(blockHtml(block));
+        if (i < items.length) parts.push(itemNode(items[i]));
+      }
+      body = parts.join("");
+    }
     $("#view").innerHTML = sectionHead(s, items) + body;
-    typesetLazy($("#view"));
+    typesetLazy($("#view"), blocks ? ".item, .prose, .subhead" : ".item");
     $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <b>${esc(b.short || b.title)}</b> · ${esc(s.id)} ${esc(s.title)}`;
     markActive();
     window.scrollTo({ top: 0 });
@@ -568,6 +609,7 @@
 
   async function renderSearch(q) {
     const token = ++loadToken;
+    updateDataLink();
     if (exerciseView) current = null;
     setExerciseView(false);
     document.body.classList.remove("home-mode");
@@ -603,6 +645,7 @@
 
   function renderHome() {
     ++loadToken;
+    updateDataLink();
     setExerciseView(false);
     document.body.classList.add("home-mode");
     document.title = SITE.title || "数学命题索引";
@@ -738,6 +781,18 @@
   /* ---------------- 路由 ---------------- */
   /* 旧 id 别名：fanyan 是早期拼写错误（泛函 = fanhan），保留以兼容已分享的链接 */
   const BOOK_ALIAS = { fanyan: "fanhan" };
+  const DATA_RAW = "https://raw.githubusercontent.com/javaochen/fdu-math-indexes/main/site/data/";
+
+  // 左下角“数据”：当前书的 raw JSON，首页指向书目数据。raw 便于直接交给 AI 阅读。
+  function updateDataLink() {
+    const el = document.getElementById("data-btn");
+    if (!el) return;
+    const first = decodeURIComponent(location.hash.replace(/^#\/?/, "")).split("/").filter(Boolean)[0] || "";
+    const id = BOOK_ALIAS[first] || first;
+    const book = BOOKS.find((b) => b.id === id);
+    el.href = DATA_RAW + (book ? book.id : "books") + ".json";
+    el.title = book ? `${book.title}的原始数据（JSON），可直接交给 AI` : "全部书目与数据的索引（JSON），可直接交给 AI";
+  }
 
   function parseHash() {
     const parts = decodeURIComponent(location.hash.replace(/^#\/?/, "")).split("/").filter(Boolean);
@@ -749,6 +804,7 @@
 
   async function route() {
     const token = ++loadToken;
+    updateDataLink();
     document.body.classList.remove("network-home");
     if (!BOOKS.length) {
       $("#view").innerHTML = `<div class="empty">还没有任何书。请在 content/ 下新建书目录。</div>`;
@@ -1033,13 +1089,13 @@
   srcBtn.addEventListener("click", () => setSrcAll(!srcAll));
 
   $("#about-btn").addEventListener("click", () => { closeSidebar(); $("#modal").hidden = false; });
-  $(".brand").addEventListener("click", () => {
+  const goHome = () => {
     closeSidebar();
     if (location.hash === "#/" || !location.hash) { renderHome(); } else { location.hash = "#/"; }
-  });
-  $("#home-btn").addEventListener("click", () => {
-    closeSidebar();
-    if (location.hash === "#/" || !location.hash) { renderHome(); } else { location.hash = "#/"; }
+  };
+  $(".brand").addEventListener("click", goHome);
+  $(".brand").addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); goHome(); }
   });
   $("#modal-close").addEventListener("click", () => { $("#modal").hidden = true; });
   $("#modal").addEventListener("click", (e) => { if (e.target.id === "modal") $("#modal").hidden = true; });

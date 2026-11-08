@@ -14,14 +14,14 @@
 <div id="app">
   <aside id="sidebar">
     <button id="sidebar-close" type="button" aria-label="关闭目录">×</button>
-    <div class="brand">
+    <div class="brand" role="link" tabindex="0" aria-label="返回书目">
       <div class="brand-title">数学命题索引</div>
       <div class="brand-sub">只含陈述 · 便于自测</div>
     </div>
     <div class="books" id="books"></div>
     <nav id="toc" aria-label="目录"></nav>
     <div class="side-foot">
-      <button id="home-btn" class="linklike" type="button">书目</button>
+      <a id="data-btn" class="linklike" href="data/books.json" target="_blank" rel="noopener" title="原始数据（JSON），可直接交给 AI">数据</a>
       <span class="dot">·</span>
       <a href="https://github.com/javaochen/fdu-math-indexes" target="_blank" rel="noopener">GitHub</a>
       <span class="dot">·</span>

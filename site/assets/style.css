@@ -416,6 +416,31 @@ mark { background: rgba(255, 210, 90, .45); color: inherit; padding: 0 1px; bord
 .katex { font-size: 1.04em; }
 .katex-display { margin: .55em 0; overflow-x: auto; overflow-y: hidden; padding: 2px 0; }
 
+/* ---------- 原书小标题与导语 ---------- */
+.subhead {
+  display: flex; align-items: baseline; gap: 9px; flex-wrap: wrap;
+  margin: 22px 2px 9px; padding: 0 0 0 10px;
+  border-left: 3px solid var(--accent);
+  font-family: var(--serif); font-size: 17px; font-weight: 700; line-height: 1.5;
+  scroll-margin-top: 64px;
+}
+.subhead-no {
+  color: var(--accent); font-size: 14.5px; font-variant-numeric: tabular-nums;
+  letter-spacing: .02em;
+}
+.subhead-title { color: var(--ink); }
+.subhead-page {
+  margin-left: auto; color: var(--muted); font-family: var(--sans);
+  font-size: 11.5px; font-weight: 400; font-variant-numeric: tabular-nums;
+}
+.prose {
+  margin: 0 2px 10px; padding: 0 4px 0 13px;
+  border-left: 1px solid var(--line);
+  font-family: var(--serif); font-size: 14.5px; line-height: 1.85; color: var(--muted);
+}
+.prose p { margin: 0 0 .5em; }
+.prose p:last-child { margin-bottom: 0; }
+
 .hidden-stmt { display: none; }
 .item.revealed .hidden-stmt { display: block; }
 .reveal {
@@ -464,6 +489,8 @@ kbd {
   .bh-head { gap: 12px; }
   .bh-info h1 { font-size: 22px; }
   .bh-index { grid-template-columns: 1fr; }
+  .subhead { margin-top: 16px; font-size: 16px; }
+  .prose { font-size: 14px; }
 }
 
 /* ---------- 紧凑化 ---------- */

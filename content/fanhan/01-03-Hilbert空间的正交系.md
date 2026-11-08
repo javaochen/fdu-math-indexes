@@ -65,6 +65,8 @@ Bessel 不等式表示向量 $x$ 在 $\mathcal{E}$ 中每个标准向量 $e_\lam
 $$\lim_{n\to\infty}\langle x,e_n\rangle=0.$$
 这个推论在 $L^2[0,2\pi]$ 中用于标准正交三角函数系的情况下，就是 **Riemann–Lebesgue（黎曼–勒贝格）引理**。
 
+## 1.3.1 Hilbert空间的正交基 @23
+
 ### 定义 1.3.3 (Fourier 级数) @23
 
 设 $\mathcal{E}=\{e_\lambda:\lambda\in\Lambda\}$ 是 Hilbert 空间 $H$ 中的标准正交系，对于 $x\in H$，级数 $\sum\limits_{\lambda\in\Lambda}\langle x,e_\lambda\rangle e_\lambda$ 称为向量 $x$ 关于 $\mathcal{E}$ 的 **Fourier 级数**，或 Fourier 展开式。当 $x=\sum\limits_{\lambda\in\Lambda}\langle x,e_\lambda\rangle e_\lambda$ 成立时，就称 $x$ 关于 $\mathcal{E}$ **可以展开成 Fourier 级数**。
@@ -143,6 +145,8 @@ $$\frac{1}{n!}\mathrm{e}^{-\frac{t}{2}}L_n(t)\quad(n=0,1,\cdots)$$
 设 $A$ 是 Hilbert 空间 $H$ 的标准正交系，则 $A$ 可扩张为 $H$ 的一组标准正交基。
 
 一个 Hilbert 空间上可以有很多组不同的标准正交基，但是由集合论的知识可知，两组标准正交基的势总是一样的。而且，Hilbert 空间本质上由标准正交基的势唯一确定。具体来说，两个 Hilbert 空间 $H_1$ 与 $H_2$ 是（保持内积线性）空间同构的充要条件是它们的标准正交基的势是相同的。
+
+## 1.3.2 投影定理 @28
 
 ### 定理 1.3.4 (投影定理) @28
 

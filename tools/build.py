@@ -21,6 +21,7 @@ content/<书>/_book.md：
 
 节文件 front matter：chapter / chapter_title / section / section_title / pages。
 条目头：### 类型 [编号] [(标题)] @书页码。
+小标题：## [编号] 标题 [@书页码]（页码可省；兼容旧写法 ####）。
 
 用法：
     python tools/build.py
@@ -41,6 +42,16 @@ DATA = ROOT / "site" / "data"
 
 TYPE_RE = re.compile(
     r"^###\s+(?P<type>\S+?)\s*(?P<number>(?:[A-Z]\.)?\d+(?:\.\d+)*(?:[′'])?)?\s*(?:[（(](?P<title>.*)[）)])?\s*@(?P<page>\d+)\s*$"
+)
+# 小标题（原书三级标题）：## 1.3.1 标题 [@书页码]，页码可省。
+# 兼容早期写法 ####；不做全局替换，以免影响正文中的普通 #。
+HEADING_RE = re.compile(r"^(?:##|####)\s+(?P<title>.+?)(?:\s+@(?P<page>\d+))?\s*$")
+HEADING_NUM_RE = re.compile(
+    r"^(?P<number>"
+    r"[A-Z](?:\.(?:[IVX]+|\d+))?"       # A / A.I / A.1
+    r"|\d+(?:\.\d+)*"                    # 1 / 1.2 / 1.2.3
+    r"|[一二三四五六七八九十]+、"          # 一、
+    r")\s*(?P<title>.+)$"
 )
 TYPES = {"定义", "定理", "命题", "引理", "推论", "例", "反例", "注", "构造", "算法", "公理", "附录"}
 BIG_NUM = {"一": 1, "二": 2, "三": 3, "四": 4, "五": 5, "六": 6, "七": 7, "八": 8, "九": 9, "十": 10}
@@ -67,6 +78,13 @@ def inline(s: str) -> str:
     """仅支持 **粗体**，其余按 HTML 转义。公式原样保留，交给 KaTeX。"""
     s = escape_html(s)
     return re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", s)
+
+
+def src_from_html(html: str) -> str:
+    """从渲染 HTML 还原 Markdown/LaTeX 源码，须与 site/assets/app.js 的同名函数一致。"""
+    paras = re.findall(r"<p>(.*?)</p>", html, flags=re.S)
+    text = (p.replace("<strong>", "**").replace("</strong>", "**") for p in paras)
+    return "\n\n".join(html_lib.unescape(p) for p in text)
 
 
 def to_paragraphs(body: str) -> list[str]:
@@ -155,7 +173,15 @@ def load_book(book_dir: Path, problems: list[str]) -> dict | None:
 
         lines = body.split("\n")
         heads = []
+        subheads = []
         for i, l in enumerate(lines):
+            if l.startswith("####") or l.startswith("## "):
+                m = HEADING_RE.match(l)
+                if m:
+                    subheads.append((i, m))
+                else:
+                    problems.append(f"{path.name}: 小标题无法解析「{l[:48]}」")
+                continue
             if not l.startswith("### "):
                 continue
             m = TYPE_RE.match(l)
@@ -167,6 +193,15 @@ def load_book(book_dir: Path, problems: list[str]) -> dict | None:
             problems.append(f"{path.name}: 没有识别到任何条目头")
             continue
 
+        # 条目与小标题共同切分正文：条目正文遇到下一个小标题即结束。
+        events = [(idx, "item", n) for n, (idx, _) in enumerate(heads)]
+        events += [(idx, "heading", n) for n, (idx, _) in enumerate(subheads)]
+        events.sort(key=lambda e: e[0])
+        item_ends = {}
+        for k, (idx, kind, n) in enumerate(events):
+            if kind == "item":
+                item_ends[n] = events[k + 1][0] if k + 1 < len(events) else len(lines)
+
         section = {
             "id": sec_id,
             "title": fm.get("section_title", ""),
@@ -175,7 +210,7 @@ def load_book(book_dir: Path, problems: list[str]) -> dict | None:
         }
         used_anchors: dict[str, int] = {}
         for n, (idx, m) in enumerate(heads):
-            end = heads[n + 1][0] if n + 1 < len(heads) else len(lines)
+            end = item_ends[n]
             body_txt = "\n".join(lines[idx + 1:end])
             typ = m.group("type")
             if typ not in TYPES:
@@ -191,13 +226,59 @@ def load_book(book_dir: Path, problems: list[str]) -> dict | None:
             if not html:
                 problems.append(f"{path.name}: {typ} {item['number'] or item['title']} 正文为空")
             item["html"] = html
-            item["src"] = "\n\n".join(paras)
+            src = "\n\n".join(paras)
+            # src 可由 html 精确还原时不再重复存储；还原不了才保留原文，避免信息丢失。
+            if src_from_html(html) != src:
+                item["src"] = src
             check_math(html, f"{path.name} {typ} {item['number'] or item['title']}", problems)
             base = slugify(item)
             k = used_anchors.get(base, 0) + 1
             used_anchors[base] = k
             item["anchor"] = base if k == 1 else f"{base}-{k}"
             section["items"].append(item)
+
+        if subheads:
+            def prose_block(text: str) -> dict | None:
+                paras = to_paragraphs(text)
+                if not paras:
+                    return None
+                html = "".join(f"<p>{inline(p)}</p>" for p in paras)
+                check_math(html, f"{path.name} 小标题导语", problems)
+                return {"kind": "prose", "html": html}
+
+            blocks = []
+            first = events[0][0] if events else len(lines)
+            pre = prose_block("\n".join(lines[:first]))
+            if pre:
+                pre["before"] = 0
+                blocks.append(pre)
+
+            items_before = 0
+            for k, (idx, kind, n) in enumerate(events):
+                nxt = events[k + 1][0] if k + 1 < len(events) else len(lines)
+                if kind == "heading":
+                    m = subheads[n][1]
+                    raw = m.group("title").strip()
+                    hm = HEADING_NUM_RE.match(raw)
+                    number = hm.group("number") if hm else ""
+                    title = hm.group("title").strip() if hm else raw
+                    block = {
+                        "kind": "heading",
+                        "number": number,
+                        "title": title,
+                        "html_title": inline(title),
+                        "before": items_before,
+                    }
+                    if m.group("page"):
+                        block["page"] = int(m.group("page"))
+                    blocks.append(block)
+                    post = prose_block("\n".join(lines[idx + 1:nxt]))
+                    if post:
+                        post["before"] = items_before
+                        blocks.append(post)
+                else:
+                    items_before += 1
+            section["blocks"] = blocks
 
         ch["sections"].append(section)
 
