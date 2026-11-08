@@ -19,9 +19,6 @@
       <div class="brand-sub">只含陈述 · 便于自测</div>
     </div>
     <div class="books" id="books"></div>
-    <div class="search-box">
-      <input id="search" type="search" placeholder="搜索命题、习题、术语（/ 聚焦）" autocomplete="off">
-    </div>
     <nav id="toc" aria-label="目录"></nav>
     <div class="side-foot">
       <button id="home-btn" class="linklike" type="button">书目</button>
@@ -37,6 +34,7 @@
     <header id="topbar">
       <button id="menu-btn" class="icon-btn" type="button" aria-label="打开目录" aria-controls="sidebar" aria-expanded="false">☰</button>
       <div id="crumbs" class="crumbs"></div>
+      <button id="jump-btn" class="ghost-toggle" type="button" aria-haspopup="dialog" aria-controls="quick-jump" aria-expanded="false">跳转</button>
       <div class="modes" role="group" aria-label="显示模式">
         <button class="mode" data-mode="read" type="button">阅读</button>
         <button class="mode" data-mode="card" type="button">卡片</button>
@@ -62,9 +60,16 @@
       </div>
       <button id="src-btn" class="ghost-toggle" type="button" title="整页切换 Markdown/LaTeX 源码（s）">&lt;/&gt; 源码</button>
     </header>
+    <div class="page-search"><label for="search">全文搜索</label><input id="search" type="search" placeholder="搜索命题、习题、术语（/ 聚焦）" autocomplete="off"></div>
     <div id="view"></div>
   </main>
 </div>
+
+<dialog id="quick-jump" aria-labelledby="jump-title">
+  <header class="jump-head"><div><h2 id="jump-title">快速跳转</h2><p>所有书的小节标题与已录入习题入口</p></div><form method="dialog"><button type="submit" class="ghost-toggle" aria-label="关闭快速跳转">×</button></form></header>
+  <div class="jump-filters"><label class="jump-book-label">书籍<select id="jump-book" aria-label="选择书籍"></select></label><input id="jump-query" type="search" aria-label="筛选页面标题" placeholder="输入书名、节号或页面标题" autocomplete="off"></div>
+  <p id="jump-count" role="status"></p><nav id="jump-results" aria-label="页面跳转结果"></nav>
+</dialog>
 
 <div id="modal" class="modal" hidden>
   <div class="modal-card">
@@ -84,6 +89,7 @@
 <script src="vendor/katex/contrib/copy-tex.min.js"></script>
 <script src="assets/probability-network.js"></script>
 <script src="assets/drawer.js"></script>
+<script src="assets/page-jump.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>

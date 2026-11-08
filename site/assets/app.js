@@ -111,6 +111,7 @@
     const data = await res.json();
     SITE = data.site || SITE;
     BOOKS = data.books || [];
+    if (window.PageJump) window.PageJump.init(BOOKS);
     document.title = SITE.title;
     buildBooks();
   }
@@ -945,7 +946,7 @@
     }
     if (e.key === "/") {
       e.preventDefault();
-      if (window.SiteDrawer) window.SiteDrawer.open();
+      closeSidebar();
       searchEl.focus(); return;
     }
     if (exerciseView) {
