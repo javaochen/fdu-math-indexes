@@ -154,6 +154,8 @@ async function main() {
   }
 
   const app = await start();
+  assert.match(app.element('#toc').innerHTML, /class="toc-section-row"><a[\s\S]*?href="#\/fanhan\/1\.1"[\s\S]*?<\/a><a class="sec-link toc-exercises toc-exercises-inline"/,
+    'Section exercises must be a sibling link beside the section title');
   assert.match(app.html(), /class="exercise-items"/);
   assert.match(app.html(), /data-copy-src=/);
   assert.ok(!/<img|查看原图|扫描图/.test(app.html()));

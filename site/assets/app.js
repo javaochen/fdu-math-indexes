@@ -3,6 +3,10 @@
   "use strict";
 
   const $ = (s) => document.querySelector(s);
+  function closeSidebar() {
+    if (window.SiteDrawer) window.SiteDrawer.close();
+    else $("#sidebar").classList.remove("open");
+  }
 
   let SITE = { title: "数学命题索引" };
   let BOOKS = [];              // 目录元数据（不含正文）
@@ -229,12 +233,13 @@
           <span class="ch-name">${esc(ch.title || "未命名章")}</span><span class="ch-meta">${ch.sections.length} 节</span>
         </div><div class="chap-secs">`;
       for (const s of ch.sections) {
-        html += `<a class="sec-link" href="#/${esc(meta.id)}/${esc(s.id)}" data-sec="${esc(s.id)}">
+        html += `<div class="toc-section-row"><a class="sec-link" href="#/${esc(meta.id)}/${esc(s.id)}" data-sec="${esc(s.id)}">
           <span>${esc(s.id)}&nbsp;${esc(s.title)}</span><span class="n">${s.count}</span></a>`;
         if (exerciseInfo(s).status === "ready") {
-          html += `<a class="sec-link toc-exercises" href="${esc(sectionUrl(meta.id, s.id, true))}" data-sec="${esc(s.id)}" data-exercises="1">
-            <span>${esc(s.id)} 习题</span><span class="n">${exerciseInfo(s).count} 题</span></a>`;
+          html += `<a class="sec-link toc-exercises toc-exercises-inline" href="${esc(sectionUrl(meta.id, s.id, true))}" data-sec="${esc(s.id)}" data-exercises="1" aria-label="${esc(s.id)} ${esc(s.title)}，习题 ${exerciseInfo(s).count} 题" title="本节 ${exerciseInfo(s).count} 道习题">
+            <span>习题</span><span class="n">${exerciseInfo(s).count}</span></a>`;
         }
+        html += `</div>`;
       }
       if (ch.exercises && ch.exercises.status === "ready") {
         const id = chapterExerciseId(ch);
@@ -860,7 +865,7 @@
     if (bookBtn) {
       const b = BOOKS.find((x) => x.id === bookBtn.dataset.book);
       if (b) {
-        $("#sidebar").classList.remove("open");
+        closeSidebar();
         const target = `#/${b.id}`;
         if (location.hash === target) {
           current = null;
@@ -938,7 +943,11 @@
       }
       return;
     }
-    if (e.key === "/") { e.preventDefault(); searchEl.focus(); return; }
+    if (e.key === "/") {
+      e.preventDefault();
+      if (window.SiteDrawer) window.SiteDrawer.open();
+      searchEl.focus(); return;
+    }
     if (exerciseView) {
       if (e.shiftKey && (e.key === "ArrowRight" || e.key === "ArrowLeft")) {
         e.preventDefault(); jumpSection(e.key === "ArrowRight" ? 1 : -1);
@@ -1022,19 +1031,23 @@
   }
   srcBtn.addEventListener("click", () => setSrcAll(!srcAll));
 
-  $("#about-btn").addEventListener("click", () => { $("#modal").hidden = false; });
+  $("#about-btn").addEventListener("click", () => { closeSidebar(); $("#modal").hidden = false; });
   $(".brand").addEventListener("click", () => {
+    closeSidebar();
     if (location.hash === "#/" || !location.hash) { renderHome(); } else { location.hash = "#/"; }
   });
   $("#home-btn").addEventListener("click", () => {
-    $("#sidebar").classList.remove("open");
+    closeSidebar();
     if (location.hash === "#/" || !location.hash) { renderHome(); } else { location.hash = "#/"; }
   });
   $("#modal-close").addEventListener("click", () => { $("#modal").hidden = true; });
   $("#modal").addEventListener("click", (e) => { if (e.target.id === "modal") $("#modal").hidden = true; });
-  $("#menu-btn").addEventListener("click", () => $("#sidebar").classList.toggle("open"));
+  $("#menu-btn").addEventListener("click", () => {
+    if (window.SiteDrawer) window.SiteDrawer.toggle();
+    else $("#sidebar").classList.toggle("open");
+  });
   $("#toc").addEventListener("click", (e) => {
-    if (e.target.closest(".sec-link")) $("#sidebar").classList.remove("open");
+    if (e.target.closest(".sec-link")) closeSidebar();
   });
   bindToc();
 
