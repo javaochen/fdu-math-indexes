@@ -223,19 +223,20 @@ async function main() {
   assert.match(app.html(), /class="exercise-items"/);
   assert.ok(app.jumps.some((id) => id.endsWith(exerciseHit[2].split('/').pop())));
   await checkProbabilityChapters();
-  console.log("PASS: Functional Analysis 315 questions; Probability 46 questions in 2 chapters / 6 topics; original numbering, topic/question routes, cross-topic search/copy, chapter links/counts, lazy loading, empty states, controls and card-mode regression.");
+  const probabilityTotal = bookData.books.find((book) => book.id === "gailv").exercise_count;
+  console.log(`PASS: Functional Analysis 315 questions; Probability ${probabilityTotal} questions in 10 chapters; original numbering, topic/question routes, cross-topic search/copy, chapter links/counts, lazy loading, empty states, controls and card-mode regression.`);
 }
 
 async function checkProbabilityChapters() {
   const probability = bookData.books.find((book) => book.id === "gailv");
   const data = readJSON("gailv-exercises.json").sections;
   const chapters = probability.chapters.filter((chapter) => chapter.exercises && chapter.exercises.scope === "chapter");
-  assert.equal(chapters.length, 2);
-  assert.equal(probability.exercise_count, 46);
+  assert.equal(chapters.length, 10);
   assert.equal(fanhan.exercise_count, 315);
-  assert.equal(chapters.reduce((sum, chapter) => sum + chapter.exercises.count, 0), 46);
-  assert.equal(chapters.reduce((sum, chapter) => sum + chapter.exercises.groups.length, 0), 6);
-  assert.equal(readJSON("search.json").filter((entry) => entry[0] === "gailv" && entry[3] === "习题").length, 46);
+  const total = chapters.reduce((sum, chapter) => sum + chapter.exercises.count, 0);
+  assert.equal(probability.exercise_count, total);
+  assert.equal(chapters.reduce((sum, chapter) => sum + chapter.exercises.groups.length, 0), 30);
+  assert.equal(readJSON("search.json").filter((entry) => entry[0] === "gailv" && entry[3] === "习题").length, total);
 
   const app = await start({ hash: "#/gailv/chapter-2/exercises" });
   assert.deepEqual(app.requests, ["data/books.json", "data/gailv-exercises.json"]);
@@ -318,7 +319,7 @@ async function checkProbabilityChapters() {
   await app.key("r");
   assert.match(app.html(), /class="exercise-items"/);
   await app.navigate("#/gailv");
-  assert.ok(app.html().includes("习题 46 题"));
+  assert.ok(app.html().includes(`习题 ${probability.exercise_count} 题`));
   assert.match(app.element("#data-btn").href, /\/site\/data\/gailv\.json$/, "Footer data link must follow the current book");
   assert.ok(!app.html().includes("习题 138 题"), "Chapter summaries must not be counted once per section");
   await app.navigate("#/");
