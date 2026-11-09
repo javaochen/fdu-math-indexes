@@ -52,6 +52,8 @@ $$T(x_1,x_2,\cdots,x_n,\cdots)=(0,x_1,x_2,\cdots,x_n,\cdots).$$
 若 $T_1,T_2$ 都是 Hilbert 空间 $H$ 上的 Fredholm 算子，那么 $T_1T_2$ 也是 Fredholm 算子，并且
 $$\operatorname{ind}T_1T_2=\operatorname{ind}T_1+\operatorname{ind}T_2.$$
 
+## 指标的扰动不变性
+
 ### 定理 4.5.3 (指标在紧扰动下的不变性) @180
 
 设 $T$ 是 Hilbert 空间 $H$ 上的 Fredholm 算子。若 $S$ 为 $H$ 上紧算子，则 $T+S$ 也是 Fredholm 算子并且
