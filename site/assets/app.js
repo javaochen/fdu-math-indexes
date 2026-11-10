@@ -86,6 +86,32 @@
     return parts.filter(Boolean).join("\n\n");
   }
 
+  // 本节/本章习题源码：标题 + 题号头 + 题干。数据由 ensureExercises 按需加载。
+  function exerciseSectionSrc(s) {
+    const rec = s.book && EXERCISES.get(s.book.id)?.[s.id];
+    if (!rec || !rec.items.length) return "";
+    const head = s.scope === "chapter"
+      ? `## 第${s.chapter}章${s.chapterTitle ? ` ${s.chapterTitle}` : ""} · 习题`
+      : `## ${s.id}${s.title ? ` ${s.title}` : ""} · 习题`;
+    const parts = [head];
+    for (const it of rec.items) {
+      parts.push(itemHeadSrc(it));
+      parts.push(SRC.get(`${s.book.id}/${s.id}/exercises/${it.anchor}`) || srcFromHtml(it.html));
+    }
+    return parts.filter(Boolean).join("\n\n");
+  }
+
+  // 正文页“复制本小节”：正文 + 节级习题（仅该节有独立习题时追加，章级习题不并入）。
+  async function sectionText(s) {
+    let text = sectionSrc(s);
+    if (exerciseInfo(s).status === "ready") {
+      await ensureExercises(s.book.id);
+      const ex = exerciseSectionSrc(s);
+      if (ex) text += "\n\n" + ex;
+    }
+    return text;
+  }
+
   // 作者头像：只显示有图的作者，无图不占位、不显示文字
   function avatar(b, cls = "") {
     const src = b && b.author_img ? b.author_img : "";
@@ -712,7 +738,7 @@
           <p class="home-stat">共 ${BOOKS.length} 本书 · ${total} 条命题${exerciseTotal ? ` · ${exerciseTotal} 道习题` : ""} · 正文只含陈述，习题独立阅读</p>
         </div>
         <div class="book-grid">${cards}</div>
-        <p class="home-tip">点击书名进入。<kbd>/</kbd> 搜索全部条目，<kbd>s</kbd> 切换源码，条目右上角“复制”直接取走 Markdown/LaTeX，节头“复制本小节”一次取走整节。</p>
+        <p class="home-tip">点击书名进入。<kbd>/</kbd> 搜索全部条目，<kbd>s</kbd> 切换源码，条目右上角“复制”直接取走 Markdown/LaTeX，节头“复制本小节”一次取走整节（含节级习题），习题页可复制本节/本章习题。</p>
       </div>`;
     $("#crumbs").innerHTML = `<b>全部书目</b>`;
     document.querySelectorAll(".book-btn").forEach((x) => x.classList.remove("active"));
@@ -759,6 +785,8 @@
       <div class="meta"><span>${esc(s.book.title)}</span><span>${esc(s.chapterTitle || "")}</span>
         <span>${esc(exerciseLabel(s))}</span>${info.pages ? `<span>原书 p.${esc(info.pages)}</span>` : ""}</div>
       ${sectionTabs(s, true)}
+      ${items.length ? `<div class="sec-actions"><button class="sec-copy" type="button" data-copy-exercises
+        title="复制本节全部习题的 Markdown/LaTeX 源码">复制本节习题</button></div>` : ""}
     </div>${navigation}${body}${items.length ? navigation : ""}`;
     $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <a class="crumb-home" href="#/${esc(s.book.id)}">${esc(s.book.short || s.book.title)}</a> · ${esc(s.id)} 习题`;
     markActive();
@@ -810,6 +838,8 @@
       <div class="meta"><span>${esc(s.book.title)}</span><span>${esc(s.chapterTitle || "")}</span>
         <span>${group ? `本主题 ${items.length} 题 · ` : ""}全章 ${info.count} 题</span>${info.pages ? `<span>原书 p.${esc(info.pages)}</span>` : ""}</div>
       <nav class="section-tabs" aria-label="本章内容"><a href="${esc(sectionUrl(s.book.id, s.id))}">本章正文</a><a href="${esc(sectionUrl(s.book.id, s.id, true))}" aria-current="page">本章习题</a></nav>
+      ${allItems.length ? `<div class="sec-actions"><button class="sec-copy" type="button" data-copy-exercises
+        title="复制本章全部习题（含所有主题）的 Markdown/LaTeX 源码">复制本章习题</button></div>` : ""}
     </div>${navigation}${body}${items.length ? navigation : ""}`;
     $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <a class="crumb-home" href="#/${esc(s.book.id)}">${esc(s.book.short || s.book.title)}</a> · 第${esc(s.chapter)}章${group ? ` · ${esc(group.title)}` : ""}`;
     markActive();
@@ -932,7 +962,29 @@
     if (copySrc) { copyText(SRC.get(copySrc.dataset.copySrc) || "", copySrc); return; }
 
     const copySection = e.target.closest("[data-copy-section]");
-    if (copySection) { if (current) copyText(sectionSrc(current), copySection); return; }
+    if (copySection) {
+      if (!current) return;
+      copySection.disabled = true;
+      copySection.textContent = "复制中…";
+      try {
+        const text = await sectionText(current);
+        copySection.textContent = "复制本小节";
+        copySection.disabled = false;
+        copyText(text, copySection);
+      } catch (_) {
+        copySection.textContent = "复制失败";
+        copySection.disabled = false;
+        setTimeout(() => { copySection.textContent = "复制本小节"; }, 1400);
+      }
+      return;
+    }
+
+    const copyExercises = e.target.closest("[data-copy-exercises]");
+    if (copyExercises) {
+      const ex = current && exerciseSectionSrc(current);
+      if (ex) copyText(ex, copyExercises);
+      return;
+    }
 
     const cardBtn = e.target.closest("[data-card]");
     if (cardBtn) { renderCard(cardIdx + Number(cardBtn.dataset.card)); return; }

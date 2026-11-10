@@ -1,6 +1,7 @@
 /* Run: node tests/copy_section.cjs
- * Checks the "复制本小节" action against the generated site data with a small DOM stub.
- * This checks the copy payload and wiring, not CSS layout.
+ * Checks the copy actions against the generated site data with a small DOM stub:
+ * the section page copies statements + section-level exercises, and the exercise
+ * pages copy the section/chapter question list. Not CSS layout.
  */
 "use strict";
 
@@ -13,7 +14,10 @@ const root = path.resolve(__dirname, "..");
 const site = path.join(root, "site");
 const readJSON = (name) => JSON.parse(fs.readFileSync(path.join(site, "data", name), "utf8"));
 const fanhan = readJSON("fanhan.json");
-const findSection = (id) => fanhan.chapters.flatMap((ch) => ch.sections).find((s) => s.id === id);
+const gailv = readJSON("gailv.json");
+const fanhanEx = readJSON("fanhan-exercises.json").sections;
+const gailvEx = readJSON("gailv-exercises.json").sections;
+const findSection = (data, id) => data.chapters.flatMap((ch) => ch.sections).find((s) => s.id === id);
 
 class Element {
   constructor() {
@@ -117,6 +121,12 @@ async function start({ hash = "#/fanhan/1.1", search = "" } = {}) {
       await document.events.click({ target: button });
       await settle();
     },
+    async copyExercises() {
+      const button = new Element();
+      button.closest = (selector) => selector === "[data-copy-exercises]" ? button : null;
+      await document.events.click({ target: button });
+      await settle();
+    },
     async filter(name) {
       const chip = new Element();
       chip.dataset.filter = name;
@@ -138,8 +148,16 @@ function srcFromHtml(html) {
     .replace(/&amp;/g, "&")).join("\n\n");
 }
 
-// Independent reconstruction of the documented section payload.
-function expectedSectionSrc(s) {
+function itemHeadSrc(it) {
+  let h = `### ${it.type}`;
+  if (it.number) h += ` ${it.number}`;
+  if (it.title) h += ` (${it.title})`;
+  if (it.page) h += ` @${it.page}`;
+  return h;
+}
+
+// Independent reconstruction of the documented statement payload.
+function expectedStatements(s) {
   const items = s.items || [];
   const blocks = Array.isArray(s.blocks) ? s.blocks : [];
   const byItem = new Map();
@@ -158,40 +176,78 @@ function expectedSectionSrc(s) {
     }
     if (i >= items.length) break;
     const it = items[i];
-    let h = `### ${it.type}`;
-    if (it.number) h += ` ${it.number}`;
-    if (it.title) h += ` (${it.title})`;
-    if (it.page) h += ` @${it.page}`;
-    parts.push(h);
+    parts.push(itemHeadSrc(it));
     parts.push(it.src || srcFromHtml(it.html));
   }
   return parts.filter(Boolean).join("\n\n");
 }
 
+function expectedExerciseSrc(s, record) {
+  const head = s.scope === "chapter"
+    ? `## 第${s.chapter}章${s.chapterTitle ? ` ${s.chapterTitle}` : ""} · 习题`
+    : `## ${s.id}${s.title ? ` ${s.title}` : ""} · 习题`;
+  const parts = [head];
+  for (const it of record.items) {
+    parts.push(itemHeadSrc(it));
+    parts.push(it.src || srcFromHtml(it.html));
+  }
+  return parts.filter(Boolean).join("\n\n");
+}
+
+function expectedSectionText(s) {
+  const ex = s.exercises && s.exercises.status === "ready" ? fanhanEx[s.id] : null;
+  const statements = expectedStatements(s);
+  return ex ? `${statements}\n\n${expectedExerciseSrc(s, ex)}` : statements;
+}
+
+function statementsPart(text, s) {
+  const exHead = `## ${s.id}${s.title ? ` ${s.title}` : ""} · 习题`;
+  const idx = text.indexOf(`\n\n${exHead}`);
+  return idx < 0 ? text : text.slice(0, idx);
+}
+
 async function main() {
-  // Exact payload for a one-item section without subheadings.
-  const single = findSection("C");
-  const singleApp = await start({ hash: "#/fanhan/C" });
-  assert.match(singleApp.html(), /data-copy-section/, "Section header must offer the copy action");
-  await singleApp.copySection();
-  const expectedSingle = "## C Stone-Weierstrass 定理\n\n"
-    + "### 定理 C.1 (Stone-Weierstrass) @209\n\n"
-    + srcFromHtml(single.items[0].html);
-  assert.equal(singleApp.clipboard.at(-1), expectedSingle);
-  assert.equal(singleApp.clipboard.length, 1);
+  // Section with no independent exercises: statements only, exact payload.
+  const none = findSection(fanhan, "F");
+  const noneApp = await start({ hash: "#/fanhan/F" });
+  assert.match(noneApp.html(), /data-copy-section/, "Section header must offer the copy action");
+  await noneApp.copySection();
+  assert.equal(noneApp.clipboard.at(-1), expectedSectionText(none));
+  assert.equal(noneApp.clipboard.at(-1), expectedStatements(none), "A section without exercises must copy statements only");
+  assert.equal(noneApp.clipboard.length, 1);
+  assert.ok(!noneApp.requests.includes("data/fanhan-exercises.json"),
+    "A section without exercises must not load the exercise data");
+
+  // Section with exercises: statements + section-level exercises, exact payload.
+  const withEx = findSection(fanhan, "C");
+  const withExRecord = fanhanEx["C"];
+  const withExApp = await start({ hash: "#/fanhan/C" });
+  await withExApp.copySection();
+  const withExCopied = withExApp.clipboard.at(-1);
+  assert.equal(withExCopied, expectedSectionText(withEx));
+  assert.ok(withExApp.requests.includes("data/fanhan-exercises.json"));
+  assert.ok(withExCopied.startsWith("## C Stone-Weierstrass 定理\n\n"));
+  assert.ok(withExCopied.includes("\n\n## C Stone-Weierstrass 定理 · 习题\n\n### 习题 1 @"));
+  assert.equal((withExCopied.match(/### /g) || []).length, withEx.items.length + withExRecord.items.length);
 
   // Full section with subheadings and prose.
-  const dense = findSection("1.1");
+  const dense = findSection(fanhan, "1.1");
+  const denseEx = fanhanEx["1.1"];
   const app = await start({ hash: "#/fanhan/1.1" });
   assert.match(app.html(), /data-copy-section/);
   await app.copySection();
   const copied = app.clipboard.at(-1);
-  assert.equal(copied, expectedSectionSrc(dense), "Copy payload must match the documented section source");
+  assert.equal(copied, expectedSectionText(dense), "Copy payload must match the documented section source");
   assert.ok(copied.startsWith("## 1.1 度量空间\n\n"));
   assert.ok(copied.includes("## 定义与例子 @2\n\n"));
   assert.ok(copied.includes("### 定义 1.1.1 (度量空间) @2\n\n设 $X$ 是一个非空集合"));
   assert.ok(copied.includes("## 极限 @5\n\n### 定义 1.1.2 (极限) @5"));
-  assert.equal((copied.match(/### /g) || []).length, dense.items.length, "Every item header must be present");
+  assert.equal((statementsPart(copied, dense).match(/### /g) || []).length, dense.items.length,
+    "Every item header must be present");
+  const exIdx = copied.indexOf(`\n\n## 1.1 度量空间 · 习题`);
+  assert.ok(exIdx > 0, "Exercises must follow the statements under their own heading");
+  assert.equal((copied.slice(exIdx).match(/### /g) || []).length, denseEx.items.length,
+    "Every exercise header must be present");
   assert.ok(!/<p>|<strong>|&lt;|&amp;/.test(copied), "Copy must be Markdown/LaTeX, not rendered HTML");
 
   // The copy is the whole section, not the active type filter.
@@ -199,25 +255,65 @@ async function main() {
   assert.match(app.html(), /class="chip active" type="button" data-filter="定理"/);
   await app.copySection();
   const filtered = app.clipboard.at(-1);
-  assert.equal((filtered.match(/### /g) || []).length, dense.items.length,
+  assert.equal((statementsPart(filtered, dense).match(/### /g) || []).length, dense.items.length,
     "Copy must ignore the type filter and include every item");
 
   // Card mode shares the same header and action.
   const cardApp = await start({ hash: "#/fanhan/1.1", search: "?mode=card" });
   assert.match(cardApp.html(), /data-copy-section/);
   await cardApp.copySection();
-  assert.equal(cardApp.clipboard.at(-1), expectedSectionSrc(dense));
+  assert.equal(cardApp.clipboard.at(-1), expectedSectionText(dense));
+
+  // Chapter-level exercise books: a section copy must not append the whole chapter's questions.
+  const gailvSec = findSection(gailv, "1.2");
+  const gailvApp = await start({ hash: "#/gailv/1.2" });
+  await gailvApp.copySection();
+  assert.equal(gailvApp.clipboard.at(-1), expectedSectionText(gailvSec));
+  assert.equal(gailvApp.clipboard.at(-1), expectedStatements(gailvSec));
+  assert.ok(!gailvApp.requests.includes("data/gailv-exercises.json"),
+    "Chapter-level exercise books must not append chapter exercises to a section copy");
 
   // A section without subheadings still copies cleanly.
-  const plain = findSection("3.1");
+  const plain = findSection(fanhan, "3.1");
   const plainApp = await start({ hash: "#/fanhan/3.1" });
   await plainApp.copySection();
   const plainCopied = plainApp.clipboard.at(-1);
-  assert.equal(plainCopied, expectedSectionSrc(plain));
+  assert.equal(plainCopied, expectedSectionText(plain));
   assert.ok(plainCopied.startsWith("## 3.1 Baire 纲定理\n\n"));
-  assert.ok(!plainCopied.includes("\n## "), "A section without subheadings must not invent them");
+  assert.ok(!statementsPart(plainCopied, plain).includes("\n## "),
+    "A section without subheadings must not invent them");
 
-  console.log(`PASS: 复制本小节 payload for ${dense.items.length}-item and ${plain.items.length}-item sections, subheadings, card mode and filter-independent copy.`);
+  // Exercise page: copy the whole section question list.
+  const exApp = await start({ hash: "#/fanhan/1.1/exercises" });
+  assert.match(exApp.html(), /data-copy-exercises/);
+  assert.match(exApp.html(), /复制本节习题/);
+  await exApp.copyExercises();
+  assert.equal(exApp.clipboard.at(-1), expectedExerciseSrc(dense, denseEx));
+  assert.ok(exApp.clipboard.at(-1).startsWith("## 1.1 度量空间 · 习题\n\n### 习题 1 @"));
+
+  // Chapter exercise page: copy every question across all topics.
+  const ch2 = gailv.chapters.find((ch) => String(ch.no) === "2");
+  const ch2Record = gailvEx["chapter-2"];
+  const chapterSection = { id: "chapter-2", scope: "chapter", chapter: "2", chapterTitle: ch2.title, title: "", items: [] };
+  const chApp = await start({ hash: "#/gailv/chapter-2/exercises" });
+  assert.match(chApp.html(), /data-copy-exercises/);
+  assert.match(chApp.html(), /复制本章习题/);
+  await chApp.copyExercises();
+  const chCopied = chApp.clipboard.at(-1);
+  assert.equal(chCopied, expectedExerciseSrc(chapterSection, ch2Record));
+  assert.ok(chCopied.startsWith("## 第2章 概率空间与随机变量 · 习题\n\n"));
+  assert.equal((chCopied.match(/### /g) || []).length, ch2Record.items.length,
+    "Chapter copy must include every topic");
+
+  // No copy button when there is nothing to copy.
+  const noneExApp = await start({ hash: "#/fanhan/A/exercises" });
+  assert.match(noneExApp.html(), /已核对原书，本节没有独立习题/);
+  assert.ok(!/data-copy-exercises/.test(noneExApp.html()), "A section without exercises must not offer the exercise copy");
+  const unrecordedApp = await start({ hash: "#/gaodai/1.1/exercises" });
+  assert.match(unrecordedApp.html(), /本节习题尚未录入/);
+  assert.ok(!/data-copy-exercises/.test(unrecordedApp.html()), "An unrecorded section must not offer the exercise copy");
+
+  console.log(`PASS: 复制本小节 (statements + section exercises), 复制本节习题, 复制本章习题; ${dense.items.length} statements + ${denseEx.items.length} questions, chapter ${ch2Record.items.length} questions; no button without exercises.`);
 }
 
 main().catch((error) => { console.error(error); process.exitCode = 1; });
