@@ -47,6 +47,45 @@
       .replace(/&amp;/g, "&")).join("\n\n");
   }
 
+  // 条目头还原成 content/ 里的写法：### 类型 编号 (标题) @页码。
+  function itemHeadSrc(it) {
+    let h = `### ${it.type}`;
+    if (it.number) h += ` ${it.number}`;
+    if (it.title) h += ` (${it.title})`;
+    if (it.page) h += ` @${it.page}`;
+    return h;
+  }
+
+  // 小标题与导语还原成 Markdown；导语只能从 html 反推。
+  function blockSrc(block) {
+    if (block.kind === "heading") {
+      const h = `## ${block.number ? `${block.number} ` : ""}${block.title}`;
+      return block.page ? `${h} @${block.page}` : h;
+    }
+    return srcFromHtml(block.html);
+  }
+
+  // 整节源码：节标题 + 按原书顺序穿插的小标题/导语 + 条目头与正文。
+  function sectionSrc(s) {
+    const items = s.items || [];
+    const blocks = Array.isArray(s.blocks) ? s.blocks : [];
+    const byItem = new Map();
+    for (const block of blocks) {
+      const at = Math.max(0, Math.min(items.length, block.before | 0));
+      if (!byItem.has(at)) byItem.set(at, []);
+      byItem.get(at).push(block);
+    }
+    const parts = [`## ${s.id}${s.title ? ` ${s.title}` : ""}`];
+    for (let i = 0; i <= items.length; i++) {
+      for (const block of byItem.get(i) || []) parts.push(blockSrc(block));
+      if (i >= items.length) break;
+      const it = items[i];
+      parts.push(itemHeadSrc(it));
+      parts.push(SRC.get(`${s.book.id}/${s.id}/${it.anchor}`) || srcFromHtml(it.html));
+    }
+    return parts.filter(Boolean).join("\n\n");
+  }
+
   // 作者头像：只显示有图的作者，无图不占位、不显示文字
   function avatar(b, cls = "") {
     const src = b && b.author_img ? b.author_img : "";
@@ -446,6 +485,8 @@
             ${b.note ? `<p class="book-note">${esc(b.note)}</p>` : ""}
             ${sectionTabs(s)}
             <div class="filters">${chips}${defsBtn}</div>
+            <div class="sec-actions"><button class="sec-copy" type="button" data-copy-section
+              title="复制本小节全部条目（含小标题与导语）的 Markdown/LaTeX 源码">复制本小节</button></div>
           </div>
           ${b.author_img ? `<div class="sec-avatar">${avatar(b, "avatar-xl")}</div>` : ""}
         </div>
@@ -671,7 +712,7 @@
           <p class="home-stat">共 ${BOOKS.length} 本书 · ${total} 条命题${exerciseTotal ? ` · ${exerciseTotal} 道习题` : ""} · 正文只含陈述，习题独立阅读</p>
         </div>
         <div class="book-grid">${cards}</div>
-        <p class="home-tip">点击书名进入。<kbd>/</kbd> 搜索全部条目，<kbd>s</kbd> 切换源码，条目右上角“复制”直接取走 Markdown/LaTeX。</p>
+        <p class="home-tip">点击书名进入。<kbd>/</kbd> 搜索全部条目，<kbd>s</kbd> 切换源码，条目右上角“复制”直接取走 Markdown/LaTeX，节头“复制本小节”一次取走整节。</p>
       </div>`;
     $("#crumbs").innerHTML = `<b>全部书目</b>`;
     document.querySelectorAll(".book-btn").forEach((x) => x.classList.remove("active"));
@@ -889,6 +930,9 @@
 
     const copySrc = e.target.closest("[data-copy-src]");
     if (copySrc) { copyText(SRC.get(copySrc.dataset.copySrc) || "", copySrc); return; }
+
+    const copySection = e.target.closest("[data-copy-section]");
+    if (copySection) { if (current) copyText(sectionSrc(current), copySection); return; }
 
     const cardBtn = e.target.closest("[data-card]");
     if (cardBtn) { renderCard(cardIdx + Number(cardBtn.dataset.card)); return; }

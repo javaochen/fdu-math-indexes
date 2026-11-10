@@ -259,6 +259,16 @@ pre.src {
 .src-copy:hover { border-color: var(--accent); color: var(--accent); }
 .src-copy.copied { font-weight: 600; }
 
+/* 节头动作：复制本小节 */
+.sec-actions { display: flex; justify-content: flex-end; margin-top: 10px; }
+.sec-copy {
+  background: none; border: 1px solid var(--line); border-radius: 8px;
+  color: var(--muted); font: inherit; font-size: 12px; padding: 4px 12px;
+  cursor: pointer; white-space: nowrap;
+}
+.sec-copy:hover { border-color: var(--accent); color: var(--accent); }
+.sec-copy.copied { font-weight: 600; }
+
 /* 首页 */
 .brand { cursor: pointer; }
 .brand:hover .brand-title { color: var(--accent); }
@@ -514,6 +524,7 @@ kbd {
 .book-note { margin: 6px 0 0; padding: 5px 8px; font-size: 12px; }
 .filters { margin-top: 6px; gap: 5px; }
 .chip { padding: 2px 9px; font-size: 11.5px; }
+.sec-actions { margin-top: 6px; }
 .item { padding: 10px 14px 8px; margin: 0 0 6px; border-radius: 8px; }
 .item-head { margin-bottom: 3px; gap: 6px; }
 .badge { font-size: 11px; padding: 1px 6px; }
@@ -782,7 +793,7 @@ body.network-home { background: #f5f2e9; }
       #8ebca6 48%, #87bac5 64%, #98abd2 82%, #b49dcc 100%);
 }
 :root :is(.mode.active, .book-btn.active, .chip.active, .look-opt.active,
-    .ghost-toggle.active, .copy-btn.copied, .src-copy.copied,
+    .ghost-toggle.active, .copy-btn.copied, .src-copy.copied, .sec-copy.copied,
     .section-tabs a[aria-current="page"], .exercise-topic-links a[aria-current="page"],
     .subhead) {
   border: 2px solid transparent;
@@ -809,7 +820,7 @@ body.network-home { background: #f5f2e9; }
 .pn-home .pn-detail { border-radius: 12px; }
 @media (forced-colors: active) {
   :root :is(.mode.active, .book-btn.active, .chip.active, .look-opt.active,
-      .ghost-toggle.active, .copy-btn.copied, .src-copy.copied,
+      .ghost-toggle.active, .copy-btn.copied, .src-copy.copied, .sec-copy.copied,
       .section-tabs a[aria-current="page"], .exercise-topic-links a[aria-current="page"],
       .subhead),
   .pn-home .pn-app[aria-pressed="true"], .pn-home .pn-detail {
