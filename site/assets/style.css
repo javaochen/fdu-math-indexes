@@ -259,7 +259,10 @@ pre.src {
 .src-copy:hover { border-color: var(--accent); color: var(--accent); }
 .src-copy.copied { font-weight: 600; }
 
-/* 节头动作：复制本小节 */
+/* 节头动作：桌面端按钮在顶栏；手机端与标题同一行，省掉单独一行。 */
+.sec-title-row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; margin-bottom: 3px; }
+.sec-title-row .section-title { margin: 0; flex: 1 1 auto; min-width: 0; }
+.sec-title-row .sec-actions { margin-top: 0; }
 .sec-actions { display: flex; justify-content: flex-end; margin-top: 10px; }
 .sec-copy {
   background: none; border: 1px solid var(--line); border-radius: 8px;
@@ -271,10 +274,9 @@ pre.src {
 
 /* 桌面端：标题由顶栏面包屑承担，复制按钮移到顶栏；节头不再重复大标题与按钮行。 */
 @media (min-width: 601px) {
-  .sec-head h1.section-title { display: none; }
-  .sec-actions { display: none; }
+  .sec-title-row { display: none; }
 }
-/* 移动端：顶栏放不下复制按钮，继续用节头里的按钮。 */
+/* 移动端：顶栏放不下复制按钮，按钮留在标题行。 */
 @media (max-width: 600px) {
   #copy-btn { display: none !important; }
 }

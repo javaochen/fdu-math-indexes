@@ -528,7 +528,11 @@
       <div class="sec-head">
         <div class="sec-body">
           <div class="sec-main">
-            <h1 class="section-title">${esc(s.id)}&nbsp;&nbsp;${esc(s.title)}</h1>
+            <div class="sec-title-row">
+              <h1 class="section-title">${esc(s.id)}&nbsp;&nbsp;${esc(s.title)}</h1>
+              <div class="sec-actions"><button class="sec-copy" type="button" data-copy-section data-label="复制本小节"
+                title="复制本小节全部条目（含小标题与导语）的 Markdown/LaTeX 源码">复制本小节</button></div>
+            </div>
             <div class="meta">
               <span>${esc(b.title)}${b.author ? ` · ${esc(b.author)}` : ""}</span>
               <span>${esc(s.chapterTitle)}</span>
@@ -538,8 +542,6 @@
             ${b.note ? `<p class="book-note">${esc(b.note)}</p>` : ""}
             ${sectionTabs(s)}
             <div class="filters">${chips}${defsBtn}</div>
-            <div class="sec-actions"><button class="sec-copy" type="button" data-copy-section data-label="复制本小节"
-              title="复制本小节全部条目（含小标题与导语）的 Markdown/LaTeX 源码">复制本小节</button></div>
           </div>
           ${b.author_img ? `<div class="sec-avatar">${avatar(b, "avatar-xl")}</div>` : ""}
         </div>
@@ -813,12 +815,14 @@
         <div class="exercise-items">${items.map((it) => itemHtml({ ...it, bookId: s.book.id, secId: `${s.id}/exercises` })).join("")}</div>`;
     }
     $("#view").innerHTML = `<div class="sec-head">
-      <h1 class="section-title">${esc(s.id)}&nbsp;&nbsp;${esc(s.title)} · 习题</h1>
+      <div class="sec-title-row">
+        <h1 class="section-title">${esc(s.id)}&nbsp;&nbsp;${esc(s.title)} · 习题</h1>
+        ${items.length ? `<div class="sec-actions"><button class="sec-copy" type="button" data-copy-exercises data-label="复制本节习题"
+          title="复制本节全部习题的 Markdown/LaTeX 源码">复制本节习题</button></div>` : ""}
+      </div>
       <div class="meta"><span>${esc(s.book.title)}</span><span>${esc(s.chapterTitle || "")}</span>
         <span>${esc(exerciseLabel(s))}</span>${info.pages ? `<span>原书 p.${esc(info.pages)}</span>` : ""}</div>
       ${sectionTabs(s, true)}
-      ${items.length ? `<div class="sec-actions"><button class="sec-copy" type="button" data-copy-exercises data-label="复制本节习题"
-        title="复制本节全部习题的 Markdown/LaTeX 源码">复制本节习题</button></div>` : ""}
     </div>${navigation}${body}${items.length ? navigation : ""}`;
     setTopbarCopy(items.length ? "exercises" : null);
     $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <a class="crumb-home" href="#/${esc(s.book.id)}">${esc(s.book.short || s.book.title)}</a> · ${esc(s.id)} 习题`;
@@ -867,12 +871,14 @@
         <div class="exercise-items">${items.map((it) => itemHtml({ ...it, bookId: s.book.id, secId: `${s.id}/exercises` })).join("")}</div>`;
     }
     $("#view").innerHTML = `<div class="sec-head">
-      <h1 class="section-title">第${esc(s.chapter)}章${group ? ` · ${esc(group.title)}` : ""} · 习题</h1>
+      <div class="sec-title-row">
+        <h1 class="section-title">第${esc(s.chapter)}章${group ? ` · ${esc(group.title)}` : ""} · 习题</h1>
+        ${allItems.length ? `<div class="sec-actions"><button class="sec-copy" type="button" data-copy-exercises data-label="复制本章习题"
+          title="复制本章全部习题（含所有主题）的 Markdown/LaTeX 源码">复制本章习题</button></div>` : ""}
+      </div>
       <div class="meta"><span>${esc(s.book.title)}</span><span>${esc(s.chapterTitle || "")}</span>
         <span>${group ? `本主题 ${items.length} 题 · ` : ""}全章 ${info.count} 题</span>${info.pages ? `<span>原书 p.${esc(info.pages)}</span>` : ""}</div>
       <nav class="section-tabs" aria-label="本章内容"><a href="${esc(sectionUrl(s.book.id, s.id))}">本章正文</a><a href="${esc(sectionUrl(s.book.id, s.id, true))}" aria-current="page">本章习题</a></nav>
-      ${allItems.length ? `<div class="sec-actions"><button class="sec-copy" type="button" data-copy-exercises data-label="复制本章习题"
-        title="复制本章全部习题（含所有主题）的 Markdown/LaTeX 源码">复制本章习题</button></div>` : ""}
     </div>${navigation}${body}${items.length ? navigation : ""}`;
     setTopbarCopy(allItems.length ? "chapter" : null);
     $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <a class="crumb-home" href="#/${esc(s.book.id)}">${esc(s.book.short || s.book.title)}</a> · 第${esc(s.chapter)}章${group ? ` · ${esc(group.title)}` : ""}`;
