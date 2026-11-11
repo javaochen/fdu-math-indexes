@@ -127,6 +127,16 @@ async function start({ hash = "#/fanhan/1.1", search = "" } = {}) {
       await document.events.click({ target: button });
       await settle();
     },
+    async copyTopbar() {
+      const button = element("#copy-btn");
+      button.closest = (selector) => {
+        if (selector === "[data-copy-section]" && button.dataset.copySection !== undefined) return button;
+        if (selector === "[data-copy-exercises]" && button.dataset.copyExercises !== undefined) return button;
+        return null;
+      };
+      await document.events.click({ target: button });
+      await settle();
+    },
     async filter(name) {
       const chip = new Element();
       chip.dataset.filter = name;
@@ -263,6 +273,28 @@ async function main() {
   assert.match(cardApp.html(), /data-copy-section/);
   await cardApp.copySection();
   assert.equal(cardApp.clipboard.at(-1), expectedSectionText(dense));
+
+  // The topbar button mirrors the section/exercise action and hides elsewhere.
+  const topApp = await start({ hash: "#/fanhan/1.1" });
+  const topBtn = topApp.element("#copy-btn");
+  assert.equal(topBtn.hidden, false);
+  assert.ok("copySection" in topBtn.dataset);
+  assert.equal(topBtn.textContent, "复制小节");
+  await topApp.copyTopbar();
+  assert.equal(topApp.clipboard.at(-1), expectedSectionText(dense));
+  await topApp.navigate("#/");
+  assert.equal(topBtn.hidden, true, "The topbar copy button must disappear outside section pages");
+
+  const topExApp = await start({ hash: "#/fanhan/1.1/exercises" });
+  const topExBtn = topExApp.element("#copy-btn");
+  assert.equal(topExBtn.hidden, false);
+  assert.ok("copyExercises" in topExBtn.dataset);
+  assert.equal(topExBtn.textContent, "复制习题");
+  await topExApp.copyTopbar();
+  assert.equal(topExApp.clipboard.at(-1), expectedExerciseSrc(dense, denseEx));
+
+  const topChApp = await start({ hash: "#/gailv/chapter-2/exercises" });
+  assert.equal(topChApp.element("#copy-btn").textContent, "复制本章");
 
   // Chapter-level exercise books: a section copy must not append the whole chapter's questions.
   const gailvSec = findSection(gailv, "1.2");

@@ -269,6 +269,16 @@ pre.src {
 .sec-copy:hover { border-color: var(--accent); color: var(--accent); }
 .sec-copy.copied { font-weight: 600; }
 
+/* 桌面端：标题由顶栏面包屑承担，复制按钮移到顶栏；节头不再重复大标题与按钮行。 */
+@media (min-width: 601px) {
+  .sec-head h1.section-title { display: none; }
+  .sec-actions { display: none; }
+}
+/* 移动端：顶栏放不下复制按钮，继续用节头里的按钮。 */
+@media (max-width: 600px) {
+  #copy-btn { display: none !important; }
+}
+
 /* 首页 */
 .brand { cursor: pointer; }
 .brand:hover .brand-title { color: var(--accent); }
