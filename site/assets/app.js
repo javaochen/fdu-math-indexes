@@ -548,6 +548,19 @@
       </div>`;
   }
 
+  // 节末的上一节/下一节与进度，配合 j/k 翻节。
+  function sectionNav(s) {
+    const sections = (s.book.chapters || []).flatMap((ch) => ch.sections);
+    const i = sections.findIndex((x) => x.id === s.id);
+    if (i < 0) return "";
+    const prev = sections[i - 1], next = sections[i + 1];
+    return `<nav class="section-nav" aria-label="节导航">
+      ${prev ? `<a class="nav-prev" href="${esc(sectionUrl(s.book.id, prev.id))}">← ${esc(prev.id)} ${esc(prev.title)}</a>` : "<span></span>"}
+      <span class="nav-count">${i + 1} / ${sections.length}</span>
+      ${next ? `<a class="nav-next" href="${esc(sectionUrl(s.book.id, next.id))}">${esc(next.id)} ${esc(next.title)} →</a>` : "<span></span>"}
+    </nav>`;
+  }
+
   function renderSection(s) {
     const b = s.book;
     const items = filterItems(s.items);
@@ -573,7 +586,7 @@
       }
       body = parts.join("");
     }
-    $("#view").innerHTML = sectionHead(s, items) + body;
+    $("#view").innerHTML = sectionHead(s, items) + body + sectionNav(s);
     typesetLazy($("#view"), blocks ? ".item, .prose, .subhead" : ".item");
     $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <b>${esc(b.short || b.title)}</b> · ${esc(s.id)} ${esc(s.title)}`;
     markActive();
@@ -597,7 +610,7 @@
           <button class="card-nav" type="button" data-card="1" ${cardIdx === items.length - 1 ? "disabled" : ""}>下一条 →</button>
         </div>
         ${itemHtml({ ...it, bookId: b.id, secId: current.id }, { foldable: true, folded: true })}
-        <p class="card-hint">← → 翻动 · 空格 显示/隐藏 · Esc 回到阅读</p>
+        <p class="card-hint">← → 翻动 · 空格 显示/隐藏 · j / k 切节 · Esc 回到阅读</p>
       </div>`;
     typesetLazy($("#view"));
     $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <b>${esc(b.short || b.title)}</b> · ${esc(current.id)} 卡片`;
@@ -1142,6 +1155,14 @@
       e.preventDefault();
       closeSidebar();
       searchEl.focus(); return;
+    }
+    if (!e.ctrlKey && !e.metaKey && !e.altKey) {
+      if (e.key === "g") { e.preventDefault(); $("#jump-btn").click(); return; }
+      if (e.key === "j" || e.key === "]" || e.key === "k" || e.key === "[") {
+        e.preventDefault();
+        jumpSection(e.key === "j" || e.key === "]" ? 1 : -1);
+        return;
+      }
     }
     if (exerciseView) {
       if (e.shiftKey && (e.key === "ArrowRight" || e.key === "ArrowLeft")) {

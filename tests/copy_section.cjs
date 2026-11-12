@@ -49,6 +49,7 @@ class Element {
   blur() {}
   focus() {}
   scrollIntoView() {}
+  click() { if (this.events.click) this.events.click({ target: this }); }
 }
 
 async function settle() {
@@ -115,6 +116,13 @@ async function start({ hash = "#/fanhan/1.1", search = "" } = {}) {
     element, document, location, requests, jumps, clipboard,
     html: () => element("#view").innerHTML,
     async navigate(hash) { location.hash = hash; window.events.hashchange(); await settle(); },
+    async key(key, { shiftKey = false, input = false } = {}) {
+      await document.events.keydown({
+        key, shiftKey, ctrlKey: false, metaKey: false, altKey: false,
+        target: { matches: () => input }, preventDefault() {},
+      });
+      await settle();
+    },
     async copySection() {
       const button = new Element();
       button.closest = (selector) => selector === "[data-copy-section]" ? button : null;
@@ -274,6 +282,28 @@ async function main() {
   await cardApp.copySection();
   assert.equal(cardApp.clipboard.at(-1), expectedSectionText(dense));
 
+  // Keyboard: j/k and [ / ] flip sections; g opens the quick-jump dialog.
+  const jApp = await start({ hash: "#/fanhan/1.1" });
+  await jApp.key("j");
+  assert.equal(jApp.location.hash, "#/fanhan/1.2");
+  const kApp = await start({ hash: "#/fanhan/1.2" });
+  await kApp.key("k");
+  assert.equal(kApp.location.hash, "#/fanhan/1.1");
+  const brApp = await start({ hash: "#/fanhan/1.1" });
+  await brApp.key("]");
+  assert.equal(brApp.location.hash, "#/fanhan/1.2");
+  await brApp.navigate("#/fanhan/1.2");
+  await brApp.key("[");
+  assert.equal(brApp.location.hash, "#/fanhan/1.1");
+  const gApp = await start({ hash: "#/fanhan/1.1" });
+  let jumped = false;
+  gApp.element("#jump-btn").events.click = () => { jumped = true; };
+  await gApp.key("g");
+  assert.ok(jumped, "g must open the quick-jump dialog");
+  const exNav = await start({ hash: "#/fanhan/1.1/exercises" });
+  await exNav.key("j");
+  assert.equal(exNav.location.hash, "#/fanhan/1.2/exercises");
+
   // The topbar button mirrors the section/exercise action and hides elsewhere.
   const topApp = await start({ hash: "#/fanhan/1.1" });
   const topBtn = topApp.element("#copy-btn");
@@ -345,7 +375,7 @@ async function main() {
   assert.match(unrecordedApp.html(), /本节习题尚未录入/);
   assert.ok(!/data-copy-exercises/.test(unrecordedApp.html()), "An unrecorded section must not offer the exercise copy");
 
-  console.log(`PASS: 复制本小节 (statements + section exercises), 复制本节习题, 复制本章习题; ${dense.items.length} statements + ${denseEx.items.length} questions, chapter ${ch2Record.items.length} questions; no button without exercises.`);
+  console.log(`PASS: 复制本小节 (statements + section exercises), 复制本节习题, 复制本章习题; ${dense.items.length} statements + ${denseEx.items.length} questions, chapter ${ch2Record.items.length} questions; j/k and [ / ] section flips in read/exercise mode, g opens quick-jump; no button without exercises.`);
 }
 
 main().catch((error) => { console.error(error); process.exitCode = 1; });
