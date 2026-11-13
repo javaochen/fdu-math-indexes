@@ -159,7 +159,11 @@ async function main() {
     'Section exercises must be a sibling link beside the section title');
   assert.match(app.html(), /class="exercise-items"/);
   assert.match(app.html(), /data-copy-src=/);
-  assert.ok(!/<img|查看原图|扫描图/.test(app.html()));
+  const imgSrcs = [...app.html().matchAll(/<img[^>]+src="([^"]*)"/g)].map((m) => m[1]);
+  assert.ok(imgSrcs.every((src) => src.startsWith("assets/authors/")), "Only author avatars may appear on exercise pages");
+  assert.ok(!/查看原图|扫描图/.test(app.html()));
+  assert.match(app.html(), /class="sec-body"/);
+  assert.match(app.html(), /class="sec-avatar"/, "Exercise pages must show the same author avatar as section pages");
   assert.ok(app.document.body.classList.contains("exercise-mode"));
   assert.ok(app.modes.every((el) => el.disabled) && app.src.disabled);
   assert.deepEqual(app.requests, ["data/books.json", "data/fanhan-exercises.json"]);
@@ -222,6 +226,13 @@ async function main() {
   await app.navigate(`#/${exerciseHit[0]}/${exerciseHit[1]}/${exerciseHit[2]}`);
   assert.match(app.html(), /class="exercise-items"/);
   assert.ok(app.jumps.some((id) => id.endsWith(exerciseHit[2].split('/').pop())));
+  // Random view uses the shared page header (title row + avatar) and keeps 换一条.
+  const randomApp = await start({ hash: "#/fanhan/1.1", search: "?mode=random" });
+  assert.match(randomApp.html(), /class="sec-body"/);
+  assert.match(randomApp.html(), /class="sec-title-row"/);
+  assert.match(randomApp.html(), /class="sec-avatar"/, "Random view must show the author avatar");
+  assert.match(randomApp.html(), /id="again"/);
+
   await checkProbabilityChapters();
   const probabilityTotal = bookData.books.find((book) => book.id === "gailv").exercise_count;
   console.log(`PASS: Functional Analysis 315 questions; Probability ${probabilityTotal} questions in 10 chapters; original numbering, topic/question routes, cross-topic search/copy, chapter links/counts, lazy loading, empty states, controls and card-mode regression.`);

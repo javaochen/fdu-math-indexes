@@ -276,6 +276,12 @@
   }
 
   function sectionTabs(s, exercises = false) {
+    if (s.scope === "chapter") {
+      return `<nav class="section-tabs" aria-label="本章内容">
+        <a href="${esc(sectionUrl(s.book.id, s.id))}"${exercises ? "" : ' aria-current="page"'}>本章正文</a>
+        <a href="${esc(sectionUrl(s.book.id, s.id, true))}"${exercises ? ' aria-current="page"' : ""}>本章习题</a>
+      </nav>`;
+    }
     const chapter = chapterExerciseForSection(s);
     const chapterInfo = chapter && chapter.exercises;
     const exerciseId = chapterInfo ? chapterExerciseId(chapter) : s.id;
@@ -513,39 +519,52 @@
     }
   }
 
+  // 共用页头：正文、节习题、章习题、随机都用同一套结构（标题行、元信息、标签、头像）。
+  function pageHead({ book, title, meta, tabs = "", extra = "", copy = "", note = "" }) {
+    return `<div class="sec-head">
+      <div class="sec-body">
+        <div class="sec-main">
+          <div class="sec-title-row">
+            <h1 class="section-title">${title}</h1>
+            ${copy}
+          </div>
+          <div class="meta">${meta}</div>
+          ${note}
+          ${tabs}
+          ${extra}
+        </div>
+        ${book && book.author_img ? `<div class="sec-avatar">${avatar(book, "avatar-xl")}</div>` : ""}
+      </div>
+    </div>`;
+  }
+
+  function copyButton(kind, label, title) {
+    return `<div class="sec-actions"><button class="sec-copy" type="button" data-copy-${kind} data-label="${esc(label)}"
+      title="${esc(title)}">${esc(label)}</button></div>`;
+  }
+
   function sectionHead(s, items) {
     setExerciseView(false);
     setTopbarCopy("section");
-    document.body.classList.remove("home-mode");
-    document.body.classList.remove("card-mode");
+    document.body.classList.remove("home-mode", "card-mode");
     const b = s.book;
     const chips = FILTERS.map(([key, label, types]) => {
       const n = types ? s.items.filter((it) => types.includes(it.type)).length : s.items.length;
       return `<button class="chip${typeFilter === key ? " active" : ""}" type="button" data-filter="${key}">${label}<em>${n}</em></button>`;
     }).join("");
     const defsBtn = `<button class="chip${defsOpen ? " active" : ""}" type="button" data-defs>${defsOpen ? "收起定义" : "展开定义"}</button>`;
-    return `
-      <div class="sec-head">
-        <div class="sec-body">
-          <div class="sec-main">
-            <div class="sec-title-row">
-              <h1 class="section-title">${esc(s.id)}&nbsp;&nbsp;${esc(s.title)}</h1>
-              <div class="sec-actions"><button class="sec-copy" type="button" data-copy-section data-label="复制本小节"
-                title="复制本小节全部条目（含小标题与导语）的 Markdown/LaTeX 源码">复制本小节</button></div>
-            </div>
-            <div class="meta">
-              <span>${esc(b.title)}${b.author ? ` · ${esc(b.author)}` : ""}</span>
-              <span>${esc(s.chapterTitle)}</span>
-              <span>${s.items.length} 个条目${items.length !== s.items.length ? `（当前显示 ${items.length}）` : ""}</span>
-              ${s.pages ? `<span>原书 p.${esc(s.pages)}</span>` : ""}
-            </div>
-            ${b.note ? `<p class="book-note">${esc(b.note)}</p>` : ""}
-            ${sectionTabs(s)}
-            <div class="filters">${chips}${defsBtn}</div>
-          </div>
-          ${b.author_img ? `<div class="sec-avatar">${avatar(b, "avatar-xl")}</div>` : ""}
-        </div>
-      </div>`;
+    return pageHead({
+      book: b,
+      title: `${esc(s.id)}&nbsp;&nbsp;${esc(s.title)}`,
+      meta: `<span>${esc(b.title)}${b.author ? ` · ${esc(b.author)}` : ""}</span>
+        <span>${esc(s.chapterTitle)}</span>
+        <span>${s.items.length} 个条目${items.length !== s.items.length ? `（当前显示 ${items.length}）` : ""}</span>
+        ${s.pages ? `<span>原书 p.${esc(s.pages)}</span>` : ""}`,
+      note: b.note ? `<p class="book-note">${esc(b.note)}</p>` : "",
+      tabs: sectionTabs(s),
+      extra: `<div class="filters">${chips}${defsBtn}</div>`,
+      copy: copyButton("section", "复制本小节", "复制本小节全部条目（含小标题与导语）的 Markdown/LaTeX 源码"),
+    });
   }
 
   // 节末的上一节/下一节与进度，配合 j/k 翻节。
@@ -694,13 +713,16 @@
     const pool = book.sections.flatMap((s) => s.items.map((it) => ({ it, s })));
     if (!pool.length) { renderEmptyBook(meta); return; }
     const { it, s } = pool[Math.floor(Math.random() * pool.length)];
-    $("#view").innerHTML = `
-      <div class="sec-head">
-        <h1>随机自测</h1>
-        <div class="meta"><span>来自 ${esc(book.short || book.title)} ${esc(s.id)} ${esc(s.title)}</span><span>本节书共 ${pool.length} 个条目</span></div>
-      </div>
-      ${itemHtml({ ...it, bookId: book.id, secId: s.id }, { hidden: true })}
-      <p style="margin-top:18px"><button id="again" class="ghost-btn" type="button">换一条（r）</button></p>`;
+    current = s;
+    const head = pageHead({
+      book,
+      title: "随机自测",
+      meta: `<span>${esc(book.title)}${book.author ? ` · ${esc(book.author)}` : ""}</span>
+        <span>${esc(s.id)} ${esc(s.title)}</span>
+        <span>本书共 ${pool.length} 个条目</span>`,
+    });
+    $("#view").innerHTML = head + itemHtml({ ...it, bookId: book.id, secId: s.id }, { hidden: true })
+      + `<p style="margin-top:18px"><button id="again" class="ghost-btn" type="button">换一条（r）</button></p>`;
     typesetLazy($("#view"));
     $("#crumbs").innerHTML = `<b>随机</b> · ${esc(book.short || book.title)} ${esc(s.id)}`;    $("#again").onclick = renderRandom;
     markActive();
@@ -827,16 +849,16 @@
           `<a href="${esc(sectionUrl(s.book.id, s.id, true))}/${esc(it.anchor)}">${esc(it.number)}</a>`).join("")}</nav>
         <div class="exercise-items">${items.map((it) => itemHtml({ ...it, bookId: s.book.id, secId: `${s.id}/exercises` })).join("")}</div>`;
     }
-    $("#view").innerHTML = `<div class="sec-head">
-      <div class="sec-title-row">
-        <h1 class="section-title">${esc(s.id)}&nbsp;&nbsp;${esc(s.title)} · 习题</h1>
-        ${items.length ? `<div class="sec-actions"><button class="sec-copy" type="button" data-copy-exercises data-label="复制本节习题"
-          title="复制本节全部习题的 Markdown/LaTeX 源码">复制本节习题</button></div>` : ""}
-      </div>
-      <div class="meta"><span>${esc(s.book.title)}</span><span>${esc(s.chapterTitle || "")}</span>
-        <span>${esc(exerciseLabel(s))}</span>${info.pages ? `<span>原书 p.${esc(info.pages)}</span>` : ""}</div>
-      ${sectionTabs(s, true)}
-    </div>${navigation}${body}${items.length ? navigation : ""}`;
+    const head = pageHead({
+      book: s.book,
+      title: `${esc(s.id)}&nbsp;&nbsp;${esc(s.title)} · 习题`,
+      meta: `<span>${esc(s.book.title)}${s.book.author ? ` · ${esc(s.book.author)}` : ""}</span>
+        <span>${esc(s.chapterTitle || "")}</span>
+        <span>${esc(exerciseLabel(s))}</span>${info.pages ? `<span>原书 p.${esc(info.pages)}</span>` : ""}`,
+      tabs: sectionTabs(s, true),
+      copy: items.length ? copyButton("exercises", "复制本节习题", "复制本节全部习题的 Markdown/LaTeX 源码") : "",
+    });
+    $("#view").innerHTML = head + navigation + body + (items.length ? navigation : "");
     setTopbarCopy(items.length ? "exercises" : null);
     $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <a class="crumb-home" href="#/${esc(s.book.id)}">${esc(s.book.short || s.book.title)}</a> · ${esc(s.id)} 习题`;
     markActive();
@@ -883,16 +905,16 @@
         <nav class="exercise-question-links" aria-label="本章全部习题题号">${allItems.map((it) => `<a href="${esc(sectionUrl(s.book.id, s.id, true))}/${esc(it.anchor)}"${numbers.has(parseInt(it.number, 10)) ? ' class="in-topic"' : ""}>${esc(it.number)}</a>`).join("")}</nav>
         <div class="exercise-items">${items.map((it) => itemHtml({ ...it, bookId: s.book.id, secId: `${s.id}/exercises` })).join("")}</div>`;
     }
-    $("#view").innerHTML = `<div class="sec-head">
-      <div class="sec-title-row">
-        <h1 class="section-title">第${esc(s.chapter)}章${group ? ` · ${esc(group.title)}` : ""} · 习题</h1>
-        ${allItems.length ? `<div class="sec-actions"><button class="sec-copy" type="button" data-copy-exercises data-label="复制本章习题"
-          title="复制本章全部习题（含所有主题）的 Markdown/LaTeX 源码">复制本章习题</button></div>` : ""}
-      </div>
-      <div class="meta"><span>${esc(s.book.title)}</span><span>${esc(s.chapterTitle || "")}</span>
-        <span>${group ? `本主题 ${items.length} 题 · ` : ""}全章 ${info.count} 题</span>${info.pages ? `<span>原书 p.${esc(info.pages)}</span>` : ""}</div>
-      <nav class="section-tabs" aria-label="本章内容"><a href="${esc(sectionUrl(s.book.id, s.id))}">本章正文</a><a href="${esc(sectionUrl(s.book.id, s.id, true))}" aria-current="page">本章习题</a></nav>
-    </div>${navigation}${body}${items.length ? navigation : ""}`;
+    const head = pageHead({
+      book: s.book,
+      title: `第${esc(s.chapter)}章${group ? ` · ${esc(group.title)}` : ""} · 习题`,
+      meta: `<span>${esc(s.book.title)}${s.book.author ? ` · ${esc(s.book.author)}` : ""}</span>
+        <span>${esc(s.chapterTitle || "")}</span>
+        <span>${group ? `本主题 ${items.length} 题 · ` : ""}全章 ${info.count} 题</span>${info.pages ? `<span>原书 p.${esc(info.pages)}</span>` : ""}`,
+      tabs: sectionTabs(s, true),
+      copy: allItems.length ? copyButton("exercises", "复制本章习题", "复制本章全部习题（含所有主题）的 Markdown/LaTeX 源码") : "",
+    });
+    $("#view").innerHTML = head + navigation + body + (items.length ? navigation : "");
     setTopbarCopy(allItems.length ? "chapter" : null);
     $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <a class="crumb-home" href="#/${esc(s.book.id)}">${esc(s.book.short || s.book.title)}</a> · 第${esc(s.chapter)}章${group ? ` · ${esc(group.title)}` : ""}`;
     markActive();
