@@ -710,21 +710,45 @@
     const meta = currentMeta || BOOKS[0];
     if (!meta) return;
     const book = await ensureBook(meta.id);
-    const pool = book.sections.flatMap((s) => s.items.map((it) => ({ it, s })));
+    const pool = book.sections.flatMap((s) => s.items.map((it) => ({
+      it, s, secId: s.id, kind: "stmt", label: `${s.id} ${s.title}`, crumb: s.id,
+    })));
+    let exerciseTotal = 0;
+    if (meta.exercise_count) {
+      const records = await ensureExercises(meta.id);
+      for (const [sid, rec] of Object.entries(records)) {
+        if (!rec.items || !rec.items.length) continue;
+        const chapter = rec.scope === "chapter"
+          ? book.chapters.find((ch) => String(ch.no) === String(rec.chapter)) : null;
+        const section = rec.scope === "chapter"
+          ? { id: sid, scope: "chapter", chapter: rec.chapter, chapterTitle: chapter ? chapter.title : "", title: "", book: meta }
+          : book.sections.find((s) => s.id === sid);
+        if (!section) continue;
+        const label = rec.scope === "chapter"
+          ? `第${rec.chapter}章${chapter && chapter.title ? ` ${chapter.title}` : ""} · 习题`
+          : `${section.id} ${section.title} · 习题`;
+        const crumb = rec.scope === "chapter" ? `第${rec.chapter}章 习题` : `${section.id} 习题`;
+        for (const it of rec.items) {
+          pool.push({ it, s: section, secId: `${sid}/exercises`, kind: "exercise", label, crumb });
+        }
+        exerciseTotal += rec.items.length;
+      }
+    }
     if (!pool.length) { renderEmptyBook(meta); return; }
-    const { it, s } = pool[Math.floor(Math.random() * pool.length)];
-    current = s;
+    const pick = pool[Math.floor(Math.random() * pool.length)];
+    current = pick.s;
     const head = pageHead({
       book,
       title: "随机自测",
       meta: `<span>${esc(book.title)}${book.author ? ` · ${esc(book.author)}` : ""}</span>
-        <span>${esc(s.id)} ${esc(s.title)}</span>
-        <span>本书共 ${pool.length} 个条目</span>`,
+        <span>${esc(pick.label)}</span>
+        <span>本书共 ${pool.length} 个条目${exerciseTotal ? `（含 ${exerciseTotal} 道习题）` : ""}</span>`,
     });
-    $("#view").innerHTML = head + itemHtml({ ...it, bookId: book.id, secId: s.id }, { hidden: true })
+    $("#view").innerHTML = head + itemHtml({ ...pick.it, bookId: book.id, secId: pick.secId }, { hidden: pick.kind === "stmt" })
       + `<p style="margin-top:18px"><button id="again" class="ghost-btn" type="button">换一条（r）</button></p>`;
     typesetLazy($("#view"));
-    $("#crumbs").innerHTML = `<b>随机</b> · ${esc(book.short || book.title)} ${esc(s.id)}`;    $("#again").onclick = renderRandom;
+    $("#crumbs").innerHTML = `<b>随机</b> · ${esc(book.short || book.title)} ${esc(pick.crumb)}`;
+    $("#again").onclick = renderRandom;
     markActive();
   }
 

@@ -55,7 +55,7 @@ async function settle() {
   for (let i = 0; i < 10; i++) await new Promise((resolve) => setImmediate(resolve));
 }
 
-async function start({ hash = "#/fanhan/1.1/exercises", search = "" } = {}) {
+async function start({ hash = "#/fanhan/1.1/exercises", search = "", random = null } = {}) {
   const elements = new Map();
   const element = (selector) => {
     if (!elements.has(selector)) elements.set(selector, new Element());
@@ -92,8 +92,10 @@ async function start({ hash = "#/fanhan/1.1/exercises", search = "" } = {}) {
   const location = { hash, search, href: `http://localhost/${search}${hash}` };
   const requests = [];
   const clipboard = [];
+  const math = Object.create(Math);
+  if (random !== null) math.random = () => random;
   const context = {
-    document, window, location, URLSearchParams, URL, Map, Set, console,
+    document, window, location, URLSearchParams, URL, Map, Set, console, Math: math,
     // Execute the search debounce without sleeping for wall-clock time.
     setTimeout(callback) { queueMicrotask(callback); return 1; }, clearTimeout() {},
     localStorage: { getItem() { return null; }, setItem() {} },
@@ -226,12 +228,20 @@ async function main() {
   await app.navigate(`#/${exerciseHit[0]}/${exerciseHit[1]}/${exerciseHit[2]}`);
   assert.match(app.html(), /class="exercise-items"/);
   assert.ok(app.jumps.some((id) => id.endsWith(exerciseHit[2].split('/').pop())));
-  // Random view uses the shared page header (title row + avatar) and keeps 换一条.
-  const randomApp = await start({ hash: "#/fanhan/1.1", search: "?mode=random" });
+  // Random view includes every statement and every exercise; 0.999 lands on an exercise.
+  const randomApp = await start({ hash: "#/fanhan/1.1", search: "?mode=random", random: 0.999 });
   assert.match(randomApp.html(), /class="sec-body"/);
   assert.match(randomApp.html(), /class="sec-title-row"/);
   assert.match(randomApp.html(), /class="sec-avatar"/, "Random view must show the author avatar");
+  assert.match(randomApp.html(), /本书共 \d+ 个条目（含 315 道习题）/);
+  assert.match(randomApp.html(), /data-type="习题"/, "Random mode must be able to land on an exercise");
   assert.match(randomApp.html(), /id="again"/);
+  assert.ok(randomApp.requests.includes("data/fanhan-exercises.json"),
+    "Random mode must load exercise data when the book has exercises");
+  // Chapter-level exercises (Probability) join the same book-wide pool.
+  const gailvRandom = await start({ hash: "#/gailv/1.2", search: "?mode=random", random: 0.999 });
+  assert.match(gailvRandom.html(), /（含 278 道习题）/);
+  assert.match(gailvRandom.html(), /data-type="习题"/, "Chapter exercises must join the random pool too");
 
   await checkProbabilityChapters();
   const probabilityTotal = bookData.books.find((book) => book.id === "gailv").exercise_count;
