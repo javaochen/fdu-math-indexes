@@ -1,6 +1,6 @@
 ---
 chapter: 3
-chapter_title: 单纯同调论（后续课程）
+chapter_title: 单纯同调论
 section: "3.3"
 section_title: Euler-Poincaré 公式
 pages: "179–185"

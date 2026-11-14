@@ -94,6 +94,7 @@ def build_data(book_id: str, section_ids: set[str], chapter_ids: set[str] | None
         lo, hi = int(match[1]), int(match[2] or match[1])
         if lo > hi:
             raise ValueError(f"{where}: 印刷页码范围倒置")
+        first_no = int(fm.get("start") or 1)
         lines = body.splitlines()
         heads = []
         for i, line in enumerate(lines):
@@ -107,8 +108,8 @@ def build_data(book_id: str, section_ids: set[str], chapter_ids: set[str] | None
         items, previous = [], lo
         for n, (start, head) in enumerate(heads):
             number, title, page = head["number"], (head["title"] or "").strip(), int(head["page"])
-            if int(number.rstrip("*")) != n + 1:
-                raise ValueError(f"{where}: 题号缺漏或重复，期望 {n+1}，实际 {number}")
+            if int(number.rstrip("*")) != first_no + n:
+                raise ValueError(f"{where}: 题号缺漏或重复，期望 {first_no+n}，实际 {number}")
             if not (previous <= page <= hi):
                 raise ValueError(f"{where}: 习题 {number} 印刷页码越界或倒退")
             previous = page
