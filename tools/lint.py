@@ -70,12 +70,17 @@ def lint_file(path: Path, sec_id: str, chapter: str, tag_style: str) -> list[str
             parts = t.split(".")
             if parts and parts[0][:1].isalpha():
                 continue  # 附录编号（A.1、B.4）不按章校验
-            if chapter and str(chapter) != "?" and parts and parts[0] != str(chapter):
+            if tag_style == "subsection":
+                expected = sec_id.split(".")[1] if len(sec_id.split(".")) > 1 else ""
+                if expected and parts[0] != expected:
+                    warn.append(f"{label}: 公式编号 ({t}) 与本节的节内序号 {expected} 不一致")
+            elif tag_style == "section":
+                if sec_id and len(parts) >= 2:
+                    prefix = ".".join(sec_id.split(".")[:2])
+                    if ".".join(parts[:2]) != prefix:
+                        warn.append(f"{label}: 公式编号 ({t}) 与本节 {sec_id} 不一致")
+            elif chapter and str(chapter) != "?" and parts and parts[0] != str(chapter):
                 warn.append(f"{label}: 公式编号 ({t}) 不属于第 {chapter} 章")
-            elif tag_style == "section" and sec_id and len(parts) >= 2:
-                prefix = ".".join(sec_id.split(".")[:2])
-                if ".".join(parts[:2]) != prefix:
-                    warn.append(f"{label}: 公式编号 ({t}) 与本节 {sec_id} 不一致")
 
         for block in MATH_RE.findall(chunk):
             expr = block[0] or block[1]
@@ -129,10 +134,13 @@ def main() -> int:
 
         for ch, ids in sections_by_chapter.items():
             ids = sorted(ids)
+            gaps = {x.strip() for x in bmeta.get("section_gaps", "").split(",") if x.strip()}
             for a, b in zip(ids, ids[1:]):
                 if b[1] - a[1] > 1:
-                    print(f"  [章 {ch}] 节号从 {a[1]} 跳到 {b[1]}，中间可能有未录入的节")
-                    total_warn += 1
+                    missing = [f"{ch}.{k}" for k in range(a[1] + 1, b[1])]
+                    if not set(missing) <= gaps:
+                        print(f"  [章 {ch}] 节号从 {a[1]} 跳到 {b[1]}，中间可能有未录入的节")
+                        total_warn += 1
                 if b == a:
                     print(f"  [章 {ch}] 节 {a[1]} 重复")
                     total_warn += 1
