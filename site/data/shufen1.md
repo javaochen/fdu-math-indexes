@@ -152,6 +152,70 @@
 
 设$$A=\{x\mid x\in\mathbf{R}\ \text{并且}\ a\leqslant x\leqslant b\},$$$$B=\{y\mid y\in\mathbf{R}\ \text{并且}\ c\leqslant y\leqslant d\},$$$$C=\{z\mid z\in\mathbf{R}\ \text{并且}\ e\leqslant z\leqslant f\},$$则 $A\times B$ 就表示 $Oxy$ 平面上一个闭矩形，而 $A\times B\times C$ 表示 $Oxyz$ 空间中的一个闭长方体（如图 1.1.2）。
 
+#### 习题（p8–9）
+
+**习题 1** @8
+
+证明由 $n$ 个元素组成的集合 $T=\{a_1,a_2,\cdots,a_n\}$ 有 $2^n$ 个子集。
+
+**习题 2** @8
+
+证明：
+
+(1) 任意无限集必包含一个可列子集；
+
+(2) 设 $A$ 与 $B$ 都是可列集，证明 $A\cup B$ 也是可列集。
+
+**习题 3** @8
+
+指出下列表述中的错误：
+
+(1) $\{0\}=\varnothing$；
+
+(2) $a\subset\{a,b,c\}$；
+
+(3) $\{a,b\}\in\{a,b,c\}$；
+
+(4) $\{a,b,\{a,b\}\}=\{a,b\}$。
+
+**习题 4** @8
+
+用集合符号表示下列数集：
+
+(1) 满足 $\dfrac{x-3}{x+2}\leqslant 0$ 的实数全体；
+
+(2) 平面上第一象限的点的全体；
+
+(3) 大于 $0$ 并且小于 $1$ 的有理数全体；
+
+(4) 方程 $\sin x\cot x=0$ 的实数解全体。
+
+**习题 5** @8
+
+证明下列集合等式：
+
+(1) $A\cap(B\cup D)=(A\cap B)\cup(A\cap D)$；
+
+(2) $(A\cup B)^{c}=A^{c}\cap B^{c}$。
+
+**习题 6** @8
+
+举例说明集合运算不满足消去律：
+
+(1) $A\cup B=A\cup C\not\Rightarrow B=C$；
+
+(2) $A\cap B=A\cap C\not\Rightarrow B=C$。
+
+其中符号 "$\not\Rightarrow$" 表示左边的命题不能推出右边的命题。
+
+**习题 7** @9
+
+下述命题是否正确？不正确的话，请改正。
+
+(1) $x\notin A\cap B\ \Leftrightarrow\ x\notin A$ 并且 $x\notin B$；
+
+(2) $x\notin A\cup B\ \Leftrightarrow\ x\notin A$ 或者 $x\notin B$。
+
 ### 1.2 映射与函数（p9–20）
 
 #### 映射
@@ -518,6 +582,90 @@ $$\frac{a_1+a_2+\cdots+a_n}{n}\ge\sqrt[n]{a_1a_2\cdots a_n}\ge n\bigg/\left(\fra
 
 这就是说，算术平均值不小于几何平均值，几何平均值不小于调和平均值。
 
+#### 习题（p18–20）
+
+**习题 1** @18
+
+设 $S=\{\alpha,\beta,\gamma\}$，$T=\{a,b,c\}$，问有多少种可能的映射 $f:S\to T$，其中哪些是双射？
+
+**习题 2** @19
+
+(1) 建立区间 $[a,b]$ 与 $[0,1]$ 之间的一一对应；
+
+(2) 建立区间 $(0,1)$ 与 $(-\infty,+\infty)$ 之间的一一对应。
+
+**习题 3** @19
+
+将下列函数 $f$ 和 $g$ 构成复合函数，并指出定义域与值域：
+
+(1) $y=f(u)=\log_a u$，$u=g(x)=x^2-3$；
+
+(2) $y=f(u)=\arcsin u$，$u=g(x)=3^x$；
+
+(3) $y=f(u)=\sqrt{u^2-1}$，$u=g(x)=\sec x$；
+
+(4) $y=f(u)=\sqrt{u}$，$u=g(x)=\dfrac{x-1}{x+1}$。
+
+**习题 4** @19
+
+指出下列函数是由哪些基本初等函数复合而成的：
+
+(1) $y=\arcsin\dfrac{1}{\sqrt{x^2+1}}$；
+
+(2) $y=\dfrac{1}{3}\log_a(x^2-1)$。
+
+**习题 5** @19
+
+求下列函数的自然定义域与值域：
+
+(1) $y=\log_a\sin x\ (a>1)$；
+
+(2) $y=\sqrt{\cos x}$；
+
+(3) $y=\sqrt{4-3x-x^2}$；
+
+(4) $y=x^2+\dfrac{1}{x^4}$。
+
+**习题 6** @19
+
+问下列函数 $f$ 和 $g$ 是否等同？
+
+(1) $f(x)=\log_a(x^2)$，$g(x)=2\log_a x$；
+
+(2) $f(x)=\sec^2 x-\tan^2 x$，$g(x)=1$；
+
+(3) $f(x)=\sin^2 x+\cos^2 x$，$g(x)=1$。
+
+**习题 7** @19
+
+(1) 设 $f(x+3)=2x^3-3x^2+5x-1$，求 $f(x)$；
+
+(2) 设 $f\left(\dfrac{x}{x-1}\right)=\dfrac{3x-1}{3x+1}$，求 $f(x)$。
+
+**习题 8** @19
+
+设 $f(x)=\dfrac{1}{1+x}$，求 $f\circ f$，$f\circ f\circ f$，$f\circ f\circ f\circ f$ 的函数表达式。
+
+**习题 9** @19
+
+证明：定义于 $(-\infty,+\infty)$ 上的任何函数都可以表示成一个偶函数与一个奇函数之和。
+
+**习题 10** @19
+
+写出折线 $ABCD$ 所表示的函数关系 $y=f(x)$ 的分段表示，其中 $A=(0,3)$，$B=(1,-1)$，$C=(3,2)$，$D=(4,0)$。
+
+**习题 11** @19
+
+设 $f(x)$ 表示图 1.2.8 中阴影部分面积，写出函数 $y=f(x)$，$x\in[0,2]$ 的表达式。
+
+**习题 12** @19
+
+一玻璃杯装有汞、水、煤油三种液体，密度分别为 $13.6\ \mathrm{g/cm^3}$，$1\ \mathrm{g/cm^3}$，$0.8\ \mathrm{g/cm^3}$，上层煤油液体高度为 $5\ \mathrm{cm}$，中层水液体高度为 $4\ \mathrm{cm}$，下层汞液体高度为 $2\ \mathrm{cm}$（如图 1.2.9），试求压强 $P$ 与液体深度 $x$ 之间的函数关系。
+
+**习题 13** @20
+
+试求定义在 $[0,1]$ 上的函数，它是 $[0,1]$ 与 $[0,1]$ 之间的一一对应，但在 $[0,1]$ 的任一子区间上都不是单调函数。
+
 ## 第2章 数列极限
 
 ### 2.1 实数系的连续性（p21–27）
@@ -639,6 +787,56 @@ $$\left(\frac{n}{m}-r\right)^2-2=r^2-\frac{2n}{m}r+t>0.$$
 **定理 (Dedekind 切割定理)** @26
 
 设 $\tilde{A}/\tilde{B}$ 是实数集 $\mathbb{R}$ 的一个切割，则或者 $\tilde{A}$ 有最大数，或者 $\tilde{B}$ 有最小数。
+
+#### 习题（p27–28）
+
+**习题 1** @27
+
+(1) 证明 $\sqrt{6}$ 不是有理数；
+
+(2) $\sqrt{3}+\sqrt{2}$ 是不是有理数？
+
+**习题 2** @27
+
+求下列数集的最大数、最小数，或证明它们不存在：
+
+(1) $A=\{x\mid x\geqslant 0\}$；
+
+(2) $B=\left\{\sin x\ \middle|\ 0<x<\dfrac{2\pi}{3}\right\}$；
+
+(3) $C=\left\{\dfrac{n}{m}\ \middle|\ m,n\in\mathbf{N}^{+}\ \text{并且}\ n<m\right\}$。
+
+**习题 3** @27
+
+$A,B$ 是两个有界集，证明：
+
+(1) $A\cup B$ 是有界集；
+
+(2) $S=\{x+y\mid x\in A,\ y\in B\}$ 也是有界集。
+
+**习题 4** @27
+
+设数集 $S$ 有上界，则数集 $T=\{x\mid -x\in S\}$ 有下界，且 $\sup S=-\inf T$。
+
+**习题 5** @27
+
+证明有界数集的上、下确界惟一。
+
+**习题 6** @28
+
+对任何非空数集 $S$，必有 $\sup S\geqslant\inf S$。当 $\sup S=\inf S$ 时，数集 $S$ 有什么特点？
+
+**习题 7** @28
+
+证明非空有下界的数集必有下确界。
+
+**习题 8** @28
+
+设 $S=\{x\mid x\in\mathbf{Q}\ \text{并且}\ x^{2}<3\}$，证明：
+
+(1) $S$ 没有最大数与最小数；
+
+(2) $S$ 在 $\mathbf{Q}$ 内没有上确界与下确界。
 
 ### 2.2 数列极限（p28–38）
 
@@ -906,6 +1104,102 @@ $$\frac{a_1+a_2+\cdots+a_n}{n}\ge\sqrt[n]{a_1a_2\cdots a_n}>0=a.$$
 
 同样可由极限的夹逼性推出结论成立。
 
+#### 习题（p37–38）
+
+**习题 1** @37
+
+按定义证明下列数列是无穷小量：
+
+(1) $\left\{\dfrac{n+1}{n^{2}+1}\right\}$；
+
+(2) $\left\{(-1)^{n}(0.99)^{n}\right\}$；
+
+(3) $\left\{\dfrac{1}{n}+5^{-n}\right\}$；
+
+(4) $\left\{\dfrac{1+2+3+\cdots+n}{n^{3}}\right\}$；
+
+(5) $\left\{\dfrac{n^{2}}{3^{n}}\right\}$；
+
+(6) $\left\{\dfrac{3^{n}}{n!}\right\}$；
+
+(7) $\left\{\dfrac{n!}{n^{n}}\right\}$；
+
+(8) $\left\{\dfrac{1}{n}-\dfrac{1}{n+1}+\dfrac{1}{n+2}-\cdots+(-1)^{n}\dfrac{1}{2n}\right\}$。
+
+**习题 2** @37
+
+按定义证明下述极限：
+
+(1) $\displaystyle\lim_{n\to\infty}\dfrac{2n^{2}-1}{3n^{2}+2}=\dfrac{2}{3}$；
+
+(2) $\displaystyle\lim_{n\to\infty}\dfrac{\sqrt{n^{2}+n}}{n}=1$；
+
+(3) $\displaystyle\lim_{n\to\infty}\left(\sqrt{n^{2}+n}-n\right)=\dfrac{1}{2}$；
+
+(4) $\displaystyle\lim_{n\to\infty}\sqrt[n]{3n+2}=1$；
+
+(5) $\displaystyle\lim_{n\to\infty}x_{n}=1$，其中$$x_{n}=\begin{cases}\dfrac{n+\sqrt{n}}{n}, & n\ \text{是偶数},\\[2mm] 1-10^{-n}, & n\ \text{是奇数}.\end{cases}$$
+
+**习题 3** @37
+
+举例说明下列关于无穷小量的定义是不正确的：
+
+(1) 对任意给定的 $\varepsilon>0$，存在正整数 $N$，使当 $n>N$ 时成立 $x_{n}<\varepsilon$；
+
+(2) 对任意给定的 $\varepsilon>0$，存在无穷多个 $x_{n}$，使 $|x_{n}|<\varepsilon$。
+
+**习题 4** @37
+
+设 $k$ 是一正整数，证明：$\displaystyle\lim_{n\to\infty}x_{n}=a$ 的充分必要条件是 $\displaystyle\lim_{n\to\infty}x_{n+k}=a$。
+
+**习题 5** @38
+
+设 $\displaystyle\lim_{n\to\infty}x_{2n}=\lim_{n\to\infty}x_{2n+1}=a$，证明：$\displaystyle\lim_{n\to\infty}x_{n}=a$。
+
+**习题 6** @38
+
+设 $x_{n}\geqslant 0$，且 $\displaystyle\lim_{n\to\infty}x_{n}=a\geqslant 0$，证明：$\displaystyle\lim_{n\to\infty}\sqrt{x_{n}}=\sqrt{a}$。
+
+**习题 7** @38
+
+$\{x_{n}\}$ 是无穷小量，$\{y_{n}\}$ 是有界数列，证明 $\{x_{n}y_{n}\}$ 也是无穷小量。
+
+**习题 8** @38
+
+利用夹逼法计算极限：
+
+(1) $\displaystyle\lim_{n\to\infty}\left(1+\dfrac{1}{2}+\dfrac{1}{3}+\cdots+\dfrac{1}{n}\right)^{\frac{1}{n}}$；
+
+(2) $\displaystyle\lim_{n\to\infty}\left(\dfrac{1}{n+\sqrt{1}}+\dfrac{1}{n+\sqrt{2}}+\cdots+\dfrac{1}{n+\sqrt{n}}\right)$；
+
+(3) $\displaystyle\lim_{n\to\infty}\sum_{k=n^{2}}^{(n+1)^{2}}\dfrac{1}{\sqrt{k}}$；
+
+(4) $\displaystyle\lim_{n\to\infty}\dfrac{1\cdot 3\cdot 5\cdots(2n-1)}{2\cdot 4\cdot 6\cdots(2n)}$。
+
+**习题 9** @38
+
+求下列数列的极限：
+
+(1) $\displaystyle\lim_{n\to\infty}\dfrac{3n^{2}+4n-1}{n^{2}+1}$；
+
+(2) $\displaystyle\lim_{n\to\infty}\dfrac{n^{3}+2n^{2}-3n+1}{2n^{3}-n+3}$；
+
+(3) $\displaystyle\lim_{n\to\infty}\dfrac{3^{n}+n^{3}}{3^{n+1}+(n+1)^{3}}$；
+
+(4) $\displaystyle\lim_{n\to\infty}\left(\sqrt[n]{n^{2}+1}-1\right)\sin\dfrac{n\pi}{2}$；
+
+(5) $\displaystyle\lim_{n\to\infty}\sqrt{n}\left(\sqrt{n+1}-\sqrt{n}\right)$；
+
+(6) $\displaystyle\lim_{n\to\infty}\sqrt{n}\left(\sqrt[4]{n^{2}+1}-\sqrt{n+1}\right)$；
+
+(7) $\displaystyle\lim_{n\to\infty}\sqrt[n]{\dfrac{1}{n!}}$；
+
+(8) $\displaystyle\lim_{n\to\infty}\left(1-\dfrac{1}{2^{2}}\right)\left(1-\dfrac{1}{3^{2}}\right)\cdots\left(1-\dfrac{1}{n^{2}}\right)$；
+
+(9) $\displaystyle\lim_{n\to\infty}\sqrt[n]{n\lg n}$；
+
+(10) $\displaystyle\lim_{n\to\infty}\left(\dfrac{1}{2}+\dfrac{3}{2^{2}}+\cdots+\dfrac{2n-1}{2^{n}}\right)$。
+
 ### 2.3 无穷大量（p39–43）
 
 **定义 2.3.1 (无穷大量)** @39
@@ -985,6 +1279,62 @@ $$\frac{a_1+a_2+\cdots+a_n}{n}\ge\sqrt[n]{a_1a_2\cdots a_n}>0=a.$$
 设 $\lim\limits_{n\to\infty}a_n=a$，求极限$$\lim_{n\to\infty}\frac{a_1+2a_2+\cdots+na_n}{n^2}.$$
 
 解 令 $x_n=a_1+2a_2+\cdots+na_n$，$y_n=n^2$，由 Stolz 定理得到$$\lim_{n\to\infty}\frac{a_1+2a_2+\cdots+na_n}{n^2}=\frac{a}{2}.$$
+
+#### 习题（p43–44）
+
+**习题 1** @43
+
+按定义证明下述数列为无穷大量：
+
+(1) $\left\{\dfrac{n^{2}+1}{2n+1}\right\}$；
+
+(2) $\left\{\log_{a}\left(\dfrac{1}{n}\right)\right\}\quad(a>1)$；
+
+(3) $\{n-\arctan n\}$；
+
+(4) $\left\{\dfrac{1}{\sqrt{n+1}}+\dfrac{1}{\sqrt{n+2}}+\cdots+\dfrac{1}{\sqrt{2n}}\right\}$。
+
+**习题 2** @43
+
+(1) 设 $\displaystyle\lim_{n\to\infty}a_{n}=+\infty$（或 $-\infty$），按定义证明：$$\lim_{n\to\infty}\frac{a_{1}+a_{2}+\cdots+a_{n}}{n}=+\infty\quad(\text{或}\ -\infty);$$
+
+(2) 设 $a_{n}>0$，$\displaystyle\lim_{n\to\infty}a_{n}=0$，利用 (1) 证明：$$\lim_{n\to\infty}(a_{1}a_{2}\cdots a_{n})^{\frac{1}{n}}=0.$$
+
+**习题 3** @44
+
+证明：
+
+(1) 设 $\{x_{n}\}$ 是无穷大量，$|y_{n}|\geqslant\delta>0$，则 $\{x_{n}y_{n}\}$ 是无穷大量；
+
+(2) 设 $\{x_{n}\}$ 是无穷大量，$\displaystyle\lim_{n\to\infty}y_{n}=b\neq 0$，则 $\{x_{n}y_{n}\}$ 与 $\left\{\dfrac{x_{n}}{y_{n}}\right\}$ 都是无穷大量。
+
+**习题 4** @44
+
+(1) 利用 Stolz 定理，证明：$$\lim_{n\to\infty}\frac{1^{2}+3^{2}+5^{2}+\cdots+(2n+1)^{2}}{n^{3}}=\frac{4}{3};$$
+
+(2) 求极限$$\lim_{n\to\infty}n\left[\frac{1^{2}+3^{2}+5^{2}+\cdots+(2n+1)^{2}}{n^{3}}-\frac{4}{3}\right].$$
+
+**习题 5** @44
+
+利用 Stolz 定理，证明：
+
+(1) $\displaystyle\lim_{n\to\infty}\frac{\log_{a}n}{n}=0\quad(a>1)$；
+
+(2) $\displaystyle\lim_{n\to\infty}\frac{n^{k}}{a^{n}}=0\quad(a>1,\ k\ \text{是正整数})$。
+
+**习题 6** @44
+
+(1) 在 Stolz 定理中，若 $\displaystyle\lim_{n\to\infty}\frac{x_{n}-x_{n-1}}{y_{n}-y_{n-1}}=\infty$，能否得出 $\displaystyle\lim_{n\to\infty}\frac{x_{n}}{y_{n}}=\infty$ 的结论？
+
+(2) 在 Stolz 定理中，若 $\displaystyle\lim_{n\to\infty}\frac{x_{n}-x_{n-1}}{y_{n}-y_{n-1}}$ 不存在，能否得出 $\displaystyle\lim_{n\to\infty}\frac{x_{n}}{y_{n}}$ 不存在的结论？
+
+**习题 7** @44
+
+设 $0<\lambda<1$，$\displaystyle\lim_{n\to\infty}a_{n}=a$，证明$$\lim_{n\to\infty}\left(a_{n}+\lambda a_{n-1}+\lambda^{2}a_{n-2}+\cdots+\lambda^{n}a_{0}\right)=\frac{a}{1-\lambda}.$$
+
+**习题 8** @44
+
+设 $A_{n}=\sum\limits_{k=1}^{n}a_{k}$，当 $n\to\infty$ 时有极限。$\{p_{n}\}$ 为单调递增的正数数列，且 $p_{n}\to+\infty\ (n\to\infty)$。证明：$$\lim_{n\to\infty}\frac{p_{1}a_{1}+p_{2}a_{2}+\cdots+p_{n}a_{n}}{p_{n}}=0.$$
 
 ### 2.4 收敛准则（p44–59）
 
@@ -1264,6 +1614,116 @@ $$\text{确界存在定理}\Rightarrow\text{单调有界数列收敛定理}\Righ
 
 而完备性又可推出连续性（Cauchy 收敛原理 $\Rightarrow$ 闭区间套定理 $\Rightarrow$ 确界存在定理），故其中任何一个都可称为实数系的基本定理。
 
+#### 习题（p58–59）
+
+**习题 1** @58
+
+利用 $\displaystyle\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^{n}=\mathrm{e}$ 求下列数列的极限：
+
+(1) $\displaystyle\lim_{n\to\infty}\left(1-\dfrac{1}{n}\right)^{n}$；
+
+(2) $\displaystyle\lim_{n\to\infty}\left(1+\dfrac{1}{n+1}\right)^{n}$；
+
+(3) $\displaystyle\lim_{n\to\infty}\left(1+\dfrac{1}{2n}\right)^{n}$；
+
+(4) $\displaystyle\lim_{n\to\infty}\left(1+\dfrac{1}{n^{2}}\right)^{n}$；
+
+(5) $\displaystyle\lim_{n\to\infty}\left(1+\dfrac{1}{n}-\dfrac{1}{n^{2}}\right)^{n}$。
+
+**习题 2** @58
+
+利用单调有界数列必定收敛的性质，证明下述数列收敛，并求出极限：
+
+(1) $x_{1}=\sqrt{2},\ x_{n+1}=\sqrt{2+x_{n}},\ n=1,2,3,\cdots$；
+
+(2) $x_{1}=\sqrt{2},\ x_{n+1}=\sqrt{2x_{n}},\ n=1,2,3,\cdots$；
+
+(3) $x_{1}=\sqrt{2},\ x_{n+1}=\dfrac{-1}{2+x_{n}},\ n=1,2,3,\cdots$；
+
+(4) $x_{1}=1,\ x_{n+1}=\sqrt{4+3x_{n}},\ n=1,2,3,\cdots$；
+
+(5) $0<x_{1}<1,\ x_{n+1}=1-\sqrt{1-x_{n}},\ n=1,2,3,\cdots$；
+
+(6) $0<x_{1}<1,\ x_{n+1}=x_{n}(2-x_{n}),\ n=1,2,3,\cdots$。
+
+**习题 3** @58
+
+利用递推公式与单调有界数列的性质，证明：
+
+(1) $\displaystyle\lim_{n\to\infty}\frac{2}{3}\cdot\frac{3}{5}\cdot\frac{4}{7}\cdot\cdots\cdot\frac{n+1}{2n+1}=0$；
+
+(2) $\displaystyle\lim_{n\to\infty}\frac{a^{n}}{n!}=0\quad(a>1)$；
+
+(3) $\displaystyle\lim_{n\to\infty}\frac{n!}{n^{n}}=0$。
+
+**习题 4** @59
+
+设 $x_{n+1}=\dfrac{1}{2}\left(x_{n}+\dfrac{2}{x_{n}}\right)$，$n=1,2,3,\cdots$，分 $x_{1}=1$ 与 $x_{1}=-2$ 两种情况求 $\displaystyle\lim_{n\to\infty}x_{n}$。
+
+**习题 5** @59
+
+设 $x_{1}=a$，$x_{2}=b$，$x_{n+2}=\dfrac{x_{n+1}+x_{n}}{2}\ (n=1,2,3,\cdots)$，求 $\displaystyle\lim_{n\to\infty}x_{n}$。
+
+**习题 6** @59
+
+给定 $0<a<b$，令 $x_{1}=a$，$y_{1}=b$。
+
+(1) 若 $x_{n+1}=\sqrt{x_{n}y_{n}}$，$y_{n+1}=\dfrac{x_{n}+y_{n}}{2}\ (n=1,2,3,\cdots)$，证明 $\{x_{n}\},\{y_{n}\}$ 收敛，且 $\displaystyle\lim_{n\to\infty}x_{n}=\lim_{n\to\infty}y_{n}$。这个公共极限称为 $a$ 与 $b$ 的算术几何平均；
+
+(2) 若 $x_{n+1}=\dfrac{x_{n}+y_{n}}{2}$，$y_{n+1}=\dfrac{2x_{n}y_{n}}{x_{n}+y_{n}}\ (n=1,2,3,\cdots)$，证明 $\{x_{n}\},\{y_{n}\}$ 收敛，且 $\displaystyle\lim_{n\to\infty}x_{n}=\lim_{n\to\infty}y_{n}$。这个公共极限称为 $a$ 与 $b$ 的算术调和平均。
+
+**习题 7** @59
+
+设 $x_{1}=\sqrt{2}$，$x_{n+1}=\dfrac{1}{2+x_{n}}\ (n=1,2,3,\cdots)$，证明数列 $\{x_{n}\}$ 收敛，并求极限 $\displaystyle\lim_{n\to\infty}x_{n}$。
+
+**习题 8** @59
+
+设 $\{x_{n}\}$ 是一单调数列，证明 $\displaystyle\lim_{n\to\infty}x_{n}=a$ 的充分必要条件是：存在 $\{x_{n}\}$ 的子列 $\{x_{n_{k}}\}$ 满足 $\displaystyle\lim_{k\to\infty}x_{n_{k}}=a$。
+
+**习题 9** @59
+
+证明：若有界数列 $\{x_{n}\}$ 不收敛，则必存在两个子列 $\{x_{n_{k}}^{(1)}\}$ 与 $\{x_{n_{k}}^{(2)}\}$ 收敛于不同的极限，即 $\displaystyle\lim_{k\to\infty}x_{n_{k}}^{(1)}=a$，$\displaystyle\lim_{k\to\infty}x_{n_{k}}^{(2)}=b$，$a\neq b$。
+
+**习题 10** @59
+
+证明：若数列 $\{x_{n}\}$ 无界，但非无穷大量，则必存在两个子列 $\{x_{n_{k}}^{(1)}\}$ 与 $\{x_{n_{k}}^{(2)}\}$，其中 $\{x_{n_{k}}^{(1)}\}$ 是无穷大量，$\{x_{n_{k}}^{(2)}\}$ 是收敛子列。
+
+**习题 11** @59
+
+设 $S$ 是非空有上界的数集，$\sup S=a\notin S$。证明在数集 $S$ 中可取出严格单调增加的数列 $\{x_{n}\}$，使得 $\displaystyle\lim_{n\to\infty}x_{n}=a$。
+
+**习题 12** @59
+
+设 $\{(a_{n},b_{n})\}$ 是一列开区间，满足条件：
+
+(1) $a_{1}<a_{2}<\cdots<a_{n}<\cdots<b_{n}<\cdots<b_{2}<b_{1}$；
+
+(2) $\displaystyle\lim_{n\to\infty}(b_{n}-a_{n})=0$。
+
+证明：存在惟一的实数 $\xi$ 属于所有的开区间 $(a_{n},b_{n})$，且 $\xi=\displaystyle\lim_{n\to\infty}a_{n}=\lim_{n\to\infty}b_{n}$。
+
+**习题 13** @59
+
+利用 Cauchy 收敛原理证明下述数列收敛：
+
+(1) $x_{n}=a_{0}+a_{1}q+a_{2}q^{2}+\cdots+a_{n}q^{n}\quad(|q|<1,\ |a_{k}|\leqslant M)$；
+
+(2) $x_{n}=1-\dfrac{1}{2}+\dfrac{1}{3}-\cdots+(-1)^{n+1}\dfrac{1}{n}$。
+
+**习题 14** @59
+
+(1) 设数列 $\{x_{n}\}$ 满足条件 $\displaystyle\lim_{n\to\infty}|x_{n+1}-x_{n}|=0$，问 $\{x_{n}\}$ 是否一定是基本数列；
+
+(2) 设数列 $\{x_{n}\}$ 满足条件 $|x_{n+1}-x_{n}|<\dfrac{1}{2^{n}}\ (n=1,2,3,\cdots)$，证明 $\{x_{n}\}$ 是基本数列。
+
+**习题 15** @59
+
+对于数列 $\{x_{n}\}$ 构造数集 $A_{k}$：$$A_{k}=\{x_{n}\mid n\geqslant k\}=\{x_{k},x_{k+1},\cdots\}.$$记 $\operatorname{diam}A_{k}=\sup\{|x_{n}-x_{m}|,\ x_{n}\in A_{k},\ x_{m}\in A_{k}\}$，证明数列 $\{x_{n}\}$ 收敛的充分必要条件是 $\displaystyle\lim_{k\to\infty}\operatorname{diam}A_{k}=0$。
+
+**习题 16** @59
+
+利用 Cauchy 收敛原理证明：单调有界数列必定收敛。
+
 ## 第3章 函数极限与连续函数
 
 ### 3.1 函数极限（p60–73）
@@ -1540,6 +2000,166 @@ $$|f(x')-f(x'')|<\varepsilon.$$
 
 对于本节中最后所讨论的各类函数极限情况，同样也分别有相应的 Cauchy 收敛原理，而在证明中需要用到相应的 Heine 定理。
 
+#### 习题（p72–74）
+
+**习题 1** @72
+
+按函数极限的定义证明：
+
+(1) $\lim\limits_{x\to2}x^3=8$；
+
+(2) $\lim\limits_{x\to4}\sqrt{x}=2$；
+
+(3) $\lim\limits_{x\to3}\dfrac{x-1}{x+1}=\dfrac12$；
+
+(4) $\lim\limits_{x\to\infty}\dfrac{x+1}{2x-1}=\dfrac12$；
+
+(5) $\lim\limits_{x\to0^+}\ln x=-\infty$；
+
+(6) $\lim\limits_{x\to+\infty}e^{-x}=0$；
+
+(7) $\lim\limits_{x\to2^+}\dfrac{2x}{x^2-4}=+\infty$；
+
+(8) $\lim\limits_{x\to-\infty}\dfrac{x^2}{x+1}=-\infty$。
+
+**习题 2** @73
+
+求下列函数极限：
+
+(1) $\lim\limits_{x\to1}\dfrac{x^2-1}{2x^2-x-1}$；
+
+(2) $\lim\limits_{x\to\infty}\dfrac{x^2-1}{2x^2-x-1}$；
+
+(3) $\lim\limits_{x\to0}\dfrac{3x^5-5x^3+2x}{x^5-x^3+3x}$；
+
+(4) $\lim\limits_{x\to0}\dfrac{(1+2x)(1+3x)-1}{x}$；
+
+(5) $\lim\limits_{x\to0}\dfrac{(1+x)^n-1}{x}$；
+
+(6) $\lim\limits_{x\to0}\dfrac{(1+mx)^n-(1+nx)^m}{x^2}$；
+
+(7) $\lim\limits_{x\to a}\dfrac{\sin x-\sin a}{x-a}$；
+
+(8) $\lim\limits_{x\to0}\dfrac{x^2}{1-\cos x}$；
+
+(9) $\lim\limits_{x\to0}\dfrac{\cos x-\cos 3x}{x^2}$；
+
+(10) $\lim\limits_{x\to0}\dfrac{\tan x-\sin x}{x^3}$。
+
+**习题 3** @73
+
+利用夹逼法求极限：
+
+(1) $\lim\limits_{x\to0}x\left[\dfrac1x\right]$；
+
+(2) $\lim\limits_{x\to+\infty}x^{\frac1x}$。
+
+**习题 4** @73
+
+利用夹逼法证明：
+
+(1) $\lim\limits_{x\to+\infty}\dfrac{x^k}{a^x}=0$（$a>1$，$k$ 为任意正整数）；
+
+(2) $\lim\limits_{x\to+\infty}\dfrac{\ln^k x}{x}=0$（$k$ 为任意正整数）。
+
+**习题 5** @73
+
+讨论单侧极限：
+
+(1)
+
+$$f(x)=\begin{cases}\dfrac{1}{2x},&0<x\le1,\\[6pt] x^2,&1<x<2,\\[4pt] 2x,&2<x<3,\end{cases}$$
+
+在 $x=0,1,2$ 三点；
+
+(2) $f(x)=\dfrac{2^{\frac1x}+1}{2^{\frac1x}-1}$，在 $x=0$ 点；
+
+(3) Dirichlet 函数
+
+$$D(x)=\begin{cases}1,&x\text{ 为有理数},\\[4pt] 0,&x\text{ 为无理数},\end{cases}$$
+
+在任意点；
+
+(4) $f(x)=\dfrac1x-\left[\dfrac1x\right]$，在 $x=\dfrac1n$（$n=1,2,3,\cdots$）。
+
+**习题 6** @73
+
+说明下列函数极限的情况：
+
+(1) $\lim\limits_{x\to+\infty}\dfrac{\sin x}{x}$；
+
+(2) $\lim\limits_{x\to+\infty}e^x\sin x$；
+
+(3) $\lim\limits_{x\to+\infty}x^\alpha\sin\dfrac1x$；
+
+(4) $\lim\limits_{x\to\infty}\left(1+\dfrac1x\right)^{x^2}$；
+
+(5) $\lim\limits_{x\to-\infty}\left(1+\dfrac1{x^2}\right)^x$；
+
+(6) $\lim\limits_{x\to0^+}\left(\dfrac1x-\left[\dfrac1x\right]\right)$。
+
+**习题 7** @73
+
+设函数
+
+$$f(x)=\left(\frac{2+e^{\frac1x}}{1+e^{\frac4x}}+\frac{\sin x}{|x|}\right),$$
+
+问当 $x\to0$ 时，$f(x)$ 的极限是否存在？
+
+**习题 8** @74
+
+设 $\lim\limits_{x\to a}f(x)=A$（$a\ge0$），证明：$\lim\limits_{x\to\sqrt a}f(x^2)=A$。
+
+**习题 9** @74
+
+(1) 设 $\lim\limits_{x\to0}f(x^3)=A$，证明：$\lim\limits_{x\to0}f(x)=A$。
+
+(2) 设 $\lim\limits_{x\to0}f(x^2)=A$，问是否成立 $\lim\limits_{x\to0}f(x)=A$？
+
+**习题 10** @74
+
+写出下述命题的“否定命题”的分析表述：
+
+(1) $\{x_n\}$ 是无穷小量；
+
+(2) $\{x_n\}$ 是正无穷大量；
+
+(3) $f(x)$ 在 $x_0$ 的右极限是 $A$；
+
+(4) $f(x)$ 在 $x_0$ 的左极限是正无穷大量；
+
+(5) 当 $x\to-\infty$，$f(x)$ 的极限是 $A$；
+
+(6) 当 $x\to+\infty$，$f(x)$ 是负无穷大量。
+
+**习题 11** @74
+
+证明 $\lim\limits_{x\to x_0^+}f(x)=+\infty$ 的充分必要条件是：对于任意从右方收敛于 $x_0$ 的数列 $\{x_n\}$（$x_n>x_0$），成立
+
+$$\lim_{n\to\infty}f(x_n)=+\infty.$$
+
+**习题 12** @74
+
+证明 $\lim\limits_{x\to-\infty}f(x)=-\infty$ 的充分必要条件是：对于任意正无穷大量 $\{x_n\}$，成立
+
+$$\lim_{n\to\infty}f(x_n)=-\infty.$$
+
+**习题 13** @74
+
+证明 $\lim\limits_{x\to+\infty}f(x)$ 存在而且有限的充分必要条件是：对于任意正无穷大量 $\{x_n\}$，相应的函数值数列 $\{f(x_n)\}$ 收敛。
+
+**习题 14** @74
+
+分别写出下述函数极限存在而且有限的 Cauchy 收敛原理，并加以证明：
+
+(1) $\lim\limits_{x\to x_0}f(x)$；(2) $\lim\limits_{x\to x_0^+}f(x)$；(3) $\lim\limits_{x\to-\infty}f(x)$。
+
+**习题 15** @74
+
+设 $f(x)$ 在 $(0,+\infty)$ 上满足函数方程 $f(2x)=f(x)$，且 $\lim\limits_{x\to0^+}f(x)=A$，证明
+
+$$f(x)\equiv A,\quad x\in(0,+\infty).$$
+
 ### 3.2 连续函数（p74–83）
 
 **定义 3.2.1 (函数在一点的连续性)** @74
@@ -1689,6 +2309,104 @@ $R(x)$ 在任意点 $x_0$ 的极限存在，且极限值为 $0$。换言之，�
 在时间段 $\Delta_1$ 上，因放射速率近似为 $km$，于是$$m\left(\frac{t}{n}\right)\approx m-km\frac{t}{n}=m\left(1-k\frac{t}{n}\right);$$在时间段 $\Delta_2$ 上，因放射速率近似为 $km\left(\dfrac{t}{n}\right)$，于是$$m\left(\frac{2t}{n}\right)\approx m\left(1-k\frac{t}{n}\right)-km\left(1-k\frac{t}{n}\right)\frac{t}{n}=m\left(1-k\frac{t}{n}\right)^{2};$$……继续不断地做下去，可得到 $m(t)$ 的近似值$$m(t)\approx m\left(1-k\frac{t}{n}\right)^{n}.$$很自然可以认为，分割的区间数 $n$ 越大，近似值就越接近 $m(t)$ 的精确值。于是$$m(t)=\lim_{n\to\infty}m\left(1-k\frac{t}{n}\right)^{n}=m\lim_{n\to\infty}\mathrm{e}^{n\ln\left(1-k\frac{t}{n}\right)}=m\mathrm{e}^{-kt}.$$
 
 例 3.2.13 说明放射性物质的质量函数是时间 $t$ 的指数函数。
+
+#### 习题（p83–84）
+
+**习题 1** @83
+
+按定义证明下列函数在其定义域连续：
+
+(1) $y=\sqrt{x}$；
+
+(2) $y=\sin\dfrac1x$；
+
+(3)
+
+$$y=\begin{cases}\dfrac{\sin x}{x},&x\neq0,\\[6pt] 1,&x=0.\end{cases}$$
+
+**习题 2** @83
+
+确定下列函数的连续范围：
+
+(1) $y=\tan x+\csc x$；
+
+(2) $y=\dfrac{1}{\sqrt{\cos x}}$；
+
+(3) $y=\sqrt{\dfrac{(x-1)(x-3)}{x+1}}$；
+
+(4) $y=[x]\ln(1+x)$；
+
+(5) $y=\left[\dfrac1x\right]$；
+
+(6) $y=\operatorname{sgn}(\sin x)$。
+
+**习题 3** @83
+
+若 $f(x)$ 在点 $x_0$ 连续，证明 $f^2(x)$ 与 $|f(x)|$ 在点 $x_0$ 也连续。反之，若 $f^2(x)$ 或 $|f(x)|$ 在点 $x_0$ 连续，能否断言 $f(x)$ 在点 $x_0$ 连续？
+
+**习题 4** @83
+
+若 $f(x)$ 在点 $x_0$ 连续，$g(x)$ 在点 $x_0$ 不连续，能否断言 $f(x)\cdot g(x)$ 在点 $x_0$ 不连续？又若 $f(x)$ 与 $g(x)$ 在点 $x_0$ 都不连续，则上面的断言是否成立？
+
+**习题 5** @83
+
+若 $f,g$ 在 $[a,b]$ 上连续，则 $\max\{f,g\}$ 与 $\min\{f,g\}$ 在 $[a,b]$ 上连续，其中
+
+$$\max\{f,g\}=\max\{f(x),g(x)\},\ x\in[a,b];\qquad \min\{f,g\}=\min\{f(x),g(x)\},\ x\in[a,b].$$
+
+**习题 6** @83
+
+若对任意 $\delta>0$，$f$ 在 $[a+\delta,b-\delta]$ 上连续，能否得出
+
+(1) $f$ 在 $(a,b)$ 上连续？
+
+(2) $f$ 在 $[a,b]$ 上连续？
+
+**习题 7** @83
+
+设 $\lim\limits_{x\to x_0}f(x)=\alpha>0$，$\lim\limits_{x\to x_0}g(x)=\beta$，证明：$\lim\limits_{x\to x_0}f(x)^{g(x)}=\alpha^\beta$；并求下列极限：
+
+(1) $\lim\limits_{x\to1}\left(\dfrac{x+1}{x-1}\right)^{\frac{2x-1}{x+1}}$；
+
+(2) $\lim\limits_{x\to\infty}\left(\dfrac{x+1}{x-1}\right)^x$；
+
+(3) $\lim\limits_{x\to a}\left(\dfrac{\sin x}{\sin a}\right)^{\frac{1}{x-a}}$（$\sin a\neq0$）；
+
+(4) $\lim\limits_{n\to\infty}\left(\dfrac{n+x}{n-1}\right)^n$；
+
+(5) $\lim\limits_{n\to\infty}\tan^n\left(\dfrac{\pi}{4}+\dfrac1n\right)$。
+
+**习题 8** @84
+
+指出下列函数的不连续点，并确定其不连续的类型：
+
+(1) $y=\dfrac{x^2-1}{x^3-3x+2}$；
+
+(2) $y=[x]\sin\dfrac1x$；
+
+(3) $y=\dfrac{x}{\sin x}$；
+
+(4) $y=[2x]-2[x]$；
+
+(5) $y=\dfrac{1}{x^n}e^{-\frac{1}{x^2}}$；
+
+(6) $y=x\ln^n|x|$；
+
+(7) $y=\dfrac{x^2-x}{|x|(x^2-1)}$；
+
+(8) $y=\dfrac{\sqrt{1+3x}-1}{\sqrt{1+2x}-1}$；
+
+(9)
+
+$$y=\begin{cases}\sin\pi x,&x\text{ 为有理数},\\[4pt] 0,&x\text{ 为无理数};\end{cases}$$
+
+(10)
+
+$$y=\begin{cases}\sin\dfrac{\pi}{x},&x=\dfrac{q}{p}\ (p,q\text{ 互素},\ p>0),\\[8pt] 0,&x\text{ 为无理数}.\end{cases}$$
+
+**习题 9** @84
+
+设 $f(x)$ 在 $(0,+\infty)$ 上连续，且满足 $f(x^2)=f(x)$，$x\in(0,+\infty)$，证明 $f(x)$ 在 $(0,+\infty)$ 上为常数函数。
 
 ### 3.3 无穷小量与无穷大量的阶（p84–90）
 
@@ -1980,6 +2698,70 @@ $$\lim_{x\to0}\frac{\sqrt{1+x}-1-\dfrac{1}{2}x}{x^2}=\lim_{x\to0}\frac{(1+x)-\le
 
 （学了微分学后，可知本题要用等价无穷小量 $\sqrt{1+x}-1\sim\dfrac{1}{2}x-\dfrac{1}{8}x^2\ (x\to0)$ 来作代换。）
 
+#### 习题（p91）
+
+**习题 1** @91
+
+确定 $a$ 与 $\alpha$，使下列各无穷小量或无穷大量等价于 $(\sim)\,ax^\alpha$：
+
+(1) $u(x)=x^5-3x^4+2x^3$（$x\to0$，$x\to\infty$）；
+
+(2) $u(x)=\dfrac{x^5+2x^2}{3x^4-x^3}$（$x\to0$，$x\to\infty$）；
+
+(3) $u(x)=\sqrt{x}+\sqrt[3]{x^2}$（$x\to0^+$，$x\to+\infty$）；
+
+(4) $u(x)=\sqrt{x+\sqrt{x+\sqrt{x}}}$（$x\to0^+$，$x\to+\infty$）；
+
+(5) $u(x)=\sqrt{1+3x}-\sqrt[3]{1+2x}$（$x\to0$，$x\to+\infty$）；
+
+(6) $u(x)=\sqrt{x^2+1}-x$（$x\to+\infty$）；
+
+(7) $u(x)=\sqrt{x^3+x}-x^{\frac32}$（$x\to0^+$）；
+
+(8) $u(x)=\sqrt{1+x\sqrt{x}}-e^{2x}$（$x\to0^+$）；
+
+(9) $u(x)=\ln\cos x-\arctan x^2$（$x\to0$）；
+
+(10) $u(x)=\sqrt{1+\tan x}-\sqrt{1-\sin x}$（$x\to0$）。
+
+**习题 2** @91
+
+(1) 当 $x\to+\infty$ 时，下列变量都是无穷大量，将它们从低阶到高阶进行排列，并说明理由。
+
+$$a^x\ (a>1),\quad x^k,\quad x^\alpha\ (\alpha>0),\quad \ln^k x\ (k>0),\quad [x]!\,;$$
+
+(2) 当 $x\to0^+$ 时，下列变量都是无穷小量，将它们从高阶到低阶进行排列，并说明理由。
+
+$$x^\alpha\ (\alpha>0),\quad \frac{1}{\left[\dfrac1x\right]!},\quad a^{-\frac1x}\ (a>1),\quad \left(\frac1x\right)^{-\frac1x},\quad \ln^{-k}\left(\frac1x\right)\ (k>0).$$
+
+**习题 3** @91
+
+计算下列极限：
+
+(1) $\lim\limits_{x\to0}\dfrac{\sqrt{1+x}-\sqrt[3]{1+2x^2}}{\ln(1+3x)}$；
+
+(2) $\lim\limits_{x\to0^+}\dfrac{1-\sqrt{\cos x}}{1-\cos\sqrt{x}}$；
+
+(3) $\lim\limits_{x\to+\infty}\left(\sqrt{x+\sqrt{x+\sqrt{x}}}-\sqrt{x}\right)$；
+
+(4) $\lim\limits_{x\to+\infty}\left(\sqrt{1+x+x^2}-\sqrt{1-x+x^2}\right)$；
+
+(5) $\lim\limits_{x\to\alpha}\dfrac{a^x-a^\alpha}{x-\alpha}$（$a>0$）；
+
+(6) $\lim\limits_{x\to a}\dfrac{x^a-a^a}{x-a}$（$a>0$）；
+
+(7) $\lim\limits_{x\to+\infty}x(\ln(1+x)-\ln x)$；
+
+(8) $\lim\limits_{x\to a}\dfrac{\ln x-\ln a}{x-a}$（$a>0$）；
+
+(9) $\lim\limits_{x\to0}(x+e^x)^{\frac1x}$；
+
+(10) $\lim\limits_{x\to0}\left(\cos x-\dfrac{x^2}{2}\right)^{\frac{1}{x^2}}$；
+
+(11) $\lim\limits_{n\to\infty}n(\sqrt[n]{x}-1)$（$x>0$）；
+
+(12) $\lim\limits_{n\to\infty}n^2\left(\sqrt[n]{x}-\sqrt[n+1]{x}\right)$（$x>0$）。
+
 ### 3.4 闭区间上的连续函数（p91–99）
 
 **定理 3.4.1 (有界性定理)** @92
@@ -2077,6 +2859,84 @@ $f(x)=x^2$ 在 $[0,+\infty)$ 上非一致连续，但是在 $[0,A]$ 上一致连
 **注 (本节五个基本定理)** @98
 
 本节中给出的 5 个定理：有界性定理、最值定理、零点存在定理、中间值定理、Cantor 定理（即一致连续定理），是闭区间上连续函数最重要的分析性质。在证明这 5 个定理时，分别采用了确界存在定理、闭区间套定理、Bolzano–Weierstrass 定理和 Cauchy 收敛原理。事实上，由于实数系的 5 个基本定理是等价的，所以在理论上，可以采用从实数系的连续性到实数系的完备性中的任何一个定理，来证明上述闭区间上连续函数的任何一个性质，只是证明的难度稍有差别而已。
+
+#### 习题（p99）
+
+**习题 1** @99
+
+证明：设函数 $f(x)$ 在 $[a,+\infty)$ 上连续，且 $\lim\limits_{x\to+\infty}f(x)=A$（有限数），则 $f(x)$ 在 $[a,+\infty)$ 有界。
+
+**习题 2** @99
+
+证明：若函数 $f(x)$ 在开区间 $(a,b)$ 上连续，且 $f(a+)$ 和 $f(b-)$ 存在，则它可取到介于 $f(a+)$ 和 $f(b-)$ 之间的一切中间值。
+
+**习题 3** @99
+
+证明：若闭区间 $[a,b]$ 上的单调有界函数 $f(x)$ 能取到 $f(a)$ 和 $f(b)$ 之间的一切值，则 $f(x)$ 是 $[a,b]$ 上的连续函数。
+
+**习题 4** @99
+
+应用 Bolzano-Weierstrass 定理证明闭区间上连续函数的有界性定理。
+
+**习题 5** @99
+
+应用闭区间套定理证明零点存在定理。
+
+**习题 6** @99
+
+证明方程 $x=a\sin x+b$（$a,b>0$）至少有一个正根。
+
+**习题 7** @99
+
+证明方程 $x^3+px+q=0$（$p>0$）有且仅有一个实根。
+
+**习题 8** @99
+
+证明：
+
+(1) $\sin\dfrac1x$ 在 $(0,1)$ 上不一致连续，但在 $(a,1)$（$a>0$）上一致连续；
+
+(2) $\sin x^2$ 在 $(-\infty,+\infty)$ 上不一致连续，但在 $[0,A]$ 上一致连续；
+
+(3) $\sqrt{x}$ 在 $[0,+\infty)$ 上一致连续；
+
+(4) $\ln x$ 在 $[1,+\infty)$ 上一致连续；
+
+(5) $\cos\sqrt{x}$ 在 $[0,+\infty)$ 上一致连续。
+
+**习题 9** @99
+
+证明：对椭圆内的任意一点 $P$，存在椭圆过 $P$ 的一条弦，使得 $P$ 是该弦的中点。
+
+**习题 10** @99
+
+设函数 $f(x)$ 在 $[0,2]$ 上连续，且 $f(0)=f(2)$，证明：存在 $x,y\in[0,2]$，$y-x=1$，使得 $f(x)=f(y)$。
+
+**习题 11** @99
+
+若函数 $f(x)$ 在有限开区间 $(a,b)$ 上一致连续，则 $f(x)$ 在 $(a,b)$ 上有界。
+
+**习题 12** @99
+
+证明：
+
+(1) 某区间上两个一致连续函数之和必定一致连续；
+
+(2) 某区间上两个一致连续函数之积不一定一致连续。
+
+**习题 13** @99
+
+设函数 $f(x)$ 在 $[a,b]$ 上连续，且 $f(x)\neq0$，$x\in[a,b]$，证明 $f(x)$ 在 $[a,b]$ 上恒正或恒负。
+
+**习题 14** @99
+
+设函数 $f(x)$ 在 $[a,b]$ 上连续，$a\le x_1<x_2<\cdots<x_n\le b$，证明：在 $[a,b]$ 中必有 $\xi$，使得
+
+$$f(\xi)=\frac1n\left[f(x_1)+f(x_2)+\cdots+f(x_n)\right].$$
+
+**习题 15** @99
+
+若函数 $f(x)$ 在 $[a,+\infty)$ 上连续，且 $\lim\limits_{x\to+\infty}f(x)=A$（有限数），则 $f(x)$ 在 $[a,+\infty)$ 上一致连续。
 
 ## 第4章 微分
 
@@ -2196,6 +3056,16 @@ $$\mathrm{d}y=f'(x)\,\mathrm{d}x.$$
 
 定理 4.1.1 告诉我们，对一元函数来说，它在任一点的可微性与可导性是等价的。因此，一元函数的微分与导数总是形影相随，是密切难分的“孪生兄弟”。
 
+#### 习题（p104）
+
+**习题 1** @104
+
+半径为 $1\text{ cm}$ 的铁球表面要镀一层厚度为 $0.01\text{ cm}$ 的铜，试用求微分的方法算出每只球需要用铜多少克？（铜的密度为 $8.9\text{ g/cm}^3$。）
+
+**习题 2** @104
+
+用定义证明：函数 $y=\sqrt[3]{x^2}$ 在它的整个定义域中，除了 $x=0$ 这一点之外都是可微的。
+
 ### 4.2 导数的意义和性质（p104–110）
 
 **注 (导数的实际意义)** @104
@@ -2263,6 +3133,88 @@ Newton 最早用导数研究力学中运动体的瞬时速度问题。设运动�
 例如例 4.2.2 中的函数 $f(x)=\dfrac{b}{a}\sqrt{a^2-x^2}$，当 $x=\pm a$ 时相应的左右导数为 $f'_-(a)=-\infty$，$f'_+(-a)=+\infty$，故 $f(x)$ 的可导区间为 $(-a,a)$；但若将函数改为 $g(x)=\sqrt{(a^2-x^2)^3}$，则 $g(x)$ 在闭区间 $[-a,a]$ 上是可导的。
 
 另外，虽然同样都是单侧导数不存在，例 4.2.2 中的函数曲线（上半椭圆）在 $x=\pm a$ 处的切线是存在的，只是切线的倾角是 $\dfrac{\pi}{2}$ 而已；而例 4.2.4 中的函数曲线在 $x=0$ 处的右侧根本就没有切线存在。讨论问题时应注意区分这两种不同的情况。
+
+#### 习题（p110–111）
+
+**习题 1** @110
+
+设 $f'(x_0)$ 存在，求下列各式的值：
+
+（1）$\displaystyle\lim_{\Delta x\to 0}\frac{f(x_0-\Delta x)-f(x_0)}{\Delta x}$；
+
+（2）$\displaystyle\lim_{x\to x_0}\frac{f(x)-f(x_0)}{x-x_0}$；
+
+（3）$\displaystyle\lim_{h\to 0}\frac{f(x_0+h)-f(x_0-h)}{h}$。
+
+**习题 2** @110
+
+（1）用定义求抛物线 $y=2x^2+3x-1$ 的导函数；
+
+（2）求该抛物线上过点 $(-1,-2)$ 处的切线方程；
+
+（3）求该抛物线上过点 $(-2,1)$ 处的法线方程；
+
+（4）问该抛物线上是否有点 $(a,b)$，过该点的切线与抛物线顶点与焦点的连线平行？
+
+**习题 3** @110
+
+设 $f(x)$ 为 $(-\infty,+\infty)$ 上的可导函数，且在 $x=0$ 的某个邻域上成立
+
+$$f(1+\sin x)-3f(1-\sin x)=8x+\alpha(x),$$
+
+其中 $\alpha(x)$ 是当 $x\to 0$ 时比 $x$ 高阶的无穷小量。求曲线 $y=f(x)$ 在 $(1,f(1))$ 处的切线方程。
+
+**习题 4** @110
+
+证明：从椭圆的一个焦点发出的任一束光线，经椭圆反射后，反射光必定经过它的另一个焦点（如图 4.2.5）。
+
+**习题 5** @110
+
+证明：双曲线 $xy=a^2$ 上任一点处的切线与两坐标轴构成的直角三角形的面积恒为 $2a^2$。
+
+**习题 6** @110
+
+求函数在不可导点处的左导数和右导数。
+
+（1）$y=|\sin x|$；
+
+（2）$y=\sqrt{1-\cos x}$；
+
+（3）$y=e^{-|x|}$；
+
+（4）$y=|\ln(x+1)|$。
+
+**习题 7** @110
+
+讨论下列函数在 $x=0$ 处的可导性：
+
+（1）$y=\begin{cases}|x|^{1+a}\sin\dfrac{1}{x}\ (a>0), & x\ne 0,\\[2mm] 0, & x=0;\end{cases}$
+
+（2）$y=\begin{cases}x^2, & x>0,\\ ax+b, & x\le 0;\end{cases}$
+
+（3）$y=\begin{cases}xe^x, & x>0,\\ ax^2, & x\le 0;\end{cases}$
+
+（4）$y=\begin{cases}e^{-\frac{1}{x^2}}, & x\ne 0,\\[1mm] 0, & x=0.\end{cases}$
+
+**习题 8** @111
+
+设 $f(x)$ 在 $x=0$ 处可导，在什么情况下，$|f(x)|$ 在 $x=0$ 处也可导？
+
+**习题 9** @111
+
+设 $f(x)$ 在 $[a,b]$ 上连续，$f(a)=f(b)=0$，且 $f'_+(a)\cdot f'_-(b)>0$，证明 $f(x)$ 在 $(a,b)$ 至少存在一个零点。
+
+**习题 10** @111
+
+设 $f(x)$ 在有限区间 $(a,b)$ 内可导，
+
+（1）若 $\displaystyle\lim_{x\to a^+}f(x)=\infty$，那么能否断定也有 $\displaystyle\lim_{x\to a^+}f'(x)=\infty$？
+
+（2）若 $\displaystyle\lim_{x\to a^+}f'(x)=\infty$，那么能否断定也有 $\displaystyle\lim_{x\to a^+}f(x)=\infty$？
+
+**习题 11** @111
+
+设函数 $f(x)$ 满足 $f(0)=0$。证明 $f(x)$ 在 $x=0$ 处可导的充分必要条件是：存在在 $x=0$ 处连续的函数 $g(x)$，使得 $f(x)=xg(x)$，且此时成立 $f'(0)=g(0)$。
 
 ### 4.3 导数四则运算和反函数求导法则（p111–118）
 
@@ -2565,6 +3517,100 @@ $$=(\mathrm{e}^x)'(x^2+3x-1)\arcsin x+\mathrm{e}^x(x^2+3x-1)'\arcsin x+\mathrm{e
 $$=\mathrm{e}^x(x^2+3x-1)\arcsin x+\mathrm{e}^x(2x+3)\arcsin x+\mathrm{e}^x\frac{x^2+3x-1}{\sqrt{1-x^2}}$$
 
 $$=\mathrm{e}^x\left[(x^2+5x+2)\arcsin x+\frac{x^2+3x-1}{\sqrt{1-x^2}}\right].$$
+
+#### 习题（p118–119）
+
+**习题 1** @118
+
+用定义证明 $(\cos x)'=-\sin x$。
+
+**习题 2** @118
+
+证明：
+
+（1）$(\csc x)'=-\cot x\csc x$；
+
+（2）$(\cot x)'=-\csc^2 x$；
+
+（3）$(\arccos x)'=-\dfrac{1}{\sqrt{1-x^2}}$；
+
+（4）$(\operatorname{arccot} x)'=-\dfrac{1}{1+x^2}$；
+
+（5）$(\operatorname{ch}^{-1}x)'=\dfrac{1}{\sqrt{x^2-1}}$；
+
+（6）$(\operatorname{th}^{-1}x)'=(\operatorname{cth}^{-1}x)'=\dfrac{1}{1-x^2}$。
+
+**习题 3** @119
+
+求下列函数的导函数：
+
+（1）$f(x)=3\sin x+\ln x-\sqrt{x}$；
+
+（2）$f(x)=x\cos x+x^2+3$；
+
+（3）$f(x)=(x^2+7x-5)\sin x$；
+
+（4）$f(x)=x^2(3\tan x+2\sec x)$；
+
+（5）$f(x)=e^x\sin x-4\cos x+\dfrac{3}{\sqrt{x}}$；
+
+（6）$f(x)=\dfrac{2\sin x+x-2^x}{\sqrt[3]{x^2}}$；
+
+（7）$f(x)=\dfrac{1}{x+\cos x}$；
+
+（8）$f(x)=\dfrac{x\sin x-2\ln x}{\sqrt{x}+1}$；
+
+（9）$f(x)=\dfrac{x^2+\cot x}{\ln x}$；
+
+（10）$f(x)=\dfrac{x\sin x+\cos x}{x\sin x-\cos x}$；
+
+（11）$f(x)=(e^x+\log_3 x)\arcsin x$；
+
+（12）$f(x)=(\csc x-3\ln x)x^2\operatorname{sh} x$；
+
+（13）$f(x)=\dfrac{x+\sec x}{x-\csc x}$；
+
+（14）$f(x)=\dfrac{x+\sin x}{\arctan x}$。
+
+**习题 4** @119
+
+求曲线 $y=\ln x$ 在 $(e,1)$ 处的切线方程和法线方程。
+
+**习题 5** @119
+
+当 $a$ 取何值时，直线 $y=x$ 能与曲线 $y=\log_a x$ 相切，切点在哪里？
+
+**习题 6** @119
+
+求曲线 $y=x^n\ (n\in\mathbb{N}^*)$ 上过点 $(1,1)$ 的切线与 $x$ 轴的交点的横坐标 $x_n$，并求出极限 $\displaystyle\lim_{n\to\infty}y(x_n)$。
+
+**习题 7** @119
+
+对于抛物线 $y=ax^2+bx+c$，设集合
+
+$$S_1=\{(x,y)\mid \text{过 }(x,y)\text{ 可以作该抛物线的两条切线}\};$$
+
+$$S_2=\{(x,y)\mid \text{过 }(x,y)\text{ 只可以作该抛物线的一条切线}\};$$
+
+$$S_3=\{(x,y)\mid \text{过 }(x,y)\text{ 不能作该抛物线的切线}\},$$
+
+请分别求出这三个集合中的元素所满足的条件。
+
+**习题 8** @119
+
+（1）设 $f(x)$ 在 $x=x_0$ 处可导，$g(x)$ 在 $x=x_0$ 处不可导，证明 $c_1f(x)+c_2g(x)\ (c_2\ne 0)$ 在 $x=x_0$ 处也不可导。
+
+（2）设 $f(x)$ 与 $g(x)$ 在 $x=x_0$ 处都不可导，能否断定 $c_1f(x)+c_2g(x)$ 在 $x=x_0$ 处一定可导或一定不可导？
+
+**习题 9** @119
+
+在上题的条件下，讨论 $f(x)g(x)$ 在 $x=x_0$ 处的可导情况。
+
+**习题 10** @119
+
+设 $f_{ij}(x)\ (i,j=1,2,\cdots,n)$ 为同一区间上的可导函数，证明在该区域上成立
+
+$$\frac{\mathrm{d}}{\mathrm{d}x}\begin{vmatrix}f_{11}(x) & f_{12}(x) & \cdots & f_{1n}(x)\\f_{21}(x) & f_{22}(x) & \cdots & f_{2n}(x)\\\vdots & \vdots & & \vdots\\f_{n1}(x) & f_{n2}(x) & \cdots & f_{nn}(x)\end{vmatrix}=\sum_{k=1}^{n}\begin{vmatrix}f_{11}(x) & f_{12}(x) & \cdots & f_{1n}(x)\\\vdots & \vdots & & \vdots\\f'_{k1}(x) & f'_{k2}(x) & \cdots & f'_{kn}(x)\\\vdots & \vdots & & \vdots\\f_{n1}(x) & f_{n2}(x) & \cdots & f_{nn}(x)\end{vmatrix}.$$
 
 ### 4.4 复合函数求导法则及其应用（p119–128）
 
@@ -2928,6 +3974,192 @@ $$\mathrm{d}\left(\frac{x^2}{a^2}\right)+\mathrm{d}\left(\frac{y^2}{b^2}\right)=
 
 $$y'=\frac{\mathrm{d}y}{\mathrm{d}x}=-\frac{b^2}{a^2}\cdot\frac{x}{y}.$$
 
+#### 习题（p127–129）
+
+**习题 1** @127
+
+求下列函数的导数：
+
+（1）$y=(2x^2-x+1)^2$；
+
+（2）$y=e^{2x}\sin 3x$；
+
+（3）$y=\dfrac{1}{\sqrt{1+x^3}}$；
+
+（4）$y=\sqrt{\dfrac{\ln x}{x}}$；
+
+（5）$y=\sin x^3$；
+
+（6）$y=\cos\sqrt{x}$；
+
+（7）$y=\sqrt{x+1}-\ln(x+\sqrt{x+1})$；
+
+（8）$y=\arcsin(e^{-x^2})$；
+
+（9）$y=\ln\left(x^2-\dfrac{1}{x^2}\right)$；
+
+（10）$y=\dfrac{1}{(2x^2+\sin x)^2}$；
+
+（11）$y=\dfrac{1+\ln^2 x}{x\sqrt{1-x^2}}$；
+
+（12）$y=\dfrac{x}{\sqrt{1+\csc x^2}}$；
+
+（13）$y=\dfrac{2}{\sqrt[3]{2x^2-1}}+\dfrac{3}{\sqrt[4]{3x^3+1}}$；
+
+（14）$y=e^{-\sin^2 x}$；
+
+（15）$y=x\sqrt{a^2-x^2}+\dfrac{x}{\sqrt{a^2-x^2}}$。
+
+**习题 2** @127
+
+求下列函数的导数：
+
+（1）$y=\ln\sin x$；
+
+（2）$y=\ln(\csc x-\cot x)$；
+
+（3）$y=\dfrac{1}{2}\left(x\sqrt{a^2-x^2}+a^2\arcsin\dfrac{x}{a}\right)$；
+
+（4）$y=\ln(x+\sqrt{x^2+a^2})$；
+
+（5）$y=\dfrac{1}{2}\left(x\sqrt{x^2-a^2}-a^2\ln(x+\sqrt{x^2-a^2})\right)$。
+
+**习题 3** @127
+
+设 $f(x)$ 可导，求下列函数的导数：
+
+（1）$f(\sqrt[3]{x^2})$；
+
+（2）$f\left(\dfrac{1}{\ln x}\right)$；
+
+（3）$\sqrt{f(x)}$；
+
+（4）$\arctan f(x)$；
+
+（5）$f(f(e^{x^2}))$；
+
+（6）$\sin(f(\sin x))$；
+
+（7）$f\left(\dfrac{1}{f(x)}\right)$；
+
+（8）$\dfrac{1}{f(f(x))}$。
+
+**习题 4** @128
+
+用对数求导法求下列函数的导数：
+
+（1）$y=x^x$；
+
+（2）$y=(x^3+\sin x)^{\frac{1}{x}}$；
+
+（3）$y=\cos^x x$；
+
+（4）$y=\ln^x(2x+1)$；
+
+（5）$y=x\dfrac{\sqrt{1-x^2}}{\sqrt{1+x^3}}$；
+
+（6）$y=\displaystyle\prod_{i=1}^{n}(x-x_i)$；
+
+（7）$y=\sin x^{\sqrt{x}}$。
+
+**习题 5** @128
+
+对下列隐函数求 $\dfrac{\mathrm{d}y}{\mathrm{d}x}$：
+
+（1）$y=x+\arctan y$；
+
+（2）$y+xe^y=1$；
+
+（3）$\sqrt{x-\cos y}=\sin y-x$；
+
+（4）$xy-\ln(y+1)=0$；
+
+（5）$e^{x^2+y}-xy^2=0$；
+
+（6）$\tan(x+y)-xy=0$；
+
+（7）$2y\sin x+x\ln y=0$；
+
+（8）$x^3+y^3-3axy=0$。
+
+**习题 6** @128
+
+设所给的函数可导，证明：
+
+（1）奇函数的导函数是偶函数；偶函数的导函数是奇函数；
+
+（2）周期函数的导函数仍是周期函数。
+
+**习题 7** @128
+
+求曲线 $xy+\ln y=1$ 在 $M(1,1)$ 点的切线和法线方程。
+
+**习题 8** @128
+
+对下列参数形式的函数求 $\dfrac{\mathrm{d}y}{\mathrm{d}x}$：
+
+（1）$\begin{cases}x=at^2,\\ y=bt^3;\end{cases}$
+
+（2）$\begin{cases}x=1-t^2,\\ y=t-t^3;\end{cases}$
+
+（3）$\begin{cases}x=t^2\sin t,\\ y=t^2\cos t;\end{cases}$
+
+（4）$\begin{cases}x=ae^{-t},\\ y=be^t;\end{cases}$
+
+（5）$\begin{cases}x=a\cos^3 t,\\ y=a\sin^3 t;\end{cases}$
+
+（6）$\begin{cases}x=\operatorname{sh} at,\\ y=\operatorname{ch} bt;\end{cases}$
+
+（7）$\begin{cases}x=\dfrac{t+1}{t},\\[2mm] y=\dfrac{t-1}{t};\end{cases}$
+
+（8）$\begin{cases}x=\sqrt{1+t},\\ y=\sqrt{1-t};\end{cases}$
+
+（9）$\begin{cases}x=e^{-2t}\cos^2 t,\\ y=e^{-2t}\sin^2 t;\end{cases}$
+
+（10）$\begin{cases}x=\ln(1+t^2),\\ y=t-\arctan t.\end{cases}$
+
+**习题 9** @128
+
+求曲线 $x=\dfrac{2t+t^2}{1+t^3},\ y=\dfrac{2t-t^2}{1+t^3}$ 上与 $t=1$ 对应的点处的切线和法线方程。
+
+**习题 10** @128
+
+设方程 $\begin{cases}e^t=3t^2+2t+1,\\ t\sin y-y+\dfrac{\pi}{2}=0\end{cases}$ 确定 $y$ 为 $x$ 的函数，其中 $t$ 为参变量，求 $\left.\dfrac{\mathrm{d}y}{\mathrm{d}x}\right|_{t=0}$。
+
+**习题 11** @128
+
+证明曲线
+
+$$\begin{cases}x=a(\cos t+t\sin t),\\ y=a(\sin t-t\cos t)\end{cases}$$
+
+上任一点的法线到原点的距离等于 $|a|$。
+
+**习题 12** @128
+
+设函数 $u=g(x)$ 在 $x=x_0$ 处连续，$y=f(u)$ 在 $u=u_0=g(x_0)$ 处连续。请举例说明，在以下情况中，复合函数 $y=f(g(x))$ 在 $x=x_0$ 处并非一定不可导：
+
+（1）$u=g(x)$ 在 $x_0$ 处可导，而 $y=f(u)$ 在 $u_0$ 处不可导；
+
+（2）$u=g(x)$ 在 $x_0$ 处不可导，而 $y=f(u)$ 在 $u_0$ 处可导；
+
+（3）$u=g(x)$ 在 $x_0$ 处不可导，$y=f(u)$ 在 $u_0$ 处也不可导。
+
+**习题 13** @129
+
+设函数 $f(u),g(u)$ 和 $h(u)$ 可微，且 $h(u)>1$，$u=\varphi(x)$ 也是可微函数，利用一阶微分的形式不变性求下列复合函数的微分：
+
+（1）$f(u)g(u)h(u)$；
+
+（2）$\dfrac{f(u)g(u)}{h(u)}$；
+
+（3）$h(u)^{g(u)}$；
+
+（4）$\log_{h(u)}g(u)$；
+
+（5）$\arctan\left[\dfrac{f(u)}{h(u)}\right]$；
+
+（6）$\dfrac{1}{\sqrt{f^2(u)+h^2(u)}}$。
+
 ### 4.5 高阶导数和高阶微分（p129–139）
 
 **注 (高阶导数的实际背景)** @129
@@ -3033,6 +4265,164 @@ Newton 在研究物体的运动规律时发现，一个受力物体的速度的�
 在例 4.5.9 的计算中，只要加上一项$$f'(u)\,\mathrm{d}^2u=\mathrm{e}^u\mathrm{d}^2(\sin x)=\mathrm{e}^{\sin x}(\sin x)''\mathrm{d}x^2=-\mathrm{e}^{\sin x}\sin x\,\mathrm{d}x^2,$$答案就正确了。
 
 总而言之，关于自变量和中间变量的微分形式的不变性只是对一阶微分成立，而对于高阶微分来讲，这一性质已经不复存在了。因此在求高阶微分的时候，一定要仔细分清楚自变量和中间变量，区别对待，否则将会导致谬误。
+
+#### 习题（p138–139）
+
+**习题 1** @138
+
+求下列函数的高阶导数：
+
+（1）$y=x^3+2x^2-x+1$，求 $y'''$；
+
+（2）$y=x^4\ln x$，求 $y''$；
+
+（3）$y=\dfrac{x^2}{\sqrt{1+x}}$，求 $y'''$；
+
+（4）$y=\dfrac{\ln x}{x^2}$，求 $y''$；
+
+（5）$y=\sin x^3$，求 $y'',y'''$；
+
+（6）$y=x^3\cos\sqrt{x}$，求 $y'',y'''$；
+
+（7）$y=x^2e^{3x}$，求 $y'''$；
+
+（8）$y=e^{-x^2}\arcsin x$，求 $y''$；
+
+（9）$y=x^3\cos 2x$，求 $y^{(80)}$；
+
+（10）$y=(2x^2+1)\operatorname{sh} x$，求 $y^{(99)}$。
+
+**习题 2** @138
+
+求下列函数的 $n$ 阶导数 $y^{(n)}$：
+
+（1）$y=\sin^2\omega x$；
+
+（2）$y=2^x\ln x$；
+
+（3）$y=\dfrac{e^x}{x}$；
+
+（4）$y=\dfrac{1}{x^2-5x+6}$；
+
+（5）$y=e^{\alpha x}\cos\beta x$；
+
+（6）$y=\sin^4 x+\cos^4 x$。
+
+**习题 3** @138
+
+研究函数
+
+$$f(x)=\begin{cases}x^2, & x\ge 0,\\ -x^2, & x<0\end{cases}$$
+
+的各阶导数。
+
+**习题 4** @138
+
+设 $f(x)$ 任意次可微，求
+
+（1）$[f(x^2)]'''$；
+
+（2）$\left[f\left(\dfrac{1}{x}\right)\right]'''$；
+
+（3）$[f(\ln x)]''$；
+
+（4）$[\ln f(x)]''$；
+
+（5）$[f(e^{-x})]'''$；
+
+（6）$[f(\arctan x)]''$。
+
+**习题 5** @138
+
+利用 Leibniz 公式计算 $y^{(n)}(0)$：
+
+（1）$y=\arctan x$；
+
+（2）$y=\arcsin x$。
+
+**习题 6** @138
+
+对下列隐函数求 $\dfrac{\mathrm{d}^2y}{\mathrm{d}x^2}$：
+
+（1）$e^{x^2+y}-x^2y=0$；
+
+（2）$\tan(x+y)-xy=0$；
+
+（3）$2y\sin x+x\ln y=0$；
+
+（4）$x^3+y^3-3axy=0$。
+
+**习题 7** @138
+
+对下列参数形式的函数求 $\dfrac{\mathrm{d}^2y}{\mathrm{d}x^2}$：
+
+（1）$\begin{cases}x=at^2,\\ y=bt^3;\end{cases}$
+
+（2）$\begin{cases}x=at\cos t,\\ y=at\sin t;\end{cases}$
+
+（3）$\begin{cases}x=t(1-\sin t),\\ y=t\cos t;\end{cases}$
+
+（4）$\begin{cases}x=ae^{-t},\\ y=be^t;\end{cases}$
+
+（5）$\begin{cases}x=\sqrt{1+t},\\ y=\sqrt{1-t};\end{cases}$
+
+（6）$\begin{cases}x=\sin at,\\ y=\cos bt.\end{cases}$
+
+**习题 8** @138
+
+利用反函数的求导公式 $\dfrac{\mathrm{d}x}{\mathrm{d}y}=\dfrac{1}{y'}$，证明：
+
+（1）$\dfrac{\mathrm{d}^2x}{\mathrm{d}y^2}=-\dfrac{y''}{(y')^3}$；
+
+（2）$\dfrac{\mathrm{d}^3x}{\mathrm{d}y^3}=\dfrac{3(y'')^2-y'y'''}{(y')^5}$。
+
+**习题 9** @139
+
+求下列函数的高阶微分：
+
+（1）$y=\sqrt[3]{x-\tan x}$，求 $\mathrm{d}^2y$；
+
+（2）$y=x^4e^{-x}$，求 $\mathrm{d}^4y$；
+
+（3）$y=\dfrac{\sqrt{1+x^2}}{x}$，求 $\mathrm{d}^2y$；
+
+（4）$y=\dfrac{\sec x}{\sqrt{x^2-1}}$，求 $\mathrm{d}^2y$；
+
+（5）$y=x\sin 3x$，求 $\mathrm{d}^3y$；
+
+（6）$y=x^x$，求 $\mathrm{d}^2y$；
+
+（7）$y=\dfrac{\ln x}{x}$，求 $\mathrm{d}^ny$；
+
+（8）$y=x^n\cos 2x$，求 $\mathrm{d}^ny$。
+
+**习题 10** @139
+
+求 $\mathrm{d}^2(e^x)$，其中
+
+（1）$x$ 是自变量；
+
+（2）$x=\varphi(t)$ 是中间变量。
+
+**习题 11** @139
+
+设 $f(u),g(u)$ 任意次可微，且 $g(u)>0$。
+
+（1）当 $u=\tan x$ 时，求 $\mathrm{d}^2f$；
+
+（2）当 $u=\sqrt{v},v=\ln x$ 时，求 $\mathrm{d}^2g$；
+
+（3）$\mathrm{d}^2[f(u)g(u)]$；
+
+（4）$\mathrm{d}^2[\ln g(u)]$；
+
+（5）$\mathrm{d}^2\left[\dfrac{f(u)}{g(u)}\right]$。
+
+**习题 12** @139
+
+利用数学归纳法证明：
+
+$$\left(x^{n-1}e^{\frac{1}{x}}\right)^{(n)}=\frac{(-1)^n}{x^{n+1}}e^{\frac{1}{x}}.$$
 
 ## 第5章 微分中值定理及其应用
 
@@ -3210,6 +4600,196 @@ Rolle 定理的几何意义也很清楚：满足定理条件的函数一定在�
 
 证明：设 $|\mathrm{e}^{-x^2}f'(x)|\leq M,\ x\in(1,+\infty)$。对 $\mathrm{e}^{-x^2}f(x)$ 在 $[1,x]$ 上用 Cauchy 中值定理可证它有界，估计式为$$\left|\frac{f(x)}{\mathrm{e}^{x^2}}\right|<\left|\frac{f'(\xi)}{2\mathrm{e}^{\xi^2}}\right|+\frac{|f(1)|}{\mathrm{e}}\leq \frac{M}{2}+\frac{|f(1)|}{\mathrm{e}},\qquad \xi\in(1,x).$$进一步，对 $x\mathrm{e}^{-x^2}f(x)$ 同样处理，可得$$\left|\frac{xf(x)}{\mathrm{e}^{x^2}}\right|<\left|\frac{f'(\xi)}{2\mathrm{e}^{\xi^2}}\right|+\left|\frac{f(\xi)}{2\mathrm{e}^{\xi^2}}\right|+\frac{|f(1)|}{\mathrm{e}}<\frac{3M}{4}+\frac{3|f(1)|}{2\mathrm{e}},$$即 $x\mathrm{e}^{-x^2}f(x)$ 在 $(1,+\infty)$ 上有界。
 
+#### 习题（p153–155）
+
+**习题 1** @153
+
+设 $f'_+(x_0)>0$，$f'_-(x_0)<0$，证明 $x_0$ 是 $f(x)$ 的极小值点。
+
+**习题 2** @153
+
+（Darboux 定理）设 $f(x)$ 在 $(a,b)$ 上可导，$x_1,x_2\in(a,b)$。如果 $f'(x_1)\cdot f'(x_2)<0$，证明在 $x_1$ 和 $x_2$ 之间至少存在一点 $\xi$，使得 $f'(\xi)=0$。
+
+**习题 3** @153
+
+举例说明 Lagrange 中值定理的任何一个条件不满足时，定理结论就有可能不成立。
+
+**习题 4** @153
+
+设函数 $f(x)$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可微。利用辅助函数
+
+$$\psi(x)=\begin{vmatrix}x & f(x) & 1\\a & f(a) & 1\\b & f(b) & 1\end{vmatrix}$$
+
+证明 Lagrange 中值定理，并说明 $\psi(x)$ 的几何意义。
+
+**习题 5** @153
+
+设函数 $f(x)$ 和 $g(x)$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，证明在 $(a,b)$ 内存在一点 $\xi$，使得
+
+$$\begin{vmatrix}f(a) & f(b)\\g(a) & g(b)\end{vmatrix}=(b-a)\begin{vmatrix}f(a) & f'(\xi)\\g(a) & g'(\xi)\end{vmatrix}.$$
+
+**习题 6** @153
+
+设非线性函数 $f(x)$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，则在 $(a,b)$ 上至少存在一点 $\eta$，满足
+
+$$|f'(\eta)|>\left|\frac{f(b)-f(a)}{b-a}\right|,$$
+
+并说明它的几何意义。
+
+**习题 7** @153
+
+求极限 $\lim\limits_{n\to\infty}n^2\left(\arctan\dfrac{a}{n}-\arctan\dfrac{a}{n+1}\right)$，其中 $a\ne0$ 为常数。
+
+**习题 8** @153
+
+用 Lagrange 公式证明不等式：
+
+(1) $|\sin x-\sin y|\leqslant|x-y|$；
+
+(2) $ny^{n-1}(x-y)<x^n-y^n<nx^{n-1}(x-y)\quad(n>1,\ x>y>0)$；
+
+(3) $\dfrac{b-a}{b}<\ln\dfrac{b}{a}<\dfrac{b-a}{a}\quad(b>a>0)$；
+
+(4) $e^x>1+x\quad(x>0)$。
+
+**习题 9** @153
+
+设 $f(x)$ 在 $[a,b]$ 上定义，且对任何实数 $x_1$ 和 $x_2$，满足
+
+$$|f(x_1)-f(x_2)|\leqslant(x_1-x_2)^2,$$
+
+证明 $f(x)$ 在 $[a,b]$ 上恒为常数。
+
+**习题 10** @153
+
+证明恒等式：
+
+(1) $\arcsin x+\arccos x=\dfrac{\pi}{2}$，$x\in[0,1]$；
+
+(2) $3\arccos x-\arccos(3x-4x^3)=\pi$，$x\in\left[-\dfrac{1}{2},\dfrac{1}{2}\right]$；
+
+(3) $2\arctan x+\arcsin\dfrac{2x}{1+x^2}=\pi$，$x\in[1,+\infty)$。
+
+**习题 11** @154
+
+设函数 $f(x)$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导。证明：若 $(a,b)$ 中除至多有限个点有 $f'(x)=0$ 之外，都有 $f'(x)>0$，则 $f(x)$ 在 $[a,b]$ 上严格单调增加；同时举例说明，其逆命题不成立。
+
+**习题 12** @154
+
+证明不等式：
+
+(1) $\dfrac{2}{\pi}x<\sin x<x$，$x\in\left(0,\dfrac{\pi}{2}\right)$；
+
+(2) $3-\dfrac{1}{x}<2\sqrt{x}$，$x>1$；
+
+(3) $x-\dfrac{x^2}{2}<\ln(1+x)<x$，$x>0$；
+
+(4) $\tan x+2\sin x>3x$，$x\in\left(0,\dfrac{\pi}{2}\right)$；
+
+(5) $\dfrac{1}{2^{p-1}}\leqslant x^p+(1-x)^p\leqslant1$，$x\in[0,1]$，$p>1$；
+
+(6) $\dfrac{\tan x}{x}>\dfrac{x}{\sin x}$，$x\in\left(0,\dfrac{\pi}{2}\right)$。
+
+**习题 13** @154
+
+证明：在 $(0,1)$ 上成立
+
+(1) $(1+x)\ln^2(1+x)<x^2$；
+
+(2) $\dfrac{1}{\ln2}-1<\dfrac{1}{\ln(1+x)}-\dfrac{1}{x}<\dfrac{1}{2}$。
+
+**习题 14** @154
+
+对于每个正整数 $n$（$n\geqslant2$），证明方程
+
+$$x^n+x^{n-1}+\cdots+x^2+x=1$$
+
+在 $(0,1)$ 内必有惟一的实根 $x_n$，并求极限 $\lim\limits_{n\to\infty}x_n$。
+
+**习题 15** @154
+
+设函数 $f(x)$ 在 $[0,1]$ 上连续，在 $(0,1)$ 上可导，且 $f(0)=f(1)=0$，$f\left(\dfrac{1}{2}\right)=1$。证明：
+
+(1) 存在 $\xi\in\left(\dfrac{1}{2},1\right)$，使得 $f(\xi)=\xi$；
+
+(2) 对于任意实数 $\lambda$，必存在 $\eta\in(0,\xi)$，使得
+
+$$f'(\eta)-\lambda[f(\eta)-\eta]=1.$$
+
+**习题 16** @154
+
+设函数 $f(x)$ 和 $g(x)$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，且 $g'(x)\ne0$（$x\in(a,b)$）。分别利用辅助函数
+
+$$\varphi(x)=f(x)-f(a)-\frac{f(b)-f(a)}{g(b)-g(a)}[g(x)-g(a)]$$
+
+和
+
+$$\psi(x)=\begin{vmatrix}g(x) & f(x) & 1\\g(a) & f(a) & 1\\g(b) & f(b) & 1\end{vmatrix},$$
+
+证明 Cauchy 中值定理，并说明 $\varphi(x)$ 和 $\psi(x)$ 的几何意义。
+
+**习题 17** @154
+
+设 $a,b>0$，$f(x)$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，证明存在 $\xi\in(a,b)$，使得
+
+$$2\xi[f(b)-f(a)]=(b^2-a^2)f'(\xi).$$
+
+**习题 18** @154
+
+设 $a,b>0$，证明存在 $\xi\in(a,b)$，使得
+
+$$ae^b-be^a=(1-\xi)e^{\xi}(a-b).$$
+
+**习题 19** @154
+
+设 $f(x)$ 在 $[a,b]$ 上连续（$ab>0$），在 $(a,b)$ 上可导，证明存在 $\xi\in(a,b)$，使得
+
+$$\frac{1}{b-a}\begin{vmatrix}a & b\\f(a) & f(b)\end{vmatrix}=\xi f'(\xi)-f(\xi).$$
+
+**习题 20** @154
+
+设 $f(x)$ 在 $[1,+\infty)$ 上连续，在 $(1,+\infty)$ 上可导，已知函数 $e^{-x}f'(x)$ 在 $(1,+\infty)$ 上有界，证明函数 $e^{-x}f(x)$ 在 $(1,+\infty)$ 上也有界。
+
+**习题 21** @154
+
+设 $f'(x)$ 在 $(0,a]$ 上连续，且存在有限极限 $\lim\limits_{x\to0^+}\sqrt{x}f'(x)$，证明 $f(x)$ 在 $(0,a]$ 上一致连续。
+
+**习题 22** @154
+
+设 $f(x)$ 在 $x=0$ 的某邻域内有 $n$ 阶导数，且 $f(0)=f'(0)=\cdots=f^{(n-1)}(0)=0$，用 Cauchy 中值定理证明
+
+$$\frac{f(x)}{x^n}=\frac{f^{(n)}(\theta x)}{n!}\quad(0<\theta<1).$$
+
+**习题 23** @155
+
+证明不等式：
+
+(1) $\dfrac{x^n+y^n}{2}\geqslant\left(\dfrac{x+y}{2}\right)^n$，$x,y>0$，$n>1$；
+
+(2) $\dfrac{e^x+e^y}{2}>e^{\frac{x+y}{2}}$，$x\ne y$。
+
+**习题 24** @155
+
+（Jensen 不等式）设 $f(x)$ 为 $[a,b]$ 上的连续下凸函数，证明对于任意 $x_i\in[a,b]$ 和 $\lambda_i>0$（$i=1,2,\cdots,n$），$\sum\limits_{i=1}^n\lambda_i=1$，成立
+
+$$f\left(\sum_{i=1}^n\lambda_i x_i\right)\leqslant\sum_{i=1}^n\lambda_i f(x_i).$$
+
+**习题 25** @155
+
+利用上题结论证明：对于正数 $a,b,c$ 成立
+
+$$(abc)^{\frac{a+b+c}{3}}\leqslant a^a b^b c^c.$$
+
+**习题 26** @155
+
+设 $f(x)$ 在 $(a,+\infty)$ 上可导，并且 $\lim\limits_{x\to+\infty}f'(x)=0$，证明 $\lim\limits_{x\to+\infty}\dfrac{f(x)}{x}=0$。
+
+**习题 27** @155
+
+设 $f(x)$ 在 $[a,b]$ 连续，在 $(a,b)$ 二阶可导，证明存在 $\eta\in(a,b)$，成立
+
+$$f(b)+f(a)-2f\left(\frac{a+b}{2}\right)=\left(\frac{b-a}{2}\right)^2f''(\eta).$$
+
 ### 5.2 L'Hospital 法则（p155–161）
 
 **注 (待定型)** @155
@@ -3319,6 +4899,96 @@ L'Hospital 法则只告诉我们，对于 $\dfrac{0}{0}$ 型或 $\dfrac{\infty}{
 求 $\lim\limits_{x\to\infty}\dfrac{x+\cos x}{x}$。
 
 **解** 这是 $\dfrac{\infty}{\infty}$ 型，但这时 $(x+\cos x)'/x'=1-\sin x$，当 $x\to\infty$ 时它的极限不存在，所以不能据此得出 $\lim\limits_{x\to\infty}\dfrac{x+\cos x}{x}$ 也不存在的结论——事实上，显然有$$\lim_{x\to\infty}\frac{x+\cos x}{x}=1.$$因此，$\lim\limits_{x\to a+}\dfrac{f'(x)}{g'(x)}$ 不存在并不表示 $\lim\limits_{x\to a+}\dfrac{f(x)}{g(x)}$ 本身存在或是不存在，它仅仅意味着，此时不能使用 L'Hospital 法则，而应改用其他方法来讨论 $\lim\limits_{x\to a+}\dfrac{f(x)}{g(x)}$。
+
+#### 习题（p161–162）
+
+**习题 1** @161
+
+对于
+
+$$\lim_{x\to a^+}\frac{f'(x)}{g'(x)}=+\infty\ \text{或}\ -\infty$$
+
+的情况证明 L'Hospital 法则。
+
+**习题 2** @161
+
+求下列极限：
+
+(1) $\lim\limits_{x\to0}\dfrac{e^x-e^{-x}}{\sin x}$；
+
+(2) $\lim\limits_{x\to\pi}\dfrac{\sin3x}{\tan5x}$；
+
+(3) $\lim\limits_{x\to\frac{\pi}{2}}\dfrac{\ln(\sin x)}{(\pi-2x)^2}$；
+
+(4) $\lim\limits_{x\to a}\dfrac{x^m-a^m}{x^n-a^n}$；
+
+(5) $\lim\limits_{x\to0^+}\dfrac{\ln(\tan7x)}{\ln(\tan2x)}$；
+
+(6) $\lim\limits_{x\to\frac{\pi}{2}}\dfrac{\tan3x}{\tan x}$；
+
+(7) $\lim\limits_{x\to+\infty}\dfrac{\ln\left(1+\dfrac{1}{x}\right)}{\operatorname{arccot}x}$；
+
+(8) $\lim\limits_{x\to0}\dfrac{\ln(1+x^2)}{\sec x-\cos x}$；
+
+(9) $\lim\limits_{x\to1}\left(\dfrac{1}{\ln x}-\dfrac{1}{x-1}\right)$；
+
+(10) $\lim\limits_{x\to0}\left(\dfrac{1}{\sin x}-\dfrac{1}{x}\right)$；
+
+(11) $\lim\limits_{x\to1}\dfrac{x-1}{\ln x}$；
+
+(12) $\lim\limits_{x\to0}\dfrac{x\tan x-\sin^2x}{x^4}$；
+
+(13) $\lim\limits_{x\to0}x\cot2x$；
+
+(14) $\lim\limits_{x\to0}x^2e^{\frac{1}{x^2}}$；
+
+(15) $\lim\limits_{x\to\pi}(\pi-x)\tan\dfrac{x}{2}$；
+
+(16) $\lim\limits_{x\to+\infty}\left(\dfrac{2}{\pi}\arctan x\right)^x$；
+
+(17) $\lim\limits_{x\to0^+}\left(\dfrac{1}{x}\right)^{\tan x}$；
+
+(18) $\lim\limits_{x\to0}\left(\dfrac{1}{x}-\dfrac{1}{e^x-1}\right)$；
+
+(19) $\lim\limits_{x\to0^+}\left(\ln\dfrac{1}{x}\right)^{\sin x}$；
+
+(20) $\lim\limits_{x\to1}x^{\frac{1}{1-x}}$。
+
+**习题 3** @162
+
+说明不能用 L'Hospital 法则求下列极限：
+
+(1) $\lim\limits_{x\to0}\dfrac{x^2\sin\dfrac{1}{x}}{\sin x}$；
+
+(2) $\lim\limits_{x\to+\infty}\dfrac{x+\sin x}{x-\sin x}$；
+
+(3) $\lim\limits_{x\to\pi}\dfrac{(x^2+1)\sin x}{\ln\left(1+\sin\dfrac{\pi}{2}x\right)}$；
+
+(4) $\lim\limits_{x\to1}\dfrac{\sin\dfrac{\pi}{2}x+e^{2x}}{x}$。
+
+**习题 4** @162
+
+设
+
+$$f(x)=\begin{cases}\dfrac{g(x)}{x}, & x\ne0,\\[6pt]0, & x=0,\end{cases}$$
+
+其中 $g(0)=0$，$g'(0)=0$，$g''(0)=10$。求 $f'(0)$。
+
+**习题 5** @162
+
+讨论函数
+
+$$f(x)=\begin{cases}\left[\dfrac{(1+x)^{\frac{1}{x}}}{e}\right]^{\frac{1}{x}}, & x>0,\\[10pt]e^{-\frac{1}{2}}, & x\leqslant0\end{cases}$$
+
+在 $x=0$ 处的连续性。
+
+**习题 6** @162
+
+设函数 $f(x)$ 满足 $f(0)=0$，且 $f'(0)$ 存在，证明 $\lim\limits_{x\to0^+}x^{f(x)}=1$。
+
+**习题 7** @162
+
+设函数 $f(x)$ 在 $(a,+\infty)$ 上可导，且 $\lim\limits_{x\to+\infty}[f(x)+f'(x)]=k$，证明 $\lim\limits_{x\to+\infty}f(x)=k$。
 
 ### 5.3 Taylor 公式和插值多项式（p162–170）
 
@@ -3541,6 +5211,66 @@ $$p_n(x)=\sum_{k=0}^{n}\left[f(x_k)\prod_{\substack{i=0\\ i\neq k}}^{n}\frac{x-x
 更重要的是，对于函数值只分布在若干个离散点上的情况（这在实际问题中大量存在），Taylor 公式将是一筹莫展，而这是 Lagrange 插值多项式最能施展身手的地方，第七章中要学习的数值积分公式就是典型的例子。
 
 总而言之，这两种极端情况的插值多项式——一个取尽可能多的点，一个取尽可能高阶的导数——各有特点，在理论和实际中各司其职而又相辅相成，都是我们解决问题的重要工具。
+
+#### 习题（p170–171）
+
+**习题 1** @170
+
+由 Lagrange 中值定理知
+
+$$\ln(1+x)=\frac{x}{1+\theta(x)x},\qquad0<\theta(x)<1,$$
+
+证明：$\lim\limits_{x\to0}\theta(x)=\dfrac{1}{2}$。
+
+**习题 2** @170
+
+设
+
+$$f(x+h)=f(x)+f'(x)h+\frac{1}{2!}f''(x)h^2+\cdots+\frac{1}{n!}f^{(n)}(x+\theta h)h^n\quad(0<\theta<1),$$
+
+且 $f^{(n+1)}(x)\ne0$，证明：
+
+$$\lim_{h\to0}\theta=\frac{1}{n+1}.$$
+
+**习题 3** @170
+
+设 $f(x)=\sqrt[3]{x}$，取节点为 $x=1,1.728,2.744$，求 $f(x)$ 的二次插值多项式 $p_2(x)$ 及其余项的表达式，并计算 $p_2(2)$（$\sqrt[3]{2}=1.259\,921\,0\cdots$）。
+
+**习题 4** @170
+
+设 $f(x)=2^x$，取节点为 $x=-1,0,1$，求 $f(x)$ 的二次插值多项式 $p_2(x)$ 及其余项的表达式，并计算 $p_2\left(\dfrac{1}{3}\right)$。请与上题的计算结果相比较并分析产生差异的原因。
+
+**习题 5** @170
+
+设 $f(x)$ 在若干个测量点处的函数值如下：
+
+| $x$ | 1.4 | 1.7 | 2.3 | 3.1 ||---|---|---|---|---|| $f(x)$ | 65 | 58 | 44 | 36 |
+
+试求 $f(2.8)$ 的近似值。
+
+**习题 6** @170
+
+若 $h$ 是小量，问如何选取常数 $a,b,c$，才能使得 $af(x+h)+bf(x)+cf(x-h)$ 与 $f''(x)h^2$ 近似的阶最高？
+
+**习题 7** @170
+
+将插值条件取为 $n+1$ 个节点上的函数值和一阶导数值，即 $p_n(x)$ 满足
+
+$$\begin{cases}p_n(x_i)=f(x_i),\\p'_n(x_i)=f'(x_i),\end{cases}\qquad i=0,1,2,\cdots,n$$
+
+的插值多项式称为 Hermite 插值多项式，在微分方程数值求解等研究领域中具有重要作用。它可以取为
+
+$$p_n(x)=\sum_{k=0}^n\left[f(x_k)q_k^{(0)}(x)+f'(x_k)q_k^{(1)}(x)\right],$$
+
+这里 $\left\{q_k^{(0)}(x),q_k^{(1)}(x)\right\}_{k=0}^n$ 是满足条件
+
+$$q_k^{(0)}(x_i)=\delta_{ik},\qquad\left[q_k^{(0)}\right]'(x_i)=0,\qquad i,k=0,1,2,\cdots,n$$
+
+和
+
+$$q_k^{(1)}(x_i)=0,\qquad\left[q_k^{(1)}\right]'(x_i)=\delta_{ik},\qquad i,k=0,1,2,\cdots,n$$
+
+的基函数。试仿照 Lagrange 插值多项式的情况构造 $\left\{q_k^{(0)}(x),q_k^{(1)}(x)\right\}_{k=0}^n$。
 
 ### 5.4 函数的 Taylor 公式及其应用（p171–183）
 
@@ -4088,6 +5818,178 @@ $$\frac{1}{m+1}<\frac{\mathrm{e}^\theta}{m+1}<\frac{3}{m+1}.$$
 
 所以假设 $\mathrm{e}$ 是有理数不成立，即 $\mathrm{e}$ 是无理数。
 
+#### 习题（p183–184）
+
+**习题 1** @183
+
+求下列函数在 $x=0$ 处的 Taylor 公式（展开到指定的 $n$ 次）：
+
+(1) $f(x)=\dfrac{1}{\sqrt[3]{1-x}}$，$n=4$；
+
+(2) $f(x)=\cos(x+\alpha)$，$n=4$；
+
+(3) $f(x)=\sqrt{2+\sin x}$，$n=3$；
+
+(4) $f(x)=e^{\sin x}$，$n=4$；
+
+(5) $f(x)=\tan x$，$n=5$；
+
+(6) $f(x)=\ln(\cos x)$，$n=6$；
+
+(7) $f(x)=\begin{cases}\dfrac{x}{e^x-1}, & x\ne0,\\[6pt] 1, & x=0,\end{cases}$ $n=4$；
+
+(8) $f(x)=\begin{cases}\ln\dfrac{\sin x}{x}, & x\ne0,\\[6pt] 0, & x=0,\end{cases}$ $n=4$；
+
+(9) $f(x)=\sqrt{1-2x+x^3}-\sqrt[3]{1-3x+x^2}$，$n=3$。
+
+**习题 2** @183
+
+求下列函数在指定点处的 Taylor 公式：
+
+(1) $f(x)=-2x^3+3x^2-2$，$x_0=1$；
+
+(2) $f(x)=\ln x$，$x_0=e$；
+
+(3) $f(x)=\ln x$，$x_0=1$；
+
+(4) $f(x)=\sin x$，$x_0=\dfrac{\pi}{6}$；
+
+(5) $f(x)=\sqrt{x}$，$x_0=2$。
+
+**习题 3** @183
+
+通过对展开式及其余项的分析，说明用
+
+$$\ln2=\ln\frac{1+x}{1-x}\bigg|_{x=\frac{1}{3}}\approx2\left(x+\frac{x^3}{3}+\frac{x^5}{5}+\cdots+\frac{x^{2n-1}}{2n-1}\right)\bigg|_{x=\frac{1}{3}}$$
+
+比用
+
+$$\ln2=\ln(1+x)\bigg|_{x=1}\approx\left(x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4}+\cdots+(-1)^{n-1}\frac{x^n}{n}\right)\bigg|_{x=1}$$
+
+效果好得多的两个原因。
+
+**习题 4** @183
+
+利用上题的讨论结果，不加计算，判别用哪个公式计算 $\pi$ 的近似值效果更好，为什么？
+
+(1) $\dfrac{\pi}{4}=\arctan1\approx\left[x-\dfrac{x^3}{3}+\dfrac{x^5}{5}-\cdots+(-1)^n\dfrac{x^{2n+1}}{2n+1}\right]_{x=1}$；
+
+(2) $\dfrac{\pi}{4}=4\arctan\dfrac{1}{5}-\arctan\dfrac{1}{239}$（Machin 公式）
+
+$$\approx4\left[x-\frac{x^3}{3}+\cdots+(-1)^n\frac{x^{2n+1}}{2n+1}\right]_{x=\frac{1}{5}}-\left[x-\frac{x^3}{3}+\cdots+(-1)^n\frac{x^{2n+1}}{2n+1}\right]_{x=\frac{1}{239}}.$$
+
+**习题 5** @183
+
+利用 Taylor 公式求近似值（精确到 $10^{-4}$）：
+
+(1) $\lg11$；
+
+(2) $\sqrt[3]{e}$；
+
+(3) $\sin31^\circ$；
+
+(4) $\cos89^\circ$；
+
+(5) $\sqrt[5]{250}$；
+
+(6) $(1.1)^{1.2}$。
+
+**习题 6** @183
+
+利用函数的 Taylor 公式求极限：
+
+(1) $\lim\limits_{x\to0}\dfrac{e^x\sin x-x(1+x)}{x^3}$；
+
+(2) $\lim\limits_{x\to0^+}\dfrac{a^x+a^{-x}-2}{x^2}\quad(a>0)$；
+
+(3) $\lim\limits_{x\to0}\left(\dfrac{1}{x}-\csc x\right)$；
+
+(4) $\lim\limits_{x\to+\infty}\left(\sqrt[5]{x^5+x^4}-\sqrt[5]{x^5-x^4}\right)$；
+
+(5) $\lim\limits_{x\to+\infty}\left[x-x^2\ln\left(1+\dfrac{1}{x}\right)\right]$；
+
+(6) $\lim\limits_{x\to0}\dfrac{1}{x}\left(\dfrac{1}{x}-\dfrac{1}{\tan x}\right)$；
+
+(7) $\lim\limits_{x\to+\infty}x^{\frac{3}{2}}\left(\sqrt{x+1}+\sqrt{x-1}-2\sqrt{x}\right)$；
+
+(8) $\lim\limits_{x\to+\infty}\left[\left(x^3-x^2+\dfrac{x}{2}\right)e^{\frac{1}{x}}-\sqrt{x^6-1}\right]$。
+
+**习题 7** @184
+
+利用 Taylor 公式证明不等式：
+
+(1) $x-\dfrac{x^2}{2}<\ln(1+x)<x-\dfrac{x^2}{2}+\dfrac{x^3}{3}$，$x>0$；
+
+(2) $(1+x)^\alpha<1+\alpha x+\dfrac{\alpha(\alpha-1)}{2}x^2$，$1<\alpha<2$，$x>0$。
+
+**习题 8** @184
+
+判断下列函数所表示的曲线是否存在渐近线，若存在的话求出渐近线方程：
+
+(1) $y=\dfrac{x^2}{1+x}$；
+
+(2) $y=\dfrac{2x}{1+x^2}$；
+
+(3) $y=\sqrt{6x^2-8x+3}$；
+
+(4) $y=(2+x)e^{\frac{1}{x}}$；
+
+(5) $y=\dfrac{e^x+e^{-x}}{2}$；
+
+(6) $y=\ln\dfrac{1+x}{1-x}$；
+
+(7) $y=x+\operatorname{arccot}x$；
+
+(8) $y=\sqrt[3]{(x-2)(x+1)^2}$；
+
+(9) $y=\arccos\dfrac{1-x^2}{1+x^2}$；
+
+(10) $y=x^5\left(\cos\dfrac{1}{x}-e^{-\frac{1}{2x^2}}\right)$；
+
+(11) $y=x^2\left(xe^{\frac{1}{x}}-\sqrt[3]{x^3+x^2}\right)$；
+
+(12) $y=x^2\left(xe^{\frac{1}{2x}}-\sqrt{x^2+x}\right)$。
+
+**习题 9** @184
+
+(1) 设 $0<x_1<\dfrac{\pi}{2}$，$x_{n+1}=\sin x_n$（$n=1,2,\cdots$），证明：
+
+(i) $\lim\limits_{n\to\infty}x_n=0$；
+
+(ii) $x_n^2\sim\dfrac{3}{n}\quad(n\to\infty)$。
+
+(2) 设 $y_1>0$，$y_{n+1}=\ln(1+y_n)$（$n=1,2,\cdots$），证明：
+
+(i) $\lim\limits_{n\to\infty}y_n=0$；
+
+(ii) $y_n\sim\dfrac{2}{n}\quad(n\to\infty)$。
+
+**习题 10** @184
+
+设函数 $f(x)$ 在 $[0,1]$ 上二阶可导，且满足 $|f''(x)|\leqslant1$，$f(x)$ 在区间 $(0,1)$ 内取到最大值 $\dfrac{1}{4}$。证明：
+
+$$|f(0)|+|f(1)|\leqslant1.$$
+
+**习题 11** @184
+
+设 $f(x)$ 在 $[0,1]$ 上二阶可导，且在 $[0,1]$ 上成立
+
+$$|f(x)|\leqslant1,\qquad|f''(x)|\leqslant2.$$
+
+证明在 $[0,1]$ 上成立 $|f'(x)|\leqslant3$。
+
+**习题 12** @184
+
+设函数 $f(x)$ 在 $[0,1]$ 上二阶可导，且 $f(0)=f(1)=0$，$\min\limits_{0\leqslant x\leqslant1}f(x)=-1$。证明：
+
+$$\max_{0\leqslant x\leqslant1}f''(x)\geqslant8.$$
+
+**习题 13** @184
+
+设 $f(x)$ 在 $[a,b]$ 上二阶可导，$f(a)=f(b)=0$，证明：
+
+$$\max_{a\leqslant x\leqslant b}|f(x)|\leqslant\frac{1}{8}(b-a)^2\max_{a\leqslant x\leqslant b}|f''(x)|.$$
+
 ### 5.5 应用举例（p184–196）
 
 **注 (微分学的应用价值)** @184
@@ -4310,6 +6212,170 @@ $E(Q)$ 的导数 $E'(Q)$ 相应地称为**边际收益**，其经济学意义是
 
 由例 5.4.15，$y=\sqrt[3]{x^3-x^2-x+1}$ 的渐近线方程为$$y=x-\frac{1}{3}.$$根据这些信息，再求出若干个特殊点上 $f(x)$ 的函数值，就不难作出函数 $y=f(x)$ 的图形了（如图 5.5.5）。
 
+#### 习题（p195–196）
+
+**习题 1** @195
+
+求下列函数的极值点，并确定它们的单调区间：
+
+(1) $y=2x^3-3x^2-12x+1$；
+
+(2) $y=x+\sin x$；
+
+(3) $y=\sqrt{x}\ln x$；
+
+(4) $y=x^ne^{-x}\quad(n\in\mathbb{N}^*)$；
+
+(5) $y=\sqrt[3]{\dfrac{(x+1)^2}{x-2}}$；
+
+(6) $y=\dfrac{1-x}{1+x^2}$；
+
+(7) $y=3x+\dfrac{4}{x}$；
+
+(8) $y=x-\ln(1+x)$；
+
+(9) $y=\cos^3x+\sin^3x$；
+
+(10) $y=\arctan x-x$；
+
+(11) $y=2e^x+e^{-x}$；
+
+(12) $y=2-\sqrt[3]{(x-1)^2}$；
+
+(13) $y=\dfrac{1+3x}{\sqrt{4+5x^2}}$；
+
+(14) $y=x^{\frac{1}{x}}$。
+
+**习题 2** @195
+
+求下列曲线的拐点，并确定函数的保凸区间：
+
+(1) $y=-x^3+3x^2$；
+
+(2) $y=x+\sin x$；
+
+(3) $y=\sqrt{1+x^2}$；
+
+(4) $y=xe^{-x}$；
+
+(5) $y=\sqrt[3]{\dfrac{(x+1)^2}{x-2}}$；
+
+(6) $y=\dfrac{1-x}{1+x^2}$；
+
+(7) $y=x-\ln(1+x)$；
+
+(8) $y=\arctan x-x$；
+
+(9) $y=(x+1)^4+e^x$；
+
+(10) $y=\ln(1+x^2)$；
+
+(11) $y=e^{\arctan x}$；
+
+(12) $y=x+\sqrt{x-1}$。
+
+**习题 3** @195
+
+设 $f(x)$ 在 $x_0$ 处二阶可导，证明：$f(x)$ 在 $x_0$ 处取到极大值（极小值）的必要条件是 $f'(x_0)=0$ 且 $f''(x_0)\leqslant0$（$f''(x_0)\geqslant0$）。
+
+**习题 4** @195
+
+设 $f(x)=(x-a)^n\varphi(x)$，$\varphi(x)$ 在 $x=a$ 连续且 $\varphi(a)\ne0$，讨论 $f(x)$ 在 $x=a$ 处的极值情况。
+
+**习题 5** @195
+
+设 $f(x)$ 在 $x=a$ 处有 $n$ 阶连续导数，且 $f'(a)=f''(a)=\cdots=f^{(n-1)}(a)=0$，$f^{(n)}(a)\ne0$，讨论 $f(x)$ 在 $x=a$ 处的极值情况。
+
+**习题 6** @195
+
+如何选择参数 $h>0$，使得
+
+$$y=\frac{h}{\sqrt{\pi}}e^{-h^2x^2}$$
+
+在 $x=\pm\sigma$（$\sigma>0$ 为给定的常数）处有拐点？
+
+**习题 7** @196
+
+求 $y=\dfrac{x^2}{x^2+1}$ 在拐点处的切线方程。
+
+**习题 8** @196
+
+作出下列函数的图像（渐近线方程可利用上一节习题 8 的结果）：
+
+(1) $y=\dfrac{x^2}{1+x}$；
+
+(2) $y=\dfrac{2x}{1+x^2}$；
+
+(3) $y=\sqrt{6x^2-8x+3}$；
+
+(4) $y=(2+x)e^{\frac{1}{x}}$；
+
+(5) $y=\dfrac{e^x+e^{-x}}{2}$；
+
+(6) $y=\ln\dfrac{1+x}{1-x}$；
+
+(7) $y=x+\operatorname{arccot}x$；
+
+(8) $y=\sqrt[3]{(x-2)(x+1)^2}$；
+
+(9) $y=\arccos\dfrac{1-x^2}{1+x^2}$。
+
+**习题 9** @196
+
+求下列数列的最大项：
+
+(1) $\left\{\dfrac{n^{10}}{2^n}\right\}$；
+
+(2) $\left\{\sqrt[n]{n}\right\}$。
+
+**习题 10** @196
+
+设 $a,b$ 为实数，证明：
+
+$$\frac{|a+b|}{1+|a+b|}\leqslant\frac{|a|}{1+|a|}+\frac{|b|}{1+|b|}.$$
+
+**习题 11** @196
+
+设 $a>\ln2-1$ 为常数，证明：当 $x>0$ 时，
+
+$$x^2-2ax+1<e^x.$$
+
+**习题 12** @196
+
+设 $k>0$，试问当 $k$ 为何值时，方程 $\arctan x-kx=0$ 有正实根？
+
+**习题 13** @196
+
+对 $a$ 作了 $n$ 次测量后获得了 $n$ 个近似值 $\{a_k\}_{k=1}^n$，现在要取使得
+
+$$s=\sum_{k=1}^n(a_k-\xi)^2$$
+
+达到最小的 $\xi$ 作为 $a$ 的近似值，$\xi$ 应如何取？
+
+**习题 14** @196
+
+证明：对于给定了体积的圆柱体，当它的高与底面的直径相等的时候表面积最小。
+
+**习题 15** @196
+
+在底为 $a$ 高为 $h$ 的三角形中作内接矩形，矩形的一条边与三角形的底边重合，求此矩形的最大面积？
+
+**习题 16** @196
+
+求内接于椭圆 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$，边与椭圆的轴平行的面积最大的矩形。
+
+**习题 17** @196
+
+将一块半径为 $r$ 的圆铁片剪去一个圆心角为 $\theta$ 的扇形后做成一个漏斗，问 $\theta$ 为何值时漏斗的容积最大？
+
+**习题 18** @196
+
+要做一个容积为 $V$ 的有盖的圆柱形容器，上下两个底面的材料价格为每单位面积 $a$ 元，侧面的材料价格为每单位面积 $b$ 元，问直径与高的比例为多少时造价最省？
+
+**习题 19** @196
+
+要建造一个变电站 $M$ 向 $A$、$B$ 两地送电（如图 5.5.6，$A$、$B$ 到线路的垂距分别为 $1.2$ km、$1.8$ km，两垂足间距离为 $3.2$ km），$M$ 与 $A$ 之间的电缆每千米 $a$ 元，与 $B$ 之间的电缆每千米 $b$ 元，为使总投资最小，问变电站 $M$ 的位置应满足什么性质？
+
 ### 5.6 方程的近似求解（p197–204）
 
 **注 (解析方法与数值方法)** @197
@@ -4450,6 +6516,62 @@ Newton 法具有明显的几何意义。求解 $f(x)=0$ 实际上是求曲线 $y
 
 割线法满足$$\lim_{k\to\infty}\frac{|x^{*}-x_{k+1}|}{|x^{*}-x_k|^{p}}=C,$$其中 $p=\dfrac{1+\sqrt{5}}{2}\approx 1.618$，因此收敛速度稍慢于 Newton 法，但由于它每做一步迭代只需要计算一次函数值，运算量小，且又避免了导数运算，因而也是一种很常用的数值求解方法。（在求解由多个方程联立的方程组时更是如此。）
 
+#### 习题（p203–204）
+
+**习题 1** @203
+
+用两分法求下列方程的一个近似解（精确到小数点后第 6 位）：
+
+(1) $x^3+3x-5=0$，$x^*\in[1,2]$；
+
+(2) $x=e^{-x}$，$x^*\in\left[\dfrac{1}{2},\ln2\right]$；
+
+(3) $x^2=\cos x$，$x^*\in\left[\dfrac{\pi}{4},\dfrac{3\pi}{4}\right]$；
+
+(4) $7x^2-3x+\dfrac{4}{x}-30=0$，$x^*\in[2,2.5]$。
+
+**习题 2** @203
+
+用 Newton 法求下列方程的近似解（精确到小数点后第 10 位）：
+
+(1) $x^3-x+4=0$；
+
+(2) $x^2+\dfrac{1}{x^2}=10x\quad(x>1)$；
+
+(3) $x\lg x=1$；
+
+(4) $x+e^x=0$；
+
+(5) $\dfrac{x}{2}=\sin x\quad(x>0)$。
+
+**习题 3** @203
+
+仿照例 5.6.2，用 Newton 法导出计算机上求 $A^{\frac{1}{n}}$（$A>0$，$n$ 为非零整数）和 $\dfrac{1}{A}$ 的算法（即只用加、减、乘三种运算的算法），并实际计算下列各值：
+
+(1) $\sqrt[3]{2}$；
+
+(2) $\dfrac{1}{\sqrt[3]{9}}$；
+
+(3) $\dfrac{1}{7}$；
+
+(4) $\dfrac{1}{11}$。
+
+**习题 4** @203
+
+当 $\varepsilon=0.2$ 时，计算 Kepler 方程
+
+$$y-x-\varepsilon\sin y=0\quad(0<\varepsilon<1)$$
+
+对应于 $x=\dfrac{k}{8}$（$k=1,2,\cdots,8$）的 $y$ 的近似值。
+
+**习题 5** @204
+
+求方程 $\tan x=x$ 的最小的三个正根，精确到 $10^{-12}$。
+
+**习题 6** @204
+
+求方程 $\cot x=\dfrac{1}{x}-\dfrac{x}{2}$ 的两个正根，精确到 $10^{-12}$。
+
 ## 第6章 不定积分
 
 ### 6.1 不定积分的概念和运算法则（p205–209）
@@ -4535,6 +6657,52 @@ Newton 法具有明显的几何意义。求解 $f(x)=0$ 实际上是求曲线 $y
 已知曲线 $y=f(x)$ 在任意一点 $(x,f(x))$ 处的切线斜率都等于 $x^{2}$，并且曲线经过点 $(3,2)$，求该曲线的方程。
 
 解：根据题意，有 $y'=x^{2}$，因此$$y=\int x^{2}\,\mathrm{d}x=\frac{x^{3}}{3}+C,$$这是 $xy$ 平面上的一族曲线（如图 6.1.1），它们在横坐标相同的点上的切线都是互相平行的。为确定常数 $C$，利用曲线经过点 $(3,2)$ 的条件，将 $x=3,\ y=2$ 代入上式，即可解得 $C=-7$，所以所求的曲线为$$y=\frac{x^{3}}{3}-7.$$在第五章 §5 中求解人口模型时，最后定出常数 $C_1=p_0\mathrm{e}^{-\lambda t_0}$，实际上采用的是同一种方法。
+
+#### 习题（p209–210）
+
+**习题 1** @209
+
+求下列不定积分：
+
+(1) $\displaystyle\int (x^3+2x^2-5\sqrt{x})\,\mathrm{d}x$；
+
+(2) $\displaystyle\int (\sin x+3\mathrm{e}^x)\,\mathrm{d}x$；
+
+(3) $\displaystyle\int (x^a+a^x)\,\mathrm{d}x$；
+
+(4) $\displaystyle\int (2+\cot^2 x)\,\mathrm{d}x$；
+
+(5) $\displaystyle\int (2\csc^2 x-\sec x\tan x)\,\mathrm{d}x$；
+
+(6) $\displaystyle\int (x^2-2)^3\,\mathrm{d}x$；
+
+(7) $\displaystyle\int \left(x+\frac{1}{x}\right)^2\,\mathrm{d}x$；
+
+(8) $\displaystyle\int \left(\sqrt{x}+\frac{1}{\sqrt[3]{x^2}}+1\right)\left(\frac{1}{\sqrt{x}}+1\right)\mathrm{d}x$；
+
+(9) $\displaystyle\int \left(2^x+\frac{1}{3^x}\right)^2\mathrm{d}x$；
+
+(10) $\displaystyle\int \frac{2\cdot 3^x-5\cdot 2^x}{3^x}\,\mathrm{d}x$；
+
+(11) $\displaystyle\int \frac{\cos 2x}{\cos x-\sin x}\,\mathrm{d}x$；
+
+(12) $\displaystyle\int \left(\frac{2}{1+x^2}-\frac{3}{\sqrt{1-x^2}}\right)\mathrm{d}x$；
+
+(13) $\displaystyle\int (1-x^2)\sqrt{x\sqrt{x}}\,\mathrm{d}x$；
+
+(14) $\displaystyle\int \frac{\cos 2x}{\cos^2 x\sin^2 x}\,\mathrm{d}x$。
+
+**习题 2** @209
+
+曲线 $y=f(x)$ 经过点 $(\mathrm{e},-1)$，且在任一点处的切线斜率为该点横坐标的倒数，求该曲线的方程。
+
+**习题 3** @209
+
+已知曲线 $y=f(x)$ 在任意一点 $(x,f(x))$ 处的切线斜率都比该点横坐标的立方根少 $1$，
+
+(1) 求出该曲线方程的所有可能形式，并在直角坐标系中画出示意图；
+
+(2) 若已知该曲线经过 $(1,1)$ 点，求该曲线的方程。
 
 ### 6.2 换元积分法和分部积分法（p210–222）
 
@@ -4916,6 +7084,196 @@ $$\int\frac{\mathrm{d}x}{\sqrt{x^2-4x+5}}=\ln\left|(x-2)+\sqrt{x^2-4x+5}\right|+
 
 对于求诸如 $\displaystyle\int\frac{(ax+b)\,\mathrm{d}x}{x^2+2\xi x+\eta^2}$、$\displaystyle\int\frac{(ax+b)\,\mathrm{d}x}{\sqrt{x^2+2\xi x+\eta^2}}$ 和 $\displaystyle\int(ax+b)\sqrt{x^2+2\xi x+\eta^2}\,\mathrm{d}x$ 型的不定积分，解题思路是类似的（只是先要如例 6.2.19 那样对 $ax+b$ 作一次拆项）。读者应掌握这一方法的本质，而不必去死背公式。
 
+#### 习题（p221–223）
+
+**习题 1** @221
+
+求下列不定积分：
+
+(1) $\displaystyle\int \frac{\mathrm{d}x}{4x-3}$；
+
+(2) $\displaystyle\int \frac{\mathrm{d}x}{\sqrt{1-2x^2}}$；
+
+(3) $\displaystyle\int \frac{\mathrm{d}x}{\mathrm{e}^x-\mathrm{e}^{-x}}$；
+
+(4) $\displaystyle\int \mathrm{e}^{3x+2}\,\mathrm{d}x$；
+
+(5) $\displaystyle\int (2^x+3^x)^2\,\mathrm{d}x$；
+
+(6) $\displaystyle\int \frac{1}{2+5x^2}\,\mathrm{d}x$；
+
+(7) $\displaystyle\int \sin^5 x\,\mathrm{d}x$；
+
+(8) $\displaystyle\int \tan^{10}x\sec^2 x\,\mathrm{d}x$；
+
+(9) $\displaystyle\int \sin 5x\cos 3x\,\mathrm{d}x$；
+
+(10) $\displaystyle\int \cos^2 5x\,\mathrm{d}x$；
+
+(11) $\displaystyle\int \frac{(2x+4)\,\mathrm{d}x}{(x^2+4x+5)^2}$；
+
+(12) $\displaystyle\int \frac{\sin\sqrt{x}}{\sqrt{x}}\,\mathrm{d}x$；
+
+(13) $\displaystyle\int \frac{x^2\,\mathrm{d}x}{\sqrt[4]{1-2x^3}}$；
+
+(14) $\displaystyle\int \frac{\mathrm{d}x}{1-\sin x}$；
+
+(15) $\displaystyle\int \frac{\sin x+\cos x}{\sqrt[3]{\sin x-\cos x}}\,\mathrm{d}x$；
+
+(16) $\displaystyle\int \frac{\mathrm{d}x}{(\arcsin x)^2\sqrt{1-x^2}}$；
+
+(17) $\displaystyle\int \frac{\mathrm{d}x}{x^2-2x+2}$；
+
+(18) $\displaystyle\int \frac{1-x}{\sqrt{9-4x^2}}\,\mathrm{d}x$；
+
+(19) $\displaystyle\int \tan\sqrt{1+x^2}\cdot\frac{x}{\sqrt{1+x^2}}\,\mathrm{d}x$；
+
+(20) $\displaystyle\int \frac{\sin x\cos x}{1+\sin^4 x}\,\mathrm{d}x$。
+
+**习题 2** @221
+
+求下列不定积分：
+
+(1) $\displaystyle\int \frac{\mathrm{d}x}{\sqrt{1+\mathrm{e}^{2x}}}$；
+
+(2) $\displaystyle\int \frac{\mathrm{d}x}{x\sqrt{1+x^2}}$；
+
+(3) $\displaystyle\int \frac{\arctan\sqrt{x}}{\sqrt{x}(1+x)}\,\mathrm{d}x$；
+
+(4) $\displaystyle\int \frac{1+\ln x}{(x\ln x)^2}\,\mathrm{d}x$；
+
+(5) $\displaystyle\int (x-1)(x+2)^{20}\,\mathrm{d}x$；
+
+(6) $\displaystyle\int x^2(x+1)^n\,\mathrm{d}x$；
+
+(7) $\displaystyle\int \frac{\mathrm{d}x}{x^4\sqrt{1+x^2}}$；
+
+(8) $\displaystyle\int \frac{\sqrt{x^2-9}}{x}\,\mathrm{d}x$；
+
+(9) $\displaystyle\int \frac{\mathrm{d}x}{\sqrt{(1-x^2)^3}}$；
+
+(10) $\displaystyle\int \frac{\mathrm{d}x}{\sqrt{(x^2+a^2)^3}}$；
+
+(11) $\displaystyle\int \sqrt{\frac{x-a}{x+a}}\,\mathrm{d}x$；
+
+(12) $\displaystyle\int x\sqrt{\frac{x}{2a-x}}\,\mathrm{d}x$；
+
+(13) $\displaystyle\int \frac{\mathrm{d}x}{1+\sqrt{2x}}$；
+
+(14) $\displaystyle\int x^2\sqrt[3]{1-x}\,\mathrm{d}x$；
+
+(15) $\displaystyle\int \frac{\mathrm{d}x}{x\sqrt{x^2-1}}$；
+
+(16) $\displaystyle\int \frac{x^2}{\sqrt{a^2-x^2}}\,\mathrm{d}x$；
+
+(17) $\displaystyle\int \frac{\sqrt{a^2-x^2}}{x^4}\,\mathrm{d}x$；
+
+(18) $\displaystyle\int \frac{\mathrm{d}x}{1+\sqrt{1-x^2}}$；
+
+(19) $\displaystyle\int \frac{x^{15}}{(x^4-1)^3}\,\mathrm{d}x$；
+
+(20) $\displaystyle\int \frac{1}{x(x^n+1)}\,\mathrm{d}x$。
+
+**习题 3** @221
+
+求下列不定积分：
+
+(1) $\displaystyle\int x\mathrm{e}^{2x}\,\mathrm{d}x$；
+
+(2) $\displaystyle\int x\ln(x-1)\,\mathrm{d}x$；
+
+(3) $\displaystyle\int x^2\sin 3x\,\mathrm{d}x$；
+
+(4) $\displaystyle\int \frac{x}{\sin^2 x}\,\mathrm{d}x$；
+
+(5) $\displaystyle\int x\cos^2 x\,\mathrm{d}x$；
+
+(6) $\displaystyle\int \arcsin x\,\mathrm{d}x$；
+
+(7) $\displaystyle\int \arctan x\,\mathrm{d}x$；
+
+(8) $\displaystyle\int x^2\arctan x\,\mathrm{d}x$；
+
+(9) $\displaystyle\int x\tan^2 x\,\mathrm{d}x$；
+
+(10) $\displaystyle\int \frac{\arcsin x}{\sqrt{1-x}}\,\mathrm{d}x$；
+
+(11) $\displaystyle\int \ln^2 x\,\mathrm{d}x$；
+
+(12) $\displaystyle\int x^2\ln x\,\mathrm{d}x$；
+
+(13) $\displaystyle\int \mathrm{e}^{-x}\sin 5x\,\mathrm{d}x$；
+
+(14) $\displaystyle\int \mathrm{e}^x\sin^2 x\,\mathrm{d}x$；
+
+(15) $\displaystyle\int \frac{\ln^3 x}{x^2}\,\mathrm{d}x$；
+
+(16) $\displaystyle\int \cos(\ln x)\,\mathrm{d}x$；
+
+(17) $\displaystyle\int (\arcsin x)^2\,\mathrm{d}x$；
+
+(18) $\displaystyle\int \sqrt{x}\,\mathrm{e}^{\sqrt{x}}\,\mathrm{d}x$；
+
+(19) $\displaystyle\int \mathrm{e}^{\sqrt{x+1}}\,\mathrm{d}x$；
+
+(20) $\displaystyle\int \ln(x+\sqrt{1+x^2})\,\mathrm{d}x$。
+
+**习题 4** @222
+
+已知 $f(x)$ 的一个原函数为 $\dfrac{\sin x}{1+x\sin x}$，求 $\displaystyle\int f(x)f'(x)\,\mathrm{d}x$。
+
+**习题 5** @222
+
+设 $f'(\sin^2 x)=\cos 2x+\tan^2 x$，求 $f(x)$。
+
+**习题 6** @222
+
+设 $f(\ln x)=\dfrac{\ln(1+x)}{x}$，求 $\displaystyle\int f(x)\,\mathrm{d}x$。
+
+**习题 7** @222
+
+求不定积分 $\displaystyle\int \frac{\cos x}{\sin x+\cos x}\,\mathrm{d}x$ 与 $\displaystyle\int \frac{\sin x}{\sin x+\cos x}\,\mathrm{d}x$。
+
+**习题 8** @222
+
+求下列不定积分的递推表达式（$n$ 为非负整数）：
+
+(1) $\displaystyle I_n=\int \sin^n x\,\mathrm{d}x$；
+
+(2) $\displaystyle I_n=\int \tan^n x\,\mathrm{d}x$；
+
+(3) $\displaystyle I_n=\int \frac{\mathrm{d}x}{\cos^n x}$；
+
+(4) $\displaystyle I_n=\int x^n\sin x\,\mathrm{d}x$；
+
+(5) $\displaystyle I_n=\int \mathrm{e}^x\sin^n x\,\mathrm{d}x$；
+
+(6) $\displaystyle I_n=\int x^\alpha\ln^n x\,\mathrm{d}x\quad(\alpha\neq -1)$；
+
+(7) $\displaystyle I_n=\int \frac{x^n}{\sqrt{1-x^2}}\,\mathrm{d}x$；
+
+(8) $\displaystyle I_n=\int \frac{\mathrm{d}x}{x^n\sqrt{1+x}}$。
+
+**习题 9** @222
+
+导出求 $\displaystyle\int \frac{(ax+b)\,\mathrm{d}x}{x^2+2\xi x+\eta^2}$，$\displaystyle\int \frac{(ax+b)\,\mathrm{d}x}{\sqrt{x^2+2\xi x+\eta^2}}$ 和 $\displaystyle\int (ax+b)\sqrt{x^2+2\xi x+\eta^2}\,\mathrm{d}x$ 型不定积分的公式。
+
+**习题 10** @222
+
+求下列不定积分：
+
+(1) $\displaystyle\int (5x+3)\sqrt{x^2+x+2}\,\mathrm{d}x$；
+
+(2) $\displaystyle\int (x-1)\sqrt{x^2+2x-5}\,\mathrm{d}x$；
+
+(3) $\displaystyle\int \frac{(x-1)\,\mathrm{d}x}{\sqrt{x^2+x+1}}$；
+
+(4) $\displaystyle\int \frac{(x+2)\,\mathrm{d}x}{\sqrt{5+x-x^2}}$。
+
+**习题 11** @223
+
+设 $n$ 次多项式 $p(x)=\sum\limits_{i=0}^{n}a_i x^i$，系数满足关系 $\sum\limits_{i=1}^{n}\dfrac{a_i}{(i-1)!}=0$，证明不定积分 $\displaystyle\int p\left(\frac{1}{x}\right)\mathrm{e}^x\,\mathrm{d}x$ 是初等函数。
+
 ### 6.3 有理函数的不定积分及其应用（p223–231）
 
 **注 (有理函数与真分式化)** @223
@@ -5150,6 +7508,156 @@ $$\int\frac{\cot x\,\mathrm{d}x}{1+\sin x}=\int\frac{\cos x\,\mathrm{d}x}{\sin x
 
 因此，在求三角函数有理式的不定积分时，不要滥用万能公式。
 
+#### 习题（p229–231）
+
+**习题 1** @229
+
+求下列不定积分：
+
+(1) $\displaystyle\int \frac{\mathrm{d}x}{(x-1)(x+1)^2}$；
+
+(2) $\displaystyle\int \frac{(2x+3)\,\mathrm{d}x}{(x^2-1)(x^2+1)}$；
+
+(3) $\displaystyle\int \frac{x\,\mathrm{d}x}{(x+1)(x+2)^2(x+3)^3}$；
+
+(4) $\displaystyle\int \frac{\mathrm{d}x}{(x^2+4x+4)(x^2+4x+5)^2}$；
+
+(5) $\displaystyle\int \frac{3}{x^3+1}\,\mathrm{d}x$；
+
+(6) $\displaystyle\int \frac{\mathrm{d}x}{x^4+x^2+1}$；
+
+(7) $\displaystyle\int \frac{x^4+5x+4}{x^2+5x+4}\,\mathrm{d}x$；
+
+(8) $\displaystyle\int \frac{x^3+1}{x^3+5x-6}\,\mathrm{d}x$；
+
+(9) $\displaystyle\int \frac{x^2}{1-x^4}\,\mathrm{d}x$；
+
+(10) $\displaystyle\int \frac{\mathrm{d}x}{x^4+1}$；
+
+(11) $\displaystyle\int \frac{\mathrm{d}x}{(x^2+1)(x^2+x+1)}$；
+
+(12) $\displaystyle\int \frac{x^2+1}{x(x^3-1)}\,\mathrm{d}x$；
+
+(13) $\displaystyle\int \frac{x^2+2}{(x^2+x+1)^2}\,\mathrm{d}x$；
+
+(14) $\displaystyle\int \frac{1-x^7}{x(1+x^7)}\,\mathrm{d}x$；
+
+(15) $\displaystyle\int \frac{x^9}{(x^{10}+2x^5+2)^2}\,\mathrm{d}x$；
+
+(16) $\displaystyle\int \frac{x^{3n-1}}{(x^{2n}+1)^2}\,\mathrm{d}x$。
+
+**习题 2** @230
+
+在什么条件下，$f(x)=\dfrac{ax^2+bx+c}{x(x+1)^2}$ 的原函数仍是有理函数？
+
+**习题 3** @230
+
+设 $p_n(x)$ 是一个 $n$ 次多项式，求$$\int \frac{p_n(x)}{(x-a)^{n+1}}\,\mathrm{d}x.$$
+
+**习题 4** @230
+
+求下列不定积分：
+
+(1) $\displaystyle\int \frac{x}{\sqrt{2+4x}}\,\mathrm{d}x$；
+
+(2) $\displaystyle\int \frac{\mathrm{d}x}{\sqrt{(x-a)(b-x)}}$；
+
+(3) $\displaystyle\int \frac{x^2}{\sqrt{1+x-x^2}}\,\mathrm{d}x$；
+
+(4) $\displaystyle\int \frac{x^2+1}{x\sqrt{x^4+1}}\,\mathrm{d}x$；
+
+(5) $\displaystyle\int \frac{\sqrt{x+1}-\sqrt{x-1}}{\sqrt{x+1}+\sqrt{x-1}}\,\mathrm{d}x$；
+
+(6) $\displaystyle\int \sqrt{\frac{x+1}{x-1}}\,\mathrm{d}x$；
+
+(7) $\displaystyle\int \frac{\mathrm{d}x}{\sqrt{x(1+x)}}$；
+
+(8) $\displaystyle\int \frac{\mathrm{d}x}{x^4\sqrt{1+x^2}}$；
+
+(9) $\displaystyle\int \frac{\mathrm{d}x}{\sqrt{x}+\sqrt[4]{x}}$；
+
+(10) $\displaystyle\int \sqrt[3]{\frac{(x-4)^2}{(x+1)^8}}\,\mathrm{d}x$；
+
+(11) $\displaystyle\int \frac{\mathrm{d}x}{\sqrt[3]{(x-2)(x+1)^2}}$；
+
+(12) $\displaystyle\int \frac{\mathrm{d}x}{x\sqrt[4]{1+x^4}}$。
+
+**习题 5** @230
+
+设 $R(u,v,w)$ 是 $u,v,w$ 的有理函数，给出$$\int R(x,\sqrt{a+x},\sqrt{b+x})\,\mathrm{d}x$$的求法。
+
+**习题 6** @230
+
+求下列不定积分：
+
+(1) $\displaystyle\int \frac{\mathrm{d}x}{4+5\cos x}$；
+
+(2) $\displaystyle\int \frac{\mathrm{d}x}{2+\sin x}$；
+
+(3) $\displaystyle\int \frac{\mathrm{d}x}{3+\sin^2 x}$；
+
+(4) $\displaystyle\int \frac{\mathrm{d}x}{1+\sin x+\cos x}$；
+
+(5) $\displaystyle\int \frac{\mathrm{d}x}{2\sin x-\cos x+5}$；
+
+(6) $\displaystyle\int \frac{\mathrm{d}x}{(2+\cos x)\sin x}$；
+
+(7) $\displaystyle\int \frac{\mathrm{d}x}{\tan x+\sin x}$；
+
+(8) $\displaystyle\int \frac{\mathrm{d}x}{\sin(x+a)\cos(x+b)}$；
+
+(9) $\displaystyle\int \tan x\tan(x+a)\,\mathrm{d}x$；
+
+(10) $\displaystyle\int \frac{\sin x\cos x}{\sin x+\cos x}\,\mathrm{d}x$；
+
+(11) $\displaystyle\int \frac{\mathrm{d}x}{\sin^2 x\cos^2 x}$；
+
+(12) $\displaystyle\int \frac{\sin^2 x}{1+\sin^2 x}\,\mathrm{d}x$。
+
+**习题 7** @231
+
+求下列不定积分：
+
+(1) $\displaystyle\int \frac{x\mathrm{e}^x}{(1+x)^2}\,\mathrm{d}x$；
+
+(2) $\displaystyle\int \frac{\ln x}{(1+x^2)^{3/2}}\,\mathrm{d}x$；
+
+(3) $\displaystyle\int \ln^2(x+\sqrt{1+x^2})\,\mathrm{d}x$；
+
+(4) $\displaystyle\int \sqrt{x}\ln^2 x\,\mathrm{d}x$；
+
+(5) $\displaystyle\int x^2\mathrm{e}^x\sin x\,\mathrm{d}x$；
+
+(6) $\displaystyle\int \ln(1+x^2)\,\mathrm{d}x$；
+
+(7) $\displaystyle\int \frac{x^2\arcsin x}{\sqrt{1-x^2}}\,\mathrm{d}x$；
+
+(8) $\displaystyle\int \frac{1}{x\sqrt{x^2-2x-3}}\,\mathrm{d}x$；
+
+(9) $\displaystyle\int \arctan\sqrt{x}\,\mathrm{d}x$；
+
+(10) $\displaystyle\int \sqrt{x}\sin\sqrt{x}\,\mathrm{d}x$；
+
+(11) $\displaystyle\int \frac{x+\sin x}{1+\cos x}\,\mathrm{d}x$；
+
+(12) $\displaystyle\int \frac{\sqrt{1+\sin x}}{\cos x}\,\mathrm{d}x$；
+
+(13) $\displaystyle\int \frac{\sin^2 x}{\cos^3 x}\,\mathrm{d}x$；
+
+(14) $\displaystyle\int \mathrm{e}^{\sin x}\frac{x\cos^3 x-\sin x}{\cos^2 x}\,\mathrm{d}x$；
+
+(15) $\displaystyle\int \frac{\mathrm{d}x}{\mathrm{e}^x-\mathrm{e}^{-x}}$；
+
+(16) $\displaystyle\int \frac{\mathrm{d}x}{a^2\sin^2 x+b^2\cos^2 x}\quad(ab\neq 0)$；
+
+(17) $\displaystyle\int \frac{\sqrt[3]{x}}{x(\sqrt{x}+\sqrt[3]{x})}\,\mathrm{d}x$；
+
+(18) $\displaystyle\int x\ln\frac{1+x}{1-x}\,\mathrm{d}x$；
+
+(19) $\displaystyle\int \sqrt{1-x^2}\arcsin x\,\mathrm{d}x$；
+
+(20) $\displaystyle\int \frac{\mathrm{d}x}{(1+\mathrm{e}^x)^2}$。
+
 ## 第7章 定积分
 
 ### 7.1 定积分的概念和可积条件（p232–243）
@@ -5300,6 +7808,54 @@ $$\int\frac{\cot x\,\mathrm{d}x}{1+\sin x}=\int\frac{\cos x\,\mathrm{d}x}{\sin x
 
 由于$$\sum_{i=1}^{2k-1}\omega_i\Delta x_i=\sum_{j=0}^{k-1}\omega_{2j+1}\Delta x_{2j+1}+\sum_{j=1}^{k-1}\omega_{2j}\Delta x_{2j},$$而在右边的第一个和式中，有 $\Delta x_{2j+1}<\dfrac{\varepsilon}{2k}$ 且 $\omega_{2j+1}\leqslant 1$；在第二个和式中，有 $\omega_{2j}\leqslant\dfrac{\varepsilon}{2}$ 且 $\sum\limits_{j=1}^{k-1}\Delta x_{2j}<1$，因此得到$$\sum_{i=1}^{n}\omega_i\Delta x_i<k\cdot\frac{\varepsilon}{2k}+\frac{\varepsilon}{2}=\varepsilon.$$由定理 7.1.3，Riemann 函数可积。
 
+#### 习题（p243–244）
+
+**习题 1** @243
+
+用定义计算下列定积分：
+
+（1）$\int_0^1(ax+b)\,\mathrm{d}x$；　（2）$\int_0^1 a^x\,\mathrm{d}x\ (a>0)$。
+
+**习题 2** @243
+
+证明：若对 $[a,b]$ 的任意划分和任意 $\xi_i\in[x_{i-1},x_i]$，极限 $\lim\limits_{\lambda\to 0}\sum\limits_{i=1}^{n}f(\xi_i)\Delta x_i$ 都存在，则 $f(x)$ 必是 $[a,b]$ 上的有界函数。
+
+**习题 3** @243
+
+证明 Darboux 定理的后半部分：对任意有界函数 $f(x)$，恒有$$\lim_{\lambda\to 0}\underline{S}(P)=l.$$
+
+**习题 4** @243
+
+证明定理 7.1.3。
+
+**习题 5** @243
+
+讨论下列函数在 $[0,1]$ 的可积性：
+
+（1）$f(x)=\begin{cases}\dfrac{1}{x}-\left[\dfrac{1}{x}\right],&x\neq 0,\\[10pt]0,&x=0;\end{cases}$
+
+（2）$f(x)=\begin{cases}-1,&x\text{ 为有理数},\\1,&x\text{ 为无理数};\end{cases}$
+
+（3）$f(x)=\begin{cases}0,&x\text{ 为有理数},\\x,&x\text{ 为无理数};\end{cases}$
+
+（4）$f(x)=\begin{cases}\operatorname{sgn}\left(\sin\dfrac{\pi}{x}\right),&x\neq 0,\\[10pt]0,&x=0.\end{cases}$
+
+**习题 6** @243
+
+设 $f(x)$ 在 $[a,b]$ 上可积，且在 $[a,b]$ 上满足 $|f(x)|\geqslant m>0$（$m$ 为常数），证明 $\dfrac{1}{f(x)}$ 在 $[a,b]$ 上也可积。
+
+**习题 7** @243
+
+设有界函数 $f(x)$ 在 $[a,b]$ 上的不连续点为 $\{x_n\}_{n=1}^{\infty}$，且 $\lim\limits_{n\to\infty}x_n$ 存在，证明 $f(x)$ 在 $[a,b]$ 上可积。
+
+**习题 8** @243
+
+设 $f(x)$ 是区间 $[a,b]$ 上的有界函数。证明：$f(x)$ 在 $[a,b]$ 上可积的充分必要条件是对任意给定的 $\varepsilon>0$ 与 $\sigma>0$，存在划分 $P$，使得振幅 $\omega_i\geqslant\varepsilon$ 的那些小区间 $[x_{i-1},x_i]$ 的长度之和 $\sum\limits_{\omega_i\geqslant\varepsilon}\Delta x_i<\sigma$（即振幅不能任意小的那些小区间的长度之和可以任意小）。
+
+**习题 9** @244
+
+设 $f(x)$ 在 $[a,b]$ 上可积，$A\leqslant f(x)\leqslant B$，$g(u)$ 在 $[A,B]$ 上连续，证明复合函数 $g(f(x))$ 在 $[a,b]$ 上可积。
+
 ### 7.2 定积分的基本性质（p244–250）
 
 **命题 7.2.1 (线性性质)** @244
@@ -5365,6 +7921,68 @@ $$\int\frac{\cot x\,\mathrm{d}x}{1+\sin x}=\int\frac{\cos x\,\mathrm{d}x}{\sin x
 设函数 $f(x)$ 在 $[a,b]$ 上二阶可导，$f\left(\dfrac{a+b}{2}\right)=0$，记 $M=\sup\limits_{a\leqslant x\leqslant b}|f''(x)|$，证明$$\int_a^b f(x)\,\mathrm{d}x\leqslant\frac{M(b-a)^3}{24}.$$
 
 **证** $f(x)$ 在 $x=\dfrac{a+b}{2}$ 处的带 Lagrange 余项的 Taylor 公式为$$f(x)=f\left(\frac{a+b}{2}\right)+f'\left(\frac{a+b}{2}\right)\left(x-\frac{a+b}{2}\right)+\frac{1}{2}f''(\xi)\left(x-\frac{a+b}{2}\right)^2,$$其中 $a\leqslant\xi\leqslant b$。由 $f\left(\dfrac{a+b}{2}\right)=0$，上式简化为$$f(x)=f'\left(\frac{a+b}{2}\right)\left(x-\frac{a+b}{2}\right)+\frac{1}{2}f''(\xi)\left(x-\frac{a+b}{2}\right)^2,\quad x\in[a,b].$$对等式两边求积分，利用 $\int_a^b\left(x-\dfrac{a+b}{2}\right)\mathrm{d}x=0$，得到$$\begin{aligned}\int_a^b f(x)\,\mathrm{d}x&=f'\left(\frac{a+b}{2}\right)\int_a^b\left(x-\frac{a+b}{2}\right)\mathrm{d}x+\frac{1}{2}\int_a^b f''(\xi)\left(x-\frac{a+b}{2}\right)^2\mathrm{d}x\\&=\frac{1}{2}\int_a^b f''(\xi)\left(x-\frac{a+b}{2}\right)^2\mathrm{d}x,\end{aligned}$$于是$$\left|\int_a^b f(x)\,\mathrm{d}x\right|\leqslant\frac{1}{2}\int_a^b\left|f''(\xi)\left(x-\frac{a+b}{2}\right)^2\right|\mathrm{d}x\leqslant\frac{M}{2}\int_a^b\left(x-\frac{a+b}{2}\right)^2\mathrm{d}x=\frac{M(b-a)^3}{24}.$$
+
+#### 习题（p250–251）
+
+**习题 1** @250
+
+设 $f(x)$ 在 $[a,b]$ 上可积，$g(x)$ 在 $[a,b]$ 上定义，且在 $[a,b]$ 中除了有限个点之外，都有 $f(x)=g(x)$，证明 $g(x)$ 在 $[a,b]$ 上也可积，并且有$$\int_a^b f(x)\,\mathrm{d}x=\int_a^b g(x)\,\mathrm{d}x.$$
+
+**习题 2** @250
+
+设 $f(x)$ 和 $g(x)$ 在 $[a,b]$ 上都可积，请举例说明在一般情况下$$\int_a^b f(x)g(x)\,\mathrm{d}x\neq\left(\int_a^b f(x)\,\mathrm{d}x\right)\cdot\left(\int_a^b g(x)\,\mathrm{d}x\right).$$
+
+**习题 3** @250
+
+证明：对任意实数 $a,b,c$，只要 $\int_a^b f(x)\,\mathrm{d}x$，$\int_a^c f(x)\,\mathrm{d}x$ 和 $\int_c^b f(x)\,\mathrm{d}x$ 都存在，就成立$$\int_a^b f(x)\,\mathrm{d}x=\int_a^c f(x)\,\mathrm{d}x+\int_c^b f(x)\,\mathrm{d}x.$$
+
+**习题 4** @250
+
+判断下列积分的大小：
+
+（1）$\int_0^1 x\,\mathrm{d}x$ 和 $\int_0^1 x^2\,\mathrm{d}x$；　（2）$\int_1^2 x\,\mathrm{d}x$ 和 $\int_1^2 x^2\,\mathrm{d}x$；
+
+（3）$\int_{-2}^{-1}\left(\dfrac{1}{2}\right)^x\mathrm{d}x$ 和 $\int_0^1 2^x\,\mathrm{d}x$；　（4）$\int_0^{\frac{\pi}{2}}\sin x\,\mathrm{d}x$ 和 $\int_0^{\frac{\pi}{2}}x\,\mathrm{d}x$。
+
+**习题 5** @250
+
+设 $f(x)$ 在 $[a,b]$ 上连续，$f(x)\geqslant 0$ 但不恒为 $0$，证明$$\int_a^b f(x)\,\mathrm{d}x>0.$$
+
+**习题 6** @250
+
+设 $f(x)$ 在 $[a,b]$ 上连续，且 $\int_a^b f^2(x)\,\mathrm{d}x=0$，证明 $f(x)$ 在 $[a,b]$ 上恒为 $0$。
+
+**习题 7** @250
+
+设函数 $f(x)$ 在 $[a,b]$ 上连续，在 $(a,b)$ 内可导，且满足$$\frac{2}{b-a}\int_a^{\frac{a+b}{2}}f(x)\,\mathrm{d}x=f(b).$$证明：存在 $\xi\in(a,b)$，使得 $f'(\xi)=0$。
+
+**习题 8** @250
+
+设 $\varphi(t)$ 在 $[0,a]$ 上连续，$f(x)$ 在 $(-\infty,+\infty)$ 上二阶可导，且 $f''(x)\geqslant 0$。证明：$$f\left(\frac{1}{a}\int_0^a\varphi(t)\,\mathrm{d}t\right)\leqslant\frac{1}{a}\int_0^a f(\varphi(t))\,\mathrm{d}t.$$
+
+**习题 9** @251
+
+设 $f(x)$ 在 $[0,1]$ 上连续，且单调减少，证明对任意 $\alpha\in[0,1]$，成立$$\int_0^\alpha f(x)\,\mathrm{d}x\geqslant\alpha\int_0^1 f(x)\,\mathrm{d}x.$$
+
+**习题 10** @251
+
+（Young 不等式）设 $y=f(x)$ 是 $[0,+\infty)$ 上严格单调增加的连续函数，且 $f(0)=0$，记它的反函数为 $x=f^{-1}(y)$。证明：$$\int_0^a f(x)\,\mathrm{d}x+\int_0^b f^{-1}(y)\,\mathrm{d}y\geqslant ab\qquad(a>0,b>0).$$
+
+**习题 11** @251
+
+证明定积分的连续性：设函数 $f(x)$ 和 $f_h(x)=f(x+h)$ 在 $[a,b]$ 上可积，则有$$\lim_{h\to 0}\int_a^b|f_h(x)-f(x)|\,\mathrm{d}x=0.$$
+
+**习题 12** @251
+
+设 $f(x)$ 和 $g(x)$ 在 $[a,b]$ 上都可积，证明不等式：
+
+（1）（Schwarz 不等式）$\left[\int_a^b f(x)g(x)\,\mathrm{d}x\right]^2\leqslant\int_a^b f^2(x)\,\mathrm{d}x\cdot\int_a^b g^2(x)\,\mathrm{d}x$；
+
+（2）（Minkowski 不等式）$$\left\{\int_a^b[f(x)+g(x)]^2\,\mathrm{d}x\right\}^{\frac{1}{2}}\leqslant\left\{\int_a^b f^2(x)\,\mathrm{d}x\right\}^{\frac{1}{2}}+\left\{\int_a^b g^2(x)\,\mathrm{d}x\right\}^{\frac{1}{2}}.$$
+
+**习题 13** @251
+
+设 $f(x)$ 和 $g(x)$ 在 $[a,b]$ 上连续，且 $f(x)\geqslant 0$，$g(x)>0$，证明$$\lim_{n\to\infty}\left\{\int_a^b[f(x)]^ng(x)\,\mathrm{d}x\right\}^{\frac{1}{n}}=\max_{a\leqslant x\leqslant b}f(x).$$
 
 ### 7.3 微积分基本定理（p251–266）
 
@@ -5587,6 +8205,166 @@ Newton–Leibniz 公式将“求曲线的切线斜率”和“求曲线所围面
 证明函数 $\{1,\sin x,\cos x,\sin 2x,\cos 2x,\cdots,\sin nx,\cos nx,\cdots\}$ 是任意一个长度为 $2\pi$ 的区间上的正交函数列（见定义 7.3.1）。
 
 证：我们考虑区间 $[-\pi,\pi]$ 上的积分。将 $1$ 记为 $\cos 0x$，则对任何 $m=1,2,\cdots$ 和 $n=0,1,2,\cdots$，由于 $\sin mx\cos nx$ 是奇函数，所以$$\int_{-\pi}^{\pi}\sin mx\cos nx\,\mathrm{d}x=0.$$其次，对任何 $m=1,2,\cdots$ 和 $n=1,2,\cdots$，由于 $\sin mx\sin nx$ 是偶函数，$$\int_{-\pi}^{\pi}\sin mx\sin nx\,\mathrm{d}x=2\int_0^{\pi}\sin mx\sin nx\,\mathrm{d}x=\int_0^{\pi}\big[\cos(m-n)x-\cos(m+n)x\big]\mathrm{d}x=\begin{cases}0, & m\ne n,\\ \pi, & m=n.\end{cases}$$同理可证，对任何 $m=0,1,2,\cdots$ 和 $n=0,1,2,\cdots$，有$$\int_{-\pi}^{\pi}\cos mx\cos nx\,\mathrm{d}x=\begin{cases}0, & m\ne n,\\ \pi, & m=n\ne 0,\\ 2\pi, & m=n=0.\end{cases}$$由定义 7.3.1，这组函数确是 $[-\pi,\pi]$ 上的正交函数列。又由于 $2\pi$ 是这些函数的公共周期，由定理 7.3.6，即知这组函数是任意一个长度为 $2\pi$ 的区间上的正交函数列。
+
+#### 习题（p264–267）
+
+**习题 1** @264
+
+设函数 $f(x)$ 连续，求下列函数 $F(x)$ 的导数：
+
+（1）$F(x)=\int_x^b f(t)\,\mathrm{d}t$；　（2）$F(x)=\int_a^{\ln x}f(t)\,\mathrm{d}t$；
+
+（3）$F(x)=\int_a^{\int_0^x\sin^2t\,\mathrm{d}t}\frac{1}{1+t^2}\,\mathrm{d}t$。
+
+**习题 2** @264
+
+求下列极限：
+
+（1）$\lim\limits_{x\to 0}\dfrac{\int_0^x\cos t^2\,\mathrm{d}t}{x}$；　（2）$\lim\limits_{x\to 0}\dfrac{x^2}{\int_{\cos x}^1 e^{-w^2}\,\mathrm{d}w}$；
+
+（3）$\lim\limits_{x\to+\infty}\dfrac{\int_0^x(\arctan v)^2\,\mathrm{d}v}{\sqrt{1+x^2}}$；　（4）$\lim\limits_{x\to+\infty}\dfrac{\left(\int_0^x e^{u^2}\,\mathrm{d}u\right)^2}{\int_0^x e^{2u^2}\,\mathrm{d}u}$。
+
+**习题 3** @264
+
+设 $f(x)$ 是 $[0,+\infty)$ 上的连续函数且恒有 $f(x)>0$，证明 $g(x)=\dfrac{\int_0^x tf(t)\,\mathrm{d}t}{\int_0^x f(t)\,\mathrm{d}t}$ 是定义在 $[0,+\infty)$ 上的单调增加函数。
+
+**习题 4** @265
+
+求函数 $f(x)=\int_0^x(t-1)(t-2)^2\,\mathrm{d}t$ 的极值。
+
+**习题 5** @265
+
+利用中值定理求下列极限：
+
+（1）$\lim\limits_{n\to\infty}\int_0^1\dfrac{x^n}{1+x}\,\mathrm{d}x$；　（2）$\lim\limits_{n\to\infty}\int_n^{n+p}\dfrac{\sin x}{x}\,\mathrm{d}x\qquad(p\in\mathbf{N}^+)$。
+
+**习题 6** @265
+
+求下列定积分：
+
+（1）$\int_0^1 x^2(2-x^2)^2\,\mathrm{d}x$；　（2）$\int_1^2\dfrac{(x-1)(x^2-x+1)}{2x^2}\,\mathrm{d}x$；
+
+（3）$\int_0^2(2^x+3^x)^2\,\mathrm{d}x$；　（4）$\int_0^{\frac{1}{2}}x(1-4x^2)^{10}\,\mathrm{d}x$；
+
+（5）$\int_{-1}^1\dfrac{(x+1)\,\mathrm{d}x}{(x^2+2x+5)^2}$；　（6）$\int_0^1\arcsin x\,\mathrm{d}x$；
+
+（7）$\int_{-\frac{\pi}{4}}^{\frac{\pi}{4}}\dfrac{x}{\cos^2x}\,\mathrm{d}x$；　（8）$\int_0^{\frac{\pi}{4}}x\tan^2x\,\mathrm{d}x$；
+
+（9）$\int_0^{\frac{\pi}{2}}e^x\sin^2x\,\mathrm{d}x$；　（10）$\int_1^e\sin(\ln x)\,\mathrm{d}x$；
+
+（11）$\int_0^1 x^2\arctan x\,\mathrm{d}x$；　（12）$\int_1^{e+1}x^2\ln(x-1)\,\mathrm{d}x$；
+
+（13）$\int_0^{\sqrt{\ln 2}}x^3e^{-x^2}\,\mathrm{d}x$；　（14）$\int_0^1 e^{2\sqrt{x+1}}\,\mathrm{d}x$；
+
+（15）$\int_0^1\dfrac{\mathrm{d}x}{\sqrt{1+e^{2x}}}$；　（16）$\int_{-\frac{1}{2}}^{\frac{1}{2}}\dfrac{\mathrm{d}x}{\sqrt{(1-x^2)^3}}$；
+
+（17）$\int_0^1\left(\dfrac{x-1}{x+1}\right)^4\,\mathrm{d}x$；　（18）$\int_0^1\dfrac{x^2+1}{x^4+1}\,\mathrm{d}x$；
+
+（19）$\int_1^{\sqrt{2}}\dfrac{\mathrm{d}x}{x\sqrt{1+x^2}}$；　（20）$\int_0^1 x\sqrt{\dfrac{x}{2-x}}\,\mathrm{d}x$。
+
+**习题 7** @265
+
+求下列极限：
+
+（1）$\lim\limits_{n\to\infty}\left(\dfrac{1}{n^2}+\dfrac{2}{n^2}+\dfrac{3}{n^2}+\cdots+\dfrac{n-1}{n^2}\right)$；
+
+（2）$\lim\limits_{n\to\infty}\dfrac{1^p+2^p+3^p+\cdots+n^p}{n^{p+1}}\qquad(p>0)$；
+
+（3）$\lim\limits_{n\to\infty}\dfrac{1}{n}\left(\sin\dfrac{\pi}{n}+\sin\dfrac{2\pi}{n}+\cdots+\sin\dfrac{(n-1)\pi}{n}\right)$。
+
+**习题 8** @265
+
+求下列定积分：
+
+（1）$\int_0^\pi\cos^n x\,\mathrm{d}x$；　（2）$\int_{-\pi}^\pi\sin^n x\,\mathrm{d}x$；
+
+（3）$\int_0^a(a^2-x^2)^n\,\mathrm{d}x$；　（4）$\int_0^{\frac{1}{2}}x^2(1-4x^2)^{10}\,\mathrm{d}x$；
+
+（5）$\int_0^1 x^n\ln^m x\,\mathrm{d}x$；　（6）$\int_1^e x\ln^n x\,\mathrm{d}x$。
+
+**习题 9** @265
+
+设 $f(x)$ 在 $[0,1]$ 上连续，证明：
+
+（1）$\int_0^{\frac{\pi}{2}}f(\cos x)\,\mathrm{d}x=\int_0^{\frac{\pi}{2}}f(\sin x)\,\mathrm{d}x$；
+
+（2）$\int_0^\pi xf(\sin x)\,\mathrm{d}x=\dfrac{\pi}{2}\int_0^\pi f(\sin x)\,\mathrm{d}x$。
+
+**习题 10** @266
+
+利用上题结果计算：
+
+（1）$\int_0^\pi x\sin^4x\,\mathrm{d}x$；　（2）$\int_0^\pi\dfrac{x\sin x}{1+\cos^2x}\,\mathrm{d}x$；
+
+（3）$\int_0^\pi\dfrac{x}{1+\sin^2x}\,\mathrm{d}x$。
+
+**习题 11** @266
+
+求下列定积分：
+
+（1）$\int_0^6 x^2[x]\,\mathrm{d}x$；　（2）$\int_0^2\operatorname{sgn}(x-x^3)\,\mathrm{d}x$；
+
+（3）$\int_0^1 x|x-a|\,\mathrm{d}x$；　（4）$\int_0^2[e^x]\,\mathrm{d}x$。
+
+**习题 12** @266
+
+设 $f(x)$ 在 $[a,b]$ 上可积且关于 $x=T$ 对称，这里 $a<T<b$。则$$\int_a^b f(x)\,\mathrm{d}x=\int_a^{2T-b}f(x)\,\mathrm{d}x+2\int_T^b f(x)\,\mathrm{d}x.$$并给出它的几何解释。
+
+**习题 13** @266
+
+设 $f(x)=\begin{cases}xe^{x^2},&x\geqslant 0,\\[8pt]\dfrac{1}{1+e^x},&x<0.\end{cases}$　计算 $I=\int_1^4 f(x-2)\,\mathrm{d}x$。
+
+**习题 14** @266
+
+设函数 $f(x)=\dfrac{1}{2}\int_0^x(x-t)^2g(t)\,\mathrm{d}t$，其中函数 $g(x)$ 在 $(-\infty,+\infty)$ 上连续，且 $g(1)=5$，$\int_0^1 g(t)\,\mathrm{d}t=2$，证明 $f'(x)=x\int_0^x g(t)\,\mathrm{d}t-\int_0^x tg(t)\,\mathrm{d}t$，并计算 $f''(1)$ 和 $f'''(1)$。
+
+**习题 15** @266
+
+设 $(0,+\infty)$ 上的连续函数 $f(x)$ 满足 $f(x)=\ln x-\int_1^e f(x)\,\mathrm{d}x$，求 $\int_1^e f(x)\,\mathrm{d}x$。
+
+**习题 16** @266
+
+设函数 $f(x)$ 连续，且 $\int_0^1 tf(2x-t)\,\mathrm{d}t=\dfrac{1}{2}\arctan(x^2)$，$f(1)=1$。求 $\int_1^2 f(x)\,\mathrm{d}x$。
+
+**习题 17** @266
+
+求 $\int_0^{n\pi}x|\sin x|\,\mathrm{d}x$，其中 $n$ 为正整数。
+
+**习题 18** @266
+
+设函数 $S(x)=\int_0^x|\cos t|\,\mathrm{d}t$，求 $\lim\limits_{x\to+\infty}\dfrac{S(x)}{x}$。
+
+**习题 19** @266
+
+设 $f(x)$ 在 $(0,+\infty)$ 上连续，且对于任何 $a>0$ 有$$g(x)=\int_x^{ax}f(t)\,\mathrm{d}t=\text{常数},\qquad x\in(0,+\infty).$$证明：$f(x)=\dfrac{c}{x}$，$x\in(0,+\infty)$，其中 $c$ 为常数。
+
+**习题 20** @266
+
+设 $f(x)$ 在 $(0,+\infty)$ 上连续，证明：$$\int_1^4 f\left(\frac{x}{2}+\frac{2}{x}\right)\frac{\ln x}{x}\,\mathrm{d}x=(\ln 2)\int_1^4 f\left(\frac{x}{2}+\frac{2}{x}\right)\frac{1}{x}\,\mathrm{d}x.$$
+
+**习题 21** @266
+
+设 $f'(x)$ 在 $[a,b]$ 上连续，证明：$$\max_{a\leqslant x\leqslant b}|f(x)|\leqslant\left|\frac{1}{b-a}\int_a^b f(x)\,\mathrm{d}x\right|+\int_a^b|f'(x)|\,\mathrm{d}x.$$
+
+**习题 22** @266
+
+设 $f(x)$ 在 $(-\infty,+\infty)$ 上连续，证明：$$\int_0^x f(u)(x-u)\,\mathrm{d}u=\int_0^x\left\{\int_0^u f(x)\,\mathrm{d}x\right\}\mathrm{d}u.$$
+
+**习题 23** @266
+
+设 $f(x)$ 在 $[0,a]$ 上二阶可导（$a>0$），且 $f''(x)\geqslant 0$，证明：$$\int_0^a f(x)\,\mathrm{d}x\geqslant af\left(\frac{a}{2}\right).$$
+
+**习题 24** @266
+
+设函数 $f(x)$ 在 $[0,1]$ 上二阶可导，且 $f''(x)\leqslant 0$，$x\in[0,1]$，证明：$$\int_0^1 f(x^2)\,\mathrm{d}x\leqslant f\left(\frac{1}{3}\right).$$
+
+**习题 25** @267
+
+设 $f(x)$ 为 $[0,2\pi]$ 上的单调减少函数，证明：对任何正整数 $n$ 成立$$\int_0^{2\pi}f(x)\sin nx\,\mathrm{d}x\geqslant 0.$$
+
+**习题 26** @267
+
+设函数 $f(x)$ 在 $[0,\pi]$ 上连续，且 $\int_0^\pi f(x)\,\mathrm{d}x=0$，$\int_0^\pi f(x)\cos x\,\mathrm{d}x=0$，证明：在 $(0,\pi)$ 内至少存在两个不同的点 $\xi_1,\xi_2$，使得 $f(\xi_1)=f(\xi_2)=0$。
 
 ### 7.4 定积分在几何计算中的应用（p267–286）
 
@@ -6092,6 +8870,178 @@ $$\begin{cases}x=a\cos^4 t,\\y=a\sin^4 t\end{cases}$$
 
 （18）概率曲线 $y=\mathrm{e}^{-x^2}$。
 
+#### 习题（p281–283）
+
+**习题 1** @281
+
+求下列曲线所围的图形面积：
+
+（1）$y=\dfrac{1}{x}$，$y=x$，$x=2$；　（2）$y^2=4(x+1)$，$y^2=4(1-x)$；
+
+（3）$y=x$，$y=x+\sin^2x$，$x=0$，$x=\pi$；　（4）$y=e^x$，$y=e^{-x}$，$x=1$；
+
+（5）$y=|\ln x|$，$y=0$，$x=0.1$，$x=10$；
+
+（6）叶形线 $\begin{cases}x=2t-t^2,\\y=2t^2-t^3,\end{cases}\quad 0\leqslant t\leqslant 2$；
+
+（7）星形线 $\begin{cases}x=a\cos^3t,\\y=a\sin^3t,\end{cases}\quad 0\leqslant t\leqslant 2\pi$；
+
+（8）Archimedes 螺线 $r=a\theta$，$\theta=0$，$\theta=2\pi$；
+
+（9）对数螺线 $r=ae^\theta$，$\theta=0$，$\theta=2\pi$；
+
+（10）蚌线 $r=a\cos\theta+b\qquad(b\geqslant a>0)$；
+
+（11）$r=3\cos\theta$，$r=1+\cos\theta\qquad\left(-\dfrac{\pi}{3}\leqslant\theta\leqslant\dfrac{\pi}{3}\right)$；
+
+（12）双纽线 $r^2=a^2\cos 2\theta$；
+
+（13）四叶玫瑰线 $r=a\cos 2\theta$；
+
+（14）Descartes 叶形线 $x^3+y^3=3axy$；
+
+（15）$x^4+y^4=a^2(x^2+y^2)$。
+
+**习题 2** @281
+
+求由抛物线 $y^2=4ax$ 与其焦点的弦所围的图形面积的最小值。
+
+**习题 3** @281
+
+求下列曲线的弧长：
+
+（1）$y=x^{3/2}$，$0\leqslant x\leqslant 4$；　（2）$x=\dfrac{y^2}{4}-\dfrac{\ln y}{2}$，$1\leqslant y\leqslant e$；
+
+（3）$y=\ln\cos x$，$0\leqslant x\leqslant a<\dfrac{\pi}{2}$；
+
+（4）星形线 $\begin{cases}x=a\cos^3t,\\y=a\sin^3t,\end{cases}\quad 0\leqslant t\leqslant 2\pi$；
+
+（5）圆的渐开线 $\begin{cases}x=a(\cos t+t\sin t),\\y=a(\sin t-t\cos t),\end{cases}\quad 0\leqslant t\leqslant 2\pi$；
+
+（6）心脏线 $r=a(1-\cos\theta)$，$0\leqslant\theta\leqslant 2\pi$；
+
+（7）Archimedes 螺线 $r=a\theta$，$0\leqslant\theta\leqslant 2\pi$；
+
+（8）$r=a\sin^3\dfrac{\theta}{3}$，$0\leqslant\theta\leqslant 3\pi$。
+
+**习题 4** @281
+
+在旋轮线的第一拱上，求分该拱的长度为 $1:3$ 的点的坐标。
+
+**习题 5** @282
+
+求下列几何体的体积：
+
+（1）正圆台：上底是长半轴为 $a$、短半轴为 $b$ 的椭圆，下底是长半轴为 $A$、短半轴为 $B$ 的椭圆（$A>a$，$B>b$），高为 $h$；
+
+（2）椭球体 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}+\dfrac{z^2}{c^2}=1$；
+
+（3）直圆柱面 $x^2+y^2=a^2$ 和 $x^2+z^2=a^2$ 所围的几何体；
+
+（4）球面 $x^2+y^2+z^2=a^2$ 和直圆柱面 $x^2+y^2=ax$ 所围的几何体。
+
+**习题 6** @282
+
+证明以下旋转体的体积公式：
+
+（1）设 $f(x)\geqslant 0$ 是连续函数，由 $0\leqslant a\leqslant x\leqslant b$，$0\leqslant y\leqslant f(x)$ 所表示的区域绕 $y$ 轴旋转一周所成的旋转体的体积为$$V=2\pi\int_a^b xf(x)\,\mathrm{d}x;$$
+
+（2）在极坐标下，由 $0\leqslant\alpha\leqslant\theta\leqslant\beta\leqslant\pi$，$0\leqslant r\leqslant r(\theta)$ 所表示的区域绕极轴旋转一周所成的旋转体的体积为$$V=\frac{2\pi}{3}\int_\alpha^\beta r^3(\theta)\sin\theta\,\mathrm{d}\theta.$$
+
+**习题 7** @282
+
+求下列曲线绕指定轴旋转一周所围成的旋转体的体积：
+
+（1）$\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$，绕 $x$ 轴；
+
+（2）$y=\sin x$，$y=0$，$0\leqslant x\leqslant\pi$，（i）绕 $x$ 轴，　（ii）绕 $y$ 轴；
+
+（3）星形线 $\begin{cases}x=a\cos^3t,\\y=a\sin^3t,\end{cases}\quad 0\leqslant t\leqslant\pi$，绕 $x$ 轴；
+
+（4）旋轮线 $\begin{cases}x=a(t-\sin t),\\y=a(1-\cos t),\end{cases}\quad t\in[0,2\pi]$，$y=0$，（i）绕 $y$ 轴，　（ii）绕直线 $y=2a$；
+
+（5）$x^2+(y-b)^2=a^2$，$(0<a\leqslant b)$，绕 $x$ 轴；
+
+（6）心脏线 $r=a(1-\cos\theta)$，绕极轴；
+
+（7）对数螺线 $r=ae^\theta$，$0\leqslant\theta\leqslant\pi$，绕极轴；
+
+（8）$(x^2+y^2)^2=a^2(x^2-y^2)$，绕 $x$ 轴。
+
+**习题 8** @282
+
+将抛物线 $y=x(x-a)$ 与 $y=0$ 所界的区域在 $x\in[0,a]$ 和 $x\in[a,c]$ 的部分分别绕 $x$ 轴旋转一周后，所得到的旋转体的体积相等，求 $c$ 与 $a$ 的关系。
+
+**习题 9** @282
+
+记 $V(\xi)$ 是曲线 $y=\dfrac{\sqrt{x}}{1+x^2}$ 与 $y=0$ 所界的区域在 $x\in[0,\xi]$ 的部分绕 $x$ 轴旋转一周所得到的旋转体的体积，求常数 $a$ 使得满足$$V(a)=\frac{1}{2}\lim_{\xi\to+\infty}V(\xi).$$
+
+**习题 10** @282
+
+将椭圆 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$ 绕 $x$ 轴旋转一周围成一个旋转椭球体，再沿 $x$ 轴方向用半径为 $r(r<b)$ 的钻头打一个穿心的圆孔，剩下的体积恰为原来椭球体体积的一半，求 $r$ 的值。
+
+**习题 11** @282
+
+设直线 $y=ax(0<a<1)$ 与抛物线 $y=x^2$ 所围成的图形的面积为 $S_1$，且它们与直线 $x=1$ 所围成图形的面积为 $S_2$。
+
+（1）试确定 $a$ 的值，使得 $S_1+S_2$ 达到最小，并求出最小值；
+
+（2）求该最小值所对应的平面图形绕 $x$ 轴旋转一周所得旋转体的体积。
+
+**习题 12** @283
+
+设函数 $f(x)$ 在闭区间 $[0,1]$ 上连续，在开区间 $(0,1)$ 上大于零，并满足$$xf'(x)=f(x)+\frac{3a}{2}x^2\qquad(a\text{ 为常数}).$$进一步，假设曲线 $y=f(x)$ 与直线 $x=1$ 和 $y=0$ 所围的图形 $S$ 的面积为 $2$。
+
+（1）求函数 $f(x)$；
+
+（2）当 $a$ 为何值时，图形 $S$ 绕 $x$ 轴旋转一周所得旋转体的体积最小？
+
+**习题 13** @283
+
+求下列旋转曲面的面积：
+
+（1）$y^2=2px$，$0\leqslant x\leqslant a$，绕 $x$ 轴；　（2）$y=\sin x$，$0\leqslant x\leqslant\pi$，绕 $x$ 轴；
+
+（3）$\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1$，绕 $x$ 轴；　（4）星形线 $\begin{cases}x=a\cos^3t,\\y=a\sin^3t,\end{cases}\quad 0\leqslant t\leqslant\pi$，绕 $x$ 轴；
+
+（5）心脏线 $r=a(1-\cos\theta)$，绕极轴；　（6）双纽线 $r^2=a^2\cos 2\theta$，（i）绕极轴，（ii）绕射线 $\theta=\dfrac{\pi}{2}$。
+
+**习题 14** @283
+
+设曲线 $y=\sqrt{x-1}$，过原点作其切线，求由该曲线、所作切线及 $x$ 轴所围成的平面图形绕 $x$ 轴旋转一周所得旋转体的表面积。
+
+**习题 15** @283
+
+证明：由空间曲线$$\begin{cases}x=x(t),\\y=y(t),\\z=z(t),\end{cases}\quad t\in[T_1,T_2]$$垂直投影到 $Oxy$ 平面所形成的柱面的面积公式为$$S=\int_{T_1}^{T_2}z(t)\sqrt{[x'(t)]^2+[y'(t)]^2}\,\mathrm{d}t,$$这里假设 $x'(t),y'(t),z'(t)$ 在 $[T_1,T_2]$ 上连续，且 $z(t)\geqslant 0$。
+
+**习题 16** @283
+
+求下列曲线在指定点的曲率和曲率半径：
+
+（1）$xy=4$，在点 $(2,2)$；
+
+（2）$x=a(t-\sin t)$，$y=a(1-\cos t)\ (a>0)$，在 $t=\pi/2$ 对应的点。
+
+**习题 17** @283
+
+求下列曲线的曲率和曲率半径：
+
+（1）抛物线 $y^2=2px\ (p>0)$；
+
+（2）双曲线 $\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}=1$；
+
+（3）星形线 $x^{\frac{2}{3}}+y^{\frac{2}{3}}=a^{\frac{2}{3}}\ (a>0)$；
+
+（4）圆的渐开线 $x=a(\cos t+t\sin t)$，$y=a(\sin t-t\cos t)\ (a>0)$。
+
+**习题 18** @283
+
+求曲线 $y=\ln x$ 在点 $(1,0)$ 处的曲率圆方程。
+
+**习题 19** @283
+
+设曲线的极坐标方程为 $r=r(\theta)$，$\theta\in[\alpha,\beta]\ (\subset[0,2\pi])$，且 $r(\theta)$ 二阶可导。证明它在点 $(r,\theta)$ 处的曲率为$$K=\frac{|r^2+2r'^2-rr''|}{(r^2+r'^2)^{3/2}}.$$
+
 ### 7.5 微积分实际应用举例（p287–294）
 
 **注 (微元法)** @287
@@ -6311,6 +9261,72 @@ $$\boldsymbol{F}=m\boldsymbol{a}=m(\ddot{r}-r\omega^2)\boldsymbol{r}_0=-\left(\f
 $$G=\frac{4\pi^2}{M}\cdot\frac{a^3}{T^2}\approx 6.67\times 10^{-11}\ (\mathrm{N\cdot m^2/kg^2})$$
 
 称为**引力常量**。导出万有引力定律是人类历史上最成功的数学模型之一，其结论为以后一系列的观测和实验数据所证实（其中最引人津津乐道的是发现海王星），适用范围从天体运动一直延展到微观世界。
+
+#### 习题（p294–295）
+
+**习题 1** @294
+
+一根 $10\ \mathrm{m}$ 长的轴，密度分布为 $\rho(x)=(0.3x+6)\ \mathrm{kg/m}\ (0\leqslant x\leqslant 10)$，求轴的质量。
+
+**习题 2** @294
+
+已知抛物线状电缆 $y=x^2\ (-1\leqslant x\leqslant 1)$ 上的任一点处的电荷线密度与该点到 $y$ 轴的距离成正比，在 $(1,1)$ 处的密度为 $q$，求此电缆上的总电量。
+
+**习题 3** @294
+
+水库的闸门是一个等腰梯形，上底 $36\ \mathrm{m}$，下底 $24\ \mathrm{m}$，高 $16\ \mathrm{m}$，水平面距上底 $4\ \mathrm{m}$，求闸门所受到的水压力。（水的密度为 $1\,000\ \mathrm{kg/m^3}$。）
+
+**习题 4** @294
+
+一个弹簧满足圆柱螺线方程$$\begin{cases}x=a\cos t,\\y=a\sin t,\\z=bt,\end{cases}\quad t>0\ (a>0,\ b>0),$$其上任一点处的密度与它到 $Oxy$ 平面的距离成正比，试求其第一圈的质量。
+
+**习题 5** @295
+
+一个圆柱形水池半径 $10\ \mathrm{m}$，高 $30\ \mathrm{m}$，内有一半的水，求将水全部抽干所要做的功。
+
+**习题 6** @295
+
+半径为 $r$ 的球恰好没于水中，球的密度为 $\rho$，现在要将球吊出水面，最少要做多少功？
+
+**习题 7** @295
+
+半径为 $r$ 密度为 $\rho$ 的球壳以角速度 $\omega$ 绕其直径旋转，求它的动能。
+
+**习题 8** @295
+
+使某个自由长度为 $1\ \mathrm{m}$ 的弹簧伸长 $2.5\ \mathrm{cm}$ 需费力 $15\ \mathrm{N}$，现将它从 $1.1\ \mathrm{m}$ 拉至 $1.2\ \mathrm{m}$，问要做多少功？
+
+**习题 9** @295
+
+一物体的运动规律为 $s=3t^3-t$，介质的阻力与速度的平方成正比，求物体从 $t=1$ 运动至 $t=T$ 时阻力所做的功。
+
+**习题 10** @295
+
+半径为 $1\ \mathrm{m}$，高为 $2\ \mathrm{m}$ 的直立的圆柱形容器中充满水，拔去底部的一个半径为 $1\ \mathrm{cm}$ 的塞子后水开始流出，试导出水面高度 $h$ 随时间变化的规律，并求水完全流空所需的时间。（水面比出水口高 $h$ 时，出水速度 $v=0.6\times\sqrt{2gh}$。）
+
+**习题 11** @295
+
+上题中的圆柱形容器改为何种旋转体容器，才能使水流出时水面高度下降是匀速的。
+
+**习题 12** @295
+
+镭的衰变速度与它的现存量成正比，设 $t_0$ 时有镭 $Q_0\ \mathrm{g}$，经 $1\,600$ 年它的量减少了一半，求镭的衰变规律。
+
+**习题 13** @295
+
+将 A 物质转化为 B 物质的化学反应速度与 B 物质的浓度成反比，设反应开始时有 B 物质 $20\%$，半小时后有 B 物质 $25\%$，求 B 物质的浓度的变化规律。
+
+**习题 14** @295
+
+设 $[t,t+\mathrm{d}t]$ 中的人口增长量与 $p_{\max}-p(t)$ 成正比，试导出相应的人口模型，画出人口变化情况的草图并与 Malthus 和 Verhulst 人口模型加以比较。
+
+**习题 15** @295
+
+核反应堆中，$t$ 时刻中子的增加速度与当时的数量 $N(t)$ 成正比。设 $N(0)=N_0$，证明$$\left[\frac{N(t_2)}{N_0}\right]^{t_1}=\left[\frac{N(t_1)}{N_0}\right]^{t_2}.$$
+
+**习题 16** @295
+
+一个 $1\,000\ \mathrm{m^3}$ 的大厅中的空气内含有 $a\%$ 的废气，现以 $1\ \mathrm{m^3/min}$ 注入新鲜空气，混合后的空气又以同样的速率排出，求 $t$ 时刻空气内含有的废气浓度，并求使废气浓度减少一半所需的时间。
 
 ### 7.6 定积分的数值计算（p295–304）
 
@@ -6580,4 +9596,54 @@ $$\int_a^b f(t)\,\mathrm{d}t=\frac{b-a}{2}\int_{-1}^1f\left(\frac{b-a}{2}x+\frac
 
 除了 Gauss–Legendre 求积公式之外，还可以构造其他类型 Gauss 型求积公式，它们的基础都是定义在某个区间上的某一类特定的正交多项式，这里就不一一介绍了。
 
-> 本书尚未录入习题。
+#### 习题（p303–304）
+
+**习题 1** @303
+
+（原书栏目为“计算实习题”，要求在教师指导下编制程序上机计算。）
+
+利用 $\pi=4\int_0^1\dfrac{\mathrm{d}x}{1+x^2}$，
+
+（1）用普通的梯形公式、Simpson 公式和 Cotes 公式，计算圆周率 $\pi$ 的近似值并与精确值加以比较；
+
+（2）将区间 $[0,1]$ 分成 $4,8$ 等份，用复化梯形公式和复化 Simpson 公式计算 $\pi$ 的近似值，并与精确值加以比较；
+
+（3）用 Romberg 方法计算 $\pi$ 的近似值，使它的精度达到 $O(10^{-8})$；
+
+（4）分别用 $n=1,2,4$ 的 Gauss-Legendre 公式计算 $\pi$ 的近似值，并与前面的计算结果加以比较。
+
+**习题 2** @303
+
+设河面宽 $20\ \mathrm{m}$，从河的一岸向另一岸每隔 $2\ \mathrm{m}$ 测得的水深（单位：$\mathrm{m}$）如下：
+
+| $x$ | 0 | 2 | 4 | 6 | 8 | 10 | 12 | 14 | 16 | 18 | 20 ||---|---|---|---|---|---|---|---|---|---|---|---|| $y$ | 0 | 0.6 | 1.4 | 2.0 | 2.3 | 2.1 | 2.5 | 1.9 | 1.2 | 0.7 | 0 |
+
+求河流的横断面积（如图 7.6.3）。
+
+**习题 3** @303
+
+分别用复化梯形公式和复化 Simpson 公式计算下列积分：
+
+（1）$\int_0^1 e^{x^2}\,\mathrm{d}x$，$m=16$；
+
+（2）$\int_0^\pi\dfrac{1-\cos x}{x}\,\mathrm{d}x$，$m=8$（可看成连续函数 $f(x)=\begin{cases}\dfrac{1-\cos x}{x},&x\neq 0,\\[8pt]0,&x=0\end{cases}$ 的积分）；
+
+（3）$\int_0^1\sqrt{1-x^3}\,\mathrm{d}x$，$m=8$；
+
+（4）$\int_0^2\dfrac{e^{-x}}{1+x^2}\,\mathrm{d}x$，$m=8$。
+
+**习题 4** @304
+
+用 Romberg 方法计算 $\int_1^2\dfrac{\mathrm{d}x}{x}$，精确到小数点后第 8 位。
+
+**习题 5** @304
+
+用一般的积分区间上的 Gauss-Legendre 公式（取 $n=4$）计算积分 $I(N)=\int_0^N e^{-x^2}\,\mathrm{d}x$：
+
+（1）$N=1$；　（2）$N=3$；　（3）$N=10$。
+
+并与$$\lim_{N\to\infty}\int_0^N e^{-x^2}\,\mathrm{d}x=\frac{\sqrt{\pi}}{2}$$的结果相比较。
+
+**习题 6** @304
+
+按第 3 题（2）同样的观点，计算 $f(x)=\int_0^x\dfrac{\sin t}{t}\,\mathrm{d}t\quad\left(x=\dfrac{k\pi}{3},\ k=1,2,\cdots,6\right)$，并作出 $f(x)$ 的大致图形。

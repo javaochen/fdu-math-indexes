@@ -150,6 +150,110 @@ $x=a$ 为奇点和 $x=c\in(a,b)$ 为奇点的情况可以类似定义。当 $x=c
 
 1. 取一个足够大的数 $A$，用 $\int_a^A f(x)\,\mathrm{d}x$ 作为 $\int_a^{+\infty}f(x)\,\mathrm{d}x$ 的近似值，这时问题已化成了常义积分；2. 将 $\int_a^{+\infty}f(x)\,\mathrm{d}x$ 通过变换 $x=\dfrac{1}{t}$ 化成无界函数在有限区间上的反常积分，再用上述针对无界函数的方法；3. 直接使用 $[0,+\infty)$ 或 $(-\infty,+\infty)$ 上的 Gauss 型求积公式（这部分内容已超出本书的范围）。
 
+#### 习题（p314–315）
+
+**习题 1** @314
+
+物理学中称电场力将单位正电荷从电场中某点移至无穷远处所做的功为电场在该点处的电位。一个带电量 $+q$ 的点电荷产生的电场对距离 $r$ 处的单位正电荷的电场力为 $F=k\dfrac{q}{r^2}$（$k$ 为常数），求距电场中心 $x$ 处的电位（如图 8.1.4）。
+
+**习题 2** @314
+
+证明：若 $\int_a^{+\infty}f(x)\,\mathrm{d}x$ 和 $\int_a^{+\infty}g(x)\,\mathrm{d}x$ 收敛，$k_1$ 和 $k_2$ 为常数，则 $\int_a^{+\infty}[k_1f(x)+k_2g(x)]\,\mathrm{d}x$ 也收敛，且
+
+$$\int_a^{+\infty}[k_1f(x)+k_2g(x)]\,\mathrm{d}x=k_1\int_a^{+\infty}f(x)\,\mathrm{d}x+k_2\int_a^{+\infty}g(x)\,\mathrm{d}x.$$
+
+**习题 3** @314
+
+计算下列无穷区间上的反常积分（发散也是一种计算结果）：
+
+(1) $\int_0^{+\infty}\mathrm{e}^{-2x}\sin 5x\,\mathrm{d}x$；
+
+(2) $\int_0^{+\infty}\mathrm{e}^{-3x}\cos 2x\,\mathrm{d}x$；
+
+(3) $\int_{-\infty}^{+\infty}\dfrac{1}{x^2+x+1}\,\mathrm{d}x$；
+
+(4) $\int_0^{+\infty}\dfrac{1}{(x^2+a^2)(x^2+b^2)}\,\mathrm{d}x\ (a>0,\ b>0)$；
+
+(5) $\int_0^{+\infty}x\mathrm{e}^{ax^2}\,\mathrm{d}x\ (a\in\mathbf{R})$；
+
+(6) $\int_2^{+\infty}\dfrac{1}{x\ln^p x}\,\mathrm{d}x\ (p\in\mathbf{R})$；
+
+(7) $\int_{-\infty}^{+\infty}\dfrac{1}{(x^2+1)^{3/2}}\,\mathrm{d}x$；
+
+(8) $\int_0^{+\infty}\dfrac{1}{(\mathrm{e}^x+\mathrm{e}^{-x})^2}\,\mathrm{d}x$；
+
+(9) $\int_0^{+\infty}\dfrac{1}{x^4+1}\,\mathrm{d}x$；
+
+(10) $\int_0^{+\infty}\dfrac{\ln x}{1+x^2}\,\mathrm{d}x$。
+
+**习题 4** @314
+
+计算下列无界函数的反常积分（发散也是一种计算结果）：
+
+(1) $\int_0^1\dfrac{x}{\sqrt{1-x^2}}\,\mathrm{d}x$；
+
+(2) $\int_1^{\mathrm{e}}\dfrac{1}{x\sqrt{1-\ln^2 x}}\,\mathrm{d}x$；
+
+(3) $\int_1^2\dfrac{x}{\sqrt{x-1}}\,\mathrm{d}x$；
+
+(4) $\int_0^1\dfrac{1}{(2-x)\sqrt{1-x}}\,\mathrm{d}x$；
+
+(5) $\int_{-1}^1\dfrac{1}{x^3}\sin\dfrac{1}{x^2}\,\mathrm{d}x$；
+
+(6) $\int_0^{\frac{\pi}{2}}\dfrac{1}{\sqrt{\tan x}}\,\mathrm{d}x$。
+
+**习题 5** @314
+
+求极限 $\lim\limits_{n\to\infty}\dfrac{\sqrt[n]{n!}}{n}$。
+
+**习题 6** @314
+
+计算下列反常积分：
+
+(1) $\int_0^{\frac{\pi}{2}}\ln\cos x\,\mathrm{d}x$；
+
+(2) $\int_0^{\pi}x\ln\sin x\,\mathrm{d}x$；
+
+(3) $\int_0^{\frac{\pi}{2}}x\cot x\,\mathrm{d}x$；
+
+(4) $\int_0^1\dfrac{\arcsin x}{x}\,\mathrm{d}x$；
+
+(5) $\int_0^1\dfrac{\ln x}{\sqrt{1-x^2}}\,\mathrm{d}x$。
+
+**习题 7** @315
+
+求下列反常积分的 Cauchy 主值：
+
+(1) $(\mathrm{cpv})\int_{-\infty}^{+\infty}\dfrac{1+x}{1+x^2}\,\mathrm{d}x$；
+
+(2) $(\mathrm{cpv})\int_1^4\dfrac{1}{x-2}\,\mathrm{d}x$；
+
+(3) $(\mathrm{cpv})\int_{1/2}^{2}\dfrac{1}{x\ln x}\,\mathrm{d}x$。
+
+**习题 8** @315
+
+说明一个无界函数的反常积分可以化为无穷区间的反常积分。
+
+**习题 9** @315
+
+(1) 以 $\int_a^{+\infty}f(x)\,\mathrm{d}x$ 为例，叙述并证明反常积分的保序性和区间可加性；
+
+(2) 举例说明，对于反常积分不再成立乘积可积性。
+
+**习题 10** @315
+
+证明：当 $a>0$ 时，只要下式两边的反常积分有意义，就有
+
+$$\int_0^{+\infty}f\left(\frac{x}{a}+\frac{a}{x}\right)\frac{\ln x}{x}\,\mathrm{d}x=\ln a\int_0^{+\infty}f\left(\frac{x}{a}+\frac{a}{x}\right)\frac{1}{x}\,\mathrm{d}x.$$
+
+**习题 11** @315
+
+设 $\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛，且 $\lim\limits_{x\to+\infty}f(x)=A$。证明 $A=0$。
+
+**习题 12** @315
+
+设 $f(x)$ 在 $[a,+\infty)$ 上可导，且 $\int_a^{+\infty}f(x)\,\mathrm{d}x$ 与 $\int_a^{+\infty}f'(x)\,\mathrm{d}x$ 都收敛，证明 $\lim\limits_{x\to+\infty}f(x)=0$。
+
 ### 8.2 反常积分的收敛判别法（p315–326）
 
 **定理 8.2.1 (Cauchy 收敛原理)** @316
@@ -416,6 +520,150 @@ $$\begin{cases}p<2,\\ 2(1-p)<q<1-p,\end{cases}$$
 
 设 $\displaystyle\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛，且 $f(x)$ 在 $[a,+\infty)$ 一致连续，则 $\lim\limits_{x\to+\infty}f(x)=0$。
 
+#### 习题（p324–326）
+
+**习题 1** @324
+
+(1) 证明比较判别法（定理 8.2.2）；
+
+(2) 举例说明，当比较判别法的极限形式中 $l=0$ 或 $+\infty$ 时，$\int_a^{+\infty}\varphi(x)\,\mathrm{d}x$ 和 $\int_a^{+\infty}f(x)\,\mathrm{d}x$ 的敛散性可以产生各种不同的情况。
+
+**习题 2** @324
+
+证明 Cauchy 判别法及其极限形式（定理 8.2.3 及其推论）。
+
+**习题 3** @324
+
+讨论下列非负函数反常积分的敛散性：
+
+(1) $\int_1^{+\infty}\dfrac{1}{\sqrt{x^3-\mathrm{e}^{-2x}+\ln x+1}}\,\mathrm{d}x$；
+
+(2) $\int_1^{+\infty}\dfrac{\arctan x}{1+x^3}\,\mathrm{d}x$；
+
+(3) $\int_0^{+\infty}\dfrac{1}{1+x|\sin x|}\,\mathrm{d}x$；
+
+(4) $\int_1^{+\infty}\dfrac{x^q}{1+x^p}\,\mathrm{d}x\ (p,q\in\mathbf{R}^+)$。
+
+**习题 4** @324
+
+证明：对非负函数 $f(x)$，$(\mathrm{cpv})\int_{-\infty}^{+\infty}f(x)\,\mathrm{d}x$ 收敛与 $\int_{-\infty}^{+\infty}f(x)\,\mathrm{d}x$ 收敛是等价的。
+
+**习题 5** @324
+
+讨论下列反常积分的敛散性（包括绝对收敛、条件收敛和发散，下同）：
+
+(1) $\int_2^{+\infty}\dfrac{\ln\ln x}{\ln x}\sin x\,\mathrm{d}x$；
+
+(2) $\int_1^{+\infty}\dfrac{\sin x}{x^p}\,\mathrm{d}x\ (p\in\mathbf{R}^+)$；
+
+(3) $\int_1^{+\infty}\dfrac{\sin x\arctan x}{x^p}\,\mathrm{d}x\ (p\in\mathbf{R}^+)$；
+
+(4) $\int_0^{+\infty}\sin(x^2)\,\mathrm{d}x$；
+
+(5) $\int_a^{+\infty}\dfrac{p_m(x)}{q_n(x)}\sin x\,\mathrm{d}x$（$p_m(x)$ 和 $q_n(x)$ 分别是 $m$ 和 $n$ 次多项式，$q_n(x)$ 在 $x\in[a,+\infty)$ 范围无零点）。
+
+**习题 6** @324
+
+设 $f(x)$ 在 $[a,b]$ 只有一个奇点 $x=b$，证明定理 8.2.3′ 和定理 8.2.5′。
+
+**习题 7** @324
+
+讨论下列非负函数反常积分的敛散性：
+
+(1) $\int_0^1\dfrac{1}{\sqrt[3]{x^2(1-x)}}\,\mathrm{d}x$；
+
+(2) $\int_0^1\dfrac{\ln x}{x^2-1}\,\mathrm{d}x$；
+
+(3) $\int_0^{\frac{\pi}{2}}\dfrac{1}{\cos^2 x\sin^2 x}\,\mathrm{d}x$；
+
+(4) $\int_0^{\frac{\pi}{2}}\dfrac{1-\cos x}{x^p}\,\mathrm{d}x$；
+
+(5) $\int_0^1|\ln x|^p\,\mathrm{d}x$；
+
+(6) $\int_0^1x^{p-1}(1-x)^{q-1}\,\mathrm{d}x$；
+
+(7) $\int_0^1x^{p-1}(1-x)^{q-1}|\ln x|\,\mathrm{d}x$。
+
+**习题 8** @325
+
+讨论下列反常积分的敛散性：
+
+(1) $\int_0^1\dfrac{x^{p-1}-x^{q-1}}{\ln x}\,\mathrm{d}x\ (p,q\in\mathbf{R}^+)$；
+
+(2) $\int_0^{+\infty}\dfrac{1}{\sqrt[3]{x(x-1)^2(x-2)}}\,\mathrm{d}x$；
+
+(3) $\int_0^{+\infty}\dfrac{\ln(1+x)}{x^p}\,\mathrm{d}x$；
+
+(4) $\int_0^{+\infty}\dfrac{\arctan x}{x^p}\,\mathrm{d}x$；
+
+(5) $\int_0^{\frac{\pi}{2}}\dfrac{\sqrt{\tan x}}{x^p}\,\mathrm{d}x$；
+
+(6) $\int_0^{+\infty}x^{p-1}\mathrm{e}^{-x}\,\mathrm{d}x$；
+
+(7) $\int_0^{+\infty}\dfrac{1}{x^p+x^q}\,\mathrm{d}x$；
+
+(8) $\int_2^{+\infty}\dfrac{1}{x^p\ln^q x}\,\mathrm{d}x$。
+
+**习题 9** @325
+
+讨论下列反常积分的敛散性：
+
+(1) $\int_0^{+\infty}\dfrac{x^{p-1}}{1+x^2}\,\mathrm{d}x$；
+
+(2) $\int_1^{+\infty}\dfrac{x^q\sin x}{1+x^p}\,\mathrm{d}x\ (p\geqslant 0)$；
+
+(3) $\int_0^{+\infty}\dfrac{\mathrm{e}^{\sin x}\cos x}{x^p}\,\mathrm{d}x$；
+
+(4) $\int_0^{+\infty}\dfrac{\mathrm{e}^{\sin x}\sin 2x}{x^p}\,\mathrm{d}x$；
+
+(5) $\int_0^1\dfrac{1}{x^p}\cos\dfrac{1}{x^2}\,\mathrm{d}x$；
+
+(6) $\int_1^{+\infty}\dfrac{\sin\left(x+\dfrac{1}{x}\right)}{x^p}\,\mathrm{d}x\ (p>0)$。
+
+**习题 10** @325
+
+证明反常积分
+
+$$\int_0^{+\infty}x\sin x^4\sin x\,\mathrm{d}x$$
+
+收敛。
+
+**习题 11** @325
+
+设 $\int_a^{+\infty}f(x)\,\mathrm{d}x$ 绝对收敛，且 $\lim\limits_{x\to+\infty}f(x)=0$，证明 $\int_a^{+\infty}f^2(x)\,\mathrm{d}x$ 收敛。
+
+**习题 12** @325
+
+设 $f(x)$ 单调，且当 $x\to0^+$ 时 $f(x)\to+\infty$，证明：$\int_0^1f(x)\,\mathrm{d}x$ 收敛的必要条件是 $\lim\limits_{x\to0^+}xf(x)=0$。
+
+**习题 13** @325
+
+设 $\int_a^{+\infty}f(x)\,\mathrm{d}x$ 收敛，且 $xf(x)$ 在 $[a,+\infty)$ 上单调减少，证明：
+
+$$\lim_{x\to+\infty}x(\ln x)f(x)=0.$$
+
+**习题 14** @325
+
+设 $f(x)$ 单调下降，且 $\lim\limits_{x\to+\infty}f(x)=0$，证明：若 $f'(x)$ 在 $[0,+\infty)$ 上连续，则反常积分 $\int_0^{+\infty}f'(x)\sin^2 x\,\mathrm{d}x$ 收敛。
+
+**习题 15** @325
+
+若 $\int_a^{+\infty}f^2(x)\,\mathrm{d}x$ 收敛，则称 $f(x)$ 在 $[a,+\infty)$ 上**平方可积**。（类似可定义无界函数在 $[a,b]$ 上平方可积的概念。）
+
+(1) 对两种反常积分分别探讨 $f(x)$ 平方可积与 $f(x)$ 的反常积分收敛之间的关系；
+
+(2) 对无穷区间的反常积分，举例说明，平方可积与绝对收敛互不包含；
+
+(3) 对无界函数的反常积分，证明：平方可积必定绝对收敛，但逆命题不成立。
+
+**习题 16** @325
+
+证明反常积分
+
+$$\int_1^{+\infty}\frac{\sin x}{x^p+\sin x}\,\mathrm{d}x$$
+
+当 $p\leqslant\dfrac{1}{2}$ 时发散，当 $\dfrac{1}{2}<p\leqslant1$ 时条件收敛，当 $p>1$ 时绝对收敛。
+
 ## 第9章 数项级数
 
 ### 9.1 数项级数的收敛性（p1–6）
@@ -614,6 +862,56 @@ $$S_n=\arctan 1-\arctan\frac{1}{2n+1},$$
 
 $$\sum_{n=1}^{\infty}\arctan\frac{1}{2n^2}=\frac{\pi}{4}.$$
 
+#### 习题（p7）
+
+**习题 1** @7
+
+讨论下列级数的敛散性。收敛的话，试求出级数之和。
+
+(1) $\sum\limits_{n=1}^{\infty}\dfrac{1}{n(n+2)}$；
+
+(2) $\sum\limits_{n=1}^{\infty}\dfrac{2n}{3n+1}$；
+
+(3) $\sum\limits_{n=1}^{\infty}\dfrac{1}{n(n+1)(n+2)}$；
+
+(4) $\sum\limits_{n=1}^{\infty}\left(\dfrac{1}{2^n}-\dfrac{1}{3^n}\right)$；
+
+(5) $\sum\limits_{n=1}^{\infty}\dfrac{1}{\sqrt[n]{n}}$；
+
+(6) $\sum\limits_{n=1}^{\infty}\dfrac{5^{n-1}+4^{n+1}}{3^{2n}}$；
+
+(7) $\sum\limits_{n=1}^{\infty}\left(\sqrt{n+2}-2\sqrt{n+1}+\sqrt{n}\right)$；
+
+(8) $\sum\limits_{n=1}^{\infty}\dfrac{2n-1}{3^n}$；
+
+(9) $\sum\limits_{n=0}^{\infty}q^n\cos n\theta\quad(|q|<1)$。
+
+**习题 2** @7
+
+确定 $x$ 的范围，使下列级数收敛：
+
+(1) $\sum\limits_{n=1}^{\infty}\dfrac{1}{(1-x)^n}$；
+
+(2) $\sum\limits_{n=1}^{\infty}e^{nx}$；
+
+(3) $\sum\limits_{n=1}^{\infty}x^n(1-x)$。
+
+**习题 3** @7
+
+求八进制无限循环小数 $(36.0736073607\cdots)_8$ 的值。
+
+**习题 4** @7
+
+设 $x_n=\int_0^1 x^2(1-x)^n\,\mathrm{d}x$，求级数 $\sum\limits_{n=1}^{\infty}x_n$ 的和。
+
+**习题 5** @7
+
+设抛物线 $l_n:y=nx^2+\dfrac{1}{n}$ 和 $l_n':y=(n+1)x^2+\dfrac{1}{n+1}$ 的交点的横坐标的绝对值为 $a_n\ (n=1,2,\cdots)$。
+
+(1) 求抛物线 $l_n$ 与 $l_n'$ 所围成的平面图形的面积 $S_n$；
+
+(2) 求级数 $\sum\limits_{n=1}^{\infty}\dfrac{S_n}{a_n}$ 的和。
+
 ### 9.2 上极限与下极限（p7–13）
 
 **定义 9.2.1 (极限点)** @7
@@ -805,6 +1103,46 @@ $H^*$ 是 $\{x_n\}$ 的最大极限点，$h^*$ 是 $\{x_n\}$ 的最小极限点�
 $$\varlimsup_{n\to\infty}x_n=H^*,\qquad \varliminf_{n\to\infty}x_n=h^*,$$
 
 且 $\{x_n\}$ 的任意一个极限点 $\xi$（有限数或 $+\infty$ 或 $-\infty$）都满足 $h^*\leqslant\xi\leqslant H^*$。
+
+#### 习题（p14）
+
+**习题 1** @14
+
+求下列数列的上极限与下极限：
+
+(1) $x_n=\dfrac{n}{2n+1}\cos\dfrac{2n\pi}{5}$；
+
+(2) $x_n=n+(-1)^n\dfrac{n^2+1}{n}$；
+
+(3) $x_n=-n\left[(-1)^n+2\right]$；
+
+(4) $x_n=\sqrt[n]{n+1}+\sin\dfrac{n\pi}{3}$；
+
+(5) $x_n=2(-1)^{n+1}+3(-1)^{\frac{n(n-1)}{2}}$。
+
+**习题 2** @14
+
+证明：
+
+(1) $\varlimsup\limits_{n\to\infty}(-x_n)=-\varliminf\limits_{n\to\infty}x_n$；
+
+(2) $\varlimsup\limits_{n\to\infty}(cx_n)=\begin{cases}c\varlimsup\limits_{n\to\infty}x_n,&c>0,\\[2mm]c\varliminf\limits_{n\to\infty}x_n,&c<0.\end{cases}$
+
+**习题 3** @14
+
+证明：
+
+(1) $\varlimsup\limits_{n\to\infty}(x_n+y_n)\geqslant\varlimsup\limits_{n\to\infty}x_n+\varlimsup\limits_{n\to\infty}y_n$；
+
+(2) 若 $\lim\limits_{n\to\infty}x_n$ 存在，则 $\varlimsup\limits_{n\to\infty}(x_n+y_n)=\lim\limits_{n\to\infty}x_n+\varlimsup\limits_{n\to\infty}y_n$。
+
+**习题 4** @14
+
+证明：若 $\lim\limits_{n\to\infty}x_n=x$，$-\infty<x<0$，则
+
+$$\varlimsup_{n\to\infty}(x_ny_n)=\lim_{n\to\infty}x_n\cdot\varlimsup_{n\to\infty}y_n;$$
+
+$$\varliminf_{n\to\infty}(x_ny_n)=\lim_{n\to\infty}x_n\cdot\varliminf_{n\to\infty}y_n.$$
 
 ### 9.3 正项级数（p14–25）
 
@@ -1073,6 +1411,126 @@ $$u_n'\leqslant\int_0^{\frac{\pi}{2}}\frac{\mathrm{d}t}{1+4\pi^2n^4t^2}=\frac{1}
 $$u_n=\int_{a_n}^{a_{n+1}}f(x)\,\mathrm{d}x=0,$$
 
 也就是说，$\sum\limits_{n=1}^{\infty}u_n$ 却是收敛的。
+
+#### 习题（p24–25）
+
+**习题 1** @24
+
+讨论下列正项级数的敛散性：
+
+(1) $\sum\limits_{n=1}^{\infty}\dfrac{4n}{n^4+1}$；
+
+(2) $\sum\limits_{n=1}^{\infty}\dfrac{2n^2}{n^3+3n}$；
+
+(3) $\sum\limits_{n=2}^{\infty}\dfrac{1}{\ln^2 n}$；
+
+(4) $\sum\limits_{n=1}^{\infty}\dfrac{1}{n!}$；
+
+(5) $\sum\limits_{n=1}^{\infty}\dfrac{\ln n}{n^2}$；
+
+(6) $\sum\limits_{n=1}^{\infty}\left(1-\cos\dfrac{\pi}{n}\right)$；
+
+(7) $\sum\limits_{n=1}^{\infty}\dfrac{1}{\sqrt[n]{n}}$；
+
+(8) $\sum\limits_{n=1}^{\infty}\left(\sqrt[n]{n}-1\right)$；
+
+(9) $\sum\limits_{n=1}^{\infty}\dfrac{n^2}{2^n}$；
+
+(10) $\sum\limits_{n=1}^{\infty}\dfrac{\left[2+(-1)^n\right]^n}{2^{2n+1}}$；
+
+(11) $\sum\limits_{n=1}^{\infty}n^2e^{-n}$；
+
+(12) $\sum\limits_{n=1}^{\infty}\dfrac{2^n n!}{n^n}$；
+
+(13) $\sum\limits_{n=1}^{\infty}\left(\sqrt{n^2+1}-\sqrt{n^2-1}\right)$；
+
+(14) $\sum\limits_{n=1}^{\infty}\left(2n-\sqrt{n^2+1}-\sqrt{n^2-1}\right)$；
+
+(15) $\sum\limits_{n=2}^{\infty}\ln\dfrac{n^2+1}{n^2-1}$；
+
+(16) $\sum\limits_{n=3}^{\infty}\left(-\ln\cos\dfrac{\pi}{n}\right)$；
+
+(17) $\sum\limits_{n=1}^{\infty}\dfrac{a^n}{(1+a)(1+a^2)\cdots(1+a^n)}\quad(a>0)$。
+
+**习题 2** @24
+
+利用级数收敛的必要条件，证明：
+
+(1) $\lim\limits_{n\to\infty}\dfrac{n^n}{(n!)^2}=0$；
+
+(2) $\lim\limits_{n\to\infty}\dfrac{(2n)!}{2^{n(n+1)}}=0$。
+
+**习题 3** @24
+
+利用 Raabe 判别法判断下列级数的敛散性：
+
+(1) $\sum\limits_{n=1}^{\infty}\dfrac{n!}{(a+1)(a+2)\cdots(a+n)}\quad(a>0)$；
+
+(2) $\sum\limits_{n=1}^{\infty}\dfrac{1}{3^{\ln n}}$；
+
+(3) $\sum\limits_{n=1}^{\infty}\left(\dfrac{1}{2}\right)^{1+\frac{1}{2}+\cdots+\frac{1}{n}}$。
+
+**习题 4** @25
+
+讨论下列级数的敛散性：
+
+(1) $\sum\limits_{n=1}^{\infty}\int_0^{\frac{1}{n}}\sqrt{\dfrac{x}{1-x}}\,\mathrm{d}x$；
+
+(2) $\sum\limits_{n=1}^{\infty}\int_{n\pi}^{2n\pi}\dfrac{\sin^2 x}{x^2}\,\mathrm{d}x$；
+
+(3) $\sum\limits_{n=1}^{\infty}\int_0^{\frac{1}{n}}\ln(1+x)\,\mathrm{d}x$。
+
+**习题 5** @25
+
+利用不等式 $\dfrac{1}{n+1}<\int_n^{n+1}\dfrac{\mathrm{d}x}{x}<\dfrac{1}{n}$，证明：
+
+$$\lim_{n\to\infty}\left(1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}-\ln n\right)$$
+
+存在。（此极限为 Euler 常数 $\gamma$ —— 见例 2.4.8。）
+
+**习题 6** @25
+
+设 $\sum\limits_{n=1}^{\infty}x_n$ 与 $\sum\limits_{n=1}^{\infty}y_n$ 是两个正项级数，若 $\lim\limits_{n\to\infty}\dfrac{x_n}{y_n}=0$ 或 $+\infty$，请问这两个级数的敛散性关系如何？
+
+**习题 7** @25
+
+设正项级数 $\sum\limits_{n=1}^{\infty}x_n$ 收敛，则 $\sum\limits_{n=1}^{\infty}x_n^2$ 也收敛；反之如何？
+
+**习题 8** @25
+
+设正项级数 $\sum\limits_{n=1}^{\infty}x_n$ 收敛，则当 $p>\dfrac{1}{2}$ 时，级数 $\sum\limits_{n=1}^{\infty}\dfrac{\sqrt{x_n}}{n^p}$ 收敛；又问当 $0<p\leqslant\dfrac{1}{2}$ 时，结论是否仍然成立？
+
+**习题 9** @25
+
+设 $f(x)$ 在 $[1,+\infty)$ 上单调增加，且 $\lim\limits_{x\to+\infty}f(x)=A$，
+
+(1) 证明级数 $\sum\limits_{n=1}^{\infty}\left[f(n+1)-f(n)\right]$ 收敛，并求其和；
+
+(2) 进一步设 $f(x)$ 在 $[1,+\infty)$ 上二阶可导，且 $f''(x)<0$，证明级数 $\sum\limits_{n=1}^{\infty}f'(n)$ 收敛。
+
+**习题 10** @25
+
+设 $a_n=\int_0^{\frac{\pi}{4}}\tan^n x\,\mathrm{d}x$，$n=1,2,\cdots$，
+
+(1) 求级数 $\sum\limits_{n=1}^{\infty}\dfrac{a_n+a_{n+2}}{n}$ 的和；
+
+(2) 设 $\lambda>0$，证明级数 $\sum\limits_{n=1}^{\infty}\dfrac{a_n}{n^\lambda}$ 收敛。
+
+**习题 11** @25
+
+设 $x_n>0$，$\dfrac{x_{n+1}}{x_n}>1-\dfrac{1}{n}\ (n=1,2,\cdots)$，证明 $\sum\limits_{n=1}^{\infty}x_n$ 发散。
+
+**习题 12** @25
+
+设正项级数 $\sum\limits_{n=1}^{\infty}x_n$ 发散（$x_n>0$，$n=1,2,\cdots$），证明：必存在发散的正项级数 $\sum\limits_{n=1}^{\infty}y_n$，使得 $\lim\limits_{n\to\infty}\dfrac{y_n}{x_n}=0$。
+
+**习题 13** @25
+
+设正项级数 $\sum\limits_{n=1}^{\infty}x_n$ 发散，$S_n=\sum\limits_{k=1}^{n}x_k$，证明级数 $\sum\limits_{n=1}^{\infty}\dfrac{x_n}{S_n^2}$ 收敛。
+
+**习题 14** @25
+
+设 $\{a_n\}$ 为 Fibonacci 数列（见例 2.4.4），证明级数 $\sum\limits_{n=1}^{\infty}\dfrac{a_n}{2^n}$ 收敛，并求其和。
 
 ### 9.4 任意项级数（p26–39）
 
@@ -1377,6 +1835,112 @@ $$\left(\sum_{n=0}^{\infty}\frac{x^n}{n!}\right)\left(\sum_{n=0}^{\infty}\frac{y
 $$f(x+y)=f(x)\cdot f(y).$$
 
 在第 10 章，我们将知道函数 $f(x)$ 就是指数函数 $\mathrm{e}^x$，因而上式就是熟知的指数函数的加法定理。
+
+#### 习题（p38–39）
+
+**习题 1** @38
+
+讨论下列级数的敛散性（包括条件收敛与绝对收敛）：
+
+(1) $1-\dfrac{1}{2!}+\dfrac{1}{3}-\dfrac{1}{4!}+\dfrac{1}{5}+\cdots$；
+
+(2) $\sum\limits_{n=1}^{\infty}\dfrac{(-1)^{n+1}}{n+x}\quad(x\neq-n)$；
+
+(3) $\sum\limits_{n=1}^{\infty}(-1)^{n+1}\sin\dfrac{x}{n}$；
+
+(4) $\sum\limits_{n=1}^{\infty}\dfrac{(-1)^{n+1}}{\sqrt[n]{n}}$；
+
+(5) $\sum\limits_{n=2}^{\infty}(-1)^n\dfrac{\ln^2 n}{n}$；
+
+(6) $\sum\limits_{n=1}^{\infty}\dfrac{1}{\sqrt{n}}\cos\dfrac{n\pi}{3}$；
+
+(7) $\sum\limits_{n=1}^{\infty}(-1)^{n+1}\dfrac{4^n\sin^{2n}x}{n}$；
+
+(8) $\sum\limits_{n=1}^{\infty}\dfrac{\sin(n+1)x\cos(n-1)x}{n^p}$；
+
+(9) $\sum\limits_{n=1}^{\infty}(-1)^{n+1}\dfrac{n^2}{2^n}x^n$；
+
+(10) $\sum\limits_{n=1}^{\infty}(-1)^{n+1}\dfrac{\ln\left(2+\dfrac{1}{n}\right)}{\sqrt{(3n-2)(3n+2)}}$；
+
+(11) $\sum\limits_{n=2}^{\infty}\dfrac{x^n}{n^p\ln^q n}$；
+
+(12) $\sum\limits_{n=1}^{\infty}\dfrac{(-1)^{n+1}}{n}\cdot\dfrac{a}{1+a^n}\quad(a>0)$。
+
+**习题 2** @38
+
+利用 Cauchy 收敛原理证明下列级数发散：
+
+(1) $1+\dfrac{1}{2}-\dfrac{1}{3}+\dfrac{1}{4}+\dfrac{1}{5}-\dfrac{1}{6}+\dfrac{1}{7}+\dfrac{1}{8}-\dfrac{1}{9}+\cdots$；
+
+(2) $1-\dfrac{1}{2}+\dfrac{1}{3}+\dfrac{1}{4}-\dfrac{1}{5}+\dfrac{1}{6}+\dfrac{1}{7}-\dfrac{1}{8}+\dfrac{1}{9}+\cdots$。
+
+**习题 3** @39
+
+设正项级数 $\sum\limits_{n=1}^{\infty}x_n$ 收敛，$\{|x_n|\}$ 单调减少，利用 Cauchy 收敛原理证明：
+
+$$\lim_{n\to\infty}nx_n=0.$$
+
+**习题 4** @39
+
+若对任意 $\varepsilon>0$ 和任意正整数 $p$，存在 $N(\varepsilon,p)$，使得
+
+$$\left|x_{n+1}+x_{n+2}+\cdots+x_{n+p}\right|<\varepsilon$$
+
+对一切 $n>N$ 成立，问级数 $\sum\limits_{n=1}^{\infty}x_n$ 是否收敛？
+
+**习题 5** @39
+
+若级数 $\sum\limits_{n=1}^{\infty}x_n$ 收敛，$\lim\limits_{n\to\infty}\dfrac{x_n}{y_n}=1$，问级数 $\sum\limits_{n=1}^{\infty}y_n$ 是否收敛？
+
+**习题 6** @39
+
+设 $x_n\geqslant 0$，$\lim\limits_{n\to\infty}x_n=0$，问交错级数 $\sum\limits_{n=1}^{\infty}(-1)^{n+1}x_n$ 是否收敛？
+
+**习题 7** @39
+
+设正项数列 $\{x_n\}$ 单调减少，且级数 $\sum\limits_{n=1}^{\infty}(-1)^nx_n$ 发散。问级数 $\sum\limits_{n=1}^{\infty}\left(\dfrac{1}{1+x_n}\right)^n$ 是否收敛？并说明理由。
+
+**习题 8** @39
+
+设级数 $\sum\limits_{n=1}^{\infty}\dfrac{x_n}{n^{\alpha_0}}$ 收敛，则当 $\alpha>\alpha_0$ 时，级数 $\sum\limits_{n=1}^{\infty}\dfrac{x_n}{n^\alpha}$ 也收敛。
+
+**习题 9** @39
+
+若 $\{nx_n\}$ 收敛，$\sum\limits_{n=2}^{\infty}n(x_n-x_{n-1})$ 收敛，则级数 $\sum\limits_{n=1}^{\infty}x_n$ 收敛。
+
+**习题 10** @39
+
+若 $\sum\limits_{n=2}^{\infty}(x_n-x_{n-1})$ 绝对收敛，$\sum\limits_{n=1}^{\infty}y_n$ 收敛，则级数 $\sum\limits_{n=1}^{\infty}x_ny_n$ 收敛。
+
+**习题 11** @39
+
+设 $f(x)$ 在 $[-1,1]$ 上具有二阶连续导数，且 $\lim\limits_{x\to 0}\dfrac{f(x)}{x}=0$。证明级数 $\sum\limits_{n=1}^{\infty}f\left(\dfrac{1}{n}\right)$ 绝对收敛。
+
+**习题 12** @39
+
+已知任意项级数 $\sum\limits_{n=1}^{\infty}x_n$ 发散，证明级数 $\sum\limits_{n=1}^{\infty}\left(1+\dfrac{1}{n}\right)x_n$ 也发散。
+
+**习题 13** @39
+
+设 $x_n>0$，$\lim\limits_{n\to\infty}n\left(\dfrac{x_n}{x_{n+1}}-1\right)>0$，证明：交错级数 $\sum\limits_{n=1}^{\infty}(-1)^{n+1}x_n$ 收敛。
+
+**习题 14** @39
+
+利用
+
+$$1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}-\ln n\to\gamma\quad(n\to\infty),$$
+
+其中 $\gamma$ 是 Euler 常数（见例 2.4.8），求下述 $\sum\limits_{n=1}^{\infty}\dfrac{(-1)^{n+1}}{n}$ 的更序级数的和：
+
+$$1+\frac{1}{3}-\frac{1}{2}+\frac{1}{5}+\frac{1}{7}-\frac{1}{4}+\frac{1}{9}+\frac{1}{11}-\frac{1}{6}+\cdots.$$
+
+**习题 15** @39
+
+利用级数的 Cauchy 乘积证明：
+
+(1) $\left(\sum\limits_{n=0}^{\infty}\dfrac{1}{n!}\right)\cdot\left(\sum\limits_{n=0}^{\infty}\dfrac{(-1)^n}{n!}\right)=1$；
+
+(2) $\left(\sum\limits_{n=0}^{\infty}q^n\right)\left(\sum\limits_{n=0}^{\infty}q^n\right)=\sum\limits_{n=0}^{\infty}(n+1)q^n=\dfrac{1}{(1-q)^2}\quad(|q|<1)$。
 
 ## 第10章 函数项级数
 
@@ -1758,6 +2322,98 @@ $$u_n(x_n)-u(x_n)=n\left(1+\frac{1}{2n}\right)^n\to\infty\quad(n\to\infty),$$
 
 由定理 10.1.2，$\{u_n(x)\}$ 在 $(-1,1)$ 上不一致收敛于 $u(x)=0$。
 
+#### 习题（p60–61）
+
+**习题 1** @60
+
+讨论下列函数序列在指定区间上的一致收敛性：
+
+(1) $S_n(x)=\mathrm{e}^{-nx}$，(i) $x\in(0,1)$，(ii) $x\in(1,+\infty)$；
+
+(2) $S_n(x)=x\mathrm{e}^{-nx}$，$x\in(0,+\infty)$；
+
+(3) $S_n(x)=\sin\dfrac{x}{n}$，(i) $x\in(-\infty,+\infty)$，(ii) $x\in[-A,A]\ (A>0)$；
+
+(4) $S_n(x)=\arctan nx$，(i) $x\in(0,1)$，(ii) $x\in(1,+\infty)$；
+
+(5) $S_n(x)=\sqrt{x^2+\dfrac{1}{n^2}}$，$x\in(-\infty,+\infty)$；
+
+(6) $S_n(x)=nx(1-x)^n$，$x\in[0,1]$；
+
+(7) $S_n(x)=\dfrac{x}{n}\ln\dfrac{x}{n}$，(i) $x\in(0,1)$，(ii) $x\in(1,+\infty)$；
+
+(8) $S_n(x)=\dfrac{x^n}{1+x^n}$，(i) $x\in(0,1)$，(ii) $x\in(1,+\infty)$；
+
+(9) $S_n(x)=(\sin x)^n$，$x\in[0,\pi]$；
+
+(10) $S_n(x)=(\sin x)^{\frac{1}{n}}$，(i) $x\in[0,\pi]$，(ii) $x\in[\delta,\pi-\delta]\ (\delta>0)$；
+
+(11) $S_n(x)=\left(1+\dfrac{x}{n}\right)^n$，(i) $x\in(-\infty,+\infty)$，(ii) $x\in[-A,A]\ (A>0)$；
+
+(12) $S_n(x)=n\left(\sqrt{x+\dfrac{1}{n}}-\sqrt{x}\right)$，(i) $x\in(0,+\infty)$，(ii) $x\in[\delta,+\infty)$，$\delta>0$。
+
+**习题 2** @60
+
+设 $S_n(x)=n(x^n-x^{2n})$，则函数序列 $\{S_n(x)\}$ 在 $[0,1]$ 上收敛但不一致收敛，且极限运算与积分运算不能交换，即
+
+$$\lim_{n\to\infty}\int_0^1 S_n(x)\,\mathrm{d}x\neq\int_0^1\lim_{n\to\infty}S_n(x)\,\mathrm{d}x.$$
+
+**习题 3** @60
+
+设 $S_n(x)=\dfrac{x}{1+n^2x^2}$，则
+
+(1) 函数序列 $\{S_n(x)\}$ 在 $(-\infty,+\infty)$ 上一致收敛；
+
+(2) $\left\{\dfrac{\mathrm{d}}{\mathrm{d}x}S_n(x)\right\}$ 在 $(-\infty,+\infty)$ 上不一致收敛；
+
+(3) 极限运算与求导运算不能交换，即
+
+$$\lim_{n\to\infty}\frac{\mathrm{d}}{\mathrm{d}x}S_n(x)=\frac{\mathrm{d}}{\mathrm{d}x}\lim_{n\to\infty}S_n(x)$$
+
+并不对一切 $x\in(-\infty,+\infty)$ 成立。
+
+**习题 4** @61
+
+设 $S_n(x)=\dfrac{1}{n}\arctan x^n$，则函数序列 $\{S_n(x)\}$ 在 $(0,+\infty)$ 上一致收敛；试问极限运算与求导运算能否交换，即
+
+$$\lim_{n\to\infty}\frac{\mathrm{d}}{\mathrm{d}x}S_n(x)=\frac{\mathrm{d}}{\mathrm{d}x}\lim_{n\to\infty}S_n(x)$$
+
+是否成立？
+
+**习题 5** @61
+
+设 $S_n(x)=n^\alpha x\mathrm{e}^{-nx}$，其中 $\alpha$ 是参数。求 $\alpha$ 的取值范围，使得函数序列 $\{S_n(x)\}$ 在 $[0,1]$ 上：
+
+(1) 一致收敛；
+
+(2) 积分运算与极限运算可以交换，即
+
+$$\lim_{n\to\infty}\int_0^1 S_n(x)\,\mathrm{d}x=\int_0^1\lim_{n\to\infty}S_n(x)\,\mathrm{d}x;$$
+
+(3) 求导运算与极限运算可以交换，即对一切 $x\in[0,1]$ 成立
+
+$$\lim_{n\to\infty}\frac{\mathrm{d}}{\mathrm{d}x}S_n(x)=\frac{\mathrm{d}}{\mathrm{d}x}\lim_{n\to\infty}S_n(x).$$
+
+**习题 6** @61
+
+设 $S'(x)$ 在区间 $(a,b)$ 上连续，
+
+$$S_n(x)=n\left[S\left(x+\frac{1}{n}\right)-S(x)\right],$$
+
+证明：$\{S_n(x)\}$ 在 $(a,b)$ 上内闭一致收敛于 $S'(x)$。
+
+**习题 7** @61
+
+设 $S_0(x)$ 在 $[0,a]$ 上连续，令
+
+$$S_n(x)=\int_0^x S_{n-1}(t)\,\mathrm{d}t,\quad n=1,2,\cdots.$$
+
+证明：$\{S_n(x)\}$ 在 $[0,a]$ 上一致收敛于 $0$。
+
+**习题 8** @61
+
+设 $S(x)$ 在 $[0,1]$ 上连续，且 $S(1)=0$。证明：$\{x^nS(x)\}$ 在 $[0,1]$ 上一致收敛。
+
 ### 10.2 一致收敛级数的判别与性质（p61–72）
 
 **定理 10.2.1 (Cauchy 收敛原理)** @61
@@ -2043,6 +2699,98 @@ $$f(x)=\sum_{n=0}^{\infty}\frac{\varphi(10^nx)}{10^n},$$
 由于 $\left|\dfrac{\varphi(10^nx)}{10^n}\right|\leqslant\dfrac{1}{2\cdot 10^n}$，及 $\sum\limits_{n=0}^{\infty}\dfrac{1}{2\cdot 10^n}$ 的收敛性，应用定理 10.2.2（Weierstrass 判别法），可知 $f(x)$ 表达式中的函数项级数关于 $x\in(-\infty,+\infty)$ 一致收敛。再由 $\varphi(x)$ 的连续性，应用定理 10.2.4′，得知 $f(x)$ 在 $(-\infty,+\infty)$ 上连续。
 
 进一步可以证明：$f(x)$ 在任意一点 $x$ 都是不可导的。这样，一个处处连续、但处处不可导的函数反例通过函数项级数这一工具被构造出来了。
+
+#### 习题（p72–73）
+
+**习题 1** @72
+
+讨论下列函数项级数在所指定区间上的一致收敛性：
+
+(1) $\sum\limits_{n=0}^{\infty}(1-x)x^n$，$x\in[0,1]$；
+
+(2) $\sum\limits_{n=0}^{\infty}(1-x)^2x^n$，$x\in[0,1]$；
+
+(3) $\sum\limits_{n=1}^{\infty}x^3\mathrm{e}^{-nx^2}$，$x\in[0,+\infty)$；
+
+(4) $\sum\limits_{n=1}^{\infty}x\mathrm{e}^{-nx^2}$，(i) $x\in[0,+\infty)$，(ii) $x\in[\delta,+\infty)\ (\delta>0)$；
+
+(5) $\sum\limits_{n=0}^{\infty}\dfrac{x}{1+n^3x^2}$，$x\in(-\infty,+\infty)$；
+
+(6) $\sum\limits_{n=1}^{\infty}\dfrac{\sin nx}{\sqrt[3]{n^4+x^4}}$，$x\in(-\infty,+\infty)$；
+
+(7) $\sum\limits_{n=0}^{\infty}(-1)^n(1-x)x^n$，$x\in[0,1]$；
+
+(8) $\sum\limits_{n=1}^{\infty}\dfrac{(-1)^n}{n+x^2}$，$x\in(-\infty,+\infty)$；
+
+(9) $\sum\limits_{n=0}^{\infty}2^n\sin\dfrac{1}{3^nx}$，(i) $x\in(0,+\infty)$，(ii) $x\in[\delta,+\infty)\ (\delta>0)$；
+
+(10) $\sum\limits_{n=1}^{\infty}\dfrac{\sin x\sin nx}{\sqrt{n}}$，$x\in(-\infty,+\infty)$；
+
+(11) $\sum\limits_{n=0}^{\infty}\dfrac{x^2}{(1+x^2)^n}$，$x\in(-\infty,+\infty)$；
+
+(12) $\sum\limits_{n=0}^{\infty}(-1)^n\dfrac{x^2}{(1+x^2)^n}$，$x\in(-\infty,+\infty)$。
+
+**习题 2** @73
+
+证明：函数 $f(x)=\sum\limits_{n=0}^{\infty}\dfrac{\cos nx}{n^2+1}$ 在 $(0,2\pi)$ 上连续，且有连续的导函数。
+
+**习题 3** @73
+
+证明：函数 $f(x)=\sum\limits_{n=1}^{\infty}n\mathrm{e}^{-nx}$ 在 $(0,+\infty)$ 上连续，且有各阶连续导数。
+
+**习题 4** @73
+
+证明：函数 $\sum\limits_{n=1}^{\infty}\dfrac{1}{n^x}$ 在 $(1,+\infty)$ 上连续，且有各阶连续导数；函数 $\sum\limits_{n=1}^{\infty}\dfrac{(-1)^n}{n^x}$ 在 $(0,+\infty)$ 上连续，且有各阶连续导数。
+
+**习题 5** @73
+
+证明：函数项级数 $f(x)=\sum\limits_{n=1}^{\infty}\arctan\dfrac{x}{n^2}$ 可以逐项求导，即
+
+$$\frac{\mathrm{d}}{\mathrm{d}x}f(x)=\sum_{n=1}^{\infty}\frac{\mathrm{d}}{\mathrm{d}x}\arctan\frac{x}{n^2}.$$
+
+**习题 6** @73
+
+设数项级数 $\sum\limits_{n=1}^{\infty}a_n$ 收敛，证明：
+
+(1) $\lim\limits_{x\to0+}\sum\limits_{n=1}^{\infty}\dfrac{a_n}{n^x}=\sum\limits_{n=1}^{\infty}a_n$；
+
+(2) $\int_0^1\sum\limits_{n=1}^{\infty}a_nx^n\,\mathrm{d}x=\sum\limits_{n=1}^{\infty}\dfrac{a_n}{n+1}$。
+
+**习题 7** @73
+
+设 $u_n(x),v_n(x)$ 在区间 $(a,b)$ 上连续，且 $|u_n(x)|\leqslant v_n(x)$ 对一切 $n\in\mathbf{N}^+$ 成立。证明：若 $\sum\limits_{n=1}^{\infty}v_n(x)$ 在 $(a,b)$ 上点态收敛于一个连续函数，则 $\sum\limits_{n=1}^{\infty}u_n(x)$ 也必然收敛于一个连续函数。
+
+**习题 8** @73
+
+设函数项级数 $\sum\limits_{n=1}^{\infty}u_n(x)$ 在 $x=a$ 与 $x=b$ 收敛，且对一切 $n\in\mathbf{N}^+$，$u_n(x)$ 在闭区间 $[a,b]$ 上单调增加，证明：$\sum\limits_{n=1}^{\infty}u_n(x)$ 在 $[a,b]$ 上一致收敛。
+
+**习题 9** @73
+
+设对一切 $n\in\mathbf{N}^+$，$u_n(x)$ 在 $x=a$ 右连续，且 $\sum\limits_{n=1}^{\infty}u_n(x)$ 在 $x=a$ 发散，证明：对任意 $\delta>0$，$\sum\limits_{n=1}^{\infty}u_n(x)$ 在 $(a,a+\delta)$ 上必定非一致收敛。
+
+**习题 10** @73
+
+证明：函数项级数 $\sum\limits_{n=2}^{\infty}\ln\left(1+\dfrac{x}{n\ln^2n}\right)$ 在 $[-a,a]$ 上是一致收敛的，其中 $a$ 是小于 $2\ln^22$ 的任意固定正数。
+
+**习题 11** @73
+
+设
+
+$$f(x)=\sum_{n=1}^{\infty}\frac{1}{2^n}\tan\frac{x}{2^n},$$
+
+(1) 证明：$f(x)$ 在 $\left[0,\dfrac{\pi}{2}\right]$ 上连续；
+
+(2) 计算 $\int_{\frac{\pi}{6}}^{\frac{\pi}{2}}f(x)\,\mathrm{d}x$。
+
+**习题 12** @73
+
+设 $f(x)=\sum\limits_{n=1}^{\infty}\dfrac{\cos nx}{\sqrt{n^3+n}}$，
+
+(1) 证明：$f(x)$ 在 $(-\infty,+\infty)$ 上连续；
+
+(2) 记 $F(x)=\int_0^xf(t)\,\mathrm{d}t$，证明：
+
+$$\frac{\sqrt{2}}{2}-\frac{1}{15}<F\left(\frac{\pi}{2}\right)<\frac{\sqrt{2}}{2}.$$
 
 ### 10.3 幂级数（p73–81）
 
@@ -2339,6 +3087,108 @@ $$f(x)g(x)=xh(x),\quad x\in(0,1).$$
 令 $x\to 1-$，得到 $f(1)g(1)=h(1)$，也就是
 
 $$\left(\sum_{n=1}^{\infty}a_n\right)\left(\sum_{n=1}^{\infty}b_n\right)=\sum_{n=1}^{\infty}c_n.$$
+
+#### 习题（p81–82）
+
+**习题 1** @81
+
+求下列幂级数的收敛半径与收敛域：
+
+(1) $\sum\limits_{n=1}^{\infty}\dfrac{3^n+(-2)^n}{n}x^n$；
+
+(2) $\sum\limits_{n=1}^{\infty}\left(1+\dfrac{1}{2}+\cdots+\dfrac{1}{n}\right)(x-1)^n$；
+
+(3) $\sum\limits_{n=1}^{\infty}(-1)^n\dfrac{x^{2n}}{n\cdot2^n}$；
+
+(4) $\sum\limits_{n=1}^{\infty}(-1)^n\dfrac{\ln(n+1)}{n+1}(x+1)^n$；
+
+(5) $\sum\limits_{n=1}^{\infty}\dfrac{3^n}{n!}\left(\dfrac{x-1}{2}\right)^n$；
+
+(6) $\sum\limits_{n=2}^{\infty}\dfrac{\ln^2n}{n^2}x^{n^2}$；
+
+(7) $\sum\limits_{n=1}^{\infty}\dfrac{n!}{n^n}x^n$；
+
+(8) $\sum\limits_{n=1}^{\infty}\dfrac{(n!)^2}{(2n)!}x^n$；
+
+(9) $\sum\limits_{n=1}^{\infty}\dfrac{(2n)!!}{(2n+1)!!}x^n$。
+
+**习题 2** @82
+
+设 $a>b>0$，求下列幂级数的收敛域：
+
+(1) $\sum\limits_{n=1}^{\infty}\left(\dfrac{a^n}{n}+\dfrac{b^n}{n^2}\right)x^n$；
+
+(2) $\sum\limits_{n=1}^{\infty}\dfrac{x^n}{a^n+b^n}$；
+
+(3) $ax+bx^2+a^2x^3+b^2x^4+\cdots+a^nx^{2n-1}+b^nx^{2n}+\cdots$。
+
+**习题 3** @82
+
+设 $\sum\limits_{n=0}^{\infty}a_nx^n$ 与 $\sum\limits_{n=0}^{\infty}b_nx^n$ 的收敛半径分别为 $R_1$ 和 $R_2$，讨论下列幂级数的收敛半径：
+
+(1) $\sum\limits_{n=0}^{\infty}a_nx^{2n}$；
+
+(2) $\sum\limits_{n=0}^{\infty}(a_n+b_n)x^n$；
+
+(3) $\sum\limits_{n=0}^{\infty}a_nb_nx^n$。
+
+**习题 4** @82
+
+应用逐项求导或逐项求积分等性质，求下列幂级数的和函数，并指出它们的定义域：
+
+(1) $\sum\limits_{n=1}^{\infty}nx^n$；
+
+(2) $\sum\limits_{n=0}^{\infty}\dfrac{x^{2n}}{2n+1}$；
+
+(3) $\sum\limits_{n=1}^{\infty}(-1)^{n-1}n^2x^n$；
+
+(4) $\sum\limits_{n=1}^{\infty}\dfrac{x^n}{n(n+1)}$；
+
+(5) $\sum\limits_{n=0}^{\infty}n(n+1)x^n$；
+
+(6) $1+\sum\limits_{n=1}^{\infty}\dfrac{x^{2n}}{(2n)!}$；
+
+(7) $\sum\limits_{n=1}^{\infty}\dfrac{n+1}{n!}x^n$。
+
+**习题 5** @82
+
+设 $f(x)=\sum\limits_{n=0}^{\infty}a_nx^n$，则不论 $\sum\limits_{n=0}^{\infty}a_nx^n$ 在 $x=r$ 是否收敛，只要 $\sum\limits_{n=0}^{\infty}\dfrac{a_n}{n+1}x^{n+1}$ 在 $x=r$ 收敛，就成立
+
+$$\int_0^rf(x)\,\mathrm{d}x=\sum_{n=0}^{\infty}\frac{a_n}{n+1}r^{n+1},$$
+
+并由此证明：
+
+$$\int_0^1\ln\frac{1}{1-x}\cdot\frac{\mathrm{d}x}{x}=\sum_{n=1}^{\infty}\frac{1}{n^2}.$$
+
+**习题 6** @82
+
+证明：
+
+(1) $y=\sum\limits_{n=0}^{\infty}\dfrac{x^{4n}}{(4n)!}$ 满足方程 $y^{(4)}=y$；
+
+(2) $y=\sum\limits_{n=0}^{\infty}\dfrac{x^n}{(n!)^2}$ 满足方程 $xy''+y'-y=0$。
+
+**习题 7** @82
+
+应用幂级数性质求下列级数的和：
+
+(1) $\sum\limits_{n=1}^{\infty}(-1)^{n-1}\dfrac{n}{2^n}$；
+
+(2) $\sum\limits_{n=1}^{\infty}\dfrac{1}{n\cdot2^n}$；
+
+(3) $\sum\limits_{n=1}^{\infty}\dfrac{n(n+2)}{4^{n+1}}$；
+
+(4) $\sum\limits_{n=0}^{\infty}\dfrac{(n+1)^2}{2^n}$；
+
+(5) $\sum\limits_{n=0}^{\infty}(-1)^n\dfrac{1}{3^n(2n+1)}$；
+
+(6) $\sum\limits_{n=2}^{\infty}(-1)^n\dfrac{1}{2^n(n^2-1)}$；
+
+(7) $\sum\limits_{n=0}^{\infty}(-1)^n\dfrac{2^{n+1}}{n!}$。
+
+**习题 8** @82
+
+设正项级数 $\sum\limits_{n=1}^{\infty}a_n$ 发散，$A_n=\sum\limits_{k=1}^{n}a_k$，且 $\lim\limits_{n\to\infty}\dfrac{a_n}{A_n}=0$，求幂级数 $\sum\limits_{n=1}^{\infty}a_nx^n$ 的收敛半径。
 
 ### 10.4 函数的幂级数展开（p82–93）
 
@@ -2674,6 +3524,88 @@ $$\pi=2\sqrt{3}\left(1-\frac{1}{3\cdot 3}+\frac{1}{5\cdot 3^2}-\frac{1}{7\cdot 3
 
 $$\pi\approx 3.1416.$$
 
+#### 习题（p93–94）
+
+**习题 1** @93
+
+求下列函数在指定点的 Taylor 展开，并确定它们的收敛范围：
+
+(1) $1+2x-3x^2+5x^3$，$x_0=1$；
+
+(2) $\dfrac{1}{x^2}$，$x_0=-1$；
+
+(3) $\dfrac{x}{2-x-x^2}$，$x_0=0$；
+
+(4) $\sin x$，$x_0=\dfrac{\pi}{6}$；
+
+(5) $\ln x$，$x_0=2$；
+
+(6) $\sqrt[3]{4-x^2}$，$x_0=0$；
+
+(7) $\dfrac{x-1}{x+1}$，$x_0=1$；
+
+(8) $(1+x)\ln(1-x)$，$x_0=0$；
+
+(9) $\ln\sqrt{\dfrac{1+x}{1-x}}$，$x_0=0$；
+
+(10) $\dfrac{\mathrm{e}^{-x}}{1-x}$，$x_0=0$。
+
+**习题 2** @94
+
+求下列函数在 $x_0=0$ 的 Taylor 展开：
+
+(1) $\dfrac{x}{\sin x}$ 至 $x^4$；
+
+(2) $\mathrm{e}^{\sin x}$ 至 $x^4$；
+
+(3) $\ln\cos x$ 至 $x^6$；
+
+(4) $\sqrt{\dfrac{1+x}{1-x}}$ 至 $x^4$。
+
+**习题 3** @94
+
+利用幂级数展开，计算下列积分，要求精确到 $0.001$：
+
+(1) $\int_0^1\dfrac{\sin x}{x}\,\mathrm{d}x$；
+
+(2) $\int_0^1\cos x^2\,\mathrm{d}x$；
+
+(3) $\int_0^{\frac{1}{2}}\dfrac{\arctan x}{x}\,\mathrm{d}x$；
+
+(4) $\int_2^{+\infty}\dfrac{\mathrm{d}x}{1+x^3}$。
+
+**习题 4** @94
+
+应用 $\dfrac{\mathrm{e}^x-1}{x}$ 在 $x=0$ 的幂级数展开，证明：
+
+$$\sum_{n=1}^{\infty}\frac{n}{(n+1)!}=1.$$
+
+**习题 5** @94
+
+求下列函数项级数的和函数：
+
+(1) $\sum\limits_{n=1}^{\infty}\dfrac{(-1)^{n-1}}{n(n+1)}\left(\dfrac{2+x}{2-x}\right)^{2n}$；
+
+(2) $\sum\limits_{n=1}^{\infty}\left(1+\dfrac{1}{2}+\cdots+\dfrac{1}{n}\right)x^n$。
+
+**习题 6** @94
+
+设 $\{a_n\}$ 是等差数列，$b>1$，求级数 $\sum\limits_{n=1}^{\infty}\dfrac{a_n}{b^n}$ 的和。
+
+**习题 7** @94
+
+利用幂级数展开，计算 $\int_0^1\dfrac{\ln x}{1-x^2}\,\mathrm{d}x$。
+
+**习题 8** @94
+
+(1) 应用 $\dfrac{\pi}{4}=\arctan\dfrac{1}{2}+\arctan\dfrac{1}{3}$，计算 $\pi$ 的值，要求精确到 $10^{-4}$；
+
+(2) 应用 $\dfrac{\pi}{6}=\arcsin\dfrac{1}{2}$，计算 $\pi$ 的值，要求精确到 $10^{-4}$。
+
+**习题 9** @94
+
+利用幂级数展开，计算 $\int_1^3\mathrm{e}^{-\frac{1}{x}}\,\mathrm{d}x$ 的值，要求精确到 $10^{-4}$。
+
 ### 10.5 用多项式逼近连续函数（p94–96）
 
 **定义 10.5.1 (多项式一致逼近)** @94
@@ -2737,6 +3669,36 @@ $$B_n(1,x)=1,\qquad B_n(t,x)=x,\qquad B_n(t^2,x)=x^2+\frac{x-x^2}{n}.$$
 **注 (定理的等价表述)** @96
 
 定理 10.5.1 还可以表述为：设 $f$ 在 $[a,b]$ 上连续，则它的 Bernstein 多项式序列 $\{B_n(f,x)\}$ 在 $[a,b]$ 上一致收敛于 $f$。
+
+#### 习题（p96–97）
+
+**习题 1** @96
+
+求 $f(x)=x^3$ 的 Bernstein 多项式 $B_n(f,x)$。
+
+**习题 2** @96
+
+设 $f(x)=\sqrt{x}$，$x\in[0,1]$，求它的四次 Bernstein 多项式 $B_4(f,x)$。
+
+**习题 3** @96
+
+设 $f(x)$ 在 $[a,b]$ 上连续，证明：对任意给定的 $\varepsilon>0$，存在有理系数多项式 $P(x)$，使得
+
+$$|P(x)-f(x)|<\varepsilon$$
+
+对一切 $x\in[a,b]$ 成立。
+
+**习题 4** @96
+
+设 $f(x)$ 在 $[a,b]$ 上连续，且对任一多项式 $g(x)$ 成立
+
+$$\int_a^bf(x)g(x)\,\mathrm{d}x=0,$$
+
+证明：在 $[a,b]$ 上成立 $f(x)=0$。
+
+**习题 5** @97
+
+设 $P_0(x)=0$，$P_{n+1}(x)=P_n(x)+\dfrac{x^2-P_n^2(x)}{2}\ (n=0,1,2,\cdots)$，证明：$\{P_n(x)\}$ 在 $[-1,1]$ 上一致收敛于 $|x|$。
 
 ## 第11章 Euclid 空间上的极限和连续
 
@@ -2936,6 +3898,80 @@ $\mathbb{R}^n$ 上的点集 $S$ 是紧集的充分必要条件为：它是有界
 
 Cantor 闭区域套定理、Bolzano–Weierstrass 定理、Cauchy 收敛原理和 Heine–Borel 定理称为 **Euclid 空间上的基本定理**，它们是相互等价的。
 
+#### 习题（p106–107）
+
+**习题 1** @106
+
+证明定理 11.1.1：距离满足正定性、对称性和三角不等式。
+
+**习题 2** @106
+
+证明：若 $\mathbb{R}^n$ 中的点列 $\{x_k\}$ 收敛，则其极限是惟一的。
+
+**习题 3** @106
+
+设 $\mathbb{R}^n$ 中的点列 $\{x_k\}$ 和 $\{y_k\}$ 收敛，证明：对于任何实数 $\alpha,\beta$，成立等式$$\lim_{k\to\infty}(\alpha x_k+\beta y_k)=\alpha\lim_{k\to\infty}x_k+\beta\lim_{k\to\infty}y_k.$$
+
+**习题 4** @106
+
+求下列 $\mathbb{R}^2$ 中子集的内部、边界与闭包：
+
+（1）$S=\{(x,y)\mid x>0,\ y\neq 0\}$；
+
+（2）$S=\{(x,y)\mid 0<x^2+y^2\leqslant 1\}$；
+
+（3）$S=\{(x,y)\mid 0<x\leqslant 1,\ y=\sin\frac{1}{x}\}$。
+
+**习题 5** @106
+
+求下列点集的全部聚点：
+
+（1）$S=\{(-1)^k\frac{k}{k+1}\mid k=1,2,\cdots\}$；
+
+（2）$S=\{(\cos\frac{2k\pi}{5},\sin\frac{2k\pi}{5})\mid k=1,2,\cdots\}$；
+
+（3）$S=\{(x,y)\mid (x^2+y^2)(y^2-x^2+1)\leqslant 0\}$。
+
+**习题 6** @106
+
+证明定理 11.1.3：$x$ 是点集 $S(\subset\mathbb{R}^n)$ 的聚点的充分必要条件是：存在 $S$ 中的点列 $\{x_k\}$，满足 $x_k\neq x\ (k=1,2,\cdots)$，且 $\lim_{k\to\infty}x_k=x$。
+
+**习题 7** @106
+
+设 $U$ 是 $\mathbb{R}^2$ 上的开集，是否 $U$ 的每个点都是它的聚点？对于 $\mathbb{R}^2$ 中的闭集又如何呢？
+
+**习题 8** @106
+
+证明 $S\subset\mathbb{R}^n$ 的所有内点组成的点集 $S^\circ$ 必是开集。
+
+**习题 9** @106
+
+证明 $S\subset\mathbb{R}^n$ 的闭包 $\overline{S}=S\cup S'$ 必是闭集。
+
+**习题 10** @107
+
+设 $E,F\subset\mathbb{R}^n$。若 $E$ 为开集，$F$ 为闭集，证明：$E\setminus F$ 为开集，$F\setminus E$ 为闭集。
+
+**习题 11** @107
+
+证明 Cantor 闭区域套定理。
+
+**习题 12** @107
+
+举例说明：满足 $\lim_{k\to\infty}|x_{k+1}-x_k|=0$ 的点列 $\{x_k\}$ 不一定收敛。
+
+**习题 13** @107
+
+设 $E,F\subset\mathbb{R}^n$ 为紧集，证明 $E\cap F$ 和 $E\cup F$ 为紧集。
+
+**习题 14** @107
+
+用定义证明点集 $\{0\}\cup\{\frac{1}{k}\mid k=1,2,\cdots\}$ 是 $\mathbb{R}$ 中的紧集。
+
+**习题 15** @107
+
+应用 Heine-Borel 定理直接证明：$\mathbb{R}^n$ 上有界无限点集必有聚点。
+
 ### 11.2 多元连续函数（p107–114）
 
 **定义 11.2.1 (n 元函数)** @107
@@ -3068,6 +4104,108 @@ $z=\sqrt{1-\dfrac{x^2}{a^2}-\dfrac{y^2}{b^2}}$ 是二元函数，其定义域为
 
 设 $\Omega$ 是 $\mathbb{R}^k$ 上的开集，$D$ 为 $\mathbb{R}^n$ 上的开集，$g: D\to\mathbb{R}^k$ 与 $f: \Omega\to\mathbb{R}^m$ 为映射，并且 $g$ 的值域 $g(D)$ 满足 $g(D)\subset\Omega$，则可以定义复合映射$$f\circ g: D\to\mathbb{R}^m,\qquad u\mapsto f(g(u)).$$如果 $g$ 在 $D$ 上连续，$f$ 在 $\Omega$ 上连续，那么复合映射 $f\circ g$ 在 $D$ 上连续。
 
+#### 习题（p114–115）
+
+**习题 1** @114
+
+确定下列函数的自然定义域：
+
+（1）$u=\ln(y-x)+\dfrac{x}{\sqrt{1-x^2-y^2}}$；
+
+（2）$u=\dfrac{1}{\sqrt{x}}+\dfrac{1}{\sqrt{y}}+\dfrac{1}{\sqrt{z}}$；
+
+（3）$u=\sqrt{R^2-x^2-y^2-z^2}+\sqrt{x^2+y^2+z^2-r^2}\quad(R>r)$；
+
+（4）$u=\arcsin\dfrac{z}{x^2+y^2}$。
+
+**习题 2** @114
+
+设 $f\left(\dfrac{y}{x}\right)=\dfrac{x^3}{(x^2+y^2)^{3/2}}\ (x>0)$，求 $f(x)$。
+
+**习题 3** @114
+
+若函数$$z(x,y)=\sqrt{y}+f(\sqrt{x}-1),$$且当 $y=4$ 时 $z=x+1$，求 $f(x)$ 和 $z(x,y)$。
+
+**习题 4** @114
+
+讨论下列函数当 $(x,y)$ 趋于 $(0,0)$ 时的极限是否存在：
+
+（1）$f(x,y)=\dfrac{x-y}{x+y}$；
+
+（2）$f(x,y)=\dfrac{xy}{x^2+y^2}$；
+
+（3）$$f(x,y)=\begin{cases}1,&0<y<x^2,\\ 0,&\text{其他点};\end{cases}$$
+
+（4）$f(x,y)=\dfrac{x^3y^3}{x^4+y^8}$。
+
+**习题 5** @114
+
+对多元函数证明极限惟一性、局部有界性、局部保序性和局部夹逼性。
+
+**习题 6** @114
+
+对多元函数证明极限的四则运算法则：假设当 $x$ 趋于 $x_0$ 时函数 $f(x)$ 和 $g(x)$ 的极限存在，则
+
+（1）$\lim\limits_{x\to x_0}(f(x)\pm g(x))=\lim\limits_{x\to x_0}f(x)\pm\lim\limits_{x\to x_0}g(x)$；
+
+（2）$\lim\limits_{x\to x_0}(f(x)\cdot g(x))=\lim\limits_{x\to x_0}f(x)\cdot\lim\limits_{x\to x_0}g(x)$；
+
+（3）$\lim\limits_{x\to x_0}(f(x)/g(x))=\lim\limits_{x\to x_0}f(x)/\lim\limits_{x\to x_0}g(x)\quad\left(\lim\limits_{x\to x_0}g(x)\neq 0\right)$。
+
+**习题 7** @114
+
+求下列各极限：
+
+（1）$\lim\limits_{(x,y)\to(0,1)}\dfrac{1-xy}{x^2+y^2}$；
+
+（2）$\lim\limits_{(x,y)\to(0,0)}\dfrac{1+x^2+y^2}{x^2+y^2}$；
+
+（3）$\lim\limits_{(x,y)\to(0,0)}\dfrac{\sqrt{1+xy}-1}{xy}$；
+
+（4）$\lim\limits_{(x,y)\to(0,0)}\dfrac{x^2+y^2}{\sqrt{1+x^2+y^2}-1}$；
+
+（5）$\lim\limits_{(x,y)\to(0,0)}\dfrac{\ln(x^2+\mathrm{e}^{y^2})}{x^2+y^2}$；
+
+（6）$\lim\limits_{(x,y)\to(0,0)}\dfrac{\sin(x^3+y^3)}{x^2+y^2}$；
+
+（7）$\lim\limits_{(x,y)\to(0,0)}\dfrac{1-\cos(x^2+y^2)}{(x^2+y^2)x^2y^2}$；
+
+（8）$\lim\limits_{\substack{x\to+\infty\\ y\to+\infty}}(x^2+y^2)\mathrm{e}^{-(x+y)}$。
+
+**习题 8** @114
+
+讨论下列函数在原点的二重极限和二次极限：
+
+（1）$f(x,y)=\dfrac{x^2y^2}{x^2y^2+(x-y)^2}$；
+
+（2）$f(x,y)=\dfrac{x^2(1+x^2)-y^2(1+y^2)}{x^2+y^2}$；
+
+（3）$f(x,y)=x\sin\dfrac{1}{y}+y\sin\dfrac{1}{x}$。
+
+**习题 9** @115
+
+验证函数$$f(x,y)=\begin{cases}\dfrac{2}{x^2}\left(y-\dfrac{1}{2}x^2\right),&x>0\ \text{且}\ \dfrac{1}{2}x^2<y\leqslant x^2,\\[8pt] \dfrac{1}{x^2}(2x^2-y),&x>0\ \text{且}\ x^2<y<2x^2,\\[8pt] 0,&\text{其他点}\end{cases}$$在原点不连续，而在其他点连续。
+
+**习题 10** @115
+
+讨论函数$$f(x,y)=\begin{cases}\dfrac{x^2y}{x^2+y^2},&x^2+y^2\neq 0,\\ 0,&x^2+y^2=0\end{cases}$$的连续范围。
+
+**习题 11** @115
+
+设 $f(t)$ 在区间 $(a,b)$ 上具有连续导数，$D=(a,b)\times(a,b)$。定义 $D$ 上的函数$$F(x,y)=\begin{cases}\dfrac{f(x)-f(y)}{x-y},&x\neq y,\\[8pt] f'(x),&x=y.\end{cases}$$证明：对于任何 $c\in(a,b)$ 成立$$\lim_{(x,y)\to(c,c)}F(x,y)=f'(c).$$
+
+**习题 12** @115
+
+设二元函数 $f(x,y)$ 在开集 $D\subset\mathbb{R}^2$ 内对于变量 $x$ 是连续的，对于变量 $y$ 满足 Lipschitz 条件：$$|f(x,y')-f(x,y'')|\leqslant L|y'-y''|,$$其中 $(x,y'),(x,y'')\in D$，$L$ 为常数（通常称为 Lipschitz 常数）。证明 $f(x,y)$ 在 $D$ 上连续。
+
+**习题 13** @115
+
+证明：若 $f$ 和 $g$ 是 $D$ 到 $\mathbb{R}^m$ 上的连续映射，则映射 $f+g$ 与函数 $\langle f,g\rangle$ 在 $D$ 上都是连续的。
+
+**习题 14** @115
+
+证明复合映射的连续性定理（定理 11.2.3）。
+
 ### 11.3 连续函数的性质（p115–119）
 
 **定义 11.3.1 (点集上映射的连续性)** @115
@@ -3169,6 +4307,60 @@ $$f(D)=\{y\in\mathbb{R}^m\mid y=f(x),\,x\in D\}$$
 **定理 11.3.6 (中间值定理)** @118
 
 设 $K$ 为 $\mathbb{R}^n$ 中连通的紧集，$f$ 是 $K$ 上的连续函数，则 $f$ 可取到它在 $K$ 上的最小值 $m$ 与最大值 $M$ 之间的一切值。换言之，$f$ 的值域是闭区间 $[m,M]$。
+
+#### 习题（p118–119）
+
+**习题 1** @118
+
+设 $D\subset\mathbb{R}^n$，$f:D\to\mathbb{R}^m$ 为连续映射。如果 $D$ 中的点列 $\{x_k\}$ 满足 $\lim\limits_{k\to\infty}x_k=a$，且 $a\in D$，证明$$\lim_{k\to\infty}f(x_k)=f(a).$$
+
+**习题 2** @118
+
+设 $f$ 是 $\mathbb{R}^n$ 上的连续函数，$c$ 为实数。设$$A_c=\{x\in\mathbb{R}^n\mid f(x)<c\},\qquad B_c=\{x\in\mathbb{R}^n\mid f(x)\leqslant c\},$$证明：$A_c$ 为 $\mathbb{R}^n$ 上的开集，$B_c$ 为 $\mathbb{R}^n$ 上的闭集。
+
+**习题 3** @118
+
+设二元函数$$f(x,y)=\frac{1}{1-xy},\qquad (x,y)\in D=[0,1)\times[0,1),$$证明：$f$ 在 $D$ 上连续，但不一致连续。
+
+**习题 4** @118
+
+设 $A$ 为 $\mathbb{R}^n$ 上的非空子集，定义 $\mathbb{R}^n$ 上的函数 $f$ 为$$f(x)=\inf\{|x-y|\mid y\in A\},$$它称为 $x$ 到 $A$ 的距离。证明：
+
+（1）当且仅当 $x\in\overline{A}$ 时，$f(x)=0$；
+
+（2）对于任意 $x',x''\in\mathbb{R}^n$，不等式$$|f(x')-f(x'')|\leqslant|x'-x''|$$成立，从而 $f$ 在 $\mathbb{R}^n$ 上一致连续；
+
+（3）若 $A$ 是紧集，则对于任意 $c>0$，点集 $\{x\in\mathbb{R}^n\mid f(x)\leqslant c\}$ 是紧集。
+
+**习题 5** @118
+
+设二元函数 $f$ 在 $\mathbb{R}^2$ 上连续，证明：
+
+（1）若 $\lim\limits_{x^2+y^2\to+\infty}f(x,y)=+\infty$，则 $f$ 在 $\mathbb{R}^2$ 上的最小值必定存在；
+
+（2）若 $\lim\limits_{x^2+y^2\to+\infty}f(x,y)=0$，则 $f$ 在 $\mathbb{R}^2$ 上的最大值与最小值至少存在一个。
+
+**习题 6** @119
+
+设 $f$ 是 $\mathbb{R}^n$ 上的连续函数，满足
+
+（1）当 $x\neq\mathbf{0}$ 时成立 $f(x)>0$；
+
+（2）对于任意 $x$ 与 $c>0$，成立 $f(cx)=cf(x)$。
+
+证明：存在 $a>0,b>0$，使得$$a\|x\|\leqslant f(x)\leqslant b\|x\|.$$
+
+**习题 7** @119
+
+设 $f:\mathbb{R}^n\to\mathbb{R}^m$ 为连续映射，证明：对于 $\mathbb{R}^n$ 中的任意子集 $A$，成立$$f(\overline{A})\subset\overline{f(A)}.$$举例说明 $f(\overline{A})$ 能够是 $\overline{f(A)}$ 的真子集。
+
+**习题 8** @119
+
+设 $f$ 是有界开区域 $D\subset\mathbb{R}^2$ 上的一致连续函数，证明：
+
+（1）可以将 $f$ 连续延拓到 $D$ 的边界上，即存在定义在 $\overline{D}$ 上的连续函数 $\widetilde{f}$，使得 $\widetilde{f}\big|_D=f$；
+
+（2）$f$ 在 $D$ 上有界。
 
 ## 第12章 多元函数的微分学
 
@@ -3365,6 +4557,198 @@ $$f(D)=\{y\in\mathbb{R}^m\mid y=f(x),\,x\in D\}$$
 综合上述三点，我们可以得到以下的统一表述：向量值函数 $\boldsymbol{f}$ 连续、可导和可微就是它的每一个坐标分量函数 $f_i(x_1,x_2,\cdots,x_n)\ (i=1,2,\cdots,m)$ 连续、可导和可微。
 
 此外，在用 Jacobi 矩阵定义了向量值函数的导数 $\boldsymbol{f}'(x^0)$ 之后，多元函数和向量值函数的微分公式与一元函数的微分公式$$\mathrm{d}y=f'(x)\mathrm{d}x$$在形式上就是完全一致的。也就是说，只要将 $x,y$ 和 $f$ 理解为向量，这就是多元函数和向量值函数的微分公式。
+
+#### 习题（p135–137）
+
+**习题 1** @135
+
+求下列函数的偏导数：
+
+(1) $z=x^{5}-6x^{4}y^{2}+y^{6}$；
+
+(2) $z=x^{2}\ln(x^{2}+y^{2})$；
+
+(3) $z=xy+\dfrac{x}{y}$；
+
+(4) $z=\sin(xy)+\cos^{2}(xy)$；
+
+(5) $z=e^{x}(\cos y+x\sin y)$；
+
+(6) $z=\tan\left(\dfrac{x^{2}}{y}\right)$；
+
+(7) $z=\sin\dfrac{x}{y}\cdot\cos\dfrac{y}{x}$；
+
+(8) $z=(1+xy)^{y}$；
+
+(9) $z=\ln(x+\ln y)$；
+
+(10) $z=\arctan\dfrac{x+y}{1-xy}$；
+
+(11) $u=e^{x(x^{2}+y^{2}+z^{2})}$；
+
+(12) $u=x^{\frac{y}{z}}$；
+
+(13) $u=\dfrac{1}{\sqrt{x^{2}+y^{2}+z^{2}}}$；
+
+(14) $u=x^{y^{z}}$；
+
+(15) $u=\sum\limits_{i=1}^{n}a_{i}x_{i}$（$a_{i}$ 为常数）；
+
+(16) $u=\sum\limits_{i,j=1}^{n}a_{ij}x_{i}x_{j}$（$a_{ij}=a_{ji}$ 且为常数）。
+
+**习题 2** @135
+
+设 $f(x,y)=x+y-\sqrt{x^{2}+y^{2}}$，求 $f_{x}(3,4)$ 及 $f_{y}(3,4)$。
+
+**习题 3** @135
+
+设 $z=e^{\frac{x}{y^{2}}}$，验证$$2x\frac{\partial z}{\partial x}+y\frac{\partial z}{\partial y}=0.$$
+
+**习题 4** @135
+
+曲线$$\begin{cases}z=\dfrac{x^{2}+y^{2}}{4},\\y=4\end{cases}$$在点 $(2,4,5)$ 处的切线与 $x$ 轴的正向所夹的角度是多少？
+
+**习题 5** @135
+
+求下列函数在指定点的全微分：
+
+(1) $f(x,y)=3x^{2}y-xy^{2}$，在点 $(1,2)$；
+
+(2) $f(x,y)=\ln(1+x^{2}+y^{2})$，在点 $(2,4)$；
+
+(3) $f(x,y)=\dfrac{\sin x}{y^{2}}$，在点 $(0,1)$ 和 $\left(\dfrac{\pi}{4},2\right)$。
+
+**习题 6** @135
+
+求下列函数的全微分：
+
+(1) $z=y^{x}$；
+
+(2) $z=xye^{xy}$；
+
+(3) $z=\dfrac{x+y}{x-y}$；
+
+(4) $z=\dfrac{y}{\sqrt{x^{2}+y^{2}}}$；
+
+(5) $u=\sqrt{x^{2}+y^{2}+z^{2}}$；
+
+(6) $u=\ln(x^{2}+y^{2}+z^{2})$。
+
+**习题 7** @135
+
+求函数 $z=xe^{2y}$ 在点 $P(1,0)$ 处的沿从点 $P(1,0)$ 到点 $Q(2,-1)$ 方向的方向导数。
+
+**习题 8** @135
+
+设 $z=x^{2}-xy+y^{2}$，求它在点 $(1,1)$ 处的沿方向 $\boldsymbol{v}=(\cos\alpha,\sin\alpha)$ 的方向导数，并指出：
+
+(1) 沿哪个方向的方向导数最大？
+
+(2) 沿哪个方向的方向导数最小？
+
+(3) 沿哪个方向的方向导数为零？
+
+**习题 9** @135
+
+如果可微函数 $f(x,y)$ 在点 $(1,2)$ 处的从点 $(1,2)$ 到点 $(2,2)$ 方向的方向导数为 $2$，从点 $(1,2)$ 到点 $(1,1)$ 方向的方向导数为 $-2$。求
+
+(1) 这个函数在点 $(1,2)$ 处的梯度；
+
+(2) 点 $(1,2)$ 处的从点 $(1,2)$ 到点 $(4,6)$ 方向的方向导数。
+
+**习题 10** @136
+
+求下列函数的梯度：
+
+(1) $z=x^{2}+y^{2}\sin(xy)$；
+
+(2) $z=1-\left(\dfrac{x^{2}}{a^{2}}+\dfrac{y^{2}}{b^{2}}\right)$；
+
+(3) $u=x^{2}+2y^{2}+3z^{2}+3xy+4yz+6x-2y-5z$，在点 $(1,1,1)$。
+
+**习题 11** @136
+
+对于函数 $f(x,y)=xy$，在第 I 象限（包括边界）的每一点，指出函数值增加最快的方向。
+
+**习题 12** @136
+
+验证函数$$f(x,y)=\sqrt[3]{xy}$$在原点 $(0,0)$ 连续且可偏导，但除方向 $\boldsymbol{e}_{i}$ 和 $-\boldsymbol{e}_{i}\ (i=1,2)$ 外，在原点的沿其他方向的方向导数都不存在。
+
+**习题 13** @136
+
+验证函数$$f(x,y)=\begin{cases}\dfrac{xy}{\sqrt{x^{2}+y^{2}}}, & x^{2}+y^{2}\neq 0,\\[6pt]0, & x^{2}+y^{2}=0\end{cases}$$在原点 $(0,0)$ 连续且可偏导，但它在原点不可微。
+
+**习题 14** @136
+
+验证函数$$f(x,y)=\begin{cases}(x^{2}+y^{2})\sin\dfrac{1}{x^{2}+y^{2}}, & x^{2}+y^{2}\neq 0,\\[6pt]0, & x^{2}+y^{2}=0\end{cases}$$的偏导函数 $f_{x}(x,y),f_{y}(x,y)$ 在原点 $(0,0)$ 不连续，但它在原点可微。
+
+**习题 15** @136
+
+证明函数$$f(x,y)=\begin{cases}\dfrac{2xy^{2}}{x^{2}+y^{4}}, & x^{2}+y^{2}\neq 0,\\[6pt]0, & x^{2}+y^{2}=0\end{cases}$$在原点 $(0,0)$ 处沿各个方向的方向导数都存在，但它在原点不连续，因而不可微。
+
+**习题 16** @136
+
+计算下列函数的高阶导数：
+
+(1) $z=\arctan\dfrac{y}{x}$，求 $\dfrac{\partial^{2}z}{\partial x^{2}},\dfrac{\partial^{2}z}{\partial x\partial y},\dfrac{\partial^{2}z}{\partial y^{2}}$；
+
+(2) $z=x\sin(x+y)+y\cos(x+y)$，求 $\dfrac{\partial^{2}z}{\partial x^{2}},\dfrac{\partial^{2}z}{\partial x\partial y},\dfrac{\partial^{2}z}{\partial y^{2}}$；
+
+(3) $z=xe^{xy}$，求 $\dfrac{\partial^{3}z}{\partial x^{2}\partial y},\dfrac{\partial^{3}z}{\partial x\partial y^{2}}$；
+
+(4) $u=\ln(ax+by+cz)$，求 $\dfrac{\partial^{4}u}{\partial x^{4}},\dfrac{\partial^{4}u}{\partial x^{2}\partial y^{2}}$；
+
+(5) $z=(x-a)^{p}(y-b)^{q}$，求 $\dfrac{\partial^{p+q}z}{\partial x^{p}\partial y^{q}}$；
+
+(6) $u=xyze^{x+y+z}$，求 $\dfrac{\partial^{p+q+r}u}{\partial x^{p}\partial y^{q}\partial z^{r}}$。
+
+**习题 17** @136
+
+计算下列函数的高阶微分：
+
+(1) $z=x\ln(xy)$，求 $\mathrm{d}^{2}z$；
+
+(2) $z=\sin^{2}(ax+by)$，求 $\mathrm{d}^{3}z$；
+
+(3) $u=e^{x+y+z}(x^{2}+y^{2}+z^{2})$，求 $\mathrm{d}^{3}u$；
+
+(4) $z=e^{x}\sin y$，求 $\mathrm{d}^{4}z$。
+
+**习题 18** @137
+
+函数 $z=f(x,y)$ 满足$$\frac{\partial z}{\partial x}=-\sin y+\frac{1}{1-xy},\quad\text{及}\quad f(0,y)=2\sin y+y^{3}.$$求 $f(x,y)$ 的表达式。
+
+**习题 19** @137
+
+验证：
+
+(1) $z=e^{-kn^{2}t}\sin(ny)$ 满足热传导方程 $\dfrac{\partial z}{\partial t}=k\dfrac{\partial^{2}z}{\partial y^{2}}$；
+
+(2) $u=z\arctan\dfrac{x}{y}$ 满足 Laplace 方程 $\dfrac{\partial^{2}u}{\partial x^{2}}+\dfrac{\partial^{2}u}{\partial y^{2}}+\dfrac{\partial^{2}u}{\partial z^{2}}=0$。
+
+**习题 20** @137
+
+设 $f(r,t)=t^{\alpha}e^{-\frac{r^{2}}{4t}}$，确定 $\alpha$ 使得 $f$ 满足方程$$\frac{\partial f}{\partial t}=\frac{1}{r^{2}}\frac{\partial}{\partial r}\left(r^{2}\frac{\partial f}{\partial r}\right).$$
+
+**习题 21** @137
+
+求下列向量值函数在指定点的导数：
+
+(1) $f(x)=(a\cos x,b\sin x,cx)^{\mathrm{T}}$，在 $x=\dfrac{\pi}{4}$ 点；
+
+(2) $f(x,y,z)=(3x+e^{y}\cot z,x^{3}+y^{3}\tan z)^{\mathrm{T}}$，在 $\left(1,2,\dfrac{\pi}{4}\right)$ 点；
+
+(3) $g(u,v)=(u\cos v,u\sin v,v)^{\mathrm{T}}$，在 $(1,\pi)$ 点。
+
+**习题 22** @137
+
+设 $f:\mathbf{R}^{3}\to\mathbf{R}^{3}$ 为向量值函数。
+
+(1) 如果坐标分量函数 $f_{1}(x,y,z)=x,f_{2}(x,y,z)=y,f_{3}(x,y,z)=z$，证明 $f$ 的导数是单位阵；
+
+(2) 写出坐标分量函数的一般形式，使 $f$ 的导数是单位阵；
+
+(3) 如果已知 $f$ 的导数是对角阵 $\operatorname{diag}(p(x),q(y),r(z))$，那么坐标分量函数应该具有什么样的形式？
 
 ### 12.2 多元复合函数的求导法则（p137–145）
 
@@ -3692,6 +5076,116 @@ $$\mathrm{d}^3z=\mathrm{d}\left(-\frac{\mathrm{d}u^2}{u^2}\right)=\mathrm{d}\lef
 
 $$\mathrm{d}^k z=(-1)^{k+1}\frac{(k-1)!\,(\mathrm{d}x+\mathrm{d}y)^k}{(x+y)^k},\qquad k=1,2,\cdots.$$
 
+#### 习题（p144–146）
+
+**习题 1** @144
+
+利用链式法则求偏导数：
+
+(1) $z=\tan(3t+2x^{2}-y^{2})$，$x=\dfrac{1}{t}$，$y=\sqrt{t}$，求 $\dfrac{\mathrm{d}z}{\mathrm{d}t}$；
+
+(2) $z=e^{x-2y}$，$x=\sin t$，$y=t^{3}$，求 $\dfrac{\mathrm{d}^{2}z}{\mathrm{d}t^{2}}$；
+
+(3) $w=\dfrac{e^{ux}(y-z)}{a^{2}+1}$，$y=a\sin x$，$z=\cos x$，求 $\dfrac{\mathrm{d}w}{\mathrm{d}x}$；
+
+(4) $z=u^{2}\ln v$，$u=\dfrac{x}{y}$，$v=3x-2y$，求 $\dfrac{\partial z}{\partial x},\dfrac{\partial z}{\partial y}$；
+
+(5) $u=e^{x^{2}+y^{2}+z^{2}}$，$z=y^{2}\sin x$，求 $\dfrac{\partial u}{\partial x},\dfrac{\partial u}{\partial y}$；
+
+(6) $w=(x+y+z)\sin(x^{2}+y^{2}+z^{2})$，$x=te^{s}$，$y=e^{t}$，$z=e^{st}$，求 $\dfrac{\partial w}{\partial s},\dfrac{\partial w}{\partial t}$；
+
+(7) $z=x^{2}+y^{2}+\cos(x+y)$，$x=u+v$，$y=\arcsin v$，求 $\dfrac{\partial z}{\partial u},\dfrac{\partial^{2}z}{\partial v\partial u}$；
+
+（以下假设 $f$ 具有二阶连续偏导数）
+
+(8) $u=f\left(xy,\dfrac{x}{y}\right)$，求 $\dfrac{\partial u}{\partial x},\dfrac{\partial u}{\partial y},\dfrac{\partial^{2}u}{\partial x\partial y},\dfrac{\partial^{2}u}{\partial y^{2}}$；
+
+(9) $u=f(x^{2}+y^{2}+z^{2})$，求 $\dfrac{\partial u}{\partial x},\dfrac{\partial u}{\partial y},\dfrac{\partial u}{\partial z},\dfrac{\partial^{2}u}{\partial x^{2}},\dfrac{\partial^{2}u}{\partial x\partial y}$；
+
+(10) $w=f(x,y,z)$，$x=u+v$，$y=u-v$，$z=uv$，求 $\dfrac{\partial w}{\partial u},\dfrac{\partial w}{\partial v},\dfrac{\partial^{2}w}{\partial u\partial v}$。
+
+**习题 2** @145
+
+设 $f(x,y)$ 具有连续偏导数，且 $f(x,x^{2})=1$，$f_{x}(x,x^{2})=x$，求 $f_{y}(x,x^{2})$。
+
+**习题 3** @145
+
+设 $f(x,y)$ 具有连续偏导数，且 $f(1,1)=1$，$f_{x}(1,1)=2$，$f_{y}(1,1)=3$。如果 $\varphi(x)=f(x,f(x,x))$，求 $\varphi'(1)$。
+
+**习题 4** @145
+
+设 $z=\dfrac{y}{f(x^{2}-y^{2})}$，其中 $f(t)$ 具有连续导数，且 $f(t)\neq 0$，求$$\frac{1}{x}\frac{\partial z}{\partial x}+\frac{1}{y}\frac{\partial z}{\partial y}.$$
+
+**习题 5** @145
+
+设 $z=\arctan\dfrac{x}{y}$，$x=u+v$，$y=u-v$，验证$$\frac{\partial z}{\partial u}+\frac{\partial z}{\partial v}=\frac{u-v}{u^{2}+v^{2}}.$$
+
+**习题 6** @145
+
+设 $\varphi$ 和 $\psi$ 具有二阶连续导数，验证：
+
+(1) $u=y\varphi(x^{2}-y^{2})$ 满足 $y\dfrac{\partial u}{\partial x}+x\dfrac{\partial u}{\partial y}=\dfrac{x}{y}u$；
+
+(2) $u=\varphi(x-at)+\psi(x+at)$ 满足波动方程 $\dfrac{\partial^{2}u}{\partial t^{2}}=a^{2}\dfrac{\partial^{2}u}{\partial x^{2}}$。
+
+**习题 7** @145
+
+设 $z=f(x,y)$ 具有二阶连续偏导数，写出 $\dfrac{\partial^{2}z}{\partial x^{2}}+\dfrac{\partial^{2}z}{\partial y^{2}}$ 在坐标变换$$\begin{cases}u=x^{2}-y^{2},\\v=2xy\end{cases}$$下的表达式。
+
+**习题 8** @145
+
+设 $f(x,y)=\displaystyle\int_{0}^{xy}e^{-t^{2}}\,\mathrm{d}t$，求$$\frac{x}{y}\frac{\partial^{2}f}{\partial x^{2}}-2\frac{\partial^{2}f}{\partial x\partial y}+\frac{y}{x}\frac{\partial^{2}f}{\partial y^{2}}.$$
+
+**习题 9** @145
+
+如果函数 $f(x,y)$ 满足：对于任意的实数 $t$ 及 $x,y$，成立$$f(tx,ty)=t^{n}f(x,y),$$那么 $f$ 称为 $n$ 次齐次函数。
+
+(1) 证明 $n$ 次齐次函数 $f$ 满足方程$$x\frac{\partial f}{\partial x}+y\frac{\partial f}{\partial y}=nf;$$
+
+(2) 利用上述性质，对于 $z=\sqrt{x^{2}+y^{2}}$ 求出 $x\dfrac{\partial z}{\partial x}+y\dfrac{\partial z}{\partial y}$。
+
+**习题 10** @146
+
+设 $z=f\left(xy,\dfrac{x}{y}\right)+g\left(\dfrac{x}{y}\right)$，其中 $f$ 具有二阶连续偏导数，$g$ 具有二阶连续导数，求 $\dfrac{\partial^{2}z}{\partial x\partial y}$。
+
+**习题 11** @146
+
+设向量值函数 $f:\mathbf{R}^{2}\to\mathbf{R}^{3}$ 的坐标分量函数为$$\begin{cases}x=u^{2}+v^{2},\\y=u^{2}-v^{2},\\z=uv.\end{cases}$$向量值函数 $g:\mathbf{R}^{2}\to\mathbf{R}^{2}$ 的坐标分量函数为$$\begin{cases}u=r\cos\theta,\\v=r\sin\theta.\end{cases}$$求复合函数 $f\circ g$ 的导数。
+
+**习题 12** @146
+
+设 $w=f(x,u,v)$，$u=g(y,z)$，$v=h(x,y)$，求 $\dfrac{\partial w}{\partial x},\dfrac{\partial w}{\partial y},\dfrac{\partial w}{\partial z}$。
+
+**习题 13** @146
+
+设 $z=u^{v}$，$u=\ln\sqrt{x^{2}+y^{2}}$，$v=\arctan\dfrac{y}{x}$，求 $\mathrm{d}z$。
+
+**习题 14** @146
+
+设 $z=(x^{2}+y^{2})e^{-\arctan\frac{y}{x}}$，求 $\mathrm{d}z$ 和 $\dfrac{\partial^{2}z}{\partial x\partial y}$。
+
+**习题 15** @146
+
+求下列函数的全微分：
+
+(1) $u=f(ax^{2}+by^{2}+cz^{2})$；
+
+(2) $u=f(x+y,xy)$；
+
+(3) $u=f\left(\ln(1+x^{2}+y^{2}+z^{2}),e^{x+y+z}\right)$。
+
+**习题 16** @146
+
+设 $f(t)$ 具有任意阶连续导数，而 $u=f(ax+by+cz)$。对任意正整数 $k$，求 $\mathrm{d}^{k}u$。
+
+**习题 17** @146
+
+设函数 $z=f(x,y)$ 在全平面上有定义，具有连续的偏导数，且满足方程$$xf_{x}(x,y)+yf_{y}(x,y)=0,$$证明：$f(x,y)$ 为常数。
+
+**习题 18** @146
+
+设 $n$ 元函数 $f$ 在 $\mathbf{R}^{n}$ 上具有连续偏导数，证明对于任意的 $\boldsymbol{x}=(x_{1},x_{2},\cdots,x_{n}),\boldsymbol{y}=(y_{1},y_{2},\cdots,y_{n})\in\mathbf{R}^{n}$，成立下述 Hadamard 公式：$$f(\boldsymbol{y})-f(\boldsymbol{x})=\sum_{i=1}^{n}\int_{0}^{1}(y_{i}-x_{i})\frac{\partial f}{\partial x_{i}}\left(\boldsymbol{x}+t(\boldsymbol{y}-\boldsymbol{x})\right)\mathrm{d}t.$$
+
 ### 12.3 中值定理和 Taylor 公式（p146–150）
 
 **定义 12.3.1 (凸区域)** @146
@@ -3829,6 +5323,44 @@ $$\begin{aligned}&f(x_1^0+\Delta x_1,x_2^0+\Delta x_2,\cdots,x_n^0+\Delta x_n)\\
 $$R_k=\frac{1}{(k+1)!}\left(\sum_{i=1}^{n}\Delta x_i\frac{\partial}{\partial x_i}\right)^{k+1}f(x_1^0+\theta\Delta x_1,x_2^0+\theta\Delta x_2,\cdots,x_n^0+\theta\Delta x_n),\quad 0<\theta<1$$
 
 为 Lagrange 余项。
+
+#### 习题（p151）
+
+**习题 1** @151
+
+对函数 $f(x,y)=\sin x\cos y$ 应用中值定理证明：存在 $\theta\in(0,1)$，使得$$\frac{3}{4}=\frac{\pi}{3}\cos\frac{\pi\theta}{3}\cos\frac{\pi\theta}{6}-\frac{\pi}{6}\sin\frac{\pi\theta}{3}\sin\frac{\pi\theta}{6}.$$
+
+**习题 2** @151
+
+写出函数 $f(x,y)=3x^{3}+y^{3}-2x^{2}y-2xy^{2}-6x-8y+9$ 在点 $(1,2)$ 的 Taylor 展开式。
+
+**习题 3** @151
+
+求函数 $f(x,y)=\sin x\ln(1+y)$ 在 $(0,0)$ 点的 Taylor 展开式（展开到三阶导数为止）。
+
+**习题 4** @151
+
+求函数 $f(x,y)=e^{x+y}$ 在 $(0,0)$ 点的 $n$ 阶 Taylor 展开式，并写出余项。
+
+**习题 5** @151
+
+设 $f(x,y)=\dfrac{\cos y}{x}$，$x>0$。
+
+(1) 求 $f(x,y)$ 在 $(1,0)$ 点的 Taylor 展开式（展开到二阶导数），并计算余项 $R_{2}$；
+
+(2) 求 $f(x,y)$ 在 $(1,0)$ 点的 $k$ 阶 Taylor 展开式，并证明在 $(1,0)$ 点的某个邻域内，余项 $R_{k}$ 满足当 $k\to\infty$ 时，$R_{k}\to 0$。
+
+**习题 6** @151
+
+利用 Taylor 公式近似计算 $8.96^{2.03}$（展开到二阶导数）。
+
+**习题 7** @151
+
+设 $f(x,y)$ 在 $\mathbf{R}^{2}$ 上可微，$l_{1}$ 与 $l_{2}$ 是 $\mathbf{R}^{2}$ 上两个线性无关的单位向量（方向）。若$$\frac{\partial f}{\partial l_{i}}(x,y)\equiv 0,\quad i=1,2,$$证明：在 $\mathbf{R}^{2}$ 上 $f(x,y)\equiv$ 常数。
+
+**习题 8** @151
+
+设 $f(x,y)=\sin\dfrac{y}{x}\ (x\neq 0)$，证明：$$\left(x\frac{\partial}{\partial x}+y\frac{\partial}{\partial y}\right)^{k}f(x,y)=0,\quad k\geqslant 1.$$
 
 ### 12.4 隐函数（p151–166）
 
@@ -4342,6 +5874,104 @@ $$\frac{\partial(x,y)}{\partial(r,\theta)}=\begin{vmatrix}\cos\theta&-r\sin\thet
 
 定理 12.4.5 和定理 12.4.6 在高维也成立。请有兴趣的读者考虑一下。
 
+#### 习题（p165–167）
+
+**习题 1** @165
+
+求下列方程所确定的隐函数的导数或偏导数：
+
+(1) $\sin y+e^{x}-xy^{2}=0$，求 $\dfrac{\mathrm{d}y}{\mathrm{d}x}$；
+
+(2) $x^{y}=y^{x}$，求 $\dfrac{\mathrm{d}y}{\mathrm{d}x}$；
+
+(3) $\ln\sqrt{x^{2}+y^{2}}=\arctan\dfrac{y}{x}$，求 $\dfrac{\mathrm{d}y}{\mathrm{d}x}$；
+
+(4) $\arctan\dfrac{x+y}{a}-\dfrac{y}{a}=0$，求 $\dfrac{\mathrm{d}y}{\mathrm{d}x}$ 和 $\dfrac{\mathrm{d}^{2}y}{\mathrm{d}x^{2}}$；
+
+(5) $\dfrac{x}{z}=\ln\dfrac{x}{y}$，求 $\dfrac{\partial z}{\partial x}$ 和 $\dfrac{\partial z}{\partial y}$；
+
+(6) $e^{z}-xyz=0$，求 $\dfrac{\partial z}{\partial x},\dfrac{\partial z}{\partial y},\dfrac{\partial^{2}z}{\partial x^{2}}$ 和 $\dfrac{\partial^{2}z}{\partial x\partial y}$；
+
+(7) $z^{3}-3xyz=a^{3}$，求 $\dfrac{\partial z}{\partial x},\dfrac{\partial z}{\partial y},\dfrac{\partial^{2}z}{\partial x^{2}}$ 和 $\dfrac{\partial^{2}z}{\partial x\partial y}$；
+
+(8) $f(x+y,y+z,z+x)=0$，求 $\dfrac{\partial z}{\partial x}$ 和 $\dfrac{\partial z}{\partial y}$；
+
+(9) $z=f(xz,z-y)$，求 $\dfrac{\partial z}{\partial x},\dfrac{\partial z}{\partial y}$ 和 $\dfrac{\partial^{2}z}{\partial x^{2}}$；
+
+(10) $f(x,x+y,x+y+z)=0$，求 $\dfrac{\partial z}{\partial x},\dfrac{\partial z}{\partial y},\dfrac{\partial^{2}z}{\partial x^{2}}$ 和 $\dfrac{\partial^{2}z}{\partial x\partial y}$。
+
+**习题 2** @166
+
+设 $y=\tan(x+y)$ 确定 $y$ 为 $x$ 的隐函数，验证$$\frac{\mathrm{d}^{3}y}{\mathrm{d}x^{3}}=-\frac{2(3y^{4}+8y^{2}+5)}{y^{8}}.$$
+
+**习题 3** @166
+
+设 $\varphi$ 是可微函数，证明由 $\varphi(cx-az,cy-bz)=0$ 所确定的隐函数 $z=f(x,y)$ 满足方程$$a\frac{\partial z}{\partial x}+b\frac{\partial z}{\partial y}=c.$$
+
+**习题 4** @166
+
+设方程 $\varphi(x+zy^{-1},y+zx^{-1})=0$ 确定隐函数 $z=f(x,y)$，证明它满足方程$$x\frac{\partial z}{\partial x}+y\frac{\partial z}{\partial y}=z-xy.$$
+
+**习题 5** @166
+
+求下列方程组所确定的隐函数的导数或偏导数：
+
+(1) $\begin{cases}z-x^{2}-y^{2}=0,\\ x^{2}+2y^{2}+3z^{2}=4a^{2},\end{cases}$ 求 $\dfrac{\mathrm{d}y}{\mathrm{d}x},\dfrac{\mathrm{d}z}{\mathrm{d}x},\dfrac{\mathrm{d}^{2}y}{\mathrm{d}x^{2}}$ 和 $\dfrac{\mathrm{d}^{2}z}{\mathrm{d}x^{2}}$；
+
+(2) $\begin{cases}xu+yv=0,\\ yu+xv=1,\end{cases}$ 求 $\dfrac{\partial u}{\partial x},\dfrac{\partial u}{\partial y},\dfrac{\partial^{2}u}{\partial x^{2}}$ 和 $\dfrac{\partial^{2}u}{\partial x\partial y}$；
+
+(3) $\begin{cases}u=f(ux,v+y),\\ v=g(u-x,v^{2}y),\end{cases}$ 求 $\dfrac{\partial u}{\partial x}$ 和 $\dfrac{\partial v}{\partial x}$；
+
+(4) $\begin{cases}x=u+v,\\ y=u-v,\\ z=u^{2}v^{2},\end{cases}$ 求 $\dfrac{\partial z}{\partial x}$ 和 $\dfrac{\partial z}{\partial y}$；
+
+(5) $\begin{cases}x=e^{u}\cos v,\\ y=e^{u}\sin v,\\ z=u^{2}+v^{2},\end{cases}$ 求 $\dfrac{\partial z}{\partial x}$ 和 $\dfrac{\partial z}{\partial y}$。
+
+**习题 6** @166
+
+求微分：
+
+(1) $x+2y+z-2\sqrt{xyz}=0$，求 $\mathrm{d}z$；
+
+(2) $\begin{cases}x+y=u+v,\\[2pt] \dfrac{x}{y}=\dfrac{\sin u}{\sin v},\end{cases}$ 求 $\mathrm{d}u$ 与 $\mathrm{d}v$。
+
+**习题 7** @166
+
+设 $\begin{cases}x=x(y),\\ z=z(y)\end{cases}$ 是由方程组$$\begin{cases}F(y-x,y-z)=0,\\G\left(xy,\dfrac{z}{y}\right)=0\end{cases}$$所确定的向量值隐函数，其中二元函数 $F$ 和 $G$ 分别具有连续的偏导数，求 $\dfrac{\mathrm{d}x}{\mathrm{d}y}$ 和 $\dfrac{\mathrm{d}z}{\mathrm{d}y}$。
+
+**习题 8** @166
+
+设 $f(x,y)$ 具有二阶连续偏导数。在极坐标 $\begin{cases}x=r\cos\theta,\\ y=r\sin\theta\end{cases}$ 变换下，求$$\frac{\partial^{2}f}{\partial x^{2}}+\frac{\partial^{2}f}{\partial y^{2}}$$关于极坐标的表达式。
+
+**习题 9** @166
+
+设二元函数 $f$ 具有二阶连续偏导数。证明：通过适当线性变换$$\begin{cases}u=x+\lambda y,\\v=x+\mu y,\end{cases}$$可以将方程$$A\frac{\partial^{2}f}{\partial x^{2}}+2B\frac{\partial^{2}f}{\partial x\partial y}+C\frac{\partial^{2}f}{\partial y^{2}}=0\qquad (AC-B^{2}<0)$$化简为$$\frac{\partial^{2}f}{\partial u\partial v}=0,$$并说明此时 $\lambda,\mu$ 为一元二次方程 $A+2Bt+Ct^{2}=0$ 的两个相异实根。
+
+**习题 10** @167
+
+通过自变量变换 $\begin{cases}x=e^{t},\\ y=e^{s},\end{cases}$ 变换方程$$ax^{2}\frac{\partial^{2}z}{\partial x^{2}}+2bxy\frac{\partial^{2}z}{\partial x\partial y}+cy^{2}\frac{\partial^{2}z}{\partial y^{2}}=0,\quad a,b,c\ \text{为常数}.$$
+
+**习题 11** @167
+
+通过自变量变换 $\begin{cases}u=x-2\sqrt{y},\\ v=x+2\sqrt{y},\end{cases}$ 变换方程$$\frac{\partial^{2}z}{\partial x^{2}}-y\frac{\partial^{2}z}{\partial y^{2}}=\frac{1}{2}\frac{\partial z}{\partial y},\quad y>0.$$
+
+**习题 12** @167
+
+导出新的因变量关于新的自变量的偏导数所满足的方程：
+
+(1) 用 $\begin{cases}u=x^{2}+y^{2},\\ v=\dfrac{1}{x}+\dfrac{1}{y}\end{cases}$ 及 $w=\ln z-(x+y)$ 变换方程$$y\frac{\partial z}{\partial x}-x\frac{\partial z}{\partial y}=(y-x)z;$$
+
+(2) 用 $\begin{cases}u=x,\\ v=x+y\end{cases}$ 及 $w=x+y+z$ 变换方程$$\frac{\partial^{2}z}{\partial x^{2}}-2\frac{\partial^{2}z}{\partial x\partial y}+\left(1+\frac{y}{x}\right)\frac{\partial^{2}z}{\partial y^{2}}=0;$$
+
+(3) 用 $\begin{cases}u=x+y,\\ v=\dfrac{y}{x}\end{cases}$ 及 $w=\dfrac{z}{x}$ 变换方程$$\frac{\partial^{2}z}{\partial x^{2}}-2\frac{\partial^{2}z}{\partial x\partial y}+\frac{\partial^{2}z}{\partial y^{2}}=0.$$
+
+**习题 13** @167
+
+设 $y=f(x,t)$，而 $t$ 是由方程 $F(x,y,t)=0$ 所确定的 $x,y$ 的隐函数，其中 $f$ 和 $F$ 都具有连续偏导数。证明$$\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{\dfrac{\partial f}{\partial x}\dfrac{\partial F}{\partial t}-\dfrac{\partial f}{\partial t}\dfrac{\partial F}{\partial x}}{\dfrac{\partial f}{\partial t}\dfrac{\partial F}{\partial y}+\dfrac{\partial F}{\partial t}}.$$
+
+**习题 14** @167
+
+设二元函数 $f(x,y):\mathbf{R}^{2}\to\mathbf{R}$ 具有连续偏导数，证明：存在一对一的连续的向量值函数 $G(t):\mathbf{R}\to\mathbf{R}^{2}$，使得$$f\circ G=\text{常数}.$$
+
 ### 12.5 偏导数在几何中的应用（p167–177）
 
 #### 空间曲线的切线和法平面
@@ -4750,6 +6380,82 @@ $$\begin{aligned}\boldsymbol{n}_1\cdot\boldsymbol{n}_2&=(x-a)\cdot x+y(y-b)+z\cd
 
 因此两球面是正交的。
 
+#### 习题（p177–178）
+
+**习题 1** @177
+
+求下列曲线在指定点处的切线与法平面方程：
+
+(1) $\begin{cases}y=x^{2},\\[2pt] z=\dfrac{x}{1+x},\end{cases}$ 在 $\left(1,1,\dfrac{1}{2}\right)$ 点；
+
+(2) $\begin{cases}x=t-\sin t,\\ y=1-\cos t,\\ z=4\sin\dfrac{t}{2},\end{cases}$ 在 $t=\dfrac{\pi}{2}$ 对应的点；
+
+(3) $\begin{cases}x+y+z=0,\\ x^{2}+y^{2}+z^{2}=6,\end{cases}$ 在 $(1,-2,1)$ 点；
+
+(4) $\begin{cases}x^{2}+y^{2}=R^{2},\\ x^{2}+z^{2}=R^{2},\end{cases}$ 在 $\left(\dfrac{R}{\sqrt{2}},\dfrac{R}{\sqrt{2}},\dfrac{R}{\sqrt{2}}\right)$ 点。
+
+**习题 2** @177
+
+在曲线 $x=t,y=t^{2},z=t^{3}$ 上求一点，使曲线在这一点的切线与平面 $x+2y+z=10$ 平行。
+
+**习题 3** @177
+
+求曲线 $x=\sin^{2}t,y=\sin t\cos t,z=\cos^{2}t$ 在 $t=\dfrac{\pi}{2}$ 所对应的点处的切线的方向余弦。
+
+**习题 4** @177
+
+求下列曲面在指定点的切平面与法线方程：
+
+(1) $z=2x^{4}+3y^{3}$，在点 $(2,1,35)$；
+
+(2) $e^{\frac{x}{z}}+e^{\frac{y}{z}}=4$，在点 $(\ln 2,\ln 2,1)$；
+
+(3) $x=u+v,y=u^{2}+v^{2},z=u^{3}+v^{3}$，在点 $u=0,v=1$ 所对应的点。
+
+**习题 5** @177
+
+在马鞍面 $z=xy$ 上求一点，使得这一点的法线与平面 $x+3y+z+9=0$ 垂直，并写出此法线方程。
+
+**习题 6** @177
+
+求椭球面 $x^{2}+2y^{2}+3z^{2}=498$ 的平行于平面 $x+3y+5z=7$ 的切平面。
+
+**习题 7** @177
+
+求圆柱面 $x^{2}+y^{2}=a^{2}$ 与马鞍面 $bz=xy$ 的交角。
+
+**习题 8** @177
+
+已知曲面 $x^{2}-y^{2}-3z=0$，求经过点 $A(0,0,-1)$ 且与直线 $\dfrac{x}{2}=\dfrac{y}{1}=\dfrac{z}{2}$ 平行的切平面的方程。
+
+**习题 9** @177
+
+设椭球面 $2x^{2}+3y^{2}+z^{2}=6$ 上点 $P(1,1,1)$ 处指向外侧的法向量为 $\boldsymbol{n}$，求函数 $u=\dfrac{\sqrt{6x^{2}+8y^{2}}}{z}$ 在点 $P$ 处沿方向 $\boldsymbol{n}$ 的方向导数。
+
+**习题 10** @177
+
+证明：曲面 $\sqrt{x}+\sqrt{y}+\sqrt{z}=\sqrt{a}\ (a>0)$ 上任一点的切平面在各坐标轴上的截距之和等于 $a$。
+
+**习题 11** @177
+
+证明：曲线$$\begin{cases}x=ae^{t}\cos t,\\y=ae^{t}\sin t,\\z=ae^{t}\end{cases}$$与锥面 $x^{2}+y^{2}=z^{2}$ 的各母线相交的角度相同。
+
+**习题 12** @177
+
+证明：曲面 $f(ax-bz,ay-cz)=0$ 上的切平面都与某一定直线平行，其中函数 $f$ 具有连续偏导数，且常数 $a,b,c$ 不同时为零。
+
+**习题 13** @177
+
+证明：曲面 $z=xf\left(\dfrac{y}{x}\right)\ (x\neq 0)$ 在任一点处的切平面都通过原点，其中函数 $f$ 具有连续偏导数。
+
+**习题 14** @178
+
+证明：曲面 $F\left(\dfrac{z}{y},\dfrac{x}{z},\dfrac{y}{x}\right)=0$ 的所有切平面都过某一定点，其中函数 $F$ 具有连续偏导数。
+
+**习题 15** @178
+
+设 $F(x,y,z)$ 具有连续偏导数，且 $F_{x}^{2}+F_{y}^{2}+F_{z}^{2}\neq 0$。进一步，设 $k$ 为正整数，$F(x,y,z)$ 为 $k$ 次齐次函数，即对于任意的实数 $t$ 和 $(x,y,z)$，成立$$F(tx,ty,tz)=t^{k}F(x,y,z).$$证明：曲面 $F(x,y,z)=0$ 上所有点的切平面相交于一定点。
+
 ### 12.6 无条件极值（p178–190）
 
 我们已经讨论了在只有一个自变量的情况下，如何解决诸如用料最省、路程最短、收益最大等最值问题。但实际问题一般总受到多个因素的制约，因此有必要讨论多元函数的最值问题。与一元函数类似，多元函数的最值与极值有着密切联系，下面先引入多元函数的极值概念。
@@ -5095,6 +6801,76 @@ $$X^*>X^{**},$$
 公共资源的过度使用常常会导致严重的后果。「牧童」经济典出于中世纪时英格兰的一段历史：当时是畜牧业鼎盛时期，到处是茂盛的草场和成群的牛羊，这时当局公布了一条法令「公共牧地为一般公众自由使用」。法令公布之后，牧场上的饲养量大增。道理很简单，牧场是公共地，放牧的收益却归牧民所有，于是牧民为了获得更多的收益，无限制地扩大其放牧的牛羊数，结果不仅青草被一扫而光，连草根也被啃得一干二净，这样一来，牧场成了荒漠。
 
 「牧童」经济模型仍有其现实意义。海洋鱼类的过度捕捞，森林的乱砍滥伐，大气污染等问题，都是这个模型的例子。
+
+#### 习题（p189–190）
+
+**习题 1** @189
+
+讨论下列函数的极值：
+
+(1) $f(x,y)=x^{4}+2y^{4}-2x^{2}-12y^{2}+6$；
+
+(2) $f(x,y)=x^{4}+y^{4}-x^{2}-2xy-y^{2}$；
+
+(3) $f(x,y,z)=x^{2}+y^{2}-z^{2}$；
+
+(4) $f(x,y)=(y-x^{2})(y-x^{4})$；
+
+(5) $f(x,y)=xy+\dfrac{a^{3}}{x}+\dfrac{b^{3}}{y}$，其中常数 $a>0,b>0$；
+
+(6) $f(x,y,z)=x+\dfrac{y}{x}+\dfrac{z}{y}+\dfrac{2}{z}\quad (x,y,z>0)$。
+
+**习题 2** @189
+
+设 $f(x,y,z)=x^{2}+3y^{2}+2z^{2}-2xy+2xz$，证明：函数 $f$ 的最小值为 $0$。
+
+**习题 3** @189
+
+证明：函数 $f(x,y)=(1+e^{y})\cos x-ye^{y}$ 有无穷多个极大值点，但无极小值点。
+
+**习题 4** @189
+
+求函数 $f(x,y)=\sin x+\sin y-\sin(x+y)$ 在闭区域$$D=\{(x,y)\mid x\geqslant 0,y\geqslant 0,x+y\leqslant 2\pi\}$$上的最大值与最小值。
+
+**习题 5** @189
+
+在 $[0,1]$ 上用怎样的直线 $\xi=ax+b$ 来代替曲线 $y=x^{2}$，才能使它在平方误差的积分$$J(a,b)=\int_{0}^{1}(y-\xi)^{2}\,\mathrm{d}x$$极小意义下的最佳近似。
+
+**习题 6** @189
+
+在半径为 $R$ 的圆上，求内接三角形的面积最大者。
+
+**习题 7** @190
+
+要做一圆柱形帐篷，并给它加一个圆锥形的顶。问：在体积为定值时，圆柱的半径 $R$、高 $H$ 及圆锥的高 $h$ 满足什么关系时，所用的布料最省？
+
+**习题 8** @190
+
+求由方程 $x^{2}+2xy+2y^{2}=1$ 所确定的隐函数 $y=y(x)$ 的极值。
+
+**习题 9** @190
+
+求由方程 $2x^{2}+2y^{2}+z^{2}+8yz-z+8=0$ 所确定的隐函数 $z=z(x,y)$ 的极值。
+
+**习题 10** @190
+
+在 $Oxy$ 平面上求一点，使它到三直线 $x=0$，$y=0$ 和 $x+2y-16=0$ 的距离的平方和最小。
+
+**习题 11** @190
+
+证明：圆的所有外切三角形中，以正三角形的面积为最小。
+
+**习题 12** @190
+
+证明：圆的所有内接 $n$ 边形中，以正 $n$ 边形的面积为最大。
+
+**习题 13** @190
+
+证明：当 $0<x<1,0<y<+\infty$ 时，成立不等式$$yx^{y}(1-x)<e^{-1}.$$
+
+**习题 14** @190
+
+某养殖场饲养两种鱼，若甲种鱼放养 $x$（万尾），乙种鱼放养 $y$（万尾），收获时两种鱼的收获量分别为$$(3-\alpha x-\beta y)x\quad\text{和}\quad(4-\beta x-2\alpha y)y\quad(\alpha>\beta>0).$$求使产鱼总量最大的放养数。
 
 ### 12.7 条件极值问题与 Lagrange 乘数法（p191–202）
 
@@ -5552,6 +7328,76 @@ $$k=\frac{c_0-c}{\ln x}=\frac{4000-3000}{\ln 10\,000}=108.57.$$
 
 $$v^*=\frac{4000-108.57\ln 1\,000\,000+\dfrac{1}{0.000\,58}-108.57}{1-0.000\,58\times108.57}\approx4392\ (\text{元/台}).$$
 
+#### 习题（p201–202）
+
+**习题 1** @201
+
+求下列函数的条件极值：
+
+(1) $f(x,y)=xy$，约束条件为 $x+y=1$；
+
+(2) $f(x,y,z)=x-2y+2z$，约束条件为 $x^{2}+y^{2}+z^{2}=1$；
+
+(3) $f(x,y,z)=\dfrac{x^{2}}{a^{2}}+\dfrac{y^{2}}{b^{2}}+\dfrac{z^{2}}{c^{2}}$，约束条件为$$\begin{cases}x^{2}+y^{2}+z^{2}=1,\\Ax+By+Cz=0,\end{cases}$$其中 $a>b>c>0$，$A^{2}+B^{2}+C^{2}=1$。
+
+**习题 2** @201
+
+在周长为 $2p$ 的一切三角形中，找出面积最大的三角形。
+
+**习题 3** @201
+
+要做一个容积为 $1\ \mathrm{m}^{3}$ 的有盖铝圆桶，什么样的尺寸才能使用料最省？
+
+**习题 4** @201
+
+抛物面 $z=x^{2}+y^{2}$ 被平面 $x+y+z=1$ 截成一椭圆，求原点到这个椭圆的最长距离与最短距离。
+
+**习题 5** @201
+
+求椭圆 $x^{2}+3y^{2}=12$ 的内接等腰三角形，其底边平行于椭圆的长轴，而使面积最大。
+
+**习题 6** @201
+
+求空间一点 $(a,b,c)$ 到平面 $Ax+By+Cz+D=0$ 的距离。
+
+**习题 7** @201
+
+求平面 $Ax+By+Cz=0$ 与柱面 $\dfrac{x^{2}}{a^{2}}+\dfrac{y^{2}}{b^{2}}=1$ 相交所成的椭圆的面积（$A,B,C$ 都不为零；$a,b$ 为正数）。
+
+**习题 8** @201
+
+求 $z=\dfrac{1}{2}(x^{4}+y^{4})$ 在条件 $x+y=a$ 下的最小值，其中 $x\geqslant 0,y\geqslant 0,a$ 为常数，并证明不等式$$\frac{x^{4}+y^{4}}{2}\geqslant\left(\frac{x+y}{2}\right)^{4}.$$
+
+**习题 9** @201
+
+当 $x>0,y>0,z>0$ 时，求函数$$f(x,y,z)=\ln x+2\ln y+3\ln z$$在球面 $x^{2}+y^{2}+z^{2}=6R^{2}$ 上的最大值，并由此证明：当 $a,b,c$ 为正实数时，成立不等式$$ab^{2}c^{3}\leqslant 108\left(\frac{a+b+c}{6}\right)^{6}.$$
+
+**习题 10** @201
+
+(1) 求函数 $f(x,y,z)=x^{a}y^{b}z^{c}\ (x>0,y>0,z>0)$ 在约束条件 $x^{k}+y^{k}+z^{k}=1$ 下的极大值，其中 $k,a,b,c$ 均为正常数；
+
+(2) 利用 (1) 的结果证明：对于任何正数 $u,v,w$，成立不等式$$\left(\frac{u}{a}\right)^{a}\left(\frac{v}{b}\right)^{b}\left(\frac{w}{c}\right)^{c}\leqslant\left(\frac{u+v+w}{a+b+c}\right)^{a+b+c}.$$
+
+**习题 11** @201
+
+求 $a,b$ 之值，使得椭圆 $\dfrac{x^{2}}{a^{2}}+\dfrac{y^{2}}{b^{2}}=1$ 包含圆 $(x-1)^{2}+y^{2}=1$，且面积最小。
+
+**习题 12** @201
+
+设三角形 $ABC$ 的三个顶点分别在三条光滑曲线 $f(x,y)=0,g(x,y)=0$ 及 $h(x,y)=0$ 上。证明：若三角形 $ABC$ 的面积取极大值，则各曲线分别在三个顶点处的法线必通过三角形 $ABC$ 的垂心。
+
+**习题 13** @201
+
+设 $a_{1},a_{2},\cdots,a_{n}$ 为 $n$ 个已知正数。求 $n$ 元函数$$f(x_{1},x_{2},\cdots,x_{n})=\sum_{k=1}^{n}a_{k}x_{k}$$在约束条件$$\sum_{k=1}^{n}x_{k}^{2}\leqslant 1$$下的最大值与最小值。
+
+**习题 14** @202
+
+求二次型 $\sum\limits_{i,j=1}^{n}a_{ij}x_{i}x_{j}\ (a_{ij}=a_{ji})$ 在 $n$ 维单位球面$$\left\{(x_{1},x_{2},\cdots,x_{n})\in\mathbf{R}^{n}\ \middle|\ \sum_{k=1}^{n}x_{k}^{2}=1\right\}$$上的最大值与最小值。
+
+**习题 15** @202
+
+设生产某种产品必须投入两种要素，$x_{1}$ 和 $x_{2}$ 分别为两要素的投入量，$Q$ 为产出量。若生产函数为 $Q=2x_{1}^{\alpha}x_{2}^{\beta}$，其中 $\alpha,\beta$ 为正的常数，且 $\alpha+\beta=1$。假定两种要素的价格分别为 $p_{1}$ 和 $p_{2}$，试问：当产出量为 $12$ 时，两种要素各投入多少可以使得投入总费用最小？
+
 ## 第13章 重积分
 
 ### 13.1 有界闭区域上的重积分（p203–209）
@@ -5793,6 +7639,40 @@ $$|a-f_N(t_0)|\leqslant 1/2^N.$$
 $$|a-f(t_0)|\leqslant|a-f_N(t_0)|+|f_N(t_0)-f(t_0)|\leqslant 1/2^N+1/2^N=1/2^{N-1},$$
 
 所以 $f(t_0)\in O(a,1/2^{N-1})\subset U$，这说明 $a$ 是 $f$ 的像集的聚点。显然 $f([0,1])\subset\Delta$；而 $f$ 为连续映射，所以 $f([0,1])$ 为紧集，因此是闭集，所以 $f([0,1])$ 包含它的所有聚点，因此 $f([0,1])=\Delta$，即 $f$ 的像为整个 $\Delta$。
+
+#### 习题（p209–210）
+
+**习题 1** @209
+
+设一平面薄板（不计其厚度），它在 $xy$ 平面上的表示是由光滑的简单闭曲线围成的闭区域 $D$。如果该薄板分布有面密度为 $\mu(x,y)$ 的电荷，且 $\mu(x,y)$ 在 $D$ 上连续，试用二重积分表示该薄板上的全部电荷。
+
+**习题 2** @210
+
+设函数 $f(x,y)$ 在矩形 $D=[0,\pi]\times[0,1]$ 上有界，而且除了曲线段 $y=\sin x,\ 0\leqslant x\leqslant\pi$ 外，$f(x,y)$ 在 $D$ 上其他点连续。证明 $f$ 在 $D$ 上可积。
+
+**习题 3** @210
+
+按定义计算二重积分 $\displaystyle\iint_D xy\,\mathrm{d}x\mathrm{d}y$，其中 $D=[0,1]\times[0,1]$。
+
+**习题 4** @210
+
+设一元函数 $f(x)$ 在 $[a,b]$ 上可积，$D=[a,b]\times[c,d]$。定义二元函数
+
+$$F(x,y)=f(x),\qquad (x,y)\in D.$$
+
+证明 $F(x,y)$ 在 $D$ 上可积。
+
+**习题 5** @210
+
+设 $D$ 是 $\mathbb{R}^2$ 上的零边界闭区域，二元函数 $f(x,y)$ 和 $g(x,y)$ 在 $D$ 上可积。证明
+
+$$H(x,y)=\max\{f(x,y),g(x,y)\}$$
+
+和
+
+$$h(x,y)=\min\{f(x,y),g(x,y)\}$$
+
+也在 $D$ 上可积。
 
 ### 13.2 积分的性质与计算（p210–218）
 
@@ -6099,6 +7979,96 @@ $$\int_{T_{n-1}}\mathrm{d}x_1\mathrm{d}x_2\cdots\mathrm{d}x_{n-1}=\frac{h^{n-1}}
 则利用上式得 $T_n$ 的体积为
 
 $$\int_{T_n}\mathrm{d}x_1\mathrm{d}x_2\cdots\mathrm{d}x_n=\int_0^h\mathrm{d}x_1\iint_{\substack{x_2\geqslant 0,\ x_3\geqslant 0,\ \cdots,\ x_n\geqslant 0\\ x_2+x_3+\cdots+x_n\leqslant h-x_1}}\mathrm{d}x_2\mathrm{d}x_3\cdots\mathrm{d}x_n=\int_0^h\frac{(h-x_1)^{n-1}}{(n-1)!}\,\mathrm{d}x_1=\frac{h^n}{n!}.$$
+
+#### 习题（p218–219）
+
+**习题 1** @218
+
+证明重积分的性质 8。
+
+**习题 2** @218
+
+根据二重积分的性质，比较下列积分的大小：
+
+(1) $\displaystyle\iint_D (x+y)^2\,\mathrm{d}x\mathrm{d}y$ 与 $\displaystyle\iint_D (x+y)^3\,\mathrm{d}x\mathrm{d}y$，
+
+其中 $D$ 为 $x$ 轴、$y$ 轴与直线 $x+y=1$ 所围的区域；
+
+(2) $\displaystyle\iint_D \ln(x+y)\,\mathrm{d}x\mathrm{d}y$ 与 $\displaystyle\iint_D [\ln(x+y)]^2\,\mathrm{d}x\mathrm{d}y$，
+
+其中 $D$ 为闭矩形 $[3,5]\times[0,1]$。
+
+**习题 3** @218
+
+利用重积分的性质估计下列重积分的值：
+
+(1) $\displaystyle\iint_D xy(x+y)\,\mathrm{d}x\mathrm{d}y$，其中 $D$ 为闭矩形 $[0,1]\times[0,1]$；
+
+(2) $\displaystyle\iint_D \frac{\mathrm{d}x\mathrm{d}y}{100+\cos^2 x+\cos^2 y}$，其中 $D$ 为区域 $\{(x,y)\mid |x|+|y|\leqslant 10\}$；
+
+(3) $\displaystyle\iiint_\Omega \frac{\mathrm{d}x\mathrm{d}y\mathrm{d}z}{1+x^2+y^2+z^2}$，其中 $\Omega$ 为单位球 $\{(x,y,z)\mid x^2+y^2+z^2\leqslant 1\}$。
+
+**习题 4** @218
+
+计算下列重积分：
+
+(1) $\displaystyle\iint_D (x^3+3x^2y+y^3)\,\mathrm{d}x\mathrm{d}y$，其中 $D$ 为闭矩形 $[0,1]\times[0,1]$；
+
+(2) $\displaystyle\iint_D xy\,e^{x^2+y^2}\,\mathrm{d}x\mathrm{d}y$，其中 $D$ 为闭矩形 $[a,b]\times[c,d]$；
+
+(3) $\displaystyle\iiint_\Omega \frac{\mathrm{d}x\mathrm{d}y\mathrm{d}z}{(x+y+z)^3}$，其中 $\Omega$ 为长方体 $[1,2]\times[1,2]\times[1,2]$。
+
+**习题 5** @219
+
+在下列积分中改变累次积分的次序：
+
+(1) $\displaystyle\int_a^b \mathrm{d}x\int_a^x f(x,y)\,\mathrm{d}y\quad (a<b)$；
+
+(2) $\displaystyle\int_0^{2a}\mathrm{d}x\int_{\sqrt{2ax-x^2}}^{\sqrt{2ax}} f(x,y)\,\mathrm{d}y\quad (a>0)$；
+
+(3) $\displaystyle\int_0^{2\pi}\mathrm{d}x\int_0^{\sin x} f(x,y)\,\mathrm{d}y$；
+
+(4) $\displaystyle\int_0^1 \mathrm{d}y\int_0^{2y} f(x,y)\,\mathrm{d}x+\int_1^3 \mathrm{d}y\int_0^{3-y} f(x,y)\,\mathrm{d}x$；
+
+(5) $\displaystyle\int_0^1 \mathrm{d}x\int_0^{1-x}\mathrm{d}y\int_0^{x+y} f(x,y,z)\,\mathrm{d}z$（改成按 $y$ 方向、$x$ 方向、$z$ 方向的次序积分）；
+
+(6) $\displaystyle\int_{-1}^1 \mathrm{d}x\int_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}\mathrm{d}y\int_{\sqrt{x^2+y^2}}^1 f(x,y,z)\,\mathrm{d}z$（改成按 $x$ 方向、$y$ 方向、$z$ 方向的次序积分）。
+
+**习题 6** @219
+
+计算下列重积分：
+
+(1) $\displaystyle\iint_D xy^2\,\mathrm{d}x\mathrm{d}y$，其中 $D$ 为抛物线 $y^2=2px$ 和直线 $x=\frac{p}{2}\ (p>0)$ 所围的区域；
+
+(2) $\displaystyle\iint_D \frac{\mathrm{d}x\mathrm{d}y}{\sqrt{2a-x}}\quad (a>0)$，其中 $D$ 为圆心在 $(a,a)$、半径为 $a$ 并且和坐标轴相切的圆周上较短的一段弧和坐标轴所围的区域；
+
+(3) $\displaystyle\iint_D e^{x+y}\,\mathrm{d}x\mathrm{d}y$，其中 $D$ 为区域 $\{(x,y)\mid |x|+|y|\leqslant 1\}$；
+
+(4) $\displaystyle\iint_D (x^2+y^2)\,\mathrm{d}x\mathrm{d}y$，其中 $D$ 为直线 $y=x$，$y=x+a$，$y=a$ 和 $y=3a\ (a>0)$ 所围的区域；
+
+(5) $\displaystyle\iint_D y\,\mathrm{d}x\mathrm{d}y$，其中 $D$ 为摆线的一拱 $x=a(t-\sin t)$，$y=a(1-\cos t)\ (0\leqslant t\leqslant 2\pi)$ 与 $x$ 轴所围的区域；
+
+(6) $\displaystyle\iint_D y\left[1+xe^{\frac{1}{2}(x^2+y^2)}\right]\mathrm{d}x\mathrm{d}y$，其中 $D$ 为直线 $y=x$，$y=-1$ 和 $x=1$ 所围的区域；
+
+(7) $\displaystyle\iint_D x^2y\,\mathrm{d}x\mathrm{d}y$，其中 $D=\{(x,y)\mid x^2+y^2\geqslant 2x,\ 0\leqslant x\leqslant 2,\ 0\leqslant y\leqslant x\}$；
+
+(8) $\displaystyle\iiint_\Omega xy^2z^3\,\mathrm{d}x\mathrm{d}y\mathrm{d}z$，其中 $\Omega$ 为曲面 $z=xy$，平面 $y=x$，$x=1$ 和 $z=0$ 所围的区域；
+
+(9) $\displaystyle\iiint_\Omega \frac{\mathrm{d}x\mathrm{d}y\mathrm{d}z}{(1+x+y+z)^3}$，其中 $\Omega$ 为平面 $x=0$，$y=0$，$z=0$ 和 $x+y+z=1$ 所围成的四面体；
+
+(10) $\displaystyle\iiint_\Omega z\,\mathrm{d}x\mathrm{d}y\mathrm{d}z$，其中 $\Omega$ 为抛物面 $z=x^2+y^2$ 与平面 $z=h\ (h>0)$ 所围的区域；
+
+(11) $\displaystyle\iiint_\Omega z^2\,\mathrm{d}x\mathrm{d}y\mathrm{d}z$，其中 $\Omega$ 为球体 $x^2+y^2+z^2\leqslant R^2$ 和 $x^2+y^2+z^2\leqslant 2Rz\ (R>0)$ 的公共部分；
+
+(12) $\displaystyle\iiint_\Omega x^2\,\mathrm{d}x\mathrm{d}y\mathrm{d}z$，其中 $\Omega$ 为椭球体 $\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}\leqslant 1$。
+
+**习题 7** @219
+
+设平面薄片所占的区域是由直线 $x+y=2$，$y=x$ 和 $x$ 轴所围成，它的面密度为 $\rho(x,y)=x^2+y^2$，求这个薄片的质量。
+
+**习题 8** @219
+
+求抛物线 $y^2=2px+p^2$ 与 $y^2=-2qx+q^2\ (p,q>0)$ 所围图形的面积。
 
 ### 13.3 重积分的变量代换（p219–234）
 
@@ -6446,6 +8416,142 @@ $$F_z=\begin{cases}\displaystyle G\rho\int_{0}^{2\pi}\mathrm{d}\theta\int_{0}^{a
 
 （2）当 $s<a$ 时，即质点在球体内部时，球体对质点的引力等效于一个球心与原点相同，而半径为 $s$ 的球体对该质点的引力。即，等效于将半径为 $s$ 的球体的质量 $\rho\dfrac{4\pi s^3}{3}$ 全部集中在球心时，球心对该质点的引力。
 
+#### 习题（p233–235）
+
+**习题 1** @233
+
+利用极坐标计算下列二重积分：
+
+(1) $\displaystyle\iint_D e^{-(x^2+y^2)}\,\mathrm{d}x\mathrm{d}y$，其中 $D$ 是由圆周 $x^2+y^2=R^2\ (R>0)$ 所围区域；
+
+(2) $\displaystyle\iint_D \sqrt{x}\,\mathrm{d}x\mathrm{d}y$，其中 $D$ 是由圆周 $x^2+y^2=x$ 所围区域；
+
+(3) $\displaystyle\iint_D (x+y)\,\mathrm{d}x\mathrm{d}y$，其中 $D$ 是由圆周 $x^2+y^2=x+y$ 所围区域；
+
+(4) $\displaystyle\iint_D \sqrt{\frac{1-x^2-y^2}{1+x^2+y^2}}\,\mathrm{d}x\mathrm{d}y$，其中 $D$ 是由圆周 $x^2+y^2=1$ 及坐标轴所围成的在第一象限上的区域。
+
+**习题 2** @233
+
+求下列图形的面积：
+
+(1) $(a_1x+b_1y+c_1)^2+(a_2x+b_2y+c_2)^2=1\quad (\delta=a_1b_2-a_2b_1\neq 0)$ 所围的区域；
+
+(2) 由抛物线 $y^2=mx$，$y^2=nx\ (0<m<n)$，直线 $y=\alpha x$，$y=\beta x\ (0<\alpha<\beta)$ 所围的区域；
+
+(3) 三叶玫瑰线 $(x^2+y^2)^2=a(x^3-3xy^2)\ (a>0)$ 所围的图形；
+
+(4) 曲线 $\left(\frac{x}{h}+\frac{y}{k}\right)^4=\frac{x^2}{a^2}+\frac{y^2}{b^2}\ (h,k>0;\ a,b>0)$ 所围图形在 $x>0$，$y>0$ 的部分。
+
+**习题 3** @233
+
+求极限
+
+$$\lim_{\rho\to 0}\frac{1}{\pi\rho^2}\iint_{x^2+y^2\leqslant\rho^2} f(x,y)\,\mathrm{d}x\mathrm{d}y,$$
+
+其中 $f(x,y)$ 在原点附近连续。
+
+**习题 4** @233
+
+选取适当的坐标变换计算下列二重积分：
+
+(1) $\displaystyle\iint_D (\sqrt{x}+\sqrt{y})\,\mathrm{d}x\mathrm{d}y$，其中 $D$ 是由坐标轴及抛物线 $\sqrt{x}+\sqrt{y}=1$ 所围的区域；
+
+(2) $\displaystyle\iint_D \left(\frac{x^2}{a^2}+\frac{y^2}{b^2}\right)\mathrm{d}x\mathrm{d}y$，其中 $D$ 是由 i) 椭圆 $\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$ 所围区域；ii) 圆 $x^2+y^2=R^2$ 所围的区域；
+
+(3) $\displaystyle\iint_D y\,\mathrm{d}x\mathrm{d}y$，其中 $D$ 是由直线 $x=-2$，$y=0$，$y=2$，以及曲线 $x=-\sqrt{2y-y^2}$ 所围的区域；
+
+(4) $\displaystyle\iint_D e^{x+y}\,\mathrm{d}x\mathrm{d}y$，其中 $D$ 是由直线 $x+y=2$，$x=0$ 及 $y=0$ 所围的区域；
+
+(5) $\displaystyle\iint_D \frac{(x+y)^2}{1+(x-y)^2}\,\mathrm{d}x\mathrm{d}y$，其中闭区域 $D=\{(x,y)\mid |x|+|y|\leqslant 1\}$；
+
+(6) $\displaystyle\iint_D \frac{\sqrt{x^2+y^2}}{\sqrt{4a^2-x^2-y^2}}\,\mathrm{d}x\mathrm{d}y$，其中闭区域 $D$ 是由曲线 $y=\sqrt{a^2-x^2}-a\ (a>0)$ 和直线 $y=-x$ 所围成。
+
+**习题 5** @234
+
+选取适当的坐标变换计算下列三重积分：
+
+(1) $\displaystyle\iiint_\Omega (x^2+y^2+z^2)\,\mathrm{d}x\mathrm{d}y\mathrm{d}z$，其中 $\Omega$ 为球 $\{(x,y,z)\mid x^2+y^2+z^2\leqslant 1\}$；
+
+(2) $\displaystyle\iiint_\Omega \sqrt{1-\frac{x^2}{a^2}-\frac{y^2}{b^2}-\frac{z^2}{c^2}}\,\mathrm{d}x\mathrm{d}y\mathrm{d}z$，其中 $\Omega$ 为椭球 $\left\{(x,y,z)\ \middle|\ \frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}\leqslant 1\right\}$；
+
+(3) $\displaystyle\iiint_\Omega z\sqrt{x^2+y^2}\,\mathrm{d}x\mathrm{d}y\mathrm{d}z$，其中 $\Omega$ 为柱面 $y=\sqrt{2x-x^2}$ 及平面 $z=0$，$z=a\ (a>0)$ 和 $y=0$ 所围的区域；
+
+(4) $\displaystyle\iiint_\Omega \frac{z\ln(1+x^2+y^2+z^2)}{1+x^2+y^2+z^2}\,\mathrm{d}x\mathrm{d}y\mathrm{d}z$，其中 $\Omega$ 为半球 $\{(x,y,z)\mid x^2+y^2+z^2\leqslant 1,\ z\geqslant 0\}$；
+
+(5) $\displaystyle\iiint_\Omega (x+y+z)^2\,\mathrm{d}x\mathrm{d}y\mathrm{d}z$，其中 $\Omega$ 为抛物面 $x^2+y^2=2az$ 与球面 $x^2+y^2+z^2=3a^2\ (a>0)$ 所围的区域；
+
+(6) $\displaystyle\iiint_\Omega (x^2+y^2)\,\mathrm{d}x\mathrm{d}y\mathrm{d}z$，其中 $\Omega$ 为平面曲线 $\begin{cases}y^2=2z,\\ x=0\end{cases}$ 绕 $z$ 轴旋转一周形成的曲面与平面 $z=8$ 所围的区域；
+
+(7) $\displaystyle\iiint_\Omega \frac{1}{\sqrt{x^2+y^2+z^2}}\,\mathrm{d}x\mathrm{d}y\mathrm{d}z$，其中闭区域 $\Omega=\{(x,y,z)\mid x^2+y^2+(z-1)^2\leqslant 1\}$；
+
+(8) $\displaystyle\iiint_\Omega (x+y-z)(x-y+z)(y+z-x)\,\mathrm{d}x\mathrm{d}y\mathrm{d}z$，其中闭区域
+
+$$\Omega=\{(x,y,z)\mid 0\leqslant x+y-z\leqslant 1,\ 0\leqslant x-y+z\leqslant 1,\ 0\leqslant y+z-x\leqslant 1\}.$$
+
+**习题 6** @234
+
+求球面 $x^2+y^2+z^2=R^2$ 和圆柱面 $x^2+y^2=Rx\ (R>0)$ 所围立体的体积。
+
+**习题 7** @234
+
+求抛物面 $z=6-x^2-y^2$ 与锥面 $z=\sqrt{x^2+y^2}$ 所围立体的体积。
+
+**习题 8** @234
+
+求下列曲面所围空间区域的体积：
+
+(1) $\left(\frac{x^2}{a^2}+\frac{y^2}{b^2}+\frac{z^2}{c^2}\right)^2=ax\quad (a,b,c>0)$；
+
+(2) $\left(\frac{x}{a}+\frac{y}{b}\right)^2+\left(\frac{z}{c}\right)^2=1\ (a,b,c>0)$ 与三张平面 $x=0$，$y=0$，$z=0$ 所围的在第一卦限的立体。
+
+**习题 9** @234
+
+设一物体在空间的表示为由曲面 $4z^2=25(x^2+y^2)$ 与平面 $z=5$ 所围成的一立体，其密度为 $\rho(x,y,z)=x^2+y^2$，求此物体的质量。
+
+**习题 10** @234
+
+在一个形状为旋转抛物面 $z=x^2+y^2$ 的容器内，已经盛有 $8\pi\,\mathrm{cm}^3$ 的水，现又倒入 $120\pi\,\mathrm{cm}^3$ 的水，问水面比原来升高多少厘米。
+
+**习题 11** @235
+
+求质量为 $M$ 的均匀薄片 $\begin{cases}x^2+y^2\leqslant a^2,\\ z=0\end{cases}$ 对 $z$ 轴上 $(0,0,c)\ (c>0)$ 点处的单位质量的质点的引力。
+
+**习题 12** @235
+
+已知球体 $x^2+y^2+z^2\leqslant 2Rz$，在其上任一点的密度在数量上等于该点到原点距离的平方，求球体的质量与质心。
+
+**习题 13** @235
+
+证明不等式
+
+$$2\pi(\sqrt{17}-4)\leqslant \iint_{x^2+y^2\leqslant 1}\frac{\mathrm{d}x\mathrm{d}y}{\sqrt{16+\sin^2 x+\sin^2 y}}\leqslant\frac{\pi}{4}.$$
+
+**习题 14** @235
+
+设一元函数 $f(u)$ 在 $[-1,1]$ 上连续，证明：
+
+$$\iint_{|x|+|y|\leqslant 1} f(x+y)\,\mathrm{d}x\mathrm{d}y=\int_{-1}^1 f(u)\,\mathrm{d}u.$$
+
+**习题 15** @235
+
+设一元函数 $f(u)$ 在 $[-1,1]$ 上连续。证明：
+
+$$\iiint_\Omega f(z)\,\mathrm{d}x\mathrm{d}y\mathrm{d}z=\pi\int_{-1}^1 f(u)(1-u^2)\,\mathrm{d}u,$$
+
+其中 $\Omega$ 为单位球 $x^2+y^2+z^2\leqslant 1$。
+
+**习题 16** @235
+
+计算下列 $n$ 重积分：
+
+(1) $\displaystyle\int_\Omega \sqrt{x_1+x_2+\cdots+x_n}\,\mathrm{d}x_1\mathrm{d}x_2\cdots\mathrm{d}x_n$，其中
+
+$$\Omega=\{(x_1,x_2,\cdots,x_n)\mid x_1+x_2+\cdots+x_n\leqslant 1,\ x_i\geqslant 0,\ i=1,2,\cdots,n\};$$
+
+(2) $\displaystyle\int_\Omega (x_1^2+x_2^2+\cdots+x_n^2)\,\mathrm{d}x_1\mathrm{d}x_2\cdots\mathrm{d}x_n$，
+
+其中 $\Omega$ 为 $n$ 维球体 $\{(x_1,x_2,\cdots,x_n)\mid x_1^2+x_2^2+\cdots+x_n^2\leqslant 1\}$。
+
 ### 13.4 反常重积分（p235–243）
 
 本节讨论两类反常重积分：无界区域上的重积分，以及无界函数（被积函数在区域内有奇点）的重积分。处理方式与一元反常积分类似，都是先在有界子区域上作正常积分，再让子区域单调地"逼近"原来的区域，取极限。
@@ -6741,6 +8847,58 @@ $$\begin{aligned}I&=\int_{x_1^2+x_2^2+\cdots+x_n^2\le 1}\frac{\mathrm{d}x_1\math
 $$\int_{-a}^{a}\frac{\mathrm{d}u}{\sqrt{a^2-u^2}}=\pi$$
 
 和上节例 13.3.11 的结果。
+
+#### 习题（p243–244）
+
+**习题 1** @243
+
+讨论下列反常重积分的敛散性：
+
+(1) $\displaystyle\iint_{\mathbb{R}^2}\frac{\mathrm{d}x\mathrm{d}y}{(1+|x|^p)(1+|y|^q)}$；
+
+(2) $\displaystyle\iint_D \frac{\varphi(x,y)}{(1+x^2+y^2)^p}\,\mathrm{d}x\mathrm{d}y$，$D=\{(x,y)\mid 0\leqslant y\leqslant 1\}$，而且 $0<m\leqslant|\varphi(x,y)|\leqslant M\ (m,M$ 为常数$)$；
+
+(3) $\displaystyle\iint_{x^2+y^2\leqslant 1}\frac{\varphi(x,y)}{(1-x^2-y^2)^p}\,\mathrm{d}x\mathrm{d}y$，其中 $\varphi(x,y)$ 满足与上题同样的条件；
+
+(4) $\displaystyle\iint_{[0,a]\times[0,a]}\frac{\mathrm{d}x\mathrm{d}y}{|x-y|^p}$；
+
+(5) $\displaystyle\iiint_{x^2+y^2+z^2\leqslant 1}\frac{\mathrm{d}x\mathrm{d}y\mathrm{d}z}{(x^2+y^2+z^2)^p}$。
+
+**习题 2** @243
+
+计算下列反常重积分：
+
+(1) $\displaystyle\iint_D \frac{\mathrm{d}x\mathrm{d}y}{x^py^q}$，其中 $D=\{(x,y)\mid xy\geqslant 1,\ x\geqslant 1\}$，且 $p>q>1$；
+
+(2) $\displaystyle\int_{\frac{x^2}{a^2}+\frac{y^2}{b^2}\geqslant 1} e^{-\left(\frac{x^2}{a^2}+\frac{y^2}{b^2}\right)}\,\mathrm{d}x\mathrm{d}y$；
+
+(3) $\displaystyle\iiint_{\mathbb{R}^3} e^{-(x^2+y^2+z^2)}\,\mathrm{d}x\mathrm{d}y\mathrm{d}z$。
+
+**习题 3** @244
+
+设 $D$ 是由第一象限内的抛物线 $y=x^2$，圆周 $x^2+y^2=1$ 以及 $x$ 轴所围的平面区域，证明 $\displaystyle\iint_D \frac{\mathrm{d}x\mathrm{d}y}{x^2+y^2}$ 收敛。
+
+**习题 4** @244
+
+判别反常重积分
+
+$$I=\iint_{\mathbb{R}^2}\frac{\mathrm{d}x\mathrm{d}y}{(1+x^2)(1+y^2)}$$
+
+是否收敛。如果收敛，求其值。
+
+**习题 5** @244
+
+设 $F(t)=\displaystyle\iint_{\substack{0\leqslant x\leqslant t\\ 0\leqslant y\leqslant 1}} e^{-\frac{t}{x^2}}\,\mathrm{d}x\mathrm{d}y$，求 $F'(t)$。
+
+**习题 6** @244
+
+设函数 $f(x)$ 在 $[0,a]$ 上连续，证明：
+
+$$\iint_{0\leqslant y\leqslant x\leqslant a}\frac{f(y)}{\sqrt{(a-x)(x-y)}}\,\mathrm{d}x\mathrm{d}y=\pi\int_0^a f(x)\,\mathrm{d}x.$$
+
+**习题 7** @244
+
+计算积分 $\displaystyle\int_{\mathbb{R}^n} e^{-(x_1^2+x_2^2+\cdots+x_n^2)}\,\mathrm{d}x_1\mathrm{d}x_2\cdots\mathrm{d}x_n$。
 
 ### 13.5 微分形式（p244–250）
 
@@ -7061,6 +9219,58 @@ $$\mathrm{d}y_1\wedge\mathrm{d}y_2\wedge\cdots\wedge\mathrm{d}y_n=\frac{\partial
 $$\begin{aligned}\int_{T(D)}f(y_1,y_2,\cdots,y_n)\,\mathrm{d}y_1\wedge\mathrm{d}y_2\wedge\cdots\wedge\mathrm{d}y_n\\ =\int_{D}f(y_1(\boldsymbol{x}),y_2(\boldsymbol{x}),\cdots,y_n(\boldsymbol{x}))\,\frac{\partial(y_1,y_2,\cdots,y_n)}{\partial(x_1,x_2,\cdots,x_n)}\,\mathrm{d}x_1\wedge\mathrm{d}x_2\wedge\cdots\wedge\mathrm{d}x_n.\end{aligned}$$
 
 以后将知道，这样做会带来很大的方便。这也是引入微分形式的目的之一。
+
+#### 习题（p250）
+
+**习题 1** @250
+
+计算下列外积：
+
+(1) $(x\,\mathrm{d}x+7z^2\,\mathrm{d}y)\wedge(y\,\mathrm{d}x-x\,\mathrm{d}y+6\,\mathrm{d}z)$；
+
+(2) $(\cos y\,\mathrm{d}x+\cos x\,\mathrm{d}y)\wedge(\sin y\,\mathrm{d}x-\sin x\,\mathrm{d}y)$；
+
+(3) $(6\,\mathrm{d}x\wedge\mathrm{d}y+27\,\mathrm{d}x\wedge\mathrm{d}z)\wedge(\mathrm{d}x+\mathrm{d}y+\mathrm{d}z)$。
+
+**习题 2** @250
+
+设
+
+$$\omega=a_0+a_1\,\mathrm{d}x_1+a_2\,\mathrm{d}x_1\wedge\mathrm{d}x_3+a_3\,\mathrm{d}x_2\wedge\mathrm{d}x_3\wedge\mathrm{d}x_4,$$
+
+$$\eta=b_1\,\mathrm{d}x_1\wedge\mathrm{d}x_2+b_2\,\mathrm{d}x_1\wedge\mathrm{d}x_3+b_3\,\mathrm{d}x_1\wedge\mathrm{d}x_2\wedge\mathrm{d}x_3+b_4\,\mathrm{d}x_2\wedge\mathrm{d}x_3\wedge\mathrm{d}x_4.$$
+
+求 $\omega+\eta$ 和 $\omega\wedge\eta$。
+
+**习题 3** @250
+
+求
+
+$$\begin{aligned}\omega={}&x_1\,\mathrm{d}x_1\wedge\mathrm{d}x_2+x_3\,\mathrm{d}x_2\wedge\mathrm{d}x_3+(1+x_2^2)\,\mathrm{d}x_1\wedge\mathrm{d}x_3+x_2^2\,\mathrm{d}x_3\wedge\mathrm{d}x_1\\&+(x_3^2+x_2^2)\,\mathrm{d}x_2\wedge\mathrm{d}x_1\wedge\mathrm{d}x_3-x_1^2\,\mathrm{d}x_3\wedge\mathrm{d}x_2\end{aligned}$$
+
+的标准形式。
+
+**习题 4** @250
+
+证明外积满足分配律和结合律。
+
+**习题 5** @250
+
+写出微分形式 $\mathrm{d}x\wedge\mathrm{d}y\wedge\mathrm{d}z$ 在下列变换下的表达式：
+
+(1) 柱面坐标变换
+
+$$x=r\cos\theta,\qquad y=r\sin\theta,\qquad z=z;$$
+
+(2) 球面坐标变换
+
+$$x=r\sin\varphi\cos\theta,\qquad y=r\sin\varphi\sin\theta,\qquad z=r\cos\varphi.$$
+
+**习题 6** @250
+
+设 $\omega_j=\displaystyle\sum_{i=1}^n a_j^i\,\mathrm{d}x_i\ (j=1,2,\cdots,n)$ 为 $\mathbb{R}^n$ 上的 $1$-形式，证明
+
+$$\omega_1\wedge\omega_2\wedge\cdots\wedge\omega_n=\det(a_j^i)\,\mathrm{d}x_1\wedge\mathrm{d}x_2\wedge\cdots\wedge\mathrm{d}x_n.$$
 
 ## 第14章 曲线积分、曲面积分与场论
 
@@ -7490,6 +9700,96 @@ $$\frac{h}{2(R+h)}=\frac{36\,000\,000}{2(6\,371\,000+36\,000\,000)}\approx0.424\
 
 因此，卫星的电波覆盖了地球表面三分之一以上的面积。于是，从理论上说，只要在赤道上空使用三颗相间 $2\pi/3$ 的通讯卫星，它们的电波就可以覆盖几乎整个地球表面。
 
+#### 习题（p263–265）
+
+**习题 1** @263
+
+求下列第一类曲线积分：
+
+(1) $\displaystyle\int_L (x+y)\,\mathrm{d}s$，其中 $L$ 是以 $O(0,0),A(1,0),B(0,1)$ 为顶点的三角形；
+
+(2) $\displaystyle\int_L |y|\,\mathrm{d}s$，其中 $L$ 为单位圆周 $x^2+y^2=1$；
+
+(3) $\displaystyle\int_L |x|^{1/3}\,\mathrm{d}s$，其中 $L$ 为星形线 $x^{2/3}+y^{2/3}=a^{2/3}$；
+
+(4) $\displaystyle\int_L |x|\,\mathrm{d}s$，其中 $L$ 为双纽线 $(x^2+y^2)^2=x^2-y^2$；
+
+(5) $\displaystyle\int_L (x^2+y^2+z^2)\,\mathrm{d}s$，$L$ 为一段螺旋线 $x=a\cos t,\ y=a\sin t,\ z=bt,\ 0\leqslant t\leqslant 2\pi$；
+
+(6) $\displaystyle\int_L xyz\,\mathrm{d}s$，其中 $L$ 为曲线 $x=t,\ y=\dfrac{2\sqrt{2t^3}}{3},\ z=\dfrac{1}{2}t^2$ 上相应于 $t$ 从 $0$ 变到 $1$ 的一段弧；
+
+(7) $\displaystyle\int_L (xy+yz+zx)\,\mathrm{d}s$，其中 $L$ 为球面 $x^2+y^2+z^2=a^2$ 和平面 $x+y+z=0$ 的交线。
+
+**习题 2** @264
+
+求椭圆周 $x=a\cos t,\ y=b\sin t,\ 0\leqslant t\leqslant 2\pi$ 的质量，已知曲线在点 $M(x,y)$ 处的线密度是 $\rho(x,y)=|y|$。
+
+**习题 3** @264
+
+求下列曲面的面积：
+
+(1) $z=axy$ 包含在圆柱面 $x^2+y^2=a^2\ (a>0)$ 内的部分；
+
+(2) 锥面 $x^2+y^2=\dfrac{1}{3}z^2\ (z\geqslant 0)$ 被平面 $x+y+z=2a\ (a>0)$ 所截的部分；
+
+(3) 球面 $x^2+y^2+z^2=a^2$ 包含在锥面 $z=\sqrt{x^2+y^2}$ 内的部分；
+
+(4) 圆柱面 $x^2+y^2=a^2$ 被两平面 $x+z=0,\ x-z=0\ (x>0,y>0)$ 所截部分；
+
+(5) 抛物面 $x^2+y^2=2az$ 包含在柱面 $(x^2+y^2)^2=2a^2xy\ (a>0)$ 内的部分；
+
+(6) 环面$$\begin{cases}x=(b+a\cos\theta)\cos\varphi,\\y=(b+a\cos\theta)\sin\varphi,\\z=a\sin\theta,\end{cases}\qquad 0\leqslant\theta\leqslant 2\pi,\ 0\leqslant\varphi\leqslant 2\pi,$$其中 $0<a<b$。
+
+**习题 4** @264
+
+求下列第一类曲面积分：
+
+(1) $\displaystyle\iint_\Sigma (x+y+z)\,\mathrm{d}S$，其中 $\Sigma$ 是左半球面 $x^2+y^2+z^2=a^2,\ y\leqslant 0$；
+
+(2) $\displaystyle\iint_\Sigma (x^2+y^2)\,\mathrm{d}S$，其中 $\Sigma$ 是区域 $\{(x,y,z)\mid \sqrt{x^2+y^2}\leqslant z\leqslant 1\}$ 的边界；
+
+(3) $\displaystyle\iint_\Sigma (xy+yz+zx)\,\mathrm{d}S$，其中 $\Sigma$ 是锥面 $z=\sqrt{x^2+y^2}$ 被柱面 $x^2+y^2=2ax$ 所截部分；
+
+(4) $\displaystyle\iint_\Sigma \frac{1}{x^2+y^2+z^2}\,\mathrm{d}S$，其中 $\Sigma$ 是圆柱面 $x^2+y^2=a^2$ 介于平面 $z=0$ 与 $z=H$ 之间的部分；
+
+(5) $\displaystyle\iint_\Sigma \left(\frac{x^2}{2}+\frac{y^2}{3}+\frac{z^2}{4}\right)\mathrm{d}S$，其中 $\Sigma$ 是球面 $x^2+y^2+z^2=a^2$；
+
+(6) $\displaystyle\iint_\Sigma (x^3+y^2+z)\,\mathrm{d}S$，其中 $\Sigma$ 是抛物面 $2z=x^2+y^2$ 介于平面 $z=0$ 与 $z=8$ 之间的部分；
+
+(7) $\displaystyle\iint_\Sigma z\,\mathrm{d}S$，其中 $\Sigma$ 是螺旋面 $x=u\cos v,\ y=u\sin v,\ z=v,\ 0\leqslant u\leqslant a,\ 0\leqslant v\leqslant 2\pi$ 的一部分。
+
+**习题 5** @264
+
+设球面 $\Sigma$ 的半径为 $R$，球心在球面 $x^2+y^2+z^2=a^2$ 上。问当 $R$ 为何值时，$\Sigma$ 在球面 $x^2+y^2+z^2=a^2$ 内部的面积最大？并求该最大面积。
+
+**习题 6** @264
+
+求密度为 $\rho(x,y)=z$ 的抛物面壳 $z=\dfrac{1}{2}(x^2+y^2),\ 0\leqslant z\leqslant 1$ 的质量与质心。
+
+**习题 7** @264
+
+求均匀球面（半径是 $a$，密度是 $1$）对不在该球面上的质点（质量为 $1$）的引力。
+
+**习题 8** @264
+
+设 $u(x,y,z)$ 为连续函数，它在 $M(x_0,y_0,z_0)$ 处有连续的二阶偏导数。记 $\Sigma$ 为以 $M$ 点为中心，半径为 $R$ 的球面，以及$$T(R)=\frac{1}{4\pi R^2}\iint_\Sigma u(x,y,z)\,\mathrm{d}S .$$
+
+(1) 证明：$\displaystyle\lim_{R\to 0}T(R)=u(x_0,y_0,z_0)$；
+
+(2) 若$$\left.\left(\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}+\frac{\partial^2 u}{\partial z^2}\right)\right|_{(x_0,y_0,z_0)}\neq 0 ,$$求当 $R\to 0$ 时无穷小量 $T(R)-u(x_0,y_0,z_0)$ 的主要部分。
+
+**习题 9** @265
+
+设 $\Sigma$ 为上半椭球面 $\dfrac{x^2}{2}+\dfrac{y^2}{2}+z^2=1\ (z\geqslant 0)$，$\pi$ 为 $\Sigma$ 在点 $P(x,y,z)$ 处的切平面，$\rho(x,y,z)$ 为原点 $O(0,0,0)$ 到平面 $\pi$ 的距离，求$$\iint_\Sigma \frac{z}{\rho(x,y,z)}\,\mathrm{d}S .$$
+
+**习题 10** @265
+
+设 $\Sigma$ 是单位球面 $x^2+y^2+z^2=1$。证明$$\iint_\Sigma f(ax+by+cz)\,\mathrm{d}S=2\pi\int_{-1}^{1}f\left(u\sqrt{a^2+b^2+c^2}\right)\mathrm{d}u ,$$其中 $a,b,c$ 为不全为零的常数，$f(u)$ 是 $|u|\leqslant \sqrt{a^2+b^2+c^2}$ 上的一元连续函数。
+
+**习题 11** @265
+
+设有一高度为 $h(t)$（$t$ 为时间）的雪堆在融化过程中，其侧面满足方程（设长度单位为 cm，时间单位为 h）$$z=h(t)-\frac{2(x^2+y^2)}{h(t)} .$$已知体积减少的速率与侧面积成正比（比例系数 $0.9$）。问高度为 $130\ \mathrm{cm}$ 的雪堆全部融化需多少时间？
+
 ### 14.2 第二类曲线积分与第二类曲面积分（p265–275）
 
 **定义 14.2.1 (第二类曲线积分)** @266
@@ -7819,6 +10119,56 @@ $$\cos\alpha=\frac{x}{\sqrt{1+x^2+y^2}},\qquad \cos\gamma=-\frac{1}{\sqrt{1+x^2+
 注意到 $\Sigma$ 在 $xy$ 平面的投影区域为 $D=\{(x,y)\mid x^2+y^2\leqslant 2^2\}$，就有
 
 $$\begin{aligned}&\iint_\Sigma(z^2+x)\,\mathrm{d}y\mathrm{d}z+\sqrt{z}\,\mathrm{d}x\mathrm{d}y=\iint_D\bigl[(z^2+x)(-x)+\sqrt{z}\bigr]\mathrm{d}x\mathrm{d}y\\&\quad=-\iint_D\left[\left(\left(\frac{1}{2}(x^2+y^2)\right)^2+x\right)(-x)+\sqrt{\frac{1}{2}(x^2+y^2)}\right]\mathrm{d}x\mathrm{d}y\\&\quad=-\int_0^{2\pi}\mathrm{d}\theta\int_0^2\left(-\frac{1}{4}r^5\cos\theta-r^2\cos^2\theta+\sqrt{\frac{1}{2}}\,r\right)r\,\mathrm{d}r=\left(4-\frac{8}{3}\sqrt{2}\right)\pi .\end{aligned}$$
+
+#### 习题（p275–276）
+
+**习题 1** @275
+
+求下列第二类曲线积分：
+
+(1) $\displaystyle\int_L (x^2+y^2)\,\mathrm{d}x+(x^2-y^2)\,\mathrm{d}y$，其中 $L$ 是以 $A(1,0),B(2,0),C(2,1),D(1,1)$ 为顶点的正方形，方向为逆时针方向；
+
+(2) $\displaystyle\int_L (x^2-2xy)\,\mathrm{d}x+(y^2-2xy)\,\mathrm{d}y$，其中 $L$ 是抛物线的一段：$y=x^2,\ -1\leqslant x\leqslant 1$，方向由 $(-1,1)$ 到 $(1,1)$；
+
+(3) $\displaystyle\int_L \frac{(x+y)\,\mathrm{d}x-(x-y)\,\mathrm{d}y}{x^2+y^2}$，其中 $L$ 是圆周 $x^2+y^2=a^2$，方向为逆时针方向；
+
+(4) $\displaystyle\int_L y\,\mathrm{d}x-x\,\mathrm{d}y+(x^2+y^2)\,\mathrm{d}z$，其中 $L$ 是曲线 $x=\mathrm{e}^t,\ y=\mathrm{e}^{-t},\ z=a^t,\ 0\leqslant t\leqslant 1$，方向由 $(\mathrm{e},\mathrm{e}^{-1},a)$ 到 $(1,1,1)$；
+
+(5) $\displaystyle\int_L x\,\mathrm{d}x+y\,\mathrm{d}y+(x+y-1)\,\mathrm{d}z$，其中 $L$ 是从点 $(1,1,1)$ 到点 $(2,3,4)$ 的直线段；
+
+(6) $\displaystyle\int_L y\,\mathrm{d}x+z\,\mathrm{d}y+x\,\mathrm{d}z$，其中 $L$ 为曲线$$\begin{cases}x^2+y^2+z^2=2az,\\x+z=a\ (a>0),\end{cases}$$若从 $z$ 轴的正向看去，$L$ 的方向为逆时针方向；
+
+(7) $\displaystyle\int_L (y-z)\,\mathrm{d}x+(z-x)\,\mathrm{d}y+(x-y)\,\mathrm{d}z$，$L$ 为圆周$$\begin{cases}x^2+y^2+z^2=1,\\y=x\tan\alpha\quad\left(0<\alpha<\dfrac{\pi}{2}\right),\end{cases}$$若从 $x$ 轴的正向看去，这个圆周的方向为逆时针方向。
+
+**习题 2** @275
+
+证明不等式$$\left|\int_L P(x,y)\,\mathrm{d}x+Q(x,y)\,\mathrm{d}y\right|\leqslant MC ,$$其中 $C$ 是曲线 $L$ 的弧长，$M=\max\left\{\sqrt{P^2(x,y)+Q^2(x,y)}\ \middle|\ (x,y)\in L\right\}$。记圆周 $x^2+y^2=R^2$ 为 $L_R$，利用以上不等式估计$$I_R=\int_{L_R}\frac{y\,\mathrm{d}x-x\,\mathrm{d}y}{(x^2+xy+y^2)^2} ,$$并证明$$\lim_{R\to+\infty}I_R=0 .$$
+
+**习题 3** @276
+
+方向依纵轴的负方向，且大小等于作用点的横坐标的平方的力构成一个力场。求质量为 $m$ 的质点沿抛物线 $y^2=1-x$ 从点 $(1,0)$ 移到 $(0,1)$ 时，场力所做的功。
+
+**习题 4** @276
+
+计算下列第二类曲面积分：
+
+(1) $\displaystyle\iint_\Sigma (x+y)\,\mathrm{d}y\,\mathrm{d}z+(y+z)\,\mathrm{d}z\,\mathrm{d}x+(z+x)\,\mathrm{d}x\,\mathrm{d}y$，其中 $\Sigma$ 是中心在原点，边长为 $2h$ 的立方体 $[-h,h]\times[-h,h]\times[-h,h]$ 的表面，方向取外侧；
+
+(2) $\displaystyle\iint_\Sigma yz\,\mathrm{d}z\,\mathrm{d}x$，其中 $\Sigma$ 是椭球面 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}+\dfrac{z^2}{c^2}=1$ 的上半部分，方向取上侧；
+
+(3) $\displaystyle\iint_\Sigma z\,\mathrm{d}y\,\mathrm{d}z+x\,\mathrm{d}z\,\mathrm{d}x+y\,\mathrm{d}x\,\mathrm{d}y$，其中 $\Sigma$ 是柱面 $x^2+y^2=1$ 被平面 $z=0$ 和 $z=4$ 所截部分，方向取外侧；
+
+(4) $\displaystyle\iint_\Sigma zx\,\mathrm{d}y\,\mathrm{d}z+3\,\mathrm{d}x\,\mathrm{d}y$，其中 $\Sigma$ 是抛物面 $z=4-x^2-y^2$ 在 $z\geqslant 0$ 部分，方向取下侧；
+
+(5) $\displaystyle\iint_\Sigma [f(x,y,z)+x]\,\mathrm{d}y\,\mathrm{d}z+[2f(x,y,z)+y]\,\mathrm{d}z\,\mathrm{d}x+[f(x,y,z)+z]\,\mathrm{d}x\,\mathrm{d}y$，其中 $f(x,y,z)$ 为连续函数，$\Sigma$ 是平面 $x-y+z=1$ 在第四卦限部分，方向取上侧；
+
+(6) $\displaystyle\iint_\Sigma x^2\,\mathrm{d}y\,\mathrm{d}z+y^2\,\mathrm{d}z\,\mathrm{d}x+(z^2+5)\,\mathrm{d}x\,\mathrm{d}y$，其中 $\Sigma$ 是锥面 $z=\sqrt{x^2+y^2}\ (0\leqslant z\leqslant h)$，方向取下侧；
+
+(7) $\displaystyle\iint_\Sigma \frac{\mathrm{e}^{\sqrt{z^2+x^2}}}{\sqrt{z^2+x^2}}\,\mathrm{d}z\,\mathrm{d}x$，其中 $\Sigma$ 是抛物面 $y=x^2+z^2$ 与平面 $y=1,\ y=2$ 所围立体的表面，方向取外侧；
+
+(8) $\displaystyle\iint_\Sigma \frac{1}{x}\,\mathrm{d}y\,\mathrm{d}z+\frac{1}{y}\,\mathrm{d}z\,\mathrm{d}x+\frac{1}{z}\,\mathrm{d}x\,\mathrm{d}y$，其中 $\Sigma$ 为椭球面 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}+\dfrac{z^2}{c^2}=1$，方向取外侧；
+
+(9) $\displaystyle\iint_\Sigma x^2\,\mathrm{d}y\,\mathrm{d}z+y^2\,\mathrm{d}z\,\mathrm{d}x+z^2\,\mathrm{d}x\,\mathrm{d}y$，其中 $\Sigma$ 是球面 $(x-a)^2+(y-b)^2+(z-c)^2=R^2$，方向取外侧。
 
 ### 14.3 Green 公式、Gauss 公式和 Stokes 公式（p276–291）
 
@@ -8162,6 +10512,146 @@ $$\sqrt{1+\left(\frac{\partial z}{\partial x}\right)^2+\left(\frac{\partial z}{\
 
 $$I=2\iint_{\Sigma}z\,\mathrm{d}S=2\iint_{(x-r)^2+y^2\leqslant r^2}z\frac{R}{z}\,\mathrm{d}x\mathrm{d}y=2R\iint_{(x-r)^2+y^2\leqslant r^2}\mathrm{d}x\mathrm{d}y=2\pi r^2R.$$
 
+#### 习题（p289–292）
+
+**习题 1** @289
+
+利用 Green 公式计算下列积分：
+
+(1) $\displaystyle\int_L (x+y)^2\,\mathrm{d}x-(x^2+y^2)\,\mathrm{d}y$，其中 $L$ 是以 $A(1,1),B(3,2),C(2,5)$ 为顶点的三角形的边界，逆时针方向；
+
+(2) $\displaystyle\int_L xy^2\,\mathrm{d}x-x^2y\,\mathrm{d}y$，其中 $L$ 是圆周 $x^2+y^2=a^2$，逆时针方向；
+
+(3) $\displaystyle\int_L (x^2y\cos x+2xy\sin x-y^2\mathrm{e}^x)\,\mathrm{d}x+(x^2\sin x-2y\mathrm{e}^x)\,\mathrm{d}y$，其中 $L$ 是星形线 $x^{\frac{2}{3}}+y^{\frac{2}{3}}=a^{\frac{2}{3}}\ (a>0)$，逆时针方向；
+
+(4) $\displaystyle\int_L \mathrm{e}^x[(1-\cos y)\,\mathrm{d}x-(y-\sin y)\,\mathrm{d}y]$，其中 $L$ 是曲线 $y=\sin x$ 上从 $(0,0)$ 到 $(\pi,0)$ 的一段；
+
+(5) $\displaystyle\int_L (x^2-y)\,\mathrm{d}x-(x+\sin^2 y)\,\mathrm{d}y$，其中 $L$ 是圆周 $x^2+y^2=2x$ 的上半部分，方向从点 $(0,0)$ 到点 $(2,0)$；
+
+(6) $\displaystyle\int_L [\mathrm{e}^x\sin y-b(x+y)]\,\mathrm{d}x+(\mathrm{e}^x\cos y-ax)\,\mathrm{d}y$，其中 $a,b$ 是正常数，$L$ 为从点 $A(2a,0)$ 沿曲线 $y=\sqrt{2ax-x^2}$ 到点 $O(0,0)$ 的一段；
+
+(7) $\displaystyle\int_L \frac{x\,\mathrm{d}y-y\,\mathrm{d}x}{4x^2+y^2}$，其中 $L$ 是以点 $(1,0)$ 为中心，$R$ 为半径的圆周 $(R>1)$，逆时针方向；
+
+(8) $\displaystyle\int_L \frac{(x-y)\,\mathrm{d}x+(x+4y)\,\mathrm{d}y}{x^2+4y^2}$，其中 $L$ 为单位圆周 $x^2+y^2=1$，逆时针方向；
+
+(9) $\displaystyle\int_L \frac{\mathrm{e}^x[(x\sin y-y\cos y)\,\mathrm{d}x+(x\cos y-y\sin y)\,\mathrm{d}y]}{x^2+y^2}$，其中 $L$ 是包围原点的简单光滑闭曲线，逆时针方向。
+
+**习题 2** @290
+
+利用曲线积分，求下列曲线所围成的图形的面积：
+
+(1) 星形线 $x=a\cos^3 t,\ y=a\sin^3 t$；
+
+(2) 抛物线 $(x+y)^2=ax\ (a>0)$ 与 $x$ 轴；
+
+(3) 旋轮线的一段：$$\begin{cases}x=a(t-\sin t),\\y=a(1-\cos t),\end{cases}\quad t\in[0,2\pi]$$与 $x$ 轴。
+
+**习题 3** @290
+
+先证明曲线积分与路径无关，再计算积分值：
+
+(1) $\displaystyle\int_{(0,0)}^{(1,1)}(x-y)(\mathrm{d}x-\mathrm{d}y)$；
+
+(2) $\displaystyle\int_{(2,1)}^{(1,2)}\varphi(x)\,\mathrm{d}x+\psi(y)\,\mathrm{d}y$，其中 $\varphi(x),\psi(y)$ 为连续函数；
+
+(3) $\displaystyle\int_{(1,0)}^{(2,1)}\frac{x\,\mathrm{d}x+y\,\mathrm{d}y}{\sqrt{x^2+y^2}}$，沿不通过原点的路径。
+
+**习题 4** @290
+
+证明：$(2x\cos y+y^2\cos x)\,\mathrm{d}x+(2y\sin x-x^2\sin y)\,\mathrm{d}y$ 在整个 $xy$ 平面上是某个函数的全微分，并找出它的一个原函数。
+
+**习题 5** @290
+
+证明：$\dfrac{x\,\mathrm{d}x+y\,\mathrm{d}y}{x^2+y^2}$ 在除去 $y$ 的负半轴及原点的裂缝 $xy$ 平面上是某个函数的全微分，并找出它的一个原函数。
+
+**习题 6** @290
+
+设 $Q(x,y)$ 在 $xy$ 平面上有连续偏导数，曲线积分 $\displaystyle\int_L 2xy\,\mathrm{d}x+Q(x,y)\,\mathrm{d}y$ 与路径无关，并且对任意 $t$ 恒有$$\int_{(0,0)}^{(t,1)}2xy\,\mathrm{d}x+Q(x,y)\,\mathrm{d}y=\int_{(0,0)}^{(1,t)}2xy\,\mathrm{d}x+Q(x,y)\,\mathrm{d}y ,$$求 $Q(x,y)$。
+
+**习题 7** @291
+
+确定常数 $\lambda$，使得右半平面 $x>0$ 上的向量函数$$\boldsymbol{r}(x,y)=2xy(x^4+y^2)^\lambda\boldsymbol{i}-x^2(x^4+y^2)^\lambda\boldsymbol{j}$$为某二元函数 $u(x,y)$ 的梯度，并求 $u(x,y)$。
+
+**习题 8** @291
+
+设一力场为 $\boldsymbol{F}=(3x^2y+8xy^2)\boldsymbol{i}+(x^3+8x^2y+12y\mathrm{e}^y)\boldsymbol{j}$，证明：质点在此场内移动时，场力所做的功与路径无关。
+
+**习题 9** @291
+
+利用 Gauss 公式计算下列曲面积分：
+
+(1) $\displaystyle\iint_\Sigma x^2\,\mathrm{d}y\,\mathrm{d}z+y^2\,\mathrm{d}z\,\mathrm{d}x+z^2\,\mathrm{d}x\,\mathrm{d}y$，$\Sigma$ 为立方体 $0\leqslant x,y,z\leqslant a$ 的表面，方向取外侧；
+
+(2) $\displaystyle\iint_\Sigma (x-y+z)\,\mathrm{d}y\,\mathrm{d}z+(y-z+x)\,\mathrm{d}z\,\mathrm{d}x+(z-x+y)\,\mathrm{d}x\,\mathrm{d}y$，其中 $\Sigma$ 为闭曲面$$|x-y+z|+|y-z+x|+|z-x+y|=1 ,$$方向取外侧；
+
+(3) $\displaystyle\iint_\Sigma (x^2\cos\alpha+y^2\cos\beta+z^2\cos\gamma)\,\mathrm{d}S$，其中 $\Sigma$ 为锥面 $z^2=x^2+y^2$ 介于平面 $z=0$ 与 $z=h\ (h>0)$ 之间的部分，方向取下侧；
+
+(4) $\displaystyle\iint_\Sigma x\,\mathrm{d}y\,\mathrm{d}z+y\,\mathrm{d}z\,\mathrm{d}x+z\,\mathrm{d}x\,\mathrm{d}y$，其中 $\Sigma$ 为上半球面 $z=\sqrt{R^2-x^2-y^2}$，方向取上侧；
+
+(5) $\displaystyle\iint_\Sigma 2(1-x^2)\,\mathrm{d}y\,\mathrm{d}z+8xy\,\mathrm{d}z\,\mathrm{d}x-4zx\,\mathrm{d}x\,\mathrm{d}y$，其中 $\Sigma$ 是由 $xy$ 平面上的曲线 $x=\mathrm{e}^y\ (0\leqslant y\leqslant a)$ 绕 $x$ 轴旋转而成的旋转面，曲面的法向量与 $x$ 轴的正向的夹角为钝角；
+
+(6) $\displaystyle\iint_\Sigma (2x+z)\,\mathrm{d}y\,\mathrm{d}z+z\,\mathrm{d}x\,\mathrm{d}y$，其中 $\Sigma$ 是曲面 $z=x^2+y^2\ (0\leqslant z\leqslant 1)$，曲面的法向量与 $z$ 轴的正向的夹角为锐角；
+
+(7) $\displaystyle\iint_\Sigma \frac{ax\,\mathrm{d}y\,\mathrm{d}z+(a+z)^2\,\mathrm{d}x\,\mathrm{d}y}{(x^2+y^2+z^2)^{1/2}}\ (a>0)$，其中 $\Sigma$ 是下半球面 $z=-\sqrt{a^2-x^2-y^2}$，方向取上侧；
+
+(8) $\displaystyle\iint_\Sigma \frac{x\,\mathrm{d}y\,\mathrm{d}z+y\,\mathrm{d}z\,\mathrm{d}x+z\,\mathrm{d}x\,\mathrm{d}y}{(x^2+y^2+z^2)^{3/2}}$，其中 $\Sigma$ 是
+
+(i) 椭球面 $x^2+2y^2+3z^2=1$，方向取外侧；
+
+(ii) 抛物面 $1-\dfrac{z}{5}=\dfrac{(x-2)^2}{16}+\dfrac{(y-1)^2}{9}\ (z\geqslant 0)$，方向取上侧。
+
+**习题 10** @291
+
+利用 Gauss 公式证明阿基米德原理：将物体全部浸没在液体中时，物体所受的浮力等于与物体同体积的液体的重量，而方向是垂直向上的。
+
+**习题 11** @291
+
+设某种流体的速度场为 $\boldsymbol{v}=yz\,\boldsymbol{i}+xz\,\boldsymbol{j}+xy\,\boldsymbol{k}$，求单位时间内流体
+
+(1) 流过圆柱 $x^2+y^2\leqslant a^2,\ 0\leqslant z\leqslant h$ 的侧面（方向取外侧）的流量；
+
+(2) 流过该圆柱的全表面（方向取外侧）的流量。
+
+**习题 12** @291
+
+利用 Stokes 公式计算下列曲线积分：
+
+(1) $\displaystyle\int_L y\,\mathrm{d}x+z\,\mathrm{d}y+x\,\mathrm{d}z$，其中 $L$ 是球面 $x^2+y^2+z^2=a^2$ 与平面 $x+y+z=0$ 的交线（它是圆周），从 $x$ 轴的正向看去，此圆周的方向是逆时针方向；
+
+(2) $\displaystyle\int_L 3z\,\mathrm{d}x+5x\,\mathrm{d}y-2y\,\mathrm{d}z$，其中 $L$ 是圆柱面 $x^2+y^2=1$ 与平面 $z=y+3$ 的交线（它是椭圆），从 $z$ 轴的正向看去，是逆时针方向；
+
+(3) $\displaystyle\int_L (y-z)\,\mathrm{d}x+(z-x)\,\mathrm{d}y+(x-y)\,\mathrm{d}z$，其中 $L$ 为圆柱面 $x^2+y^2=a^2$ 和平面 $\dfrac{x}{a}+\dfrac{z}{h}=1\ (a>0,h>0)$ 的交线（它是椭圆），从 $x$ 轴的正向看去，是逆时针方向；
+
+(4) $\displaystyle\int_L (y^2-z^2)\,\mathrm{d}x+(z^2-x^2)\,\mathrm{d}y+(x^2-y^2)\,\mathrm{d}z$，其中 $L$ 是用平面 $x+y+z=\dfrac{3}{2}$ 截立方体 $0\leqslant x,y,z\leqslant 1$ 的表面所得的截痕，从 $x$ 轴的正向看去，是逆时针方向；
+
+(5) $\displaystyle\int_L (x^2-yz)\,\mathrm{d}x+(y^2-xz)\,\mathrm{d}y+(z^2-xy)\,\mathrm{d}z$，其中 $L$ 是沿着螺线 $x=a\cos\varphi,\ y=a\sin\varphi,\ z=\dfrac{h}{2\pi}\varphi$ 从点 $A(a,0,0)$ 至点 $B(a,0,h)$ 的路径；
+
+(6) $\displaystyle\int_L (y^2-z^2)\,\mathrm{d}x+(2z^2-x^2)\,\mathrm{d}y+(3x^2-y^2)\,\mathrm{d}z$，其中 $L$ 是平面 $x+y+z=2$ 与柱面 $|x|+|y|=1$ 的交线，从 $z$ 轴的正向看去，是逆时针方向。
+
+**习题 13** @292
+
+设 $f(t)$ 是 $\mathbf{R}$ 上恒为正值的连续函数，$L$ 是逆时针方向的圆周 $(x-a)^2+(y-a)^2=1$。证明$$\int_L xf(y)\,\mathrm{d}y-\frac{y}{f(x)}\,\mathrm{d}x\geqslant 2\pi .$$
+
+**习题 14** @292
+
+设 $D$ 为两条直线 $y=x,\ y=4x$ 和两条双曲线 $xy=1,\ xy=4$ 所围成的区域，$F(u)$ 是具有连续导数的一元函数，记 $f(u)=F'(u)$。证明$$\int_{\partial D}\frac{F(xy)}{y}\,\mathrm{d}y=\ln 2\int_{1}^{4}f(u)\,\mathrm{d}u ,$$其中 $\partial D$ 的方向为逆时针方向。
+
+**习题 15** @292
+
+证明：若 $\Sigma$ 为封闭曲面，$\boldsymbol{l}$ 为一固定向量，则$$\iint_\Sigma \cos(\boldsymbol{n},\boldsymbol{l})\,\mathrm{d}S=0 ,$$其中 $\boldsymbol{n}$ 为曲面 $\Sigma$ 的单位外法向量。
+
+**习题 16** @292
+
+设区域 $\Omega$ 由分片光滑封闭曲面 $\Sigma$ 所围成。证明：$$\iiint_\Omega \frac{\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z}{r}=\frac{1}{2}\iint_\Sigma \cos(\boldsymbol{r},\boldsymbol{n})\,\mathrm{d}S ,$$其中 $\boldsymbol{n}$ 为曲面 $\Sigma$ 的单位外法向量，$\boldsymbol{r}=(x,y,z),\ r=\sqrt{x^2+y^2+z^2}$。
+
+**习题 17** @292
+
+设函数 $P(x,y,z),Q(x,y,z)$ 和 $R(x,y,z)$ 在 $\mathbf{R}^3$ 上具有连续偏导数，且对于任意光滑曲面 $\Sigma$，成立$$\iint_\Sigma P\,\mathrm{d}y\,\mathrm{d}z+Q\,\mathrm{d}z\,\mathrm{d}x+R\,\mathrm{d}x\,\mathrm{d}y=0 .$$证明：在 $\mathbf{R}^3$ 上，$\dfrac{\partial P}{\partial x}+\dfrac{\partial Q}{\partial y}+\dfrac{\partial R}{\partial z}\equiv 0$。
+
+**习题 18** @292
+
+设 $L$ 是平面 $x\cos\alpha+y\cos\beta+z\cos\gamma-p=0$ 上的简单闭曲线，它所包围的区域 $D$ 的面积为 $S$，其中 $(\cos\alpha,\cos\beta,\cos\gamma)$ 是平面取定方向上的单位向量。证明$$S=\frac{1}{2}\int_L\begin{vmatrix}\mathrm{d}x & \mathrm{d}y & \mathrm{d}z\\\cos\alpha & \cos\beta & \cos\gamma\\x & y & z\end{vmatrix} ,$$其中 $L$ 的定向与平面的定向符合右手定则。
+
 ### 14.4 微分形式的外微分（p292–295）
 
 **注 (0-形式的微分)** @292
@@ -8291,6 +10781,34 @@ $$\int_{\partial D}f=\int_{D}\mathrm{d}f .$$
 $$\int_{\partial M}\omega=\int_{M}\mathrm{d}\omega .$$
 
 这个式子统称为 **Stokes 公式**。它说明了，高次的微分形式 $\mathrm{d}\omega$ 在给定区域上的积分等于低一次的微分形式 $\omega$ 在低一维的区域边界上的积分。
+
+#### 习题（p296）
+
+**习题 1** @296
+
+计算下列微分形式的外微分：
+
+(1) $1$-形式 $\omega=2xy\,\mathrm{d}x+x^2\,\mathrm{d}y$；
+
+(2) $1$-形式 $\omega=\cos y\,\mathrm{d}x-\sin x\,\mathrm{d}y$；
+
+(3) $2$-形式 $\omega=6z\,\mathrm{d}x\wedge\mathrm{d}y-xy\,\mathrm{d}x\wedge\mathrm{d}z$。
+
+**习题 2** @296
+
+设 $\omega=a_1(x_1)\,\mathrm{d}x_1+a_2(x_2)\,\mathrm{d}x_2+\cdots+a_n(x_n)\,\mathrm{d}x_n$ 是 $\mathbf{R}^n$ 上的 $1$-形式，求 $\mathrm{d}\omega$。
+
+**习题 3** @296
+
+设 $\omega=a_1(x_2,x_3)\,\mathrm{d}x_2\wedge\mathrm{d}x_3+a_2(x_1,x_3)\,\mathrm{d}x_3\wedge\mathrm{d}x_1+a_3(x_1,x_2)\,\mathrm{d}x_1\wedge\mathrm{d}x_2$ 是 $\mathbf{R}^3$ 上的 $2$-形式，求 $\mathrm{d}\omega$。
+
+**习题 4** @296
+
+设在 $\mathbf{R}^3$ 上在一个开区域 $\Omega=(a,b)\times(c,d)\times(e,f)$ 上定义了具有连续导数的函数 $a_1(z),a_2(x),a_3(y)$，试求形如$$\omega=b_1(y)\,\mathrm{d}x+b_2(z)\,\mathrm{d}y+b_3(x)\,\mathrm{d}z$$的 $1$-形式 $\omega$，使得$$\mathrm{d}\omega=a_1(z)\,\mathrm{d}y\wedge\mathrm{d}z+a_2(x)\,\mathrm{d}z\wedge\mathrm{d}x+a_3(y)\,\mathrm{d}x\wedge\mathrm{d}y .$$
+
+**习题 5** @296
+
+设 $\omega=\displaystyle\sum_{i,j=1}^{n}a_{ij}\,\mathrm{d}x_i\wedge\mathrm{d}x_j\ (a_{ij}=-a_{ji},\ i,j=1,2,\cdots,n)$ 是 $\mathbf{R}^n$ 上的 $2$-形式，证明$$\mathrm{d}\omega=\frac{1}{3}\sum_{i,j,k=1}^{n}\left(\frac{\partial a_{ij}}{\partial x_k}+\frac{\partial a_{jk}}{\partial x_i}+\frac{\partial a_{ki}}{\partial x_j}\right)\mathrm{d}x_i\wedge\mathrm{d}x_j\wedge\mathrm{d}x_k .$$
 
 ### 14.5 场论初步（p296–312）
 
@@ -8860,6 +11378,116 @@ $$0=\iiint_\Omega\Delta U\,\mathrm{d}V=\iiint_\Omega\mathbf{div}(\mathbf{grad}\,
 
 即函数 $f$ 必须满足 $\displaystyle\iint_{\partial\Omega}f\,\mathrm{d}S=0$，它称为**相容性条件**。这个条件很容易理解，因为 $\displaystyle\iint_{\partial\Omega}f\,\mathrm{d}S=\iint_{\partial\Omega}\frac{\partial U}{\partial n}\,\mathrm{d}S$ 就是单位时间内沿 $\partial\Omega$ 的外侧流过 $\partial\Omega$ 的热量，注意到 $U$ 是无热源的稳定场，它当然是 $0$。
 
+#### 习题（p310–312）
+
+**习题 1** @310
+
+设 $\boldsymbol{a}=3\boldsymbol{i}+20\boldsymbol{j}-15\boldsymbol{k}$，对下列数量场 $f(x,y,z)$，分别计算 $\mathbf{grad}\,f$ 和 $\mathrm{div}\,(f\boldsymbol{a})$：
+
+(1) $f(x,y,z)=(x^2+y^2+z^2)^{-\frac{1}{2}}$；
+
+(2) $f(x,y,z)=x^2+y^2+z^2$；
+
+(3) $f(x,y,z)=\ln(x^2+y^2+z^2)$。
+
+**习题 2** @310
+
+求向量场 $\boldsymbol{a}=x^2\boldsymbol{i}+y^2\boldsymbol{j}+z^2\boldsymbol{k}$ 穿过球面 $x^2+y^2+z^2=1$ 在第一卦限部分的通量，其中球面在这一部分的定向为上侧。
+
+**习题 3** @310
+
+设 $\boldsymbol{r}=x\boldsymbol{i}+y\boldsymbol{j}+z\boldsymbol{k},\ r=|\boldsymbol{r}|$，求：
+
+(1) 满足 $\mathrm{div}\,[f(r)\boldsymbol{r}]=0$ 的函数 $f(r)$；
+
+(2) 满足 $\mathrm{div}\,[\mathbf{grad}\,f(r)]=0$ 的函数 $f(r)$。
+
+**习题 4** @310
+
+计算$$\mathbf{grad}\left\{\boldsymbol{c}\cdot\boldsymbol{r}+\frac{1}{2}\ln(\boldsymbol{c}\cdot\boldsymbol{r})\right\}$$其中 $\boldsymbol{c}$ 是常矢量，$\boldsymbol{r}=x\boldsymbol{i}+y\boldsymbol{j}+z\boldsymbol{k}$，且 $\boldsymbol{c}\cdot\boldsymbol{r}>0$。
+
+**习题 5** @311
+
+计算向量场 $\boldsymbol{a}=\mathbf{grad}\left(\arctan\dfrac{y}{x}\right)$ 沿下列定向曲线的环量：
+
+(1) 圆周 $(x-2)^2+(y-2)^2=1,\ z=0$，从 $z$ 轴的正向看去为逆时针方向；
+
+(2) 圆周 $x^2+y^2=4,\ z=1$，从 $z$ 轴的正向看去为顺时针方向。
+
+**习题 6** @311
+
+计算向量场 $\boldsymbol{r}=xyz(\boldsymbol{i}+\boldsymbol{j}+\boldsymbol{k})$ 在点 $M(1,3,2)$ 处的旋度，以及在这点沿方向 $\boldsymbol{n}=\boldsymbol{i}+2\boldsymbol{j}+2\boldsymbol{k}$ 的环量面密度。
+
+**习题 7** @311
+
+设 $\boldsymbol{a}=a_x\boldsymbol{i}+a_y\boldsymbol{j}+a_z\boldsymbol{k}$ 为向量场，$f(x,y,z)$ 为数量场，证明：（假设函数 $a_x,a_y,a_z$ 和 $f$ 具有必要的连续偏导数）
+
+(1) $\mathrm{div}\,(\mathbf{rot}\,\boldsymbol{a})=0$；
+
+(2) $\mathbf{rot}\,(\mathbf{grad}\,f)=\boldsymbol{0}$；
+
+(3) $\mathbf{grad}\,(\mathrm{div}\,\boldsymbol{a})-\mathbf{rot}\,(\mathbf{rot}\,\boldsymbol{a})=\Delta\boldsymbol{a}$。
+
+**习题 8** @311
+
+位于原点的点电荷 $q$ 产生的静电场的电场强度为$$\boldsymbol{E}=\frac{q}{4\pi\varepsilon_0 r^3}(x\boldsymbol{i}+y\boldsymbol{j}+z\boldsymbol{k}) ,$$其中 $r=\sqrt{x^2+y^2+z^2}$，$\varepsilon_0$ 为真空介电常数。求 $\mathbf{rot}\,\boldsymbol{E}$。
+
+**习题 9** @311
+
+设 $\boldsymbol{a}$ 为常向量，$\boldsymbol{r}=x\boldsymbol{i}+y\boldsymbol{j}+z\boldsymbol{k}$，验证：
+
+(1) $\nabla\cdot(\boldsymbol{a}\times\boldsymbol{r})=0$；
+
+(2) $\nabla\times(\boldsymbol{a}\times\boldsymbol{r})=2\boldsymbol{a}$；
+
+(3) $\nabla\cdot((\boldsymbol{r}\cdot\boldsymbol{r})\boldsymbol{a})=2\boldsymbol{r}\cdot\boldsymbol{a}$。
+
+**习题 10** @311
+
+求全微分 $(x^2-2yz)\,\mathrm{d}x+(y^2-2xz)\,\mathrm{d}y+(z^2-2xy)\,\mathrm{d}z$ 的原函数。
+
+**习题 11** @311
+
+证明向量场$$\boldsymbol{a}=\frac{x-y}{x^2+y^2}\,\boldsymbol{i}+\frac{x+y}{x^2+y^2}\,\boldsymbol{j}\quad(x>0)$$是有势场并求势函数。
+
+**习题 12** @311
+
+证明向量场$$\boldsymbol{a}=(2x+y+z)yz\,\boldsymbol{i}+(x+2y+z)zx\,\boldsymbol{j}+(x+y+2z)xy\,\boldsymbol{k}$$是有势场，并求出它的势函数。
+
+**习题 13** @311
+
+验证：
+
+(1) $u=y^3-3x^2y$ 为平面 $\mathbf{R}^2$ 上的调和函数；
+
+(2) $u=\ln\sqrt{(x-a)^2+(y-b)^2}$ 为 $\mathbf{R}^2\setminus\{(a,b)\}$ 上的调和函数；
+
+(3) $u=\dfrac{1}{\sqrt{x^2+y^2+z^2}}$ 为 $\mathbf{R}^3\setminus\{(0,0,0)\}$ 上的调和函数。
+
+**习题 14** @311
+
+设 $u(x,y)$ 在 $\mathbf{R}^2$ 上具有二阶连续偏导数，证明 $u$ 是调和函数的充要条件为：对于 $\mathbf{R}^2$ 中任意光滑封闭曲线 $C$，成立$$\int_C \frac{\partial u}{\partial\boldsymbol{n}}\,\mathrm{d}s=0 ,$$其中 $\dfrac{\partial u}{\partial\boldsymbol{n}}$ 为沿 $C$ 的外法线方向的方向导数。
+
+**习题 15** @311
+
+设 $u=u(x,y)$ 与 $v=v(x,y)$ 都为平面上的调和函数。令 $F=\sqrt{u^2+v^2}$。证明当 $p\geqslant 2$ 时，在 $F\neq 0$ 的点成立$$\Delta(F^p)\geqslant 0 .$$
+
+**习题 16** @311
+
+设 $B=\{(x,y,z)\mid x^2+y^2+z^2\leqslant 1\}$，$\boldsymbol{F}(x,y,z):\mathbf{R}^3\to\mathbf{R}^3$ 为具有连续导数的向量值函数，且满足$$\boldsymbol{F}\big|_{\partial B}=(0,0,0),\quad \nabla\cdot\boldsymbol{F}\big|_B=0 .$$证明：对于任何 $\mathbf{R}^3$ 上具有连续偏导数的函数 $g(x,y,z)$ 成立$$\iiint_B \nabla g\cdot\boldsymbol{F}\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z=0 .$$
+
+**习题 17** @311
+
+设 $D=\{(x,y)\in\mathbf{R}^2\mid x^2+y^2<1\}$，$u(x,y)$ 在 $\overline{D}$ 上具有连续二阶偏导数。进一步，设 $u$ 在 $\overline{D}$ 上不恒等于零，但在 $D$ 的边界 $\partial D$ 上恒为零，且在 $D$ 上成立$$\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}=\lambda u\quad(\lambda\ \text{为常数}) .$$证明$$\int_D \|\mathbf{grad}\,u\|^2\,\mathrm{d}x\,\mathrm{d}y+\lambda\int_D u^2\,\mathrm{d}x\,\mathrm{d}y=0 .$$
+
+**习题 18** @312
+
+设区域 $\Omega$ 由分片光滑封闭曲面 $\Sigma$ 所围成，$u(x,y,z)$ 在 $\overline{\Omega}$ 上具有二阶连续偏导数，且在 $\overline{\Omega}$ 上调和，即满足$$\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2}+\frac{\partial^2 u}{\partial z^2}=0 .$$
+
+(1) 证明$$\iint_\Sigma \frac{\partial u}{\partial\boldsymbol{n}}\,\mathrm{d}S=0 ,$$其中 $\boldsymbol{n}$ 为 $\Sigma$ 的单位外法向量；
+
+(2) 设 $(x_0,y_0,z_0)\in\Omega$ 为一定点，证明$$u(x_0,y_0,z_0)=\frac{1}{4\pi}\iint_\Sigma\left(u\,\frac{\cos(\boldsymbol{r},\boldsymbol{n})}{r^2}+\frac{1}{r}\frac{\partial u}{\partial\boldsymbol{n}}\right)\mathrm{d}S ,$$其中 $\boldsymbol{r}=(x-x_0,y-y_0,z-z_0),\ r=|\boldsymbol{r}|$。
+
 ## 第15章 含参变量积分
 
 ### 15.1 含参变量的常义积分（p313–317）
@@ -8919,6 +11547,72 @@ $$0=\iiint_\Omega\Delta U\,\mathrm{d}V=\iiint_\Omega\mathbf{div}(\mathbf{grad}\,
 **注 (先求导再积分的方法)** @317
 
 本例对参变量先求了一次导数，然后又做了一次积分，但并非回到了原来的出发点，而是解决了问题。这与例 15.1.2 中展示的通过交换积分次序来求积分的处理过程都是重要的方法。
+
+#### 习题（p317–318）
+
+**习题 1** @317
+
+求下列极限：
+
+(1) $\displaystyle\lim_{\alpha\to 0}\int_0^{1+\alpha}\frac{\mathrm{d}x}{1+x^2+\alpha^2}$；
+
+(2) $\displaystyle\lim_{n\to\infty}\int_0^1\frac{\mathrm{d}x}{1+\left(1+\frac{x}{n}\right)^n}$。
+
+**习题 2** @317
+
+设 $f(x,y)$ 当 $y$ 固定时，关于 $x$ 在 $[a,b]$ 上连续，且当 $y\to y_0-$ 时，它关于 $y$ 单调增加地趋于连续函数 $\varphi(x)$，证明$$\lim_{y\to y_0-}\int_a^b f(x,y)\,\mathrm{d}x=\int_a^b\varphi(x)\,\mathrm{d}x.$$
+
+**习题 3** @317
+
+利用交换积分顺序的方法计算下列积分：
+
+(1) $\displaystyle\int_0^1\sin\left(\ln\frac{1}{x}\right)\frac{x^b-x^a}{\ln x}\,\mathrm{d}x\quad(b>a>0)$；
+
+(2) $\displaystyle\int_0^{\frac{\pi}{2}}\ln\frac{1+a\sin x}{1-a\sin x}\frac{\mathrm{d}x}{\sin x}\quad(1>a>0)$。
+
+**习题 4** @317
+
+求下列函数的导数：
+
+(1) $\displaystyle I(y)=\int_y^{y^2}\mathrm{e}^{-x^2}\,\mathrm{d}x$；
+
+(2) $\displaystyle I(y)=\int_y^{y^2}\frac{\cos xy}{x}\,\mathrm{d}x$；
+
+(3) $\displaystyle F(t)=\int_0^{t^2}\mathrm{d}x\int_{x-t}^{x+t}\sin(x^2+y^2-t^2)\,\mathrm{d}y$。
+
+**习题 5** @317
+
+设 $\displaystyle I(y)=\int_0^b(x+y)f(x)\,\mathrm{d}x$，其中 $f(x)$ 为可微函数，求 $I''(y)$。
+
+**习题 6** @317
+
+设 $\displaystyle F(y)=\int_a^b f(x)|y-x|\,\mathrm{d}x\quad(a<b)$，其中 $f(x)$ 为可微函数，求 $F''(y)$。
+
+**习题 7** @317
+
+设函数 $f(x)$ 具有二阶导数，$F(x)$ 是可导的，证明函数$$u(x,t)=\frac{1}{2}\left[f(x-at)+f(x+at)\right]+\frac{1}{2a}\int_{x-at}^{x+at}F(y)\,\mathrm{d}y$$满足弦振动方程$$\frac{\partial^2 u}{\partial t^2}=a^2\frac{\partial^2 u}{\partial x^2}$$及初值条件$$u(x,0)=f(x),\qquad \frac{\partial u}{\partial t}(x,0)=F(x).$$
+
+**习题 8** @317
+
+利用积分号下求导法计算下列积分：
+
+(1) $\displaystyle\int_0^{\frac{\pi}{2}}\ln(a^2-\sin^2 x)\,\mathrm{d}x\quad(a>1)$；
+
+(2) $\displaystyle\int_0^{\pi}\ln(1-2\alpha\cos x+\alpha^2)\,\mathrm{d}x\quad(|\alpha|<1)$；
+
+(3) $\displaystyle\int_0^{\frac{\pi}{2}}\ln(a^2\sin^2 x+b^2\cos^2 x)\,\mathrm{d}x$。
+
+**习题 9** @318
+
+证明：第二类椭圆积分$$E(k)=\int_0^{\frac{\pi}{2}}\sqrt{1-k^2\sin^2 t}\,\mathrm{d}t\qquad(0<k<1)$$满足微分方程$$E''(k)+\frac{1}{k}E'(k)+\frac{E(k)}{1-k^2}=0.$$
+
+**习题 10** @318
+
+设函数 $f(u,v)$ 在 $\mathbf{R}^2$ 上具有二阶连续偏导数。证明：函数$$w(x,y,z)=\int_0^{2\pi}f(x+z\cos\varphi,\ y+z\sin\varphi)\,\mathrm{d}\varphi$$满足偏微分方程$$z\left(\frac{\partial^2 w}{\partial x^2}+\frac{\partial^2 w}{\partial y^2}-\frac{\partial^2 w}{\partial z^2}\right)=\frac{\partial w}{\partial z}.$$
+
+**习题 11** @318
+
+设 $f(x)$ 在 $[0,1]$ 上连续，且 $f(x)>0$。研究函数$$I(y)=\int_0^1\frac{yf(x)}{x^2+y^2}\,\mathrm{d}x$$的连续性。
 
 ### 15.2 含参变量的反常积分（p318–329）
 
@@ -9096,6 +11790,88 @@ Dini 定理并不是这个定理的逆定理。Dini 定理只说明了在 $f(x,y
 
 **解** 利用积分次序交换的方法。由于$$\frac{\cos ax-\cos bx}{x}=\int_a^b\sin xy\,\mathrm{d}y,$$所以$$I=\int_0^{+\infty}\mathrm{d}x\int_a^b\frac{\sin xy}{x}\,\mathrm{d}y.$$由例 15.2.4 知含参变量反常积分 $\displaystyle\int_0^{+\infty}\frac{\sin xy}{x}\,\mathrm{d}x$ 在 $[a,b]$ 上一致收敛，并注意到 $\displaystyle\int_0^{+\infty}\frac{\sin xy}{x}\,\mathrm{d}x=\frac{\pi}{2}\ (y>0)$，就得到$$I=\int_0^{+\infty}\mathrm{d}x\int_a^b\frac{\sin xy}{x}\,\mathrm{d}y=\int_a^b\mathrm{d}y\int_0^{+\infty}\frac{\sin xy}{x}\,\mathrm{d}x=\int_a^b\frac{\pi}{2}\,\mathrm{d}y=\frac{\pi}{2}(b-a).$$
 
+#### 习题（p330–331）
+
+**习题 1** @330
+
+证明下列含参变量反常积分在指定区间上一致收敛：
+
+(1) $\displaystyle\int_0^{+\infty}\frac{\cos xy}{x^2+y^2}\,\mathrm{d}x,\ y\geqslant a>0$；
+
+(2) $\displaystyle\int_0^{+\infty}\frac{\sin 2x}{x+\alpha}\mathrm{e}^{-\alpha x}\,\mathrm{d}x,\ 0\leqslant\alpha\leqslant\alpha_0$；
+
+(3) $\displaystyle\int_0^{+\infty}x\sin x^4\cos\alpha x\,\mathrm{d}x,\ a\leqslant\alpha\leqslant b$。
+
+**习题 2** @330
+
+说明下列含参变量反常积分在指定区间上非一致收敛：
+
+(1) $\displaystyle\int_0^{+\infty}\frac{x\sin\alpha x}{\alpha(1+x^2)}\,\mathrm{d}x,\ 0<\alpha<+\infty$；
+
+(2) $\displaystyle\int_0^1\frac{1}{x^\alpha}\sin\frac{1}{x}\,\mathrm{d}x,\ 0<\alpha<2$。
+
+**习题 3** @330
+
+设 $f(t)$ 在 $t>0$ 上连续，反常积分 $\displaystyle\int_0^{+\infty}t^\lambda f(t)\,\mathrm{d}t$ 当 $\lambda=a$ 与 $\lambda=b$ 时都收敛，证明 $\displaystyle\int_0^{+\infty}t^\lambda f(t)\,\mathrm{d}t$ 关于 $\lambda$ 在 $[a,b]$ 上一致收敛。
+
+**习题 4** @330
+
+讨论下列含参变量反常积分的一致收敛性：
+
+(1) $\displaystyle\int_0^{+\infty}\frac{\cos xy}{\sqrt{x}}\,\mathrm{d}x$，在 $y\geqslant y_0>0$；
+
+(2) $\displaystyle\int_{-\infty}^{+\infty}\mathrm{e}^{-(x-\alpha)^2}\,\mathrm{d}x$，在 (i) $a<\alpha<b$；(ii) $-\infty<\alpha<+\infty$；
+
+(3) $\displaystyle\int_0^{+\infty}x^{p-1}\ln^2 x\,\mathrm{d}x$，在 (i) $p\geqslant p_0>0$；(ii) $p>0$；
+
+(4) $\displaystyle\int_0^{+\infty}\mathrm{e}^{-\alpha x}\sin x\,\mathrm{d}x$，在 (i) $\alpha\geqslant\alpha_0>0$；(ii) $\alpha>0$。
+
+**习题 5** @330
+
+证明：函数 $\displaystyle F(\alpha)=\int_1^{+\infty}\frac{\cos x}{x^\alpha}\,\mathrm{d}x$ 在 $(0,+\infty)$ 上连续。
+
+**习题 6** @330
+
+确定函数 $\displaystyle F(y)=\int_0^{\pi}\frac{\sin x}{x^y(\pi-x)^{2-y}}\,\mathrm{d}x$ 的连续范围。
+
+**习题 7** @331
+
+设 $\displaystyle\int_0^{+\infty}f(x)\,\mathrm{d}x$ 存在。证明：$f(x)$ 的 Laplace 变换 $\displaystyle F(s)=\int_0^{+\infty}\mathrm{e}^{-sx}f(x)\,\mathrm{d}x$ 在 $[0,+\infty)$ 上连续。
+
+**习题 8** @331
+
+证明：函数 $\displaystyle I(t)=\int_0^{+\infty}\frac{\cos x}{1+(x+t)^2}\,\mathrm{d}x$ 在 $(-\infty,+\infty)$ 上可微。
+
+**习题 9** @331
+
+利用 $\dfrac{\mathrm{e}^{-ax}-\mathrm{e}^{-bx}}{x}=\displaystyle\int_a^b\mathrm{e}^{-xy}\,\mathrm{d}y$，计算$$\int_0^{+\infty}\frac{\mathrm{e}^{-ax}-\mathrm{e}^{-bx}}{x}\,\mathrm{d}x\qquad(b>a>0).$$
+
+**习题 10** @331
+
+利用 $\dfrac{\sin bx-\sin ax}{x}=\displaystyle\int_a^b\cos xy\,\mathrm{d}y$，计算$$\int_0^{+\infty}\mathrm{e}^{-px}\frac{\sin bx-\sin ax}{x}\,\mathrm{d}x\qquad(p>0,\ b>a>0).$$
+
+**习题 11** @331
+
+利用 $\displaystyle\int_0^{+\infty}\frac{\mathrm{d}x}{a+x^2}=\frac{\pi}{2\sqrt{a}}\ (a>0)$，计算$$I_n=\int_0^{+\infty}\frac{\mathrm{d}x}{(a+x^2)^{n+1}}\qquad(n\ \text{为正整数}).$$
+
+**习题 12** @331
+
+计算$$g(\alpha)=\int_1^{+\infty}\frac{\arctan\alpha x}{x^2\sqrt{x^2-1}}\,\mathrm{d}x.$$
+
+**习题 13** @331
+
+设 $f(x)$ 在 $[0,+\infty)$ 上连续，且 $\displaystyle\lim_{x\to+\infty}f(x)=0$，证明$$\int_0^{+\infty}\frac{f(ax)-f(bx)}{x}\,\mathrm{d}x=f(0)\ln\frac{b}{a}\qquad(a,b>0).$$
+
+**习题 14** @331
+
+(1) 利用 $\displaystyle\int_0^{+\infty}\mathrm{e}^{-y^2}\,\mathrm{d}y=\frac{\sqrt{\pi}}{2}$ 推出$$L(c)=\int_0^{+\infty}\mathrm{e}^{-x^2-\frac{c^2}{x^2}}\,\mathrm{d}x=\frac{\sqrt{\pi}}{2}\mathrm{e}^{-2c}\qquad(c>0);$$
+
+(2) 利用积分号下求导的方法引出 $\dfrac{\mathrm{d}L}{\mathrm{d}c}=-2L$，以此推出与 (1) 同样的结果，并计算$$\int_0^{+\infty}\mathrm{e}^{-a^2y^2-\frac{b^2}{y^2}}\,\mathrm{d}y\qquad(a>0,\ b>0).$$
+
+**习题 15** @331
+
+利用 $\displaystyle\int_0^{+\infty}\mathrm{e}^{-t(\alpha^2+x^2)}\,\mathrm{d}t=\frac{1}{\alpha^2+x^2}$，计算$$J=\int_0^{+\infty}\frac{\cos\beta x}{\alpha^2+x^2}\,\mathrm{d}x\qquad(\alpha>0).$$
+
 ### 15.3 Euler 积分（p330–341）
 
 **定义 (Beta 函数)** @330
@@ -9246,6 +12022,68 @@ Gamma 函数有如下的渐近估计：$$\Gamma(s+1)=\sqrt{2\pi s}\left(\frac{s}
 
 于是当正数 $\alpha,\beta$ 满足 $\dfrac{1}{\alpha}+\dfrac{1}{\beta}<1$ 时，反常重积分$$I=\iint_D\frac{\mathrm{d}x\,\mathrm{d}y}{1+x^\alpha+y^\beta}$$收敛，且$$I=\frac{1}{\alpha\beta}\mathrm{B}\left(\frac{1}{\alpha},\frac{1}{\beta}\right)\mathrm{B}\left(\frac{1}{\alpha}+\frac{1}{\beta},1-\left(\frac{1}{\alpha}+\frac{1}{\beta}\right)\right)=\frac{1}{\alpha\beta}\Gamma\left(\frac{1}{\alpha}\right)\Gamma\left(\frac{1}{\beta}\right)\Gamma\left(1-\left(\frac{1}{\alpha}+\frac{1}{\beta}\right)\right).$$
 
+#### 习题（p340–341）
+
+**习题 1** @340
+
+计算下列积分：
+
+(1) $\displaystyle\int_0^1\sqrt{x-x^2}\,\mathrm{d}x$；
+
+(2) $\displaystyle\int_0^{\pi}\frac{\mathrm{d}x}{\sqrt{3-\cos x}}$；
+
+(3) $\displaystyle\int_0^1\frac{\mathrm{d}x}{\sqrt[n]{1-x^n}}\quad(n>1)$；
+
+(4) $\displaystyle\int_0^{+\infty}\frac{x^{m-1}}{1+x^n}\,\mathrm{d}x\quad(n>m>0)$；
+
+(5) $\displaystyle\int_0^{+\infty}\frac{\sqrt[4]{x}}{(1+x)^2}\,\mathrm{d}x$；
+
+(6) $\displaystyle\int_0^{\frac{\pi}{2}}\sin^7 x\cos^{\frac{1}{2}}x\,\mathrm{d}x$；
+
+(7) $\displaystyle\int_0^{+\infty}x^m\mathrm{e}^{-x^n}\,\mathrm{d}x\quad(m,n>0)$；
+
+(8) $\displaystyle\int_0^1 x^{p-1}(1-x^n)^{q-1}\,\mathrm{d}x\quad(p,q,n>0)$。
+
+**习题 2** @340
+
+证明 $\displaystyle\int_0^{+\infty}\mathrm{e}^{-x^n}\,\mathrm{d}x=\frac{1}{n}\Gamma\left(\frac{1}{n}\right)$（$n$ 为正整数），并推出 $\displaystyle\lim_{n\to\infty}\int_0^{+\infty}\mathrm{e}^{-x^n}\,\mathrm{d}x=1$。
+
+**习题 3** @340
+
+证明：$\Gamma(s)$ 在 $s>0$ 上可导，且$$\Gamma'(s)=\int_0^{+\infty}x^{s-1}\mathrm{e}^{-x}\ln x\,\mathrm{d}x.$$进一步证明$$\Gamma^{(n)}(s)=\int_0^{+\infty}x^{s-1}\mathrm{e}^{-x}(\ln x)^n\,\mathrm{d}x\qquad(n\geqslant 1).$$
+
+**习题 4** @340
+
+证明 $\displaystyle\lim_{s\to 0+}\Gamma(s)=+\infty$。
+
+**习题 5** @340
+
+计算 $\displaystyle\int_0^1\ln\Gamma(x)\,\mathrm{d}x$。
+
+**习题 6** @340
+
+设 $\Omega=\{(x,y,z)\mid x^2+y^2+z^2\leqslant 1\}$。确定正数 $p$，使得反常重积分$$I=\iiint_\Omega\frac{\mathrm{d}x\mathrm{d}y\mathrm{d}z}{(1-x^2-y^2-z^2)^p}$$收敛，并在收敛时，计算 $I$ 的值。
+
+**习题 7** @340
+
+设 $\Omega=\{(x,y,z)\mid x\geqslant 0,\ y\geqslant 0,\ z\geqslant 0\}$。确定正数 $\alpha,\beta,\gamma$，使得反常重积分$$I=\iiint_\Omega\frac{\mathrm{d}x\mathrm{d}y\mathrm{d}z}{1+x^\alpha+y^\beta+z^\gamma}$$收敛，并在收敛时，计算 $I$ 的值。
+
+**习题 8** @340
+
+计算$$I=\iint_D x^{m-1}y^{n-1}(1-x-y)^{p-1}\,\mathrm{d}x\mathrm{d}y,$$其中 $D$ 是由三条直线 $x=0$，$y=0$ 及 $x+y=1$ 所围成的闭区域，$m,n,p$ 均为大于 $0$ 的正数。
+
+**习题 9** @340
+
+证明$$\int_0^{\frac{\pi}{2}}\tan^\alpha x\,\mathrm{d}x=\frac{\pi}{2\cos\frac{\alpha\pi}{2}}\qquad(|\alpha|<1).$$
+
+**习题 10** @340
+
+设 $0<\alpha<2$，$0<k<1$，证明：$$\int_0^{\pi}\left(\frac{\sin\varphi}{1+\cos\varphi}\right)^{\alpha-1}\frac{\mathrm{d}\varphi}{1+k\cos\varphi}=\frac{1}{1+k}\left(\sqrt{\frac{1+k}{1-k}}\right)^{\alpha}\frac{\pi}{\sin\frac{\alpha}{2}\pi}.$$
+
+**习题 11** @341
+
+设 $0\leqslant h<1$，正整数 $n\geqslant 3$，证明$$\int_0^h(1-t^2)^{\frac{n-3}{2}}\,\mathrm{d}t\geqslant\frac{\sqrt{\pi}}{2}\frac{\Gamma\left(\frac{n-1}{2}\right)}{\Gamma\left(\frac{n}{2}\right)}h.$$
+
 ## 第16章 Fourier 级数
 
 ### 16.1 函数的 Fourier 级数展开（p342–348）
@@ -9309,6 +12147,104 @@ $f(x)$ 的图形在电工学中称为**方波**（见图 16.1.1(a)），上式�
 **解** 在上面的公式中令 $T=1$，计算 $f(x)$ 的 Fourier 系数得$$a_0=\frac{1}{T}\int_{-T}^{T}f(x)\,\mathrm{d}x=\int_{0}^{1}x^2\,\mathrm{d}x=\frac{1}{3},$$对 $n=1,2,\cdots$，利用分部积分法，$$a_n=\frac{1}{T}\int_{-T}^{T}f(x)\cos\frac{n\pi}{T}x\,\mathrm{d}x=\int_{0}^{1}x^2\cos n\pi x\,\mathrm{d}x=\frac{2\cdot(-1)^n}{n^2\pi^2},$$$$b_n=\frac{1}{T}\int_{-T}^{T}f(x)\sin\frac{n\pi}{T}x\,\mathrm{d}x=\int_{0}^{1}x^2\sin n\pi x\,\mathrm{d}x=\frac{(-1)^{n+1}}{n\pi}+\frac{2\left[(-1)^n-1\right]}{n^3\pi^3},$$于是得到 $f(x)$ 的 Fourier 级数$$f(x)\sim\frac{1}{6}+\frac{2}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^n}{n^2}\cos n\pi x+\frac{1}{\pi}\sum_{n=1}^{\infty}\left[\frac{(-1)^{n+1}}{n}+2\cdot\frac{(-1)^n-1}{n^3\pi^2}\right]\sin n\pi x.$$
 
 $f(x)$ 的图形及由一系列正弦波叠加的近似情况见图 16.1.4。
+
+#### 习题（p348–349）
+
+**习题 1** @348
+
+设交流电的变化规律为 $E(t)=A\sin\omega t$，将它转变为直流电的整流过程有两种类型：
+
+（1）半波整流（见图 16.1.5(a)）$$f_1(t)=\frac{A}{2}\left(\sin\omega t+|\sin\omega t|\right);$$
+
+（2）全波整流（见图 16.1.5(b)）$$f_2(t)=A|\sin\omega t|;$$
+
+现取 $\omega=1$，试将 $f_1(x)$ 和 $f_2(x)$ 在 $[-\pi,\pi]$ 展开为 Fourier 级数。
+
+**习题 2** @348
+
+将下列函数在 $[-\pi,\pi]$ 上展开成 Fourier 级数：
+
+（1）$f(x)=\operatorname{sgn}x$；
+
+（2）$f(x)=|\cos x|$；
+
+（3）$f(x)=\dfrac{x^2}{2}-\pi^2$；
+
+（4）$f(x)=\begin{cases}x,&x\in[-\pi,0),\\0,&x\in[0,\pi);\end{cases}$
+
+（5）$f(x)=\begin{cases}ax,&x\in[-\pi,0),\\bx,&x\in[0,\pi).\end{cases}$
+
+**习题 3** @348
+
+将下列函数展开成正弦级数：
+
+（1）$f(x)=\pi+x,\ x\in[0,\pi]$；
+
+（2）$f(x)=e^{-2x},\ x\in[0,\pi]$；
+
+（3）$f(x)=\begin{cases}2x,&x\in\left[0,\dfrac{\pi}{2}\right),\\[2mm]\pi,&x\in\left[\dfrac{\pi}{2},\pi\right];\end{cases}$
+
+（4）$f(x)=\begin{cases}\cos\dfrac{\pi x}{2},&x\in[0,1),\\[2mm]0,&x\in[1,2].\end{cases}$
+
+**习题 4** @348
+
+将下列函数展开成余弦级数：
+
+（1）$f(x)=x(\pi-x),\ x\in[0,\pi]$；
+
+（2）$f(x)=e^x,\ x\in[0,\pi]$；
+
+（3）$f(x)=\begin{cases}\sin 2x,&x\in\left[0,\dfrac{\pi}{4}\right),\\[2mm]1,&x\in\left[\dfrac{\pi}{4},\dfrac{\pi}{2}\right];\end{cases}$
+
+（4）$f(x)=x-\dfrac{\pi}{2}+\left|x-\dfrac{\pi}{2}\right|,\ x\in[0,\pi]$。
+
+**习题 5** @348
+
+求定义在任意一个长度为 $2\pi$ 的区间 $[a,a+2\pi]$ 上的函数 $f(x)$ 的 Fourier 级数及其系数的计算公式。
+
+**习题 6** @348
+
+将下列函数在指定区间展开成 Fourier 级数：
+
+（1）$f(x)=\dfrac{\pi-x}{2},\ x\in[0,2\pi]$；
+
+（2）$f(x)=x^2,\ x\in[0,2\pi]$；
+
+（3）$f(x)=x,\ x\in[0,1]$；
+
+（4）$f(x)=\begin{cases}e^{3x},&x\in[-1,0),\\0,&x\in[0,1];\end{cases}$
+
+（5）$f(x)=\begin{cases}C,&x\in[-T,0),\\0,&x\in[0,T],\end{cases}$（$C$ 是常数）。
+
+**习题 7** @348
+
+某可控硅控制电路中的负载电流为$$I(t)=\begin{cases}0,&0\le t<T_0,\\5\sin\omega t,&T_0\le t<T,\end{cases}$$其中 $\omega$ 为圆频率，周期 $T=\dfrac{2\pi}{\omega}$。现设初始导通时间 $T_0=\dfrac{T}{8}$（见图 16.1.6），求 $I(t)$ 在 $[0,T]$ 上的 Fourier 级数。
+
+**习题 8** @349
+
+设 $f(x)$ 在 $[-\pi,\pi]$ 上可积或绝对可积，证明：
+
+（1）若对于任意 $x\in[-\pi,\pi]$，成立 $f(x)=f(x+\pi)$，则 $a_{2n-1}=b_{2n-1}=0$；
+
+（2）若对于任意 $x\in[-\pi,\pi]$，成立 $f(x)=-f(x+\pi)$，则 $a_{2n}=b_{2n}=0$。
+
+**习题 9** @349
+
+设 $f(x)$ 在 $\left(0,\dfrac{\pi}{2}\right)$ 上可积或绝对可积，应分别对它进行怎么样的延拓，才能使它在 $[-\pi,\pi]$ 上的 Fourier 级数的形式为
+
+（1）$f(x)\sim\displaystyle\sum_{n=1}^{\infty}a_n\cos(2n-1)x$；
+
+（2）$f(x)\sim\displaystyle\sum_{n=1}^{\infty}b_n\sin 2nx$。
+
+**习题 10** @349
+
+设周期为 $2\pi$ 的函数 $f(x)$ 在 $[-\pi,\pi]$ 上的 Fourier 系数为 $a_n$ 和 $b_n$，求下列函数的 Fourier 系数 $\tilde a_n$ 和 $\tilde b_n$：
+
+（1）$g(x)=f(-x)$；
+
+（2）$h(x)=f(x+C)$（$C$ 是常数）；
+
+（3）$F(x)=\dfrac{1}{\pi}\displaystyle\int_{-\pi}^{\pi}f(t)f(x-t)\,\mathrm{d}t$（假定积分顺序可以交换）。
 
 ### 16.2 Fourier 级数的收敛判别法（p349–358）
 
@@ -9405,6 +12341,60 @@ Dirichlet–Jordan 判别法和 Dini–Lipschitz 判别法都是 Fourier 级数�
 **注 ($\cos x$ 零点倒数的平方和)** @358
 
 还可以获得一些其他的有趣结果。如 $\cos x$ 的全部零点为$$\pm\frac{\pi}{2},\ \pm\frac{3\pi}{2},\ \cdots,\ \pm\frac{(2k-1)\pi}{2},\ \cdots,$$而$$\sum_{k=1}^{\infty}\frac{1}{\left[\dfrac{(2k-1)\pi}{2}\right]^2}+\sum_{k=1}^{\infty}\frac{1}{\left[-\dfrac{(2k-1)\pi}{2}\right]^2}=2\cdot\frac{4}{\pi^2}\sum_{k=1}^{\infty}\frac{1}{(2k-1)^2}=2\cdot\frac{4}{\pi^2}\cdot\frac{\pi^2}{8}=1,$$即 $\cos x$ 全部零点的倒数的平方和恰为 $1$。
+
+#### 习题（p358–359）
+
+**习题 1** @358
+
+设 $\psi(x)$ 在 $[0,+\infty)$ 上连续且单调，$\lim\limits_{x\to+\infty}\psi(x)=0$，证明$$\lim_{p\to+\infty}\int_0^{+\infty}\psi(x)\sin px\,\mathrm{d}x=0.$$
+
+**习题 2** @358
+
+设函数 $\psi(u)$ 在 $[-\pi,\pi]$ 上可积或绝对可积，在 $u=0$ 点连续且有单侧导数，证明$$\lim_{p\to+\infty}\int_{-\pi}^{\pi}\psi(u)\frac{\cos\dfrac{u}{2}-\cos pu}{2\sin\dfrac{u}{2}}\,\mathrm{d}u=\frac{1}{2}\int_0^{\pi}\left[\psi(u)-\psi(-u)\right]\cot\frac{u}{2}\,\mathrm{d}u.$$
+
+**习题 3** @358
+
+设函数 $\psi(u)$ 在 $[-\delta,\delta]$ 上单调，证明$$\lim_{p\to+\infty}\int_{-\delta}^{\delta}\left\{\psi(u)-\frac{1}{2}\left[\psi(0+)+\psi(0-)\right]\right\}\frac{\sin pu}{u}\,\mathrm{d}u=0.$$
+
+**习题 4** @358
+
+证明：Dirichlet 引理对 $\psi(u)$ 是分段单调有界函数的情况依然成立。
+
+**习题 5** @358
+
+证明 Lipschitz 判别法的推论。
+
+**习题 6** @358
+
+对 §16.1 的习题 2、3、4、6 中的函数，验证它们的 Fourier 级数满足收敛判别法的条件，并分别写出这些 Fourier 级数的和函数。
+
+**习题 7** @358
+
+利用 $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{\pi^2}{6}$，证明：
+
+（1）$1-\dfrac{1}{2^2}+\dfrac{1}{3^2}-\dfrac{1}{4^2}+\cdots=\dfrac{\pi^2}{12}$；
+
+（2）$1+\dfrac{1}{3^2}+\dfrac{1}{5^2}+\dfrac{1}{7^2}+\cdots=\dfrac{\pi^2}{8}$。
+
+**习题 8** @358
+
+求 $\sin x$ 全部非零点的倒数的平方和。
+
+**习题 9** @358
+
+证明下列关系式：
+
+（1）对 $0<x<2\pi$ 且 $a\ne0$，有$$\pi e^{ax}=\left(e^{2a\pi}-1\right)\left[\frac{1}{2a}+\sum_{n=1}^{\infty}\frac{a\cos nx-n\sin nx}{a^2+n^2}\right];$$
+
+（2）对 $0<x<2\pi$ 且 $a$ 不是自然数，有$$\pi\cos ax=\frac{\sin 2a\pi}{2a}+\sum_{n=1}^{\infty}\frac{a\sin 2a\pi\cos nx+n\left(\cos 2a\pi-1\right)\sin nx}{a^2-n^2};$$
+
+（3）对（2），令 $x=\pi$，有$$\frac{a\pi}{\sin a\pi}=1+2a^2\sum_{n=1}^{\infty}\frac{(-1)^n}{a^2-n^2}.$$
+
+**习题 10** @359
+
+（1）验证函数$$f(x)=\begin{cases}\dfrac{1}{\ln\dfrac{|x|}{2\pi}},&x\ne0,\\[3mm]0,&x=0\end{cases}$$满足 Dirichlet–Jordan 判别法条件而不满足 Dini–Lipschitz 判别法条件。
+
+（2）验证函数$$f(x)=\begin{cases}x\cos\dfrac{\pi}{2x},&x\ne0,\\[2mm]0,&x=0\end{cases}$$满足 Dini–Lipschitz 判别法条件。（今后会学到，它不满足 Dirichlet–Jordan 判别法条件，在此从略。）
 
 ### 16.3 Fourier 级数的性质（p359–366）
 
@@ -9512,6 +12502,44 @@ $\dfrac{L^2}{4\pi}$ 就是周长为 $L$ 的圆所围的面积。
 
 设 $f(x)$ 在 $[-\pi,\pi]$ 上连续，$f(-\pi)=f(\pi)$，$\displaystyle\int_{-\pi}^{\pi}f(x)\,\mathrm{d}x=0$，且除了有限个点外 $f(x)$ 可导，但在不可导的点，$f(x)$ 的单侧导数存在。进一步假设 $f(x)$ 的导数 $f'(x)$ 在 $[-\pi,\pi]$ 上可积或平方可积，则$$\int_{-\pi}^{\pi}f^2(x)\,\mathrm{d}x\leqslant \int_{-\pi}^{\pi}f'^2(x)\,\mathrm{d}x,$$等号成立当且仅当 $f(x)=a\cos x+b\sin x$（$a,b$ 为常数）。
 
+#### 习题（p366–367）
+
+**习题 1** @366
+
+由例 16.1.2 的结果$$x\sim 2\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin nx,\qquad x\in(-\pi,\pi),$$用逐项积分法求 $x^2$ 和 $x^3$ 的 Fourier 级数。
+
+**习题 2** @366
+
+证明定理 16.3.2 的推论 16.3.1：$\dfrac{a_0}{2}+\displaystyle\sum_{n=1}^{\infty}\left(a_n\cos nx+b_n\sin nx\right)$ 是某个在 $[-\pi,\pi]$ 上可积或绝对可积函数的 Fourier 级数的必要条件是 $\displaystyle\sum_{n=1}^{\infty}\frac{b_n}{n}$ 收敛。
+
+**习题 3** @366
+
+说明级数 $\displaystyle\sum_{n=2}^{\infty}\frac{\sin nx}{\ln n}$ 和 $\displaystyle\sum_{n=2}^{\infty}\frac{\sin nx}{\ln\ln n}$ 点点收敛，但不可能是任何可积或绝对可积函数的 Fourier 级数。
+
+**习题 4** @366
+
+利用例 16.1.1 的结果$$f(x)=\begin{cases}1,&x\in[-\pi,0),\\0,&x\in[0,\pi)\end{cases}\sim\frac{1}{2}-\frac{2}{\pi}\sum_{n=1}^{\infty}\frac{\sin(2n-1)x}{2n-1}$$和 Parseval 等式，证明 $\displaystyle\sum_{n=1}^{\infty}\frac{1}{(2n-1)^2}=\frac{\pi^2}{8}$。
+
+**习题 5** @367
+
+利用例 16.1.2 的结果$$f(x)=\begin{cases}x,&x\in[0,\pi),\\-x,&x\in[-\pi,0)\end{cases}\sim\frac{\pi}{2}+\frac{2}{\pi}\sum_{n=1}^{\infty}\frac{(-1)^n-1}{n^2}\cos nx$$和 Parseval 等式，求 $\displaystyle\sum_{n=1}^{\infty}\frac{1}{(2n-1)^4}$。
+
+**习题 6** @367
+
+利用$$x^2=\frac{\pi^2}{3}+4\sum_{n=1}^{\infty}\frac{(-1)^n}{n^2}\cos nx,\qquad x\in(-\pi,\pi)$$和 Parseval 等式，求 $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^4}$。
+
+**习题 7** @367
+
+设 $f(x)$ 为 $(-\infty,+\infty)$ 上以 $2\pi$ 为周期，且具有二阶连续导数的函数，记$$b_n=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin nx\,\mathrm{d}x,\qquad b''_n=\frac{1}{\pi}\int_{-\pi}^{\pi}f''(x)\sin nx\,\mathrm{d}x.$$证明：若 $\displaystyle\sum_{n=1}^{\infty}b''_n$ 绝对收敛，则$$\sum_{n=1}^{\infty}\sqrt{|b_n|}<\frac{1}{2}\left(2+\sum_{n=1}^{\infty}|b''_n|\right).$$
+
+**习题 8** @367
+
+设 $f(x)$ 为 $(-\infty,+\infty)$ 上的以 $2\pi$ 为周期的连续函数。证明：若 $f(x)$ 的 Fourier 系数全为零，则 $f(x)\equiv0$。
+
+**习题 9** @367
+
+设 $f(x)$ 是周期为 $2\pi$ 的任意一个连续函数，证明对于任意给定的 $\varepsilon>0$，存在三角多项式$$\psi_n(x)=\frac{A_0}{2}+\sum_{k=1}^{n}\left(A_k\cos kx+B_k\sin kx\right),$$使得$$\int_{-\pi}^{\pi}\left|f(x)-\psi_n(x)\right|\,\mathrm{d}x<\varepsilon.$$
+
 ### 16.4 Fourier 变换和 Fourier 积分（p367–374）
 
 **定义 (Fourier 变换)** @367
@@ -9616,6 +12644,30 @@ $\dfrac{L^2}{4\pi}$ 就是周长为 $L$ 的圆所围的面积。
 
 而换一个角度，从 Fourier 变换的定义来看，由于$$\frac{|\hat{f}(\omega)|}{\pi}=\frac{1}{\pi}\left|\int_{-\infty}^{+\infty}f(x)\mathrm{e}^{-\mathrm{i}\omega x}\,\mathrm{d}x\right|=\lim_{T\to+\infty}\frac{\dfrac{1}{T}\left|\displaystyle\int_{-T}^{T}f(x)\mathrm{e}^{-\mathrm{i}\omega x}\,\mathrm{d}x\right|}{\Delta\omega},$$与 $|c_n|$ 的表达式比较，说明它确实能看成相应于频率 $\omega$ 的谐波在整体中的某种“强度”，与上面的结论相吻合。
 
+#### 习题（p374–375）
+
+**习题 1** @374
+
+求下列定义在 $(-\infty,+\infty)$ 的函数的 Fourier 变换：
+
+（1）$f(x)=\begin{cases}A,&0<x<\delta,\\0,&其他;\end{cases}$
+
+（2）$f(x)=e^{-a|x|},\ a>0$；
+
+（3）$f(x)=e^{-ax^2},\ a>0$；
+
+（4）$f(x)=\begin{cases}e^{-2x},&x\ge0,\\0,&x<0;\end{cases}$
+
+（5）$f(x)=\begin{cases}A\cos\omega_0x,&|x|\le\delta,\\0,&|x|>\delta;\end{cases}\quad\omega_0\ne0$ 是常数，$\delta=\dfrac{\pi}{\omega_0}$。
+
+**习题 2** @374
+
+求 $f(x)=e^{-ax}$（$x\in[0,+\infty)$，$a>0$）的正弦变换和余弦变换。
+
+**习题 3** @375
+
+设$$f_1(x)=\begin{cases}e^{-x},&x\ge0,\\0,&x<0,\end{cases}\qquad f_2(x)=\begin{cases}\sin x,&0\le x\le\dfrac{\pi}{2},\\0,&其他,\end{cases}$$求 $f_1*f_2(x)$。
+
 ### 16.5 快速 Fourier 变换（p375–380）
 
 **定义 (离散 Fourier 变换)** @375
@@ -9676,4 +12728,20 @@ $\dfrac{L^2}{4\pi}$ 就是周长为 $L$ 的圆所围的面积。
 
 求两个级数的 Cauchy 乘积的处理是类似的，某些类型的矩阵乘法也可以从卷积入手导出快速算法，这里不再一一介绍了。
 
-> 本书尚未录入习题。
+#### 习题（p380）
+
+**习题 1** @380
+
+说明离散 Fourier 变换$$X(j)=\sum_{n=0}^{N-1}x(n)e^{-2\pi\mathrm{i}\frac{nj}{N}}$$可以看成 Fourier 变换$$\hat f(\omega)=\int_{-\infty}^{+\infty}f(x)e^{-\mathrm{i}\omega x}\,\mathrm{d}x$$的离散近似形式的推广。
+
+**习题 2** @380
+
+证明正交关系式$$\frac{1}{N}\sum_{n=0}^{N-1}e^{-2\pi\mathrm{i}\frac{nj}{N}}e^{2\pi\mathrm{i}\frac{nk}{N}}=\delta_{j,k}.$$
+
+**习题 3** @380
+
+设 $N=pq\ (p,q\in\mathbf{N})$，构造只需 $O((p+q)N)$ 次运算的 Fourier 变换算法。
+
+**习题 4** @380
+
+对 $N=2^s$，具体写出以 2 为底的 FFT 的计算流程。
