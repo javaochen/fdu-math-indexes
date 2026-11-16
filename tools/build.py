@@ -293,6 +293,83 @@ def load_book(book_dir: Path, problems: list[str]) -> dict | None:
     return book
 
 
+def md_item(it: dict) -> list[str]:
+    name = f"{it['type']} {it['number']}".strip()
+    if it.get("title"):
+        name += f" ({it['title']})"
+    body = it.get("src") or src_from_html(it.get("html", ""))
+    return [f"**{name}** @{it['page']}", ""] + ([body, ""] if body else [])
+
+
+def md_block(block: dict) -> list[str]:
+    if block.get("kind") == "heading":
+        label = " ".join(x for x in (block.get("number", ""), block.get("title", "")) if x)
+        page = f" @{block['page']}" if block.get("page") else ""
+        return [f"#### {label}{page}", ""]
+    body = src_from_html(block.get("html", ""))
+    return [body, ""] if body else []
+
+
+def md_exercise(it: dict) -> list[str]:
+    name = f"习题 {it['number']}"
+    if it.get("title"):
+        name += f" ({it['title']})"
+    return [f"**{name}** @{it['page']}", "", it.get("src", ""), ""]
+
+
+def write_bundle(book: dict, exercises: dict | None, path: Path) -> int:
+    """整本书的单一 Markdown 全文包：正文陈述 + 已录入习题，便于直接交给 AI。"""
+    lines: list[str] = [f"# {book['title']}", ""]
+    if book.get("author"):
+        lines += [f"作者：{book['author']}", ""]
+    if book.get("source"):
+        lines += [f"源文件：{book['source']}", ""]
+    if book.get("note"):
+        lines += [f"> {book['note']}", ""]
+    lines += [
+        "> 本文件由数学命题索引自动生成，包含正文陈述与已录入习题；习题可能尚未完全录入。",
+        "",
+    ]
+    ready = exercises["sections"] if exercises else {}
+    any_exercise = False
+
+    for ch in book.get("chapters", []):
+        lines += [f"## 第{ch['no']}章 {ch['title']}", ""]
+        for sec in ch.get("sections", []):
+            lines += [f"### {sec['id']} {sec['title']}（p{sec['pages']}）", ""]
+            items = sec.get("items", [])
+            blocks = sec.get("blocks") or []
+            if blocks:
+                grouped: dict[int, list[dict]] = {}
+                for block in blocks:
+                    grouped.setdefault(int(block.get("before", 0)), []).append(block)
+                for i in range(len(items) + 1):
+                    for block in grouped.get(i, []):
+                        lines += md_block(block)
+                    if i < len(items):
+                        lines += md_item(items[i])
+            else:
+                for it in items:
+                    lines += md_item(it)
+            record = ready.get(sec["id"])
+            if record and record.get("status") == "ready" and record.get("items"):
+                any_exercise = True
+                lines += [f"#### 习题（p{record['pages']}）", ""]
+                for it in record["items"]:
+                    lines += md_exercise(it)
+        record = ready.get("chapter-" + str(ch["no"]))
+        if record and record.get("status") == "ready" and record.get("items"):
+            any_exercise = True
+            lines += [f"### 第{ch['no']}章 习题（p{record['pages']}）", ""]
+            for it in record["items"]:
+                lines += md_exercise(it)
+
+    if not any_exercise:
+        lines += ["> 本书尚未录入习题。", ""]
+    path.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+    return path.stat().st_size
+
+
 def write_json(path: Path, obj) -> int:
     path.write_text(json.dumps(obj, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     return path.stat().st_size
@@ -391,6 +468,7 @@ def main() -> int:
                     ])
         else:
             (DATA / f"{b['id']}-exercises.json").unlink(missing_ok=True)
+        write_bundle(b, ex_data, DATA / f"{b['id']}.md")
         meta_books.append({
             "id": b["id"], "title": b["title"], "short": b["short"], "author": b["author"],
         "author_img": b["author_img"],

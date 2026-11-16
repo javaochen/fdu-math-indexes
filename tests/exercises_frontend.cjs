@@ -258,6 +258,10 @@ async function checkProbabilityChapters() {
   assert.equal(probability.exercise_count, total);
   assert.equal(chapters.reduce((sum, chapter) => sum + chapter.exercises.groups.length, 0), 30);
   assert.equal(readJSON("search.json").filter((entry) => entry[0] === "gailv" && entry[3] === "习题").length, total);
+  const bundle = fs.readFileSync(path.join(site, "data", "gailv.md"), "utf8");
+  assert.ok(bundle.includes("# 概率论"), "Book bundle must start with the title");
+  assert.ok(bundle.includes("**习题 1**"), "Book bundle must contain exercises");
+  assert.ok(bundle.includes("## 第2章"), "Book bundle must keep chapter order");
 
   const app = await start({ hash: "#/gailv/chapter-2/exercises" });
   assert.deepEqual(app.requests, ["data/books.json", "data/gailv-exercises.json"]);
@@ -341,7 +345,7 @@ async function checkProbabilityChapters() {
   assert.match(app.html(), /class="exercise-items"/);
   await app.navigate("#/gailv");
   assert.ok(app.html().includes(`习题 ${probability.exercise_count} 题`));
-  assert.match(app.element("#data-btn").href, /\/site\/data\/gailv\.json$/, "Footer data link must follow the current book");
+  assert.match(app.element("#data-btn").href, /\/site\/data\/gailv\.md$/, "Footer data link must follow the current book");
   assert.ok(!app.html().includes("习题 138 题"), "Chapter summaries must not be counted once per section");
   await app.navigate("#/");
   assert.match(app.element("#data-btn").href, /\/site\/data\/books\.json$/, "Home must fall back to the catalog data");

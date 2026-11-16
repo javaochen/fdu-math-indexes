@@ -960,8 +960,8 @@
     const first = decodeURIComponent(location.hash.replace(/^#\/?/, "")).split("/").filter(Boolean)[0] || "";
     const id = BOOK_ALIAS[first] || first;
     const book = BOOKS.find((b) => b.id === id);
-    el.href = DATA_RAW + (book ? book.id : "books") + ".json";
-    el.title = book ? `${book.title}的原始数据（JSON），可直接交给 AI` : "全部书目与数据的索引（JSON），可直接交给 AI";
+    el.href = book ? `${DATA_RAW}${book.id}.md` : `${DATA_RAW}books.json`;
+    el.title = book ? `${book.title}的整本书 Markdown（正文 + 已录入习题），可直接交给 AI` : "全部书目与数据的索引（JSON），可直接交给 AI";
   }
 
   function parseHash() {
