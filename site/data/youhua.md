@@ -3644,7 +3644,7 @@ $$\min_{\alpha}\ \|\alpha y^{k-1}-s^{k-1}\|^2,\tag{6.2.7}$$
 
 $$\min_{\alpha}\ \|y^{k-1}-\alpha^{-1}s^{k-1}\|^2,\tag{6.2.8}$$
 
-其中引入记号 $s^{k-1}\triangleqx^k-x^{k-1}$ 以及 $y^{k-1}\triangleq\nabla f(x^k)-\nabla f(x^{k-1})$。
+其中引入记号 $s^{k-1}\triangleq x^k-x^{k-1}$ 以及 $y^{k-1}\triangleq\nabla f(x^k)-\nabla f(x^{k-1})$。
 
 问题 (6.2.7) 和 (6.2.8) 的解分别为
 
@@ -7448,7 +7448,7 @@ $$\begin{aligned}x_j^{k+1}&=\arg\min_{x_j}\left\{f_j(x_j)+\Bigl(\sum_{i=1}^{m}A_
 
 PDHG 算法的构造要从鞍点问题谈起。仍然考虑原始问题 (8.5.1)，其中 $f,h$ 是适当的闭凸函数。将问题 (8.5.1) 变形为
 
-$$(\mathrm{L}_{\mathrm{PD}})\quad \min_{x}\max_{z}\ \psi_{PD}(x,z)\overset{\text{def}}{=\joinrel=}f(x)-h^{*}(z)+z^{\mathrm{T}}Ax.\tag{8.5.10}$$
+$$(\mathrm{L}_{\mathrm{PD}})\quad \min_{x}\max_{z}\ \psi_{PD}(x,z)\triangleq f(x)-h^{*}(z)+z^{\mathrm{T}}Ax.\tag{8.5.10}$$
 
 此时问题 (8.5.1) 变成了一个极小–极大问题，即关于变量 $x$ 求极小，关于变量 $z$ 求极大，这是一个典型的鞍点问题。
 
@@ -7494,7 +7494,7 @@ $$\begin{aligned}z^{k+1}&=\operatorname{prox}_{\delta_kh^{*}}\bigl(z^{k}+\delta_
 
 考虑 LASSO 问题
 
-$$\min_{x\in\mathbb{R}^n}\ \psi(x)\overset{\text{def}}{=\joinrel=}\mu\|x\|_1+\frac{1}{2}\|Ax-b\|_2^2.$$
+$$\min_{x\in\mathbb{R}^n}\ \psi(x)\triangleq\mu\|x\|_1+\frac{1}{2}\|Ax-b\|_2^2.$$
 
 取 $f(x)=\mu\|x\|_1$ 和 $h(x)=\dfrac{1}{2}\|x-b\|_2^2$，相应的鞍点问题 (8.5.10) 形式为 $\min\limits_{x\in\mathbb{R}^n}\max\limits_{z\in\mathbb{R}^m}f(x)-h^{*}(z)+z^{\mathrm{T}}Ax$。根据共轭函数的定义，
 
@@ -9444,7 +9444,9 @@ $$\Upsilon=\begin{bmatrix}Q_\alpha & Q_{\bar\alpha}\end{bmatrix}\begin{bmatrix}Q
 
 下面我们介绍基于增广拉格朗日乘子法的半光滑牛顿算法 [161]．从一个初始点 $X^0$ 开始，增广拉格朗日算法求解半定规划对偶问题的格式为
 
-$$\begin{aligned}y^{k+1}&=\arg\min \tilde L_{\sigma^k}(y,X^k)\tag{8.8.58}\\ X^{k+1}&=\Pi_{\mathbb S^n_+}(X^k-\sigma(\mathcal A^*y^{k+1}-C)),\tag{8.8.59}\end{aligned}$$
+$$y^{k+1}=\arg\min \tilde L_{\sigma^k}(y,X^k)\tag{8.8.58}$$
+
+$$X^{k+1}=\Pi_{\mathbb S^n_+}(X^k-\sigma(\mathcal A^*y^{k+1}-C)),\tag{8.8.59}$$
 
 其中
 

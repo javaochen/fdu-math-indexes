@@ -134,7 +134,7 @@ $$L(x_1,x_2,\cdots,x_n,\lambda_1,\lambda_2,\cdots,\lambda_m)=f(x_1,x_2,\cdots,x_
 
 那么条件极值点就在方程组
 
-$$\begin{cases}\dfrac{\partial L}{\partial x_k}=\dfrac{\partial f}{\partial x_k}-\sum_{i=1}^{m}\lambda_i\dfrac{\partial g_i}{\partial x_k}=0,&\quad(k=1,2,\cdots,n;\ l=1,2,\cdots,m)\\[3mm] g_l=0&\end{cases}\tag{\ast}$$
+$$\begin{cases}\dfrac{\partial L}{\partial x_k}=\dfrac{\partial f}{\partial x_k}-\sum_{i=1}^{m}\lambda_i\dfrac{\partial g_i}{\partial x_k}=0,&\quad(k=1,2,\cdots,n;\ l=1,2,\cdots,m)\\[3mm] g_l=0&\end{cases}\tag{*}$$
 
 的所有解 $(x_1,x_2,\cdots,x_n,\lambda_1,\lambda_2,\cdots,\lambda_m)$ 所对应的点 $(x_1,x_2,\cdots,x_n)$ 中。
 

@@ -75,9 +75,15 @@ def escape_html(s: str) -> str:
 
 
 def inline(s: str) -> str:
-    """仅支持 **粗体**，其余按 HTML 转义。公式原样保留，交给 KaTeX。"""
-    s = escape_html(s)
-    return re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", s)
+    """仅支持正文中的 **粗体**；公式内部原样保留，避免把 $X^{**}$ 的 ** 当成粗体。"""
+    parts = re.split(r"(\$\$[\s\S]*?\$\$|\$[^$]*\$)", s)
+    out = []
+    for i, part in enumerate(parts):
+        if i % 2:
+            out.append(escape_html(part))
+        else:
+            out.append(re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", escape_html(part)))
+    return "".join(out)
 
 
 def src_from_html(html: str) -> str:
