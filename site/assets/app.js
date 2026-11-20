@@ -25,6 +25,9 @@
   let currentMeta = null;
   let current = null;
   let query = "";
+  let lastSearch = "";          // 最近一次搜索词，用于从结果页返回
+  let searchState = null;       // 当前搜索结果，供“复制全部”使用
+  let searchOrigin = "";        // 进入搜索前的页面，清空搜索时恢复
   let mathObserver = null;
   let loadToken = 0;
   let exerciseView = false;
@@ -605,7 +608,7 @@
       }
       body = parts.join("");
     }
-    $("#view").innerHTML = sectionHead(s, items) + body + sectionNav(s);
+    $("#view").innerHTML = searchBackLink() + sectionHead(s, items) + body + sectionNav(s);
     typesetLazy($("#view"), blocks ? ".item, .prose, .subhead" : ".item");
     $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <b>${esc(b.short || b.title)}</b> · ${esc(s.id)} ${esc(s.title)}`;
     markActive();
@@ -621,7 +624,7 @@
     const b = current.book;
     const head = sectionHead(current, items);
     document.body.classList.add("card-mode");
-    $("#view").innerHTML = head + `
+    $("#view").innerHTML = searchBackLink() + head + `
       <div class="card-view">
         <div class="card-bar">
           <button class="card-nav" type="button" data-card="-1" ${cardIdx === 0 ? "disabled" : ""}>← 上一条</button>
@@ -765,8 +768,53 @@
     }).join("");
   }
 
+  function searchHashQuery() {
+    const raw = location.hash.replace(/^#\/?/, "");
+    if (raw === "search") return "";
+    if (!raw.startsWith("search/")) return null;
+    return decodeURIComponent(raw.slice(7));
+  }
+
+  function searchHitTitle(e) {
+    return [e[3], e[4], e[5]].filter(Boolean).join(" ");
+  }
+
+  function searchHitLocation(e, book) {
+    const sourceChapter = book && (book.chapters || []).find((ch) => chapterExerciseId(ch) === e[1]);
+    return sourceChapter ? `第${sourceChapter.no}章` : e[1];
+  }
+
+  function searchMarkdown(state) {
+    if (!state) return "";
+    const base = location.origin && location.origin !== "null" ? location.origin + location.pathname : "";
+    const lines = [`# 搜索：${state.q}`, "", `命中 ${state.hits.length} 条。`, ""];
+    for (const e of state.hits) {
+      const book = BOOKS.find((b) => b.id === e[0]);
+      lines.push(`- **${searchHitTitle(e)}** — ${book ? book.short || book.title : e[0]} · ${searchHitLocation(e, book)}`);
+      lines.push(`  ${base}#/${e[0]}/${e[1]}/${e[2]}`);
+      if (e[6]) lines.push(`  ${e[6].replace(/\s+/g, " ").trim()}`);
+      lines.push("");
+    }
+    return lines.join("\n").trim() + "\n";
+  }
+
+  function searchBackLink() {
+    if (!lastSearch) return "";
+    return `<a class="search-back" href="#/search/${encodeURIComponent(lastSearch)}">← 返回搜索“${esc(lastSearch)}”</a>`;
+  }
+
   async function renderSearch(q) {
     const token = ++loadToken;
+    lastSearch = q;
+    const h = `#/search/${encodeURIComponent(q)}`;
+    if (location.hash !== h) {
+      const fromSearch = location.hash.startsWith("#/search/");
+      if (fromSearch) history.replaceState(null, "", h);
+      else {
+        searchOrigin = location.hash || "#/";
+        history.pushState(null, "", h);
+      }
+    }
     updateDataLink();
     setTopbarCopy(null);
     if (exerciseView) current = null;
@@ -780,11 +828,12 @@
       if (terms.every((t) => SEARCH_N[i].includes(t))) hitIdx.push(i);
     }
     const shown = hitIdx.slice(0, 80);
+    const hits = hitIdx.map((i) => SEARCH[i]);
+    searchState = { q, hits };
     const rows = shown.map((i) => {
       const e = SEARCH[i];
       const book = BOOKS.find((b) => b.id === e[0]);
-      const sourceChapter = book && (book.chapters || []).find((ch) => chapterExerciseId(ch) === e[1]);
-      const sourceLocation = sourceChapter ? `第${sourceChapter.no}章` : e[1];
+      const sourceLocation = searchHitLocation(e, book);
       return `<a class="hit" href="#/${esc(e[0])}/${esc(e[1])}/${esc(e[2])}">
         <span class="badge" data-type="${esc(e[3])}">${esc(e[3])}</span>
         <b>${esc(e[4] || "")}</b>
@@ -795,7 +844,9 @@
     }).join("");
     $("#view").innerHTML = `
       <div class="sec-head"><h1>搜索</h1>
-        <div class="meta"><span>“${esc(q)}” 命中 ${hitIdx.length} 条${hitIdx.length > shown.length ? `（显示前 ${shown.length} 条）` : ""}</span></div>
+        <div class="meta"><span>“${esc(q)}” 命中 ${hitIdx.length} 条${hitIdx.length > shown.length ? `（显示前 ${shown.length} 条）` : ""}</span>
+          ${hitIdx.length ? `<button class="sec-copy" type="button" data-copy-search title="复制全部命中结果为 Markdown">复制全部 ${hitIdx.length} 条</button>` : ""}
+        </div>
       </div>` + (rows || `<div class="empty">没有匹配的条目。</div>`);
     $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <b>搜索</b> “${esc(q)}”`;
     typesetLazy($("#view"), ".hit");
@@ -804,6 +855,8 @@
 
   function renderHome() {
     ++loadToken;
+    lastSearch = "";
+    searchState = null;
     updateDataLink();
     setTopbarCopy(null);
     setExerciseView(false);
@@ -882,7 +935,7 @@
       tabs: sectionTabs(s, true),
       copy: items.length ? copyButton("exercises", "复制本节习题", "复制本节全部习题的 Markdown/LaTeX 源码") : "",
     });
-    $("#view").innerHTML = head + navigation + body + (items.length ? navigation : "");
+    $("#view").innerHTML = searchBackLink() + head + navigation + body + (items.length ? navigation : "");
     setTopbarCopy(items.length ? "exercises" : null);
     $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <a class="crumb-home" href="#/${esc(s.book.id)}">${esc(s.book.short || s.book.title)}</a> · ${esc(s.id)} 习题`;
     markActive();
@@ -938,7 +991,7 @@
       tabs: sectionTabs(s, true),
       copy: allItems.length ? copyButton("exercises", "复制本章习题", "复制本章全部习题（含所有主题）的 Markdown/LaTeX 源码") : "",
     });
-    $("#view").innerHTML = head + navigation + body + (items.length ? navigation : "");
+    $("#view").innerHTML = searchBackLink() + head + navigation + body + (items.length ? navigation : "");
     setTopbarCopy(allItems.length ? "chapter" : null);
     $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <a class="crumb-home" href="#/${esc(s.book.id)}">${esc(s.book.short || s.book.title)}</a> · 第${esc(s.chapter)}章${group ? ` · ${esc(group.title)}` : ""}`;
     markActive();
@@ -982,6 +1035,14 @@
       return;
     }
     const raw = location.hash.replace(/^#\/?/, "");
+    const sq = searchHashQuery();
+    if (sq !== null) {
+      if (!sq) { history.replaceState(null, "", "#/"); renderHome(); return; }
+      searchEl.value = sq;
+      query = sq;
+      renderSearch(sq);
+      return;
+    }
     if (!raw) { renderHome(); return; }
     const { bookId, secId, anchor, exercises } = parseHash();
     const meta = BOOKS.find((b) => b.id === bookId) || BOOKS[0];
@@ -1060,6 +1121,9 @@
 
     const copySrc = e.target.closest("[data-copy-src]");
     if (copySrc) { copyText(SRC.get(copySrc.dataset.copySrc) || "", copySrc); return; }
+
+    const copySearch = e.target.closest("[data-copy-search]");
+    if (copySearch) { copyText(searchMarkdown(searchState), copySearch); return; }
 
     const copySection = e.target.closest("[data-copy-section]");
     if (copySection) {
@@ -1163,7 +1227,13 @@
     const v = searchEl.value;
     timer = setTimeout(() => {
       query = v.trim();
-      if (!query) { route(); return; }
+      if (!query) {
+        lastSearch = "";
+        searchState = null;
+        if (location.hash.startsWith("#/search/")) history.replaceState(null, "", searchOrigin || "#/");
+        route();
+        return;
+      }
       renderSearch(query);
     }, 160);
   });

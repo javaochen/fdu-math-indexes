@@ -367,6 +367,11 @@ pre.src {
 .hit-title { font-family: var(--serif); font-weight: 600; }
 .hit-src { float: right; font-size: 11.5px; color: var(--muted); }
 .hit-text { margin: 6px 0 0; font-family: var(--serif); font-size: 13.5px; color: var(--muted); line-height: 1.7; }
+.search-back {
+  display: inline-block; margin: 0 0 8px; font-size: 12.5px; color: var(--accent);
+  text-decoration: none;
+}
+.search-back:hover { text-decoration: underline; }
 mark { background: rgba(255, 210, 90, .45); color: inherit; padding: 0 1px; border-radius: 2px; }
 @media (prefers-color-scheme: dark) { mark { background: rgba(212, 177, 108, .3); } }
 

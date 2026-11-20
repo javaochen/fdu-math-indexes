@@ -100,7 +100,7 @@ async function start({ hash = "#/fanhan/1.1/exercises", search = "", random = nu
     setTimeout(callback) { queueMicrotask(callback); return 1; }, clearTimeout() {},
     localStorage: { getItem() { return null; }, setItem() {} },
     navigator: { clipboard: { async writeText(text) { clipboard.push(text); } } },
-    history: { replaceState() {} },
+    history: { replaceState() {}, pushState() {} },
     async fetch(url) {
       requests.push(url);
       const target = path.resolve(site, url);
@@ -125,6 +125,11 @@ async function start({ hash = "#/fanhan/1.1/exercises", search = "", random = nu
     async copy(key) {
       const button = new Element(); button.dataset.copySrc = key;
       button.closest = (selector) => selector === "[data-copy-src]" || selector === "button" ? button : null;
+      await document.events.click({ target: button }); await settle();
+    },
+    async copySearch() {
+      const button = new Element(); button.dataset.copySearch = "";
+      button.closest = (selector) => selector === "[data-copy-search]" || selector === "button" ? button : null;
       await document.events.click({ target: button }); await settle();
     },
   };
@@ -197,6 +202,10 @@ async function main() {
   const searchEntry = readJSON("search.json").find((entry) => entry[0] === "fanhan" && entry[5]);
   await app.search(searchEntry[5]);
   assert.match(app.html(), /class="hit"/);
+  assert.match(app.html(), /data-copy-search/);
+  await app.copySearch();
+  assert.ok(app.clipboard.at(-1).startsWith("# 搜索："), "Copy all search must include a Markdown header");
+  assert.ok(app.clipboard.at(-1).includes(searchEntry[5].slice(0, 8)), "Copy all search must include hit titles");
   assert.ok(!app.document.body.classList.contains("exercise-mode"));
   assert.ok(app.modes.every((el) => !el.disabled) && !app.src.disabled);
   await app.search("");
@@ -205,7 +214,11 @@ async function main() {
   await app.search(searchEntry[5]);
   await app.navigate(`#/${searchEntry[0]}/${searchEntry[1]}/${searchEntry[2]}`);
   assert.match(app.html(), /class="item/);
+  assert.ok(app.html().includes("返回搜索"), "Section page opened from search must offer a way back");
   assert.ok(!app.document.body.classList.contains("exercise-mode"));
+  await app.navigate(`#/search/${encodeURIComponent(searchEntry[5])}`);
+  assert.match(app.html(), /class="hit"/);
+  assert.ok(app.html().includes("data-copy-search"));
   await app.navigate("#/fanhan/1.1");
   assert.match(app.html(), /class="section-tabs"/);
   assert.match(app.html(), /class="item/);
