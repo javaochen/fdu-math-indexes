@@ -289,7 +289,16 @@ pre.src {
 .home { max-width: 920px; }
 .home-head h1 { font-family: var(--serif); font-size: 34px; margin: 6px 0 6px; letter-spacing: .02em; }
 .home-sub { color: var(--muted); margin: 0 0 6px; }
+.home-manifesto {
+  margin: 4px 0 8px; font-family: var(--serif); font-weight: 700;
+  font-size: clamp(19px, 2.6vw, 27px); letter-spacing: .05em; color: var(--ink);
+}
 .home-stat { color: var(--muted); font-size: 13px; margin: 0 0 24px; }
+.page-tagline {
+  margin: 7px 0 0; padding-left: 8px; border-left: 2px solid var(--accent);
+  font-family: var(--serif); font-size: 13px; letter-spacing: .04em; color: var(--accent);
+}
+.book-home .page-tagline { margin-top: 8px; }
 .book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
 
 /* 书首页：书头 + 全书索引 */

@@ -484,7 +484,7 @@ def main() -> int:
         })
 
     books_size = write_json(DATA / "books.json", {
-        "site": {"title": "数学命题索引", "subtitle": "教材命题 · 只含陈述，便于自测"},
+        "site": {"title": "数学命题索引", "subtitle": "教材命题 · 只含陈述，证明留给你"},
         "books": meta_books,
         "count": total,
     })
