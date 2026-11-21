@@ -93,6 +93,14 @@ def src_from_html(html: str) -> str:
     return "\n\n".join(html_lib.unescape(p) for p in text)
 
 
+MATH_DELIM_RE = re.compile(r"\$\$|\$")
+
+
+def math_open(text: str) -> bool:
+    """当前累计文本是否停在未闭合的 $...$ / $$...$$ 内。"""
+    return len(MATH_DELIM_RE.findall(text)) % 2 == 1
+
+
 def to_paragraphs(body: str) -> list[str]:
     paras, cur = [], []
     for raw in body.splitlines():
@@ -102,7 +110,10 @@ def to_paragraphs(body: str) -> list[str]:
                 paras.append("".join(cur).strip())
                 cur = []
             continue
-        cur.append(line.strip())
+        text = line.strip()
+        # 中文正文换行不补空格；公式内换行是 TeX 的空白，必须保留，
+        # 否则 \qquad 会与下一行变量粘成 \qquadx。
+        cur.append((" " if cur and math_open("".join(cur)) else "") + text)
     if cur:
         paras.append("".join(cur).strip())
     return [p for p in paras if p]

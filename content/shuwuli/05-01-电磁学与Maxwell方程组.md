@@ -20,12 +20,14 @@ pages: "142–144"
 Maxwell 方程组在不同应用需求下往往写作不同的等价形式，其中真空中 Maxwell 方程组的微分形式为
 
 $$
-\begin{cases}
-\operatorname{div}\boldsymbol{E}=\dfrac{\rho}{\varepsilon_0}, & \tag{5.1}\\
-\operatorname{div}\boldsymbol{B}=0, & \tag{5.2}\\
-\operatorname{curl}\boldsymbol{E}=-\dfrac{\partial \boldsymbol{B}}{\partial t}, & \tag{5.3}\\
-\operatorname{curl}\boldsymbol{B}=\mu_0\left(\varepsilon_0\dfrac{\partial \boldsymbol{E}}{\partial t}+\boldsymbol{j}\right). & \tag{5.4}
-\end{cases}
+\left\{
+\begin{array}{ll}
+\operatorname{div}\boldsymbol{E}=\dfrac{\rho}{\varepsilon_0}, & \text{(5.1)}\\
+\operatorname{div}\boldsymbol{B}=0, & \text{(5.2)}\\
+\operatorname{curl}\boldsymbol{E}=-\dfrac{\partial \boldsymbol{B}}{\partial t}, & \text{(5.3)}\\
+\operatorname{curl}\boldsymbol{B}=\mu_0\left(\varepsilon_0\dfrac{\partial \boldsymbol{E}}{\partial t}+\boldsymbol{j}\right). & \text{(5.4)}
+\end{array}
+\right.
 $$
 
 这是一组一阶线性偏微分方程组，其中 $\boldsymbol{E}=(E_1,E_2,E_3)^{\mathrm{T}}$ 为电场强度向量，$\boldsymbol{B}=(B_1,B_2,B_3)^{\mathrm{T}}$ 为磁感应强度向量，$\rho$ 为电荷密度函数，$\boldsymbol{j}=(j_1,j_2,j_3)^{\mathrm{T}}$ 为电流密度函数，它们都是时间变量 $t$ 和空间变量 $x$ 的函数，$\varepsilon_0$ 为真空中的介电常数，$\mu_0$ 为真空中的磁导率。

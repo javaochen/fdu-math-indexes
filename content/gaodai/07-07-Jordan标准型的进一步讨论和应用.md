@@ -164,13 +164,13 @@ J_i=\begin{pmatrix}
 =\begin{pmatrix}
 &&&1\\
 &&1&\lambda_i\\
-&\iddots&&\\
+&\text{⋰}&&\\
 1&\lambda_i&&
 \end{pmatrix}
 \begin{pmatrix}
 &&&1\\
 &&1&\\
-&\iddots&&\\
+&\text{⋰}&&\\
 1&&&
 \end{pmatrix}
 =S_{i1}S_{i2},

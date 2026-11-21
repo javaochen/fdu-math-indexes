@@ -136,11 +136,11 @@ $$\left\{f:\Lambda\to\bigcup_{\lambda\in\Lambda}X_\lambda\ \middle|\ \forall\lam
 
 设 $X,Y,Z$ 是集合，$f:X\to Y$，$g:Y\to Z$，$h:X\to Z$ 是映射，如果 $gf=h:X\to Z$，则称下面图表**可交换**：
 
-$$\begin{array}{ccc}X & \xrightarrow{\ f\ } & Y\\{\scriptstyle h}\downarrow & & \swarrow{\scriptstyle g}\\Z & &\end{array}$$
+$$\begin{array}{ccc} X & \xrightarrow{\ f\ } & Y\\ {\scriptstyle h}\downarrow & & \swarrow{\scriptstyle g}\\ Z & & \end{array}$$
 
 类似地，如果下面图表中的映射满足 $gf=qp:X\to Z$，则称此图表可交换：
 
-$$\begin{array}{ccc}X & \xrightarrow{\ f\ } & Y\\{\scriptstyle p}\downarrow & & \downarrow{\scriptstyle g}\\W & \xrightarrow{\ q\ } & Z\end{array}$$
+$$\begin{array}{ccc} X & \xrightarrow{\ f\ } & Y\\ {\scriptstyle p}\downarrow & & \downarrow{\scriptstyle g}\\ W & \xrightarrow{\ q\ } & Z \end{array}$$
 
 ## 第1章 点集拓扑
 
@@ -748,7 +748,7 @@ $\mathbb{R}^3$ 的子空间$$T=\{(x_1,x_2,x_3)\in\mathbb{R}^3\mid (\sqrt{x_1^2+x
 
 设 $X$ 是具有不动点性质的拓扑空间，$h:X\to Y$ 是同胚。对任意连续映射 $f:Y\to Y$，作 $\tilde{f}=h^{-1}fh:X\to X$，它必有不动点，记为 $x^*$。此时 $y^*=h(x^*)$ 满足$$f(y^*)=fh(x^*)=h\tilde{f}(x^*)=y^*,$$即 $y^*$ 是 $f$ 的不动点。因此 $Y$ 也具有不动点性质。
 
-$$\begin{array}{ccc}X & \xrightarrow{\ h\ } & Y\\{\scriptstyle \tilde{f}}\downarrow & & \downarrow{\scriptstyle f}\\X & \xrightarrow{\ h\ } & Y\end{array}$$
+$$\begin{array}{ccc} X & \xrightarrow{\ h\ } & Y\\ {\scriptstyle \tilde{f}}\downarrow & & \downarrow{\scriptstyle f}\\ X & \xrightarrow{\ h\ } & Y \end{array}$$
 
 利用上述事实可以证明某些空间不同胚。
 
@@ -2454,7 +2454,7 @@ $\pi_1(S^n)=1\ (n\geqslant 2)$，因此 $S^2$ 是单连通的。
 
 图 2.31 中的曲面 $S$ 称为**双环面**。$S$ 可看成是"带边曲面" $M$ 将边界圆周 $C_1'$ 与 $C_1''$、$C_2'$ 与 $C_2''$ 分别粘贴得到的。设同胚 $h_i:C_i'\to C_i''$（$i=1,2$）给出这粘贴，即 $x\in C_i'$ 与 $h_i(x)\in C_i''$ 粘成一点。
 
-令 $D=\{1,2,\cdots,n\}$，取离散拓扑，$q:M\times D\to M$ 是射影。定义由 $M\times D$ 作出的商空间 $\widetilde S$，它是紧曲面，且 $q$ 导出连续映射 $p:\widetilde S\to S$。$\widetilde S$ 的定义如下：将圆周 $C_i'\times\{j\}$ 与 $C_i''\times\{k\}$ 利用 $h_i$ 来粘贴，其中 $i=1,2$，$1\le j,k\le n$，使得 $M\times D$ 中的边界圆周成对粘贴所得的商空间仍连通，这就是 $\widetilde S$。例如，对于 $n=3$，可按下列方式粘贴：$$\begin{aligned}&C_1'\times\{1\}\ \text{与}\ C_1''\times\{2\},\qquad C_2'\times\{1\}\ \text{与}\ C_2''\times\{2\},\\&C_1'\times\{2\}\ \text{与}\ C_1''\times\{3\},\qquad C_2'\times\{2\}\ \text{与}\ C_2''\times\{1\},\\&C_1'\times\{3\}\ \text{与}\ C_1''\times\{1\},\qquad C_2'\times\{3\}\ \text{与}\ C_2''\times\{3\}.\end{aligned}$$易见 $(\widetilde S,p)$ 是 $S$ 的覆盖空间，按边界圆周配对方式的不同，可得到不同的覆盖空间。
+令 $D=\{1,2,\cdots,n\}$，取离散拓扑，$q:M\times D\to M$ 是射影。定义由 $M\times D$ 作出的商空间 $\widetilde S$，它是紧曲面，且 $q$ 导出连续映射 $p:\widetilde S\to S$。$\widetilde S$ 的定义如下：将圆周 $C_i'\times\{j\}$ 与 $C_i''\times\{k\}$ 利用 $h_i$ 来粘贴，其中 $i=1,2$，$1\le j,k\le n$，使得 $M\times D$ 中的边界圆周成对粘贴所得的商空间仍连通，这就是 $\widetilde S$。例如，对于 $n=3$，可按下列方式粘贴：$$ \begin{aligned} &C_1'\times\{1\}\ \text{与}\ C_1''\times\{2\},\qquad C_2'\times\{1\}\ \text{与}\ C_2''\times\{2\},\\ &C_1'\times\{2\}\ \text{与}\ C_1''\times\{3\},\qquad C_2'\times\{2\}\ \text{与}\ C_2''\times\{1\},\\ &C_1'\times\{3\}\ \text{与}\ C_1''\times\{1\},\qquad C_2'\times\{3\}\ \text{与}\ C_2''\times\{3\}. \end{aligned} $$易见 $(\widetilde S,p)$ 是 $S$ 的覆盖空间，按边界圆周配对方式的不同，可得到不同的覆盖空间。
 
 **例 (复指数映射)** @119
 
@@ -2544,7 +2544,7 @@ $p^{-1}(b)$ 的基数称为覆盖空间 $(E,p)$ 的**叶数**或**层数**。
 
 **例 (Polish 圆)** @130
 
-令 $X=A\cup B\cup C$ 是平面 $\mathbb{R}^2$ 的子空间，其中$$\begin{aligned}A&=\{(u,v)\in\mathbb{R}^2\mid u^2+v^2=1,\ v\ge 0\},\\B&=\{(u,v)\in\mathbb{R}^2\mid -1\le u\le 0,\ v=0\},\\C&=\left\{(u,v)\in\mathbb{R}^2\mid 0<u\le 1,\ v=\frac{1}{2}\sin\frac{\pi}{u}\right\}.\end{aligned}$$$X$ 称为 **Polish 圆**（图 2.41）。显然 $X$ 是道路连通但不局部道路连通的。可以证明 $B\cup C$ 不是道路连通的，所以 $X$ 是单连通的。考虑指数映射给出的覆盖射影 $p:\mathbb{R}\to S^1$，令 $f:X\to S^1$ 由下式给出：$$f(u,v)=\begin{cases}(u,v), & (u,v)\in A,\\ (u,-\sqrt{1-u^2}), & (u,v)\in B\cup C.\end{cases}$$显然 $f$ 连续。令 $x_0=(1,0)$，$e_0=0\in\mathbb{R}$，则条件$$f_*\pi_1(X,x_0)\subset p_*\pi_1(\mathbb{R},0)$$满足。按定理中方式所定义的 $\tilde f:X\to\mathbb{R}$ 为$$\tilde f(u,v)=\begin{cases}\dfrac{\cos^{-1}u}{2\pi}, & (u,v)\in A,\\[4pt] 1-\dfrac{\cos^{-1}u}{2\pi}, & (u,v)\in B,\\[4pt] -\dfrac{\cos^{-1}u}{2\pi}, & (u,v)\in C.\end{cases}$$易见 $p\tilde f=f$，$\tilde f(1,0)=0$，但 $\tilde f$ 在点 $(0,0)$ 处不连续。
+令 $X=A\cup B\cup C$ 是平面 $\mathbb{R}^2$ 的子空间，其中$$ \begin{aligned} A&=\{(u,v)\in\mathbb{R}^2\mid u^2+v^2=1,\ v\ge 0\},\\ B&=\{(u,v)\in\mathbb{R}^2\mid -1\le u\le 0,\ v=0\},\\ C&=\left\{(u,v)\in\mathbb{R}^2\mid 0<u\le 1,\ v=\frac{1}{2}\sin\frac{\pi}{u}\right\}. \end{aligned} $$$X$ 称为 **Polish 圆**（图 2.41）。显然 $X$ 是道路连通但不局部道路连通的。可以证明 $B\cup C$ 不是道路连通的，所以 $X$ 是单连通的。考虑指数映射给出的覆盖射影 $p:\mathbb{R}\to S^1$，令 $f:X\to S^1$ 由下式给出：$$ f(u,v)=\begin{cases}(u,v), & (u,v)\in A,\\ (u,-\sqrt{1-u^2}), & (u,v)\in B\cup C.\end{cases} $$显然 $f$ 连续。令 $x_0=(1,0)$，$e_0=0\in\mathbb{R}$，则条件$$f_*\pi_1(X,x_0)\subset p_*\pi_1(\mathbb{R},0)$$满足。按定理中方式所定义的 $\tilde f:X\to\mathbb{R}$ 为$$ \tilde f(u,v)=\begin{cases}\dfrac{\cos^{-1}u}{2\pi}, & (u,v)\in A,\\[4pt] 1-\dfrac{\cos^{-1}u}{2\pi}, & (u,v)\in B,\\[4pt] -\dfrac{\cos^{-1}u}{2\pi}, & (u,v)\in C.\end{cases} $$易见 $p\tilde f=f$，$\tilde f(1,0)=0$，但 $\tilde f$ 在点 $(0,0)$ 处不连续。
 
 ### 2.6 覆盖空间的分类定理（p131–139）
 
@@ -2594,7 +2594,7 @@ $\pi_1(P^2)\cong\mathbb{Z}_2$，它的子群共轭类为 $\{0\}$ 和 $\{\mathbb{
 
 分类定理表明，覆盖空间 $p:E\to B$ 由其示性类唯一决定（同构意义下）。自然要问：对于 $\pi_1(B,b_0)$ 的任意子群共轭类，是否存在覆盖空间以该子群共轭类作为它的示性类？存在性定理表明，在一些很弱的条件下确实如此。
 
-设 $p:E\to B$ 是覆盖射影，$b_0\in B$，$e_0\in p^{-1}(b_0)$。如果 $(E,p)$ 的示性类是 $\pi_1(B,b_0)$ 的仅含幺元的平凡子群所属的共轭类，那么 $\pi_1(E,e_0)$ 是平凡群，即 $E$ 是单连通空间。对任意 $b\in B$，设 $e\in p^{-1}(b)$，$U$ 是 $b$ 的基本邻域，$V$ 是 $p^{-1}(U)$ 的包含 $e$ 的道路分支，则可交换图表$$\begin{array}{ccc}V & \longrightarrow & E\\{\scriptstyle p|_V}\downarrow & & \downarrow{\scriptstyle p}\\U & \xrightarrow{i} & B\end{array}$$中 $p|_V$ 是同胚，$(p|_V)_*$ 是同构，$\pi_1(E,e)$ 是平凡群，再由图表可交换得知 $i_*$ 必是平凡同态。也就是说，对任意 $[\sigma]\in\pi_1(U,b)$，$i_*([\sigma])$ 是 $\pi_1(B,b)$ 的幺元，即 $b$ 有邻域 $U$，使得 $U$ 中以 $b$ 为基点的闭道在 $B$ 中都等价于常闭道。
+设 $p:E\to B$ 是覆盖射影，$b_0\in B$，$e_0\in p^{-1}(b_0)$。如果 $(E,p)$ 的示性类是 $\pi_1(B,b_0)$ 的仅含幺元的平凡子群所属的共轭类，那么 $\pi_1(E,e_0)$ 是平凡群，即 $E$ 是单连通空间。对任意 $b\in B$，设 $e\in p^{-1}(b)$，$U$ 是 $b$ 的基本邻域，$V$ 是 $p^{-1}(U)$ 的包含 $e$ 的道路分支，则可交换图表$$\begin{array}{ccc} V & \longrightarrow & E\\ {\scriptstyle p|_V}\downarrow & & \downarrow{\scriptstyle p}\\ U & \xrightarrow{i} & B \end{array}$$中 $p|_V$ 是同胚，$(p|_V)_*$ 是同构，$\pi_1(E,e)$ 是平凡群，再由图表可交换得知 $i_*$ 必是平凡同态。也就是说，对任意 $[\sigma]\in\pi_1(U,b)$，$i_*([\sigma])$ 是 $\pi_1(B,b)$ 的幺元，即 $b$ 有邻域 $U$，使得 $U$ 中以 $b$ 为基点的闭道在 $B$ 中都等价于常闭道。
 
 **定义 2.47 (半局部单连通空间)** @136
 
@@ -3250,7 +3250,7 @@ $$\varphi_{p-1}\partial_p=\partial_p\varphi_p:C_p(K)\to C_{p-1}(L),$$
 
 即下面图表可交换，则称 $\varphi$ 为**链映射**。
 
-$$\begin{array}{ccc}C_p(K) & \xrightarrow{\varphi_p} & C_p(L)\\\downarrow{\scriptstyle\partial_p} & & \downarrow{\scriptstyle\partial_p}\\C_{p-1}(K) & \xrightarrow{\varphi_{p-1}} & C_{p-1}(L)\end{array}$$
+$$\begin{array}{ccc} C_p(K) & \xrightarrow{\varphi_p} & C_p(L)\\ \downarrow{\scriptstyle\partial_p} & & \downarrow{\scriptstyle\partial_p}\\ C_{p-1}(K) & \xrightarrow{\varphi_{p-1}} & C_{p-1}(L) \end{array}$$
 
 设 $\varphi$ 是链映射，若 $z\in Z_p(K)$，则 $\partial\varphi_p(z)=\varphi_{p-1}\partial z=0$，即 $\varphi_p(z)\in Z_p(L)$。若 $b\in B_p(K)$，设 $b=\partial c$，$c\in C_{p+1}(K)$，则 $\varphi_p(b)=\varphi_p\partial c=\partial\varphi_{p+1}(c)\in B_p(L)$。因此 $\varphi_p(Z_p(K))\subset Z_p(L)$，$\varphi_p(B_p(K))\subset B_p(L)$，$\varphi_p$ 导出商群之间的同态
 
@@ -3270,7 +3270,7 @@ $$\varphi_{*p}:H_p(K)\to H_p(L),$$
 
 $$(\psi\varphi)_{*p}=\psi_{*p}\varphi_{*p}:H_p(K)\to H_p(M);$$
 
-$$\begin{array}{ccc}H_p(K) & \xrightarrow{\varphi_{*p}} & H_p(L)\\& \searrow{\scriptstyle(\psi\varphi)_{*p}} & \downarrow{\scriptstyle\psi_{*p}}\\& & H_p(M)\end{array}$$
+$$\begin{array}{ccc} H_p(K) & \xrightarrow{\varphi_{*p}} & H_p(L)\\ & \searrow{\scriptstyle(\psi\varphi)_{*p}} & \downarrow{\scriptstyle\psi_{*p}}\\ & & H_p(M) \end{array}$$
 
 2° 当 $K=L$ 时，恒同链映射 $1=\{1_{C_p(K)}:C_p(K)\to C_p(K)\}$ 导出恒同同构 $1_*=\{1_{H_p(K)}:H_p(K)\to H_p(K)\}$。
 
@@ -3304,7 +3304,7 @@ $$f_p(\langle a_0,\cdots,a_p\rangle)=\begin{cases}\langle f(a_0),\cdots,f(a_p)\r
 
 $$(gf)_{*p}=g_{*p}f_{*p};$$
 
-$$\begin{array}{ccc}H_p(K) & \xrightarrow{f_{*p}} & H_p(L)\\& \searrow{\scriptstyle(gf)_{*p}} & \downarrow{\scriptstyle g_{*p}}\\& & H_p(M)\end{array}$$
+$$\begin{array}{ccc} H_p(K) & \xrightarrow{f_{*p}} & H_p(L)\\ & \searrow{\scriptstyle(gf)_{*p}} & \downarrow{\scriptstyle g_{*p}}\\ & & H_p(M) \end{array}$$
 
 2° 若 $K=L$，则 $(1_{|K|})_{*p}=1_{H_p(K)}:H_p(K)\to H_p(K)$。
 
@@ -3582,7 +3582,7 @@ $$\alpha_0\ge\frac{1}{2}\left(7+\sqrt{49-24\chi(K)}\right).$$
 
 设 $f:S^n\to S^n$（$n\ge 1$）是连续映射，$(K,\varphi)$ 是 $S^n$ 的一个剖分，以 $[z]$ 记 $H_n(K)$ 的母元。令 $\tilde f=\varphi^{-1}f\varphi:|K|\to|K|$，则存在整数 $\rho$，使得 $\tilde f_{*n}([z])=\rho[z]$，$\rho$ 称为 $f$ 的**拓扑度**（或**映射度**、**Brouwer 度**），记为 $\deg f$。
 
-$$\begin{array}{ccc}S^n & \xrightarrow{\ f\ } & S^n\\{\scriptstyle\varphi}\big\uparrow & & \big\uparrow{\scriptstyle\varphi}\\|K| & \xrightarrow{\ \tilde f\ } & |K|\end{array}$$
+$$\begin{array}{ccc} S^n & \xrightarrow{\ f\ } & S^n\\ {\scriptstyle\varphi}\big\uparrow & & \big\uparrow{\scriptstyle\varphi}\\ |K| & \xrightarrow{\ \tilde f\ } & |K| \end{array}$$
 
 **注 (拓扑度的无关性)** @210
 
@@ -4260,7 +4260,7 @@ $$\delta^p c^p(x_{p+1})=c^p(\partial_{p+1}x_{p+1}).$$
 
 设 $f:K\to L$ 是单纯映射，$f_p:C_p(K)\to C_p(L)$ 是 $f$ 确定的链映射，同态 $f^p:C^p(L)\to C^p(K)$ 是 $f_p$ 的“对偶”，定义为：对 $c^p\in C^p(L)$，$f^p(c^p)$ 是 $K$ 的 $p$ 维上链，它在 $K$ 的任意 $p$ 维链 $x_p$ 上取值为 $(f^p(c^p))(x_p)=c^p(f_p(x_p))$。$f^p$ 满足 $\delta^p f^p=f^{p+1}\delta^p$（也称 $f^p$ 为链映射），即下图交换：
 
-$$\begin{array}{ccc}C^p(L) & \xrightarrow{f^p} & C^p(K)\\\downarrow{\scriptstyle\delta^p} & & \downarrow{\scriptstyle\delta^p}\\C^{p+1}(L) & \xrightarrow{f^{p+1}} & C^{p+1}(K)\end{array}$$
+$$ \begin{array}{ccc} C^p(L) & \xrightarrow{f^p} & C^p(K)\\ \downarrow{\scriptstyle\delta^p} & & \downarrow{\scriptstyle\delta^p}\\ C^{p+1}(L) & \xrightarrow{f^{p+1}} & C^{p+1}(K) \end{array} $$
 
 因此 $f^p$ 导出上同调群的同态
 
@@ -4788,7 +4788,7 @@ $$\mathscr{K}=\{\operatorname{Hom}(G,H)\mid G,H\in\mathscr{G}\},$$
 
 1° **（交换公理）** 设 $f\in\operatorname{Hom}((X,A),(Y,B))$，$g\colon A\to B$ 是 $f$ 在 $A$ 上的限制，则下面图表可交换，即 $H_n(g)\Delta=\Delta H_n(f)$：
 
-$$\begin{array}{ccc}H_n(X,A) & \xrightarrow{\ \Delta\ } & H_{n-1}(A)\\[2pt]{\scriptstyle H_n(f)}\downarrow & & \downarrow{\scriptstyle H_n(g)}\\[2pt]H_n(Y,B) & \xrightarrow{\ \Delta\ } & H_{n-1}(B)\end{array}$$
+$$\begin{array}{ccc} H_n(X,A) & \xrightarrow{\ \Delta\ } & H_{n-1}(A)\\[2pt] {\scriptstyle H_n(f)}\downarrow & & \downarrow{\scriptstyle H_n(g)}\\[2pt] H_n(Y,B) & \xrightarrow{\ \Delta\ } & H_{n-1}(B) \end{array}$$
 
 2° **（正合公理）** 设 $i\colon A\to X$ 和 $j\colon(X,\varnothing)\to(X,A)$ 是包含映射，则下面的序列（称为**同调序列**）是正合的：
 
@@ -4884,7 +4884,7 @@ $$\operatorname{Im}\varphi=\varphi(G)=\{\varphi(a)\mid a\in G\}$$
 
 特别地，恒同映射 $1_G:G\to G$ 是 $G$ 到自身的同构，称为**恒同同构**。
 
-$$\begin{array}{ccc}G & \xrightarrow{\ \varphi\ } & H\\& \searrow{\scriptstyle \psi\varphi} & \downarrow{\scriptstyle \psi}\\& & K\end{array}$$
+$$\begin{array}{ccc} G & \xrightarrow{\ \varphi\ } & H\\ & \searrow{\scriptstyle \psi\varphi} & \downarrow{\scriptstyle \psi}\\ & & K \end{array}$$
 
 设 $\varphi:G\to H$，$\psi:H\to K$ 是同态，则 $\psi\varphi:G\to K$ 也是同态。而当 $\psi\varphi$ 是单同态时，$\varphi$ 也是单同态；$\psi\varphi$ 是满同态时，$\psi$ 也是满同态。
 
@@ -4910,7 +4910,7 @@ $$\varphi_*(aH_1)=\varphi(a)H_2,$$
 
 则 $\varphi_*:G_1/H_1\to G_2/H_2$ 是同态，称为 $\varphi$ 所**诱导的商群** $G_1/H_1$ 到 $G_2/H_2$ 的同态。若 $\pi_i:G_i\to G_i/H_i\ (i=1,2)$ 为自然射影，则下列图表可交换：
 
-$$\begin{array}{ccc}G_1 & \xrightarrow{\ \varphi\ } & G_2\\{\scriptstyle \pi_1}\downarrow & & \downarrow{\scriptstyle \pi_2}\\G_1/H_1 & \xrightarrow{\ \varphi_*\ } & G_2/H_2\end{array}$$
+$$\begin{array}{ccc} G_1 & \xrightarrow{\ \varphi\ } & G_2\\ {\scriptstyle \pi_1}\downarrow & & \downarrow{\scriptstyle \pi_2}\\ G_1/H_1 & \xrightarrow{\ \varphi_*\ } & G_2/H_2 \end{array}$$
 
 特别地有
 
@@ -5150,7 +5150,7 @@ $$\varphi:F[A]\to G.$$
 
 $R\subset\operatorname{Ker}\varphi$ 是 $G$ 的关系组的充要条件为：对任意 $q\in\operatorname{Ker}\varphi$，$q$ 可表示为有限个形如 $g_ir_ig_i^{-1}$ 的元素的积，$g_i\in F[A]$，$r_i\in R$，即消去有限个 $r_i\in R$ 后成为 $F[A]$ 的幺元。我们也称 $q$ 由诸 $r_i$ 导出。
 
-$$\begin{array}{ccc}& F[A] &\\& {\scriptstyle \pi}\downarrow\ \searrow{\scriptstyle \varphi} &\\& F[A]/\operatorname{Ker}\varphi & \xrightarrow{\ \varphi_*\ } G\end{array}$$
+$$\begin{array}{ccc} & F[A] &\\ & {\scriptstyle \pi}\downarrow\ \searrow{\scriptstyle \varphi} &\\ & F[A]/\operatorname{Ker}\varphi & \xrightarrow{\ \varphi_*\ } G \end{array}$$
 
 以 $\pi:F[A]\to F[A]/\operatorname{Ker}\varphi$ 记自然射影。对任意 $g\in F[A]$，仍以 $g$ 记 $\pi(g)$，则对 $r\in\operatorname{Ker}\varphi$，有 $r=1$。因此为方便起见，将关系组表示为 $R=\{r=1\}$。
 

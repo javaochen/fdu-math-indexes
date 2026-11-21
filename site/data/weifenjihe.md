@@ -16,7 +16,7 @@
 
 物理学中，曲线常被看作质点运动的轨迹，时间 $t$ 是描述质点运动的参数；在微分几何中，也常常采用参数方程来表示曲线。
 
-设 $\{O;xyz\}$ 是 $E^3$ 中的笛卡儿直角坐标系，$$\begin{cases}x=x(t),\\y=y(t),\\z=z(t)\end{cases}\tag{1-1}$$都是 $t$ 的连续可微函数（今后总假定它们有三阶连续导数），设这些函数的定义域是直线 $\mathbf{R}^1$ 中的一个区间 $(a,b)$（区间的端点 $a$ 可以是 $-\infty$，$b$ 可以是 $+\infty$）。(1-1) 式给出了从 $(a,b)$ 到 $E^3$ 中的一个连续可微映射$$t\longmapsto (x(t),y(t),z(t)).$$在这个映射下，$t$ 被映到点 $P(x(t),y(t),z(t))$，$(a,b)$ 的像集就构成了 $E^3$ 中的一条连续可微曲线 $C$，简称**曲线**。我们把 $t$ 称为曲线 $C$ 的**参数**，(1-1) 式就是曲线 $C$ 的**参数方程**。今后常把 (1-1) 式写成向量形式$$\boldsymbol{r}=\boldsymbol{r}(t)=(x(t),y(t),z(t)),\tag{1-2}$$而把曲线上参数为 $t$ 的点 $P$ 称为点 $\boldsymbol{r}(t)$，简称为 $t$ 点或 $P(t)$ 点。
+设 $\{O;xyz\}$ 是 $E^3$ 中的笛卡儿直角坐标系，$$\begin{cases} x=x(t),\\ y=y(t),\\ z=z(t) \end{cases}\tag{1-1}$$都是 $t$ 的连续可微函数（今后总假定它们有三阶连续导数），设这些函数的定义域是直线 $\mathbf{R}^1$ 中的一个区间 $(a,b)$（区间的端点 $a$ 可以是 $-\infty$，$b$ 可以是 $+\infty$）。(1-1) 式给出了从 $(a,b)$ 到 $E^3$ 中的一个连续可微映射$$t\longmapsto (x(t),y(t),z(t)).$$在这个映射下，$t$ 被映到点 $P(x(t),y(t),z(t))$，$(a,b)$ 的像集就构成了 $E^3$ 中的一条连续可微曲线 $C$，简称**曲线**。我们把 $t$ 称为曲线 $C$ 的**参数**，(1-1) 式就是曲线 $C$ 的**参数方程**。今后常把 (1-1) 式写成向量形式$$\boldsymbol{r}=\boldsymbol{r}(t)=(x(t),y(t),z(t)),\tag{1-2}$$而把曲线上参数为 $t$ 的点 $P$ 称为点 $\boldsymbol{r}(t)$，简称为 $t$ 点或 $P(t)$ 点。
 
 **定义 (切向量与正则点)** @1
 
@@ -152,7 +152,7 @@ $$r'(s)=\frac{\mathrm{d}r(s)}{\mathrm{d}t}\cdot\frac{\mathrm{d}t}{\mathrm{d}s}$$
 
 及其导数的式子，不难推得在任意参数下曲率及挠率的计算公式：
 
-$$\left\{\begin{aligned}k(t)&=\frac{\left|\dfrac{\mathrm{d}r}{\mathrm{d}t}\times\dfrac{\mathrm{d}^2r}{\mathrm{d}t^2}\right|}{\left|\dfrac{\mathrm{d}r}{\mathrm{d}t}\right|^3},\\[12pt]\tau(t)&=\frac{\left(\dfrac{\mathrm{d}r}{\mathrm{d}t},\ \dfrac{\mathrm{d}^2r}{\mathrm{d}t^2},\ \dfrac{\mathrm{d}^3r}{\mathrm{d}t^3}\right)}{\left|\dfrac{\mathrm{d}r}{\mathrm{d}t}\times\dfrac{\mathrm{d}^2r}{\mathrm{d}t^2}\right|^2}.\end{aligned}\right.\tag{1-8}$$
+$$\left\{\begin{aligned} k(t)&=\frac{\left|\dfrac{\mathrm{d}r}{\mathrm{d}t}\times\dfrac{\mathrm{d}^2r}{\mathrm{d}t^2}\right|}{\left|\dfrac{\mathrm{d}r}{\mathrm{d}t}\right|^3},\\[12pt] \tau(t)&=\frac{\left(\dfrac{\mathrm{d}r}{\mathrm{d}t},\ \dfrac{\mathrm{d}^2r}{\mathrm{d}t^2},\ \dfrac{\mathrm{d}^3r}{\mathrm{d}t^3}\right)}{\left|\dfrac{\mathrm{d}r}{\mathrm{d}t}\times\dfrac{\mathrm{d}^2r}{\mathrm{d}t^2}\right|^2}. \end{aligned}\right.\tag{1-8}$$
 
 **注 (n 阶接触)** @9
 
@@ -190,11 +190,11 @@ $$k(t)=\frac{ab}{(a^2\sin^2t+b^2\cos^2t)^{3/2}},\qquad \tau=0\quad(\text{平面�
 
 **定理 (Frenet 公式)** @11
 
-Frenet 标架的三个单位向量的导向量可写成下列公式$$\begin{cases}\boldsymbol{T}'=k\boldsymbol{N},\\[2pt]\boldsymbol{N}'=-k\boldsymbol{T}+\tau\boldsymbol{B},\\[2pt]\boldsymbol{B}'=-\tau\boldsymbol{N},\end{cases}\qquad(1-9)$$其中 $k$、$\tau$ 分别是曲线的曲率与挠率。通常称它为曲线论的**基本公式**（Frenet 公式）。从 (1-9) 式可见，当曲线 $C$ 的曲率 $k$、挠率 $\tau$ 已知后，邻近点的 Frenet 标架之间的变化情况也就清楚了。
+Frenet 标架的三个单位向量的导向量可写成下列公式$$ \begin{cases} \boldsymbol{T}'=k\boldsymbol{N},\\[2pt] \boldsymbol{N}'=-k\boldsymbol{T}+\tau\boldsymbol{B},\\[2pt] \boldsymbol{B}'=-\tau\boldsymbol{N}, \end{cases}\qquad(1-9) $$其中 $k$、$\tau$ 分别是曲线的曲率与挠率。通常称它为曲线论的**基本公式**（Frenet 公式）。从 (1-9) 式可见，当曲线 $C$ 的曲率 $k$、挠率 $\tau$ 已知后，邻近点的 Frenet 标架之间的变化情况也就清楚了。
 
 **定义 (平面曲线的相对曲率)** @11
 
-在平面曲线论中，我们可选取法向量 $\boldsymbol{N}_r(s)$，使 $\{\boldsymbol{T}(s),\boldsymbol{N}_r(s)\}$ 的定向与普通直角坐标系的 $x$ 轴和 $y$ 轴的定向相同。此时，Frenet 公式成为$$\begin{cases}\boldsymbol{T}'=k_r\boldsymbol{N}_r,\\[2pt]\boldsymbol{N}_r'=-k_r\boldsymbol{T},\end{cases}\qquad(1-10)$$但这里的 $k_r$ 的正负由曲线的定向及平面的定向所确定，可能是正值，也可能是负值。为表示与空间曲线论中所定义的曲率 $k=|\boldsymbol{T}'(s)|$（总取正值）相区别，我们将这里的曲率称为平面曲线的**相对曲率**（$|k_r|=k$）。
+在平面曲线论中，我们可选取法向量 $\boldsymbol{N}_r(s)$，使 $\{\boldsymbol{T}(s),\boldsymbol{N}_r(s)\}$ 的定向与普通直角坐标系的 $x$ 轴和 $y$ 轴的定向相同。此时，Frenet 公式成为$$ \begin{cases} \boldsymbol{T}'=k_r\boldsymbol{N}_r,\\[2pt] \boldsymbol{N}_r'=-k_r\boldsymbol{T}, \end{cases}\qquad(1-10) $$但这里的 $k_r$ 的正负由曲线的定向及平面的定向所确定，可能是正值，也可能是负值。为表示与空间曲线论中所定义的曲率 $k=|\boldsymbol{T}'(s)|$（总取正值）相区别，我们将这里的曲率称为平面曲线的**相对曲率**（$|k_r|=k$）。
 
 **例 1 (密切平面平行的曲线)** @11
 
@@ -210,7 +210,7 @@ Frenet 标架的三个单位向量的导向量可写成下列公式$$\begin{case
 
 **例 3 (球面曲线的标架分解)** @12
 
-设 $\boldsymbol{r}(s)$ 是单位球面 $S^2$ 上的一条曲线，$s$ 为弧长参数，它的曲率 $k$、挠率 $\tau$ 都不等于 $0$，则$$\boldsymbol{r}=-\rho\boldsymbol{N}-\rho'\sigma\boldsymbol{B},$$其中 $\rho=\frac{1}{k}$（曲率半径），$\sigma=\frac{1}{\tau}$（挠率半径）。
+设 $\boldsymbol{r}(s)$ 是单位球面 $S^2$ 上的一条曲线，$s$ 为弧长参数，它的曲率 $k$、挠率 $\tau$ 都不等于 $0$，则$$ \boldsymbol{r}=-\rho\boldsymbol{N}-\rho'\sigma\boldsymbol{B}, $$其中 $\rho=\frac{1}{k}$（曲率半径），$\sigma=\frac{1}{\tau}$（挠率半径）。
 
 **注 (Frenet 公式解题步骤)** @12
 
@@ -560,7 +560,7 @@ $S^2$ 上的两点 $A,B$，如果它们的向径 $\boldsymbol a=-\boldsymbol b$�
 
 设 $\{O;xyz\}$ 是 $E^3$ 中的笛卡儿坐标系，而
 
-$$\begin{cases}x=x(u,v),\\y=y(u,v),\\z=z(u,v)\end{cases}\tag{2-1}$$
+$$\begin{cases} x=x(u,v),\\ y=y(u,v),\\ z=z(u,v) \end{cases}\tag{2-1}$$
 
 都是 $u,v$ 的可微函数，其定义域是 $(u,v)$ 平面 $\mathbf{R}^2$ 中的一个区域 $D$。(2-1) 式给出从 $D$ 到 $E^3$ 中的一个映射
 
@@ -614,7 +614,7 @@ $$\boldsymbol{r}=\boldsymbol{r}(u(t),v(t)),$$
 
 $C$ 在 $P_0$ 点的切向量是
 
-$$\begin{aligned}\left.\frac{\mathrm{d}\boldsymbol{r}}{\mathrm{d}t}\right|_{t=t_0}&=\left(\frac{\partial\boldsymbol{r}}{\partial u}\frac{\mathrm{d}u}{\mathrm{d}t}+\frac{\partial\boldsymbol{r}}{\partial v}\frac{\mathrm{d}v}{\mathrm{d}t}\right)_{t=t_0}\\&=\left.\frac{\partial\boldsymbol{r}}{\partial u}\right|_{\substack{u=u_0\\v=v_0}}\left(\frac{\mathrm{d}u}{\mathrm{d}t}\right)_{t=t_0}+\left.\frac{\partial\boldsymbol{r}}{\partial v}\right|_{\substack{u=u_0\\v=v_0}}\left(\frac{\mathrm{d}v}{\mathrm{d}t}\right)_{t=t_0}.\end{aligned}\tag{2-3}$$
+$$\begin{aligned} \left.\frac{\mathrm{d}\boldsymbol{r}}{\mathrm{d}t}\right|_{t=t_0} &=\left(\frac{\partial\boldsymbol{r}}{\partial u}\frac{\mathrm{d}u}{\mathrm{d}t}+\frac{\partial\boldsymbol{r}}{\partial v}\frac{\mathrm{d}v}{\mathrm{d}t}\right)_{t=t_0}\\ &=\left.\frac{\partial\boldsymbol{r}}{\partial u}\right|_{\substack{u=u_0\\v=v_0}}\left(\frac{\mathrm{d}u}{\mathrm{d}t}\right)_{t=t_0}+\left.\frac{\partial\boldsymbol{r}}{\partial v}\right|_{\substack{u=u_0\\v=v_0}}\left(\frac{\mathrm{d}v}{\mathrm{d}t}\right)_{t=t_0}. \end{aligned}\tag{2-3}$$
 
 因此 $P_0$ 点的切向量能用 $P_0$ 点的两条坐标曲线的切向量 $\boldsymbol{r}_u$ 与 $\boldsymbol{r}_v$ 来线性表出。
 
@@ -648,11 +648,11 @@ $$(\boldsymbol{a},\boldsymbol{b})=\boldsymbol{a}\cdot\boldsymbol{b}.$$
 
 $\boldsymbol{r}_u,\boldsymbol{r}_v$ 之间的内积记为
 
-$$E=(\boldsymbol{r}_u,\boldsymbol{r}_u)=\boldsymbol{r}_u\cdot\boldsymbol{r}_u,\qquadF=(\boldsymbol{r}_u,\boldsymbol{r}_v)=\boldsymbol{r}_u\cdot\boldsymbol{r}_v,\qquadG=(\boldsymbol{r}_v,\boldsymbol{r}_v)=\boldsymbol{r}_v\cdot\boldsymbol{r}_v.\tag{2-4}$$
+$$E=(\boldsymbol{r}_u,\boldsymbol{r}_u)=\boldsymbol{r}_u\cdot\boldsymbol{r}_u,\qquad F=(\boldsymbol{r}_u,\boldsymbol{r}_v)=\boldsymbol{r}_u\cdot\boldsymbol{r}_v,\qquad G=(\boldsymbol{r}_v,\boldsymbol{r}_v)=\boldsymbol{r}_v\cdot\boldsymbol{r}_v.\tag{2-4}$$
 
 利用内积的线性性质就可算出任意两个向量之间的内积：
 
-$$\begin{aligned}(a\boldsymbol{r}_u+b\boldsymbol{r}_v,\,f\boldsymbol{r}_u+g\boldsymbol{r}_v)&=af(\boldsymbol{r}_u,\boldsymbol{r}_u)+(bf+ag)(\boldsymbol{r}_u,\boldsymbol{r}_v)+bg(\boldsymbol{r}_v,\boldsymbol{r}_v)\\&=afE+(bf+ag)F+bgG.\end{aligned}$$
+$$\begin{aligned} (a\boldsymbol{r}_u+b\boldsymbol{r}_v,\,f\boldsymbol{r}_u+g\boldsymbol{r}_v) &=af(\boldsymbol{r}_u,\boldsymbol{r}_u)+(bf+ag)(\boldsymbol{r}_u,\boldsymbol{r}_v)+bg(\boldsymbol{r}_v,\boldsymbol{r}_v)\\ &=afE+(bf+ag)F+bgG. \end{aligned}$$
 
 设 $T_P$ 中两个向量 $\boldsymbol{a},\boldsymbol{b}$ 之间的夹角为 $\theta$，由
 
@@ -692,7 +692,7 @@ $$\frac{\partial(\bar u,\bar v)}{\partial(u,v)}\neq 0.$$
 
 在 (2-7) 两边分别对 $\bar u,\bar v$ 求偏导数后就得到
 
-$$\begin{cases}\boldsymbol{r}_{\bar u}=\boldsymbol{r}_u\dfrac{\partial u}{\partial\bar u}+\boldsymbol{r}_v\dfrac{\partial v}{\partial\bar u},\\[2mm]\boldsymbol{r}_{\bar v}=\boldsymbol{r}_u\dfrac{\partial u}{\partial\bar v}+\boldsymbol{r}_v\dfrac{\partial v}{\partial\bar v}.\end{cases}\tag{2-8}$$
+$$\begin{cases} \boldsymbol{r}_{\bar u}=\boldsymbol{r}_u\dfrac{\partial u}{\partial\bar u}+\boldsymbol{r}_v\dfrac{\partial v}{\partial\bar u},\\[2mm] \boldsymbol{r}_{\bar v}=\boldsymbol{r}_u\dfrac{\partial u}{\partial\bar v}+\boldsymbol{r}_v\dfrac{\partial v}{\partial\bar v}. \end{cases}\tag{2-8}$$
 
 由此可得
 
@@ -728,7 +728,7 @@ $$\boldsymbol{r}_u=(-v\sin u,\,v\cos u,\,0),\qquad \boldsymbol{r}_v=(\cos u,\,\s
 
 $$\boldsymbol{r}_u\times\boldsymbol{r}_v=(v\cos u\cot\omega,\,v\sin u\cot\omega,\,-v),$$
 
-$$\begin{aligned}\boldsymbol{n}&=\frac{\boldsymbol{r}_u\times\boldsymbol{r}_v}{|\boldsymbol{r}_u\times\boldsymbol{r}_v|}=\frac{1}{v\sqrt{\cot^2\omega+1}}\,(v\cos u\cot\omega,\,v\sin u\cot\omega,\,-v)\\&=(\cos u\cos\omega,\,\sin u\cos\omega,\,-\sin\omega).\end{aligned}$$
+$$\begin{aligned} \boldsymbol{n}&=\frac{\boldsymbol{r}_u\times\boldsymbol{r}_v}{|\boldsymbol{r}_u\times\boldsymbol{r}_v|} =\frac{1}{v\sqrt{\cot^2\omega+1}}\,(v\cos u\cot\omega,\,v\sin u\cot\omega,\,-v)\\ &=(\cos u\cos\omega,\,\sin u\cos\omega,\,-\sin\omega). \end{aligned}$$
 
 **例 3 (旋转面)** @55
 
@@ -746,7 +746,7 @@ $$\boldsymbol{r}_u=(-f\sin u,\,f\cos u,\,0),\qquad \boldsymbol{r}_v=(f'\cos u,\,
 
 $$\boldsymbol{r}_u\times\boldsymbol{r}_v=(fg'\cos u,\,fg'\sin u,\,-ff'),$$
 
-$$\begin{aligned}\boldsymbol{n}&=\frac{\boldsymbol{r}_u\times\boldsymbol{r}_v}{|\boldsymbol{r}_u\times\boldsymbol{r}_v|}=\frac{1}{f\sqrt{(f')^2+(g')^2}}\,(fg'\cos u,\,fg'\sin u,\,-ff')\\&=\left(\frac{g'\cos u}{\sqrt{f'^2+g'^2}},\,\frac{g'\sin u}{\sqrt{f'^2+g'^2}},\,\frac{-f'}{\sqrt{f'^2+g'^2}}\right).\end{aligned}$$
+$$\begin{aligned} \boldsymbol{n}&=\frac{\boldsymbol{r}_u\times\boldsymbol{r}_v}{|\boldsymbol{r}_u\times\boldsymbol{r}_v|} =\frac{1}{f\sqrt{(f')^2+(g')^2}}\,(fg'\cos u,\,fg'\sin u,\,-ff')\\ &=\left(\frac{g'\cos u}{\sqrt{f'^2+g'^2}},\,\frac{g'\sin u}{\sqrt{f'^2+g'^2}},\,\frac{-f'}{\sqrt{f'^2+g'^2}}\right). \end{aligned}$$
 
 **例 4 (螺旋面与正螺面)** @56
 
@@ -822,7 +822,7 @@ $$\boldsymbol{r}(u,v)=\boldsymbol{a}(u)+v\boldsymbol{l}(u),\tag{2-17}$$
 
 $$\boldsymbol{r}_u=\boldsymbol{a}'+v\boldsymbol{l}',\qquad \boldsymbol{r}_v=\boldsymbol{l},$$
 
-$$\boldsymbol{r}_u\times\boldsymbol{r}_v=(\boldsymbol{a}'+v\boldsymbol{l}')\times\boldsymbol{l},\qquad\boldsymbol{n}=\frac{(\boldsymbol{a}'+v\boldsymbol{l}')\times\boldsymbol{l}}{|(\boldsymbol{a}'+v\boldsymbol{l}')\times\boldsymbol{l}|}.$$
+$$\boldsymbol{r}_u\times\boldsymbol{r}_v=(\boldsymbol{a}'+v\boldsymbol{l}')\times\boldsymbol{l},\qquad \boldsymbol{n}=\frac{(\boldsymbol{a}'+v\boldsymbol{l}')\times\boldsymbol{l}}{|(\boldsymbol{a}'+v\boldsymbol{l}')\times\boldsymbol{l}|}.$$
 
 前面所举出的柱面、锥面和切线面都是直纹面。
 
@@ -884,7 +884,7 @@ $$\begin{cases}\boldsymbol{n}(t)\cdot\boldsymbol{r}-p(t)=0,\\ \boldsymbol{n}'(t)
 
 对固定的 $t$，方程 (2-20) 表示了一条特征线 $l_t$。改写 (2-20)：
 
-$$\begin{aligned}0&=\boldsymbol{n}'(t)\cdot\boldsymbol{r}-p'(t)\\&=\lim_{\Delta t\to 0}\frac{\boldsymbol{n}(t+\Delta t)\cdot\boldsymbol{r}-p(t+\Delta t)-[\boldsymbol{n}(t)\cdot\boldsymbol{r}-p(t)]}{\Delta t},\end{aligned}$$
+$$\begin{aligned} 0&=\boldsymbol{n}'(t)\cdot\boldsymbol{r}-p'(t)\\ &=\lim_{\Delta t\to 0}\frac{\boldsymbol{n}(t+\Delta t)\cdot\boldsymbol{r}-p(t+\Delta t)-[\boldsymbol{n}(t)\cdot\boldsymbol{r}-p(t)]}{\Delta t}, \end{aligned}$$
 
 则特征线 $l_t$ 可看成是平面族中相邻平面 $T_t,T_{t+\Delta t}$ 的交线，当 $\Delta t\to 0$ 时的极限位置。显然特征线 $l_t$ 是直线，它的方向向量 $\boldsymbol{l}(t)$ 可取为 $\boldsymbol{n}(t)\times\boldsymbol{n}'(t)$。因此包络面 $S$ 是由直线 $l_t$ 所组成的。如果这些直线 $l_t$ 都重合在一起，则包络面 $S$ 退化为一条直线，于是原来的平面族为平面束。除了这种情况外，在包络面 $S$ 上就能选取一条曲线 $C:\boldsymbol{r}=\boldsymbol{a}(t)$，使得曲线 $C$ 与每条特征线 $l_t$ 只交于一点，那么这个包络面必须是一个直纹面
 
@@ -1800,7 +1800,7 @@ $$f=c\operatorname{ch}\Big(\frac{v}{c}+b\Big),$$
 
 **注 (曲面的基本方程)** @110
 
-可以把曲面的基本公式改写成$$\begin{cases}\dfrac{\partial \boldsymbol{r}}{\partial u^{i}}=\boldsymbol{r}_{i}\\[8pt]\dfrac{\partial \boldsymbol{r}_{i}}{\partial u^{j}}=\Gamma^{k}_{ij}\boldsymbol{r}_{k}+\Omega_{ij}\boldsymbol{n}\\[8pt]\dfrac{\partial \boldsymbol{n}}{\partial u^{j}}=-\omega^{k}_{j}\boldsymbol{r}_{k}\end{cases}\tag{2-63}$$其中 $\omega^{k}_{j}=g^{kl}\Omega_{lj}$。
+可以把曲面的基本公式改写成$$ \begin{cases} \dfrac{\partial \boldsymbol{r}}{\partial u^{i}}=\boldsymbol{r}_{i}\\[8pt] \dfrac{\partial \boldsymbol{r}_{i}}{\partial u^{j}}=\Gamma^{k}_{ij}\boldsymbol{r}_{k}+\Omega_{ij}\boldsymbol{n}\\[8pt] \dfrac{\partial \boldsymbol{n}}{\partial u^{j}}=-\omega^{k}_{j}\boldsymbol{r}_{k} \end{cases}\tag{2-63} $$其中 $\omega^{k}_{j}=g^{kl}\Omega_{lj}$。
 
 对向量 $\boldsymbol{r},\boldsymbol{r}_{i},\boldsymbol{n}$ 运用二阶连续偏导数可交换次序的规则，必须成立$$\frac{\partial}{\partial u^{l}}\left(\frac{\partial \boldsymbol{r}}{\partial u^{i}}\right)=\frac{\partial}{\partial u^{i}}\left(\frac{\partial \boldsymbol{r}}{\partial u^{l}}\right)\tag{2-64}$$$$\frac{\partial}{\partial u^{l}}\left(\frac{\partial \boldsymbol{r}_{i}}{\partial u^{j}}\right)=\frac{\partial}{\partial u^{j}}\left(\frac{\partial \boldsymbol{r}_{i}}{\partial u^{l}}\right)\tag{2-65}$$$$\frac{\partial}{\partial u^{l}}\left(\frac{\partial \boldsymbol{n}}{\partial u^{j}}\right)=\frac{\partial}{\partial u^{j}}\left(\frac{\partial \boldsymbol{n}}{\partial u^{l}}\right)\tag{2-66}$$
 
@@ -1816,7 +1816,7 @@ $$f=c\operatorname{ch}\Big(\frac{v}{c}+b\Big),$$
 
 曲面的第一、二基本形式的系数 $g_{ij},\Omega_{ij}$ 必须满足 (2-67)、(2-68) 两式。这两组方程称为**曲面的基本方程**，其中前一组 (2-67) 称为 **Gauss 方程**，后一组 (2-68) 称为 **Codazzi 方程**。
 
-若分别令 $i,j,k=1,2$，并用记号 $E,F,G,L,M,N$，则从 (2-67)、(2-68) 可写出许多方程，但其中有许多彼此等价的方程。若选用正交曲线网作为参数曲线网，则 $F=0$，于是 Gauss 方程中只有一个独立方程$$-\frac{1}{\sqrt{EG}}\left\{\left[\frac{(\sqrt{E})_{v}}{\sqrt{G}}\right]_{v}+\left[\frac{(\sqrt{G})_{u}}{\sqrt{E}}\right]_{u}\right\}=\frac{LN-M^{2}}{EG}\tag{2-71}$$而 Codazzi 方程中只有两个独立方程$$\begin{cases}\left(\dfrac{L}{\sqrt{E}}\right)_{v}-\left(\dfrac{M}{\sqrt{E}}\right)_{u}-N\dfrac{(\sqrt{E})_{v}}{G}-M\dfrac{(\sqrt{G})_{u}}{\sqrt{EG}}=0\\[12pt]\left(\dfrac{N}{\sqrt{G}}\right)_{u}-\left(\dfrac{M}{\sqrt{G}}\right)_{v}-L\dfrac{(\sqrt{G})_{u}}{E}-M\dfrac{(\sqrt{E})_{v}}{\sqrt{EG}}=0\end{cases}\tag{2-72}$$演算是直接的，详细过程不再写出。
+若分别令 $i,j,k=1,2$，并用记号 $E,F,G,L,M,N$，则从 (2-67)、(2-68) 可写出许多方程，但其中有许多彼此等价的方程。若选用正交曲线网作为参数曲线网，则 $F=0$，于是 Gauss 方程中只有一个独立方程$$-\frac{1}{\sqrt{EG}}\left\{\left[\frac{(\sqrt{E})_{v}}{\sqrt{G}}\right]_{v}+\left[\frac{(\sqrt{G})_{u}}{\sqrt{E}}\right]_{u}\right\}=\frac{LN-M^{2}}{EG}\tag{2-71}$$而 Codazzi 方程中只有两个独立方程$$ \begin{cases} \left(\dfrac{L}{\sqrt{E}}\right)_{v}-\left(\dfrac{M}{\sqrt{E}}\right)_{u}-N\dfrac{(\sqrt{E})_{v}}{G}-M\dfrac{(\sqrt{G})_{u}}{\sqrt{EG}}=0\\[12pt] \left(\dfrac{N}{\sqrt{G}}\right)_{u}-\left(\dfrac{M}{\sqrt{G}}\right)_{v}-L\dfrac{(\sqrt{G})_{u}}{E}-M\dfrac{(\sqrt{E})_{v}}{\sqrt{EG}}=0 \end{cases}\tag{2-72} $$演算是直接的，详细过程不再写出。
 
 **定理 (Gauss)** @112
 
@@ -1832,7 +1832,7 @@ $$f=c\operatorname{ch}\Big(\frac{v}{c}+b\Big),$$
 
 如果所给出的函数 $g_{ij},\Omega_{ij}$ 不满足 Gauss–Codazzi 方程，则它们肯定不能成为某个曲面的第一、二基本形式的系数。反之，若在参数 $(u,v)$ 平面中的一个单连通区域中给出两族函数 $\{g_{ij}\},\{\Omega_{ij}\}$，它们关于 $i,j$ 对称且满足 Gauss–Codazzi 方程，那么能否找出曲面，使其第一、二基本形式的系数就是所给的 $g_{ij},\Omega_{ij}$？
 
-也就是说，如 Gauss–Codazzi 方程成立，能否从 (2-63) 中解出 $\boldsymbol{r},\boldsymbol{r}_{i},\boldsymbol{n}$？这相当于全微分方程组$$\begin{cases}\mathrm{d}\boldsymbol{r}=\boldsymbol{r}_{i}\,\mathrm{d}u^{i}\\[6pt]\mathrm{d}\boldsymbol{r}_{i}=\Gamma^{k}_{ij}\mathrm{d}u^{j}\boldsymbol{r}_{k}+\Omega_{ij}\mathrm{d}u^{j}\boldsymbol{n}\\[6pt]\mathrm{d}\boldsymbol{n}=-g^{kl}\Omega_{lj}\mathrm{d}u^{j}\boldsymbol{r}_{k}\end{cases}\tag{2-74}$$在下列初值条件下求解 $\{\boldsymbol{r},\boldsymbol{r}_{i},\boldsymbol{n}\}$ 的问题：在 $u^{i}=u^{i}_{0}$ 时$$\begin{cases}\boldsymbol{r}=\boldsymbol{r}_{0}\\\boldsymbol{r}_{i}=\boldsymbol{r}_{0i}\\\boldsymbol{n}=\boldsymbol{n}_{0}\end{cases}\tag{2-75}$$其中$$\begin{cases}\boldsymbol{r}_{0i}\cdot\boldsymbol{r}_{0j}=g_{ij}(u_{0})\\\boldsymbol{r}_{0i}\cdot\boldsymbol{n}_{0}=0\\\boldsymbol{n}_{0}\cdot\boldsymbol{n}_{0}=1\end{cases}$$
+也就是说，如 Gauss–Codazzi 方程成立，能否从 (2-63) 中解出 $\boldsymbol{r},\boldsymbol{r}_{i},\boldsymbol{n}$？这相当于全微分方程组$$ \begin{cases} \mathrm{d}\boldsymbol{r}=\boldsymbol{r}_{i}\,\mathrm{d}u^{i}\\[6pt] \mathrm{d}\boldsymbol{r}_{i}=\Gamma^{k}_{ij}\mathrm{d}u^{j}\boldsymbol{r}_{k}+\Omega_{ij}\mathrm{d}u^{j}\boldsymbol{n}\\[6pt] \mathrm{d}\boldsymbol{n}=-g^{kl}\Omega_{lj}\mathrm{d}u^{j}\boldsymbol{r}_{k} \end{cases}\tag{2-74} $$在下列初值条件下求解 $\{\boldsymbol{r},\boldsymbol{r}_{i},\boldsymbol{n}\}$ 的问题：在 $u^{i}=u^{i}_{0}$ 时$$ \begin{cases} \boldsymbol{r}=\boldsymbol{r}_{0}\\ \boldsymbol{r}_{i}=\boldsymbol{r}_{0i}\\ \boldsymbol{n}=\boldsymbol{n}_{0} \end{cases}\tag{2-75} $$其中$$ \begin{cases} \boldsymbol{r}_{0i}\cdot\boldsymbol{r}_{0j}=g_{ij}(u_{0})\\ \boldsymbol{r}_{0i}\cdot\boldsymbol{n}_{0}=0\\ \boldsymbol{n}_{0}\cdot\boldsymbol{n}_{0}=1 \end{cases} $$
 
 **命题 (解的存在唯一性)** @115
 
@@ -1868,7 +1868,7 @@ $$f=c\operatorname{ch}\Big(\frac{v}{c}+b\Big),$$
 
 **命题 (Liouville 公式)** @123
 
-选取曲面 $S$ 上的正交曲线网作为参数曲线网，取$$\boldsymbol{e}_{1}=\frac{\boldsymbol{r}_{1}}{\sqrt{E}},\qquad \boldsymbol{e}_{2}=\frac{\boldsymbol{r}_{2}}{\sqrt{G}}$$为基来表示单位切向量 $\boldsymbol{T}$。用 $\theta$ 表示从 $\boldsymbol{r}_{1}$ 到 $\boldsymbol{T}$ 的正向夹角，则可取夹角 $\theta(s)$ 是 $s$ 的可微函数，即$$\boldsymbol{T}=\cos\theta\,\boldsymbol{e}_{1}+\sin\theta\,\boldsymbol{e}_{2}$$由$$\sqrt{E}\,\frac{\mathrm{d}u^{1}}{\mathrm{d}s}=\cos\theta,\qquad \sqrt{G}\,\frac{\mathrm{d}u^{2}}{\mathrm{d}s}=\sin\theta\tag{2-96}$$直接计算得到$$k_{g}=\frac{1}{2\sqrt{EG}}\left(-E_{2}\frac{\mathrm{d}u^{1}}{\mathrm{d}s}+G_{1}\frac{\mathrm{d}u^{2}}{\mathrm{d}s}\right)+\frac{\mathrm{d}\theta}{\mathrm{d}s}\tag{2-97}$$即$$\begin{aligned}k_{g}&=\frac{1}{2\sqrt{EG}}\left(-E_{2}\frac{\cos\theta}{\sqrt{E}}+G_{1}\frac{\sin\theta}{\sqrt{G}}\right)+\frac{\mathrm{d}\theta}{\mathrm{d}s}\\&=\frac{\mathrm{d}\theta}{\mathrm{d}s}-\frac{1}{2\sqrt{G}}\frac{\partial\ln E}{\partial v}\cos\theta+\frac{1}{2\sqrt{E}}\frac{\partial\ln G}{\partial u}\sin\theta\end{aligned}\tag{2-98}$$这就是计算测地曲率的 **Liouville 公式**。公式中只涉及 $E,F,G$，所以测地曲率 $k_{g}$ 是曲面的内蕴几何量。
+选取曲面 $S$ 上的正交曲线网作为参数曲线网，取$$\boldsymbol{e}_{1}=\frac{\boldsymbol{r}_{1}}{\sqrt{E}},\qquad \boldsymbol{e}_{2}=\frac{\boldsymbol{r}_{2}}{\sqrt{G}}$$为基来表示单位切向量 $\boldsymbol{T}$。用 $\theta$ 表示从 $\boldsymbol{r}_{1}$ 到 $\boldsymbol{T}$ 的正向夹角，则可取夹角 $\theta(s)$ 是 $s$ 的可微函数，即$$\boldsymbol{T}=\cos\theta\,\boldsymbol{e}_{1}+\sin\theta\,\boldsymbol{e}_{2}$$由$$\sqrt{E}\,\frac{\mathrm{d}u^{1}}{\mathrm{d}s}=\cos\theta,\qquad \sqrt{G}\,\frac{\mathrm{d}u^{2}}{\mathrm{d}s}=\sin\theta\tag{2-96}$$直接计算得到$$k_{g}=\frac{1}{2\sqrt{EG}}\left(-E_{2}\frac{\mathrm{d}u^{1}}{\mathrm{d}s}+G_{1}\frac{\mathrm{d}u^{2}}{\mathrm{d}s}\right)+\frac{\mathrm{d}\theta}{\mathrm{d}s}\tag{2-97}$$即$$ \begin{aligned} k_{g}&=\frac{1}{2\sqrt{EG}}\left(-E_{2}\frac{\cos\theta}{\sqrt{E}}+G_{1}\frac{\sin\theta}{\sqrt{G}}\right)+\frac{\mathrm{d}\theta}{\mathrm{d}s}\\ &=\frac{\mathrm{d}\theta}{\mathrm{d}s}-\frac{1}{2\sqrt{G}}\frac{\partial\ln E}{\partial v}\cos\theta+\frac{1}{2\sqrt{E}}\frac{\partial\ln G}{\partial u}\sin\theta \end{aligned}\tag{2-98} $$这就是计算测地曲率的 **Liouville 公式**。公式中只涉及 $E,F,G$，所以测地曲率 $k_{g}$ 是曲面的内蕴几何量。
 
 **定义 (测地线)** @124
 
@@ -1880,7 +1880,7 @@ $$f=c\operatorname{ch}\Big(\frac{v}{c}+b\Big),$$
 
 **注 (测地线方程的 Liouville 形式)** @124
 
-用 Liouville 公式可把测地线的微分方程表示为$$k_{g}=\frac{\mathrm{d}\theta}{\mathrm{d}s}-\frac{1}{2\sqrt{G}}\frac{\partial\ln E}{\partial v}\cos\theta+\frac{1}{2\sqrt{E}}\frac{\partial\ln G}{\partial u}\sin\theta=0$$其中$$\frac{\mathrm{d}u}{\mathrm{d}s}=\frac{1}{\sqrt{E}}\cos\theta,\qquad \frac{\mathrm{d}v}{\mathrm{d}s}=\frac{1}{\sqrt{G}}\sin\theta$$由此三式消去 $s$ 可得$$\begin{cases}\dfrac{\mathrm{d}\theta}{\mathrm{d}u}=\dfrac{\sqrt{E}}{2\sqrt{G}}\dfrac{\partial\ln E}{\partial v}-\dfrac{1}{2}\dfrac{\partial\ln G}{\partial u}\tan\theta\\[10pt]\dfrac{\mathrm{d}v}{\mathrm{d}u}=\dfrac{\sqrt{E}}{\sqrt{G}}\tan\theta\end{cases}$$在初值条件 $u=u_{0}:\ \theta=\theta_{0},\ v=v_{0}$ 下可求出唯一的一条测地线。
+用 Liouville 公式可把测地线的微分方程表示为$$k_{g}=\frac{\mathrm{d}\theta}{\mathrm{d}s}-\frac{1}{2\sqrt{G}}\frac{\partial\ln E}{\partial v}\cos\theta+\frac{1}{2\sqrt{E}}\frac{\partial\ln G}{\partial u}\sin\theta=0$$其中$$\frac{\mathrm{d}u}{\mathrm{d}s}=\frac{1}{\sqrt{E}}\cos\theta,\qquad \frac{\mathrm{d}v}{\mathrm{d}s}=\frac{1}{\sqrt{G}}\sin\theta$$由此三式消去 $s$ 可得$$ \begin{cases} \dfrac{\mathrm{d}\theta}{\mathrm{d}u}=\dfrac{\sqrt{E}}{2\sqrt{G}}\dfrac{\partial\ln E}{\partial v}-\dfrac{1}{2}\dfrac{\partial\ln G}{\partial u}\tan\theta\\[10pt] \dfrac{\mathrm{d}v}{\mathrm{d}u}=\dfrac{\sqrt{E}}{\sqrt{G}}\tan\theta \end{cases} $$在初值条件 $u=u_{0}:\ \theta=\theta_{0},\ v=v_{0}$ 下可求出唯一的一条测地线。
 
 因为测地线方程仅依赖于曲面的第一基本形式，所以当两个曲面成等距对应时，与测地线相对应的曲线也是测地线。
 
@@ -1900,7 +1900,7 @@ $$f=c\operatorname{ch}\Big(\frac{v}{c}+b\Big),$$
 
 在曲面 $S$ 的 $P$ 点的切平面中，选取一个单位正交标架 $\boldsymbol{e}_{1},\boldsymbol{e}_{2}$，于是切平面中任何一个向量 $\boldsymbol{v}$ 可写成 $\boldsymbol{v}=y^{i}\boldsymbol{e}_{i}$。设它的长度为 $|\boldsymbol{v}|=s$，然后以 $P$ 点为起点、以 $\boldsymbol{v}$ 为初始方向作一条测地线 $C$，在 $C$ 上选取一点 $M$，使得从 $P$ 点到 $M$ 点的测地线弧长为 $s$。当 $|\boldsymbol{v}|=s$ 充分小时这总能做到。这样得到切平面中的向量到曲面 $S$ 上点的一个局部的对应$$\exp_{P}:\ \boldsymbol{v}\longmapsto M$$称为**指数映射**。
 
-把 $\boldsymbol{v}$ 的分量 $(y^{i})$ 取为曲面上点 $M$ 的新的坐标。由于 $C$ 在 $P$ 点的单位切向量为$$\left.\frac{\mathrm{d}u^{i}}{\mathrm{d}s}\right|_{s=0}=\frac{y^{i}}{|\boldsymbol{v}|}=\frac{y^{i}}{s},$$有展开式$$\begin{aligned}u^{i}(s)&=u^{i}(0)+\left.\frac{\mathrm{d}u^{i}}{\mathrm{d}s}\right|_{0}s+\frac{1}{2}\left.\left(\frac{\mathrm{d}^{2}u^{i}}{\mathrm{d}s^{2}}\right)\right|_{0}s^{2}+\cdots\\&=u^{i}(0)+\frac{y^{i}}{s}\cdot s+\frac{1}{2}\left(-\Gamma^{i}_{jk}\left.\frac{\mathrm{d}u^{j}}{\mathrm{d}s}\right|_{0}\left.\frac{\mathrm{d}u^{k}}{\mathrm{d}s}\right|_{0}\right)s^{2}+\cdots\\&=u^{i}(0)+y^{i}-\frac{1}{2}\Gamma^{i}_{jk}|_{0}\,y^{j}y^{k}+\cdots\end{aligned}\tag{2-100}$$于是$$\left.\frac{\partial u^{i}}{\partial y^{j}}\right|_{y=0}=\delta^{i}_{j}$$从而 $\det\left(\frac{\partial u^{i}}{\partial y^{j}}\right)_{0}=1$，在 $P$ 点的邻近有 $\det\left(\frac{\partial u^{i}}{\partial y^{j}}\right)\neq 0$，所以用 $(y^{i})$ 作为新坐标系是合理的。
+把 $\boldsymbol{v}$ 的分量 $(y^{i})$ 取为曲面上点 $M$ 的新的坐标。由于 $C$ 在 $P$ 点的单位切向量为$$\left.\frac{\mathrm{d}u^{i}}{\mathrm{d}s}\right|_{s=0}=\frac{y^{i}}{|\boldsymbol{v}|}=\frac{y^{i}}{s},$$有展开式$$ \begin{aligned} u^{i}(s)&=u^{i}(0)+\left.\frac{\mathrm{d}u^{i}}{\mathrm{d}s}\right|_{0}s+\frac{1}{2}\left.\left(\frac{\mathrm{d}^{2}u^{i}}{\mathrm{d}s^{2}}\right)\right|_{0}s^{2}+\cdots\\ &=u^{i}(0)+\frac{y^{i}}{s}\cdot s+\frac{1}{2}\left(-\Gamma^{i}_{jk}\left.\frac{\mathrm{d}u^{j}}{\mathrm{d}s}\right|_{0}\left.\frac{\mathrm{d}u^{k}}{\mathrm{d}s}\right|_{0}\right)s^{2}+\cdots\\ &=u^{i}(0)+y^{i}-\frac{1}{2}\Gamma^{i}_{jk}|_{0}\,y^{j}y^{k}+\cdots \end{aligned}\tag{2-100} $$于是$$\left.\frac{\partial u^{i}}{\partial y^{j}}\right|_{y=0}=\delta^{i}_{j}$$从而 $\det\left(\frac{\partial u^{i}}{\partial y^{j}}\right)_{0}=1$，在 $P$ 点的邻近有 $\det\left(\frac{\partial u^{i}}{\partial y^{j}}\right)\neq 0$，所以用 $(y^{i})$ 作为新坐标系是合理的。
 
 **定义 (法坐标系)** @129
 
@@ -1936,7 +1936,7 @@ $$f=c\operatorname{ch}\Big(\frac{v}{c}+b\Big),$$
 
 **注 (总曲率的内蕴表达式)** @134
 
-在测地极坐标系 $(\rho,\theta)$ 下，由 Gauss 定理 (2-73) 知 $K$ 仅用第一基本形式的系数表示：$$\begin{aligned}K&=-\frac{1}{2\sqrt{EG}}\left\{\left(\frac{E_{\theta}}{\sqrt{EG}}\right)_{\theta}+\left(\frac{G_{\rho}}{\sqrt{EG}}\right)_{\rho}\right\}\\&=-\frac{\left(\sqrt{G}\right)_{\rho\rho}}{\sqrt{G}}\end{aligned}\tag{2-105}$$
+在测地极坐标系 $(\rho,\theta)$ 下，由 Gauss 定理 (2-73) 知 $K$ 仅用第一基本形式的系数表示：$$ \begin{aligned} K&=-\frac{1}{2\sqrt{EG}}\left\{\left(\frac{E_{\theta}}{\sqrt{EG}}\right)_{\theta}+\left(\frac{G_{\rho}}{\sqrt{EG}}\right)_{\rho}\right\}\\ &=-\frac{\left(\sqrt{G}\right)_{\rho\rho}}{\sqrt{G}} \end{aligned}\tag{2-105} $$
 
 **命题 (常曲率曲面的度量形式)** @135
 
@@ -1954,7 +1954,7 @@ $$f=c\operatorname{ch}\Big(\frac{v}{c}+b\Big),$$
 
 平面作为总曲率为 0 的曲面的代表；球面作为总曲率为正常数的曲面的代表，半径为 $a$ 的球面的总曲率为 $\dfrac{1}{a^{2}}$。可展曲面的充要条件是总曲率为 0，于是可展曲面与平面互相等距，即可展曲面能等距地展开到平面上去。
 
-对总曲率为 $-\dfrac{1}{a^{2}}$ 的曲面，因这种曲面之间彼此是等距的，只须找出一个代表即可，为此在旋转曲面中去找。设待定母线为 $yz$ 平面中的曲线 $z=f(y)$，绕 $z$ 轴旋转后形成旋转面$$\boldsymbol{r}=(v\cos u,\ v\sin u,\ f(v))$$其总曲率为$$K=\frac{LN-M^{2}}{EG-F^{2}}=\frac{LN}{EG}=\frac{f'f''}{v\left[1+(f')^{2}\right]^{2}}$$令 $K=-\dfrac{1}{a^{2}}$，得$$\frac{f'f''}{v\left[1+(f')^{2}\right]^{2}}=-\frac{1}{a^{2}},$$即$$\frac{f'\,\mathrm{d}(f')}{\left[1+(f')^{2}\right]^{2}}=-\frac{1}{a^{2}}v\,\mathrm{d}v$$两边积分并取积分常数 $C_{1}=0$，可解出$$f'=\pm\frac{\sqrt{a^{2}-v^{2}}}{v}$$取正号后再积分，并令 $v=a\cos\varphi$，得$$f=-a\int\frac{\sin^{2}\varphi}{\cos\varphi}\,\mathrm{d}\varphi=-a\left[\ln(\sec\varphi+\tan\varphi)-\sin\varphi\right]+C_{2}$$取 $C_{2}=0$，于是以母线$$\begin{cases}y=a\cos\varphi\\z=-a\left[\ln(\sec\varphi+\tan\varphi)-\sin\varphi\right]\end{cases}\tag{2-106}$$绕 $z$ 轴旋转后所得的旋转曲面的总曲率正好等于负常数 $-\dfrac{1}{a^{2}}$。称母线 (2-106) 为**曳物线**，而把曳物线绕 $z$ 轴旋转后所得的曲面称为**伪球面**。
+对总曲率为 $-\dfrac{1}{a^{2}}$ 的曲面，因这种曲面之间彼此是等距的，只须找出一个代表即可，为此在旋转曲面中去找。设待定母线为 $yz$ 平面中的曲线 $z=f(y)$，绕 $z$ 轴旋转后形成旋转面$$\boldsymbol{r}=(v\cos u,\ v\sin u,\ f(v))$$其总曲率为$$K=\frac{LN-M^{2}}{EG-F^{2}}=\frac{LN}{EG}=\frac{f'f''}{v\left[1+(f')^{2}\right]^{2}}$$令 $K=-\dfrac{1}{a^{2}}$，得$$\frac{f'f''}{v\left[1+(f')^{2}\right]^{2}}=-\frac{1}{a^{2}},$$即$$\frac{f'\,\mathrm{d}(f')}{\left[1+(f')^{2}\right]^{2}}=-\frac{1}{a^{2}}v\,\mathrm{d}v$$两边积分并取积分常数 $C_{1}=0$，可解出$$f'=\pm\frac{\sqrt{a^{2}-v^{2}}}{v}$$取正号后再积分，并令 $v=a\cos\varphi$，得$$f=-a\int\frac{\sin^{2}\varphi}{\cos\varphi}\,\mathrm{d}\varphi=-a\left[\ln(\sec\varphi+\tan\varphi)-\sin\varphi\right]+C_{2}$$取 $C_{2}=0$，于是以母线$$ \begin{cases} y=a\cos\varphi\\ z=-a\left[\ln(\sec\varphi+\tan\varphi)-\sin\varphi\right] \end{cases}\tag{2-106} $$绕 $z$ 轴旋转后所得的旋转曲面的总曲率正好等于负常数 $-\dfrac{1}{a^{2}}$。称母线 (2-106) 为**曳物线**，而把曳物线绕 $z$ 轴旋转后所得的曲面称为**伪球面**。
 
 **定理 (测地线的局部最短性)** @138
 
@@ -1970,7 +1970,7 @@ $$f=c\operatorname{ch}\Big(\frac{v}{c}+b\Big),$$
 
 **注 (测地挠率的计算公式)** @140
 
-考虑到$$\frac{\mathrm{d}\boldsymbol{n}}{\mathrm{d}s}=\boldsymbol{n}_{u}\frac{\mathrm{d}u}{\mathrm{d}s}+\boldsymbol{n}_{v}\frac{\mathrm{d}v}{\mathrm{d}s},\qquad \boldsymbol{T}=\boldsymbol{r}_{u}\frac{\mathrm{d}u}{\mathrm{d}s}+\boldsymbol{r}_{v}\frac{\mathrm{d}v}{\mathrm{d}s},$$有$$\begin{aligned}\tau_{g}={}&(\boldsymbol{n},\boldsymbol{n}_{u},\boldsymbol{r}_{u})\left(\frac{\mathrm{d}u}{\mathrm{d}s}\right)^{2}+\left[(\boldsymbol{n},\boldsymbol{n}_{u},\boldsymbol{r}_{v})+(\boldsymbol{n},\boldsymbol{n}_{v},\boldsymbol{r}_{u})\right]\frac{\mathrm{d}u}{\mathrm{d}s}\frac{\mathrm{d}v}{\mathrm{d}s}\\&+(\boldsymbol{n},\boldsymbol{n}_{v},\boldsymbol{r}_{v})\left(\frac{\mathrm{d}v}{\mathrm{d}s}\right)^{2}\end{aligned}$$因为 $\boldsymbol{n}=\dfrac{\boldsymbol{r}_{u}\times\boldsymbol{r}_{v}}{\sqrt{EG-F^{2}}}$，利用 Lagrange 恒等式，经直接计算后就得到$$\tau_{g}=\frac{1}{\sqrt{EG-F^{2}}}\begin{vmatrix}\left(\dfrac{\mathrm{d}v}{\mathrm{d}s}\right)^{2} & -\dfrac{\mathrm{d}u}{\mathrm{d}s}\dfrac{\mathrm{d}v}{\mathrm{d}s} & \left(\dfrac{\mathrm{d}u}{\mathrm{d}s}\right)^{2}\\[10pt]E & F & G\\L & M & N\end{vmatrix}$$上式右端行列式等于 0 即为曲率线微分方程 (2-60)。
+考虑到$$\frac{\mathrm{d}\boldsymbol{n}}{\mathrm{d}s}=\boldsymbol{n}_{u}\frac{\mathrm{d}u}{\mathrm{d}s}+\boldsymbol{n}_{v}\frac{\mathrm{d}v}{\mathrm{d}s},\qquad \boldsymbol{T}=\boldsymbol{r}_{u}\frac{\mathrm{d}u}{\mathrm{d}s}+\boldsymbol{r}_{v}\frac{\mathrm{d}v}{\mathrm{d}s},$$有$$ \begin{aligned} \tau_{g}={}&(\boldsymbol{n},\boldsymbol{n}_{u},\boldsymbol{r}_{u})\left(\frac{\mathrm{d}u}{\mathrm{d}s}\right)^{2}+\left[(\boldsymbol{n},\boldsymbol{n}_{u},\boldsymbol{r}_{v})+(\boldsymbol{n},\boldsymbol{n}_{v},\boldsymbol{r}_{u})\right]\frac{\mathrm{d}u}{\mathrm{d}s}\frac{\mathrm{d}v}{\mathrm{d}s}\\ &+(\boldsymbol{n},\boldsymbol{n}_{v},\boldsymbol{r}_{v})\left(\frac{\mathrm{d}v}{\mathrm{d}s}\right)^{2} \end{aligned} $$因为 $\boldsymbol{n}=\dfrac{\boldsymbol{r}_{u}\times\boldsymbol{r}_{v}}{\sqrt{EG-F^{2}}}$，利用 Lagrange 恒等式，经直接计算后就得到$$\tau_{g}=\frac{1}{\sqrt{EG-F^{2}}}\begin{vmatrix} \left(\dfrac{\mathrm{d}v}{\mathrm{d}s}\right)^{2} & -\dfrac{\mathrm{d}u}{\mathrm{d}s}\dfrac{\mathrm{d}v}{\mathrm{d}s} & \left(\dfrac{\mathrm{d}u}{\mathrm{d}s}\right)^{2}\\[10pt] E & F & G\\ L & M & N \end{vmatrix}$$上式右端行列式等于 0 即为曲率线微分方程 (2-60)。
 
 **定理 (曲率线的测地挠率刻画)** @140
 
@@ -1978,7 +1978,7 @@ $$f=c\operatorname{ch}\Big(\frac{v}{c}+b\Big),$$
 
 **注 (Gauss-Bonnet 公式的导出)** @141
 
-设曲线 $C$ 是曲面 $S$ 上的一条光滑的闭曲线，它所包围的区域 $\mathscr{D}$ 是一个单连通区域，相应于参数平面中的区域 $D$。选取曲面上的参数曲线网 $(u,v)$ 为正交曲线网，设 $C$ 的参数方程是 $u=u(s),\ v=v(s)$，其中 $s$ 为弧长参数，$\theta(s)$ 是曲线 $C$ 在弧长为 $s$ 处的切向量与 $u$ 曲线的正向夹角。由 Liouville 公式 (2-98) 得$$k_{g}=\frac{\mathrm{d}\theta}{\mathrm{d}s}-\frac{1}{2\sqrt{G}}\frac{\partial\ln E}{\partial v}\cos\theta+\frac{1}{2\sqrt{E}}\frac{\partial\ln G}{\partial u}\sin\theta$$两边绕曲线 $C$ 积分一周后得到$$\int_{C}k_{g}\,\mathrm{d}s=\int_{C}\mathrm{d}\theta+\int_{C}\frac{1}{2\sqrt{EG}}\left(-E_{v}\,\mathrm{d}u+G_{u}\,\mathrm{d}v\right)\tag{2-107}$$沿单连通区域的边界曲线的正向绕一周后，边界曲线的切向量转过了 $2\pi$ 角；对右端第二个积分运用 Green 公式后再由 Gauss 定理就有$$\begin{aligned}\int_{C}k_{g}\,\mathrm{d}s&=2\pi+\int_{D}\left\{\left(\frac{E_{v}}{2\sqrt{EG}}\right)_{v}+\left(\frac{G_{u}}{2\sqrt{EG}}\right)_{u}\right\}\mathrm{d}u\,\mathrm{d}v\\&=2\pi-\int_{D}K\sqrt{EG}\,\mathrm{d}u\,\mathrm{d}v=2\pi-\iint_{\mathscr{D}}K\,\mathrm{d}\sigma\end{aligned}$$其中 $\mathrm{d}\sigma=\sqrt{EG}\,\mathrm{d}u\,\mathrm{d}v$ 是曲面 $S$ 的面积元素。
+设曲线 $C$ 是曲面 $S$ 上的一条光滑的闭曲线，它所包围的区域 $\mathscr{D}$ 是一个单连通区域，相应于参数平面中的区域 $D$。选取曲面上的参数曲线网 $(u,v)$ 为正交曲线网，设 $C$ 的参数方程是 $u=u(s),\ v=v(s)$，其中 $s$ 为弧长参数，$\theta(s)$ 是曲线 $C$ 在弧长为 $s$ 处的切向量与 $u$ 曲线的正向夹角。由 Liouville 公式 (2-98) 得$$k_{g}=\frac{\mathrm{d}\theta}{\mathrm{d}s}-\frac{1}{2\sqrt{G}}\frac{\partial\ln E}{\partial v}\cos\theta+\frac{1}{2\sqrt{E}}\frac{\partial\ln G}{\partial u}\sin\theta$$两边绕曲线 $C$ 积分一周后得到$$\int_{C}k_{g}\,\mathrm{d}s=\int_{C}\mathrm{d}\theta+\int_{C}\frac{1}{2\sqrt{EG}}\left(-E_{v}\,\mathrm{d}u+G_{u}\,\mathrm{d}v\right)\tag{2-107}$$沿单连通区域的边界曲线的正向绕一周后，边界曲线的切向量转过了 $2\pi$ 角；对右端第二个积分运用 Green 公式后再由 Gauss 定理就有$$ \begin{aligned} \int_{C}k_{g}\,\mathrm{d}s&=2\pi+\int_{D}\left\{\left(\frac{E_{v}}{2\sqrt{EG}}\right)_{v}+\left(\frac{G_{u}}{2\sqrt{EG}}\right)_{u}\right\}\mathrm{d}u\,\mathrm{d}v\\ &=2\pi-\int_{D}K\sqrt{EG}\,\mathrm{d}u\,\mathrm{d}v=2\pi-\iint_{\mathscr{D}}K\,\mathrm{d}\sigma \end{aligned} $$其中 $\mathrm{d}\sigma=\sqrt{EG}\,\mathrm{d}u\,\mathrm{d}v$ 是曲面 $S$ 的面积元素。
 
 **定理 (Gauss-Bonnet 公式)** @142
 
@@ -2112,7 +2112,7 @@ $\Sigma$ 是这个映射的像。假设 $U$ 到 $\Sigma$ 上的映射满足如�
 
 (ii) 映射是正则的，即 Jacobi 矩阵
 
-$$\begin{pmatrix}\dfrac{\partial x}{\partial u} & \dfrac{\partial y}{\partial u} & \dfrac{\partial z}{\partial u}\\[8pt]\dfrac{\partial x}{\partial v} & \dfrac{\partial y}{\partial v} & \dfrac{\partial z}{\partial v}\end{pmatrix}\qquad (u,v\in U)\tag{3-2}$$
+$$\begin{pmatrix} \dfrac{\partial x}{\partial u} & \dfrac{\partial y}{\partial u} & \dfrac{\partial z}{\partial u}\\[8pt] \dfrac{\partial x}{\partial v} & \dfrac{\partial y}{\partial v} & \dfrac{\partial z}{\partial v} \end{pmatrix}\qquad (u,v\in U)\tag{3-2}$$
 
 的秩数为 2。
 
@@ -2140,7 +2140,7 @@ $$\boldsymbol{r}(u,v)=(u,v,f(u,v))$$
 
 如图 2，由
 
-$$\boldsymbol{r}(u)=\bigl(x(u),y(u)\bigr)=\begin{cases}\left(\dfrac{1}{u},\ \sin\pi u\right), & 1\leqslant u<\infty\\[8pt](0,\ u+2), & -\infty<u\leqslant -1\\[4pt]\text{光滑连接 }(1,0)\text{ 和 }(0,1)\text{ 的曲线弧} & \\[4pt]\text{如图中虚线所示},\ -1<u<1 &\end{cases}\tag{3-4}$$
+$$\boldsymbol{r}(u)=\bigl(x(u),y(u)\bigr)= \begin{cases} \left(\dfrac{1}{u},\ \sin\pi u\right), & 1\leqslant u<\infty\\[8pt] (0,\ u+2), & -\infty<u\leqslant -1\\[4pt] \text{光滑连接 }(1,0)\text{ 和 }(0,1)\text{ 的曲线弧} & \\[4pt] \text{如图中虚线所示},\ -1<u<1 & \end{cases}\tag{3-4}$$
 
 定义了 $\mathbf{R}^1\to E^2$ 的一个映射，映射像为曲线 $C$，它由三段曲线连接而成。但是曲线 $C$ 上并不是所有点都是局部连通的：$y$ 轴上的那些点，例如点 $\left(0,\dfrac{1}{2}\right)$，就没有一个任意小的连通邻域，因此曲线 $C$ 与 $E^1$ 不是同胚的。
 
@@ -2220,11 +2220,11 @@ $$\bar u=\bar u(u,v),\qquad \bar v=\bar v(u,v).\tag{3-6}$$
 
 根据隐函数存在定理，在 $\Sigma_\alpha\cap\Sigma_\beta$ 的一点必有一邻域，使在其中 $\bar u,\bar v$ 可用 $x,y,z$ 中的两个坐标（不妨设为 $x$ 和 $y$）的 $C^k$ 阶函数来表示：$\bar u=g(x,y)$，$\bar v=h(x,y)$，而 $x,y$ 又为 $u,v$ 的 $C^k$ 阶函数，因此 (3-6) 又可写成为
 
-$$\begin{cases}\bar u=g\bigl(x(u,v),y(u,v)\bigr)\\[4pt]\bar v=h\bigl(x(u,v),y(u,v)\bigr)\end{cases}$$
+$$\begin{cases} \bar u=g\bigl(x(u,v),y(u,v)\bigr)\\[4pt] \bar v=h\bigl(x(u,v),y(u,v)\bigr) \end{cases}$$
 
 的形式。根据复合函数定理知道 $\bar u,\bar v$ 为 $u,v$ 的 $C^k$ 阶函数，它就是坐标转换函数。而且
 
-$$\begin{pmatrix}x_u & y_u & z_u\\[4pt]x_v & y_v & z_v\end{pmatrix}=\begin{pmatrix}\bar u_u & \bar v_u\\[4pt]\bar u_v & \bar v_v\end{pmatrix}\begin{pmatrix}x_{\bar u} & y_{\bar u} & z_{\bar u}\\[4pt]x_{\bar v} & y_{\bar v} & z_{\bar v}\end{pmatrix}$$
+$$\begin{pmatrix} x_u & y_u & z_u\\[4pt] x_v & y_v & z_v \end{pmatrix} = \begin{pmatrix} \bar u_u & \bar v_u\\[4pt] \bar u_v & \bar v_v \end{pmatrix} \begin{pmatrix} x_{\bar u} & y_{\bar u} & z_{\bar u}\\[4pt] x_{\bar v} & y_{\bar v} & z_{\bar v} \end{pmatrix}$$
 
 中两个扁矩阵的秩都是 2，所以
 
@@ -2244,7 +2244,7 @@ $$\boldsymbol{r}_u\times\boldsymbol{r}_v$$
 
 所定义的法线方向确定为法线的正向。它在每一 $\Sigma_\alpha$ 中是连续变化的，而由
 
-$$\boldsymbol{r}_{\bar u}\times\boldsymbol{r}_{\bar v}=\det\frac{\partial(\bar u,\bar v)}{\partial(u,v)}\cdot\boldsymbol{r}_u\times\boldsymbol{r}_v,\qquad\det\frac{\partial(\bar u,\bar v)}{\partial(u,v)}>0$$
+$$\boldsymbol{r}_{\bar u}\times\boldsymbol{r}_{\bar v}=\det\frac{\partial(\bar u,\bar v)}{\partial(u,v)}\cdot\boldsymbol{r}_u\times\boldsymbol{r}_v,\qquad \det\frac{\partial(\bar u,\bar v)}{\partial(u,v)}>0$$
 
 **命题 (定向与连续法线场)** @158
 
@@ -2262,17 +2262,17 @@ $$\boldsymbol{r}_{\bar u}\times\boldsymbol{r}_{\bar v}=\det\frac{\partial(\bar u
 
 **注 (局部形式回顾)** @159
 
-第二章曾对曲面上曲线所围成的多角形区域证明 Gauss-Bonnet 公式。那时需要假定所论的曲面区域 $\mathscr{S}$ 在一个坐标区域 $D$ 之中，结论是$$\sum_{i=0}^{k}\int_{s_{i}}^{s_{i+1}}k_{g}(s)\,\mathrm{d}s+\iint_{\mathscr{S}}K\,\mathrm{d}\sigma+\sum_{i=0}^{k}\theta_{i}=2\pi \tag{3-7}$$各个符号的意义同前（见 (2-100)）。以下改用整体的观点讨论这个公式。
+第二章曾对曲面上曲线所围成的多角形区域证明 Gauss-Bonnet 公式。那时需要假定所论的曲面区域 $\mathscr{S}$ 在一个坐标区域 $D$ 之中，结论是$$ \sum_{i=0}^{k}\int_{s_{i}}^{s_{i+1}}k_{g}(s)\,\mathrm{d}s+\iint_{\mathscr{S}}K\,\mathrm{d}\sigma+\sum_{i=0}^{k}\theta_{i}=2\pi \tag{3-7} $$各个符号的意义同前（见 (2-100)）。以下改用整体的观点讨论这个公式。
 
 **定义 (曲面曲线的弧长)** @159
 
-$C^{k}$ 阶曲面上的 $C^{j}\ (j\leqslant k)$ 阶曲线段 $l$ 是直线上开区间 $(a,b)$ 到曲面 $S$ 上的一个映射。如果它的某一段穿过一个坐标区域 $\Sigma$，那么在坐标图 $(\Sigma,h)$ 中，刻画这一段的 $C^{j}$ 阶函数是$$u=f(t),\qquad v=g(t).$$一般地，曲线可能穿过若干个坐标区域，则在每一坐标区域中都有它自己的表达式，把每个区域中的那一段的弧长算出来相加，就得到整条曲线的弧长。
+$C^{k}$ 阶曲面上的 $C^{j}\ (j\leqslant k)$ 阶曲线段 $l$ 是直线上开区间 $(a,b)$ 到曲面 $S$ 上的一个映射。如果它的某一段穿过一个坐标区域 $\Sigma$，那么在坐标图 $(\Sigma,h)$ 中，刻画这一段的 $C^{j}$ 阶函数是$$ u=f(t),\qquad v=g(t). $$一般地，曲线可能穿过若干个坐标区域，则在每一坐标区域中都有它自己的表达式，把每个区域中的那一段的弧长算出来相加，就得到整条曲线的弧长。
 
-例如曲线穿过两个坐标区域 $\Sigma$ 与 $\Sigma'$，设交点 $B$ 对应参数 $t_{1}$，在 $\Sigma$ 中算 $AB$、在 $\Sigma'$ 中算 $BC$，相加即得 $AC$ 的弧长。结果与 $B$ 的选取无关：若在 $AC$ 上另取一点 $B'$，使 $BB'\subset\Sigma\cap\Sigma'$，$B,B'$ 分别对应参数 $t_{1},t_{2}$，则由$$E\,\mathrm{d}u^{2}+2F\,\mathrm{d}u\,\mathrm{d}v+G\,\mathrm{d}v^{2}=\bar{E}\,\mathrm{d}\bar{u}^{2}+2\bar{F}\,\mathrm{d}\bar{u}\,\mathrm{d}\bar{v}+\bar{G}\,\mathrm{d}\bar{v}^{2}$$得到$$\int_{t_{1}}^{t_{2}}\sqrt{E\left(\frac{\mathrm{d}u}{\mathrm{d}t}\right)^{2}+2F\frac{\mathrm{d}u}{\mathrm{d}t}\frac{\mathrm{d}v}{\mathrm{d}t}+G\left(\frac{\mathrm{d}v}{\mathrm{d}t}\right)^{2}}\,\mathrm{d}t=\int_{t_{1}}^{t_{2}}\sqrt{\bar{E}\left(\frac{\mathrm{d}\bar{u}}{\mathrm{d}t}\right)^{2}+2\bar{F}\frac{\mathrm{d}\bar{u}}{\mathrm{d}t}\frac{\mathrm{d}\bar{v}}{\mathrm{d}t}+\bar{G}\left(\frac{\mathrm{d}\bar{v}}{\mathrm{d}t}\right)^{2}}\,\mathrm{d}t,$$即在 $\Sigma$ 及 $\Sigma'$ 中计算出的弧长相同。这样就定义了曲线弧长；选定曲线 $l$ 的起点后，还可定出它的弧长参数。
+例如曲线穿过两个坐标区域 $\Sigma$ 与 $\Sigma'$，设交点 $B$ 对应参数 $t_{1}$，在 $\Sigma$ 中算 $AB$、在 $\Sigma'$ 中算 $BC$，相加即得 $AC$ 的弧长。结果与 $B$ 的选取无关：若在 $AC$ 上另取一点 $B'$，使 $BB'\subset\Sigma\cap\Sigma'$，$B,B'$ 分别对应参数 $t_{1},t_{2}$，则由$$ E\,\mathrm{d}u^{2}+2F\,\mathrm{d}u\,\mathrm{d}v+G\,\mathrm{d}v^{2} =\bar{E}\,\mathrm{d}\bar{u}^{2}+2\bar{F}\,\mathrm{d}\bar{u}\,\mathrm{d}\bar{v}+\bar{G}\,\mathrm{d}\bar{v}^{2} $$得到$$ \int_{t_{1}}^{t_{2}}\sqrt{E\left(\frac{\mathrm{d}u}{\mathrm{d}t}\right)^{2} +2F\frac{\mathrm{d}u}{\mathrm{d}t}\frac{\mathrm{d}v}{\mathrm{d}t} +G\left(\frac{\mathrm{d}v}{\mathrm{d}t}\right)^{2}}\,\mathrm{d}t =\int_{t_{1}}^{t_{2}}\sqrt{\bar{E}\left(\frac{\mathrm{d}\bar{u}}{\mathrm{d}t}\right)^{2} +2\bar{F}\frac{\mathrm{d}\bar{u}}{\mathrm{d}t}\frac{\mathrm{d}\bar{v}}{\mathrm{d}t} +\bar{G}\left(\frac{\mathrm{d}\bar{v}}{\mathrm{d}t}\right)^{2}}\,\mathrm{d}t, $$即在 $\Sigma$ 及 $\Sigma'$ 中计算出的弧长相同。这样就定义了曲线弧长；选定曲线 $l$ 的起点后，还可定出它的弧长参数。
 
 **定义 (区域上的积分)** @160
 
-若 $f$ 是定义于曲线 $l$ 上的函数，则 $f$ 可用弧长参数的函数 $f(s)$ 表示，并按普通意义定义积分$$\int_{AC}f\,\mathrm{d}s=\int_{s_{1}}^{s_{2}}f(s)\,\mathrm{d}s,$$其中 $s_{1},s_{2}$ 分别是 $A,C$ 所对应的参数。
+若 $f$ 是定义于曲线 $l$ 上的函数，则 $f$ 可用弧长参数的函数 $f(s)$ 表示，并按普通意义定义积分$$ \int_{AC}f\,\mathrm{d}s=\int_{s_{1}}^{s_{2}}f(s)\,\mathrm{d}s, $$其中 $s_{1},s_{2}$ 分别是 $A,C$ 所对应的参数。
 
 同样，若 $\Omega$ 是曲面上的一个区域，可把它划分为若干小区域，使每一小区域都在一个坐标区域中，求出每一小区域的面积再相加，就是区域 $\Omega$ 的面积；这个面积与区域划分的方式无关。一个函数沿 $\Omega$ 的积分也照此办理。
 
@@ -2284,7 +2284,7 @@ $C^{k}$ 阶曲面上的 $C^{j}\ (j\leqslant k)$ 阶曲线段 $l$ 是直线上开
 
 **定义 (Euler-Poincaré 示性数)** @161
 
-经过上述剖分后得到三个数：$F$——三角形的个数，$E$——边的条数，$V$——顶点的个数。它们定义了区域 $\mathscr{S}$ 的 **Euler-Poincaré 示性数**$$\chi(\mathscr{S})=F-E+V. \tag{3-8}$$此式右边看似与三角剖分的方式有关，但由后文的 Gauss-Bonnet 公式可知，$\chi(\mathscr{S})$ 实际上与剖分方式无关，是曲面的拓扑不变量。
+经过上述剖分后得到三个数：$F$——三角形的个数，$E$——边的条数，$V$——顶点的个数。它们定义了区域 $\mathscr{S}$ 的 **Euler-Poincaré 示性数**$$ \chi(\mathscr{S})=F-E+V. \tag{3-8} $$此式右边看似与三角剖分的方式有关，但由后文的 Gauss-Bonnet 公式可知，$\chi(\mathscr{S})$ 实际上与剖分方式无关，是曲面的拓扑不变量。
 
 **注 (紧致曲面的示性数)** @161
 
@@ -2298,23 +2298,23 @@ $C^{k}$ 阶曲面上的 $C^{j}\ (j\leqslant k)$ 阶曲线段 $l$ 是直线上开
 
 **定义 (亏格与洞数)** @161
 
-数$$n=\frac{2-\chi(S)}{2}$$称为 $S$ 的**亏格**，即 $S$ 的洞数。
+数$$ n=\frac{2-\chi(S)}{2} $$称为 $S$ 的**亏格**，即 $S$ 的洞数。
 
 **定理 (整体 Gauss-Bonnet 定理)** @161
 
-设 $\Omega$ 是定向曲面 $S$ 上的一个区域，$\Omega$ 的边界 $\partial\Omega$ 由若干条简单闭曲线 $C_{1},\cdots,C_{n}$ 组成。设每一 $C_{i}$ 是分段正则且正定向的，$C_{1},\cdots,C_{n}$ 的外角全体记为 $\theta_{1},\cdots,\theta_{p}$，则成立$$\sum_{i=1}^{n}\int_{C_{i}}k_{g}(s)\,\mathrm{d}s+\iint_{\Omega}K\,\mathrm{d}\sigma+\sum_{l=1}^{p}\theta_{l}=2\pi\chi(\Omega). \tag{3-9}$$这里 $s$ 表示 $C_{i}$ 的弧长，$C_{i}$ 上的积分等于它在每一正则弧上积分之和。
+设 $\Omega$ 是定向曲面 $S$ 上的一个区域，$\Omega$ 的边界 $\partial\Omega$ 由若干条简单闭曲线 $C_{1},\cdots,C_{n}$ 组成。设每一 $C_{i}$ 是分段正则且正定向的，$C_{1},\cdots,C_{n}$ 的外角全体记为 $\theta_{1},\cdots,\theta_{p}$，则成立$$ \sum_{i=1}^{n}\int_{C_{i}}k_{g}(s)\,\mathrm{d}s+\iint_{\Omega}K\,\mathrm{d}\sigma+\sum_{l=1}^{p}\theta_{l}=2\pi\chi(\Omega). \tag{3-9} $$这里 $s$ 表示 $C_{i}$ 的弧长，$C_{i}$ 上的积分等于它在每一正则弧上积分之和。
 
 **注 (外角的符号)** @162
 
-外角 $\theta_{l}$ 的符号由 $S$ 的定向决定：当 $\boldsymbol{r}'(t_{l}-0)$ 到 $\boldsymbol{r}'(t_{l}+0)$ 的方向与 $S$ 的定向一致时，$\theta_{l}$ 取正号；反之取负号。因此$$-\pi\leqslant\theta_{l}\leqslant\pi\qquad(l=1,\cdots,p).$$
+外角 $\theta_{l}$ 的符号由 $S$ 的定向决定：当 $\boldsymbol{r}'(t_{l}-0)$ 到 $\boldsymbol{r}'(t_{l}+0)$ 的方向与 $S$ 的定向一致时，$\theta_{l}$ 取正号；反之取负号。因此$$ -\pi\leqslant\theta_{l}\leqslant\pi\qquad(l=1,\cdots,p). $$
 
 **推论 1** @163
 
-设 $\Omega$ 是定向曲面 $S$ 上的一个单连通区域，$\Omega$ 的边界是分段正则的简单闭曲线 $C$。设 $s$ 是弧长参数，$s_{0},\cdots,s_{k},s_{k+1}$ 和 $\theta_{0},\cdots,\theta_{k}$ 分别是 $C$ 的顶点的弧长参数及外角，其中 $s_{k+1}$ 与 $s_{0}$ 为同一顶点的参数，$k_{g}(s)$ 是 $C$ 的测地曲率，则成立$$\sum_{i=0}^{k}\int_{s_{i}}^{s_{i+1}}k_{g}(s)\,\mathrm{d}s+\iint_{\Omega}K\,\mathrm{d}\sigma+\sum_{i=0}^{k}\theta_{i}=2\pi.$$这里用到单连通区域的 Euler-Poincaré 示性数等于 $1$：单连通区域即其内任意一条闭曲线都能在其中连续收缩为一点的区域。
+设 $\Omega$ 是定向曲面 $S$ 上的一个单连通区域，$\Omega$ 的边界是分段正则的简单闭曲线 $C$。设 $s$ 是弧长参数，$s_{0},\cdots,s_{k},s_{k+1}$ 和 $\theta_{0},\cdots,\theta_{k}$ 分别是 $C$ 的顶点的弧长参数及外角，其中 $s_{k+1}$ 与 $s_{0}$ 为同一顶点的参数，$k_{g}(s)$ 是 $C$ 的测地曲率，则成立$$ \sum_{i=0}^{k}\int_{s_{i}}^{s_{i+1}}k_{g}(s)\,\mathrm{d}s+\iint_{\Omega}K\,\mathrm{d}\sigma+\sum_{i=0}^{k}\theta_{i}=2\pi. $$这里用到单连通区域的 Euler-Poincaré 示性数等于 $1$：单连通区域即其内任意一条闭曲线都能在其中连续收缩为一点的区域。
 
 **推论 2** @163
 
-设 $S$ 是紧致的定向曲面，则成立$$\iint_{S}K\,\mathrm{d}\sigma=2\pi\chi(S).$$
+设 $S$ 是紧致的定向曲面，则成立$$ \iint_{S}K\,\mathrm{d}\sigma=2\pi\chi(S). $$
 
 **推论 3** @164
 
@@ -2328,17 +2328,17 @@ $C^{k}$ 阶曲面上的 $C^{j}\ (j\leqslant k)$ 阶曲线段 $l$ 是直线上开
 
 **定义 (平面向量场)** @165
 
-平面区域 $U\subset\mathbf{R}^{2}$ 的向量场是由向量值函数$$\boldsymbol{w}(x,y)=(a(x,y),b(x,y))\tag{3-12}$$所定义的，这里 $a(x,y),b(x,y)$ 均假定为可微函数。
+平面区域 $U\subset\mathbf{R}^{2}$ 的向量场是由向量值函数$$ \boldsymbol{w}(x,y)=(a(x,y),b(x,y))\tag{3-12} $$所定义的，这里 $a(x,y),b(x,y)$ 均假定为可微函数。
 
-由微分方程论知道，对于一个向量场 $\boldsymbol{w}$ 及 $U$ 中一点 $(x_{0},y_{0})$，必存在积分一条曲线（或称为轨线）$$x=\phi(x_{0},y_{0},t),\qquad y=\psi(x_{0},y_{0},t),$$使在 $t=0$ 时积分曲线过 $(x_{0},y_{0})$ 点，即$$\phi(x_{0},y_{0},0)=x_{0},\qquad \psi(x_{0},y_{0},0)=y_{0},$$且处处以 $\boldsymbol{w}(x,y)$ 为切向量。它们是以 $t=0,x=x_{0},y=y_{0}$ 为初值条件求解$$\frac{\mathrm{d}x}{\mathrm{d}t}=a(x,y),\qquad \frac{\mathrm{d}y}{\mathrm{d}t}=b(x,y)$$而得出的。
+由微分方程论知道，对于一个向量场 $\boldsymbol{w}$ 及 $U$ 中一点 $(x_{0},y_{0})$，必存在积分一条曲线（或称为轨线）$$ x=\phi(x_{0},y_{0},t),\qquad y=\psi(x_{0},y_{0},t), $$使在 $t=0$ 时积分曲线过 $(x_{0},y_{0})$ 点，即$$ \phi(x_{0},y_{0},0)=x_{0},\qquad \psi(x_{0},y_{0},0)=y_{0}, $$且处处以 $\boldsymbol{w}(x,y)$ 为切向量。它们是以 $t=0,x=x_{0},y=y_{0}$ 为初值条件求解$$ \frac{\mathrm{d}x}{\mathrm{d}t}=a(x,y),\qquad \frac{\mathrm{d}y}{\mathrm{d}t}=b(x,y) $$而得出的。
 
 **例 1** @166
 
-设向量场是$$a(x,y)=x,\qquad b(x,y)=y,$$则此向量场的积分曲线或轨线为$$x=x_{0}\mathrm{e}^{t},\qquad y=y_{0}\mathrm{e}^{t}.$$这是汇聚于 $(0,0)$ 的直线。
+设向量场是$$ a(x,y)=x,\qquad b(x,y)=y, $$则此向量场的积分曲线或轨线为$$ x=x_{0}\mathrm{e}^{t},\qquad y=y_{0}\mathrm{e}^{t}. $$这是汇聚于 $(0,0)$ 的直线。
 
 **例 2** @166
 
-设向量场是$$a(x,y)=y,\qquad b(x,y)=-x,$$则积分曲线族为$$x=x_{0}\cos t+y_{0}\sin t,\qquad y=-x_{0}\sin t+y_{0}\cos t,$$即以 $O$ 为中心的一族同心圆。
+设向量场是$$ a(x,y)=y,\qquad b(x,y)=-x, $$则积分曲线族为$$ x=x_{0}\cos t+y_{0}\sin t,\qquad y=-x_{0}\sin t+y_{0}\cos t, $$即以 $O$ 为中心的一族同心圆。
 
 **定义 (向量场的奇点)** @166
 
@@ -2346,19 +2346,19 @@ $C^{k}$ 阶曲面上的 $C^{j}\ (j\leqslant k)$ 阶曲线段 $l$ 是直线上开
 
 **定义 (曲面上的向量场)** @166
 
-向量场可以照样在曲面上定义。设 $\Sigma$ 为一坐标区域，$(u,v)$ 是 $\Sigma$ 上的坐标，向量场由$$\boldsymbol{w}(P)=a(u,v)\boldsymbol{r}_{u}+b(u,v)\boldsymbol{r}_{v}\tag{3-13}$$所定义。一曲面上向量场 $\boldsymbol{w}(P)$ 在 $\Sigma\cap\tilde{\Sigma}$ 处成立$$\boldsymbol{w}(P)=a(u,v)\boldsymbol{r}_{u}+b(u,v)\boldsymbol{r}_{v}=\tilde{a}(\tilde{u},\tilde{v})\boldsymbol{r}_{\tilde{u}}+\tilde{b}(\tilde{u},\tilde{v})\boldsymbol{r}_{\tilde{v}},$$而且 $\boldsymbol{r}_{u},\boldsymbol{r}_{v}$ 线性无关，所以成立$$\tilde{a}(\tilde{u},\tilde{v})=a(u,v)\frac{\partial u}{\partial\tilde{u}}+b(u,v)\frac{\partial v}{\partial\tilde{u}},$$$$\tilde{b}(\tilde{u},\tilde{v})=a(u,v)\frac{\partial u}{\partial\tilde{v}}+b(u,v)\frac{\partial v}{\partial\tilde{v}}.$$
+向量场可以照样在曲面上定义。设 $\Sigma$ 为一坐标区域，$(u,v)$ 是 $\Sigma$ 上的坐标，向量场由$$ \boldsymbol{w}(P)=a(u,v)\boldsymbol{r}_{u}+b(u,v)\boldsymbol{r}_{v}\tag{3-13} $$所定义。一曲面上向量场 $\boldsymbol{w}(P)$ 在 $\Sigma\cap\tilde{\Sigma}$ 处成立$$ \boldsymbol{w}(P)=a(u,v)\boldsymbol{r}_{u}+b(u,v)\boldsymbol{r}_{v} =\tilde{a}(\tilde{u},\tilde{v})\boldsymbol{r}_{\tilde{u}}+\tilde{b}(\tilde{u},\tilde{v})\boldsymbol{r}_{\tilde{v}}, $$而且 $\boldsymbol{r}_{u},\boldsymbol{r}_{v}$ 线性无关，所以成立$$ \tilde{a}(\tilde{u},\tilde{v})=a(u,v)\frac{\partial u}{\partial\tilde{u}}+b(u,v)\frac{\partial v}{\partial\tilde{u}}, $$$$ \tilde{b}(\tilde{u},\tilde{v})=a(u,v)\frac{\partial u}{\partial\tilde{v}}+b(u,v)\frac{\partial v}{\partial\tilde{v}}. $$
 
 **定义 (积分曲线)** @167
 
-在一个坐标区域中，向量场的积分曲线（轨线）是作为微分方程$$\frac{\mathrm{d}u}{\mathrm{d}t}=a(u,v),\qquad \frac{\mathrm{d}v}{\mathrm{d}t}=b(u,v)$$的解而得来的。
+在一个坐标区域中，向量场的积分曲线（轨线）是作为微分方程$$ \frac{\mathrm{d}u}{\mathrm{d}t}=a(u,v),\qquad \frac{\mathrm{d}v}{\mathrm{d}t}=b(u,v) $$的解而得来的。
 
 **例 3** @167
 
-普通环面 $T^{2}$ 的参数表示可写为$$\boldsymbol{r}=\left\{\left(a+b\cos\frac{s}{b}\right)\cos v,\ \left(a+b\cos\frac{s}{b}\right)\sin v,\ b\sin\frac{s}{b}\right\}$$$$(0\leqslant s<2\pi b,\ 0\leqslant v<2\pi),$$这里 $s$ 是每一经线上的弧长参数。那么 $T^{2}$ 上的向量$$\boldsymbol{w}(v,s)=\left\{-\cos v\sin\frac{s}{b},\ -\sin v\sin\frac{s}{b},\ \cos\frac{s}{b}\right\}$$是可微的单位向量场，易知其轨线就是 $T^{2}$ 上的经线。
+普通环面 $T^{2}$ 的参数表示可写为$$ \boldsymbol{r}=\left\{\left(a+b\cos\frac{s}{b}\right)\cos v,\ \left(a+b\cos\frac{s}{b}\right)\sin v,\ b\sin\frac{s}{b}\right\} $$$$ (0\leqslant s<2\pi b,\ 0\leqslant v<2\pi), $$这里 $s$ 是每一经线上的弧长参数。那么 $T^{2}$ 上的向量$$ \boldsymbol{w}(v,s)=\left\{-\cos v\sin\frac{s}{b},\ -\sin v\sin\frac{s}{b},\ \cos\frac{s}{b}\right\} $$是可微的单位向量场，易知其轨线就是 $T^{2}$ 上的经线。
 
 **例 4** @167
 
-把球面 $S^{2}$ 去掉两极 $N$ 和 $S$，每一条从 $N$ 到 $S$ 的经线的切向量全体形成定义在 $S^{2}-\{N\}\cup\{S\}$ 上的向量场 $\boldsymbol{v}(P)$。为了得到定义在整个球面上的向量场 $\boldsymbol{w}(P)$，可用同一参数 $t$，$-1<t<1$，将每一条从 $N$ 到 $S$ 的经线加以参数化，并在同一经线上的点取相同的 $t$ 值，然后定义$$\boldsymbol{w}(P)=(1-t^{2})\boldsymbol{v}(P),\qquad \text{当 }P\in S^{2}-\{N\}\cup\{S\};$$$$\boldsymbol{w}(N)=\boldsymbol{w}(S)=\boldsymbol{0}.$$向量场 $\boldsymbol{w}$ 是球面 $S^{2}$ 上的向量场，点 $N,S$ 是向量场 $\boldsymbol{w}$ 的两个奇点。
+把球面 $S^{2}$ 去掉两极 $N$ 和 $S$，每一条从 $N$ 到 $S$ 的经线的切向量全体形成定义在 $S^{2}-\{N\}\cup\{S\}$ 上的向量场 $\boldsymbol{v}(P)$。为了得到定义在整个球面上的向量场 $\boldsymbol{w}(P)$，可用同一参数 $t$，$-1<t<1$，将每一条从 $N$ 到 $S$ 的经线加以参数化，并在同一经线上的点取相同的 $t$ 值，然后定义$$ \boldsymbol{w}(P)=(1-t^{2})\boldsymbol{v}(P),\qquad \text{当 }P\in S^{2}-\{N\}\cup\{S\}; $$$$ \boldsymbol{w}(N)=\boldsymbol{w}(S)=\boldsymbol{0}. $$向量场 $\boldsymbol{w}$ 是球面 $S^{2}$ 上的向量场，点 $N,S$ 是向量场 $\boldsymbol{w}$ 的两个奇点。
 
 **定义 (孤立奇点)** @168
 
@@ -2372,35 +2372,35 @@ $C^{k}$ 阶曲面上的 $C^{j}\ (j\leqslant k)$ 阶曲线段 $l$ 是直线上开
 
 先讨论平面情形。设 $(0,0)$ 是向量场的孤立奇点，$U$ 是 $(0,0)$ 的一个邻域，使得在 $(x,y)\in U$ 时向量场无其他奇点。在奇点 $(0,0)$ 附近画一个取正向的简单闭环路 $C$，$C$ 上每点 $P$ 有一个向量 $\boldsymbol{w}(P)$。另取一点 $O'$，把 $\boldsymbol{w}(P)$ 的单位向量 $\boldsymbol{l}(P)$ 用 $\overrightarrow{O'P'}$ 表示，当 $P$ 绕 $C$ 走一圈时，$P'$ 在单位圆上所转的圈数就称为**向量场奇点 $(0,0)$ 的指标**，记为 $I$。
 
-设 $C$ 是围绕奇点 $(0,0)$ 的一个简单闭环路，它的方程为$$\begin{cases}u=u(t),\\v=v(t),\end{cases}\qquad 0\leqslant t\leqslant L\tag{3-14}$$而向量场 $\boldsymbol{w}$ 在其上的向量为 $(a(t),b(t))$，这里$$a(t)=a(u(t),v(t)),\qquad b(t)=b(u(t),v(t)),\tag{3-15}$$与 $(a(t),b(t))$ 相应的单位向量 $\boldsymbol{l}$ 为$$\boldsymbol{l}=\left(\frac{a}{\sqrt{a^{2}+b^{2}}},\ \frac{b}{\sqrt{a^{2}+b^{2}}}\right)\tag{3-16}$$
+设 $C$ 是围绕奇点 $(0,0)$ 的一个简单闭环路，它的方程为$$ \begin{cases} u=u(t),\\ v=v(t), \end{cases}\qquad 0\leqslant t\leqslant L\tag{3-14} $$而向量场 $\boldsymbol{w}$ 在其上的向量为 $(a(t),b(t))$，这里$$ a(t)=a(u(t),v(t)),\qquad b(t)=b(u(t),v(t)),\tag{3-15} $$与 $(a(t),b(t))$ 相应的单位向量 $\boldsymbol{l}$ 为$$ \boldsymbol{l}=\left(\frac{a}{\sqrt{a^{2}+b^{2}}},\ \frac{b}{\sqrt{a^{2}+b^{2}}}\right)\tag{3-16} $$
 
 **命题 (指标积分公式)** @169
 
-$\boldsymbol{l}$ 与 $x$ 轴正向的夹角为 $\varphi$，可选 $\varphi$ 为 $t$ 的可微函数。因为 $\tan\varphi=\dfrac{b}{a}$（$a\neq0$ 时），所以$$\frac{\mathrm{d}\varphi}{\mathrm{d}t}=\frac{\mathrm{d}}{\mathrm{d}t}\left(\arctan\frac{b}{a}\right)=\frac{ab'-ba'}{a^{2}+b^{2}};$$若 $a=0$，则 $b\neq0$，由 $\cot\varphi=\dfrac{a}{b}$ 也得出同一公式，故上述公式普遍适用。
+$\boldsymbol{l}$ 与 $x$ 轴正向的夹角为 $\varphi$，可选 $\varphi$ 为 $t$ 的可微函数。因为 $\tan\varphi=\dfrac{b}{a}$（$a\neq0$ 时），所以$$ \frac{\mathrm{d}\varphi}{\mathrm{d}t}=\frac{\mathrm{d}}{\mathrm{d}t}\left(\arctan\frac{b}{a}\right)=\frac{ab'-ba'}{a^{2}+b^{2}}; $$若 $a=0$，则 $b\neq0$，由 $\cot\varphi=\dfrac{a}{b}$ 也得出同一公式，故上述公式普遍适用。
 
-$P$ 点绕 $C$ 转一周，$\boldsymbol{l}(P)$ 也必转回原处，$\varphi$ 的变化$$\varphi(L)-\varphi(0)=\int_{C}\frac{\mathrm{d}\varphi}{\mathrm{d}t}\,\mathrm{d}t=\int_{C}\frac{ab'-ba'}{a^{2}+b^{2}}\,\mathrm{d}t$$为 $2\pi$ 的整数倍，所以 $\boldsymbol{l}(P)$ 所转的圈数$$I=\frac{1}{2\pi}[\varphi(L)-\varphi(0)]=\frac{1}{2\pi}\oint_{C}\frac{ab'-ba'}{a^{2}+b^{2}}\,\mathrm{d}t\tag{3-17}$$必为整数。
+$P$ 点绕 $C$ 转一周，$\boldsymbol{l}(P)$ 也必转回原处，$\varphi$ 的变化$$ \varphi(L)-\varphi(0)=\int_{C}\frac{\mathrm{d}\varphi}{\mathrm{d}t}\,\mathrm{d}t=\int_{C}\frac{ab'-ba'}{a^{2}+b^{2}}\,\mathrm{d}t $$为 $2\pi$ 的整数倍，所以 $\boldsymbol{l}(P)$ 所转的圈数$$ I=\frac{1}{2\pi}[\varphi(L)-\varphi(0)]=\frac{1}{2\pi}\oint_{C}\frac{ab'-ba'}{a^{2}+b^{2}}\,\mathrm{d}t\tag{3-17} $$必为整数。
 
 **定义 (曲面奇点的指标)** @169
 
-设 $P\in S$ 是 $S$ 上一向量场 $\boldsymbol{w}$ 的孤立奇点，在 $P$ 点的一坐标区域 $\Sigma$ 内选取单位正交标架系 $\{\boldsymbol{e}_{1},\boldsymbol{e}_{2},\boldsymbol{n}\}$，使 $\boldsymbol{e}_{1}$ 合于 $\boldsymbol{r}_{u}$ 的单位向量，$\boldsymbol{n}$ 取为正侧法线单位向量，$\boldsymbol{e}_{2}$ 选为单位向量使 $\{\boldsymbol{e}_{1},\boldsymbol{e}_{2},\boldsymbol{n}\}$ 为正取向的正交标架。向量场的向量可表示为$$\boldsymbol{l}(u,v)=a(u,v)\boldsymbol{e}_{1}+b(u,v)\boldsymbol{e}_{2},$$这里 $\boldsymbol{l}(u,v)$ 是 $\boldsymbol{w}(u,v)$ 的单位向量。
+设 $P\in S$ 是 $S$ 上一向量场 $\boldsymbol{w}$ 的孤立奇点，在 $P$ 点的一坐标区域 $\Sigma$ 内选取单位正交标架系 $\{\boldsymbol{e}_{1},\boldsymbol{e}_{2},\boldsymbol{n}\}$，使 $\boldsymbol{e}_{1}$ 合于 $\boldsymbol{r}_{u}$ 的单位向量，$\boldsymbol{n}$ 取为正侧法线单位向量，$\boldsymbol{e}_{2}$ 选为单位向量使 $\{\boldsymbol{e}_{1},\boldsymbol{e}_{2},\boldsymbol{n}\}$ 为正取向的正交标架。向量场的向量可表示为$$ \boldsymbol{l}(u,v)=a(u,v)\boldsymbol{e}_{1}+b(u,v)\boldsymbol{e}_{2}, $$这里 $\boldsymbol{l}(u,v)$ 是 $\boldsymbol{w}(u,v)$ 的单位向量。
 
-在 $P$ 点适当小邻域内作一简单闭曲线 $C$，其参数为 $0\leqslant t\leqslant L$，使它在 $U$ 中围成包含 $P$ 在内的小邻域 $\mathscr{D}$，并且在曲线内部除 $P$ 外无向量场奇点，曲线上也无向量场的奇点；又参数 $t$ 的增加方向和曲面的定向相容。沿曲线 $C$，向量 $\boldsymbol{l}$ 与 $\boldsymbol{e}_{1}$ 的夹角记为 $\varphi$，可取 $\varphi$ 为 $t$ 的可微函数；沿 $C$ 函数 $a,b$ 表示为 $a(t),b(t)$。由于$$\tan\varphi=\frac{b}{a}\quad\text{或}\quad \cot\varphi=\frac{a}{b}$$二者必有一成立，故同样可定义$$I=\frac{1}{2\pi}[\varphi(L)-\varphi(0)]=\frac{1}{2\pi}\oint_{C}\frac{ab'-ba'}{a^{2}+b^{2}}\,\mathrm{d}t,$$这就是 $\boldsymbol{w}$ 本身绕 $C$ 一圈后所转的圈数。不论是平面上还是曲面上的向量场，绕简单闭环路 $C$ 的孤立奇点的指标都是由统一的 (3-17) 算出的；当环路 $C$ 是分段光滑曲线时指标公式 (3-17) 也适用。
+在 $P$ 点适当小邻域内作一简单闭曲线 $C$，其参数为 $0\leqslant t\leqslant L$，使它在 $U$ 中围成包含 $P$ 在内的小邻域 $\mathscr{D}$，并且在曲线内部除 $P$ 外无向量场奇点，曲线上也无向量场的奇点；又参数 $t$ 的增加方向和曲面的定向相容。沿曲线 $C$，向量 $\boldsymbol{l}$ 与 $\boldsymbol{e}_{1}$ 的夹角记为 $\varphi$，可取 $\varphi$ 为 $t$ 的可微函数；沿 $C$ 函数 $a,b$ 表示为 $a(t),b(t)$。由于$$ \tan\varphi=\frac{b}{a}\quad\text{或}\quad \cot\varphi=\frac{a}{b} $$二者必有一成立，故同样可定义$$ I=\frac{1}{2\pi}[\varphi(L)-\varphi(0)]=\frac{1}{2\pi}\oint_{C}\frac{ab'-ba'}{a^{2}+b^{2}}\,\mathrm{d}t, $$这就是 $\boldsymbol{w}$ 本身绕 $C$ 一圈后所转的圈数。不论是平面上还是曲面上的向量场，绕简单闭环路 $C$ 的孤立奇点的指标都是由统一的 (3-17) 算出的；当环路 $C$ 是分段光滑曲线时指标公式 (3-17) 也适用。
 
 **命题 (指标与闭路无关)** @170
 
-孤立奇点的指标与简单闭环路 $C$ 的选取无关。设 $P$ 点的坐标区域 $\Sigma$ 在坐标映照 $h$ 下的像为 $U$，点 $P$ 的像为 $h(P)$，曲线 $C$ 和它所围区域的像分别为 $h(C)$ 和 $h(\mathscr{D})$；为简化记号略去 $h$，仍分别记为 $U,P,C,\mathscr{D}$。由 (3-17) 可得$$\begin{aligned}I&=\frac{1}{2\pi}\oint_{C}\frac{ab'-ba'}{a^{2}+b^{2}}\,\mathrm{d}t\\&=\frac{1}{2\pi}\oint_{C}\frac{a(b_{u}\mathrm{d}u+b_{v}\mathrm{d}v)-b(a_{u}\mathrm{d}u+a_{v}\mathrm{d}v)}{a^{2}+b^{2}}\\&=\frac{1}{2\pi}\oint_{C}\frac{ab_{u}-ba_{u}}{a^{2}+b^{2}}\,\mathrm{d}u+\frac{ab_{v}-ba_{v}}{a^{2}+b^{2}}\,\mathrm{d}v,\end{aligned}$$因为除了在奇点 $P$ 处上式分母为零外，成立着关系式$$\left(\frac{ab_{v}-ba_{v}}{a^{2}+b^{2}}\right)_{v}=\left(\frac{ab_{u}-ba_{u}}{a^{2}+b^{2}}\right)_{u},$$所以由平面区域的 Green 公式得知，曲线积分值 $I$ 是与绕 $P$ 点的单纯闭环路选取方式无关的。
+孤立奇点的指标与简单闭环路 $C$ 的选取无关。设 $P$ 点的坐标区域 $\Sigma$ 在坐标映照 $h$ 下的像为 $U$，点 $P$ 的像为 $h(P)$，曲线 $C$ 和它所围区域的像分别为 $h(C)$ 和 $h(\mathscr{D})$；为简化记号略去 $h$，仍分别记为 $U,P,C,\mathscr{D}$。由 (3-17) 可得$$ \begin{aligned} I&=\frac{1}{2\pi}\oint_{C}\frac{ab'-ba'}{a^{2}+b^{2}}\,\mathrm{d}t\\ &=\frac{1}{2\pi}\oint_{C}\frac{a(b_{u}\mathrm{d}u+b_{v}\mathrm{d}v)-b(a_{u}\mathrm{d}u+a_{v}\mathrm{d}v)}{a^{2}+b^{2}}\\ &=\frac{1}{2\pi}\oint_{C}\frac{ab_{u}-ba_{u}}{a^{2}+b^{2}}\,\mathrm{d}u+\frac{ab_{v}-ba_{v}}{a^{2}+b^{2}}\,\mathrm{d}v, \end{aligned} $$因为除了在奇点 $P$ 处上式分母为零外，成立着关系式$$ \left(\frac{ab_{v}-ba_{v}}{a^{2}+b^{2}}\right)_{v}=\left(\frac{ab_{u}-ba_{u}}{a^{2}+b^{2}}\right)_{u}, $$所以由平面区域的 Green 公式得知，曲线积分值 $I$ 是与绕 $P$ 点的单纯闭环路选取方式无关的。
 
-特别当环路 $C$ 内不含有奇点时$$I=\frac{1}{2\pi}\iint_{\mathscr{D}}\left[\left(\frac{ab_{v}-ba_{v}}{a^{2}+b^{2}}\right)_{u}-\left(\frac{ab_{u}-ba_{u}}{a^{2}+b^{2}}\right)_{v}\right]\mathrm{d}u\,\mathrm{d}v=0.$$
+特别当环路 $C$ 内不含有奇点时$$ I=\frac{1}{2\pi}\iint_{\mathscr{D}}\left[\left(\frac{ab_{v}-ba_{v}}{a^{2}+b^{2}}\right)_{u}-\left(\frac{ab_{u}-ba_{u}}{a^{2}+b^{2}}\right)_{v}\right]\mathrm{d}u\,\mathrm{d}v=0. $$
 
 **命题 (指标与坐标无关)** @171
 
-确定角 $\varphi$ 时用到了坐标曲线的切向量 $\boldsymbol{e}_{1}$，为说明用 (3-17) 定义孤立奇点指标 $I$ 的合理性，还须验证 $I$ 与曲面的坐标系选取无关。取一个沿曲线 $C$ 的平行向量场 $\boldsymbol{v}$，用它来测量向量场 $\boldsymbol{w}$ 的变化状况。设 $\boldsymbol{w}$ 与 $\boldsymbol{e}_{1}$ 的交角为 $\varphi$，$\boldsymbol{v}$ 与 $\boldsymbol{e}_{1}$ 的交角为 $\psi$，这些都可取为沿曲线 $C$ 的分段可微函数。由奇点指标的定义知道，绕 $C$ 一周后的角差 $\Delta_{C}\varphi$ 为$$\Delta_{C}\varphi=2\pi I.$$由第二章向量的平行移动一节知道，平行向量场绕边界一周后的角差 $\Delta_{C}\psi$ 等于$$\Delta_{C}\psi=\iint_{\mathscr{D}}K\,\mathrm{d}\sigma.$$因此有$$\Delta_{C}(\varphi-\psi)=2\pi I-\iint_{\mathscr{D}}K\,\mathrm{d}\sigma\tag{3-18}$$因为 $\varphi-\psi$ 是向量场 $\boldsymbol{w}$ 与平行向量场 $\boldsymbol{v}$ 之间的交角，是与 $\boldsymbol{e}_{1}$ 无关的，所以从上式可见，奇点的指标 $I$ 也与坐标系的选取无关。
+确定角 $\varphi$ 时用到了坐标曲线的切向量 $\boldsymbol{e}_{1}$，为说明用 (3-17) 定义孤立奇点指标 $I$ 的合理性，还须验证 $I$ 与曲面的坐标系选取无关。取一个沿曲线 $C$ 的平行向量场 $\boldsymbol{v}$，用它来测量向量场 $\boldsymbol{w}$ 的变化状况。设 $\boldsymbol{w}$ 与 $\boldsymbol{e}_{1}$ 的交角为 $\varphi$，$\boldsymbol{v}$ 与 $\boldsymbol{e}_{1}$ 的交角为 $\psi$，这些都可取为沿曲线 $C$ 的分段可微函数。由奇点指标的定义知道，绕 $C$ 一周后的角差 $\Delta_{C}\varphi$ 为$$ \Delta_{C}\varphi=2\pi I. $$由第二章向量的平行移动一节知道，平行向量场绕边界一周后的角差 $\Delta_{C}\psi$ 等于$$ \Delta_{C}\psi=\iint_{\mathscr{D}}K\,\mathrm{d}\sigma. $$因此有$$ \Delta_{C}(\varphi-\psi)=2\pi I-\iint_{\mathscr{D}}K\,\mathrm{d}\sigma\tag{3-18} $$因为 $\varphi-\psi$ 是向量场 $\boldsymbol{w}$ 与平行向量场 $\boldsymbol{v}$ 之间的交角，是与 $\boldsymbol{e}_{1}$ 无关的，所以从上式可见，奇点的指标 $I$ 也与坐标系的选取无关。
 
-从 (3-18) 还可看出，角差 $\Delta_{C}(\varphi-\psi)$ 是与平行向量场 $\boldsymbol{v}$ 的选取无关的。如果另取一个平行向量场 $\boldsymbol{v}'$，相应的角差为 $\Delta_{C}(\varphi-\psi')$，则有$$\Delta_{C}(\varphi-\psi)=\Delta_{C}(\varphi-\psi')\tag{3-19}$$其实，上式对任何曲线 $C$（不一定闭曲线）也成立。这是因为，平行移动使向量的交角不变，即 $\Delta_{C}(\psi'-\psi)=0$，于是$$\Delta_{C}(\varphi-\psi)-\Delta_{C}(\varphi-\psi')=\Delta_{C}(\psi'-\psi)=0.$$
+从 (3-18) 还可看出，角差 $\Delta_{C}(\varphi-\psi)$ 是与平行向量场 $\boldsymbol{v}$ 的选取无关的。如果另取一个平行向量场 $\boldsymbol{v}'$，相应的角差为 $\Delta_{C}(\varphi-\psi')$，则有$$ \Delta_{C}(\varphi-\psi)=\Delta_{C}(\varphi-\psi')\tag{3-19} $$其实，上式对任何曲线 $C$（不一定闭曲线）也成立。这是因为，平行移动使向量的交角不变，即 $\Delta_{C}(\psi'-\psi)=0$，于是$$ \Delta_{C}(\varphi-\psi)-\Delta_{C}(\varphi-\psi')=\Delta_{C}(\psi'-\psi)=0. $$
 
 **定理 (Poincaré)** @172
 
-对于紧致定向曲面 $S$ 上的任何只有孤立奇点的向量场 $\boldsymbol{w}$，它在所有奇点处的指标之和等于曲面的 Euler-Poincaré 示性数 $\chi$，即$$\sum_{i}I_{i}=\chi\tag{3-20}$$
+对于紧致定向曲面 $S$ 上的任何只有孤立奇点的向量场 $\boldsymbol{w}$，它在所有奇点处的指标之和等于曲面的 Euler-Poincaré 示性数 $\chi$，即$$ \sum_{i}I_{i}=\chi\tag{3-20} $$
 
 **推论 (紧致曲面的奇点)** @172
 
@@ -2478,7 +2478,7 @@ Plateau 问题属于存在性一类的问题，而在极小曲面的研究中有
 
 **定理 (Jorgens 定理)** @178
 
-如果全平面 $(x,y)$ 上的函数 $\varphi(x,y)$ 满足$$\begin{cases}\varphi_{xx}\varphi_{yy}-\varphi_{xy}^{2}=1\\\varphi_{xx}>0\end{cases}\tag{3-33}$$则 $\varphi_{xx},\varphi_{xy},\varphi_{yy}$ 必为常数，因而 $\varphi$ 为 $x,y$ 的二次多项式。
+如果全平面 $(x,y)$ 上的函数 $\varphi(x,y)$ 满足$$ \begin{cases} \varphi_{xx}\varphi_{yy}-\varphi_{xy}^{2}=1\\ \varphi_{xx}>0 \end{cases}\tag{3-33} $$则 $\varphi_{xx},\varphi_{xy},\varphi_{yy}$ 必为常数，因而 $\varphi$ 为 $x,y$ 的二次多项式。
 
 **定理 (Heinz–Hopf 估计)** @181
 
@@ -2898,7 +2898,7 @@ $\boldsymbol{r}_1\perp\boldsymbol{r}_2$ 的充要条件是它们的数量积 $\b
 
 $\boldsymbol{r}_1$ 与 $\boldsymbol{r}_2$ 的向量积（或称外积）是
 
-$$\boldsymbol{r}_1\times\boldsymbol{r}_2=\left(\begin{vmatrix}y_1 & z_1\\y_2 & z_2\end{vmatrix},\begin{vmatrix}z_1 & x_1\\z_2 & x_2\end{vmatrix},\begin{vmatrix}x_1 & y_1\\x_2 & y_2\end{vmatrix}\right).$$
+$$\boldsymbol{r}_1\times\boldsymbol{r}_2 =\left( \begin{vmatrix} y_1 & z_1\\ y_2 & z_2 \end{vmatrix}, \begin{vmatrix} z_1 & x_1\\ z_2 & x_2 \end{vmatrix}, \begin{vmatrix} x_1 & y_1\\ x_2 & y_2 \end{vmatrix} \right).$$
 
 它是与 $\boldsymbol{r}_1,\boldsymbol{r}_2$ 同时垂直的一个向量，而且 $\boldsymbol{r}_1,\boldsymbol{r}_2,\boldsymbol{r}_1\times\boldsymbol{r}_2$ 成右手系。
 
@@ -2912,17 +2912,17 @@ $\boldsymbol{r}_1\parallel\boldsymbol{r}_2$ 的充要条件为 $\boldsymbol{r}_1
 
 1) 结合律：
 
-$$\lambda(\mu\boldsymbol{r})=(\lambda\mu)\boldsymbol{r},\qquad(\boldsymbol{r}_1+\boldsymbol{r}_2)+\boldsymbol{r}_3=\boldsymbol{r}_1+(\boldsymbol{r}_2+\boldsymbol{r}_3),$$
+$$\lambda(\mu\boldsymbol{r})=(\lambda\mu)\boldsymbol{r},\qquad (\boldsymbol{r}_1+\boldsymbol{r}_2)+\boldsymbol{r}_3=\boldsymbol{r}_1+(\boldsymbol{r}_2+\boldsymbol{r}_3),$$
 
-$$(\lambda\boldsymbol{r}_1)\cdot\boldsymbol{r}_2=\lambda(\boldsymbol{r}_1\cdot\boldsymbol{r}_2),\qquad(\lambda\boldsymbol{r}_1)\times\boldsymbol{r}_2=\lambda(\boldsymbol{r}_1\times\boldsymbol{r}_2).$$
+$$(\lambda\boldsymbol{r}_1)\cdot\boldsymbol{r}_2=\lambda(\boldsymbol{r}_1\cdot\boldsymbol{r}_2),\qquad (\lambda\boldsymbol{r}_1)\times\boldsymbol{r}_2=\lambda(\boldsymbol{r}_1\times\boldsymbol{r}_2).$$
 
 2) 交换律：
 
-$$\boldsymbol{r}_1+\boldsymbol{r}_2=\boldsymbol{r}_2+\boldsymbol{r}_1,\qquad\boldsymbol{r}_1\cdot\boldsymbol{r}_2=\boldsymbol{r}_2\cdot\boldsymbol{r}_1.$$
+$$\boldsymbol{r}_1+\boldsymbol{r}_2=\boldsymbol{r}_2+\boldsymbol{r}_1,\qquad \boldsymbol{r}_1\cdot\boldsymbol{r}_2=\boldsymbol{r}_2\cdot\boldsymbol{r}_1.$$
 
 3) 分配律：
 
-$$(\lambda+\mu)\boldsymbol{r}=\lambda\boldsymbol{r}+\mu\boldsymbol{r},\qquad\lambda(\boldsymbol{r}_1+\boldsymbol{r}_2)=\lambda\boldsymbol{r}_1+\lambda\boldsymbol{r}_2,$$
+$$(\lambda+\mu)\boldsymbol{r}=\lambda\boldsymbol{r}+\mu\boldsymbol{r},\qquad \lambda(\boldsymbol{r}_1+\boldsymbol{r}_2)=\lambda\boldsymbol{r}_1+\lambda\boldsymbol{r}_2,$$
 
 $$\boldsymbol{r}_1\cdot(\boldsymbol{r}_2+\boldsymbol{r}_3)=\boldsymbol{r}_1\cdot\boldsymbol{r}_2+\boldsymbol{r}_1\cdot\boldsymbol{r}_3,$$
 
@@ -2936,7 +2936,7 @@ $$\boldsymbol{r}_1\times\boldsymbol{r}_2=-\boldsymbol{r}_2\times\boldsymbol{r}_1
 
 三个向量 $\boldsymbol{r}_1,\boldsymbol{r}_2,\boldsymbol{r}_3$ 的混合积是
 
-$$(\boldsymbol{r}_1,\boldsymbol{r}_2,\boldsymbol{r}_3)=(\boldsymbol{r}_1\times\boldsymbol{r}_2)\cdot\boldsymbol{r}_3=\begin{vmatrix}x_1 & y_1 & z_1\\x_2 & y_2 & z_2\\x_3 & y_3 & z_3\end{vmatrix}.$$
+$$(\boldsymbol{r}_1,\boldsymbol{r}_2,\boldsymbol{r}_3)=(\boldsymbol{r}_1\times\boldsymbol{r}_2)\cdot\boldsymbol{r}_3= \begin{vmatrix} x_1 & y_1 & z_1\\ x_2 & y_2 & z_2\\ x_3 & y_3 & z_3 \end{vmatrix}.$$
 
 它的绝对值表示以 $\boldsymbol{r}_1,\boldsymbol{r}_2,\boldsymbol{r}_3$ 为棱的平行六面体的体积。
 
@@ -2954,7 +2954,7 @@ $$(\boldsymbol{r}_1,\boldsymbol{r}_2,\boldsymbol{r}_3)>0.$$
 
 关于向量的数量积和向量积，还成立着下面的 Lagrange 恒等式：
 
-$$(\boldsymbol{r}_1\times\boldsymbol{r}_2)\cdot(\boldsymbol{r}_3\times\boldsymbol{r}_4)=(\boldsymbol{r}_1\cdot\boldsymbol{r}_3)(\boldsymbol{r}_2\cdot\boldsymbol{r}_4)-(\boldsymbol{r}_1\cdot\boldsymbol{r}_4)(\boldsymbol{r}_2\cdot\boldsymbol{r}_3).$$
+$$(\boldsymbol{r}_1\times\boldsymbol{r}_2)\cdot(\boldsymbol{r}_3\times\boldsymbol{r}_4) =(\boldsymbol{r}_1\cdot\boldsymbol{r}_3)(\boldsymbol{r}_2\cdot\boldsymbol{r}_4) -(\boldsymbol{r}_1\cdot\boldsymbol{r}_4)(\boldsymbol{r}_2\cdot\boldsymbol{r}_3).$$
 
 这个恒等式可以通过把各个向量都用分量表示后直接加以验证。
 
@@ -2962,7 +2962,7 @@ $$(\boldsymbol{r}_1\times\boldsymbol{r}_2)\cdot(\boldsymbol{r}_3\times\boldsymbo
 
 关于三个向量的双重向量积，成立
 
-$$(\boldsymbol{r}_1\times\boldsymbol{r}_2)\times\boldsymbol{r}_3=(\boldsymbol{r}_1\cdot\boldsymbol{r}_3)\boldsymbol{r}_2-(\boldsymbol{r}_2\cdot\boldsymbol{r}_3)\boldsymbol{r}_1.$$
+$$(\boldsymbol{r}_1\times\boldsymbol{r}_2)\times\boldsymbol{r}_3 =(\boldsymbol{r}_1\cdot\boldsymbol{r}_3)\boldsymbol{r}_2-(\boldsymbol{r}_2\cdot\boldsymbol{r}_3)\boldsymbol{r}_1.$$
 
 ### A2 向量函数 极限（p200–200）
 
@@ -3016,13 +3016,13 @@ $$\lim_{\Delta t\to 0}\frac{\boldsymbol{r}(t_0+\Delta t)-\boldsymbol{r}(t_0)}{\D
 
 存在，则称 $\boldsymbol{r}(t)$ 在 $t_0$ 是可微分的，这个极限称为 $\boldsymbol{r}(t)$ 在 $t_0$ 的导向量，记为 $\left(\dfrac{\mathrm{d}\boldsymbol{r}}{\mathrm{d}t}\right)_{t_0}$ 或 $\boldsymbol{r}'(t_0)$：
 
-$$\left(\frac{\mathrm{d}\boldsymbol{r}}{\mathrm{d}t}\right)_{t_0}=\boldsymbol{r}'(t_0)=\lim_{\Delta t\to 0}\frac{\boldsymbol{r}(t_0+\Delta t)-\boldsymbol{r}(t_0)}{\Delta t}.$$
+$$\left(\frac{\mathrm{d}\boldsymbol{r}}{\mathrm{d}t}\right)_{t_0}=\boldsymbol{r}'(t_0) =\lim_{\Delta t\to 0}\frac{\boldsymbol{r}(t_0+\Delta t)-\boldsymbol{r}(t_0)}{\Delta t}.$$
 
 **定理 (导向量的分量表示)** @201
 
 从极限的定义出发，容易证明下式成立：
 
-$$\left(\frac{\mathrm{d}\boldsymbol{r}}{\mathrm{d}t}\right)_{t_0}=\boldsymbol{r}'(t_0)=(x'(t_0),y'(t_0),z'(t_0)).$$
+$$\left(\frac{\mathrm{d}\boldsymbol{r}}{\mathrm{d}t}\right)_{t_0}=\boldsymbol{r}'(t_0) =(x'(t_0),y'(t_0),z'(t_0)).$$
 
 **定义 (区间上可微)** @201
 
@@ -3032,31 +3032,31 @@ $$\left(\frac{\mathrm{d}\boldsymbol{r}}{\mathrm{d}t}\right)_{t_0}=\boldsymbol{r}
 
 不难验证以下的微分公式：
 
-$$(\lambda\boldsymbol{r})'=\lambda'\boldsymbol{r}+\lambda\boldsymbol{r}',\qquad(\boldsymbol{r}_1+\boldsymbol{r}_2)'=\boldsymbol{r}_1'+\boldsymbol{r}_2',$$
+$$(\lambda\boldsymbol{r})'=\lambda'\boldsymbol{r}+\lambda\boldsymbol{r}',\qquad (\boldsymbol{r}_1+\boldsymbol{r}_2)'=\boldsymbol{r}_1'+\boldsymbol{r}_2',$$
 
 $$(\boldsymbol{r}_1\cdot\boldsymbol{r}_2)'=\boldsymbol{r}_1'\cdot\boldsymbol{r}_2+\boldsymbol{r}_1\cdot\boldsymbol{r}_2',$$
 
 $$(\boldsymbol{r}_1\times\boldsymbol{r}_2)'=\boldsymbol{r}_1'\times\boldsymbol{r}_2+\boldsymbol{r}_1\times\boldsymbol{r}_2',$$
 
-$$(\boldsymbol{r}_1,\boldsymbol{r}_2,\boldsymbol{r}_3)'=(\boldsymbol{r}_1',\boldsymbol{r}_2,\boldsymbol{r}_3)+(\boldsymbol{r}_1,\boldsymbol{r}_2',\boldsymbol{r}_3)+(\boldsymbol{r}_1,\boldsymbol{r}_2,\boldsymbol{r}_3').$$
+$$(\boldsymbol{r}_1,\boldsymbol{r}_2,\boldsymbol{r}_3)' =(\boldsymbol{r}_1',\boldsymbol{r}_2,\boldsymbol{r}_3)+(\boldsymbol{r}_1,\boldsymbol{r}_2',\boldsymbol{r}_3) +(\boldsymbol{r}_1,\boldsymbol{r}_2,\boldsymbol{r}_3').$$
 
 **定义 (向量函数的微分)** @201
 
 向量函数 $\boldsymbol{r}(t)=(x(t),y(t),z(t))$ 微分的定义和普通函数一样：
 
-$$\mathrm{d}\boldsymbol{r}=\boldsymbol{r}'(t)\,\mathrm{d}t=(\mathrm{d}x(t),\mathrm{d}y(t),\mathrm{d}z(t)).$$
+$$\mathrm{d}\boldsymbol{r}=\boldsymbol{r}'(t)\,\mathrm{d}t =(\mathrm{d}x(t),\mathrm{d}y(t),\mathrm{d}z(t)).$$
 
 **定理 (复合函数的导数)** @201
 
 对于复合函数 $\boldsymbol{r}=\boldsymbol{r}(t)$，$t=\varphi(u)$，则可以验证
 
-$$\frac{\mathrm{d}\boldsymbol{r}}{\mathrm{d}u}=\frac{\mathrm{d}\boldsymbol{r}}{\mathrm{d}t}\frac{\mathrm{d}t}{\mathrm{d}u}=\boldsymbol{r}'(t)\varphi'(u).$$
+$$\frac{\mathrm{d}\boldsymbol{r}}{\mathrm{d}u} =\frac{\mathrm{d}\boldsymbol{r}}{\mathrm{d}t}\frac{\mathrm{d}t}{\mathrm{d}u} =\boldsymbol{r}'(t)\varphi'(u).$$
 
 **定义 (偏导向量)** @201
 
 若向量函数是两个或更多变量的函数（即它的分量是两个或更多变量的函数）时，类似于普通数量函数的偏导数，可以得到偏导向量的概念。例如，设 $\boldsymbol{r}(u,v)=(x(u,v),y(u,v),z(u,v))$，则有
 
-$$\boldsymbol{r}_u=\frac{\partial\boldsymbol{r}}{\partial u}=(x_u,y_u,z_u),\qquad\boldsymbol{r}_v=\frac{\partial\boldsymbol{r}}{\partial v}=(x_v,y_v,z_v),$$
+$$\boldsymbol{r}_u=\frac{\partial\boldsymbol{r}}{\partial u}=(x_u,y_u,z_u),\qquad \boldsymbol{r}_v=\frac{\partial\boldsymbol{r}}{\partial v}=(x_v,y_v,z_v),$$
 
 这里
 
@@ -3068,7 +3068,7 @@ $$x_v=\frac{\partial x}{\partial v},\quad y_v=\frac{\partial y}{\partial v},\qua
 
 对于复合向量函数 $\boldsymbol{r}(u,v)=(x(u,v),y(u,v),z(u,v))$，$u=u(\bar{u},\bar{v})$，$v=v(\bar{u},\bar{v})$，则成立链式法则：
 
-$$\boldsymbol{r}_{\bar{u}}=\boldsymbol{r}_u\frac{\partial u}{\partial\bar{u}}+\boldsymbol{r}_v\frac{\partial v}{\partial\bar{u}},\qquad\boldsymbol{r}_{\bar{v}}=\boldsymbol{r}_u\frac{\partial u}{\partial\bar{v}}+\boldsymbol{r}_v\frac{\partial v}{\partial\bar{v}}.$$
+$$\boldsymbol{r}_{\bar{u}}=\boldsymbol{r}_u\frac{\partial u}{\partial\bar{u}}+\boldsymbol{r}_v\frac{\partial v}{\partial\bar{u}},\qquad \boldsymbol{r}_{\bar{v}}=\boldsymbol{r}_u\frac{\partial u}{\partial\bar{v}}+\boldsymbol{r}_v\frac{\partial v}{\partial\bar{v}}.$$
 
 ### A4 向量函数的积分（p202–202）
 
@@ -3076,7 +3076,7 @@ $$\boldsymbol{r}_{\bar{u}}=\boldsymbol{r}_u\frac{\partial u}{\partial\bar{u}}+\b
 
 设向量函数 $\boldsymbol{r}(t)=(x(t),y(t),z(t))$，则 $\boldsymbol{r}(t)$ 的不定积分是
 
-$$\int\boldsymbol{r}(t)\,\mathrm{d}t=\left(\int x(t)\,\mathrm{d}t,\ \int y(t)\,\mathrm{d}t,\ \int z(t)\,\mathrm{d}t\right).$$
+$$\int\boldsymbol{r}(t)\,\mathrm{d}t =\left(\int x(t)\,\mathrm{d}t,\ \int y(t)\,\mathrm{d}t,\ \int z(t)\,\mathrm{d}t\right).$$
 
 **定理 (不定积分的性质)** @202
 
@@ -3084,11 +3084,11 @@ $$\int\boldsymbol{r}(t)\,\mathrm{d}t=\left(\int x(t)\,\mathrm{d}t,\ \int y(t)\,\
 
 $$\int\lambda\boldsymbol{r}(t)\,\mathrm{d}t=\lambda\int\boldsymbol{r}(t)\,\mathrm{d}t,$$
 
-$$\int[\boldsymbol{r}_1(t)+\boldsymbol{r}_2(t)]\,\mathrm{d}t=\int\boldsymbol{r}_1(t)\,\mathrm{d}t+\int\boldsymbol{r}_2(t)\,\mathrm{d}t,$$
+$$\int[\boldsymbol{r}_1(t)+\boldsymbol{r}_2(t)]\,\mathrm{d}t =\int\boldsymbol{r}_1(t)\,\mathrm{d}t+\int\boldsymbol{r}_2(t)\,\mathrm{d}t,$$
 
-$$\int\boldsymbol{v}\cdot\boldsymbol{r}(t)\,\mathrm{d}t=\boldsymbol{v}\cdot\int\boldsymbol{r}(t)\,\mathrm{d}t,$$
+$$\int\boldsymbol{v}\cdot\boldsymbol{r}(t)\,\mathrm{d}t =\boldsymbol{v}\cdot\int\boldsymbol{r}(t)\,\mathrm{d}t,$$
 
-$$\int\boldsymbol{v}\times\boldsymbol{r}(t)\,\mathrm{d}t=\boldsymbol{v}\times\int\boldsymbol{r}(t)\,\mathrm{d}t,$$
+$$\int\boldsymbol{v}\times\boldsymbol{r}(t)\,\mathrm{d}t =\boldsymbol{v}\times\int\boldsymbol{r}(t)\,\mathrm{d}t,$$
 
 其中 $\lambda$ 表示常数，$\boldsymbol{v}$ 表示常向量。
 
@@ -3096,7 +3096,7 @@ $$\int\boldsymbol{v}\times\boldsymbol{r}(t)\,\mathrm{d}t=\boldsymbol{v}\times\in
 
 同样可以定义向量函数 $\boldsymbol{r}(t)=(x(t),y(t),z(t))$ 的定积分：
 
-$$\int_a^b\boldsymbol{r}(t)\,\mathrm{d}t=\left(\int_a^b x(t)\,\mathrm{d}t,\ \int_a^b y(t)\,\mathrm{d}t,\ \int_a^b z(t)\,\mathrm{d}t\right).$$
+$$\int_a^b\boldsymbol{r}(t)\,\mathrm{d}t =\left(\int_a^b x(t)\,\mathrm{d}t,\ \int_a^b y(t)\,\mathrm{d}t,\ \int_a^b z(t)\,\mathrm{d}t\right).$$
 
 于是关于数量函数的定积分的许多性质都可以立即推广到向量函数。
 

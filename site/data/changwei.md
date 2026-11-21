@@ -20,7 +20,7 @@
 
 **例 (四个常微分方程)** @2
 
-例如，下面的方程都是常微分方程：$$\begin{aligned}&(1)\ \frac{\mathrm{d}y}{\mathrm{d}x}+\frac{1}{x}y=x^{3}\quad(x\neq 0),\\&(2)\ \frac{\mathrm{d}y}{\mathrm{d}x}=1+y^{2},\\&(3)\ y''+yy'=x,\\&(4)\ \frac{\mathrm{d}^{2}\theta}{\mathrm{d}t^{2}}+a^{2}\theta=0.\end{aligned}\tag{1.2}$$
+例如，下面的方程都是常微分方程：$$\begin{aligned} &(1)\ \frac{\mathrm{d}y}{\mathrm{d}x}+\frac{1}{x}y=x^{3}\quad(x\neq 0),\\ &(2)\ \frac{\mathrm{d}y}{\mathrm{d}x}=1+y^{2},\\ &(3)\ y''+yy'=x,\\ &(4)\ \frac{\mathrm{d}^{2}\theta}{\mathrm{d}t^{2}}+a^{2}\theta=0. \end{aligned}\tag{1.2}$$
 
 在前三个方程中，$x$ 是自变量，$y$ 是未知函数；在最后一个方程中，$t$ 是自变量，$\theta$ 是未知函数（而 $a>0$ 是常数）。前两个方程都是一阶的；后两个方程都是二阶的。
 
@@ -50,7 +50,7 @@
 
 **定义 1.3 (通解与特解)** @3
 
-设 $n$ 阶微分方程 (1.1) 的解$$y=\varphi(x,C_{1},C_{2},\cdots,C_{n})\tag{1.3}$$包含 $n$ 个独立的任意常数 $C_{1},C_{2},\cdots,C_{n}$，则称它为**通解**。这里所说 $n$ 个任意常数 $C_{1},C_{2},\cdots,C_{n}$ 是独立的，其含义是雅可比（Jacobi，1804—1851）行列式$$\frac{D(\varphi,\varphi',\cdots,\varphi^{(n-1)})}{D(C_{1},C_{2},\cdots,C_{n})}\overset{\mathrm{def}}{=}\begin{vmatrix}\dfrac{\partial\varphi}{\partial C_{1}} & \dfrac{\partial\varphi}{\partial C_{2}} & \cdots & \dfrac{\partial\varphi}{\partial C_{n}}\\[2mm]\dfrac{\partial\varphi'}{\partial C_{1}} & \dfrac{\partial\varphi'}{\partial C_{2}} & \cdots & \dfrac{\partial\varphi'}{\partial C_{n}}\\[2mm]\vdots & \vdots & & \vdots\\[2mm]\dfrac{\partial\varphi^{(n-1)}}{\partial C_{1}} & \dfrac{\partial\varphi^{(n-1)}}{\partial C_{2}} & \cdots & \dfrac{\partial\varphi^{(n-1)}}{\partial C_{n}}\end{vmatrix}\neq 0,$$其中$$\begin{cases}\varphi=\varphi(x,C_{1},C_{2},\cdots,C_{n}),\\\varphi'=\varphi'(x,C_{1},C_{2},\cdots,C_{n}),\\\cdots\cdots\cdots\cdots\\\varphi^{(n-1)}=\varphi^{(n-1)}(x,C_{1},C_{2},\cdots,C_{n}).\end{cases}$$
+设 $n$ 阶微分方程 (1.1) 的解$$y=\varphi(x,C_{1},C_{2},\cdots,C_{n})\tag{1.3}$$包含 $n$ 个独立的任意常数 $C_{1},C_{2},\cdots,C_{n}$，则称它为**通解**。这里所说 $n$ 个任意常数 $C_{1},C_{2},\cdots,C_{n}$ 是独立的，其含义是雅可比（Jacobi，1804—1851）行列式$$\frac{D(\varphi,\varphi',\cdots,\varphi^{(n-1)})}{D(C_{1},C_{2},\cdots,C_{n})} \overset{\mathrm{def}}{=} \begin{vmatrix} \dfrac{\partial\varphi}{\partial C_{1}} & \dfrac{\partial\varphi}{\partial C_{2}} & \cdots & \dfrac{\partial\varphi}{\partial C_{n}}\\[2mm] \dfrac{\partial\varphi'}{\partial C_{1}} & \dfrac{\partial\varphi'}{\partial C_{2}} & \cdots & \dfrac{\partial\varphi'}{\partial C_{n}}\\[2mm] \vdots & \vdots & & \vdots\\[2mm] \dfrac{\partial\varphi^{(n-1)}}{\partial C_{1}} & \dfrac{\partial\varphi^{(n-1)}}{\partial C_{2}} & \cdots & \dfrac{\partial\varphi^{(n-1)}}{\partial C_{n}} \end{vmatrix}\neq 0,$$其中$$\begin{cases} \varphi=\varphi(x,C_{1},C_{2},\cdots,C_{n}),\\ \varphi'=\varphi'(x,C_{1},C_{2},\cdots,C_{n}),\\ \cdots\cdots\cdots\cdots\\ \varphi^{(n-1)}=\varphi^{(n-1)}(x,C_{1},C_{2},\cdots,C_{n}). \end{cases}$$
 
 如果微分方程 (1.1) 的解 $y=\varphi(x)$ 不包含任意常数，则称它为**特解**。显然，当任意常数一旦确定之后，通解也就变成了特解。
 
@@ -70,13 +70,13 @@
 
 现在，把初值条件 (1.7) 分别代入 (1.6) 式和 (1.5) 式，可以得到 $C_{2}=y_{0}$ 和 $C_{1}=v_{0}$。这样，在初值条件 (1.7) 下，微分方程 (1.4) 有唯一确定的解$$y=-\frac{1}{2}gt^{2}+v_{0}t+y_{0},\tag{1.8}$$因此它描述了具有初始高度 $y_{0}$ 和初始速度 $v_{0}$ 的自由落体运动。
 
-称 (1.8) 式是**初值问题** $(1.4)+(1.7)$ 的解，亦即初值问题$$\begin{cases}\ddot{y}=-g,\\y(0)=y_{0},\ \dot{y}(0)=v_{0}\end{cases}\tag{1.9}$$的解。初值问题又名**柯西（Cauchy，1789—1857）问题**。
+称 (1.8) 式是**初值问题** $(1.4)+(1.7)$ 的解，亦即初值问题$$\begin{cases} \ddot{y}=-g,\\ y(0)=y_{0},\ \dot{y}(0)=v_{0} \end{cases}\tag{1.9}$$的解。初值问题又名**柯西（Cauchy，1789—1857）问题**。
 
 从上面简单的实例分析中，可以得出下面的启示：
 
 第一，微分方程的求解与一定的积分运算相联系。因此常把求解微分方程的过程称为积分一个微分方程，而把微分方程的解叫作**积分**。由于每进行一次不定积分运算，就会产生一个任意常数，因此就微分方程本身的积分（不顾及定解条件）而言，$n$ 阶微分方程的通解应该包含 $n$ 个任意常数。关于 $n$ 阶微分方程的通解所包含的 $n$ 个任意常数的独立性，以及在一定条件下在局部范围内通解包含微分方程所有解的讨论，将在第十章中进行。
 
-第二，微分方程所描述的是物体运动的瞬时（局部）规律。求解微分方程，就是从这种瞬时（局部）规律出发，去获得运动的全过程。为此，需要给定运动的初始状态（即如上所说的初值条件），以便确定运动的全过程（它的未来，甚至它的过去）。对于 $n$ 阶微分方程 (1.1)，初值条件的一般提法是$$y(x_{0})=y_{0},\ y'(x_{0})=y'_{0},\ \cdots,\ y^{(n-1)}(x_{0})=y^{(n-1)}_{0},$$其中 $x_{0}$ 是自变量所取定的某个初值，而 $y_{0},y'_{0},\cdots,y^{(n-1)}_{0}$ 是未知函数及其相应导数所取定的初值。这样，不失一般性，$n$ 阶微分方程的初值问题可以提成如下形式：$$\begin{cases}y^{(n)}=F(x,y,y',\cdots,y^{(n-1)}),\\y(x_{0})=y_{0},\ y'(x_{0})=y'_{0},\ \cdots,\ y^{(n-1)}(x_{0})=y^{(n-1)}_{0}.\end{cases}\tag{1.10}$$
+第二，微分方程所描述的是物体运动的瞬时（局部）规律。求解微分方程，就是从这种瞬时（局部）规律出发，去获得运动的全过程。为此，需要给定运动的初始状态（即如上所说的初值条件），以便确定运动的全过程（它的未来，甚至它的过去）。对于 $n$ 阶微分方程 (1.1)，初值条件的一般提法是$$y(x_{0})=y_{0},\ y'(x_{0})=y'_{0},\ \cdots,\ y^{(n-1)}(x_{0})=y^{(n-1)}_{0},$$其中 $x_{0}$ 是自变量所取定的某个初值，而 $y_{0},y'_{0},\cdots,y^{(n-1)}_{0}$ 是未知函数及其相应导数所取定的初值。这样，不失一般性，$n$ 阶微分方程的初值问题可以提成如下形式：$$\begin{cases} y^{(n)}=F(x,y,y',\cdots,y^{(n-1)}),\\ y(x_{0})=y_{0},\ y'(x_{0})=y'_{0},\ \cdots,\ y^{(n-1)}(x_{0})=y^{(n-1)}_{0}. \end{cases}\tag{1.10}$$
 
 自然要问：当函数 $F$ 满足什么条件时，初值问题 (1.10) 的解是存在的，或者更进一步，是存在而且唯一的。这是常微分方程理论中的一个基本问题。在第三章中将就 $n=1$ 的情形证明：只要 $F$ 是连续的，则初值问题 (1.10) 的解是（局部）存在的，而且将在某些附加条件下证明解的存在和唯一性。在第五章再把这些结果进一步推广到 $n\geqslant 2$ 的情形。
 
@@ -268,7 +268,7 @@ $$\frac{dy}{dx}=\frac{\bigl\{[(x-a)^2+y^2]^{3/2}-[(x+a)^2+y^2]^{3/2}\bigr\}y}{(x
 
 **注 1 (分组凑全微分)** @14
 
-对于某些恰当方程，可以采用更简便的分组凑全微分的方法求解。例如，对于方程 (2.11) 的左端，可用如下分组求积的方法：$$\begin{aligned}&(2x\sin y+3x^2y)\,\mathrm{d}x+(x^3+x^2\cos y+y^2)\,\mathrm{d}y\\={}&(2x\sin y\,\mathrm{d}x+x^2\cos y\,\mathrm{d}y)+(3x^2y\,\mathrm{d}x+x^3\,\mathrm{d}y)+y^2\,\mathrm{d}y\\={}&(\sin y\,\mathrm{d}x^2+x^2\,\mathrm{d}\sin y)+(y\,\mathrm{d}x^3+x^3\,\mathrm{d}y)+y^2\,\mathrm{d}y\\={}&\mathrm{d}(x^2\sin y)+\mathrm{d}(x^3y)+\mathrm{d}\left(\frac{1}{3}y^3\right)\\={}&\mathrm{d}\left(x^2\sin y+x^3y+\frac{1}{3}y^3\right),\end{aligned}$$由此可直接得到通积分 (2.13)。
+对于某些恰当方程，可以采用更简便的分组凑全微分的方法求解。例如，对于方程 (2.11) 的左端，可用如下分组求积的方法：$$\begin{aligned} &(2x\sin y+3x^2y)\,\mathrm{d}x+(x^3+x^2\cos y+y^2)\,\mathrm{d}y\\ ={}&(2x\sin y\,\mathrm{d}x+x^2\cos y\,\mathrm{d}y)+(3x^2y\,\mathrm{d}x+x^3\,\mathrm{d}y)+y^2\,\mathrm{d}y\\ ={}&(\sin y\,\mathrm{d}x^2+x^2\,\mathrm{d}\sin y)+(y\,\mathrm{d}x^3+x^3\,\mathrm{d}y)+y^2\,\mathrm{d}y\\ ={}&\mathrm{d}(x^2\sin y)+\mathrm{d}(x^3y)+\mathrm{d}\left(\frac{1}{3}y^3\right)\\ ={}&\mathrm{d}\left(x^2\sin y+x^3y+\frac{1}{3}y^3\right), \end{aligned}$$由此可直接得到通积分 (2.13)。
 
 **注 2 (与位势问题的联系)** @14
 
@@ -520,7 +520,7 @@ $RL$ 串联电路（图 2-5）：电感 $L$、电阻 $R$ 及电源电压 $U$ 均
 
 **求法.** 先由 (2.65) 求出该族中每条曲线所满足的微分方程，再利用等角轨线的几何解释写出等角轨线应满足的微分方程，解之即得所求曲线族。
 
-设 $\Phi'_C\neq 0$，由联立方程$$\Phi(x,y,C)=0,\qquad \Phi'_x(x,y,C)\,\mathrm{d}x+\Phi'_y(x,y,C)\,\mathrm{d}y=0\tag{2.67}$$消去 $C$，得曲线族 (2.65) 所满足的微分方程$$\frac{\mathrm{d}y}{\mathrm{d}x}=H(x,y),\qquadH(x,y)=-\frac{\Phi'_x(x,y,C(x,y))}{\Phi'_y(x,y,C(x,y))},\tag{2.68}$$其中 $C=C(x,y)$ 由 $\Phi(x,y,C)=0$ 决定。
+设 $\Phi'_C\neq 0$，由联立方程$$\Phi(x,y,C)=0,\qquad \Phi'_x(x,y,C)\,\mathrm{d}x+\Phi'_y(x,y,C)\,\mathrm{d}y=0\tag{2.67}$$消去 $C$，得曲线族 (2.65) 所满足的微分方程$$\frac{\mathrm{d}y}{\mathrm{d}x}=H(x,y),\qquad H(x,y)=-\frac{\Phi'_x(x,y,C(x,y))}{\Phi'_y(x,y,C(x,y))},\tag{2.68}$$其中 $C=C(x,y)$ 由 $\Phi(x,y,C)=0$ 决定。
 
 把 (2.68) 在点 $(x,y)$ 的线素斜率记为 $y'_1$，把与它相交成 $\alpha$ 角的线素斜率记为 $y'$，则当 $\alpha\neq\dfrac{\pi}{2}$ 时 $\tan\alpha=\dfrac{y'-y'_1}{1+y'y'_1}$，以 $y'_1=H(x,y)$ 代入，得等角轨线的微分方程$$\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{H(x,y)+\tan\alpha}{1-H(x,y)\tan\alpha}.\tag{2.69}$$当 $\alpha=\dfrac{\pi}{2}$ 时由 $y'=-\dfrac{1}{y'_1}$ 得正交轨线的微分方程$$\frac{\mathrm{d}y}{\mathrm{d}x}=-\frac{1}{H(x,y)}.\tag{2.70}$$
 
@@ -550,7 +550,7 @@ $RL$ 串联电路（图 2-5）：电感 $L$、电阻 $R$ 及电源电压 $U$ 均
 
 **例 3 (捕食者与被捕食者)** @39
 
-设捕者总数以 $x(t)$ 表示，食饵总数以 $y(t)$ 表示（$x,y$ 为光滑函数且 $x>0,\ y>0$）。食饵食物充足、生存空间足够，故不考虑捕者时其增长率为常数 $\mu>0$；捕者的存在使这一增长率降低，设降低量与 $x(t)$ 成正比，于是食饵的增长率为$$r_y=\mu-\delta x,\tag{2.80}$$其中 $\mu,\delta$ 为正常数。类似地，捕者的增长率为$$r_x=-\lambda+\sigma y,\tag{2.81}$$其中 $\lambda,\sigma$ 为正常数。在 (2.72) 中把 $N(t)$ 分别取为 $x(t)$、$y(t)$，增长率 $r$ 分别取 (2.81)、(2.80)，得捕者与食饵所满足的微分方程组$$\frac{\mathrm{d}x}{\mathrm{d}t}=x(-\lambda+\sigma y),\qquad\frac{\mathrm{d}y}{\mathrm{d}t}=y(\mu-\delta x).\tag{2.82}$$
+设捕者总数以 $x(t)$ 表示，食饵总数以 $y(t)$ 表示（$x,y$ 为光滑函数且 $x>0,\ y>0$）。食饵食物充足、生存空间足够，故不考虑捕者时其增长率为常数 $\mu>0$；捕者的存在使这一增长率降低，设降低量与 $x(t)$ 成正比，于是食饵的增长率为$$r_y=\mu-\delta x,\tag{2.80}$$其中 $\mu,\delta$ 为正常数。类似地，捕者的增长率为$$r_x=-\lambda+\sigma y,\tag{2.81}$$其中 $\lambda,\sigma$ 为正常数。在 (2.72) 中把 $N(t)$ 分别取为 $x(t)$、$y(t)$，增长率 $r$ 分别取 (2.81)、(2.80)，得捕者与食饵所满足的微分方程组$$\frac{\mathrm{d}x}{\mathrm{d}t}=x(-\lambda+\sigma y),\qquad \frac{\mathrm{d}y}{\mathrm{d}t}=y(\mu-\delta x).\tag{2.82}$$
 
 (2.82) 的右端与 $t$ 无关，两式相除消去 $\mathrm{d}t$，得只含 $x,y$ 的变量分离方程$$\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{y(\mu-\delta x)}{x(-\lambda+\sigma y)},\tag{2.83}$$积分后得 (2.82) 的通积分$$H(x,y)\stackrel{\text{def}}{=}\delta x+\sigma y-\mu\ln x-\lambda\ln y=h,\tag{2.84}$$其中 $h$ 为任意常数。
 
@@ -564,7 +564,7 @@ $RL$ 串联电路（图 2-5）：电感 $L$、电阻 $R$ 及电源电压 $U$ 均
 
 依初值不同，$(x(t),y(t))$ 在不同闭曲线 $\Gamma_h$ 上取值，周期运动中 $x(t)$、$y(t)$ 的增减幅度不同，但两个物种数量的平均值$$[x]=\bar x=\frac{\mu}{\delta}\qquad\text{和}\qquad [y]=\bar y=\frac{\lambda}{\sigma},$$与闭曲线 $\Gamma_h$ 无关。事实上，设 $\Gamma_h$ 的周期为 $T_h$，则 $[x]=\dfrac{1}{T_h}\displaystyle\int_0^{T_h}x(t)\,\mathrm{d}t$，$[y]=\dfrac{1}{T_h}\displaystyle\int_0^{T_h}y(t)\,\mathrm{d}t$；由 (2.82) 得 $\dfrac{\mathrm{d}x}{x}=(-\lambda+\sigma y)\,\mathrm{d}t$，$\dfrac{\mathrm{d}y}{y}=(\mu-\delta x)\,\mathrm{d}t$，从 $0$ 到 $T_h$ 积分并利用周期性条件 $x(T_h)=x(0)$、$y(T_h)=y(0)$，即得上式。
 
-**外加捕捉的影响.** 若对两个物种同时施加一个外加捕捉行为，即 (2.82) 变为$$\frac{\mathrm{d}x}{\mathrm{d}t}=x[-(\lambda+\varepsilon)+\sigma y],\qquad\frac{\mathrm{d}y}{\mathrm{d}t}=y[(\mu-\varepsilon)-\delta x].\tag{2.86}$$当捕捉量不大（即 $\mu-\varepsilon>0$）时，(2.86) 与 (2.82) 描述同样的规律，相应的平均值变为$$\bar x=\frac{\mu-\varepsilon}{\delta},\qquad \bar y=\frac{\lambda+\varepsilon}{\sigma}.\tag{2.87}$$
+**外加捕捉的影响.** 若对两个物种同时施加一个外加捕捉行为，即 (2.82) 变为$$\frac{\mathrm{d}x}{\mathrm{d}t}=x[-(\lambda+\varepsilon)+\sigma y],\qquad \frac{\mathrm{d}y}{\mathrm{d}t}=y[(\mu-\varepsilon)-\delta x].\tag{2.86}$$当捕捉量不大（即 $\mu-\varepsilon>0$）时，(2.86) 与 (2.82) 描述同样的规律，相应的平均值变为$$\bar x=\frac{\mu-\varepsilon}{\delta},\qquad \bar y=\frac{\lambda+\varepsilon}{\sigma}.\tag{2.87}$$
 
 **结论.** 由 (2.87)，随着外加捕捉的增加（$\varepsilon$ 增大），捕者的平均量 $\bar x$ 减小，而被捕食者的平均量 $\bar y$ 上升；换言之，小量的外加捕捉对原来的捕者不利。若所考察的两个物种是农作物的害虫和它们的天敌，则施用少量农药会使天敌的平均量减少、害虫的平均量上升，而大量施药又会导致环境污染，因此采用生物治虫是更理想的选择。
 
@@ -650,7 +650,7 @@ $$(E_0):\ \frac{\mathrm{d}y}{\mathrm{d}x}=F(x,y),\qquad y(0)=0,$$
 
 其中函数
 
-$$F(x,y)=\begin{cases}0, & x=0,\ -\infty<y<+\infty,\\[2pt]2x, & 0<x\leqslant 1,\ -\infty<y<0,\\[2pt]2x-\dfrac{4y}{x}, & 0<x\leqslant 1,\ 0\leqslant y<x^2,\\[2pt]-2x, & 0<x\leqslant 1,\ x^2\leqslant y<+\infty.\end{cases}$$
+$$F(x,y)=\begin{cases} 0, & x=0,\ -\infty<y<+\infty,\\[2pt] 2x, & 0<x\leqslant 1,\ -\infty<y<0,\\[2pt] 2x-\dfrac{4y}{x}, & 0<x\leqslant 1,\ 0\leqslant y<x^2,\\[2pt] -2x, & 0<x\leqslant 1,\ x^2\leqslant y<+\infty. \end{cases}$$
 
 容易验证，函数 $F(x,y)$ 在条形区域
 
@@ -778,7 +778,7 @@ $$y_n(x)=(-1)^{n+1}x^2\qquad(0\leqslant x\leqslant 1;\ n=1,2,\cdots).$$
 
 **定理 3.6 (第一比较定理)** @63
 
-设函数 $f(x,y)$ 与 $F(x,y)$ 都在平面区域 $G$ 内连续且满足不等式$$f(x,y)<F(x,y),\qquad (x,y)\in G;\tag{3.29}$$又设函数 $y=\varphi(x)$ 与 $y=\Phi(x)$ 在区间 $(a,b)$ 上分别是初值问题$$(E_1):\ \frac{\mathrm{d}y}{\mathrm{d}x}=f(x,y),\qquad y(x_0)=y_0$$与$$(E_2):\ \frac{\mathrm{d}y}{\mathrm{d}x}=F(x,y),\qquad y(x_0)=y_0$$的解，其中 $(x_0,y_0)\in G$。则我们有$$\begin{cases}\varphi(x)<\Phi(x), & x\in(x_0,b),\\[2pt]\varphi(x)>\Phi(x), & x\in(a,x_0).\end{cases}\tag{3.30}$$
+设函数 $f(x,y)$ 与 $F(x,y)$ 都在平面区域 $G$ 内连续且满足不等式$$f(x,y)<F(x,y),\qquad (x,y)\in G;\tag{3.29}$$又设函数 $y=\varphi(x)$ 与 $y=\Phi(x)$ 在区间 $(a,b)$ 上分别是初值问题$$(E_1):\ \frac{\mathrm{d}y}{\mathrm{d}x}=f(x,y),\qquad y(x_0)=y_0$$与$$(E_2):\ \frac{\mathrm{d}y}{\mathrm{d}x}=F(x,y),\qquad y(x_0)=y_0$$的解，其中 $(x_0,y_0)\in G$。则我们有$$\begin{cases} \varphi(x)<\Phi(x), & x\in(x_0,b),\\[2pt] \varphi(x)>\Phi(x), & x\in(a,x_0). \end{cases}\tag{3.30}$$
 
 **注 1 (几何意义)** @64
 
@@ -798,7 +798,7 @@ $$y_n(x)=(-1)^{n+1}x^2\qquad(0\leqslant x\leqslant 1;\ n=1,2,\cdots).$$
 
 **定理 3.8 (第二比较定理)** @66
 
-设函数 $f(x,y)$ 与 $F(x,y)$ 都在平面区域 $G$ 内连续且满足$$f(x,y)\leqslant F(x,y),\qquad (x,y)\in G;$$又设函数 $y=\varphi(x)$ 与 $y=\Phi(x)$ 在区间 $(a,b)$ 上分别是初值问题$$(E_1):\ \frac{\mathrm{d}y}{\mathrm{d}x}=f(x,y),\qquad y(x_0)=y_0$$与$$(E_2):\ \frac{\mathrm{d}y}{\mathrm{d}x}=F(x,y),\qquad y(x_0)=y_0$$的解，其中 $(x_0,y_0)\in G$，并且 $y=\varphi(x)$ 是 $(E_1)$ 的右行最小解和左行最大解，$y=\Phi(x)$ 是 $(E_2)$ 的右行最大解和左行最小解，则有如下比较关系：$$\begin{cases}\varphi(x)\leqslant\Phi(x), & x\in[x_0,b),\\[2pt]\varphi(x)\geqslant\Phi(x), & x\in(a,x_0].\end{cases}$$
+设函数 $f(x,y)$ 与 $F(x,y)$ 都在平面区域 $G$ 内连续且满足$$f(x,y)\leqslant F(x,y),\qquad (x,y)\in G;$$又设函数 $y=\varphi(x)$ 与 $y=\Phi(x)$ 在区间 $(a,b)$ 上分别是初值问题$$(E_1):\ \frac{\mathrm{d}y}{\mathrm{d}x}=f(x,y),\qquad y(x_0)=y_0$$与$$(E_2):\ \frac{\mathrm{d}y}{\mathrm{d}x}=F(x,y),\qquad y(x_0)=y_0$$的解，其中 $(x_0,y_0)\in G$，并且 $y=\varphi(x)$ 是 $(E_1)$ 的右行最小解和左行最大解，$y=\Phi(x)$ 是 $(E_2)$ 的右行最大解和左行最小解，则有如下比较关系：$$\begin{cases} \varphi(x)\leqslant\Phi(x), & x\in[x_0,b),\\[2pt] \varphi(x)\geqslant\Phi(x), & x\in(a,x_0]. \end{cases}$$
 
 **例 1 (解的延伸趋势)** @66
 
@@ -816,9 +816,9 @@ $$y_n(x)=(-1)^{n+1}x^2\qquad(0\leqslant x\leqslant 1;\ n=1,2,\cdots).$$
 
 事实上，如果上述结论不成立，则存在 $x_1>\bar x$，使得当 $x=x_1$ 时 $\Gamma$ 与 $H$ 相交于 $P_1$ 点，而且 $\Gamma$ 从 $H$ 的左下方向右上方穿过 $H$。由此可见，在 $P_1$ 点 $\Gamma$ 的斜率 $y'(x_1)$ 大于或等于 $H$ 的斜率 $K_1$。由于 $P_1$ 点在直线 $L$ 的下方，所以双曲线 $H$ 在 $P_1$ 点的斜率$$K_1=-\left(2m-\frac{1}{2}\right)\frac{\pi}{x_1^2}>-1.$$然而$$y'(x_1)=\sin\bigl(x_1y(x_1)\bigr)=\sin\left(2m-\frac{1}{2}\right)\pi=-1.$$这是一个矛盾。因此，当 $x>\bar x$ 时 $\Gamma$ 必须在 $H$ 的下方，亦即$$0<y(x)<\left(2m-\frac{1}{2}\right)\frac{\pi}{x}.$$由这不等式就直接推出 (3.34) 式。
 
-其次，要证 $\Gamma$ 与 $L$ 确实相交。为此，考虑双曲线族$$H_k:\ xy=k\pi\qquad (x>0,\ y>0;\ k=1,2,\cdots)$$及其界定的区域$$G_k:\ (k-1)\pi<xy<k\pi,\quad x>0,\ y>0\qquad (k=1,2,\cdots).$$则由 (3.33) 式可见，积分曲线 $\Gamma$ 的斜率 $y'(x)$ 满足不等式$$\begin{cases}0<y'(x)<1, & (x,y(x))\in G_{2n-1},\\[2pt]-1<y'(x)<0, & (x,y(x))\in G_{2n}\end{cases}\qquad (n=1,2,\cdots).$$
+其次，要证 $\Gamma$ 与 $L$ 确实相交。为此，考虑双曲线族$$H_k:\ xy=k\pi\qquad (x>0,\ y>0;\ k=1,2,\cdots)$$及其界定的区域$$G_k:\ (k-1)\pi<xy<k\pi,\quad x>0,\ y>0\qquad (k=1,2,\cdots).$$则由 (3.33) 式可见，积分曲线 $\Gamma$ 的斜率 $y'(x)$ 满足不等式$$\begin{cases} 0<y'(x)<1, & (x,y(x))\in G_{2n-1},\\[2pt] -1<y'(x)<0, & (x,y(x))\in G_{2n} \end{cases}\qquad (n=1,2,\cdots).$$
 
-现在，从点 $P_0(0,y_0)$ 出发向右作一连续的折线 $\Lambda:y=u(x)\ (x\geqslant 0)$，使得它的节点 $P_k$ 分别在双曲线 $H_k$ 上，而各直线段的斜率满足条件$$u'(x)=\begin{cases}1, & (x,u(x))\in G_{2n-1},\\[2pt]0, & (x,u(x))\in G_{2n}.\end{cases}$$因此由第一比较定理得出，从 $P_0$ 点出发的积分曲线 $\Gamma:y=y(x)\ (x\geqslant 0)$ 一定在折线 $\Lambda$ 的下方（参见图 3-3）。
+现在，从点 $P_0(0,y_0)$ 出发向右作一连续的折线 $\Lambda:y=u(x)\ (x\geqslant 0)$，使得它的节点 $P_k$ 分别在双曲线 $H_k$ 上，而各直线段的斜率满足条件$$u'(x)=\begin{cases} 1, & (x,u(x))\in G_{2n-1},\\[2pt] 0, & (x,u(x))\in G_{2n}. \end{cases}$$因此由第一比较定理得出，从 $P_0$ 点出发的积分曲线 $\Gamma:y=y(x)\ (x\geqslant 0)$ 一定在折线 $\Lambda$ 的下方（参见图 3-3）。
 
 考虑折线 $\Lambda$ 的节点 $P_k(x_k,y_k)$。注意 $x_ky_k=k\pi$。现任取三个相邻的节点 $P_n,P_{n+1}$ 和 $P_{n+2}$，其中 $n$ 为奇数，则有$$x_{n+2}=\frac{(n+2)\pi}{y_{n+2}},\qquad x_{n+1}=\frac{(n+1)\pi}{y_{n+1}},\qquad x_n=\frac{n\pi}{y_n},$$而且 $y_{n+1}=y_n$，$y_{n+2}>y_n$。因此推出$$x_{n+1}-x_n=\frac{\pi}{y_n},\qquad x_{n+2}-x_{n+1}<\frac{\pi}{y_n},$$从而$$x_{n+2}-x_{n+1}<x_{n+1}-x_n.$$再利用 $y_{n+2}-y_n=y_{n+2}-y_{n+1}=x_{n+2}-x_{n+1}$，就推出$$\frac{y_{n+2}-y_n}{x_{n+2}-x_n}=\frac{x_{n+2}-x_{n+1}}{(x_{n+2}-x_{n+1})+(x_{n+1}-x_n)}<\frac{x_{n+2}-x_{n+1}}{2(x_{n+2}-x_{n+1})}=\frac{1}{2}.$$这就是说，直线段 $P_nP_{n+2}$ 的斜率小于 $\dfrac{1}{2}$，其中 $n$ 为奇数。因此，如果从 $P_1$ 点出发作一直线$$L_1:\ y-y_1=\frac{1}{2}(x-x_1),$$那么折线 $\Lambda$ 将在 $L_1$ 的下方，所以积分曲线 $\Gamma$ 也在 $L_1$ 的下方。因为 $P_0$ 点在 $L$ 的上方而在 $L_1$ 的下方，而且当 $x$ 增大时直线 $L_1$ 将从 $L$ 的上方进入下方，所以积分曲线 $\Gamma$ 也从 $L$ 的上方进入下方。这就证明了 $\Gamma$ 和 $L$ 的相交性。
 
@@ -828,9 +828,9 @@ $$y_n(x)=(-1)^{n+1}x^2\qquad(0\leqslant x\leqslant 1;\ n=1,2,\cdots).$$
 
 **证明梗概.** 由上一节的推论可知，初值问题 (3.36) 的解存在且唯一，并可延伸到包含坐标原点的任意区域的边界。证明分三步，细节留给读者完成。
 
-(1) 先证 $\dfrac{\pi}{4}\leqslant\beta\leqslant 1$。当 $|x|\leqslant 1$ 时显然有$$(y+1)^2\leqslant x^2+(y+1)^2\leqslant 1+(y+1)^2,$$因此可应用比较定理，把初值问题 (3.36) 的解与两个可积的初值问题$$(E_1):\ \frac{\mathrm{d}y}{\mathrm{d}x}=(y+1)^2,\quad y(0)=0;\qquad(E_2):\ \frac{\mathrm{d}y}{\mathrm{d}x}=1+(y+1)^2,\quad y(0)=0$$的解分别比较，从而得到 $\dfrac{\pi}{4}\leqslant\beta\leqslant 1$。
+(1) 先证 $\dfrac{\pi}{4}\leqslant\beta\leqslant 1$。当 $|x|\leqslant 1$ 时显然有$$(y+1)^2\leqslant x^2+(y+1)^2\leqslant 1+(y+1)^2,$$因此可应用比较定理，把初值问题 (3.36) 的解与两个可积的初值问题$$(E_1):\ \frac{\mathrm{d}y}{\mathrm{d}x}=(y+1)^2,\quad y(0)=0;\qquad (E_2):\ \frac{\mathrm{d}y}{\mathrm{d}x}=1+(y+1)^2,\quad y(0)=0$$的解分别比较，从而得到 $\dfrac{\pi}{4}\leqslant\beta\leqslant 1$。
 
-(2) 再证 $\beta<1$。在 (3.36) 的积分曲线上取一点 $(\xi,\eta)$，其中 $0<\xi\ll 1$，则初值问题$$(E_3):\ \frac{\mathrm{d}y}{\mathrm{d}x}=(y+1)^2,\qquad y(\xi)=\eta$$可积，且它的解的右侧最大存在区间为 $[0,C(\xi))$，其中 $C(\xi)=\xi+\dfrac{1}{\eta+1}$。由于$$\frac{\mathrm{d}C}{\mathrm{d}\xi}=1-\frac{1}{(\eta+1)^2}\frac{\mathrm{d}\eta}{\mathrm{d}\xi}=1-\frac{\xi^2+(\eta+1)^2}{(\eta+1)^2}<0,$$且 $C(0)=1$，因此当 $0<\xi\ll 1$ 时 $C(\xi)<1$。再对 (3.36) 和 $(E_3)$ 应用比较定理可得 $\beta<1$。
+(2) 再证 $\beta<1$。在 (3.36) 的积分曲线上取一点 $(\xi,\eta)$，其中 $0<\xi\ll 1$，则初值问题$$(E_3):\ \frac{\mathrm{d}y}{\mathrm{d}x}=(y+1)^2,\qquad y(\xi)=\eta$$可积，且它的解的右侧最大存在区间为 $[0,C(\xi))$，其中 $C(\xi)=\xi+\dfrac{1}{\eta+1}$。由于$$\frac{\mathrm{d}C}{\mathrm{d}\xi}=1-\frac{1}{(\eta+1)^2}\frac{\mathrm{d}\eta}{\mathrm{d}\xi} =1-\frac{\xi^2+(\eta+1)^2}{(\eta+1)^2}<0,$$且 $C(0)=1$，因此当 $0<\xi\ll 1$ 时 $C(\xi)<1$。再对 (3.36) 和 $(E_3)$ 应用比较定理可得 $\beta<1$。
 
 (3) 最后证 $\beta>\dfrac{\pi}{4}$。取正数 $\lambda$，使 $0<1-\lambda\ll 1$，则初值问题$$(E_4):\ \frac{\mathrm{d}y}{\mathrm{d}x}=\lambda^2+(y+1)^2,\qquad y(0)=0$$的解在右侧的最大存在区间为 $[0,\tilde C(\lambda))$。计算表明 $\tilde C(1)=\dfrac{\pi}{4}$ 而且$$\left.\frac{\mathrm{d}\tilde C(\lambda)}{\mathrm{d}\lambda}\right|_{\lambda=1}<0,$$因此当 $0<1-\lambda\ll 1$ 时 $\tilde C(\lambda)>\dfrac{\pi}{4}$。最后再对 (3.36) 和 $(E_4)$ 应用比较定理可得 $\beta>\dfrac{\pi}{4}$。
 
@@ -984,11 +984,11 @@ $$y_n(x)=(-1)^{n+1}x^2\qquad(0\leqslant x\leqslant 1;\ n=1,2,\cdots).$$
 
 **命题 (隐式关系解出 $u$ 及其二阶信息)** @86
 
-在定理 4.2 的条件下，对任意 $x_0\in J$，存在 $(x_0,0)$ 的一个邻域 $V$ 和 $V$ 上定义的函数 $u=\varphi(x,q)$，使得$$H\bigl(x,\varphi(x,q),q\bigr)\equiv0\quad\bigl((x,q)\in V\bigr),\qquad \varphi(x_0,0)=0,$$且对 $(x,0)\in V$ 成立$$\varphi'_x(x,0)=\varphi'_q(x,0)=0,\qquad\varphi''_{xx}(x,0)=\varphi''_{xq}(x,0)=0,$$$$\varphi''_{qq}(x,0)=-\frac{H''_{qq}(x,0,0)}{H'_u(x,0,0)}\neq0 .$$
+在定理 4.2 的条件下，对任意 $x_0\in J$，存在 $(x_0,0)$ 的一个邻域 $V$ 和 $V$ 上定义的函数 $u=\varphi(x,q)$，使得$$H\bigl(x,\varphi(x,q),q\bigr)\equiv0\quad\bigl((x,q)\in V\bigr),\qquad \varphi(x_0,0)=0,$$且对 $(x,0)\in V$ 成立$$\varphi'_x(x,0)=\varphi'_q(x,0)=0,\qquad \varphi''_{xx}(x,0)=\varphi''_{xq}(x,0)=0,$$$$\varphi''_{qq}(x,0)=-\frac{H''_{qq}(x,0,0)}{H'_u(x,0,0)}\neq0 .$$
 
 **命题 (由一阶初值问题构造相切解)** @87
 
-沿用命题 4.7 的 $\varphi$，对 $q\neq0$ 令$$h(x,q)=\frac{q-\varphi'_x(x,q)}{\varphi'_q(x,q)},$$并记 $\tilde h(x)=\lim_{q\to0}h(x,q)=\dfrac{1}{\varphi''_{qq}(x,0)}$；定义$$s(x,q)=\begin{cases}h(x,q),&q\neq0,\\[4pt] \tilde h(x),&q=0 .\end{cases}$$则 $s$ 在 $(x_0,0)$ 的某邻域内连续，初值问题$$\frac{\mathrm{d}q}{\mathrm{d}x}=s(x,q),\qquad q(x_0)=0$$在 $x_0$ 附近的某区间 $\tilde J\subset J$ 上存在解 $q=r(x)$。令 $\xi(x)=\varphi\bigl(x,r(x)\bigr)$，则$$\xi(x_0)=\xi'(x_0)=0,\qquad\xi''(x_0)=\varphi''_{qq}(x_0,0)\,\bigl(r'(x_0)\bigr)^2\neq0,$$从而 $y=\psi(x)+\xi(x)$ 也是方程 (4.22) 在 $\tilde J$ 上的解，它与 $y=\psi(x)$ 在 $x_0$ 处相切但不相同。
+沿用命题 4.7 的 $\varphi$，对 $q\neq0$ 令$$h(x,q)=\frac{q-\varphi'_x(x,q)}{\varphi'_q(x,q)},$$并记 $\tilde h(x)=\lim_{q\to0}h(x,q)=\dfrac{1}{\varphi''_{qq}(x,0)}$；定义$$s(x,q)=\begin{cases}h(x,q),&q\neq0,\\[4pt] \tilde h(x),&q=0 .\end{cases}$$则 $s$ 在 $(x_0,0)$ 的某邻域内连续，初值问题$$\frac{\mathrm{d}q}{\mathrm{d}x}=s(x,q),\qquad q(x_0)=0$$在 $x_0$ 附近的某区间 $\tilde J\subset J$ 上存在解 $q=r(x)$。令 $\xi(x)=\varphi\bigl(x,r(x)\bigr)$，则$$\xi(x_0)=\xi'(x_0)=0,\qquad \xi''(x_0)=\varphi''_{qq}(x_0,0)\,\bigl(r'(x_0)\bigr)^2\neq0,$$从而 $y=\psi(x)+\xi(x)$ 也是方程 (4.22) 在 $\tilde J$ 上的解，它与 $y=\psi(x)$ 在 $x_0$ 处相切但不相同。
 
 ## 第5章 高阶微分方程
 
@@ -1018,21 +1018,21 @@ $$y_n(x)=(-1)^{n+1}x^2\qquad(0\leqslant x\leqslant 1;\ n=1,2,\cdots).$$
 
 微分方程 (5.15) 是一个二阶的自治系统，可按常规方法降阶。不过对它还有更简捷的降阶法。令 $z=y'$，则方程 (5.15) 降为一阶方程$$z'=a\sqrt{1+z^2},$$而且它是变量分离的。容易求出它的通解$$z=\sinh a(x+C_1),$$其中 $C_1$ 是一个任意常数。由此可再积分，得到方程 (5.15) 的通解$$y=\frac{1}{a}\cosh a(x+C_1)+C_2,\tag{5.17}$$其中 $C_2$ 是第二个任意常数。
 
-利用通解 (5.17) 和边值条件 (5.16)，我们得到$$\begin{cases}\dfrac{1}{a}\cosh a(x_1+C_1)+C_2=y_1,\\[2mm]\dfrac{1}{a}\cosh a(x_2+C_1)+C_2=y_2.\end{cases}$$由此可唯一确定任意常数 $C_1$ 和 $C_2$，从而由 (5.17) 式给出所求的解，它是一个双曲余弦函数。
+利用通解 (5.17) 和边值条件 (5.16)，我们得到$$\begin{cases} \dfrac{1}{a}\cosh a(x_1+C_1)+C_2=y_1,\\[2mm] \dfrac{1}{a}\cosh a(x_2+C_1)+C_2=y_2. \end{cases}$$由此可唯一确定任意常数 $C_1$ 和 $C_2$，从而由 (5.17) 式给出所求的解，它是一个双曲余弦函数。
 
 看来好像问题已经解决，其实不完全如此。因为常数 $a$ 依赖于未知的水平力大小 $H_0$，所以需要先确定 $a$，然后才能完全确定 $C_1$ 和 $C_2$。
 
-设悬链线的长度为 $L$，自然要求$$L>\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}.\tag{5.18}$$利用曲线的弧长积分公式，并利用 (5.15) 式和 (5.17) 式，我们有$$\begin{aligned}L&=\int_{x_1}^{x_2}\sqrt{1+(y')^2}\,\mathrm{d}x=\frac{1}{a}\int_{x_1}^{x_2}y''(x)\,\mathrm{d}x\\&=\frac{1}{a}\left[\sinh a(x_2+C_1)-\sinh a(x_1+C_1)\right]\\&=\frac{2}{a}\sinh\frac{a(x_2-x_1)}{2}\cosh\frac{a(x_1+x_2)+2C_1}{2}.\end{aligned}$$另外，我们已得到$$\begin{aligned}y_2-y_1&=\frac{1}{a}\left[\cosh a(x_2+C_1)-\cosh a(x_1+C_1)\right]\\&=\frac{2}{a}\sinh\frac{a(x_2-x_1)}{2}\sinh\frac{a(x_1+x_2)+2C_1}{2},\end{aligned}$$由此推出$$\sqrt{L^2-(y_2-y_1)^2}=\frac{2}{a}\sinh\frac{a(x_2-x_1)}{2}.\tag{5.19}$$注意，由 (5.18) 式可知 (5.19) 式的左端是一个正的常数 $K_0$，再令常数 $K_1=x_2-x_1>0$，则 $K_0>K_1$。因此，由 (5.19) 式得到$$\frac{K_0}{2}a=\sinh\left(\frac{K_1}{2}a\right),$$由此再利用简单的作图法（亦即求曲线 $y=\dfrac{K_0}{2}x$ 和 $y=\sinh\left(\dfrac{K_1}{2}x\right)$ 的交点），就可唯一地确定正数 $a$。
+设悬链线的长度为 $L$，自然要求$$L>\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}.\tag{5.18}$$利用曲线的弧长积分公式，并利用 (5.15) 式和 (5.17) 式，我们有$$\begin{aligned} L&=\int_{x_1}^{x_2}\sqrt{1+(y')^2}\,\mathrm{d}x=\frac{1}{a}\int_{x_1}^{x_2}y''(x)\,\mathrm{d}x\\ &=\frac{1}{a}\left[\sinh a(x_2+C_1)-\sinh a(x_1+C_1)\right]\\ &=\frac{2}{a}\sinh\frac{a(x_2-x_1)}{2}\cosh\frac{a(x_1+x_2)+2C_1}{2}. \end{aligned}$$另外，我们已得到$$\begin{aligned} y_2-y_1&=\frac{1}{a}\left[\cosh a(x_2+C_1)-\cosh a(x_1+C_1)\right]\\ &=\frac{2}{a}\sinh\frac{a(x_2-x_1)}{2}\sinh\frac{a(x_1+x_2)+2C_1}{2}, \end{aligned}$$由此推出$$\sqrt{L^2-(y_2-y_1)^2}=\frac{2}{a}\sinh\frac{a(x_2-x_1)}{2}.\tag{5.19}$$注意，由 (5.18) 式可知 (5.19) 式的左端是一个正的常数 $K_0$，再令常数 $K_1=x_2-x_1>0$，则 $K_0>K_1$。因此，由 (5.19) 式得到$$\frac{K_0}{2}a=\sinh\left(\frac{K_1}{2}a\right),$$由此再利用简单的作图法（亦即求曲线 $y=\dfrac{K_0}{2}x$ 和 $y=\sinh\left(\dfrac{K_1}{2}x\right)$ 的交点），就可唯一地确定正数 $a$。
 
 **例 3 (二体问题)** @96
 
-地球绕太阳的运动历来是人们重视的问题之一。为了简单起见，我们将不考虑其他天体（微小）的影响。设太阳 $S$ 位于惯性坐标系 $Oxyz$ 的原点 $O$，而地球 $E$ 的坐标对应向量$$\boldsymbol{r}(t)=(x(t),y(t),z(t)),$$则 $E$ 的运动速度和加速度分别为$$\dot{\boldsymbol{r}}(t)=(\dot{x}(t),\dot{y}(t),\dot{z}(t)),\qquad \ddot{\boldsymbol{r}}(t)=(\ddot{x}(t),\ddot{y}(t),\ddot{z}(t)).$$令太阳和地球的质量分别为 $m_s$ 和 $m_e$，则地球的惯性力为$$m_e\ddot{\boldsymbol{r}}(t)=m_e(\ddot{x}(t),\ddot{y}(t),\ddot{z}(t)).$$另外，由牛顿的万有引力定律得知，地球受太阳的吸引力为$$\boldsymbol{f}(t)=-G\frac{m_sm_e}{|\boldsymbol{r}(t)|^2}\frac{\boldsymbol{r}(t)}{|\boldsymbol{r}(t)|},$$其中 $G$ 是万有引力常量，而 $|\boldsymbol{r}(t)|$ 表示 $\boldsymbol{r}(t)$ 的欧几里得模，即$$|\boldsymbol{r}(t)|=\sqrt{x^2(t)+y^2(t)+z^2(t)}.$$再利用牛顿第二运动定律，我们得到地球的运动微分方程$$m_e\ddot{\boldsymbol{r}}(t)=\boldsymbol{f}(t),$$亦即$$\begin{cases}\ddot{x}=-\dfrac{Gm_sx}{\left(\sqrt{x^2+y^2+z^2}\right)^3},\\[3mm]\ddot{y}=-\dfrac{Gm_sy}{\left(\sqrt{x^2+y^2+z^2}\right)^3},\\[3mm]\ddot{z}=-\dfrac{Gm_sz}{\left(\sqrt{x^2+y^2+z^2}\right)^3}.\end{cases}\tag{5.20}$$它是一个自治的微分方程组，其中未知函数为 $x=x(t)$，$y=y(t)$ 和 $z=z(t)$。注意，这是一个 6 阶微分方程组。
+地球绕太阳的运动历来是人们重视的问题之一。为了简单起见，我们将不考虑其他天体（微小）的影响。设太阳 $S$ 位于惯性坐标系 $Oxyz$ 的原点 $O$，而地球 $E$ 的坐标对应向量$$\boldsymbol{r}(t)=(x(t),y(t),z(t)),$$则 $E$ 的运动速度和加速度分别为$$\dot{\boldsymbol{r}}(t)=(\dot{x}(t),\dot{y}(t),\dot{z}(t)),\qquad \ddot{\boldsymbol{r}}(t)=(\ddot{x}(t),\ddot{y}(t),\ddot{z}(t)).$$令太阳和地球的质量分别为 $m_s$ 和 $m_e$，则地球的惯性力为$$m_e\ddot{\boldsymbol{r}}(t)=m_e(\ddot{x}(t),\ddot{y}(t),\ddot{z}(t)).$$另外，由牛顿的万有引力定律得知，地球受太阳的吸引力为$$\boldsymbol{f}(t)=-G\frac{m_sm_e}{|\boldsymbol{r}(t)|^2}\frac{\boldsymbol{r}(t)}{|\boldsymbol{r}(t)|},$$其中 $G$ 是万有引力常量，而 $|\boldsymbol{r}(t)|$ 表示 $\boldsymbol{r}(t)$ 的欧几里得模，即$$|\boldsymbol{r}(t)|=\sqrt{x^2(t)+y^2(t)+z^2(t)}.$$再利用牛顿第二运动定律，我们得到地球的运动微分方程$$m_e\ddot{\boldsymbol{r}}(t)=\boldsymbol{f}(t),$$亦即$$\begin{cases} \ddot{x}=-\dfrac{Gm_sx}{\left(\sqrt{x^2+y^2+z^2}\right)^3},\\[3mm] \ddot{y}=-\dfrac{Gm_sy}{\left(\sqrt{x^2+y^2+z^2}\right)^3},\\[3mm] \ddot{z}=-\dfrac{Gm_sz}{\left(\sqrt{x^2+y^2+z^2}\right)^3}. \end{cases}\tag{5.20}$$它是一个自治的微分方程组，其中未知函数为 $x=x(t)$，$y=y(t)$ 和 $z=z(t)$。注意，这是一个 6 阶微分方程组。
 
-由力学的知识可知，地球的运动 $(x(t),y(t),z(t))$ 还取决于它的初始状态$$\begin{cases}x(t_0)=x_0,\qquad y(t_0)=y_0,\qquad z(t_0)=z_0,\\\dot{x}(t_0)=u_0,\qquad \dot{y}(t_0)=v_0,\qquad \dot{z}(t_0)=w_0.\end{cases}\tag{5.21}$$因此，为了解决地球的运动问题，我们需要求解初值问题 (5.20)+(5.21)。
+由力学的知识可知，地球的运动 $(x(t),y(t),z(t))$ 还取决于它的初始状态$$\begin{cases} x(t_0)=x_0,\qquad y(t_0)=y_0,\qquad z(t_0)=z_0,\\ \dot{x}(t_0)=u_0,\qquad \dot{y}(t_0)=v_0,\qquad \dot{z}(t_0)=w_0. \end{cases}\tag{5.21}$$因此，为了解决地球的运动问题，我们需要求解初值问题 (5.20)+(5.21)。
 
 由 (5.20) 式可以得到$$z\ddot{y}-y\ddot{z}=0,$$亦即$$\frac{\mathrm{d}}{\mathrm{d}t}(z\dot{y}-y\dot{z})=0.$$由此得到一个首次积分$$z\dot{y}-y\dot{z}=C_1,\tag{5.22}$$其中 $C_1$ 是任意常数。类似地，还可以求出另外两个首次积分$$x\dot{z}-z\dot{x}=C_2,\tag{5.23}$$和$$y\dot{x}-x\dot{y}=C_3,\tag{5.24}$$这里 $C_2$ 和 $C_3$ 都是任意常数，以下设 $C_3>0$。
 
-由 (5.22)—(5.24) 式推出$$C_1x+C_2y+C_3z=0.$$这证明了地球运动的轨道永远在一个平面上；或者说，二体问题是一个平面问题。因此，我们不妨设地球的轨道永远在平面 $z=0$ 上。这样一来，方程组 (5.20) 就可降为一个 4 阶方程组$$\begin{cases}\ddot{x}+\mu x\left(\sqrt{x^2+y^2}\right)^{-3}=0,\\[2mm]\ddot{y}+\mu y\left(\sqrt{x^2+y^2}\right)^{-3}=0,\end{cases}\tag{5.25}$$其中常数 $\mu=Gm_s$。由此可得$$(\dot{x}\ddot{x}+\dot{y}\ddot{y})+\mu(x\dot{x}+y\dot{y})\left(\sqrt{x^2+y^2}\right)^{-3}=0,$$亦即$$\frac{\mathrm{d}}{\mathrm{d}t}(\dot{x}^2+\dot{y}^2)-2\mu\frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{1}{\sqrt{x^2+y^2}}\right)=0.$$由此又得到一个首次积分$$\dot{x}^2+\dot{y}^2-\frac{2\mu}{\sqrt{x^2+y^2}}=C_4.\tag{5.26}$$利用极坐标 $x=r\cos\theta$，$y=r\sin\theta$，则 (5.26) 式变成$$\left(\frac{\mathrm{d}r}{\mathrm{d}t}\right)^2+\left(r\frac{\mathrm{d}\theta}{\mathrm{d}t}\right)^2-\frac{2\mu}{r}=C_4,\tag{5.27}$$而首次积分 (5.24) 变成$$r^2\frac{\mathrm{d}\theta}{\mathrm{d}t}=-C_3.\tag{5.28}$$然后，由 (5.27) 式和 (5.28) 式可知$$\left(\frac{\mathrm{d}r}{\mathrm{d}t}\right)^2=C_4+\left(\frac{\mu}{C_3}\right)^2-\left(\frac{C_3}{r}-\frac{\mu}{C_3}\right)^2,$$它蕴涵积分常数 $C_4$ 必须满足$$C_4+\left(\frac{\mu}{C_3}\right)^2>0.$$因此，我们有$$\frac{\mathrm{d}r}{\mathrm{d}t}=\pm\sqrt{C_4+\left(\frac{\mu}{C_3}\right)^2-\left(\frac{C_3}{r}-\frac{\mu}{C_3}\right)^2}.$$再利用 (5.28) 式推出$$\frac{\mathrm{d}r}{\mathrm{d}\theta}=\pm\frac{r^2}{C_3}\sqrt{C_4+\left(\frac{\mu}{C_3}\right)^2-\left(\frac{C_3}{r}-\frac{\mu}{C_3}\right)^2},$$亦即$$\frac{\mathrm{d}\left(\dfrac{C_3}{r}\right)}{\pm\sqrt{C_4+\left(\dfrac{\mu}{C_3}\right)^2-\left(\dfrac{C_3}{r}-\dfrac{\mu}{C_3}\right)^2}}=\mathrm{d}\theta.$$
+由 (5.22)—(5.24) 式推出$$C_1x+C_2y+C_3z=0.$$这证明了地球运动的轨道永远在一个平面上；或者说，二体问题是一个平面问题。因此，我们不妨设地球的轨道永远在平面 $z=0$ 上。这样一来，方程组 (5.20) 就可降为一个 4 阶方程组$$\begin{cases} \ddot{x}+\mu x\left(\sqrt{x^2+y^2}\right)^{-3}=0,\\[2mm] \ddot{y}+\mu y\left(\sqrt{x^2+y^2}\right)^{-3}=0, \end{cases}\tag{5.25}$$其中常数 $\mu=Gm_s$。由此可得$$(\dot{x}\ddot{x}+\dot{y}\ddot{y})+\mu(x\dot{x}+y\dot{y})\left(\sqrt{x^2+y^2}\right)^{-3}=0,$$亦即$$\frac{\mathrm{d}}{\mathrm{d}t}(\dot{x}^2+\dot{y}^2)-2\mu\frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{1}{\sqrt{x^2+y^2}}\right)=0.$$由此又得到一个首次积分$$\dot{x}^2+\dot{y}^2-\frac{2\mu}{\sqrt{x^2+y^2}}=C_4.\tag{5.26}$$利用极坐标 $x=r\cos\theta$，$y=r\sin\theta$，则 (5.26) 式变成$$\left(\frac{\mathrm{d}r}{\mathrm{d}t}\right)^2+\left(r\frac{\mathrm{d}\theta}{\mathrm{d}t}\right)^2-\frac{2\mu}{r}=C_4,\tag{5.27}$$而首次积分 (5.24) 变成$$r^2\frac{\mathrm{d}\theta}{\mathrm{d}t}=-C_3.\tag{5.28}$$然后，由 (5.27) 式和 (5.28) 式可知$$\left(\frac{\mathrm{d}r}{\mathrm{d}t}\right)^2=C_4+\left(\frac{\mu}{C_3}\right)^2-\left(\frac{C_3}{r}-\frac{\mu}{C_3}\right)^2,$$它蕴涵积分常数 $C_4$ 必须满足$$C_4+\left(\frac{\mu}{C_3}\right)^2>0.$$因此，我们有$$\frac{\mathrm{d}r}{\mathrm{d}t}=\pm\sqrt{C_4+\left(\frac{\mu}{C_3}\right)^2-\left(\frac{C_3}{r}-\frac{\mu}{C_3}\right)^2}.$$再利用 (5.28) 式推出$$\frac{\mathrm{d}r}{\mathrm{d}\theta}=\pm\frac{r^2}{C_3}\sqrt{C_4+\left(\frac{\mu}{C_3}\right)^2-\left(\frac{C_3}{r}-\frac{\mu}{C_3}\right)^2},$$亦即$$\frac{\mathrm{d}\left(\dfrac{C_3}{r}\right)}{\pm\sqrt{C_4+\left(\dfrac{\mu}{C_3}\right)^2-\left(\dfrac{C_3}{r}-\dfrac{\mu}{C_3}\right)^2}}=\mathrm{d}\theta.$$
 
 ### 5.2 n 维线性空间中的微分方程（p99–102）
 
@@ -1886,13 +1886,13 @@ $$\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{M}{\left(1-\dfrac{x}{a}\right)\left(1-\d
 
 由定理 7.1，我们可设方程 (7.18) 有幂级数解$$y=\sum_{n=0}^{\infty}a_nx^n\qquad(-\infty<x<+\infty).\tag{7.19}$$对 (7.19) 式进行逐项微分，并调整求和指标，得出$$y'=\sum_{n=1}^{\infty}na_nx^{n-1}=\sum_{n=0}^{\infty}(n+1)a_{n+1}x^n,$$$$y''=\sum_{n=2}^{\infty}n(n-1)a_nx^{n-2}=\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n.$$
 
-把上面的 $y$ 和 $y''$ 代入方程 (7.18)，并调整 $xy$ 的级数展开式中的求和指标（令 $a_{-1}=0$），得到$$\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n=\sum_{n=0}^{\infty}a_{n-1}x^n.$$因此，由幂级数的唯一性，就得到如下递推公式：$$(n+2)(n+1)a_{n+2}=a_{n-1}\qquad(n=0,1,2,\cdots).$$亦即$$\begin{aligned}2a_2&=0,\\3\cdot 2a_3&=a_0,\\4\cdot 3a_4&=a_1,\\5\cdot 4a_5&=a_2,\\6\cdot 5a_6&=a_3,\end{aligned}$$由此不难推出$$\begin{aligned}a_2&=a_5=\cdots=a_{3n+2}=\cdots=0;\\a_3&=\frac{a_0}{3\cdot 2},\quad a_6=\frac{a_0}{6\cdot 5\cdot 3\cdot 2},\quad\cdots,\\a_{3n}&=\frac{a_0}{(3n)(3n-1)(3n-3)(3n-4)\cdot\cdots\cdot 6\cdot 5\cdot 3\cdot 2},\quad\cdots;\\a_4&=\frac{a_1}{4\cdot 3},\quad a_7=\frac{a_1}{7\cdot 6\cdot 4\cdot 3},\quad\cdots,\\a_{3n+1}&=\frac{a_1}{(3n+1)(3n)(3n-2)(3n-3)\cdot\cdots\cdot 7\cdot 6\cdot 4\cdot 3},\quad\cdots.\end{aligned}$$所以，我们得到艾里方程 (7.18) 的幂级数解为$$y=a_0\left[1+\sum_{n=1}^{\infty}\frac{x^{3n}}{(3n)(3n-1)(3n-3)(3n-4)\cdot\cdots\cdot 6\cdot 5\cdot 3\cdot 2}\right]+a_1\left[x+\sum_{n=1}^{\infty}\frac{x^{3n+1}}{(3n+1)(3n)(3n-2)(3n-3)\cdot\cdots\cdot 7\cdot 6\cdot 4\cdot 3}\right].$$利用达朗贝尔（d'Alembert，1717—1783）判别法，可以直接验证这个幂级数对任何 $x$ 都是收敛的。因此，它是方程 (7.18) 的通解（注意 $a_0$ 和 $a_1$ 为任意常数）。
+把上面的 $y$ 和 $y''$ 代入方程 (7.18)，并调整 $xy$ 的级数展开式中的求和指标（令 $a_{-1}=0$），得到$$\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}x^n=\sum_{n=0}^{\infty}a_{n-1}x^n.$$因此，由幂级数的唯一性，就得到如下递推公式：$$(n+2)(n+1)a_{n+2}=a_{n-1}\qquad(n=0,1,2,\cdots).$$亦即$$\begin{aligned} 2a_2&=0,\\ 3\cdot 2a_3&=a_0,\\ 4\cdot 3a_4&=a_1,\\ 5\cdot 4a_5&=a_2,\\ 6\cdot 5a_6&=a_3, \end{aligned}$$由此不难推出$$\begin{aligned} a_2&=a_5=\cdots=a_{3n+2}=\cdots=0;\\ a_3&=\frac{a_0}{3\cdot 2},\quad a_6=\frac{a_0}{6\cdot 5\cdot 3\cdot 2},\quad\cdots,\\ a_{3n}&=\frac{a_0}{(3n)(3n-1)(3n-3)(3n-4)\cdot\cdots\cdot 6\cdot 5\cdot 3\cdot 2},\quad\cdots;\\ a_4&=\frac{a_1}{4\cdot 3},\quad a_7=\frac{a_1}{7\cdot 6\cdot 4\cdot 3},\quad\cdots,\\ a_{3n+1}&=\frac{a_1}{(3n+1)(3n)(3n-2)(3n-3)\cdot\cdots\cdot 7\cdot 6\cdot 4\cdot 3},\quad\cdots. \end{aligned}$$所以，我们得到艾里方程 (7.18) 的幂级数解为$$y=a_0\left[1+\sum_{n=1}^{\infty}\frac{x^{3n}}{(3n)(3n-1)(3n-3)(3n-4)\cdot\cdots\cdot 6\cdot 5\cdot 3\cdot 2}\right]+ a_1\left[x+\sum_{n=1}^{\infty}\frac{x^{3n+1}}{(3n+1)(3n)(3n-2)(3n-3)\cdot\cdots\cdot 7\cdot 6\cdot 4\cdot 3}\right].$$利用达朗贝尔（d'Alembert，1717—1783）判别法，可以直接验证这个幂级数对任何 $x$ 都是收敛的。因此，它是方程 (7.18) 的通解（注意 $a_0$ 和 $a_1$ 为任意常数）。
 
 **例 2 (艾里方程的平移展开)** @160
 
 求艾里方程 (7.18) 在 $x=1$ 处展开的幂级数解。
 
-为此，把方程 (7.18) 改写成$$y''=[1+(x-1)]y,\tag{7.20}$$并求它的形如$$y=\sum_{n=0}^{\infty}a_n(x-1)^n\tag{7.21}$$的解。由 (7.21) 式，我们有$$y''=\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}(x-1)^n.\tag{7.22}$$把 (7.21) 式和 (7.22) 式代入 (7.20) 式，即得$$\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}(x-1)^n=a_0+\sum_{n=1}^{\infty}(a_n+a_{n-1})(x-1)^n.$$由此利用幂级数展式的唯一性，得到递推公式$$(n+2)(n+1)a_{n+2}=a_n+a_{n-1},\tag{7.23}$$其中 $a_{-1}=0$，而 $n=0,1,2,\cdots$。如果给定 $a_0$ 和 $a_1$，则由上面的递推公式推出$$\begin{aligned}a_2&=\frac{a_0}{2}, & a_3&=\frac{a_0}{6}+\frac{a_1}{6},\\a_4&=\frac{a_0}{24}+\frac{a_1}{12}, & a_5&=\frac{a_0}{30}+\frac{a_1}{120},\cdots.\end{aligned}$$因此，所求的幂级数解为$$y=a_0\left[1+\frac{(x-1)^2}{2}+\frac{(x-1)^3}{6}+\frac{(x-1)^4}{24}+\frac{(x-1)^5}{30}+\cdots\right]+a_1\left[(x-1)+\frac{(x-1)^3}{6}+\frac{(x-1)^4}{12}+\frac{(x-1)^5}{120}+\cdots\right].$$
+为此，把方程 (7.18) 改写成$$y''=[1+(x-1)]y,\tag{7.20}$$并求它的形如$$y=\sum_{n=0}^{\infty}a_n(x-1)^n\tag{7.21}$$的解。由 (7.21) 式，我们有$$y''=\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}(x-1)^n.\tag{7.22}$$把 (7.21) 式和 (7.22) 式代入 (7.20) 式，即得$$\sum_{n=0}^{\infty}(n+2)(n+1)a_{n+2}(x-1)^n=a_0+\sum_{n=1}^{\infty}(a_n+a_{n-1})(x-1)^n.$$由此利用幂级数展式的唯一性，得到递推公式$$(n+2)(n+1)a_{n+2}=a_n+a_{n-1},\tag{7.23}$$其中 $a_{-1}=0$，而 $n=0,1,2,\cdots$。如果给定 $a_0$ 和 $a_1$，则由上面的递推公式推出$$\begin{aligned} a_2&=\frac{a_0}{2}, & a_3&=\frac{a_0}{6}+\frac{a_1}{6},\\ a_4&=\frac{a_0}{24}+\frac{a_1}{12}, & a_5&=\frac{a_0}{30}+\frac{a_1}{120},\cdots. \end{aligned}$$因此，所求的幂级数解为$$y=a_0\left[1+\frac{(x-1)^2}{2}+\frac{(x-1)^3}{6}+\frac{(x-1)^4}{24}+\frac{(x-1)^5}{30}+\cdots\right]+ a_1\left[(x-1)+\frac{(x-1)^3}{6}+\frac{(x-1)^4}{12}+\frac{(x-1)^5}{120}+\cdots\right].$$
 
 **注 1 (递推公式的复杂性)** @161
 
@@ -1922,7 +1922,7 @@ $$\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{M}{\left(1-\dfrac{x}{a}\right)\left(1-\d
 
 对任意的非负整数 $n$，称由公式$$\mathrm{P}_n(x)=\frac{1}{2^n}\sum_{k=0}^{\left[\frac{n}{2}\right]}\frac{(-1)^k(2n-2k)!}{k!(n-k)!(n-2k)!}x^{n-2k}\tag{7.30}$$所表达的 $n$ 次多项式为**勒让德多项式**，其中 $\left[\frac{n}{2}\right]$ 表示 $\frac{n}{2}$ 的整数部分（$n=0,1,2,\cdots$）。
 
-这样，对任意的非负整数 $n$，由公式 (7.30) 所表达的 $n$ 次多项式 $\mathrm{P}_n(x)$ 是相应勒让德方程 (7.28) 的解。由 (7.30) 式容易算出$$\begin{aligned}\mathrm{P}_0(x)&=1,\\\mathrm{P}_1(x)&=x,\\\mathrm{P}_2(x)&=\frac{1}{2}(3x^2-1),\\\mathrm{P}_3(x)&=\frac{1}{2}(5x^3-3x),\\\mathrm{P}_4(x)&=\frac{1}{8}(35x^4-30x^2+3),\\\mathrm{P}_5(x)&=\frac{1}{8}(63x^5-70x^3+15x),\end{aligned}$$等等。
+这样，对任意的非负整数 $n$，由公式 (7.30) 所表达的 $n$ 次多项式 $\mathrm{P}_n(x)$ 是相应勒让德方程 (7.28) 的解。由 (7.30) 式容易算出$$\begin{aligned} \mathrm{P}_0(x)&=1,\\ \mathrm{P}_1(x)&=x,\\ \mathrm{P}_2(x)&=\frac{1}{2}(3x^2-1),\\ \mathrm{P}_3(x)&=\frac{1}{2}(5x^3-3x),\\ \mathrm{P}_4(x)&=\frac{1}{8}(35x^4-30x^2+3),\\ \mathrm{P}_5(x)&=\frac{1}{8}(63x^5-70x^3+15x), \end{aligned}$$等等。
 
 **注 (勒让德多项式的奇偶性)** @164
 
@@ -1934,7 +1934,7 @@ $\mathrm{P}_n(x)$ 满足罗德里格斯（Rodrigues，1795—1851）公式$$\mat
 
 **命题 2 (勒让德多项式的正交性)** @164
 
-勒让德函数系 (7.31) 是正交的，即$$\int_{-1}^1\mathrm{P}_n(x)\mathrm{P}_m(x)\mathrm{d}x=\begin{cases}0, & m\neq n,\\\sigma_n>0, & m=n,\end{cases}\tag{7.34}$$并且可以算出$$\sigma_n=\frac{2}{2n+1}.$$
+勒让德函数系 (7.31) 是正交的，即$$\int_{-1}^1\mathrm{P}_n(x)\mathrm{P}_m(x)\mathrm{d}x= \begin{cases} 0, & m\neq n,\\ \sigma_n>0, & m=n, \end{cases}\tag{7.34}$$并且可以算出$$\sigma_n=\frac{2}{2n+1}.$$
 
 **定义 (广义傅里叶级数)** @165
 
@@ -2072,7 +2072,7 @@ $\mathrm{P}_n(x)$ 满足罗德里格斯（Rodrigues，1795—1851）公式$$\mat
 
 **例 1** @181
 
-设质点 $M(x,y)$ 在 $Oxy$ 平面上运动，已知它在 $(x,y)$ 点的速度 $\boldsymbol{v}(x,y)$ 具有如下水平与垂直分量：$$v_x=-y+x(x^2+y^2-1),\qquad v_y=x+y(x^2+y^2-1),$$则质点的运动方程为$$\begin{cases}\dfrac{\mathrm{d}x}{\mathrm{d}t}=-y+x(x^2+y^2-1),\\[2mm]\dfrac{\mathrm{d}y}{\mathrm{d}t}=x+y(x^2+y^2-1).\end{cases}\tag{8.5}$$
+设质点 $M(x,y)$ 在 $Oxy$ 平面上运动，已知它在 $(x,y)$ 点的速度 $\boldsymbol{v}(x,y)$ 具有如下水平与垂直分量：$$v_x=-y+x(x^2+y^2-1),\qquad v_y=x+y(x^2+y^2-1),$$则质点的运动方程为$$\begin{cases} \dfrac{\mathrm{d}x}{\mathrm{d}t}=-y+x(x^2+y^2-1),\\[2mm] \dfrac{\mathrm{d}y}{\mathrm{d}t}=x+y(x^2+y^2-1). \end{cases}\tag{8.5}$$
 
 应用极坐标，令 $x=r\cos\theta,\ y=r\sin\theta$，则可以把方程 (8.5) 转化为$$\frac{\mathrm{d}r}{\mathrm{d}t}=r(r^2-1),\qquad \frac{\mathrm{d}\theta}{\mathrm{d}t}=1.$$然后由此积分得$$r=\frac{1}{\sqrt{1-C_1\mathrm{e}^{2t}}},\qquad \theta=t+C_2.$$
 
@@ -2448,7 +2448,7 @@ $\mathrm{P}_n(x)$ 满足罗德里格斯（Rodrigues，1795—1851）公式$$\mat
 
 条件 (1) 和 (2) 是比较自然的。对于条件 (3) 可作一点直观的说明：当 $t\to+\infty$（或 $-\infty$）时，如果一条轨线趋于一个初等结点或焦点，则从充分靠近此轨线的点出发的其他轨线也有相同的归宿；但是鞍点（即使是初等鞍点）不具有这个性质。事实上，如果一条轨线当 $t\to+\infty$（或 $-\infty$）时趋于一个鞍点（此时称这条轨线为这个鞍点的一条**分界线**），则无论取分界线外多么靠近的点为初始点，所得轨线都与分界线有不同的归宿。因此，若一条轨线两端都趋于鞍点，则它在扰动下可能破裂，从而改变轨线族的拓扑结构（见图 8-23）。两端趋于同一鞍点的轨线称为**同宿轨线**，两端趋于不同鞍点的轨线称为**异宿轨线**。
 
-下面通过实例说明定理 8.10 中的条件都是必要的：当其中某一条件不满足时，相应的系统不是结构稳定的。作为 (8.36) 的扰动系统，考虑$$\begin{cases}\dfrac{\mathrm{d}x}{\mathrm{d}t}=\tilde{X}(x,y,\alpha),\\[6pt]\dfrac{\mathrm{d}y}{\mathrm{d}t}=\tilde{Y}(x,y,\alpha),\end{cases}\tag{8.37}_\alpha$$其中参数 $\alpha\in\mathbb{R}^k\ (k\geqslant 1)$，函数 $\tilde{X}$ 和 $\tilde{Y}$ 对所有变元连续可微，并且 $(8.37)_0=(8.36)$，亦即$$\begin{cases}\tilde{X}(x,y,0)\equiv X(x,y),\\\tilde{Y}(x,y,0)\equiv Y(x,y).\end{cases}$$
+下面通过实例说明定理 8.10 中的条件都是必要的：当其中某一条件不满足时，相应的系统不是结构稳定的。作为 (8.36) 的扰动系统，考虑$$\begin{cases} \dfrac{\mathrm{d}x}{\mathrm{d}t}=\tilde{X}(x,y,\alpha),\\[6pt] \dfrac{\mathrm{d}y}{\mathrm{d}t}=\tilde{Y}(x,y,\alpha), \end{cases}\tag{8.37$_{\alpha}$}$$其中参数 $\alpha\in\mathbb{R}^k\ (k\geqslant 1)$，函数 $\tilde{X}$ 和 $\tilde{Y}$ 对所有变元连续可微，并且 $(8.37)_0=(8.36)$，亦即$$\begin{cases} \tilde{X}(x,y,0)\equiv X(x,y),\\ \tilde{Y}(x,y,0)\equiv Y(x,y). \end{cases}$$
 
 **定义 (分支值的定义)** @206
 
@@ -2456,35 +2456,35 @@ $\mathrm{P}_n(x)$ 满足罗德里格斯（Rodrigues，1795—1851）公式$$\mat
 
 **例 1 (鞍结点分支)** @206
 
-以 $(0,0)$ 为一个高阶奇点的系统$$\begin{cases}\dfrac{\mathrm{d}x}{\mathrm{d}t}=x,\\[6pt]\dfrac{\mathrm{d}y}{\mathrm{d}t}=y^2\end{cases}\tag{8.38}$$是结构不稳定的。注意，系统 (8.38) 的线性部分矩阵有一个特征根为零，因此定理 8.10 中的条件 (1) 不成立。
+以 $(0,0)$ 为一个高阶奇点的系统$$\begin{cases} \dfrac{\mathrm{d}x}{\mathrm{d}t}=x,\\[6pt] \dfrac{\mathrm{d}y}{\mathrm{d}t}=y^2 \end{cases}\tag{8.38}$$是结构不稳定的。注意，系统 (8.38) 的线性部分矩阵有一个特征根为零，因此定理 8.10 中的条件 (1) 不成立。
 
-考虑系统 (8.38) 的扰动系统$$\begin{cases}\dfrac{\mathrm{d}x}{\mathrm{d}t}=x,\\[6pt]\dfrac{\mathrm{d}y}{\mathrm{d}t}=\varepsilon+y^2,\end{cases}\tag{8.39}_\varepsilon$$其中 $\varepsilon$ 为一个实参数。不难看出，当 $\varepsilon>0$ 时，系统 $(8.39)_\varepsilon$ 没有奇点；当 $\varepsilon=0$ 时，$(8.39)_0$（即系统 (8.38)）以 $(0,0)$ 为唯一奇点；而当 $\varepsilon<0$ 时，系统 $(8.39)_\varepsilon$ 有两个不同的奇点 $(0,\sqrt{-\varepsilon})$ 和 $(0,-\sqrt{-\varepsilon})$。这说明无论 $|\varepsilon|$ 多么小，系统 $(8.39)_\varepsilon$ 与 (8.38) 都不可能拓扑等价。因此系统 (8.38) 是结构不稳定的，而且 $\varepsilon=0$ 是系统 $(8.39)_\varepsilon$ 的一个分支值。
+考虑系统 (8.38) 的扰动系统$$\begin{cases} \dfrac{\mathrm{d}x}{\mathrm{d}t}=x,\\[6pt] \dfrac{\mathrm{d}y}{\mathrm{d}t}=\varepsilon+y^2, \end{cases}\tag{8.39$_{\varepsilon}$}$$其中 $\varepsilon$ 为一个实参数。不难看出，当 $\varepsilon>0$ 时，系统 $(8.39)_\varepsilon$ 没有奇点；当 $\varepsilon=0$ 时，$(8.39)_0$（即系统 (8.38)）以 $(0,0)$ 为唯一奇点；而当 $\varepsilon<0$ 时，系统 $(8.39)_\varepsilon$ 有两个不同的奇点 $(0,\sqrt{-\varepsilon})$ 和 $(0,-\sqrt{-\varepsilon})$。这说明无论 $|\varepsilon|$ 多么小，系统 $(8.39)_\varepsilon$ 与 (8.38) 都不可能拓扑等价。因此系统 (8.38) 是结构不稳定的，而且 $\varepsilon=0$ 是系统 $(8.39)_\varepsilon$ 的一个分支值。
 
 当 $\varepsilon<0$ 时，用上节的定理 8.6 容易知道 $(0,\sqrt{-\varepsilon})$ 是不稳定的两向结点，而 $(0,-\sqrt{-\varepsilon})$ 是一个鞍点，并且随着 $|\varepsilon|$ 逐渐减小，这两个奇点逐渐靠近；当 $\varepsilon=0$ 时，它们拼合成一个半鞍半结型的奇点，叫作**鞍-结点**；而当 $\varepsilon>0$ 时，奇点消失（图 8-25）。我们把这种分支现象称为**鞍-结点分支**。
 
 **例 2 (霍普夫分支)** @207
 
-现在考察定理 8.10 中条件 (1) 遭到破坏的另一种方式：在系统的奇点处线性部分矩阵的特征根不为零，但有一对纯虚数特征根。考虑系统$$\begin{cases}\dot{x}=-y-x(x^2+y^2),\\\dot{y}=x-y(x^2+y^2),\end{cases}\tag{8.40}$$及其扰动系统$$\begin{cases}\dot{x}=\varepsilon x-y-x(x^2+y^2),\\\dot{y}=x+\varepsilon y-y(x^2+y^2).\end{cases}\tag{8.41}_\varepsilon$$显然，$(8.41)_\varepsilon$ 的线性部分矩阵有特征根 $\varepsilon\pm\mathrm{i}$。由定理 8.5 易知，当 $\varepsilon$ 的取值由负变正时，系统 $(8.41)_\varepsilon$ 的奇点 $(0,0)$ 由稳定焦点变为不稳定焦点。因此，$\varepsilon=0$ 是一个分支值，而系统 (8.40) 是结构不稳定的。
+现在考察定理 8.10 中条件 (1) 遭到破坏的另一种方式：在系统的奇点处线性部分矩阵的特征根不为零，但有一对纯虚数特征根。考虑系统$$\begin{cases} \dot{x}=-y-x(x^2+y^2),\\ \dot{y}=x-y(x^2+y^2), \end{cases}\tag{8.40}$$及其扰动系统$$\begin{cases} \dot{x}=\varepsilon x-y-x(x^2+y^2),\\ \dot{y}=x+\varepsilon y-y(x^2+y^2). \end{cases}\tag{8.41$_{\varepsilon}$}$$显然，$(8.41)_\varepsilon$ 的线性部分矩阵有特征根 $\varepsilon\pm\mathrm{i}$。由定理 8.5 易知，当 $\varepsilon$ 的取值由负变正时，系统 $(8.41)_\varepsilon$ 的奇点 $(0,0)$ 由稳定焦点变为不稳定焦点。因此，$\varepsilon=0$ 是一个分支值，而系统 (8.40) 是结构不稳定的。
 
-取极坐标 $x=r\cos\theta,\ y=r\sin\theta$，则 $(8.41)_\varepsilon$ 化为$$\begin{cases}\dot{r}=r(\varepsilon-r^2),\\\dot{\theta}=1.\end{cases}$$由此可以明显看出，当 $\varepsilon\leqslant 0$ 时，原点是稳定焦点，并且在原点附近不存在闭轨；而当 $\varepsilon>0$ 时，原点变为不稳定的焦点，并且有唯一的闭轨 $r=\sqrt{\varepsilon}$，它是稳定的极限环（图 8-26）。形象地说，当 $\varepsilon$ 的值增大而通过 $0$ 的一瞬间，奇点的稳定性发生翻转，同时一个稳定的极限环从奇点"跳出"，并随着 $\varepsilon$ 的增大而逐渐扩大。这种分支现象叫作**霍普夫**（Hopf，1902—1983）**分支**。
+取极坐标 $x=r\cos\theta,\ y=r\sin\theta$，则 $(8.41)_\varepsilon$ 化为$$\begin{cases} \dot{r}=r(\varepsilon-r^2),\\ \dot{\theta}=1. \end{cases}$$由此可以明显看出，当 $\varepsilon\leqslant 0$ 时，原点是稳定焦点，并且在原点附近不存在闭轨；而当 $\varepsilon>0$ 时，原点变为不稳定的焦点，并且有唯一的闭轨 $r=\sqrt{\varepsilon}$，它是稳定的极限环（图 8-26）。形象地说，当 $\varepsilon$ 的值增大而通过 $0$ 的一瞬间，奇点的稳定性发生翻转，同时一个稳定的极限环从奇点"跳出"，并随着 $\varepsilon$ 的增大而逐渐扩大。这种分支现象叫作**霍普夫**（Hopf，1902—1983）**分支**。
 
 **例 3 (庞加莱分支)** @208
 
-现在考虑条件 (1) 遭到破坏的方式与霍普夫分支的情形类似，但不同的是：扰动前的系统不是以 $(0,0)$ 为焦点，而是以它为中心点。为简单起见，取扰动前的系统为$$\begin{cases}\dot{x}=-y,\\\dot{y}=x,\end{cases}$$考虑扰动系统$$\begin{cases}\dot{x}=-y-\varepsilon x(x^2+y^2-1-\varepsilon),\\\dot{y}=x-\varepsilon y(x^2+y^2-1-\varepsilon).\end{cases}$$化为极坐标方程后容易看出，当 $0<|\varepsilon|\ll 1$ 时，扰动系统以圆周 $x^2+y^2=1+\varepsilon$ 为唯一闭轨，这是一个极限环。因此，扰动前后系统的轨线族有完全不同的结构，这说明 $\varepsilon=0$ 是一个分支值。
+现在考虑条件 (1) 遭到破坏的方式与霍普夫分支的情形类似，但不同的是：扰动前的系统不是以 $(0,0)$ 为焦点，而是以它为中心点。为简单起见，取扰动前的系统为$$\begin{cases} \dot{x}=-y,\\ \dot{y}=x, \end{cases}$$考虑扰动系统$$\begin{cases} \dot{x}=-y-\varepsilon x(x^2+y^2-1-\varepsilon),\\ \dot{y}=x-\varepsilon y(x^2+y^2-1-\varepsilon). \end{cases}$$化为极坐标方程后容易看出，当 $0<|\varepsilon|\ll 1$ 时，扰动系统以圆周 $x^2+y^2=1+\varepsilon$ 为唯一闭轨，这是一个极限环。因此，扰动前后系统的轨线族有完全不同的结构，这说明 $\varepsilon=0$ 是一个分支值。
 
 与霍普夫分支不同，这里的闭轨不是由于焦点的稳定性改变而产生的。事实上，它不随 $\varepsilon\to 0$ 而收缩到奇点，而是趋于闭轨 $x^2+y^2=1$；或者反过来说，我们可以把它看成是原来的中心型奇点的闭轨族中的某一闭轨，在扰动后不破裂而成为扰动后系统的一条孤立闭轨。这就是所谓的**庞加莱分支**。
 
 **例 4 (多重闭轨的分支)** @209
 
-现在考察定理 8.10 中条件 (2) 不成立的情形。考虑系统$$\begin{cases}\dot{x}=-y-x(x^2+y^2-1)^2,\\\dot{y}=x-y(x^2+y^2-1)^2,\end{cases}\tag{8.42}$$及其扰动系统$$\begin{cases}\dot{x}=-y-x(x^2+y^2-1+\varepsilon)(x^2+y^2-1-\varepsilon),\\\dot{y}=x-y(x^2+y^2-1+\varepsilon)(x^2+y^2-1-\varepsilon),\end{cases}\tag{8.43}_\varepsilon$$其中 $0\leqslant\varepsilon\ll 1$。取极坐标 $x=r\cos\theta,\ y=r\sin\theta$，则系统 $(8.43)_\varepsilon$ 化为$$\begin{cases}\dot{r}=-r\bigl[r^2-(1-\varepsilon)\bigr]\bigl[r^2-(1+\varepsilon)\bigr],\\\dot{\theta}=1.\end{cases}\tag{8.44}_\varepsilon$$
+现在考察定理 8.10 中条件 (2) 不成立的情形。考虑系统$$\begin{cases} \dot{x}=-y-x(x^2+y^2-1)^2,\\ \dot{y}=x-y(x^2+y^2-1)^2, \end{cases}\tag{8.42}$$及其扰动系统$$\begin{cases} \dot{x}=-y-x(x^2+y^2-1+\varepsilon)(x^2+y^2-1-\varepsilon),\\ \dot{y}=x-y(x^2+y^2-1+\varepsilon)(x^2+y^2-1-\varepsilon), \end{cases}\tag{8.43$_{\varepsilon}$}$$其中 $0\leqslant\varepsilon\ll 1$。取极坐标 $x=r\cos\theta,\ y=r\sin\theta$，则系统 $(8.43)_\varepsilon$ 化为$$\begin{cases} \dot{r}=-r\bigl[r^2-(1-\varepsilon)\bigr]\bigl[r^2-(1+\varepsilon)\bigr],\\ \dot{\theta}=1. \end{cases}\tag{8.44$_{\varepsilon}$}$$
 
 当 $0<\varepsilon\ll 1$ 时，从系统 $(8.44)_\varepsilon$ 的第一个方程易见，系统存在两个闭轨 $\Gamma_1:\ r=\sqrt{1-\varepsilon}$ 和 $\Gamma_2:\ r=\sqrt{1+\varepsilon}$；并且在 $\Gamma_1$ 内部和 $\Gamma_2$ 外部恒有 $\dot{r}<0$，而在 $\Gamma_1$ 和 $\Gamma_2$ 之间恒有 $\dot{r}>0$。由此可知，$\Gamma_1$ 和 $\Gamma_2$ 是系统 $(8.44)_\varepsilon$ 仅有的两个闭轨，并且分别是不稳定极限环和稳定极限环。当 $\varepsilon=0$ 时，显然系统 $(8.44)_0$（即系统 (8.42)）有唯一闭轨 $\Gamma:\ r=1$，并且在它的两侧均有 $\dot{r}<0$，所以它是一个半稳定的极限环，从而是多重环。上面的分析表明，当 $\varepsilon$ 的值减小到 $0$ 时，系统 $(8.44)_\varepsilon$ 的两个极限环重合而成为一个半稳定的极限环（或者反过来说，当 $\varepsilon$ 的值从 $0$ 增大时，一个半稳定的极限环分裂成两个极限环），使轨线结构发生了突变（图 8-27）。我们把这种分支现象称为**多重闭轨的分支**。
 
 **例 5 (同宿轨线的分支)** @209
 
-最后考察定理 8.10 中条件 (3) 遭到破坏的情况。从鞍点到鞍点的（同宿或异宿）轨线在扰动下可能破裂，并趋于其他奇点。因此，具有这种分界线的系统不是结构稳定的。现在要进一步讨论在分支现象发生时产生闭轨的可能性：可以构造出单参数的系统族$$\begin{cases}\dfrac{\mathrm{d}x}{\mathrm{d}t}=X(x,y,\varepsilon),\\[6pt]\dfrac{\mathrm{d}y}{\mathrm{d}t}=Y(x,y,\varepsilon),\end{cases}\tag{8.45}_\varepsilon$$使得当 $\varepsilon=0$ 时系统 $(8.45)_0$ 有如图 8-28(b) 所示的轨线结构：它具有一条从初等鞍点 $S$ 到 $S$ 的同宿轨线 $L$，$L$ 内部是稳定的初等焦点 $F$ 的吸引域；而当 $\varepsilon\neq 0$ 时，$L$ 破裂为两条分界线，它们的相对位置依 $\varepsilon$ 的符号而异（图 8-28 的 (a) 与 (c)）。在情形 (c) 中，分界线破裂的方向与内部焦点的稳定性相配合，就构成了一个庞加莱-本迪克松环域，从而系统 $(8.45)_\varepsilon$ 存在极限环；当 $|\varepsilon|$ 充分小时，可以使这个环域充分靠近原来的同宿轨线 $L$。因此可以把极限环看成 $L$ 经扰动破裂而产生的。这种分支现象叫作**同宿（轨线的）分支**，也可以类似地讨论**异宿（轨线的）分支**。
+最后考察定理 8.10 中条件 (3) 遭到破坏的情况。从鞍点到鞍点的（同宿或异宿）轨线在扰动下可能破裂，并趋于其他奇点。因此，具有这种分界线的系统不是结构稳定的。现在要进一步讨论在分支现象发生时产生闭轨的可能性：可以构造出单参数的系统族$$\begin{cases} \dfrac{\mathrm{d}x}{\mathrm{d}t}=X(x,y,\varepsilon),\\[6pt] \dfrac{\mathrm{d}y}{\mathrm{d}t}=Y(x,y,\varepsilon), \end{cases}\tag{8.45$_{\varepsilon}$}$$使得当 $\varepsilon=0$ 时系统 $(8.45)_0$ 有如图 8-28(b) 所示的轨线结构：它具有一条从初等鞍点 $S$ 到 $S$ 的同宿轨线 $L$，$L$ 内部是稳定的初等焦点 $F$ 的吸引域；而当 $\varepsilon\neq 0$ 时，$L$ 破裂为两条分界线，它们的相对位置依 $\varepsilon$ 的符号而异（图 8-28 的 (a) 与 (c)）。在情形 (c) 中，分界线破裂的方向与内部焦点的稳定性相配合，就构成了一个庞加莱-本迪克松环域，从而系统 $(8.45)_\varepsilon$ 存在极限环；当 $|\varepsilon|$ 充分小时，可以使这个环域充分靠近原来的同宿轨线 $L$。因此可以把极限环看成 $L$ 经扰动破裂而产生的。这种分支现象叫作**同宿（轨线的）分支**，也可以类似地讨论**异宿（轨线的）分支**。
 
-为构造具体例子，先考虑系统$$\begin{cases}\dfrac{\mathrm{d}x}{\mathrm{d}t}=y,\\[6pt]\dfrac{\mathrm{d}y}{\mathrm{d}t}=-x\left(1-\dfrac{3}{2}x\right),\end{cases}\tag{8.46}$$它有两个奇点：$O(0,0)$ 和 $A\left(\dfrac{2}{3},0\right)$。利用 §8.3.1 的讨论可知，如果仅考察 (8.46) 右端在点 $O$ 与 $A$ 的线性部分，则奇点 $O$ 为中心点，而奇点 $A$ 为初等鞍点。对于非线性系统 (8.46)，由定理 8.6 易知奇点 $A$ 仍是一个鞍点；但判断奇点 $O$ 的性质并不如此简单。不过可以把 (8.46) 的两个方程相除消去 $t$，从而得到该系统的首次积分$$F(x,y)\overset{\text{def}}{=}y^2+x^2-x^3=C,\tag{8.47}$$其中 $C$ 为任意常数。由此式不难作出 (8.46) 的相轨线图，并且知道奇点 $O$ 仍是一个中心点。
+为构造具体例子，先考虑系统$$\begin{cases} \dfrac{\mathrm{d}x}{\mathrm{d}t}=y,\\[6pt] \dfrac{\mathrm{d}y}{\mathrm{d}t}=-x\left(1-\dfrac{3}{2}x\right), \end{cases}\tag{8.46}$$它有两个奇点：$O(0,0)$ 和 $A\left(\dfrac{2}{3},0\right)$。利用 §8.3.1 的讨论可知，如果仅考察 (8.46) 右端在点 $O$ 与 $A$ 的线性部分，则奇点 $O$ 为中心点，而奇点 $A$ 为初等鞍点。对于非线性系统 (8.46)，由定理 8.6 易知奇点 $A$ 仍是一个鞍点；但判断奇点 $O$ 的性质并不如此简单。不过可以把 (8.46) 的两个方程相除消去 $t$，从而得到该系统的首次积分$$F(x,y)\overset{\text{def}}{=}y^2+x^2-x^3=C,\tag{8.47}$$其中 $C$ 为任意常数。由此式不难作出 (8.46) 的相轨线图，并且知道奇点 $O$ 仍是一个中心点。
 
 为下面讨论的方便，在 (8.47) 中令$$C=\frac{4}{27}-\varepsilon,$$则有下列结论：
 
@@ -2502,19 +2502,19 @@ $\mathrm{P}_n(x)$ 满足罗德里格斯（Rodrigues，1795—1851）公式$$\mat
 
 (C) 若 $\varepsilon>0$ 且 $|\varepsilon|\ll 1$，则当 $(x,y)$ 在 $\Gamma_\varepsilon$ 所围区域之内或 $H_\varepsilon$ 右侧时 $f(x,y,\varepsilon)<0$；当 $(x,y)\in\Gamma_\varepsilon\cup H_\varepsilon$ 时 $f(x,y,\varepsilon)=0$；当 $(x,y)$ 在 $\Gamma_\varepsilon$ 所围区域之外和 $H_\varepsilon$ 左侧时 $f(x,y,\varepsilon)>0$。
 
-利用函数 $f(x,y,\varepsilon)$，构造如下系统族：$$\begin{cases}\dfrac{\mathrm{d}x}{\mathrm{d}t}=y,\\[6pt]\dfrac{\mathrm{d}y}{\mathrm{d}t}=-x\left(1-\dfrac{3}{2}x\right)+f(x,y,\varepsilon)y.\end{cases}\tag{8.48}_\varepsilon$$
+利用函数 $f(x,y,\varepsilon)$，构造如下系统族：$$\begin{cases} \dfrac{\mathrm{d}x}{\mathrm{d}t}=y,\\[6pt] \dfrac{\mathrm{d}y}{\mathrm{d}t}=-x\left(1-\dfrac{3}{2}x\right)+f(x,y,\varepsilon)y. \end{cases}\tag{8.48$_{\varepsilon}$}$$
 
-容易算出函数 $F$ 关于微分方程 $(8.48)_\varepsilon$ 对 $t$ 的全导数为$$\left.\frac{\mathrm{d}F}{\mathrm{d}t}\right|_{(8.48)_\varepsilon}=\left(\frac{\partial F}{\partial x}\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{\partial F}{\partial y}\frac{\mathrm{d}y}{\mathrm{d}t}\right)_{(8.48)_\varepsilon}=2f(x,y,\varepsilon)y^2.$$利用全导数研究轨线走向的方法并注意 $f(x,y,\varepsilon)$ 的性质 (A)—(C)，就可以断言：当 $\varepsilon<0$、$\varepsilon=0$ 和 $\varepsilon>0$ 时，系统 $(8.48)_\varepsilon$ 的相图分别具有图 8-28 中 (a)—(c) 的三种不同结构。特别地，当 $\varepsilon=0$ 时，系统 $(8.48)_0$ 的鞍点同宿轨线就是 (8.46) 的鞍点同宿轨线，但其所围区域内的奇点却是焦点；当 $\varepsilon>0$ 时，系统 $(8.48)_\varepsilon$ 的唯一闭轨就是 (8.46) 的闭轨 $\Gamma_\varepsilon$。由此可知，$\varepsilon=0$ 是系统 $(8.48)_\varepsilon$ 的一个同宿轨线的分支值。
+容易算出函数 $F$ 关于微分方程 $(8.48)_\varepsilon$ 对 $t$ 的全导数为$$\left.\frac{\mathrm{d}F}{\mathrm{d}t}\right|_{(8.48)_\varepsilon} =\left(\frac{\partial F}{\partial x}\frac{\mathrm{d}x}{\mathrm{d}t}+\frac{\partial F}{\partial y}\frac{\mathrm{d}y}{\mathrm{d}t}\right)_{(8.48)_\varepsilon} =2f(x,y,\varepsilon)y^2.$$利用全导数研究轨线走向的方法并注意 $f(x,y,\varepsilon)$ 的性质 (A)—(C)，就可以断言：当 $\varepsilon<0$、$\varepsilon=0$ 和 $\varepsilon>0$ 时，系统 $(8.48)_\varepsilon$ 的相图分别具有图 8-28 中 (a)—(c) 的三种不同结构。特别地，当 $\varepsilon=0$ 时，系统 $(8.48)_0$ 的鞍点同宿轨线就是 (8.46) 的鞍点同宿轨线，但其所围区域内的奇点却是焦点；当 $\varepsilon>0$ 时，系统 $(8.48)_\varepsilon$ 的唯一闭轨就是 (8.46) 的闭轨 $\Gamma_\varepsilon$。由此可知，$\varepsilon=0$ 是系统 $(8.48)_\varepsilon$ 的一个同宿轨线的分支值。
 
 **例 6 (奇异向量场的开折)** @212
 
 作为这一节的结束，介绍一个向量场分支的典型例子，它把上面论及的多种分支现象有机地联系起来，并由此引出普适开折和分支的余维的概念。这个例子是波格丹诺夫（Bogdanov，1950—2013）和塔肯什（Takens，1940—2010）于 1974—1976 年的工作。
 
-记 $\mathcal{X}$ 为全体 $C^\infty$ 平面向量场的集合。考虑以坐标原点为奇点的系统 $X\in\mathcal{X}$，其线性部分矩阵是幂零的，即$$\frac{\mathrm{d}}{\mathrm{d}t}\begin{pmatrix}x\\y\end{pmatrix}=\begin{pmatrix}0&1\\0&0\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}+\cdots,\tag{8.49}$$其中省略的部分是高阶项。利用向量场的正规形理论，在原点附近系统 (8.49) 可经变换化为它的截取到二阶的正规形$$\begin{cases}\dfrac{\mathrm{d}x}{\mathrm{d}t}=y,\\[6pt]\dfrac{\mathrm{d}y}{\mathrm{d}t}=ax^2+bxy,\end{cases}\tag{8.50}$$其中 $a$ 和 $b$ 为常数。如果 $ab\neq 0$，为确定起见设 $ab>0$，则存在常数 $\alpha,\beta,\gamma$，使得经变换 $(x,y,t)\mapsto(\alpha x,\beta y,\gamma t)$，系统 (8.50) 变为$$\begin{cases}\dfrac{\mathrm{d}x}{\mathrm{d}t}=y,\\[6pt]\dfrac{\mathrm{d}y}{\mathrm{d}t}=x^2+xy.\end{cases}\tag{8.51}$$
+记 $\mathcal{X}$ 为全体 $C^\infty$ 平面向量场的集合。考虑以坐标原点为奇点的系统 $X\in\mathcal{X}$，其线性部分矩阵是幂零的，即$$\frac{\mathrm{d}}{\mathrm{d}t}\begin{pmatrix}x\\y\end{pmatrix} =\begin{pmatrix}0&1\\0&0\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}+\cdots,\tag{8.49}$$其中省略的部分是高阶项。利用向量场的正规形理论，在原点附近系统 (8.49) 可经变换化为它的截取到二阶的正规形$$\begin{cases} \dfrac{\mathrm{d}x}{\mathrm{d}t}=y,\\[6pt] \dfrac{\mathrm{d}y}{\mathrm{d}t}=ax^2+bxy, \end{cases}\tag{8.50}$$其中 $a$ 和 $b$ 为常数。如果 $ab\neq 0$，为确定起见设 $ab>0$，则存在常数 $\alpha,\beta,\gamma$，使得经变换 $(x,y,t)\mapsto(\alpha x,\beta y,\gamma t)$，系统 (8.50) 变为$$\begin{cases} \dfrac{\mathrm{d}x}{\mathrm{d}t}=y,\\[6pt] \dfrac{\mathrm{d}y}{\mathrm{d}t}=x^2+xy. \end{cases}\tag{8.51}$$
 
 由于奇点 $(0,0)$ 是非双曲的，这时称向量场具有**奇异性**。系统 (8.51) 是结构不稳定的，我们关心的是它在扰动下会出现什么样的变化。对此有如下三方面的结论。
 
-**结论 1** 当 $(\varepsilon_1,\varepsilon_2)$ 点在参数空间的原点附近变动时，系统 (8.51) 的扰动系统$$\begin{cases}\dfrac{\mathrm{d}x}{\mathrm{d}t}=y,\\[6pt]\dfrac{\mathrm{d}y}{\mathrm{d}t}=\varepsilon_1+\varepsilon_2y+x^2+xy\end{cases}\tag{8.52}$$在相空间的原点附近有且只有 $9$ 种不同的拓扑结构，其中 $4$ 种是结构稳定的，而另外 $5$ 种是结构不稳定的。
+**结论 1** 当 $(\varepsilon_1,\varepsilon_2)$ 点在参数空间的原点附近变动时，系统 (8.51) 的扰动系统$$\begin{cases} \dfrac{\mathrm{d}x}{\mathrm{d}t}=y,\\[6pt] \dfrac{\mathrm{d}y}{\mathrm{d}t}=\varepsilon_1+\varepsilon_2y+x^2+xy \end{cases}\tag{8.52}$$在相空间的原点附近有且只有 $9$ 种不同的拓扑结构，其中 $4$ 种是结构稳定的，而另外 $5$ 种是结构不稳定的。
 
 具体地说，参数空间中原点附近的邻域被四条会聚于原点的光滑曲线 $l_1^+,l_1^-,l_2$ 和 $l_3$ 分割成四个连通区域，当 $(\varepsilon_1,\varepsilon_2)$ 点位于每一个这样的区域时，系统 (8.52) 是结构稳定的。曲线 $l_1^+$ 和 $l_1^-$ 分别是正 $\varepsilon_2$ 轴和负 $\varepsilon_2$ 轴，当 $(\varepsilon_1,\varepsilon_2)$ 点穿过它们时，系统 (8.52) 发生鞍-结点分支；曲线 $l_2$ 的方程是 $\varepsilon_1=-\varepsilon_2^2\ (\varepsilon_2>0)$，当点穿过它时发生霍普夫分支；而 $l_3$ 的方程是$$\varepsilon_1=-\frac{49}{25}\varepsilon_2^2+O\bigl(\varepsilon_2^{5/2}\bigr)\qquad(\varepsilon_2>0),$$当点穿过它时发生同宿轨线分支。这四条分支曲线构成**分支图**（图 8-31）。
 
@@ -2616,7 +2616,7 @@ $\mathrm{P}_n(x)$ 满足罗德里格斯（Rodrigues，1795—1851）公式$$\mat
 
 现在，设 $y=\varphi(x,\lambda)$ 是微分方程 (9.20) 的解，而且它满足初值条件$$\varphi(0,\lambda)=\sin\alpha,\qquad \varphi'(0,\lambda)=\cos\alpha.\tag{9.22}$$由第五章的结果可知这样的解 $y=\varphi(x,\lambda)$ 是存在和唯一的，而且易知它是一个非零解. 显然，$y=\varphi(x,\lambda)$ 满足边值条件 (9.21) 的第一式. 一般说来，它不一定再满足第二式. 问题是如何确定 $\lambda$，使得上述 $y=\varphi(x,\lambda)$ 也满足边值条件 (9.21) 中的第二式. 这样，相应的 $\lambda$ 就是特征值，而 $y=\varphi(x,\lambda)$ 为相应的特征函数.
 
-我们采用极坐标. 令$$\varphi(x,\lambda)=\rho(x,\lambda)\sin\theta(x,\lambda),\qquad \varphi'(x,\lambda)=\rho(x,\lambda)\cos\theta(x,\lambda),$$其中$$\begin{cases}\rho(x,\lambda)=\sqrt{[\varphi(x,\lambda)]^2+[\varphi'(x,\lambda)]^2}\ (>0),\\[4pt]\theta(x,\lambda)=\arctan\dfrac{\varphi(x,\lambda)}{\varphi'(x,\lambda)}\quad(0\le x\le 1).\end{cases}$$由于 $y=\varphi(x,\lambda)$ 满足初值条件 (9.22)（从而满足边值条件 (9.21) 中第一式），我们有$$\theta(0,\lambda)=\arctan\frac{\sin\alpha}{\cos\alpha}=\alpha+j\pi,\tag{9.23}$$这里 $j$ 是某个整数. 欲使 $y=\varphi(x,\lambda)$ 也满足边值条件 (9.21) 中的第二式，只要使 $\theta=\theta(x,\lambda)$ 满足条件$$\theta(1,\lambda)=\beta+k\pi,\tag{9.24}$$这里 $k$ 是某个整数. 这就是说，满足关系式 (9.24) 的 $\lambda=\lambda_k$ 就是所求的特征值，而 $y=\varphi(x,\lambda_k)$ 为相应的特征函数.
+我们采用极坐标. 令$$\varphi(x,\lambda)=\rho(x,\lambda)\sin\theta(x,\lambda),\qquad \varphi'(x,\lambda)=\rho(x,\lambda)\cos\theta(x,\lambda),$$其中$$ \begin{cases} \rho(x,\lambda)=\sqrt{[\varphi(x,\lambda)]^2+[\varphi'(x,\lambda)]^2}\ (>0),\\[4pt] \theta(x,\lambda)=\arctan\dfrac{\varphi(x,\lambda)}{\varphi'(x,\lambda)}\quad(0\le x\le 1). \end{cases} $$由于 $y=\varphi(x,\lambda)$ 满足初值条件 (9.22)（从而满足边值条件 (9.21) 中第一式），我们有$$\theta(0,\lambda)=\arctan\frac{\sin\alpha}{\cos\alpha}=\alpha+j\pi,\tag{9.23}$$这里 $j$ 是某个整数. 欲使 $y=\varphi(x,\lambda)$ 也满足边值条件 (9.21) 中的第二式，只要使 $\theta=\theta(x,\lambda)$ 满足条件$$\theta(1,\lambda)=\beta+k\pi,\tag{9.24}$$这里 $k$ 是某个整数. 这就是说，满足关系式 (9.24) 的 $\lambda=\lambda_k$ 就是所求的特征值，而 $y=\varphi(x,\lambda_k)$ 为相应的特征函数.
 
 因此，我们只需讨论方程 (9.24) 的求根问题.
 

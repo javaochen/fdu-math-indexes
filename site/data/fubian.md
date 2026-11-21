@@ -50,7 +50,7 @@
 
 **例 1.2** @3
 
-设复数 $c$ 满足 $|c|<1$，证明：$$\left|\frac{z-c}{1-\overline{c}z}\right|\begin{cases}<1, & \text{当 }|z|<1;\\=1, & \text{当 }|z|=1;\\>1, & \text{当 }|z|>1,\end{cases}$$其中 $1-\overline{c}z\neq0$。
+设复数 $c$ 满足 $|c|<1$，证明：$$\left|\frac{z-c}{1-\overline{c}z}\right| \begin{cases} <1, & \text{当 }|z|<1;\\ =1, & \text{当 }|z|=1;\\ >1, & \text{当 }|z|>1, \end{cases}$$其中 $1-\overline{c}z\neq0$。
 
 **定义 (复数域的有序对构造)** @4
 
@@ -1548,7 +1548,7 @@ Morera 定理中的任意闭三角形 $\Delta$ 可以修改为任意边平行于
 
 **注 (对数函数的积分表示)** @106
 
-在 §2.3 中，已知对数函数 $\log z=\ln|z|+\mathrm{i}\arg z$，$z\in\mathbb{C}^*=\mathbb{C}\setminus\{0\}$ 是多值函数，其多值性来源于辐角的多值性。另一方面，如上一节绕数的积分表示，给定 $z_0\in\mathbb{C}^*$ 以及给定 $\arg z_0=\theta_0$，对任意 $z\in\mathbb{C}^*$ 以及连接 $z_0,z$ 的分段光滑曲线 $\gamma:[a,b]\to\mathbb{C}^*$，$\gamma(a)=z_0$，$\gamma(b)=z$，记 $\gamma$ 的参数表示为 $\gamma(t)=r(t)\mathrm{e}^{\mathrm{i}\theta(t)}$，其中 $r(t)=|\gamma(t)|\neq0$，$\theta(t)=\arg\gamma(t)$ 是 $\gamma$ 上连续辐角函数，满足 $\theta(a)=\theta_0$。那么$$\begin{aligned}\int_\gamma\frac{1}{\zeta}\mathrm{d}\zeta&=\int_a^b\frac{1}{r(t)\mathrm{e}^{\mathrm{i}\theta(t)}}\bigl(r'(t)+\mathrm{i}r(t)\theta'(t)\bigr)\mathrm{e}^{\mathrm{i}\theta(t)}\mathrm{d}t\\&=\int_a^b\frac{r'(t)}{r(t)}\mathrm{d}t+\mathrm{i}\int_a^b\theta'(t)\mathrm{d}t\\&=\ln r(b)-\ln r(a)+\mathrm{i}\bigl(\theta(b)-\theta(a)\bigr)\\&=\ln|z|+\mathrm{i}\arg z-\ln|z_0|+\mathrm{i}\theta_0,\end{aligned}$$这里 $\arg z=\theta(b)$ 是一个确定的辐角，因此也确定了对数 $\log z=\ln|z|+\mathrm{i}\arg z$ 的一个确定的值。记 $\log z_0=\ln|z_0|+\mathrm{i}\theta_0$，上式表明$$\log z=\int_\gamma\frac{1}{\zeta}\mathrm{d}\zeta+\log z_0.\tag{3.38}$$上式称为对数函数的积分表示。由于 (3.38) 中积分值依赖于积分路径 $\gamma$，不同的积分路径可能得到不同的积分值，从而 $\log z$ 的取值不同。因此，得到了对数函数多值性的另一解释：其积分表示依赖于积分路径。
+在 §2.3 中，已知对数函数 $\log z=\ln|z|+\mathrm{i}\arg z$，$z\in\mathbb{C}^*=\mathbb{C}\setminus\{0\}$ 是多值函数，其多值性来源于辐角的多值性。另一方面，如上一节绕数的积分表示，给定 $z_0\in\mathbb{C}^*$ 以及给定 $\arg z_0=\theta_0$，对任意 $z\in\mathbb{C}^*$ 以及连接 $z_0,z$ 的分段光滑曲线 $\gamma:[a,b]\to\mathbb{C}^*$，$\gamma(a)=z_0$，$\gamma(b)=z$，记 $\gamma$ 的参数表示为 $\gamma(t)=r(t)\mathrm{e}^{\mathrm{i}\theta(t)}$，其中 $r(t)=|\gamma(t)|\neq0$，$\theta(t)=\arg\gamma(t)$ 是 $\gamma$ 上连续辐角函数，满足 $\theta(a)=\theta_0$。那么$$ \begin{aligned} \int_\gamma\frac{1}{\zeta}\mathrm{d}\zeta &=\int_a^b\frac{1}{r(t)\mathrm{e}^{\mathrm{i}\theta(t)}}\bigl(r'(t)+\mathrm{i}r(t)\theta'(t)\bigr)\mathrm{e}^{\mathrm{i}\theta(t)}\mathrm{d}t\\ &=\int_a^b\frac{r'(t)}{r(t)}\mathrm{d}t+\mathrm{i}\int_a^b\theta'(t)\mathrm{d}t\\ &=\ln r(b)-\ln r(a)+\mathrm{i}\bigl(\theta(b)-\theta(a)\bigr)\\ &=\ln|z|+\mathrm{i}\arg z-\ln|z_0|+\mathrm{i}\theta_0, \end{aligned} $$这里 $\arg z=\theta(b)$ 是一个确定的辐角，因此也确定了对数 $\log z=\ln|z|+\mathrm{i}\arg z$ 的一个确定的值。记 $\log z_0=\ln|z_0|+\mathrm{i}\theta_0$，上式表明$$\log z=\int_\gamma\frac{1}{\zeta}\mathrm{d}\zeta+\log z_0.\tag{3.38}$$上式称为对数函数的积分表示。由于 (3.38) 中积分值依赖于积分路径 $\gamma$，不同的积分路径可能得到不同的积分值，从而 $\log z$ 的取值不同。因此，得到了对数函数多值性的另一解释：其积分表示依赖于积分路径。
 
 **注 (原函数与积分表示)** @107
 
@@ -1596,13 +1596,13 @@ Morera 定理中的任意闭三角形 $\Delta$ 可以修改为任意边平行于
 
 **注 (单值支的辐角表示)** @110
 
-单值支的积分表达式 (3.44) 也可改写为$$\begin{aligned}\log\frac{z-1}{z+1}&=\log(z-1)-\log(z_0-1)-\bigl(\log(z+1)-\log(z_0+1)\bigr)+w_0\\&=\log|\zeta-1|\Big|_{z_0}^{z}+\mathrm{i}\Delta_\gamma\arg(\zeta-1)-\left(\ln|\zeta+1|\Big|_{z_0}^{z}+\mathrm{i}\Delta_\gamma\arg(\zeta+1)\right)+w_0.\end{aligned}$$由此，可以通过考虑辐角 $\arg(\zeta-1)$ 和 $\arg(\zeta+1)$ 沿 $\gamma$ 的连续该变量来确定 $\log\dfrac{z-1}{z+1}$ 的这个单值支在 $z$ 点的值。
+单值支的积分表达式 (3.44) 也可改写为$$ \begin{aligned} \log\frac{z-1}{z+1}&=\log(z-1)-\log(z_0-1)-\bigl(\log(z+1)-\log(z_0+1)\bigr)+w_0\\ &=\log|\zeta-1|\Big|_{z_0}^{z}+\mathrm{i}\Delta_\gamma\arg(\zeta-1)-\left(\ln|\zeta+1|\Big|_{z_0}^{z}+\mathrm{i}\Delta_\gamma\arg(\zeta+1)\right)+w_0. \end{aligned} $$由此，可以通过考虑辐角 $\arg(\zeta-1)$ 和 $\arg(\zeta+1)$ 沿 $\gamma$ 的连续该变量来确定 $\log\dfrac{z-1}{z+1}$ 的这个单值支在 $z$ 点的值。
 
 **例 3.9 (两支的取值比较)** @110
 
 设 $f_1(z)$ 和 $f_2(z)$ 分别是 $\log\dfrac{z-1}{z+1}$ 在 $\Omega_1=\mathbb{C}\setminus\bigl((-\infty,-1]\cup[1,+\infty)\bigr)$ 和 $\Omega_2=\mathbb{C}\setminus[-1,1]$ 上满足 $\log\dfrac{\mathrm{i}-1}{\mathrm{i}+1}=\dfrac{\pi\mathrm{i}}{2}$ 的单值支，求 $f_1(-\mathrm{i})$ 和 $f_2(-\mathrm{i})$。
 
-解：对 $f_1$，取 $\Omega_1$ 内以 $\mathrm{i}$ 为起点，穿过区间 $(-1,1)$ 且以 $-\mathrm{i}$ 为终点的曲线 $\gamma$，如 $\gamma=[\mathrm{i},-\mathrm{i}]$，则$$\begin{aligned}f_1(-\mathrm{i})&=\int_\gamma\left(\frac{1}{z-1}-\frac{1}{z+1}\right)\mathrm{d}z+\frac{\pi\mathrm{i}}{2}\\&=\ln|z-1|\Big|_{\mathrm{i}}^{-\mathrm{i}}+\mathrm{i}\Delta_\gamma\arg(z-1)-\left(\ln|z+1|\Big|_{\mathrm{i}}^{-\mathrm{i}}+\mathrm{i}\Delta_\gamma\arg(z+1)\right)+\frac{\pi\mathrm{i}}{2}\\&=\left(\frac{\pi}{2}-\left(-\frac{\pi}{2}\right)\right)\mathrm{i}+\frac{\pi\mathrm{i}}{2}=\frac{3\pi\mathrm{i}}{2}.\end{aligned}$$而对 $f_2$，需要取 $\Omega_2$ 内连接 $\mathrm{i}$ 与 $-\mathrm{i}$ 的曲线 $\gamma$，可以有两种取法：从区间 $[-1,1]$ 右侧穿过实轴或从区间 $[-1,1]$ 左侧穿过实轴。如果取 $\gamma$ 从 $[-1,1]$ 右侧穿过实轴（如图），则$$\begin{aligned}f_2(-\mathrm{i})&=\int_\gamma\left(\frac{1}{z-1}-\frac{1}{z+1}\right)\mathrm{d}z+\frac{\pi\mathrm{i}}{2}\\&=\ln|z-1|\Big|_{\mathrm{i}}^{-\mathrm{i}}+\mathrm{i}\Delta_\gamma\arg(z-1)-\left(\ln|z+1|\Big|_{\mathrm{i}}^{-\mathrm{i}}+\mathrm{i}\Delta_\gamma\arg(z+1)\right)+\frac{\pi\mathrm{i}}{2}\\&=\left(-\frac{3\pi}{2}+\frac{\pi}{2}\right)\mathrm{i}+\frac{\pi\mathrm{i}}{2}=-\frac{\pi\mathrm{i}}{2}.\end{aligned}$$如果取 $\gamma$ 从 $[-1,1]$ 左侧穿过实轴，读者可以验证得到相同结果。
+解：对 $f_1$，取 $\Omega_1$ 内以 $\mathrm{i}$ 为起点，穿过区间 $(-1,1)$ 且以 $-\mathrm{i}$ 为终点的曲线 $\gamma$，如 $\gamma=[\mathrm{i},-\mathrm{i}]$，则$$ \begin{aligned} f_1(-\mathrm{i})&=\int_\gamma\left(\frac{1}{z-1}-\frac{1}{z+1}\right)\mathrm{d}z+\frac{\pi\mathrm{i}}{2}\\ &=\ln|z-1|\Big|_{\mathrm{i}}^{-\mathrm{i}}+\mathrm{i}\Delta_\gamma\arg(z-1)-\left(\ln|z+1|\Big|_{\mathrm{i}}^{-\mathrm{i}}+\mathrm{i}\Delta_\gamma\arg(z+1)\right)+\frac{\pi\mathrm{i}}{2}\\ &=\left(\frac{\pi}{2}-\left(-\frac{\pi}{2}\right)\right)\mathrm{i}+\frac{\pi\mathrm{i}}{2}=\frac{3\pi\mathrm{i}}{2}. \end{aligned} $$而对 $f_2$，需要取 $\Omega_2$ 内连接 $\mathrm{i}$ 与 $-\mathrm{i}$ 的曲线 $\gamma$，可以有两种取法：从区间 $[-1,1]$ 右侧穿过实轴或从区间 $[-1,1]$ 左侧穿过实轴。如果取 $\gamma$ 从 $[-1,1]$ 右侧穿过实轴（如图），则$$ \begin{aligned} f_2(-\mathrm{i})&=\int_\gamma\left(\frac{1}{z-1}-\frac{1}{z+1}\right)\mathrm{d}z+\frac{\pi\mathrm{i}}{2}\\ &=\ln|z-1|\Big|_{\mathrm{i}}^{-\mathrm{i}}+\mathrm{i}\Delta_\gamma\arg(z-1)-\left(\ln|z+1|\Big|_{\mathrm{i}}^{-\mathrm{i}}+\mathrm{i}\Delta_\gamma\arg(z+1)\right)+\frac{\pi\mathrm{i}}{2}\\ &=\left(-\frac{3\pi}{2}+\frac{\pi}{2}\right)\mathrm{i}+\frac{\pi\mathrm{i}}{2}=-\frac{\pi\mathrm{i}}{2}. \end{aligned} $$如果取 $\gamma$ 从 $[-1,1]$ 左侧穿过实轴，读者可以验证得到相同结果。
 
 对 $\alpha\in\mathbb{C}\setminus\mathbb{Z}$，由于幂函数 $z^\alpha=\mathrm{e}^{\alpha\log z}$，故确定了 $\log z$ 的一个单值支就确定了 $z^\alpha$ 的一个单值支。于是有
 
@@ -1936,7 +1936,7 @@ Morera 定理中的任意闭三角形 $\Delta$ 可以修改为任意边平行于
 
 **例 4.10 (Laurent 展开举例)** @138
 
-函数 $(\sin z)/z$ 在 $0$ 的 Laurent 展开式为$$\frac{\sin z}{z}=1-\frac{z^2}{3!}+\frac{z^4}{5!}-\cdots+\frac{z^{2n}}{(2n+1)!}+\cdots,$$其主部消失，$0$ 为可去奇点。函数 $1/(\mathrm{e}^z-1)$ 在 $0$ 的 Laurent 展开式为$$\begin{aligned}\frac{1}{\mathrm{e}^z-1}&=\frac{1}{z+z^2/2!+\cdots+z^n/n!+\cdots}\\&=\frac{1}{z}\,\frac{1}{1+z/2!+z^2/3!+\cdots}\\&=\frac{1}{z}+1-\frac{z}{2}-\frac{z^2}{4}-\cdots,\end{aligned}$$其主部只有 $1$ 项，$0$ 为 $1$ 阶极点。函数 $\sin(1/z)$ 在 $0$ 的 Laurent 展开式为$$\sin\frac{1}{z}=\frac{1}{z}-\frac{1}{3!z^3}+\frac{1}{5!z^5}-\cdots,$$其主部有无限多项，$0$ 为本性奇点。
+函数 $(\sin z)/z$ 在 $0$ 的 Laurent 展开式为$$\frac{\sin z}{z}=1-\frac{z^2}{3!}+\frac{z^4}{5!}-\cdots+\frac{z^{2n}}{(2n+1)!}+\cdots,$$其主部消失，$0$ 为可去奇点。函数 $1/(\mathrm{e}^z-1)$ 在 $0$ 的 Laurent 展开式为$$ \begin{aligned} \frac{1}{\mathrm{e}^z-1} &=\frac{1}{z+z^2/2!+\cdots+z^n/n!+\cdots}\\ &=\frac{1}{z}\,\frac{1}{1+z/2!+z^2/3!+\cdots}\\ &=\frac{1}{z}+1-\frac{z}{2}-\frac{z^2}{4}-\cdots, \end{aligned} $$其主部只有 $1$ 项，$0$ 为 $1$ 阶极点。函数 $\sin(1/z)$ 在 $0$ 的 Laurent 展开式为$$\sin\frac{1}{z}=\frac{1}{z}-\frac{1}{3!z^3}+\frac{1}{5!z^5}-\cdots,$$其主部有无限多项，$0$ 为本性奇点。
 
 **定义 (无穷远孤立奇点)** @139
 
@@ -2288,7 +2288,7 @@ $$\operatorname{Res}\left(\tan z,\frac{\pi}{2}\right)=\operatorname{Res}\left(\f
 
 求多项式 $p(z)=z^8+4z^4+z+1$ 在 (1) 单位圆和 (2) 第一象限内的零点个数。
 
-解：(1) 将 $p(z)$ 改写为$$p(z)=z^4\Bigl(z^4+4+\frac{1}{z^3}+\frac{1}{z^4}\Bigr),$$记 $\varphi(z)=z^4+4+z^{-3}+z^{-4}$，并记 $\gamma$ 为单位圆周 $\gamma(t)=\mathrm{e}^{\mathrm{i}t}$，$t\in[0,2\pi]$，则当 $z\in\gamma$，即 $|z|=1$ 时，$|\varphi(z)-4|\leq |z|^4+1/|z|^3+1/|z|^4=3$，这意味着 $\varphi(\gamma)\in D(4,3)$，故 $n(\varphi(\gamma),0)=0$。记 $\Gamma=p(\gamma)$，则$$\begin{aligned}n(\Gamma,0)&=\frac{1}{2\pi}\Delta_\gamma\arg p(z)\\&=\frac{4}{2\pi}\Delta_\gamma\arg z+\frac{1}{2\pi}\Delta_\gamma\arg\varphi(z)\\&=4n(\gamma,0)+n(\varphi(\gamma),0)=4.\end{aligned}$$由辐角原理，$p$ 在单位圆内恰有 $4$ 个零点。
+解：(1) 将 $p(z)$ 改写为$$p(z)=z^4\Bigl(z^4+4+\frac{1}{z^3}+\frac{1}{z^4}\Bigr),$$记 $\varphi(z)=z^4+4+z^{-3}+z^{-4}$，并记 $\gamma$ 为单位圆周 $\gamma(t)=\mathrm{e}^{\mathrm{i}t}$，$t\in[0,2\pi]$，则当 $z\in\gamma$，即 $|z|=1$ 时，$|\varphi(z)-4|\leq |z|^4+1/|z|^3+1/|z|^4=3$，这意味着 $\varphi(\gamma)\in D(4,3)$，故 $n(\varphi(\gamma),0)=0$。记 $\Gamma=p(\gamma)$，则$$\begin{aligned} n(\Gamma,0)&=\frac{1}{2\pi}\Delta_\gamma\arg p(z)\\ &=\frac{4}{2\pi}\Delta_\gamma\arg z+\frac{1}{2\pi}\Delta_\gamma\arg\varphi(z)\\ &=4n(\gamma,0)+n(\varphi(\gamma),0)=4. \end{aligned}$$由辐角原理，$p$ 在单位圆内恰有 $4$ 个零点。
 
 (2) 取 $R>0$ 充分大，则 $p$ 在 $|z|\geq R$ 内没有零点。考虑围道 $\gamma=\gamma_1+\gamma_2+\gamma_3$，其中 $\gamma_1=[0,R]$，$\gamma_2(t)=R\mathrm{e}^{\mathrm{i}t}$，$t\in[0,\pi/2]$，$\gamma_3=[\mathrm{i}R,0]$。将 $p(z)$ 改写为$$p(z)=z^8\Bigl(1+\frac{4}{z^4}+\frac{1}{z^7}+\frac{1}{z^8}\Bigr),$$并将括号内函数记为 $\psi(z)$。则对任意 $\varepsilon>0$ 充分小，只要 $R>0$ 充分大，则对 $|z|=R$ 有 $\psi(z)\in D(1,\varepsilon)$ 以及 $p(z)\in D(z^8,R^8\varepsilon)$。
 
@@ -2296,7 +2296,7 @@ $$\operatorname{Res}\left(\tan z,\frac{\pi}{2}\right)=\operatorname{Res}\left(\f
 
 当 $z$ 沿 $\gamma_2$ 从 $R$ 连续变化到 $\mathrm{i}R$ 时，$p(z)$ 从 $p(R)$ 连续变化到 $p(\mathrm{i}R)\in D(R^8,R^8\varepsilon)$，且$$\Delta_{\gamma_2}\arg p(z)=8\Delta_{\gamma_2}\arg z+\Delta_{\gamma_2}\arg\psi(z)=4\pi+\Delta_{\gamma_2}\arg\psi(z).$$由于 $\psi(z)\in D(1,\varepsilon)$，$|\Delta_{\gamma_2}\arg\psi(z)|\leq 2\sin^{-1}\varepsilon<\pi\varepsilon$。
 
-而当 $z$ 沿 $\gamma_3$ 从 $\mathrm{i}R$ 连续变化到 $0$ 时，$p(z)$ 从 $p(\mathrm{i}R)\in D(R^8,R^8\varepsilon)$ 沿像曲线 $p(\gamma_3)$ 连续变化到 $1$，注意到像曲线 $p(\gamma_3)$ 的参数表示为 $t^8+t^4+\mathrm{i}t+1$，$t\in[0,R]$，表明 $p(\gamma_3)$ 总位于第一象限（端点 $1$ 除外），这表明其辐角的连续改变量 $|\Delta_{\gamma_3}\arg p(z)|\leq\pi\varepsilon$。因此$$\begin{aligned}\Delta_\gamma\arg p(z)&=\Delta_{\gamma_1}\arg p(z)+\Delta_{\gamma_2}\arg p(z)+\Delta_{\gamma_3}\arg p(z)\\&=4\pi+\Delta_{\gamma_2}\arg\psi(z)+\Delta_{\gamma_3}\arg p(z).\end{aligned}$$因此$$-2\pi\varepsilon+4\pi\leq\Delta_\gamma\arg p(z)\leq 4\pi+2\pi\varepsilon.$$但 $\gamma$ 是闭曲线，$\Delta_\gamma\arg p(z)$ 是 $2\pi$ 的整数倍，只能有 $\Delta_\gamma\arg p(z)=4\pi$。记 $\Gamma=p(\gamma)$，则 $n(\Gamma,0)=\frac{1}{2\pi}\Delta_\gamma\arg p(z)=2$。由辐角原理，$p$ 在第一象限恰有 $2$ 个零点。
+而当 $z$ 沿 $\gamma_3$ 从 $\mathrm{i}R$ 连续变化到 $0$ 时，$p(z)$ 从 $p(\mathrm{i}R)\in D(R^8,R^8\varepsilon)$ 沿像曲线 $p(\gamma_3)$ 连续变化到 $1$，注意到像曲线 $p(\gamma_3)$ 的参数表示为 $t^8+t^4+\mathrm{i}t+1$，$t\in[0,R]$，表明 $p(\gamma_3)$ 总位于第一象限（端点 $1$ 除外），这表明其辐角的连续改变量 $|\Delta_{\gamma_3}\arg p(z)|\leq\pi\varepsilon$。因此$$\begin{aligned} \Delta_\gamma\arg p(z)&=\Delta_{\gamma_1}\arg p(z)+\Delta_{\gamma_2}\arg p(z)+\Delta_{\gamma_3}\arg p(z)\\ &=4\pi+\Delta_{\gamma_2}\arg\psi(z)+\Delta_{\gamma_3}\arg p(z). \end{aligned}$$因此$$-2\pi\varepsilon+4\pi\leq\Delta_\gamma\arg p(z)\leq 4\pi+2\pi\varepsilon.$$但 $\gamma$ 是闭曲线，$\Delta_\gamma\arg p(z)$ 是 $2\pi$ 的整数倍，只能有 $\Delta_\gamma\arg p(z)=4\pi$。记 $\Gamma=p(\gamma)$，则 $n(\Gamma,0)=\frac{1}{2\pi}\Delta_\gamma\arg p(z)=2$。由辐角原理，$p$ 在第一象限恰有 $2$ 个零点。
 
 **定理 5.11 (Rouché 定理)** @175
 
@@ -2322,7 +2322,7 @@ Rouché 定理也可以用来证明代数基本定理，留作习题。
 
 求方程 $\mathrm{e}^z=1+2z$ 在单位圆 $\mathbb{D}$ 内的零点。
 
-解：容易看出 $z=0$ 是方程在 $\mathbb{D}$ 内的一个零点。令 $f(z)=\mathrm{e}^z-2z-1$，$g(z)=-2z$，则在单位圆周上$$\begin{aligned}|f(z)-g(z)|&=|\mathrm{e}^z-1|\\&=\Bigl|z+\frac{z^2}{2!}+\cdots+\frac{z^k}{k!}+\cdots\Bigr|\\&\leq 1+\frac{1}{2!}+\cdots+\frac{1}{k!}+\cdots\\&<1+\frac{1}{2}+\cdots+\frac{1}{2^{k-1}}+\cdots=2=|g(z)|,\qquad |z|=1.\end{aligned}$$因此，$f$ 与 $g$ 在 $\mathbb{D}$ 内有相同零点个数。但 $g$ 只有一个零点，故 $f$ 也只有一个零点。即 $z=0$ 是方程 $\mathrm{e}^z=1+2z$ 在 $\mathbb{D}$ 内唯一零点。
+解：容易看出 $z=0$ 是方程在 $\mathbb{D}$ 内的一个零点。令 $f(z)=\mathrm{e}^z-2z-1$，$g(z)=-2z$，则在单位圆周上$$\begin{aligned} |f(z)-g(z)|&=|\mathrm{e}^z-1|\\ &=\Bigl|z+\frac{z^2}{2!}+\cdots+\frac{z^k}{k!}+\cdots\Bigr|\\ &\leq 1+\frac{1}{2!}+\cdots+\frac{1}{k!}+\cdots\\ &<1+\frac{1}{2}+\cdots+\frac{1}{2^{k-1}}+\cdots=2=|g(z)|,\qquad |z|=1. \end{aligned}$$因此，$f$ 与 $g$ 在 $\mathbb{D}$ 内有相同零点个数。但 $g$ 只有一个零点，故 $f$ 也只有一个零点。即 $z=0$ 是方程 $\mathrm{e}^z=1+2z$ 在 $\mathbb{D}$ 内唯一零点。
 
 **定理 5.12 (局部 Hurwitz 定理)** @177
 
@@ -2854,7 +2854,7 @@ Koebe 偏差定理的几何解释：$f(z)\in\mathcal{S}$，则 $f(z)$ 将 $D(0,r
 
 **注 (Poisson 核)** @221
 
-公式 (7.7) 称为调和函数 $u(z)$ 在圆 $D(z_0,\rho)$ 上的 Poisson 公式。$$P(\zeta,z)=\frac{\rho^2-|z-z_0|^2}{|\rho\mathrm{e}^{\mathrm{i}\theta}-(z-z_0)|^2},\qquad \zeta=z_0+\rho\mathrm{e}^{\mathrm{i}\theta},$$称为圆 $D(z_0,\rho)$ 上的 Poisson 核。Poisson 核有如下各种表达式$$\begin{aligned}P(\zeta,z)&=\frac{|\zeta-z_0|^2-|z-z_0|^2}{|(\zeta-z_0)-(z-z_0)|^2}\\&=\operatorname{Re}\left(\frac{\rho\mathrm{e}^{\mathrm{i}\theta}+(z-z_0)}{\rho\mathrm{e}^{\mathrm{i}\theta}-(z-z_0)}\right)=\operatorname{Re}\left(\frac{(\zeta-z_0)+(z-z_0)}{(\zeta-z_0)-(z-z_0)}\right)\\&=\frac{\rho^2-r^2}{\rho^2+r^2-2\rho r\cos(\varphi-\theta)},\end{aligned}\tag{7.12}$$这里 $\zeta=z_0+\rho\mathrm{e}^{\mathrm{i}\theta}$，$z=z_0+r\mathrm{e}^{\mathrm{i}\varphi}$。
+公式 (7.7) 称为调和函数 $u(z)$ 在圆 $D(z_0,\rho)$ 上的 Poisson 公式。$$P(\zeta,z)=\frac{\rho^2-|z-z_0|^2}{|\rho\mathrm{e}^{\mathrm{i}\theta}-(z-z_0)|^2},\qquad \zeta=z_0+\rho\mathrm{e}^{\mathrm{i}\theta},$$称为圆 $D(z_0,\rho)$ 上的 Poisson 核。Poisson 核有如下各种表达式$$\begin{aligned} P(\zeta,z)&=\frac{|\zeta-z_0|^2-|z-z_0|^2}{|(\zeta-z_0)-(z-z_0)|^2}\\ &=\operatorname{Re}\left(\frac{\rho\mathrm{e}^{\mathrm{i}\theta}+(z-z_0)}{\rho\mathrm{e}^{\mathrm{i}\theta}-(z-z_0)}\right)=\operatorname{Re}\left(\frac{(\zeta-z_0)+(z-z_0)}{(\zeta-z_0)-(z-z_0)}\right)\\ &=\frac{\rho^2-r^2}{\rho^2+r^2-2\rho r\cos(\varphi-\theta)}, \end{aligned}\tag{7.12}$$这里 $\zeta=z_0+\rho\mathrm{e}^{\mathrm{i}\theta}$，$z=z_0+r\mathrm{e}^{\mathrm{i}\varphi}$。
 
 在 Poisson 公式 (7.7) 中取 $u\equiv1$ 以及利用三角不等式，立即得到 Poisson 核的如下性质：
 
@@ -3262,7 +3262,7 @@ $\Gamma(s)$ 可以解析延拓为 $\mathbb{C}$ 上半纯函数，以 $0,-1,-2,\d
 
 上述定理还可以用曲线积分证明：要求 $\operatorname{Re}s>0$ 是被积函数在 $0$ 有奇性，想法让积分曲线绕开 $0$ 点。考虑割缝平面 $\mathbb{C}\setminus[0,+\infty)$，作曲线 $\gamma=\gamma_\varepsilon$ 如下：从 $+\infty$ 出发沿割缝上沿左行到 $\varepsilon>0$（上沿对应点记为 $\varepsilon^+$）；再以 $0$ 为圆心、$\varepsilon$ 为半径作圆周，方向为从 $\varepsilon^+$ 到割缝下沿的 $\varepsilon^-$；再从 $\varepsilon^-$ 出发沿割缝下沿右行到 $+\infty$。考虑积分$$\frac{1}{2\pi\mathrm{i}}\int_\gamma(-\zeta)^{s-1}\mathrm{e}^{-\zeta}\,\mathrm{d}\zeta,\tag{10.3}$$其中 $(-\zeta)^s$ 在 $\mathbb{C}\setminus[0,+\infty)$ 取主值单值支，使得当 $\zeta=-1$ 时 $(-\zeta)^s=1$。由此，在正实轴上沿 $(-\zeta)^s=t^s\mathrm{e}^{-\mathrm{i}\pi s}$，在正实轴下沿 $\zeta^s=t^s\mathrm{e}^{\mathrm{i}\pi s}$。由 Cauchy 定理知，上述积分和 $\varepsilon$ 无关。
 
-注意到$$\frac{1}{2\pi\mathrm{i}}\int_\gamma(-\zeta)^{s-1}\mathrm{e}^{-\zeta}\,\mathrm{d}\zeta=\frac{\mathrm{e}^{-\mathrm{i}\pi s}-\mathrm{e}^{\mathrm{i}\pi s}}{2\pi\mathrm{i}}\int_\varepsilon^{+\infty}t^{s-1}\mathrm{e}^{-t}\,\mathrm{d}t+\int_{|\zeta|=\varepsilon}(-\zeta)^{s-1}\mathrm{e}^{-\zeta}\,\mathrm{d}\zeta,$$即$$=-\frac{\sin\pi s}{\pi}\int_\varepsilon^{+\infty}t^{s-1}\mathrm{e}^{-t}\,\mathrm{d}t+\int_{|\zeta|=\varepsilon}(-\zeta)^{s-1}\mathrm{e}^{-\zeta}\,\mathrm{d}\zeta.$$而当 $\varepsilon\to 0$ 时，上式右端第二项积分趋于 $0$。令 $\varepsilon\to 0$，即得$$\Gamma(s)=-\frac{\pi}{\sin\pi s}\frac{1}{2\pi\mathrm{i}}\int_\gamma(-\zeta)^{s-1}\mathrm{e}^{-\zeta}\,\mathrm{d}\zeta.\tag{10.4}$$
+注意到$$\frac{1}{2\pi\mathrm{i}}\int_\gamma(-\zeta)^{s-1}\mathrm{e}^{-\zeta}\,\mathrm{d}\zeta =\frac{\mathrm{e}^{-\mathrm{i}\pi s}-\mathrm{e}^{\mathrm{i}\pi s}}{2\pi\mathrm{i}}\int_\varepsilon^{+\infty}t^{s-1}\mathrm{e}^{-t}\,\mathrm{d}t+\int_{|\zeta|=\varepsilon}(-\zeta)^{s-1}\mathrm{e}^{-\zeta}\,\mathrm{d}\zeta,$$即$$=-\frac{\sin\pi s}{\pi}\int_\varepsilon^{+\infty}t^{s-1}\mathrm{e}^{-t}\,\mathrm{d}t+\int_{|\zeta|=\varepsilon}(-\zeta)^{s-1}\mathrm{e}^{-\zeta}\,\mathrm{d}\zeta.$$而当 $\varepsilon\to 0$ 时，上式右端第二项积分趋于 $0$。令 $\varepsilon\to 0$，即得$$\Gamma(s)=-\frac{\pi}{\sin\pi s}\frac{1}{2\pi\mathrm{i}}\int_\gamma(-\zeta)^{s-1}\mathrm{e}^{-\zeta}\,\mathrm{d}\zeta.\tag{10.4}$$
 
 注意到等式右端积分对任意 $s\in\mathbb{C}$ 都有意义，且是整函数。因此，$\Gamma(s)$ 可以解析延拓成 $\mathbb{C}$ 上半纯函数，可能的极点为 $\sin\pi s$ 的零点，即整数。当 $s=k$ 为正整数时，被积函数全纯，由 Cauchy 定理可得积分为 $0$，因此，$s=k\in\mathbb{Z}^+$ 是可去奇点；当 $s=0$ 或负整数 $-k$ 时，由 Cauchy 积分公式可知积分等于 $-1/k!\ne 0$，故是一阶极点，由于 $(\sin\pi s)'\big|_{s=-k}=(-1)^k\pi$，可得留数为 $(-1)^k/k!$。
 
@@ -3292,7 +3292,7 @@ $$\Gamma(2s)=\frac{2^{2s-1}}{\sqrt{\pi}}\Gamma(s)\Gamma(s+1/2).\tag{10.7}$$
 
 **定义 (双 Γ 函数)** @258
 
-称$$\psi(s)=(\log\Gamma(s))'=\frac{\Gamma'(s)}{\Gamma(s)}\tag{10.8}$$为双 $\Gamma$ 函数。由乘积公式，$$\log\Gamma(s)=-\gamma s-\log s+\sum_{k=1}^{\infty}\left[\frac{s}{k}-\log\left(1+\frac{s}{k}\right)\right]=-\gamma s-\log s+\sum_{k=1}^{\infty}\left[\frac{s}{k}-\log(k+s)+\log k\right],$$两边求导得$$\psi(s)=-\gamma-\frac{1}{s}+\sum_{k=1}^{\infty}\left[\frac{1}{k}-\frac{1}{k+s}\right]=-\gamma+\sum_{k=0}^{\infty}\left[\frac{1}{k+1}-\frac{1}{k+s}\right].\tag{10.9}$$
+称$$\psi(s)=(\log\Gamma(s))'=\frac{\Gamma'(s)}{\Gamma(s)}\tag{10.8}$$为双 $\Gamma$ 函数。由乘积公式，$$\log\Gamma(s)=-\gamma s-\log s+\sum_{k=1}^{\infty}\left[\frac{s}{k}-\log\left(1+\frac{s}{k}\right)\right] =-\gamma s-\log s+\sum_{k=1}^{\infty}\left[\frac{s}{k}-\log(k+s)+\log k\right],$$两边求导得$$\psi(s)=-\gamma-\frac{1}{s}+\sum_{k=1}^{\infty}\left[\frac{1}{k}-\frac{1}{k+s}\right]=-\gamma+\sum_{k=0}^{\infty}\left[\frac{1}{k+1}-\frac{1}{k+s}\right].\tag{10.9}$$
 
 **引理 10.5 (Watson 引理)** @258
 

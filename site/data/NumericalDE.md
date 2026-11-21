@@ -148,7 +148,7 @@ $0.1$ 的双精度存储（double precision）为$$0.1=(-1)^{s}\cdot(2^{e-1023})
 
 前面简单的递推公式 $u_{n+2}=2u_{n+1}-u_n$，可以看成一般 $k$ 步定常迭代的特殊形式：
 
-$$u_{n+1}=G(u_n,u_{n-1},\cdots,u_{n-k+1}).\tag{1.2.1}$$
+$$ u_{n+1}=G(u_n,u_{n-1},\cdots,u_{n-k+1}).\tag{1.2.1} $$
 
 特别当 $k$ 取 $1$ 时，迭代格式 $u_{n+1}=G(u_n)$ 称为单步迭代。通过引入恒等方程 $u_i=u_i$，可以把多步迭代变成向量型的单步迭代格式。
 
@@ -156,11 +156,11 @@ $$u_{n+1}=G(u_n,u_{n-1},\cdots,u_{n-k+1}).\tag{1.2.1}$$
 
 下面考虑用单步迭代求解如下方程的根（$x$ 也称为 $G$ 的不动点）：
 
-$$x=G(x).\tag{1.2.2}$$
+$$ x=G(x).\tag{1.2.2} $$
 
 最简单地，可以用单步格式来计算：
 
-$$x_{n+1}=G(x_n).\tag{1.2.3}$$
+$$ x_{n+1}=G(x_n).\tag{1.2.3} $$
 
 当序列 $x_n$ 收敛时，$x_n$ 收敛到映射 $x\mapsto G(x)$ 的不动点，因此这个单步迭代格式也称为不动点迭代。
 
@@ -168,11 +168,11 @@ $$x_{n+1}=G(x_n).\tag{1.2.3}$$
 
 用不动点迭代求下面方程的根：
 
-$$x=\mathrm{e}^{-x}.\tag{1.2.4}$$
+$$ x=\mathrm{e}^{-x}.\tag{1.2.4} $$
 
 取 $G(x)=\mathrm{e}^{-x}$，从初始猜想 $x_0=1$ 开始，随迭代次数 $n$ 增加得到序列
 
-$$x_0=1,\quad x_1=0.36789,\quad x_2=0.6922,\quad x_3=0.5005,\quad x_4=0.6062,\quad\cdots,$$
+$$ x_0=1,\quad x_1=0.36789,\quad x_2=0.6922,\quad x_3=0.5005,\quad x_4=0.6062,\quad\cdots, $$
 
 逐渐收敛到真正的不动点 $x^*\approx 0.567$。
 
@@ -180,13 +180,13 @@ $$x_0=1,\quad x_1=0.36789,\quad x_2=0.6922,\quad x_3=0.5005,\quad x_4=0.6062,\qu
 
 记误差 $\varepsilon_n=x^*-x_n$。由 Taylor 公式，在 $x_{n-1}$ 和 $x^*$ 之间存在一点 $\xi_n$，使得
 
-$$\varepsilon_n=x^*-x_n=\mathrm{e}^{-x^*}-\mathrm{e}^{-x_{n-1}}=-\mathrm{e}^{-\xi_n}\varepsilon_{n-1}.$$
+$$ \varepsilon_n=x^*-x_n=\mathrm{e}^{-x^*}-\mathrm{e}^{-x_{n-1}}=-\mathrm{e}^{-\xi_n}\varepsilon_{n-1}. $$
 
 由于 $\mathrm{e}^{-\xi_n}<1$，每次误差的绝对值都以某个倍数减少，当 $n$ 足够大时这个倍数接近 $-\mathrm{e}^{-x^*}=-x^*\approx-0.567$；数值上相邻误差之比与相邻迭代差之比都趋于该值。
 
 实际计算中并不知道不动点 $x^*$ 的精确值，常用相邻两次迭代的差判别是否收敛：
 
-$$\frac{\|x_{i+1}-x_i\|}{\|x_{i+1}\|}<Tol.\tag{1.2.5}$$
+$$ \frac{\|x_{i+1}-x_i\|}{\|x_{i+1}\|}<Tol.\tag{1.2.5} $$
 
 其中 $Tol$ 为预先设定的阈值（例如 $10^{-6}$ 或 $10^{-9}$），$\|\cdot\|$ 表示一种度量或范数：$x$ 为标量时取绝对值，$x$ 为向量时取向量范数。
 
@@ -194,15 +194,15 @@ $$\frac{\|x_{i+1}-x_i\|}{\|x_{i+1}\|}<Tol.\tag{1.2.5}$$
 
 如果映射 $G(x)$ 是一个压缩映射，则存在常数 $\alpha\in[0,1)$，有
 
-$$\|G(x)-G(y)\|\le\alpha\|x-y\|.\tag{1.2.6}$$
+$$ \|G(x)-G(y)\|\le\alpha\|x-y\|.\tag{1.2.6} $$
 
 由单步迭代，上式等价于
 
-$$\|x_{n+2}-x_{n+1}\|\le\alpha\|x_{n+1}-x_n\|,\tag{1.2.7}$$
+$$ \|x_{n+2}-x_{n+1}\|\le\alpha\|x_{n+1}-x_n\|,\tag{1.2.7} $$
 
 则
 
-$$\|x^*-x_n\|\le\frac{\alpha^n}{1-\alpha}\|x_1-x_0\|.\tag{1.2.8}$$
+$$ \|x^*-x_n\|\le\frac{\alpha^n}{1-\alpha}\|x_1-x_0\|.\tag{1.2.8} $$
 
 对于最简单的标量情形，若 $G(x)$ 在不动点 $x^*$ 附近的导数存在，而初始值 $x_0$ 选在 $x^*$ 附近，则当 $|G'(x^*)|<1$ 时迭代收敛，当 $|G'(x^*)|>1$ 时迭代不收敛。而且当这个格式收敛时：
 
@@ -212,25 +212,25 @@ $$\|x^*-x_n\|\le\frac{\alpha^n}{1-\alpha}\|x_1-x_0\|.\tag{1.2.8}$$
 
 方程 $x=\mathrm{e}^{-x}$ 可以换成另一种形式，用不动点迭代求下面方程的根：
 
-$$x=-\ln(x).\tag{1.2.9}$$
+$$ x=-\ln(x).\tag{1.2.9} $$
 
 此时相应的不动点迭代格式为
 
-$$x_{n+1}=-\ln(x_n),\tag{1.2.10}$$
+$$ x_{n+1}=-\ln(x_n),\tag{1.2.10} $$
 
 它不收敛。因为此时 $G'(x^*)=-1/x^*\approx-1/0.567$，其绝对值大于 $1$，因此不收敛。
 
 为了构造收敛的迭代格式，常通过引入阻尼因子 $\gamma$ 的方法。设 $F(x)=x+\ln(x)$，求方程 (1.2.9) 的根可以变成求 $F(x)$ 的根：
 
-$$F(x)=0.\tag{1.2.11}$$
+$$ F(x)=0.\tag{1.2.11} $$
 
 显然，$F(x)$ 在根 $x^*\approx 0.567$ 处的导数为 $F'(x^*)=1+\dfrac{1}{x^*}>1$。任给常数 $\gamma\ne 0$，则方程
 
-$$x=x-\gamma F(x)\equiv\tilde{G}(x)\tag{1.2.12}$$
+$$ x=x-\gamma F(x)\equiv\tilde{G}(x)\tag{1.2.12} $$
 
 和方程 (1.2.9) 有同样的根。但此时可以选择 $\gamma$，使得 $|\tilde{G}'(x^*)|<1$，这样仍然可以用单步迭代来计算方程 (1.2.9) 的不动点：
 
-$$|\tilde{G}'(x^*)|<1\iff -1<1-\gamma F'(x^*)<1.\tag{1.2.13}$$
+$$ |\tilde{G}'(x^*)|<1\iff -1<1-\gamma F'(x^*)<1.\tag{1.2.13} $$
 
 当 $F'(x^*)>0$ 时，当 $\gamma\in\left(0,\dfrac{2}{F'(x^*)}\right)$ 时迭代收敛。数值上，取 $\gamma=\gamma_1/(1+1/0.567)$ 时，$\gamma_1=1$（即 $\gamma=1/F'(x^*)$）收敛最快，$\gamma_1=2$ 时收敛非常慢。
 
@@ -238,15 +238,15 @@ $$|\tilde{G}'(x^*)|<1\iff -1<1-\gamma F'(x^*)<1.\tag{1.2.13}$$
 
 如果用不动点迭代来求解方程
 
-$$\boldsymbol{A}\boldsymbol{x}=\boldsymbol{b},\tag{1.2.14}$$
+$$ \boldsymbol{A}\boldsymbol{x}=\boldsymbol{b},\tag{1.2.14} $$
 
 那么有迭代格式
 
-$$\boldsymbol{x}_{n+1}=\boldsymbol{x}_n+(\boldsymbol{b}-\boldsymbol{A}\boldsymbol{x}_n).\tag{1.2.15}$$
+$$ \boldsymbol{x}_{n+1}=\boldsymbol{x}_n+(\boldsymbol{b}-\boldsymbol{A}\boldsymbol{x}_n).\tag{1.2.15} $$
 
 但这个格式常常是不收敛的。一个最简单的方法是应用引入参数的想法，得到 Richardson 松弛：
 
-$$\boldsymbol{x}_{n+1}=\boldsymbol{x}_n+\omega(\boldsymbol{b}-\boldsymbol{A}\boldsymbol{x}_n).\tag{1.2.16}$$
+$$ \boldsymbol{x}_{n+1}=\boldsymbol{x}_n+\omega(\boldsymbol{b}-\boldsymbol{A}\boldsymbol{x}_n).\tag{1.2.16} $$
 
 通过适当选取参数 $\omega$，对某类矩阵 $\boldsymbol{A}$（例如对称正定矩阵）可以得到收敛的迭代格式。
 
@@ -256,35 +256,35 @@ $$\boldsymbol{x}_{n+1}=\boldsymbol{x}_n+\omega(\boldsymbol{b}-\boldsymbol{A}\bol
 
 上一小节中，当 $\gamma=\dfrac{1}{1+1/0.567}$ 时收敛速度最快，此时 $\gamma\approx\dfrac{1}{F'(x^*)}$。但收敛的精确解 $x^*$ 一般是不知道的，一种替代的方法是用已经计算得到的 $x_n$ 代替精确解 $x^*$，这就是 Newton-Raphson 格式（常简称 Newton 迭代方法或 Newton 格式）：
 
-$$x_{n+1}=x_n-(F'(x_n))^{-1}F(x_n).\tag{1.2.20}$$
+$$ x_{n+1}=x_n-(F'(x_n))^{-1}F(x_n).\tag{1.2.20} $$
 
 **注 1.2.3 (牛顿格式的导出)** @21
 
 Newton 格式可以通过另一种途径得到。如果已经知道 $x_n$，希望调整 $x_n$ 为 $x_{n+1}$，使得 $F(x_{n+1})=0$，那么把 $F(x_{n+1})$ 在点 $x_n$ 作 Taylor 展开，有
 
-$$0=F(x_{n+1})=F(x_n)+F'(x_n)(x_{n+1}-x_n)+O\left((x_{n+1}-x_n)^2\right).$$
+$$ 0=F(x_{n+1})=F(x_n)+F'(x_n)(x_{n+1}-x_n)+O\left((x_{n+1}-x_n)^2\right). $$
 
 舍去高阶小量，可以得到 Newton-Raphson 格式 (1.2.20)。
 
 假设 $F(x)$ 直到二阶导数光滑且有界，对 Newton 方法做简单分析。由 $\varepsilon_n=x^*-x_n$，注意到 $F(x^*)=0$，因此 $\varepsilon_n$ 满足误差方程：
 
-$$\varepsilon_{n+1}=\varepsilon_n+(F'(x_n))^{-1}F(x_n)=\varepsilon_n+(F'(x_n))^{-1}\left(F(x_n)-F(x^*)\right).\tag{1.2.21}$$
+$$ \varepsilon_{n+1}=\varepsilon_n+(F'(x_n))^{-1}F(x_n)=\varepsilon_n+(F'(x_n))^{-1}\left(F(x_n)-F(x^*)\right).\tag{1.2.21} $$
 
 由 Taylor 展开公式，把 $F(x^*)$ 在点 $x_n$ 展开：
 
-$$F(x^*)=F(x_n)+F'(x_n)(x^*-x_n)+F''(\xi)\frac{(x^*-x_n)^2}{2}.$$
+$$ F(x^*)=F(x_n)+F'(x_n)(x^*-x_n)+F''(\xi)\frac{(x^*-x_n)^2}{2}. $$
 
 这里 $\xi$ 在 $x_n$ 和 $x^*$ 之间。将上式代入误差方程得到
 
-$$\varepsilon_{n+1}=-\frac{1}{2}(F'(x_n))^{-1}F''(\xi)\varepsilon_n^2.$$
+$$ \varepsilon_{n+1}=-\frac{1}{2}(F'(x_n))^{-1}F''(\xi)\varepsilon_n^2. $$
 
 这样如果 $x_n$ 收敛到 $x^*$，则在 $x^*$ 附近的误差近似满足
 
-$$|\varepsilon_{n+1}|\approx\rho|\varepsilon_n|^2,\qquad \rho=\frac{1}{2}\left|(F'(x^*))^{-1}\right|\left|F''(x^*)\right|.\tag{1.2.22}$$
+$$ |\varepsilon_{n+1}|\approx\rho|\varepsilon_n|^2,\qquad \rho=\frac{1}{2}\left|(F'(x^*))^{-1}\right|\left|F''(x^*)\right|.\tag{1.2.22} $$
 
 与不动点迭代比较，在不动点迭代中得到的是
 
-$$|\varepsilon_{n+1}|\le\alpha|\varepsilon_n|.\tag{1.2.23}$$
+$$ |\varepsilon_{n+1}|\le\alpha|\varepsilon_n|.\tag{1.2.23} $$
 
 可以看到 Newton-Raphson 格式比不动点迭代收敛得快。
 
@@ -294,7 +294,7 @@ $$|\varepsilon_{n+1}|\le\alpha|\varepsilon_n|.\tag{1.2.23}$$
 
 如果迭代序列 $\{x_n\}$ 收敛于 $x^*$，且存在 $p\ge 1$ 及常数 $\alpha>0$，当 $n\ge n_0$ 时成立：
 
-$$\|x_{n+1}-x^*\|\le\alpha\|x_n-x^*\|^p,\tag{1.2.24}$$
+$$ \|x_{n+1}-x^*\|\le\alpha\|x_n-x^*\|^p,\tag{1.2.24} $$
 
 则称序列 $\{x_n\}$ 至少 $p$ 次收敛。当 $p=1$，$0<\alpha<1$ 时，称序列至少一次收敛或线性收敛；当 $p=2$，$\alpha>0$ 时称序列至少二次收敛或平方收敛。不动点迭代是线性收敛，而 Newton-Raphson 格式是二次收敛或平方收敛。
 
@@ -302,15 +302,15 @@ $$\|x_{n+1}-x^*\|\le\alpha\|x_n-x^*\|^p,\tag{1.2.24}$$
 
 考虑用 Newton 法求方程 $x^s=0$ 的根（$s>0$）。这里 $F(x)=x^s$，因此由 Newton 方法有迭代格式：
 
-$$x_{n+1}=x_n-(F'(x_n))^{-1}F(x_n)=x_n-s^{-1}x_n=(1-s^{-1})x_n.\tag{1.2.25}$$
+$$ x_{n+1}=x_n-(F'(x_n))^{-1}F(x_n)=x_n-s^{-1}x_n=(1-s^{-1})x_n.\tag{1.2.25} $$
 
 由于真解 $x^*=0$，因此误差 $\varepsilon=x^*-x_n$ 满足
 
-$$|\varepsilon_{n+1}|=|1-s^{-1}||\varepsilon_n|.\tag{1.2.26}$$
+$$ |\varepsilon_{n+1}|=|1-s^{-1}||\varepsilon_n|.\tag{1.2.26} $$
 
 因此用 Newton 法求方程 $x^s=0$ 的根，只在 $s>\dfrac{1}{2}$ 时才收敛，且是线性收敛。对于形如 $F(x)=x^s f(x)$（$f(0)\ne 0$）的函数，Newton 迭代方法退化到线性收敛。此时可以用如下形式修改迭代过程：
 
-$$x_{n+1}=x_n-s(F'(x_n))^{-1}F(x_n).\tag{1.2.27}$$
+$$ x_{n+1}=x_n-s(F'(x_n))^{-1}F(x_n).\tag{1.2.27} $$
 
 这个格式是平方收敛的。特别地，对于 $F(x)=x^s$，上述格式一步就得到精确解。注意到即使不知道 $s$ 的值，对于 $F(x)=x^s f(x)$ 形式的函数，$x=0$ 是 $g(x)\equiv F(x)/F'(x)$ 的单根，对 $g(x)$ 用 Newton 方法也能得到平方收敛的计算格式。
 
@@ -330,7 +330,7 @@ Newton 方法的停机准则为：
 
 这一小节以 Logistic 方程为例，说明简单迭代过程中可能蕴含丰富的数学内容。离散的 Logistic 方程为
 
-$$x_{n+1}=x_n+\alpha x_n(1-x_n).\tag{1.2.29}$$
+$$ x_{n+1}=x_n+\alpha x_n(1-x_n).\tag{1.2.29} $$
 
 这里选取初始值 $x_0\in(0,1)$，参数 $\alpha>0$。
 
@@ -338,7 +338,7 @@ $$x_{n+1}=x_n+\alpha x_n(1-x_n).\tag{1.2.29}$$
 
 通常的 Logistic 映射指：
 
-$$u_{n+1}=\beta u_n(1-u_n).\tag{1.2.30}$$
+$$ u_{n+1}=\beta u_n(1-u_n).\tag{1.2.30} $$
 
 将方程 (1.2.29) 做变换 $u_n=\dfrac{\alpha}{1+\alpha}x_n$，并令 $\beta=1+\alpha$，就可以得到方程 (1.2.30)。
 
@@ -346,21 +346,21 @@ $$u_{n+1}=\beta u_n(1-u_n).\tag{1.2.30}$$
 
 如果将 Logistic 方程 (1.2.29) 看成
 
-$$x=x+\alpha x(1-x)$$
+$$ x=x+\alpha x(1-x) $$
 
 的不动点迭代过程，则 $x=0$ 和 $x=1$ 是两个不动点。由于 $G(x)=x+\alpha x(1-x)$，因此 $G(x)$ 的导数为
 
-$$G'(x)=1+\alpha-2\alpha x.\tag{1.2.31}$$
+$$ G'(x)=1+\alpha-2\alpha x.\tag{1.2.31} $$
 
 这样 $G'(0)=1+\alpha$。因为参数 $\alpha>0$，所以不动点 $x=0$ 是不稳定的。而对于 $x=1$，有
 
-$$G'(1)=1-\alpha.\tag{1.2.32}$$
+$$ G'(1)=1-\alpha.\tag{1.2.32} $$
 
 因此当 $|G'(1)|<1$ 或等价地当 $0<\alpha<2$ 时，不动点迭代格式产生的序列收敛到不动点 $x=1$。
 
 当 $\alpha$ 略大于 $2$ 时（例如 $\alpha=2.1$），数值结果显示 $x_n$ 会趋向于两个值：
 
-$$x_{n+2}\approx x_n,\qquad x_{n+3}\approx x_{n+1}.\tag{1.2.33}$$
+$$ x_{n+2}\approx x_n,\qquad x_{n+3}\approx x_{n+1}.\tag{1.2.33} $$
 
 计算表明，当 $\alpha=2.1$ 时存在两个周期解 $x^*\approx 1.1286$ 和 $x^*\approx 0.82374$。当参数 $\alpha$ 从 $\alpha<2$ 的一个解变成 $\alpha>2$ 的两个解，这种行为称为分叉现象（bifurcation）。
 
@@ -368,41 +368,41 @@ $$x_{n+2}\approx x_n,\qquad x_{n+3}\approx x_{n+1}.\tag{1.2.33}$$
 
 合并两步迭代过程，有
 
-$$x_{n+2}=x_n+\alpha x_n(1-x_n)\left(2+\alpha-(2\alpha+\alpha^2)x_n+\alpha^2x_n^2\right).\tag{1.2.34}$$
+$$ x_{n+2}=x_n+\alpha x_n(1-x_n)\left(2+\alpha-(2\alpha+\alpha^2)x_n+\alpha^2x_n^2\right).\tag{1.2.34} $$
 
 这个过程可以看成下面问题的单步不动点迭代：
 
-$$x=x+\alpha x(1-x)\left(2+\alpha-(2\alpha+\alpha^2)x+\alpha^2x^2\right).\tag{1.2.35}$$
+$$ x=x+\alpha x(1-x)\left(2+\alpha-(2\alpha+\alpha^2)x+\alpha^2x^2\right).\tag{1.2.35} $$
 
 除了已经知道的两个不动点 $x=0$ 和 $x=1$，还可能有两个满足下面方程的不动点：
 
-$$\alpha^2x^2-(2+\alpha)\alpha x+2+\alpha=0.\tag{1.2.36}$$
+$$ \alpha^2x^2-(2+\alpha)\alpha x+2+\alpha=0.\tag{1.2.36} $$
 
 这个方程的根是
 
-$$x=\frac{1}{\alpha}\left(1+\frac{\alpha}{2}\pm\frac{1}{2}\sqrt{\alpha^2-4}\right).\tag{1.2.37}$$
+$$ x=\frac{1}{\alpha}\left(1+\frac{\alpha}{2}\pm\frac{1}{2}\sqrt{\alpha^2-4}\right).\tag{1.2.37} $$
 
 因此当 $\alpha>2$ 时得到两个实根，即从不动点 $x=1$ 分叉得到两个新的不动点。
 
 当 $\alpha$ 继续增加时，这两个不动点又会变得不稳定，进一步分叉得到 $4$ 个不动点。分叉发生在临界稳定点：
 
-$$G'(x)=-1,\tag{1.2.38}$$
+$$ G'(x)=-1,\tag{1.2.38} $$
 
 这里
 
-$$G(x)=x+\alpha x(1-x)\left(2+\alpha-(2\alpha+\alpha^2)x+\alpha^2x^2\right).$$
+$$ G(x)=x+\alpha x(1-x)\left(2+\alpha-(2\alpha+\alpha^2)x+\alpha^2x^2\right). $$
 
 注意到 $x$ 满足 (1.2.37) 式，则有
 
-$$2=\alpha x(1-x)\left((2+\alpha)\alpha-2\alpha^2x\right).\tag{1.2.39}$$
+$$ 2=\alpha x(1-x)\left((2+\alpha)\alpha-2\alpha^2x\right).\tag{1.2.39} $$
 
 利用 (1.2.36) 式可以得到 $\alpha=\sqrt{6}$（$\alpha=-\sqrt{6}$ 舍去）。因此当
 
-$$2<\alpha<\sqrt{6}\tag{1.2.40}$$
+$$ 2<\alpha<\sqrt{6}\tag{1.2.40} $$
 
 的时候有两个稳定的解。当 $\alpha>\sqrt{6}$ 时，$2$-分叉会进一步变成 $4$-分叉，这个过程一直进行下去，最终进入混沌（chaotic）状态。Feigenbaum 发现分叉发生时 $\alpha$ 满足如下关系：
 
-$$\frac{\alpha_{n+1}-\alpha_n}{\alpha_n-\alpha_{n-1}}=\frac{1}{\delta}=0.214169\cdots,\tag{1.2.41}$$
+$$ \frac{\alpha_{n+1}-\alpha_n}{\alpha_n-\alpha_{n-1}}=\frac{1}{\delta}=0.214169\cdots,\tag{1.2.41} $$
 
 ### 1.3 离散范数和连续范数（p27–28）
 
@@ -1260,9 +1260,9 @@ $$|u(t)-\tilde{u}(t)|\leqslant|u(t_0)-\tilde{u}(t_0)|\mathrm{e}^{L(t-t_0)}+\int_
 
 **命题 2.2.1 (差商近似导数)** @63
 
-记 $\Delta t$ 为时间方向步长，由 Taylor 展开式$$u(t_{n+1})=u(t_n)+\Delta t\,u'(t_n)+\frac{\Delta t^2}{2}u''(t_n)+\frac{\Delta t^3}{3!}u^{(3)}(t_n)+O(\Delta t^4),$$$$u(t_{n-1})=u(t_n)-\Delta t\,u'(t_n)+\frac{\Delta t^2}{2}u''(t_n)-\frac{\Delta t^3}{3!}u^{(3)}(t_n)+O(\Delta t^4).$$函数 $u(t)$ 在 $t=t_n$ 处的导数至少可以用下面三种方式逼近：$$\left.\frac{\mathrm{d}u}{\mathrm{d}t}\right|_{t=t_n}=\frac{u(t_{n+1})-u(t_n)}{\Delta t}-\frac{\Delta t}{2}u''(t_n)-\frac{\Delta t^2}{3!}u^{(3)}(t_n)+O(\Delta t^3),\tag{2.2.2}$$或者$$\left.\frac{\mathrm{d}u}{\mathrm{d}t}\right|_{t=t_n}=\begin{cases}\dfrac{u(t_n)-u(t_{n-1})}{\Delta t}+\dfrac{\Delta t}{2}u''(t_n)-\dfrac{\Delta t^2}{3!}u^{(3)}(t_n)+O(\Delta t^3),\\[2mm]\dfrac{u(t_{n+1})-u(t_{n-1})}{2\Delta t}-\dfrac{\Delta t^2}{2\times 3!}u^{(3)}(t_n)+O(\Delta t^3).\end{cases}\tag{2.2.3}$$
+记 $\Delta t$ 为时间方向步长，由 Taylor 展开式$$u(t_{n+1})=u(t_n)+\Delta t\,u'(t_n)+\frac{\Delta t^2}{2}u''(t_n)+\frac{\Delta t^3}{3!}u^{(3)}(t_n)+O(\Delta t^4),$$$$u(t_{n-1})=u(t_n)-\Delta t\,u'(t_n)+\frac{\Delta t^2}{2}u''(t_n)-\frac{\Delta t^3}{3!}u^{(3)}(t_n)+O(\Delta t^4).$$函数 $u(t)$ 在 $t=t_n$ 处的导数至少可以用下面三种方式逼近：$$\left.\frac{\mathrm{d}u}{\mathrm{d}t}\right|_{t=t_n}=\frac{u(t_{n+1})-u(t_n)}{\Delta t}-\frac{\Delta t}{2}u''(t_n)-\frac{\Delta t^2}{3!}u^{(3)}(t_n)+O(\Delta t^3),\tag{2.2.2}$$或者$$\left.\frac{\mathrm{d}u}{\mathrm{d}t}\right|_{t=t_n}= \begin{cases} \dfrac{u(t_n)-u(t_{n-1})}{\Delta t}+\dfrac{\Delta t}{2}u''(t_n)-\dfrac{\Delta t^2}{3!}u^{(3)}(t_n)+O(\Delta t^3),\\[2mm] \dfrac{u(t_{n+1})-u(t_{n-1})}{2\Delta t}-\dfrac{\Delta t^2}{2\times 3!}u^{(3)}(t_n)+O(\Delta t^3). \end{cases}\tag{2.2.3}$$
 
-忽略高阶小量 $O(\Delta t)$，微分算子 $\dfrac{\mathrm{d}}{\mathrm{d}t}$ 可以用差商逼近：$$\left.\frac{\mathrm{d}u}{\mathrm{d}t}\right|_{t=t_n}\approx\begin{cases}\dfrac{u(t_{n+1})-u(t_n)}{\Delta t}, & \text{向前差商},\\[2mm]\dfrac{u(t_n)-u(t_{n-1})}{\Delta t}, & \text{向后差商},\\[2mm]\dfrac{u(t_{n+1})-u(t_{n-1})}{2\Delta t}, & \text{中心差商}.\end{cases}\tag{2.2.4}$$
+忽略高阶小量 $O(\Delta t)$，微分算子 $\dfrac{\mathrm{d}}{\mathrm{d}t}$ 可以用差商逼近：$$\left.\frac{\mathrm{d}u}{\mathrm{d}t}\right|_{t=t_n}\approx \begin{cases} \dfrac{u(t_{n+1})-u(t_n)}{\Delta t}, & \text{向前差商},\\[2mm] \dfrac{u(t_n)-u(t_{n-1})}{\Delta t}, & \text{向后差商},\\[2mm] \dfrac{u(t_{n+1})-u(t_{n-1})}{2\Delta t}, & \text{中心差商}. \end{cases}\tag{2.2.4}$$
 
 把导数的近似代入 (2.2.1)，得到三个计算格式（差分方程）：$$u_{n+1}=u_n+\Delta t f_n,\tag{2.2.5}$$$$u_n=u_{n-1}+\Delta t f_n,\tag{2.2.6}$$$$u_{n+1}=u_{n-1}+2\Delta t f_n.\tag{2.2.7}$$
 
@@ -1284,7 +1284,7 @@ $$|u(t)-\tilde{u}(t)|\leqslant|u(t_0)-\tilde{u}(t_0)|\mathrm{e}^{L(t-t_0)}+\int_
 
 **命题 (局部截断误差)** @65
 
-在常微分方程数值方法中，**局部截断误差** $R_n$ 定义为常微分方程的连续解代入离散计算格式而得到的差。对上述三个计算格式，相应的 $R_{n+1}$ 为$$R_{n+1}=\begin{cases}u(t_{n+1})-u(t_n)-\Delta t f(t_n,u(t_n)),\\u(t_{n+1})-u(t_n)-\Delta t f(t_{n+1},u(t_{n+1})),\\u(t_{n+1})-u(t_{n-1})-2\Delta t f(t_n,u(t_n)).\end{cases}$$由前面的分析，这三个格式的局部截断误差为$$R_{n+1}=\begin{cases}\dfrac{\Delta t^2}{2}u''(t_n)+O(\Delta t^3),\\[2mm]-\dfrac{\Delta t^2}{2}u''(t_{n+1})+O(\Delta t^3),\\[2mm]\dfrac{\Delta t^3}{3}u^{(3)}(t_n)+O(\Delta t^5).\end{cases}$$局部截断误差的第一项称为**局部截断误差的主项**，比较各格式主项即可说明局部精度的高低。
+在常微分方程数值方法中，**局部截断误差** $R_n$ 定义为常微分方程的连续解代入离散计算格式而得到的差。对上述三个计算格式，相应的 $R_{n+1}$ 为$$R_{n+1}= \begin{cases} u(t_{n+1})-u(t_n)-\Delta t f(t_n,u(t_n)),\\ u(t_{n+1})-u(t_n)-\Delta t f(t_{n+1},u(t_{n+1})),\\ u(t_{n+1})-u(t_{n-1})-2\Delta t f(t_n,u(t_n)). \end{cases}$$由前面的分析，这三个格式的局部截断误差为$$R_{n+1}= \begin{cases} \dfrac{\Delta t^2}{2}u''(t_n)+O(\Delta t^3),\\[2mm] -\dfrac{\Delta t^2}{2}u''(t_{n+1})+O(\Delta t^3),\\[2mm] \dfrac{\Delta t^3}{3}u^{(3)}(t_n)+O(\Delta t^5). \end{cases}$$局部截断误差的第一项称为**局部截断误差的主项**，比较各格式主项即可说明局部精度的高低。
 
 **命题 (两步格式的中心形式)** @65
 
@@ -5518,11 +5518,11 @@ $$P_3(A_i)=u_i,\qquad \frac{\partial P_3}{\partial x}(A_i)=u_{x,i},\qquad \frac{
 
 设三次 Hermite 元插值多项式为
 
-$$\begin{aligned}P_3(\lambda_1,\lambda_2,\lambda_3)={}&a_1\lambda_1^3+a_2\lambda_2^3+a_3\lambda_3^3+a_4\lambda_1^2\lambda_2+a_5\lambda_1\lambda_2^2+a_6\lambda_2^2\lambda_3\\&+a_7\lambda_2\lambda_3^2+a_8\lambda_3^2\lambda_1+a_9\lambda_3\lambda_1^2+a_{10}\lambda_1\lambda_2\lambda_3,\end{aligned}\tag{5.3.1}$$
+$$\begin{aligned} P_3(\lambda_1,\lambda_2,\lambda_3)={}&a_1\lambda_1^3+a_2\lambda_2^3+a_3\lambda_3^3+a_4\lambda_1^2\lambda_2+a_5\lambda_1\lambda_2^2+a_6\lambda_2^2\lambda_3\\ &+a_7\lambda_2\lambda_3^2+a_8\lambda_3^2\lambda_1+a_9\lambda_3\lambda_1^2+a_{10}\lambda_1\lambda_2\lambda_3, \end{aligned}\tag{5.3.1}$$
 
 其中 $\lambda_i$ 为面积坐标。又因为
 
-$$\frac{\partial}{\partial\lambda_1}=\frac{\partial x}{\partial\lambda_1}\frac{\partial}{\partial x}+\frac{\partial y}{\partial\lambda_1}\frac{\partial}{\partial y},\qquad\frac{\partial}{\partial\lambda_2}=\frac{\partial x}{\partial\lambda_2}\frac{\partial}{\partial x}+\frac{\partial y}{\partial\lambda_2}\frac{\partial}{\partial y},$$
+$$\frac{\partial}{\partial\lambda_1}=\frac{\partial x}{\partial\lambda_1}\frac{\partial}{\partial x}+\frac{\partial y}{\partial\lambda_1}\frac{\partial}{\partial y},\qquad \frac{\partial}{\partial\lambda_2}=\frac{\partial x}{\partial\lambda_2}\frac{\partial}{\partial x}+\frac{\partial y}{\partial\lambda_2}\frac{\partial}{\partial y},$$
 
 由 (5.1.13) 式可得
 
@@ -5544,9 +5544,9 @@ $$P_3(\lambda_1,\lambda_2,\lambda_3)=\sum_{i=1}^{3}\bigl(u_i\hat{\mu}_i+u_{\lamb
 
 $$\hat{\mu}_i=\lambda_i^2(3-2\lambda_i)-7\lambda_1\lambda_2\lambda_3,\qquad \hat{\mu}_0=27\lambda_1\lambda_2\lambda_3,\qquad i=1,2,3,$$
 
-$$\hat{\varphi}_1=\lambda_1(2\lambda_2\lambda_3-\lambda_1\lambda_2-\lambda_1\lambda_3),\quad\hat{\varphi}_2=\lambda_1\lambda_2(\lambda_2-\lambda_3),\quad\hat{\varphi}_3=\lambda_1\lambda_3(\lambda_3-\lambda_2),$$
+$$\hat{\varphi}_1=\lambda_1(2\lambda_2\lambda_3-\lambda_1\lambda_2-\lambda_1\lambda_3),\quad \hat{\varphi}_2=\lambda_1\lambda_2(\lambda_2-\lambda_3),\quad \hat{\varphi}_3=\lambda_1\lambda_3(\lambda_3-\lambda_2),$$
 
-$$\hat{\psi}_1=\lambda_2\lambda_1(\lambda_1-\lambda_3),\quad\hat{\psi}_2=\lambda_2(2\lambda_3\lambda_1-\lambda_2\lambda_1-\lambda_2\lambda_3),\quad\hat{\psi}_3=\lambda_2\lambda_3(\lambda_3-\lambda_1).$$
+$$\hat{\psi}_1=\lambda_2\lambda_1(\lambda_1-\lambda_3),\quad \hat{\psi}_2=\lambda_2(2\lambda_3\lambda_1-\lambda_2\lambda_1-\lambda_2\lambda_3),\quad \hat{\psi}_3=\lambda_2\lambda_3(\lambda_3-\lambda_1).$$
 
 最后将 (5.3.2) 式和 (5.3.3) 式代入上式，得三次 Hermite 元插值多项式为
 
@@ -6268,7 +6268,7 @@ $$a(u,v)=\langle f,v\rangle,\quad \forall v\in V,\tag{6.3.1}$$
 
 其中
 
-$$a(u,v)=\int_\Omega\sum_{i,j}a_{ij}\frac{\partial u}{\partial x_i}\frac{\partial v}{\partial x_j}\,\mathrm{d}x,\qquad\langle f,v\rangle=\int_\Omega fv\,\mathrm{d}x,$$
+$$a(u,v)=\int_\Omega\sum_{i,j}a_{ij}\frac{\partial u}{\partial x_i}\frac{\partial v}{\partial x_j}\,\mathrm{d}x,\qquad \langle f,v\rangle=\int_\Omega fv\,\mathrm{d}x,$$
 
 并满足 Lax-Milgram 定理的条件。取 $V_h\subset H_0^1(\Omega)$ 为有限元离散空间，则有限元离散问题为：求解 $u_h\in V_h$，使得
 
@@ -6344,7 +6344,7 @@ $$\|u-u_h\|_{1,\Omega}\le Ch^k\left\{|u|_{k+1,\Omega}+\sum_{i,j}\|a_{ij}\|_{k,\i
 
 多边形区域逼近复杂边界会产生较大误差，故用等参变换构造曲边单元。以三角形单元为例，设 $(\hat K,\hat P,\hat N)$ 是二次 Lagrange 型参考元，其中 $\hat K$ 为参考单元，
 
-$$\hat P=P_2(\hat K),\qquad\hat N=\{\hat p(\hat A_i),1\le i\le 3;\ \hat p(\hat A_{ij}),1\le i<j\le 3\}.\tag{6.3.9}$$
+$$\hat P=P_2(\hat K),\qquad \hat N=\{\hat p(\hat A_i),1\le i\le 3;\ \hat p(\hat A_{ij}),1\le i<j\le 3\}.\tag{6.3.9}$$
 
 给定平面上 6 个点 $A_i\ (1\le i\le3)$ 及 $A_{ij}\ (1\le i<j\le3)$，则存在一个二次映射 $F:\hat K\to\mathbf R^2$，使得
 
@@ -6360,7 +6360,7 @@ $$x=F(\hat x)=\sum_{i=1}^3 A_i\hat\mu_i(\hat x)+\sum_{1\le i<j\le 3}A_{ij}\hat\m
 
 在映射 $F$ 下参考单元映为曲边三角形 $K=F(\hat K)$，此时定义
 
-$$P=\{p:K\to\mathbf R,\ p=\hat p\circ F^{-1},\ \forall\hat p\in\hat P\},\qquadN=\{p(A_i),1\le i\le 3;\ p(A_{ij}),1\le i<j\le 3\},\tag{6.3.10}$$
+$$P=\{p:K\to\mathbf R,\ p=\hat p\circ F^{-1},\ \forall\hat p\in\hat P\},\qquad N=\{p(A_i),1\le i\le 3;\ p(A_{ij}),1\le i<j\le 3\},\tag{6.3.10}$$
 
 则称 $(K,P,N)$ 为与 $(\hat K,\hat P,\hat N)$ 等参等价的二次等参有限元，映射 $F$ 称为等参变换。
 
@@ -6458,7 +6458,7 @@ $$a_h(u_h,v_h)=\sum_{K\in\mathcal M_h}a(u_h|_K,v_h|_K),\quad \forall u_h,v_h\in 
 
 引入与网格有关的范数及半范数
 
-$$\|v\|_{m,h}=\left(\sum_{K\in\mathcal M_h}\|v\|_{m,K}^2\right)^{1/2},\qquad|v|_{m,h}=\left(\sum_{K\in\mathcal M_h}|v|_{m,K}^2\right)^{1/2}.\tag{6.3.23}$$
+$$\|v\|_{m,h}=\left(\sum_{K\in\mathcal M_h}\|v\|_{m,K}^2\right)^{1/2},\qquad |v|_{m,h}=\left(\sum_{K\in\mathcal M_h}|v|_{m,K}^2\right)^{1/2}.\tag{6.3.23}$$
 
 **定理 6.3.4 (Strang第二引理)** @287
 

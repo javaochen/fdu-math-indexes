@@ -456,7 +456,7 @@ $$T\frac{\mathrm{d}x(t)}{\mathrm{d}t}+x(t)=Ku(t)\tag{2.1}$$
 
 导数算子 $s$ 定义为
 
-$$\begin{cases}s:C^{1}[0,+\infty)\to C[0,+\infty),\\(sx)(t)=\dfrac{\mathrm{d}x(t)}{\mathrm{d}t},\quad \forall x(\cdot)\in C^{1}[0,+\infty),\end{cases}$$
+$$\begin{cases} s:C^{1}[0,+\infty)\to C[0,+\infty),\\ (sx)(t)=\dfrac{\mathrm{d}x(t)}{\mathrm{d}t},\quad \forall x(\cdot)\in C^{1}[0,+\infty), \end{cases}$$
 
 其中 $C^{1}[0,+\infty)$ 代表 $[0,+\infty)$ 上所有具有连续导函数的函数全体，而 $C[0,+\infty)$ 则表示全体 $[0,+\infty)$ 上的连续函数。
 
@@ -486,7 +486,7 @@ $$x(t)=\mathrm{e}^{-\frac{t}{T}}\left[x(0)-\frac{K}{1+\omega^{2}T^{2}}\right]+\f
 
 因此 (2.4) 有唯一的周期解
 
-$$\begin{aligned}\bar{x}(t)&=\frac{K}{1+\omega^{2}T^{2}}(\cos\omega t+\omega T\sin\omega t)\\&=\frac{K}{\sqrt{1+\omega^{2}T^{2}}}\cos(\omega t-\varphi),\end{aligned}\tag{2.6}$$
+$$\begin{aligned} \bar{x}(t)&=\frac{K}{1+\omega^{2}T^{2}}(\cos\omega t+\omega T\sin\omega t)\\ &=\frac{K}{\sqrt{1+\omega^{2}T^{2}}}\cos(\omega t-\varphi), \end{aligned}\tag{2.6}$$
 
 其周期为 $\dfrac{2\pi}{\omega}$，振幅为 $\dfrac{K}{\sqrt{1+\omega^{2}T^{2}}}$，相位差 $\varphi=\arccos\dfrac{1}{\sqrt{1+\omega^{2}T^{2}}}$。并且当 $T>0$ 时，(2.4) 的其他解与上述的周期解之差当 $t\to+\infty$ 时趋于零。我们称 (2.6) 是 (2.4) 的稳定周期解，或称 (2.6) 是 (2.1) 在余弦输入下的输出，它体现了系统在输入为 $\cos\omega t$ 时的本质特征。
 
@@ -506,7 +506,7 @@ $$T\frac{\mathrm{d}x(t)}{\mathrm{d}t}+x(t)=K\sin\omega t\tag{2.9}$$
 
 时，其唯一周期解为
 
-$$\begin{aligned}\bar{y}(t)&=\frac{K}{1+\omega^{2}T^{2}}(\sin\omega t-\omega T\cos\omega t)\\&=\operatorname{Im}\left(\frac{K}{1+\mathrm{i}\omega T}\mathrm{e}^{\mathrm{i}\omega t}\right)\equiv\operatorname{Im}z(t),\end{aligned}\tag{2.10}$$
+$$\begin{aligned} \bar{y}(t)&=\frac{K}{1+\omega^{2}T^{2}}(\sin\omega t-\omega T\cos\omega t)\\ &=\operatorname{Im}\left(\frac{K}{1+\mathrm{i}\omega T}\mathrm{e}^{\mathrm{i}\omega t}\right)\equiv\operatorname{Im}z(t), \end{aligned}\tag{2.10}$$
 
 所以 (2.8) 也刻画了 (2.1) 在正弦输入下的特性。人们称 (2.8) 为 (2.1) 所描述系统的**频率特性** (frequency characteristic)。
 
@@ -524,7 +524,7 @@ $$u(t)=\sum_{n=1}^{\infty}[a_{n}\cos\omega_{n}t+b_{n}\sin\omega_{n}t]\equiv\sum_
 
 并假定 $\sum\limits_{n=1}^{\infty}(|a_{n}|+|b_{n}|)<+\infty$（特别地，对于某正整数 $N$，当 $n>N$ 时 $a_{n}=b_{n}=0$，则 (2.12) 为有限项之和）。记
 
-$$\left\{\begin{aligned}x_{n}(t)&=\frac{K}{1+\omega_{n}^{2}T^{2}}(\cos\omega_{n}t+\omega_{n}T\sin\omega_{n}t)=\operatorname{Re}\left(\frac{K}{1+\mathrm{i}\omega_{n}T}\mathrm{e}^{\mathrm{i}\omega_{n}t}\right),\\y_{n}(t)&=\frac{K}{1+\omega_{n}^{2}T^{2}}(\sin\omega_{n}t-\omega_{n}T\cos\omega_{n}t)=\operatorname{Im}\left(\frac{K}{1+\mathrm{i}\omega_{n}T}\mathrm{e}^{\mathrm{i}\omega_{n}t}\right),\end{aligned}\right.\tag{2.13}$$
+$$\left\{\begin{aligned} x_{n}(t)&=\frac{K}{1+\omega_{n}^{2}T^{2}}(\cos\omega_{n}t+\omega_{n}T\sin\omega_{n}t)=\operatorname{Re}\left(\frac{K}{1+\mathrm{i}\omega_{n}T}\mathrm{e}^{\mathrm{i}\omega_{n}t}\right),\\ y_{n}(t)&=\frac{K}{1+\omega_{n}^{2}T^{2}}(\sin\omega_{n}t-\omega_{n}T\cos\omega_{n}t)=\operatorname{Im}\left(\frac{K}{1+\mathrm{i}\omega_{n}T}\mathrm{e}^{\mathrm{i}\omega_{n}t}\right), \end{aligned}\right.\tag{2.13}$$
 
 则
 
@@ -632,7 +632,7 @@ $$F_{1}(s)=\frac{s-1}{s+1},\quad F_{2}(s)=\frac{1}{s+2},\tag{2.27}$$
 
 则相应的状态方程为
 
-$$\begin{cases}\dfrac{\mathrm{d}x_{1}(t)}{\mathrm{d}t}+x_{1}(t)=\dfrac{\mathrm{d}u(t)}{\mathrm{d}t}-u(t),\\[6pt]\dfrac{\mathrm{d}x_{2}(t)}{\mathrm{d}t}+2x_{2}(t)=x_{1}(t).\end{cases}\tag{2.28}$$
+$$\begin{cases} \dfrac{\mathrm{d}x_{1}(t)}{\mathrm{d}t}+x_{1}(t)=\dfrac{\mathrm{d}u(t)}{\mathrm{d}t}-u(t),\\[6pt] \dfrac{\mathrm{d}x_{2}(t)}{\mathrm{d}t}+2x_{2}(t)=x_{1}(t). \end{cases}\tag{2.28}$$
 
 消去 $x_{1}$ 得
 
@@ -664,7 +664,7 @@ $$F_{1}(s)=\frac{s-1}{s+1},\quad F_{2}(s)=\frac{1}{s-1},$$
 
 此时状态方程为
 
-$$\begin{cases}\dfrac{\mathrm{d}x_{1}(t)}{\mathrm{d}t}+x_{1}(t)=\dfrac{\mathrm{d}u(t)}{\mathrm{d}t}-u(t),\\[6pt]\dfrac{\mathrm{d}x_{2}(t)}{\mathrm{d}t}-x_{2}(t)=u(t),\end{cases}\tag{2.33}$$
+$$\begin{cases} \dfrac{\mathrm{d}x_{1}(t)}{\mathrm{d}t}+x_{1}(t)=\dfrac{\mathrm{d}u(t)}{\mathrm{d}t}-u(t),\\[6pt] \dfrac{\mathrm{d}x_{2}(t)}{\mathrm{d}t}-x_{2}(t)=u(t), \end{cases}\tag{2.33}$$
 
 由此可得传递函数
 
@@ -716,7 +716,7 @@ $$F(s)=F(\infty)+\sum_{j=1}^{N}\sum_{k=1}^{k_{j}}\frac{c_{jk}}{(s-s_{j})^{k}},\t
 
 现设 $M+2L=N$，使得
 
-$$\begin{cases}s_{j}\in\mathbb{R},\quad 1\leqslant j\leqslant M,\\\{s_{j}\mid M+1\leqslant j\leqslant N\}=\{\alpha_{l}\pm\mathrm{i}\beta_{l}\mid 1\leqslant l\leqslant L\},\end{cases}\tag{2.40}$$
+$$\begin{cases} s_{j}\in\mathbb{R},\quad 1\leqslant j\leqslant M,\\ \{s_{j}\mid M+1\leqslant j\leqslant N\}=\{\alpha_{l}\pm\mathrm{i}\beta_{l}\mid 1\leqslant l\leqslant L\}, \end{cases}\tag{2.40}$$
 
 则 (2.39) 可以进一步化为
 
@@ -822,7 +822,7 @@ $$F(s)=\frac{K}{T^{2}s^{2}+2\zeta Ts+1}.\tag{2.58}$$
 
 考虑多变量线性系统
 
-$$\begin{cases}\dfrac{\mathrm{d}\boldsymbol{x}(t)}{\mathrm{d}t}=\boldsymbol{A}\boldsymbol{x}(t)+\boldsymbol{B}\boldsymbol{u}(t),\\[6pt]\boldsymbol{y}(t)=\boldsymbol{C}\boldsymbol{x}(t)+\boldsymbol{D}\boldsymbol{u}(t).\end{cases}\tag{2.59}$$
+$$\begin{cases} \dfrac{\mathrm{d}\boldsymbol{x}(t)}{\mathrm{d}t}=\boldsymbol{A}\boldsymbol{x}(t)+\boldsymbol{B}\boldsymbol{u}(t),\\[6pt] \boldsymbol{y}(t)=\boldsymbol{C}\boldsymbol{x}(t)+\boldsymbol{D}\boldsymbol{u}(t). \end{cases}\tag{2.59}$$
 
 若形式地记 $\dfrac{\mathrm{d}\boldsymbol{x}(t)}{\mathrm{d}t}$ 为 $s\boldsymbol{x}$，那么
 
@@ -846,7 +846,7 @@ $$\boldsymbol{u}(t)=\boldsymbol{u}_{0}\mathrm{e}^{\mathrm{i}\omega t}\tag{2.63}$
 
 时，系统 (2.59) 变为
 
-$$\begin{cases}\dfrac{\mathrm{d}\boldsymbol{x}(t)}{\mathrm{d}t}=\boldsymbol{A}\boldsymbol{x}(t)+\boldsymbol{B}\boldsymbol{u}_{0}\mathrm{e}^{\mathrm{i}\omega t},\\[6pt]\boldsymbol{y}(t)=\boldsymbol{C}\boldsymbol{x}(t)+\boldsymbol{D}\boldsymbol{u}_{0}\mathrm{e}^{\mathrm{i}\omega t}.\end{cases}\tag{2.64}$$
+$$\begin{cases} \dfrac{\mathrm{d}\boldsymbol{x}(t)}{\mathrm{d}t}=\boldsymbol{A}\boldsymbol{x}(t)+\boldsymbol{B}\boldsymbol{u}_{0}\mathrm{e}^{\mathrm{i}\omega t},\\[6pt] \boldsymbol{y}(t)=\boldsymbol{C}\boldsymbol{x}(t)+\boldsymbol{D}\boldsymbol{u}_{0}\mathrm{e}^{\mathrm{i}\omega t}. \end{cases}\tag{2.64}$$
 
 当 $|\mathrm{i}\omega\boldsymbol{I}-\boldsymbol{A}|\neq0$ 时，它有一个周期为 $\dfrac{2\pi}{\omega}$ 的周期输出
 
@@ -922,11 +922,11 @@ $$\boldsymbol{x}(t)=\left(x(t),\frac{\mathrm{d}x(t)}{\mathrm{d}t},\cdots,\frac{\
 
 $$\boldsymbol{c}=(b_{m},b_{m-1},\cdots,b_{0},0,\cdots,0),$$
 
-$$\boldsymbol{A}=\begin{pmatrix}0&1&0&\cdots&0\\0&0&1&\cdots&0\\\vdots&\vdots&\vdots&&\vdots\\0&0&0&\cdots&1\\-a_{n}&-a_{n-1}&-a_{n-2}&\cdots&-a_{1}\end{pmatrix},$$
+$$\boldsymbol{A}=\begin{pmatrix} 0&1&0&\cdots&0\\ 0&0&1&\cdots&0\\ \vdots&\vdots&\vdots&&\vdots\\ 0&0&0&\cdots&1\\ -a_{n}&-a_{n-1}&-a_{n-2}&\cdots&-a_{1} \end{pmatrix},$$
 
 那么 (2.67) 和 (2.68) 可以写为
 
-$$\begin{cases}\dfrac{\mathrm{d}\boldsymbol{x}(t)}{\mathrm{d}t}=\boldsymbol{A}\boldsymbol{x}(t)+\boldsymbol{b}u(t),\\[6pt]y(t)=\boldsymbol{c}\boldsymbol{x}(t),\end{cases}\tag{2.69}$$
+$$\begin{cases} \dfrac{\mathrm{d}\boldsymbol{x}(t)}{\mathrm{d}t}=\boldsymbol{A}\boldsymbol{x}(t)+\boldsymbol{b}u(t),\\[6pt] y(t)=\boldsymbol{c}\boldsymbol{x}(t), \end{cases}\tag{2.69}$$
 
 它的传递函数是 $\boldsymbol{c}(s\boldsymbol{I}-\boldsymbol{A})^{-1}\boldsymbol{b}\equiv F(s)$。这是传递函数为 $F(s)$ 的单输入单输出系统的一种典则形式，人们称它为 **Brunovsky 典则形式**。
 
@@ -2072,7 +2072,7 @@ $f^{*}(\cdot)$ 的互反多项式为 $f(\cdot)$；若 $\alpha_j$ 是 $f(\cdot)$ 
 
 **构造 (Routh 递推表)** @91
 
-根据定理 4.4，得到下述递推运算表（通常称为 Routh 表）：每一对相邻行中，上一行为 $A_k$ 的系数 $a_0^{(k)},a_1^{(k)},\cdots,a_k^{(k)}$，下一行为 $a_1^{(k)},0,a_3^{(k)},0,a_5^{(k)},\cdots$（即按 (4.38) 取 $j$ 为偶数时的 $a_{j+1}^{(k)}$）；再由这一对行按 (4.38) 算出下一对行，直至只剩 $A_1$：$$\begin{array}{cccccccc}a_0^{(n)}&a_1^{(n)}&a_2^{(n)}&a_3^{(n)}&a_4^{(n)}&\cdots&a_{n-1}^{(n)}&a_n^{(n)}\\a_1^{(n)}&0&a_3^{(n)}&0&a_5^{(n)}&\cdots&&\\&a_0^{(n-1)}&a_1^{(n-1)}&a_2^{(n-1)}&a_3^{(n-1)}&\cdots&a_{n-1}^{(n-1)}&\\&a_1^{(n-1)}&0&a_3^{(n-1)}&0&\cdots&&\\&&&\cdots\cdots\cdots&&&&\\&&&&a_0^{(2)}&a_1^{(2)}&a_2^{(2)}&\\&&&&a_1^{(2)}&0&&\\&&&&&a_0^{(1)}&a_1^{(1)}&\end{array}$$表中每一对行的第二行即 (4.38) 中 $j$ 为奇数时所需的系数；于是定理 4.4 的条件就是表中每一对行的首项 $a_1^{(k)}\ (k=n,n-1,\cdots,1)$ 全为正数。
+根据定理 4.4，得到下述递推运算表（通常称为 Routh 表）：每一对相邻行中，上一行为 $A_k$ 的系数 $a_0^{(k)},a_1^{(k)},\cdots,a_k^{(k)}$，下一行为 $a_1^{(k)},0,a_3^{(k)},0,a_5^{(k)},\cdots$（即按 (4.38) 取 $j$ 为偶数时的 $a_{j+1}^{(k)}$）；再由这一对行按 (4.38) 算出下一对行，直至只剩 $A_1$：$$ \begin{array}{cccccccc} a_0^{(n)}&a_1^{(n)}&a_2^{(n)}&a_3^{(n)}&a_4^{(n)}&\cdots&a_{n-1}^{(n)}&a_n^{(n)}\\ a_1^{(n)}&0&a_3^{(n)}&0&a_5^{(n)}&\cdots&&\\ &a_0^{(n-1)}&a_1^{(n-1)}&a_2^{(n-1)}&a_3^{(n-1)}&\cdots&a_{n-1}^{(n-1)}&\\ &a_1^{(n-1)}&0&a_3^{(n-1)}&0&\cdots&&\\ &&&\cdots\cdots\cdots&&&&\\ &&&&a_0^{(2)}&a_1^{(2)}&a_2^{(2)}&\\ &&&&a_1^{(2)}&0&&\\ &&&&&a_0^{(1)}&a_1^{(1)}& \end{array} $$表中每一对行的第二行即 (4.38) 中 $j$ 为奇数时所需的系数；于是定理 4.4 的条件就是表中每一对行的首项 $a_1^{(k)}\ (k=n,n-1,\cdots,1)$ 全为正数。
 
 ### 3.5 一次近似定理（p92–94）
 
@@ -2208,7 +2208,7 @@ $$\Delta_{-\infty}^{+\infty}\arg Q(\mathrm{i}\omega)=(n-2n_1)\pi.$$
 
 从而 $\widetilde{F}(s)$ 稳定当且仅当
 
-$$\begin{aligned}\Delta_{-\infty}^{+\infty}\arg\{1+F(\mathrm{i}\omega)\}&=\Delta_{-\infty}^{+\infty}\arg\{P(\mathrm{i}\omega)+Q(\mathrm{i}\omega)\}-\Delta_{-\infty}^{+\infty}\arg Q(\mathrm{i}\omega)\\&=n\pi-(n-2n_1)\pi=2n_1\pi.\end{aligned}\tag{6.13}$$
+$$\begin{aligned} \Delta_{-\infty}^{+\infty}\arg\{1+F(\mathrm{i}\omega)\} &=\Delta_{-\infty}^{+\infty}\arg\{P(\mathrm{i}\omega)+Q(\mathrm{i}\omega)\}-\Delta_{-\infty}^{+\infty}\arg Q(\mathrm{i}\omega)\\ &=n\pi-(n-2n_1)\pi=2n_1\pi. \end{aligned}\tag{6.13}$$
 
 **注 (虚轴上零点的处理)** @98
 
@@ -2222,7 +2222,7 @@ $$\begin{aligned}\Delta_{-\infty}^{+\infty}\arg\{1+F(\mathrm{i}\omega)\}&=\Delta
 
 设 $n$ 次多项式 (6.1) 在右半开平面内有 $n_1$ 个零点，在虚轴上有 $n_0$ 个零点，则在左半开平面内有 $n-n_1-n_0$ 个零点。现讨论当 $s$ 沿虚轴变化时 $f(s)$ 的幅角变化情形。如果 $\mathrm{i}\omega_0$ 是 $f(\cdot)$ 的零点，在讨论 $\mathrm{i}\omega-\mathrm{i}\omega_0$ 的幅角变化时，遇到了 $\mathrm{i}\omega-\mathrm{i}\omega_0$ 等于 $0$ 的情形，此时我们作类似于图 3.7 中所示意的半圆。这样我们可得
 
-$$\begin{aligned}\Delta_{-\infty}^{+\infty}\arg f(\mathrm{i}\omega)&=\{(n-n_1-n_0)-n_1-n_0\}\pi\\&=\{n-2(n_1+n_0)\}\pi.\end{aligned}\tag{6.14}$$
+$$\begin{aligned} \Delta_{-\infty}^{+\infty}\arg f(\mathrm{i}\omega) &=\{(n-n_1-n_0)-n_1-n_0\}\pi\\ &=\{n-2(n_1+n_0)\}\pi. \end{aligned}\tag{6.14}$$
 
 因此，定理 6.1，6.2 和 6.3 的结论当 $f(\cdot)$ 和 $F(\cdot)$ 在虚轴上有零点和极点时仍成立。不过遇到虚轴上的零点或极点时，应当使用足够小的半圆周来代替虚轴上的那一段，这个半圆周内只能有一个零点或极点。
 
@@ -2716,7 +2716,7 @@ $$\boldsymbol{b}_1,\boldsymbol{A}\boldsymbol{b}_1,\cdots,\boldsymbol{A}^{n_1-1}\
 
 令
 
-$$\begin{aligned}&\boldsymbol{e}_1=\boldsymbol{b}_1,\quad \boldsymbol{e}_2=\boldsymbol{A}\boldsymbol{e}_1+\boldsymbol{b}_1,\ \cdots,\ \boldsymbol{e}_{n_1}=\boldsymbol{A}\boldsymbol{e}_{n_1-1}+\boldsymbol{b}_1,\\&\boldsymbol{e}_{n_1+1}=\boldsymbol{A}\boldsymbol{e}_{n_1}+\boldsymbol{b}_2,\quad \boldsymbol{e}_{n_1+2}=\boldsymbol{A}\boldsymbol{e}_{n_1+1}+\boldsymbol{b}_2,\ \cdots,\ \boldsymbol{e}_{n_1+n_2}=\boldsymbol{A}\boldsymbol{e}_{n_1+n_2-1}+\boldsymbol{b}_2,\\&\cdots\cdots\cdots\cdots,\\&\boldsymbol{e}_{n-n_r+1}=\boldsymbol{A}\boldsymbol{e}_{n-n_r}+\boldsymbol{b}_r,\ \cdots,\ \boldsymbol{e}_n=\boldsymbol{A}\boldsymbol{e}_{n-1}+\boldsymbol{b}_r.\end{aligned}\tag{2.12}$$
+$$\begin{aligned} &\boldsymbol{e}_1=\boldsymbol{b}_1,\quad \boldsymbol{e}_2=\boldsymbol{A}\boldsymbol{e}_1+\boldsymbol{b}_1,\ \cdots,\ \boldsymbol{e}_{n_1}=\boldsymbol{A}\boldsymbol{e}_{n_1-1}+\boldsymbol{b}_1,\\ &\boldsymbol{e}_{n_1+1}=\boldsymbol{A}\boldsymbol{e}_{n_1}+\boldsymbol{b}_2,\quad \boldsymbol{e}_{n_1+2}=\boldsymbol{A}\boldsymbol{e}_{n_1+1}+\boldsymbol{b}_2,\ \cdots,\ \boldsymbol{e}_{n_1+n_2}=\boldsymbol{A}\boldsymbol{e}_{n_1+n_2-1}+\boldsymbol{b}_2,\\ &\cdots\cdots\cdots\cdots,\\ &\boldsymbol{e}_{n-n_r+1}=\boldsymbol{A}\boldsymbol{e}_{n-n_r}+\boldsymbol{b}_r,\ \cdots,\ \boldsymbol{e}_n=\boldsymbol{A}\boldsymbol{e}_{n-1}+\boldsymbol{b}_r. \end{aligned}\tag{2.12}$$
 
 由于从向量组 (2.11) 到向量组
 
@@ -2968,7 +2968,7 @@ $$\begin{cases}\dfrac{\mathrm{d}\boldsymbol{\varphi}(t)}{\mathrm{d}t}=-\boldsymb
 
 假如 $\boldsymbol{x}(\cdot)$ 和 $\boldsymbol{\varphi}(\cdot)$ 分别是 (3.12) 和 (3.13) 中方程的解，则我们有等式
 
-$$\begin{aligned}\frac{\mathrm{d}}{\mathrm{d}t}\langle\boldsymbol{\varphi}(t),\boldsymbol{x}(t)\rangle&=\langle-\boldsymbol{A}^{\mathrm{T}}\boldsymbol{\varphi}(t)+\boldsymbol{C}^{\mathrm{T}}\boldsymbol{\eta}(t),\boldsymbol{x}(t)\rangle+\langle\boldsymbol{\varphi}(t),\boldsymbol{A}\boldsymbol{x}(t)+\boldsymbol{B}\boldsymbol{u}(t)\rangle\\&=\langle\boldsymbol{\eta}(t),\boldsymbol{C}\boldsymbol{x}(t)\rangle+\langle\boldsymbol{B}^{\mathrm{T}}\boldsymbol{\varphi}(t),\boldsymbol{u}(t)\rangle\\&=\langle\boldsymbol{\eta}(t),\boldsymbol{y}(t)\rangle+\langle\boldsymbol{\psi}(t),\boldsymbol{u}(t)\rangle.\end{aligned}$$
+$$ \begin{aligned} \frac{\mathrm{d}}{\mathrm{d}t}\langle\boldsymbol{\varphi}(t),\boldsymbol{x}(t)\rangle &=\langle-\boldsymbol{A}^{\mathrm{T}}\boldsymbol{\varphi}(t)+\boldsymbol{C}^{\mathrm{T}}\boldsymbol{\eta}(t),\boldsymbol{x}(t)\rangle+\langle\boldsymbol{\varphi}(t),\boldsymbol{A}\boldsymbol{x}(t)+\boldsymbol{B}\boldsymbol{u}(t)\rangle\\ &=\langle\boldsymbol{\eta}(t),\boldsymbol{C}\boldsymbol{x}(t)\rangle+\langle\boldsymbol{B}^{\mathrm{T}}\boldsymbol{\varphi}(t),\boldsymbol{u}(t)\rangle\\ &=\langle\boldsymbol{\eta}(t),\boldsymbol{y}(t)\rangle+\langle\boldsymbol{\psi}(t),\boldsymbol{u}(t)\rangle. \end{aligned} $$
 
 因此
 
@@ -3326,25 +3326,25 @@ Hankel 矩阵是一个行数和列数均为可列无限的矩阵。对于给定�
 
 根据
 
-$$n=\operatorname{rank}K\leqslant\min\left\{\operatorname{rank}\begin{pmatrix}C\\CA\\\vdots\\CA^{n-1}\\\vdots\end{pmatrix},\ \operatorname{rank}(B,AB,\cdots,A^{n-1}B,\cdots)\right\}\leqslant n, \tag{3.1}$$
+$$ n=\operatorname{rank}K\leqslant\min\left\{\operatorname{rank}\begin{pmatrix}C\\CA\\\vdots\\CA^{n-1}\\\vdots\end{pmatrix},\ \operatorname{rank}(B,AB,\cdots,A^{n-1}B,\cdots)\right\}\leqslant n, \tag{3.1} $$
 
 可得
 
-$$\operatorname{rank}\begin{pmatrix}C\\CA\\\vdots\\CA^{n-1}\\\vdots\end{pmatrix}=n,\qquad\operatorname{rank}(B,AB,\cdots,A^{n-1}B,\cdots)=n. \tag{3.2}$$
+$$ \operatorname{rank}\begin{pmatrix}C\\CA\\\vdots\\CA^{n-1}\\\vdots\end{pmatrix}=n,\qquad \operatorname{rank}(B,AB,\cdots,A^{n-1}B,\cdots)=n. \tag{3.2} $$
 
 再根据 Cayley-Hamilton 定理，知
 
-$$A^n+\alpha_1A^{n-1}+\cdots+\alpha_{n-1}A+\alpha_nI=\mathbf{0},$$
+$$ A^n+\alpha_1A^{n-1}+\cdots+\alpha_{n-1}A+\alpha_nI=\mathbf{0}, $$
 
 这里
 
-$$\det(\lambda I-A)=\lambda^n+\alpha_1\lambda^{n-1}+\cdots+\alpha_{n-1}\lambda+\alpha_n.$$
+$$ \det(\lambda I-A)=\lambda^n+\alpha_1\lambda^{n-1}+\cdots+\alpha_{n-1}\lambda+\alpha_n. $$
 
 从而
 
-$$\operatorname{rank}\begin{pmatrix}C\\CA\\\vdots\\CA^{n-1}\end{pmatrix}=\operatorname{rank}\begin{pmatrix}C\\CA\\\vdots\\CA^{n-1}\\\vdots\end{pmatrix}=n, \tag{3.3}$$
+$$ \operatorname{rank}\begin{pmatrix}C\\CA\\\vdots\\CA^{n-1}\end{pmatrix} =\operatorname{rank}\begin{pmatrix}C\\CA\\\vdots\\CA^{n-1}\\\vdots\end{pmatrix}=n, \tag{3.3} $$
 
-$$\operatorname{rank}(B,AB,\cdots,A^{n-1}B)=\operatorname{rank}(B,AB,\cdots,A^{n-1}B,\cdots)=n.$$
+$$ \operatorname{rank}(B,AB,\cdots,A^{n-1}B)=\operatorname{rank}(B,AB,\cdots,A^{n-1}B,\cdots)=n. $$
 
 所以，实现 $[A,B,C]$ 既是能控的，又是能观的。
 
@@ -3352,7 +3352,7 @@ $$\operatorname{rank}(B,AB,\cdots,A^{n-1}B)=\operatorname{rank}(B,AB,\cdots,A^{n
 
 如果 $[\tilde A,\tilde B,\tilde C]$ 是 $K$ 的任一有限阶实现，$\tilde A\in\mathbb{R}^{\tilde n\times\tilde n}$，那么由
 
-$$n=\operatorname{rank}K\leqslant\min\left\{\operatorname{rank}\begin{pmatrix}\tilde C\\\tilde C\tilde A\\\vdots\\\tilde C\tilde A^{\tilde n-1}\\\vdots\end{pmatrix},\ \operatorname{rank}(\tilde B,\tilde A\tilde B,\cdots,\tilde A^{\tilde n-1}\tilde B,\cdots)\right\}\leqslant\tilde n$$
+$$ n=\operatorname{rank}K\leqslant\min\left\{\operatorname{rank}\begin{pmatrix}\tilde C\\\tilde C\tilde A\\\vdots\\\tilde C\tilde A^{\tilde n-1}\\\vdots\end{pmatrix},\ \operatorname{rank}(\tilde B,\tilde A\tilde B,\cdots,\tilde A^{\tilde n-1}\tilde B,\cdots)\right\}\leqslant\tilde n $$
 
 可以得到，$K$ 的任一有限阶实现的阶数 $\tilde n\geqslant n$。因此，当 $\operatorname{rank}K=n$ 时，$n$ 阶的实现 $[A,B,C]$ 是最小阶数的实现，人们称它为 $K$ 的**最小实现**，也称为 $K$ 的**正则实现**。从上述讨论中看到，最小实现是既能控又能观的实现。
 
@@ -3360,7 +3360,7 @@ $$n=\operatorname{rank}K\leqslant\min\left\{\operatorname{rank}\begin{pmatrix}\t
 
 设 $[\hat A,\hat B,\hat C]$ 是 $K$ 的另一最小实现，那么存在可逆矩阵 $T$ 使得
 
-$$\begin{cases}T\hat A=AT,\\T\hat B=B,\\\hat C=CT,\end{cases} \tag{3.4}$$
+$$ \begin{cases} T\hat A=AT,\\ T\hat B=B,\\ \hat C=CT, \end{cases} \tag{3.4} $$
 
 即在相差一个可逆线性变换的意义下，最小实现是唯一的。
 
@@ -3368,25 +3368,25 @@ $$\begin{cases}T\hat A=AT,\\T\hat B=B,\\\hat C=CT,\end{cases} \tag{3.4}$$
 
 设 $[A,B,C]$ 与 $[\hat A,\hat B,\hat C]$ 都是 $K$ 的最小实现，记
 
-$$\Phi=\begin{pmatrix}C\\CA\\\vdots\\CA^{n-1}\end{pmatrix},\qquad\hat\Phi=\begin{pmatrix}\hat C\\\hat C\hat A\\\vdots\\\hat C\hat A^{n-1}\end{pmatrix},\qquad\Gamma=(B,AB,\cdots,A^{n-1}B),\qquad\hat\Gamma=(\hat B,\hat A\hat B,\cdots,\hat A^{n-1}\hat B),$$
+$$ \Phi=\begin{pmatrix}C\\CA\\\vdots\\CA^{n-1}\end{pmatrix},\qquad \hat\Phi=\begin{pmatrix}\hat C\\\hat C\hat A\\\vdots\\\hat C\hat A^{n-1}\end{pmatrix},\qquad \Gamma=(B,AB,\cdots,A^{n-1}B),\qquad \hat\Gamma=(\hat B,\hat A\hat B,\cdots,\hat A^{n-1}\hat B), $$
 
 则
 
-$$\operatorname{rank}\Phi=\operatorname{rank}\Gamma=\operatorname{rank}\hat\Phi=\operatorname{rank}\hat\Gamma=n, \tag{3.5}$$
+$$ \operatorname{rank}\Phi=\operatorname{rank}\Gamma=\operatorname{rank}\hat\Phi=\operatorname{rank}\hat\Gamma=n, \tag{3.5} $$
 
-$$\Phi\Gamma=\hat\Phi\hat\Gamma, \tag{3.6}$$
+$$ \Phi\Gamma=\hat\Phi\hat\Gamma, \tag{3.6} $$
 
 而由 (3.5) 知 $\hat\Phi^{\mathrm T}\hat\Phi$ 与 $\hat\Gamma\hat\Gamma^{\mathrm T}$ 都是 $n$ 阶可逆矩阵。记
 
-$$\hat T=(\hat\Phi^{\mathrm T}\hat\Phi)^{-1}\hat\Phi^{\mathrm T}\Phi,\qquadT=\Gamma\hat\Gamma^{\mathrm T}(\hat\Gamma\hat\Gamma^{\mathrm T})^{-1}, \tag{3.8}$$
+$$ \hat T=(\hat\Phi^{\mathrm T}\hat\Phi)^{-1}\hat\Phi^{\mathrm T}\Phi,\qquad T=\Gamma\hat\Gamma^{\mathrm T}(\hat\Gamma\hat\Gamma^{\mathrm T})^{-1}, \tag{3.8} $$
 
 则 $\hat TT=I$，即 $\hat T$ 和 $T$ 互为逆矩阵；并且
 
-$$\hat\Gamma=\hat T\Gamma,\qquad \hat\Phi=\Phi T.$$
+$$ \hat\Gamma=\hat T\Gamma,\qquad \hat\Phi=\Phi T. $$
 
 又由 $[A,B,C]$ 和 $[\hat A,\hat B,\hat C]$ 都是 $K$ 的实现，容易知道
 
-$$\Phi A\Gamma=\hat\Phi\hat A\hat\Gamma, \tag{3.9}$$
+$$ \Phi A\Gamma=\hat\Phi\hat A\hat\Gamma, \tag{3.9} $$
 
 由此得到 $\hat A=T^{-1}AT$，$\hat B=T^{-1}B$，$\hat C=CT$，即 (3.4) 成立。
 
@@ -3402,33 +3402,33 @@ $$\Phi A\Gamma=\hat\Phi\hat A\hat\Gamma, \tag{3.9}$$
 
 假设系统为
 
-$$\begin{cases}a_{11}(D)x_1(t)+a_{12}(D)x_2(t)+\cdots+a_{1n}(D)x_n(t)=f_1(t),\\a_{21}(D)x_1(t)+a_{22}(D)x_2(t)+\cdots+a_{2n}(D)x_n(t)=f_2(t),\\\cdots\cdots\cdots\cdots\cdots,\\a_{n1}(D)x_1(t)+a_{n2}(D)x_2(t)+\cdots+a_{nn}(D)x_n(t)=f_n(t),\end{cases} \tag{1.1}$$
+$$ \begin{cases} a_{11}(D)x_1(t)+a_{12}(D)x_2(t)+\cdots+a_{1n}(D)x_n(t)=f_1(t),\\ a_{21}(D)x_1(t)+a_{22}(D)x_2(t)+\cdots+a_{2n}(D)x_n(t)=f_2(t),\\ \cdots\cdots\cdots\cdots\cdots,\\ a_{n1}(D)x_1(t)+a_{n2}(D)x_2(t)+\cdots+a_{nn}(D)x_n(t)=f_n(t), \end{cases} \tag{1.1} $$
 
 其中 $D=\dfrac{\mathrm{d}}{\mathrm{d}t}$ 是一阶微分算子，$a_{ij}(D)\equiv\sum\limits_{l=0}^{L_{ij}}a_{ij}^{(l)}D^l$ 是 $L_{ij}$ 阶微分算子，$a_{ij}^{(l)}$ 是常数（$i,j=1,2,\cdots,n$；$l=0,1,\cdots,L_{ij}$），且当 $L_{ij}\neq0$ 时 $a_{ij}^{L_{ij}}\neq0$。函数 $f_i(\cdot)$（$i=1,2,\cdots,n$）具有任意阶导数。若记
 
-$$x(t)=(x_1(t),x_2(t),\cdots,x_n(t))^{\mathrm T},\qquadf(t)=(f_1(t),f_2(t),\cdots,f_n(t))^{\mathrm T},\qquadA(D)\equiv(a_{ij}(D))_{i,j=1}^{n},$$
+$$ x(t)=(x_1(t),x_2(t),\cdots,x_n(t))^{\mathrm T},\qquad f(t)=(f_1(t),f_2(t),\cdots,f_n(t))^{\mathrm T},\qquad A(D)\equiv(a_{ij}(D))_{i,j=1}^{n}, $$
 
 那么 (1.1) 可简记为
 
-$$A(D)x(t)=f(t). \tag{1.2}$$
+$$ A(D)x(t)=f(t). \tag{1.2} $$
 
 当 $n=1$ 时，(1.2) 是一个高阶常微分方程，可以用常微分方程理论求解。如果 $\max\limits_{1\leqslant i,j\leqslant n}L_{ij}=1$，那么方程组 (1.2) 是一阶的，它可以写成
 
-$$A^{(1)}\frac{\mathrm{d}x(t)}{\mathrm{d}t}+A^{(0)}x(t)=f(t).$$
+$$ A^{(1)}\frac{\mathrm{d}x(t)}{\mathrm{d}t}+A^{(0)}x(t)=f(t). $$
 
 进一步，当行列式 $\det A^{(1)}\equiv\det(a_{ij}^{(1)})\neq0$ 时，上式等价于
 
-$$\frac{\mathrm{d}x(t)}{\mathrm{d}t}+(A^{(1)})^{-1}A^{(0)}x(t)=(A^{(1)})^{-1}f(t),$$
+$$ \frac{\mathrm{d}x(t)}{\mathrm{d}t}+(A^{(1)})^{-1}A^{(0)}x(t)=(A^{(1)})^{-1}f(t), $$
 
 它是一个标准的一阶常系数线性常微分方程组，可以用常数变易公式求解。但是，如果 $\det A^{(1)}\equiv\det(a_{ij}^{(1)})=0$，那么就不能按照一阶常微分方程组的解法来求解。
 
 **例 (不能化为一阶方程组的二阶方程组)** @159
 
-$$A(D)=\begin{pmatrix}D&D-1\\0&1\end{pmatrix},\qquadA^{(1)}=\begin{pmatrix}1&1\\0&0\end{pmatrix},\qquadA^{(0)}=\begin{pmatrix}0&-1\\0&1\end{pmatrix}.$$
+$$ A(D)=\begin{pmatrix}D&D-1\\0&1\end{pmatrix},\qquad A^{(1)}=\begin{pmatrix}1&1\\0&0\end{pmatrix},\qquad A^{(0)}=\begin{pmatrix}0&-1\\0&1\end{pmatrix}. $$
 
 此时 $\det A^{(1)}=0$。而直接解 (1.1) 可得
 
-$$x_1(t)=\int\left[f_1(t)+f_2(t)-f_2'(t)\right]\mathrm{d}t,\qquad x_2(t)=f_2(t).$$
+$$ x_1(t)=\int\left[f_1(t)+f_2(t)-f_2'(t)\right]\mathrm{d}t,\qquad x_2(t)=f_2(t). $$
 
 我们现在讨论 (1.1) 或 (1.2) 一般的求解方法。如果忽略微分算子 $D$，(1.2) 或 (1.1) 很像线性代数方程组。然而，我们不能简单地应用线性代数方程组的求解方法来解 (1.1)，因为当 $P(D)$ 是一个以 $D$ 为未定元的多项式（称为一个微分算子多项式）时，$\dfrac{1}{P(D)}$ 的意义一般来说是不明确的。不过，如果把求解线性代数方程组的消元法则加以推广，则有可能对研究常系数线性常微分方程组 (1.1) 的求解问题有所帮助。
 
@@ -3438,25 +3438,25 @@ $$x_1(t)=\int\left[f_1(t)+f_2(t)-f_2'(t)\right]\mathrm{d}t,\qquad x_2(t)=f_2(t).
 
 第一，把 (1.1) 的第 $i$ 个方程与第 $j$ 个方程对调，不会影响 (1.1) 的求解。这相当于用矩阵
 
-$$E(i,j)\equiv\begin{pmatrix}1& & & & & & \\& \ddots& & & & & \\& & 1& & & & \\& & & 0& \cdots& 1& \\& & & \vdots& 1& \vdots& \\& & & 1& \cdots& 0& \\& & & & & & \ddots\end{pmatrix} \tag{1.3}$$
+$$ E(i,j)\equiv \begin{pmatrix} 1& & & & & & \\ & \ddots& & & & & \\ & & 1& & & & \\ & & & 0& \cdots& 1& \\ & & & \vdots& 1& \vdots& \\ & & & 1& \cdots& 0& \\ & & & & & & \ddots \end{pmatrix} \tag{1.3} $$
 
 同时左乘微分方程组 (1.2) 的两端，其中第 $i$ 行与第 $j$ 行互换，空白处为 $0$，未写出的对角元为 $1$。这时 (1.2) 的系数矩阵变为 $E(i,j)A(D)$，右端变为 $E(i,j)f(t)$。
 
 第二，对微分方程组 (1.1) 的第 $i$ 个方程乘以非零的常数 $\alpha$，也不会改变 (1.1) 的解。这相当于用矩阵
 
-$$E_i(\alpha)\equiv\begin{pmatrix}1& & & & \\& \ddots& & & \\& & \alpha& & \\& & & 1& \\& & & & \ddots\end{pmatrix} \tag{1.4}$$
+$$ E_i(\alpha)\equiv \begin{pmatrix} 1& & & & \\ & \ddots& & & \\ & & \alpha& & \\ & & & 1& \\ & & & & \ddots \end{pmatrix} \tag{1.4} $$
 
 同时左乘微分方程组 (1.2) 的两端，这时 (1.2) 的系数矩阵变为 $E_i(\alpha)A(D)$，而右端变为 $E_i(\alpha)f(t)$。
 
 第三，用微分算子多项式 $P(D)$ 作用到微分方程组 (1.1) 的第 $j$ 个方程后，加到第 $i$ 个方程上，并保留原来的第 $j$ 个方程。这时同样不会改变 (1.1) 的解。这相当于用矩阵
 
-$$E_{ij}(P(D))\equiv\begin{pmatrix}1& & & & \\& \ddots& & & \\& & 1& \cdots& P(D)\\& & & \ddots& \vdots\\& & & & 1\end{pmatrix} \tag{1.5}$$
+$$ E_{ij}(P(D))\equiv \begin{pmatrix} 1& & & & \\ & \ddots& & & \\ & & 1& \cdots& P(D)\\ & & & \ddots& \vdots\\ & & & & 1 \end{pmatrix} \tag{1.5} $$
 
 同时左乘微分方程组 (1.2) 的两端，这时 (1.2) 的系数矩阵变为 $E_{ij}(P(D))A(D)$，右端变为 $E_{ij}(P(D))f(t)$。此处，我们按照通常多项式的加法和乘法定义任意两个微分算子多项式 $P(D)$ 与 $Q(D)$ 之和 $P(D)+Q(D)$ 及乘积 $P(D)\cdot Q(D)$。例如 $P(D)=2D^2+3D-1$，$Q(D)=D+2$，则
 
-$$P(D)+Q(D)=2D^2+4D+1,$$
+$$ P(D)+Q(D)=2D^2+4D+1, $$
 
-$$P(D)\cdot Q(D)=(2D^2+3D-1)(D+2)=2D^3+7D^2+5D-2.$$
+$$ P(D)\cdot Q(D)=(2D^2+3D-1)(D+2)=2D^3+7D^2+5D-2. $$
 
 **定义 (初等矩阵与初等变换)** @161
 
@@ -3470,7 +3470,7 @@ $$P(D)\cdot Q(D)=(2D^2+3D-1)(D+2)=2D^3+7D^2+5D-2.$$
 
 如果 $U(D)\in\mathcal{M}_n$，那么方程组 (1.1) 的解必是方程组
 
-$$U(D)A(D)x(t)=U(D)f(t) \tag{1.6}$$
+$$ U(D)A(D)x(t)=U(D)f(t) \tag{1.6} $$
 
 的解；反之，方程组 (1.6) 的解必是方程组 (1.1) 的解。这就是说，用模方阵同时左乘方程组 (1.1) 的两端，不会改变方程组的解。
 
@@ -3482,7 +3482,7 @@ $$U(D)A(D)x(t)=U(D)f(t) \tag{1.6}$$
 
 假设 $f(D)$ 和 $g(D)$ 为多项式，如果存在多项式 $q(D)$，使得
 
-$$f(D)=q(D)g(D),$$
+$$ f(D)=q(D)g(D), $$
 
 我们称 $g(D)$ 为 $f(D)$ 的**因式**，$f(D)$ 为 $g(D)$ 的**倍式**。
 
@@ -3492,7 +3492,7 @@ $$f(D)=q(D)g(D),$$
 
 假设 $f(D)$ 和 $g(D)$ 为多项式，$g(D)\neq0$，则存在唯一的多项式 $q(D)$ 和 $r(D)$，使得
 
-$$f(D)=q(D)g(D)+r(D), \tag{1.7}$$
+$$ f(D)=q(D)g(D)+r(D), \tag{1.7} $$
 
 其中 $r(D)\equiv0$ 或者 $r(D)$ 的次数低于 $g(D)$ 的次数。
 
@@ -3510,7 +3510,7 @@ $$f(D)=q(D)g(D)+r(D), \tag{1.7}$$
 
 假设 $a_1(D),a_2(D),\cdots,a_n(D)$ 为 $n$ 个多项式，记 $\boldsymbol{a}(D)=(a_1(D),a_2(D),\cdots,a_n(D))^{\mathrm T}$。如果存在 $n$ 阶模方阵 $U(D)$ 使得
 
-$$U(D)\boldsymbol{a}(D)=(d(D),0,\cdots,0)^{\mathrm T}, \tag{1.8}$$
+$$ U(D)\boldsymbol{a}(D)=(d(D),0,\cdots,0)^{\mathrm T}, \tag{1.8} $$
 
 则 $d(D)=\{a_1(D),a_2(D),\cdots,a_n(D)\}$。
 
@@ -3518,19 +3518,19 @@ $$U(D)\boldsymbol{a}(D)=(d(D),0,\cdots,0)^{\mathrm T}, \tag{1.8}$$
 
 先观察 $n=2$ 的情形，不妨设 $a_1(D)$，$a_2(D)$ 全不为零。注意到初等矩阵和有限个初等矩阵的乘积都是模方阵。故当 $a_1(D)$ 的次数小于 $a_2(D)$ 的次数时，我们可以作初等变换交换它们的次序。从而，不失一般性，我们可以考虑 $a_1(D)$ 的次数大于等于 $a_2(D)$ 的次数的情况。利用剩余除法，存在多项式 $g(D)$ 和 $r(D)$，使得
 
-$$a_1(D)\equiv g(D)a_2(D)+r(D), \tag{1.9}$$
+$$ a_1(D)\equiv g(D)a_2(D)+r(D), \tag{1.9} $$
 
 其中 $r(D)\equiv0$ 或者 $r(D)$ 的次数低于 $a_2(D)$ 的次数。于是作初等变换
 
-$$\begin{pmatrix}1&-g(D)\\0&1\end{pmatrix}\begin{pmatrix}a_1(D)\\a_2(D)\end{pmatrix}=\begin{pmatrix}r(D)\\a_2(D)\end{pmatrix}.$$
+$$ \begin{pmatrix}1&-g(D)\\0&1\end{pmatrix}\begin{pmatrix}a_1(D)\\a_2(D)\end{pmatrix}=\begin{pmatrix}r(D)\\a_2(D)\end{pmatrix}. $$
 
 再作一次初等变换
 
-$$\begin{pmatrix}0&1\\1&0\end{pmatrix}\begin{pmatrix}r(D)\\a_2(D)\end{pmatrix}=\begin{pmatrix}a_2(D)\\r(D)\end{pmatrix}.$$
+$$ \begin{pmatrix}0&1\\1&0\end{pmatrix}\begin{pmatrix}r(D)\\a_2(D)\end{pmatrix}=\begin{pmatrix}a_2(D)\\r(D)\end{pmatrix}. $$
 
 如果 $r(D)\equiv0$，则
 
-$$U(D)=\begin{pmatrix}0&1\\1&0\end{pmatrix}\begin{pmatrix}1&-g(D)\\0&1\end{pmatrix}=\begin{pmatrix}0&1\\1&-g(D)\end{pmatrix}$$
+$$ U(D)=\begin{pmatrix}0&1\\1&0\end{pmatrix}\begin{pmatrix}1&-g(D)\\0&1\end{pmatrix}=\begin{pmatrix}0&1\\1&-g(D)\end{pmatrix} $$
 
 就是我们所要求的。否则 $r(D)$ 是一个次数小于 $a_2(D)$ 次数的多项式。此时记 $a_1^{(1)}(D)=a_2(D)$，$a_2^{(1)}(D)=r(D)$，重复上面的过程。只要 $a_2^{(k)}(D)\neq0$，它的次数便关于 $k$ 严格递减，所以存在 $\bar k>0$，经过 $\bar k$ 次循环 $a_2^{(\bar k)}(D)=0$。此时我们只要将每次循环所作的初等变换矩阵依次左乘后得到的矩阵记为 $U(D)$ 即可。
 
@@ -3542,11 +3542,11 @@ $$U(D)=\begin{pmatrix}0&1\\1&0\end{pmatrix}\begin{pmatrix}1&-g(D)\\0&1\end{pmatr
 
 假设 $d(D)$ 是多项式 $a_1(D),a_2(D),\cdots,a_n(D)$ 的最大公因式，则存在 $n$ 个多项式 $q_1(D),q_2(D),\cdots,q_n(D)$，使得
 
-$$\sum_{i=1}^{n}q_i(D)a_i(D)=d(D). \tag{1.10}$$
+$$ \sum_{i=1}^{n}q_i(D)a_i(D)=d(D). \tag{1.10} $$
 
 特别地，当 $a_1(D),a_2(D),\cdots,a_n(D)$ 互素时，存在 $n$ 个多项式 $q_1(D),q_2(D),\cdots,q_n(D)$，使得
 
-$$\sum_{i=1}^{n}q_i(D)a_i(D)=1. \tag{1.11}$$
+$$ \sum_{i=1}^{n}q_i(D)a_i(D)=1. \tag{1.11} $$
 
 由上可见，利用初等矩阵对方程组 (1.1) 进行变换，使得变换后的方程组具有较简单的形式，就有可能求出方程组的解。值得注意的是，利用初等矩阵进行的变换不涉及微分算子多项式的除法，因此不会出现形如 $\dfrac{1}{P(D)}$ 的意义不明确的项，这一点是非常重要的。
 
@@ -3556,15 +3556,15 @@ $$\sum_{i=1}^{n}q_i(D)a_i(D)=1. \tag{1.11}$$
 
 由于矩阵 $A(D)$ 非奇异，所以它的第 $n$ 列元素的公因式 $a^*_{1,n}(D)$ 不是 $0$。由定理 1.5，存在 $n$ 阶模方阵 $E^1(D)$，使得
 
-$$E^1(D)\begin{pmatrix}a_{1,n}(D)\\a_{2,n}(D)\\\vdots\\a_{n,n}(D)\end{pmatrix}=\begin{pmatrix}a^*_{1,n}(D)\\0\\\vdots\\0\end{pmatrix}.$$
+$$ E^1(D)\begin{pmatrix}a_{1,n}(D)\\a_{2,n}(D)\\\vdots\\a_{n,n}(D)\end{pmatrix} =\begin{pmatrix}a^*_{1,n}(D)\\0\\\vdots\\0\end{pmatrix}. $$
 
 于是
 
-$$E^1(D)A(D)=\begin{pmatrix}a^*_{1,1}&a^*_{1,2}&\cdots&a^*_{1,n-1}&a^*_{1,n}\\\alpha_{2,1}&\alpha_{2,2}&\cdots&\alpha_{2,n-1}&0\\\vdots&\vdots& &\vdots&\vdots\\\alpha_{n-1,1}&\alpha_{n-1,2}&\cdots&\alpha_{n-1,n-1}&0\\\alpha_{n,1}&\alpha_{n,2}&\cdots&\alpha_{n,n-1}&0\end{pmatrix}(D).$$
+$$ E^1(D)A(D)= \begin{pmatrix} a^*_{1,1}&a^*_{1,2}&\cdots&a^*_{1,n-1}&a^*_{1,n}\\ \alpha_{2,1}&\alpha_{2,2}&\cdots&\alpha_{2,n-1}&0\\ \vdots&\vdots& &\vdots&\vdots\\ \alpha_{n-1,1}&\alpha_{n-1,2}&\cdots&\alpha_{n-1,n-1}&0\\ \alpha_{n,1}&\alpha_{n,2}&\cdots&\alpha_{n,n-1}&0 \end{pmatrix}(D). $$
 
 如同上面的操作，存在 $n-1$ 阶模方阵 $E^2(D)$ 满足
 
-$$E^2(D)\begin{pmatrix}\alpha_{2,1}&\alpha_{2,2}&\cdots&\alpha_{2,n-1}\\\vdots&\vdots& &\vdots\\\alpha_{n-1,1}&\alpha_{n-1,2}&\cdots&\alpha_{n-1,n-1}\\\alpha_{n,1}&\alpha_{n,2}&\cdots&\alpha_{n,n-1}\end{pmatrix}(D)=\begin{pmatrix}a^*_{2,1}&a^*_{2,2}&\cdots&a^*_{2,n-2}&a^*_{2,n-1}\\\tilde\alpha_{3,1}&\tilde\alpha_{3,2}&\cdots&\tilde\alpha_{3,n-2}&0\\\vdots&\vdots& &\vdots&\vdots\\\tilde\alpha_{n-1,1}&\tilde\alpha_{n-1,2}&\cdots&\tilde\alpha_{n-1,n-2}&0\\\tilde\alpha_{n,1}&\tilde\alpha_{n,2}&\cdots&\tilde\alpha_{n,n-2}&0\end{pmatrix}(D),$$
+$$ E^2(D) \begin{pmatrix} \alpha_{2,1}&\alpha_{2,2}&\cdots&\alpha_{2,n-1}\\ \vdots&\vdots& &\vdots\\ \alpha_{n-1,1}&\alpha_{n-1,2}&\cdots&\alpha_{n-1,n-1}\\ \alpha_{n,1}&\alpha_{n,2}&\cdots&\alpha_{n,n-1} \end{pmatrix}(D) = \begin{pmatrix} a^*_{2,1}&a^*_{2,2}&\cdots&a^*_{2,n-2}&a^*_{2,n-1}\\ \tilde\alpha_{3,1}&\tilde\alpha_{3,2}&\cdots&\tilde\alpha_{3,n-2}&0\\ \vdots&\vdots& &\vdots&\vdots\\ \tilde\alpha_{n-1,1}&\tilde\alpha_{n-1,2}&\cdots&\tilde\alpha_{n-1,n-2}&0\\ \tilde\alpha_{n,1}&\tilde\alpha_{n,2}&\cdots&\tilde\alpha_{n,n-2}&0 \end{pmatrix}(D), $$
 
 其中 $a^*_{2,n-1}(D)=\{\alpha_{2,n-1}(D),\cdots,\alpha_{n-1,n-1}(D),\alpha_{n,n-1}(D)\}$。
 
@@ -3572,29 +3572,29 @@ $$E^2(D)\begin{pmatrix}\alpha_{2,1}&\alpha_{2,2}&\cdots&\alpha_{2,n-1}\\\vdots&\
 
 仿照上面的方法，我们对第 $n-2$ 列到第 $2$ 列分别进行变换。我们看到一定存在模方阵，使得它们的乘积 $\tilde E(D)$ 满足
 
-$$\tilde E(D)A(D)=\begin{pmatrix}a^*_{1,1}&a^*_{1,2}&\cdots&a^*_{1,n-1}&a^*_{1,n}\\a^*_{2,1}&a^*_{2,2}&\cdots&a^*_{2,n-1}&0\\\vdots&\vdots& &\vdots&\vdots\\a^*_{n-1,1}&a^*_{n-1,2}&\cdots&0&0\\a^*_{n,1}&0&\cdots&0&0\end{pmatrix}(D). \tag{1.12}$$
+$$ \tilde E(D)A(D)= \begin{pmatrix} a^*_{1,1}&a^*_{1,2}&\cdots&a^*_{1,n-1}&a^*_{1,n}\\ a^*_{2,1}&a^*_{2,2}&\cdots&a^*_{2,n-1}&0\\ \vdots&\vdots& &\vdots&\vdots\\ a^*_{n-1,1}&a^*_{n-1,2}&\cdots&0&0\\ a^*_{n,1}&0&\cdots&0&0 \end{pmatrix}(D). \tag{1.12} $$
 
 由于
 
-$$\prod_{i=1}^{n}\left[(-1)^{\frac{n(n-1)}{2}}a^*_{i,n-i+1}(D)\right]=\det(\tilde E(D)A(D))=\det(\tilde E(D))\det(A(D))\neq0, \tag{1.13}$$
+$$ \prod_{i=1}^{n}\left[(-1)^{\frac{n(n-1)}{2}}a^*_{i,n-i+1}(D)\right] =\det(\tilde E(D)A(D)) =\det(\tilde E(D))\det(A(D))\neq0, \tag{1.13} $$
 
 所以 (1.12) 中位于副对角线上的元素 $a^*_{i,n-i+1}(D)$ 都是非零的算子多项式。如果在 $a^*_{i,n-i+1}(D)$ 上方的元素的次数不低于相应副对角线元素 $a^*_{i,n-i+1}(D)$ 的次数，仍然可以利用第三种初等变换降低其次数或将其化为零。这样，经过初等变换运算，可以把矩阵 $A(D)$ 简化，使其副对角线元素 $a^*_{i,n-i+1}(D)$ 不为零，在副对角线下方元素都为零，在副对角线上方的元素的次数都比相应副对角线元素的次数低，或者副对角线上方的元素为零。设最后的变换矩阵为
 
-$$E(D)\equiv\begin{pmatrix}e_{11}&\cdots&e_{1n}\\ \vdots& &\vdots\\ e_{n1}&\cdots&e_{nn}\end{pmatrix}(D),$$
+$$ E(D)\equiv\begin{pmatrix}e_{11}&\cdots&e_{1n}\\ \vdots& &\vdots\\ e_{n1}&\cdots&e_{nn}\end{pmatrix}(D), $$
 
 那么
 
-$$E(D)A(D)x(t)=E(D)f(t),$$
+$$ E(D)A(D)x(t)=E(D)f(t), $$
 
 而 $E(D)A(D)$ 与 (1.12) 右端的矩阵形状相同，且
 
-$$E(D)f(t)\equiv(f^*_1(t),f^*_2(t),\cdots,f^*_n(t))^{\mathrm T}.$$
+$$ E(D)f(t)\equiv(f^*_1(t),f^*_2(t),\cdots,f^*_n(t))^{\mathrm T}. $$
 
 **定义 (典则方程组与典则型)** @168
 
 经过上述初等变换，常系数线性常微分方程组 (1.1) 变为
 
-$$\begin{cases}a^*_{1,1}(D)x_1(t)+a^*_{1,2}(D)x_2(t)+\cdots+a^*_{1,n}(D)x_n(t)=f^*_1(t),\\\cdots\cdots\cdots\cdots\cdots,\\a^*_{n-1,1}(D)x_1(t)+a^*_{n-1,2}(D)x_2(t)=f^*_{n-1}(t),\\a^*_{n,1}(D)x_1(t)=f^*_n(t).\end{cases} \tag{1.14}$$
+$$ \begin{cases} a^*_{1,1}(D)x_1(t)+a^*_{1,2}(D)x_2(t)+\cdots+a^*_{1,n}(D)x_n(t)=f^*_1(t),\\ \cdots\cdots\cdots\cdots\cdots,\\ a^*_{n-1,1}(D)x_1(t)+a^*_{n-1,2}(D)x_2(t)=f^*_{n-1}(t),\\ a^*_{n,1}(D)x_1(t)=f^*_n(t). \end{cases} \tag{1.14} $$
 
 上述形式的方程组称为**典则方程组**，其系数矩阵称为**典则型**。
 
@@ -3604,11 +3604,11 @@ $$\begin{cases}a^*_{1,1}(D)x_1(t)+a^*_{1,2}(D)x_2(t)+\cdots+a^*_{1,n}(D)x_n(t)=f
 
 解微分方程会产生一些任意常数，因此让我们来关心一下方程组 (1.14) 的解含有任意常数的个数。根据方程组 (1.14) 的形式，我们知道：$x_1(t)$ 所含任意常数的个数就是多项式 $a^*_{n,1}(D)$ 的次数；$x_2(t)$ 所含任意常数的个数就是多项式 $a^*_{n-1,2}(D)$ 的次数加上 $x_1(t)$ 中已经出现过的常数个数；依此类推，我们得知方程组 (1.14) 的解含有任意常数的个数等于 $\prod\limits_{i=1}^{n}a^*_{i,n-i+1}(D)$ 的次数。另外，(1.14) 左端系数矩阵的行列式
 
-$$\det(E(D)A(D))=\prod_{i=1}^{n}(-1)^{\frac{n(n-1)}{2}}a^*_{i,n-i+1}(D).$$
+$$ \det(E(D)A(D))=\prod_{i=1}^{n}(-1)^{\frac{n(n-1)}{2}}a^*_{i,n-i+1}(D). $$
 
 所以
 
-$$\prod_{i=1}^{n}a^*_{i,n-i+1}(D)=(-1)^{\frac{n(n-1)}{2}}\det(E(D))\det(A(D)).$$
+$$ \prod_{i=1}^{n}a^*_{i,n-i+1}(D)=(-1)^{\frac{n(n-1)}{2}}\det(E(D))\det(A(D)). $$
 
 **定理 1.7 (解中任意常数的个数与 $\det A(D)$ 的次数)** @169
 
@@ -3622,11 +3622,11 @@ $$\prod_{i=1}^{n}a^*_{i,n-i+1}(D)=(-1)^{\frac{n(n-1)}{2}}\det(E(D))\det(A(D)).$$
 
 考虑线性常微分方程组
 
-$$\begin{cases}(2D^2+1)x_1(t)+(D^2-1)x_2(t)+(D^2+2)x_3(t)=f_1(t),\\-D^2x_1(t)-(D^2+1)x_3(t)=0,\\(D^2-1)x_1(t)+(D^2-1)x_2(t)-Dx_3(t)=0.\end{cases}$$
+$$ \begin{cases} (2D^2+1)x_1(t)+(D^2-1)x_2(t)+(D^2+2)x_3(t)=f_1(t),\\ -D^2x_1(t)-(D^2+1)x_3(t)=0,\\ (D^2-1)x_1(t)+(D^2-1)x_2(t)-Dx_3(t)=0. \end{cases} $$
 
 把第 $2$ 式加到第 $1$ 式；用 $D^2+1$ 乘第 $1$ 式加到第 $2$ 式，用 $D$ 乘第 $1$ 式加到第 $3$ 式；用 $1-D$ 乘第 $3$ 式加到第 $2$ 式；将第 $2$ 式乘 $-\dfrac{1}{2}$ 加到第 $1$ 式，用 $-\dfrac{D+1}{2}$ 乘第 $2$ 式再加到第 $3$ 式；最后第 $2$ 式乘以 $\dfrac{1}{2}$，第 $3$ 式乘以 $2$，就得到典则方程组
 
-$$\begin{cases}\left(\dfrac{1}{2}D^2-D+1\right)x_1(t)+x_3(t)=\dfrac{1}{2}(1-D)f_1(t),\\\dfrac{1}{2}(D^2+2D)x_1(t)+(D^2-1)x_2(t)=\dfrac{1}{2}(D+1)f_1(t),\\(D^3-D^2-2)x_1(t)=-(D^2+1)f_1(t).\end{cases}$$
+$$ \begin{cases} \left(\dfrac{1}{2}D^2-D+1\right)x_1(t)+x_3(t)=\dfrac{1}{2}(1-D)f_1(t),\\ \dfrac{1}{2}(D^2+2D)x_1(t)+(D^2-1)x_2(t)=\dfrac{1}{2}(D+1)f_1(t),\\ (D^3-D^2-2)x_1(t)=-(D^2+1)f_1(t). \end{cases} $$
 
 由此，先从第 $3$ 式解出 $x_1(\cdot)$，由于关于 $x_1(\cdot)$ 的方程式是 $3$ 阶的，所以解 $x_1(\cdot)$ 含有 $3$ 个任意常数；再将 $x_1(\cdot)$ 代入第 $2$ 式求解 $x_2(\cdot)$，由于关于 $x_2(\cdot)$ 的方程式是二阶的，所以得出的解 $x_2(\cdot)$ 含有 $5$ 个任意常数（其中的 $3$ 个任意常数来自 $x_1(\cdot)$）；最后将 $x_1(\cdot)$ 代入第 $1$ 式就可以求出 $x_3(\cdot)$。
 
@@ -3634,11 +3634,11 @@ $$\begin{cases}\left(\dfrac{1}{2}D^2-D+1\right)x_1(t)+x_3(t)=\dfrac{1}{2}(1-D)f_
 
 考虑线性常微分方程组
 
-$$\begin{cases}(D^2+D+1)x_1(t)+(D^2+3D+2)x_2(t)+(D-1)x_3(t)=f_1(t),\\(2D-1)x_1(t)-(D+1)x_2(t)+(D^2-D+1)x_3(t)=0,\\(D^2+2D-1)x_1(t)+(D^2+D)x_2(t)+(D^2-D)x_3(t)=0.\end{cases}$$
+$$ \begin{cases} (D^2+D+1)x_1(t)+(D^2+3D+2)x_2(t)+(D-1)x_3(t)=f_1(t),\\ (2D-1)x_1(t)-(D+1)x_2(t)+(D^2-D+1)x_3(t)=0,\\ (D^2+2D-1)x_1(t)+(D^2+D)x_2(t)+(D^2-D)x_3(t)=0. \end{cases} $$
 
 用 $-D$ 乘第 $1$ 式加到第 $2$ 式和第 $3$ 式；交换第 $1$ 式和第 $2$ 式；用 $-D+1$ 乘第 $1$ 式然后加到第 $2$ 式；用 $D$ 乘第 $3$ 式加到第 $2$ 式；用 $D^2+2D+1$ 和 $D^2+D$ 乘第 $2$ 式分别加到第 $1$ 式和第 $3$ 式；最后第 $1$ 式减去第 $3$ 式，就得到典则方程组
 
-$$\begin{cases}(D^2+2D)x_1(t)+x_3(t)=(-D^2+1)f_1(t),\\2Dx_1(t)+(D+1)x_2(t)=(-D+1)f_1(t),\\(D^3+2D^2+D-1)x_1(t)=-D^3f_1(t).\end{cases}$$
+$$ \begin{cases} (D^2+2D)x_1(t)+x_3(t)=(-D^2+1)f_1(t),\\ 2Dx_1(t)+(D+1)x_2(t)=(-D+1)f_1(t),\\ (D^3+2D^2+D-1)x_1(t)=-D^3f_1(t). \end{cases} $$
 
 由第 $3$ 式可以解出 $x_1(\cdot)$，它含有 $3$ 个任意常数；把它依次代入第 $2$ 式和第 $1$ 式就可以解出 $x_2(\cdot)$ 和 $x_3(\cdot)$。这样，该方程组的解含有 $4$ 个任意常数。
 
@@ -3646,19 +3646,19 @@ $$\begin{cases}(D^2+2D)x_1(t)+x_3(t)=(-D^2+1)f_1(t),\\2Dx_1(t)+(D+1)x_2(t)=(-D+1
 
 考虑线性常微分方程组
 
-$$\begin{cases}(2D^2+1)x_1(t)+(D^2-3)x_2(t)+(D^2+2)x_3(t)=f_1(t),\\-D^2x_1(t)+2x_2(t)-(D^2+1)x_3(t)=0,\\(2D^2-1)x_1(t)-2x_2(t)+(D^2+1)x_3(t)=0.\end{cases}$$
+$$ \begin{cases} (2D^2+1)x_1(t)+(D^2-3)x_2(t)+(D^2+2)x_3(t)=f_1(t),\\ -D^2x_1(t)+2x_2(t)-(D^2+1)x_3(t)=0,\\ (2D^2-1)x_1(t)-2x_2(t)+(D^2+1)x_3(t)=0. \end{cases} $$
 
 把第 $2$ 式加到第 $1$ 式和第 $3$ 式，就得到
 
-$$\begin{cases}(D^2+1)x_1(t)+(D^2-1)x_2(t)+x_3(t)=f_1(t),\\-D^2x_1(t)+2x_2(t)-(D^2+1)x_3(t)=0,\\(D^2-1)x_1(t)=0.\end{cases}$$
+$$ \begin{cases} (D^2+1)x_1(t)+(D^2-1)x_2(t)+x_3(t)=f_1(t),\\ -D^2x_1(t)+2x_2(t)-(D^2+1)x_3(t)=0,\\ (D^2-1)x_1(t)=0. \end{cases} $$
 
 用 $D^2+1$ 乘第 $1$ 式并加到第 $2$ 式，就得到
 
-$$\begin{cases}(D^2+1)x_1(t)+(D^2-1)x_2(t)+x_3(t)=f_1(t),\\(D^4+D^2+1)x_1(t)+(D^4+1)x_2(t)=(D^2+1)f_1(t),\\(D^2-1)x_1(t)=0.\end{cases}$$
+$$ \begin{cases} (D^2+1)x_1(t)+(D^2-1)x_2(t)+x_3(t)=f_1(t),\\ (D^4+D^2+1)x_1(t)+(D^4+1)x_2(t)=(D^2+1)f_1(t),\\ (D^2-1)x_1(t)=0. \end{cases} $$
 
 由于第 $3$ 式就是 $D^2x_1(t)=x_1(t)$，代入第 $1$，$2$ 式可得典则方程组
 
-$$\begin{cases}2x_1(t)+(D^2-1)x_2(t)+x_3(t)=f_1(t),\\3x_1(t)+(D^4+1)x_2(t)=(D^2+1)f_1(t),\\(D^2-1)x_1(t)=0.\end{cases}$$
+$$ \begin{cases} 2x_1(t)+(D^2-1)x_2(t)+x_3(t)=f_1(t),\\ 3x_1(t)+(D^4+1)x_2(t)=(D^2+1)f_1(t),\\ (D^2-1)x_1(t)=0. \end{cases} $$
 
 这样，从第 $3$ 式可以解出 $x_1(\cdot)$，它含有 $2$ 个任意常数；把它代入第 $2$ 式就得到关于 $x_2(\cdot)$ 的四阶微分方程，解出含有 $6$ 个任意常数的解；把 $x_1(\cdot)$ 和 $x_2(\cdot)$ 代入第 $1$ 式，就得到 $x_3(\cdot)$。这表明有时线性微分方程组的解的某些分量可能不依赖于右端向量函数。
 
@@ -3668,21 +3668,21 @@ $$\begin{cases}2x_1(t)+(D^2-1)x_2(t)+x_3(t)=f_1(t),\\3x_1(t)+(D^4+1)x_2(t)=(D^2+
 
 对于系统
 
-$$\begin{cases}a_{1,1}(D)x_1(t)+a_{1,2}(D)x_2(t)+\cdots+a_{1,n}(D)x_n(t)=f_1(t),\\a_{2,1}(D)x_1(t)+a_{2,2}(D)x_2(t)+\cdots+a_{2,n}(D)x_n(t)=f_2(t),\\\cdots\cdots\cdots\cdots\cdots,\\a_{n,1}(D)x_1(t)+a_{n,2}(D)x_2(t)+\cdots+a_{n,n}(D)x_n(t)=f_n(t),\end{cases}\tag{2.1}$$
+$$ \begin{cases} a_{1,1}(D)x_1(t)+a_{1,2}(D)x_2(t)+\cdots+a_{1,n}(D)x_n(t)=f_1(t),\\ a_{2,1}(D)x_1(t)+a_{2,2}(D)x_2(t)+\cdots+a_{2,n}(D)x_n(t)=f_2(t),\\ \cdots\cdots\cdots\cdots\cdots,\\ a_{n,1}(D)x_1(t)+a_{n,2}(D)x_2(t)+\cdots+a_{n,n}(D)x_n(t)=f_n(t), \end{cases}\tag{2.1} $$
 
 其中 $a_{i,j}(D)$ 是微分算子 $D=\dfrac{\mathrm{d}}{\mathrm{d}t}$ 的多项式。要问的问题是：在什么条件下，干扰作用 $f_1(\cdot)$ 对输出变量 $x_1(\cdot)$ 没有影响？例 1.10 中就是这种情形，例 1.10 有没有一般性呢？
 
 由上一节可知，经过一系列初等变换后，(2.1) 可以变为下面的形式（见 (1.14)）：
 
-$$\begin{cases}a^*_{1,1}(D)x_1(t)+a^*_{1,2}(D)x_2(t)+\cdots+a^*_{1,n}(D)x_n(t)=f^*_1(t),\\\cdots\cdots\cdots\cdots\cdots,\\a^*_{n-1,1}(D)x_1(t)+a^*_{n-1,2}(D)x_2(t)=f^*_{n-1}(t),\\a^*_{n,1}(D)x_1(t)=f^*_n(t).\end{cases}\tag{2.2}$$
+$$ \begin{cases} a^*_{1,1}(D)x_1(t)+a^*_{1,2}(D)x_2(t)+\cdots+a^*_{1,n}(D)x_n(t)=f^*_1(t),\\ \cdots\cdots\cdots\cdots\cdots,\\ a^*_{n-1,1}(D)x_1(t)+a^*_{n-1,2}(D)x_2(t)=f^*_{n-1}(t),\\ a^*_{n,1}(D)x_1(t)=f^*_n(t). \end{cases}\tag{2.2} $$
 
 设相应的变换矩阵是
 
-$$\boldsymbol{E}(D)=\begin{pmatrix}e_{11}(D)&\cdots&e_{1n}(D)\\\vdots& &\vdots\\e_{n1}(D)&\cdots&e_{nn}(D)\end{pmatrix},\tag{2.3}$$
+$$ \boldsymbol{E}(D)=\begin{pmatrix} e_{11}(D)&\cdots&e_{1n}(D)\\ \vdots& &\vdots\\ e_{n1}(D)&\cdots&e_{nn}(D) \end{pmatrix},\tag{2.3} $$
 
 由于 $\boldsymbol{E}(D)$ 是由初等矩阵的乘积构成的，所以它的行列式是一个非零常数，从而它的逆矩阵也是由 $D$ 的多项式组成的。记
 
-$$\boldsymbol{E}^{-1}(D)\equiv\begin{pmatrix}e^*_{11}(D)&\cdots&e^*_{1n}(D)\\\vdots& &\vdots\\e^*_{n1}(D)&\cdots&e^*_{nn}(D)\end{pmatrix}.$$
+$$ \boldsymbol{E}^{-1}(D)\equiv\begin{pmatrix} e^*_{11}(D)&\cdots&e^*_{1n}(D)\\ \vdots& &\vdots\\ e^*_{n1}(D)&\cdots&e^*_{nn}(D) \end{pmatrix}. $$
 
 **命题 (无关性与变换矩阵的元素)** @173
 
@@ -3700,7 +3700,7 @@ $$a^*_{i,j}(D)\equiv\sum_{k=1}^{n}e_{i,k}(D)a_{k,j}(D),\qquad i,j=1,2,\cdots,n.$
 
 记 $A_{j,1}$ 为从 $\boldsymbol{A}(D)$ 中删去第 $j$ 行与第 $1$ 列后所得的 $n-1$ 阶子式，即
 
-$$A_{j,1}=\begin{vmatrix}a_{1,2}&a_{1,3}&\cdots&a_{1,n}\\\vdots&\vdots&&\vdots\\a_{j-1,2}&a_{j-1,3}&\cdots&a_{j-1,n}\\a_{j+1,2}&a_{j+1,3}&\cdots&a_{j+1,n}\\\vdots&\vdots&&\vdots\\a_{n,2}&a_{n,3}&\cdots&a_{n,n}\end{vmatrix},$$
+$$ A_{j,1}=\begin{vmatrix} a_{1,2}&a_{1,3}&\cdots&a_{1,n}\\ \vdots&\vdots&&\vdots\\ a_{j-1,2}&a_{j-1,3}&\cdots&a_{j-1,n}\\ a_{j+1,2}&a_{j+1,3}&\cdots&a_{j+1,n}\\ \vdots&\vdots&&\vdots\\ a_{n,2}&a_{n,3}&\cdots&a_{n,n} \end{vmatrix}, $$
 
 则 $e_{n,j}(D)\equiv0$ 蕴含 $A_{j,1}\equiv0$；反之，若 $a^*_{1,n},a^*_{2,n-1},\cdots,a^*_{n-1,2}$ 都不等于零，则由 $A_{j,1}\equiv0$ 可推出 $e_{n,j}(D)\equiv0$。这就是说，在上述条件下，$A_{j,1}\equiv0$ 与 $e_{n,j}(D)\equiv0$ 是等价的。
 
@@ -3712,7 +3712,7 @@ $$A_{j,1}\equiv0.$$
 
 对于例 1.10，有
 
-$$A_{11}(D)\equiv\begin{vmatrix}2&-D^2-1\\-2&D^2+1\end{vmatrix}\equiv0,$$
+$$ A_{11}(D)\equiv\begin{vmatrix} 2&-D^2-1\\ -2&D^2+1 \end{vmatrix}\equiv0, $$
 
 所以 $x_1(\cdot)$ 与 $f_1(\cdot)$ 无关。类似地，我们也可以给出干扰作用 $f_j(\cdot)$ 既不影响 $x_1(\cdot)$、也不影响 $x_2(\cdot)$ 的条件。
 
@@ -3732,7 +3732,7 @@ $$\boldsymbol{y}(t)=\boldsymbol{C}\boldsymbol{x}(t),\tag{3.2}$$
 
 我们的问题是：是否存在反馈控制 $\boldsymbol{u}(t)=\boldsymbol{F}\boldsymbol{x}(t)$，使得反馈后的闭环系统
 
-$$\begin{cases}\dfrac{\mathrm{d}\boldsymbol{x}(t)}{\mathrm{d}t}=\boldsymbol{A}\boldsymbol{x}(t)+\boldsymbol{B}\boldsymbol{F}\boldsymbol{x}(t)+\boldsymbol{S}\boldsymbol{q}(t),\qquad\forall t\geqslant0,\\[2mm]\boldsymbol{y}(t)=\boldsymbol{C}\boldsymbol{x}(t)\end{cases}\tag{3.3}$$
+$$ \begin{cases} \dfrac{\mathrm{d}\boldsymbol{x}(t)}{\mathrm{d}t}=\boldsymbol{A}\boldsymbol{x}(t)+\boldsymbol{B}\boldsymbol{F}\boldsymbol{x}(t)+\boldsymbol{S}\boldsymbol{q}(t),\qquad\forall t\geqslant0,\\[2mm] \boldsymbol{y}(t)=\boldsymbol{C}\boldsymbol{x}(t) \end{cases}\tag{3.3} $$
 
 的输出 $\boldsymbol{y}(\cdot)$ 与系统的干扰 $\boldsymbol{q}(\cdot)$ 无关，即要求
 
@@ -3922,7 +3922,7 @@ $$V\subseteq K,\qquad \boldsymbol{A}V\subseteq V+\mathcal{R}(\boldsymbol{B}).\ta
 
 设
 
-$$\begin{cases}V^0=K,\\V^j=K\cap\boldsymbol{A}^{-1}\big(\mathcal{R}(\boldsymbol{B})+V^{j-1}\big),\qquad j\geqslant1.\end{cases}\tag{5.4}$$
+$$ \begin{cases} V^0=K,\\ V^j=K\cap\boldsymbol{A}^{-1}\big(\mathcal{R}(\boldsymbol{B})+V^{j-1}\big),\qquad j\geqslant1. \end{cases}\tag{5.4} $$
 
 那么，存在 $k\leqslant n$，使得 $V^k=V^{k+1}$，且
 
@@ -4016,17 +4016,17 @@ $$\mathcal{R}(\boldsymbol{B})=\operatorname{span}\{\boldsymbol{e}_3\},\qquad \ma
 
 所以 $\mathcal{R}(\boldsymbol{A})\cap\big(\mathcal{R}(\boldsymbol{B})+V^0\big)=\operatorname{span}\{\boldsymbol{e}_2\}$。由于 $\mathcal{N}(\boldsymbol{A})=\operatorname{span}\{\boldsymbol{e}_1\}$ 且 $\boldsymbol{A}\boldsymbol{x}=\boldsymbol{e}_2$ 有解 $\boldsymbol{x}=\boldsymbol{e}_3$，故 $\boldsymbol{A}^{-1}\big(\mathcal{R}(\boldsymbol{B})+V^0\big)=\operatorname{span}\{\boldsymbol{e}_1,\boldsymbol{e}_3\}$。因此
 
-$$\begin{aligned}V^1&=\mathcal{N}(\boldsymbol{C})\cap\boldsymbol{A}^{-1}\big(\mathcal{R}(\boldsymbol{B})+V^0\big)\\&=\operatorname{span}\{\boldsymbol{e}_2,\boldsymbol{e}_3\}\cap\operatorname{span}\{\boldsymbol{e}_1,\boldsymbol{e}_3\}=\operatorname{span}\{\boldsymbol{e}_3\}.\end{aligned}$$
+$$ \begin{aligned} V^1&=\mathcal{N}(\boldsymbol{C})\cap\boldsymbol{A}^{-1}\big(\mathcal{R}(\boldsymbol{B})+V^0\big)\\ &=\operatorname{span}\{\boldsymbol{e}_2,\boldsymbol{e}_3\}\cap\operatorname{span}\{\boldsymbol{e}_1,\boldsymbol{e}_3\}=\operatorname{span}\{\boldsymbol{e}_3\}. \end{aligned} $$
 
 又 $\mathcal{R}(\boldsymbol{B})+V^1=\operatorname{span}\{\boldsymbol{e}_3\}$，故 $\mathcal{R}(\boldsymbol{A})\cap\big(\mathcal{R}(\boldsymbol{B})+V^1\big)=\operatorname{span}\{0\}$，即 $\boldsymbol{A}^{-1}\big(\mathcal{R}(\boldsymbol{B})+V^1\big)=\mathcal{N}(\boldsymbol{A})=\operatorname{span}\{\boldsymbol{e}_1\}$。因此
 
-$$\begin{aligned}V^2&=\mathcal{N}(\boldsymbol{C})\cap\boldsymbol{A}^{-1}\big(\mathcal{R}(\boldsymbol{B})+V^1\big)\\&=\operatorname{span}\{\boldsymbol{e}_2,\boldsymbol{e}_3\}\cap\operatorname{span}\{\boldsymbol{e}_1\}=\{0\}=V^*.\end{aligned}$$
+$$ \begin{aligned} V^2&=\mathcal{N}(\boldsymbol{C})\cap\boldsymbol{A}^{-1}\big(\mathcal{R}(\boldsymbol{B})+V^1\big)\\ &=\operatorname{span}\{\boldsymbol{e}_2,\boldsymbol{e}_3\}\cap\operatorname{span}\{\boldsymbol{e}_1\}=\{0\}=V^*. \end{aligned} $$
 
 所以，只要 $\boldsymbol{S}\neq0$，则 $\mathcal{R}(\boldsymbol{S})\not\subseteq V^*$，故对任何 $\boldsymbol{S}\neq0$，该干扰解耦问题无解。
 
 虽然对于任意的矩阵 $\boldsymbol{F}$，我们仍有
 
-$$\begin{cases}\boldsymbol{C}\boldsymbol{S}=0,\\\boldsymbol{C}(\boldsymbol{A}+\boldsymbol{B}\boldsymbol{F})\boldsymbol{S}=0,\end{cases}$$
+$$ \begin{cases} \boldsymbol{C}\boldsymbol{S}=0,\\ \boldsymbol{C}(\boldsymbol{A}+\boldsymbol{B}\boldsymbol{F})\boldsymbol{S}=0, \end{cases} $$
 
 但是不存在 $\boldsymbol{F}$，使得 $\boldsymbol{C}(\boldsymbol{A}+\boldsymbol{B}\boldsymbol{F})^2\boldsymbol{S}=0$。这意味着仅凭上述两式不足以断言系统干扰解耦问题的可解性。
 
@@ -4104,7 +4104,7 @@ $$\boldsymbol{A}\boldsymbol{e}_1=\boldsymbol{e}_2+\boldsymbol{e}_3\notin V_1+\ma
 
 故 $V_1$ 非 $(\boldsymbol{A},\boldsymbol{B})$-不变子空间。又由于
 
-$$\begin{cases}\boldsymbol{A}\boldsymbol{e}_1=\boldsymbol{e}_2+\boldsymbol{e}_3\in V_2+\mathcal{R}(\boldsymbol{B}),\\\boldsymbol{A}\boldsymbol{e}_2=\boldsymbol{e}_3\in V_2+\mathcal{R}(\boldsymbol{B}),\\\boldsymbol{A}\boldsymbol{e}_1=\boldsymbol{e}_2+\boldsymbol{e}_3\in V_3+\mathcal{R}(\boldsymbol{B}),\\\boldsymbol{A}\boldsymbol{e}_3=\boldsymbol{e}_2\in V_3+\mathcal{R}(\boldsymbol{B}),\end{cases}$$
+$$ \begin{cases} \boldsymbol{A}\boldsymbol{e}_1=\boldsymbol{e}_2+\boldsymbol{e}_3\in V_2+\mathcal{R}(\boldsymbol{B}),\\ \boldsymbol{A}\boldsymbol{e}_2=\boldsymbol{e}_3\in V_2+\mathcal{R}(\boldsymbol{B}),\\ \boldsymbol{A}\boldsymbol{e}_1=\boldsymbol{e}_2+\boldsymbol{e}_3\in V_3+\mathcal{R}(\boldsymbol{B}),\\ \boldsymbol{A}\boldsymbol{e}_3=\boldsymbol{e}_2\in V_3+\mathcal{R}(\boldsymbol{B}), \end{cases} $$
 
 故 $V_2$ 是 $(\boldsymbol{A},\boldsymbol{B})$-不变子空间，$V_3$ 也是 $(\boldsymbol{A},\boldsymbol{B})$-不变子空间。显然 $V_1=V_2\cap V_3$，即 $V_2$ 和 $V_3$ 均为包含 $V_1$ 的 $(\boldsymbol{A},\boldsymbol{B})$-不变子空间。事实上，我们可以证明：对于任意的 $k\neq-1$，子空间 $\operatorname{span}\{\boldsymbol{e}_1,\boldsymbol{e}_2+k\boldsymbol{e}_3\}$ 都是 $(\boldsymbol{A},\boldsymbol{B})$-不变子空间。所以，包含 $V_1$ 的 $(\boldsymbol{A},\boldsymbol{B})$-不变子空间的最小维数是 $2$，而维数是 $2$ 的包含 $V_1$ 的 $(\boldsymbol{A},\boldsymbol{B})$-不变子空间有无限个。
 
@@ -4132,7 +4132,7 @@ $$(\boldsymbol{A}+\boldsymbol{B}\boldsymbol{F})\boldsymbol{S}=k\boldsymbol{S}.$$
 
 为此，设 $\boldsymbol{F}=(f_{ij})_{2\times3}$，利用待定系数法可得
 
-$$\begin{cases}f_{11}-f_{12}-k-1=0,\\f_{21}-f_{22}+k=0.\end{cases}$$
+$$ \begin{cases} f_{11}-f_{12}-k-1=0,\\ f_{21}-f_{22}+k=0. \end{cases} $$
 
 故可取 $k=0$，
 

@@ -226,17 +226,17 @@
 
 设 $X,Y$ 是两个给定的集合，若按照某种规则 $f$，使得对集合 $X$ 中的每一个元素 $x$，都可以找到集合 $Y$ 中惟一确定的元素 $y$ 与之对应，则称这个对应规则 $f$ 是集合 $X$ 到集合 $Y$ 的一个映射，记为
 
-$$f:X\to Y,\qquad x\mapsto y=f(x).$$
+$$ f:X\to Y,\qquad x\mapsto y=f(x). $$
 
 其中 $y$ 称为在映射 $f$ 之下 $x$ 的像，$x$ 称为在映射 $f$ 之下 $y$ 的一个逆像（也称为原像）。集合 $X$ 称为映射 $f$ 的定义域，记为 $D_f$；而在映射 $f$ 之下，$X$ 中元素 $x$ 的像 $y$ 的全体称为映射 $f$ 的值域，记为 $R_f$，即
 
-$$R_f=\{y\mid y\in Y \text{ 并且 } y=f(x),\ x\in X\}.$$
+$$ R_f=\{y\mid y\in Y \text{ 并且 } y=f(x),\ x\in X\}. $$
 
 **例 1.2.1 (三角形映射到外接圆)** @9
 
 设 $X$ 是平面上所有三角形的全体，$Y$ 是平面上所有圆的全体。因每个三角形都有惟一确定的外接圆，若定义对应规则
 
-$$f:X\to Y,\qquad x\mapsto y\ (y \text{ 是三角形 } x \text{ 的外接圆}),$$
+$$ f:X\to Y,\qquad x\mapsto y\ (y \text{ 是三角形 } x \text{ 的外接圆}), $$
 
 则 $f$ 显然是一个映射，其定义域与值域分别为 $D_f=X$ 和 $R_f=Y$。
 
@@ -244,11 +244,11 @@ $$f:X\to Y,\qquad x\mapsto y\ (y \text{ 是三角形 } x \text{ 的外接圆}),$
 
 记 $X=\{\alpha,\beta,\gamma\}$，$Y=\{a,b,c,d\}$，下面所规定的对应关系 $f$ 显然也是一个映射：
 
-$$f(\alpha)=a,\quad f(\beta)=d,\quad f(\gamma)=b.$$
+$$ f(\alpha)=a,\quad f(\beta)=d,\quad f(\gamma)=b. $$
 
 $f$ 的定义域与值域分别为
 
-$$D_f=X=\{\alpha,\beta,\gamma\},\qquad R_f=\{a,b,d\}\subset Y.$$
+$$ D_f=X=\{\alpha,\beta,\gamma\},\qquad R_f=\{a,b,d\}\subset Y. $$
 
 在这个例子中，$R_f$ 是 $Y$ 的真子集。
 
@@ -268,7 +268,7 @@ $$D_f=X=\{\alpha,\beta,\gamma\},\qquad R_f=\{a,b,d\}\subset Y.$$
 
 设 $X=\mathbf{R}^+$，$Y=\mathbf{R}^-=\{x\mid -x\in\mathbf{R}^+\}$，则对应关系
 
-$$f:X\to Y,\qquad x\mapsto y\ (y^2=x)$$
+$$ f:X\to Y,\qquad x\mapsto y\ (y^2=x) $$
 
 是一个映射。
 
@@ -278,7 +278,7 @@ $$f:X\to Y,\qquad x\mapsto y\ (y^2=x)$$
 
 设 $X=Y=\mathbf{R}$，对应关系
 
-$$f:X\to Y,\qquad x\mapsto y=x^2.$$
+$$ f:X\to Y,\qquad x\mapsto y=x^2. $$
 
 虽然 $Y$ 中与 $x=2$ 和 $x=-2$ 对应的元素都是 $y=4$，但这并不影响 $f$ 成为一个映射。
 
@@ -292,7 +292,7 @@ $$f:X\to Y,\qquad x\mapsto y=x^2.$$
 
 设 $f:X\to Y$ 是单射，则由定义 1.2.2，对任一 $y\in R_f\subset Y$，它的逆像 $x\in X$（即满足方程 $f(x)=y$ 的 $x$）是惟一确定的。由定义 1.2.1，对应关系
 
-$$g:R_f\to X,\qquad y\mapsto x\ (f(x)=y)$$
+$$ g:R_f\to X,\qquad y\mapsto x\ (f(x)=y) $$
 
 构成了 $R_f$ 到 $X$ 上的一个映射，我们把它称为 $f$ 的**逆映射**，记为 $f^{-1}$，其定义域为 $D_{f^{-1}}=R_f$，值域为 $R_{f^{-1}}=X$。
 
@@ -302,11 +302,11 @@ $$g:R_f\to X,\qquad y\mapsto x\ (f(x)=y)$$
 
 现设有如下两个映射
 
-$$g:X\to U_1,\quad x\mapsto u=g(x)\qquad\text{和}\qquadf:U_2\to Y,\quad u\mapsto y=f(u),$$
+$$ g:X\to U_1,\quad x\mapsto u=g(x) \qquad\text{和}\qquad f:U_2\to Y,\quad u\mapsto y=f(u), $$
 
 如果 $R_g\subset U_2=D_f$，那就可以构造出一个新的对应关系
 
-$$f\circ g:X\to Y,\qquad x\mapsto y=f(g(x)),$$
+$$ f\circ g:X\to Y,\qquad x\mapsto y=f(g(x)), $$
 
 由定义 1.2.1，这还是一个映射，我们将之称为 $f$ 和 $g$ 的**复合映射**。
 
@@ -316,53 +316,53 @@ $$f\circ g:X\to Y,\qquad x\mapsto y=f(g(x)),$$
 
 设 $X=Y=U_1=U_2=\mathbf{R}$，映射 $g$ 与 $f$ 为
 
-$$g:X\to U_1,\quad x\mapsto u=\sin x\qquad\text{和}\qquadf:U_2\to Y,\quad u\mapsto y=\frac{u}{1+u^2}.$$
+$$ g:X\to U_1,\quad x\mapsto u=\sin x \qquad\text{和}\qquad f:U_2\to Y,\quad u\mapsto y=\frac{u}{1+u^2}. $$
 
 显然 $R_g=[-1,1]\subset D_f$，因此可以构成复合映射
 
-$$f\circ g:X\to Y,\qquad x\mapsto y=f(g(x))=\frac{\sin x}{1+\sin^2 x}.$$
+$$ f\circ g:X\to Y,\qquad x\mapsto y=f(g(x))=\frac{\sin x}{1+\sin^2 x}. $$
 
 **例 1.2.6 (限制定义域后复合)** @11
 
 设映射 $g$ 与 $f$ 为
 
-$$g:\mathbf{R}\to\mathbf{R},\quad x\mapsto u=1-x^2\qquad\text{和}\qquadf:\mathbf{R}^+\to\mathbf{R},\quad u\mapsto y=\lg u,$$
+$$ g:\mathbf{R}\to\mathbf{R},\quad x\mapsto u=1-x^2 \qquad\text{和}\qquad f:\mathbf{R}^+\to\mathbf{R},\quad u\mapsto y=\lg u, $$
 
 其中 $\lg x=\log_{10}x$。则 $R_g=(-\infty,1]\not\subset D_f$，因此不能构成复合映射 $f\circ g$。
 
 但若将映射 $g$ 的定义域作一限制，即换成映射 $g^*$：
 
-$$g^*:X=(-1,1)\to\mathbf{R},\quad x\mapsto u=1-x^2\qquad\text{和}\qquadf:\mathbf{R}^+\to\mathbf{R},\quad u\mapsto y=\lg u,$$
+$$ g^*:X=(-1,1)\to\mathbf{R},\quad x\mapsto u=1-x^2 \qquad\text{和}\qquad f:\mathbf{R}^+\to\mathbf{R},\quad u\mapsto y=\lg u, $$
 
 则 $R_{g^*}=(0,1]\subset D_f$，于是可以构成复合映射
 
-$$f\circ g^*:X=(-1,1)\to\mathbf{R},\qquad x\mapsto y=\lg(1-x^2).$$
+$$ f\circ g^*:X=(-1,1)\to\mathbf{R},\qquad x\mapsto y=\lg(1-x^2). $$
 
 要注意，映射 $f$ 和 $g$ 的复合是有顺序的。这就是说，$f\circ g$ 有意义并不意味着 $g\circ f$ 也一定有意义，即使都有意义，即 $R_g\subset D_f$ 与 $R_f\subset D_g$ 都满足，复合映射 $f\circ g$ 与 $g\circ f$ 一般来讲也是不同的。
 
 特别地，若将映射 $f$ 与它的逆映射 $f^{-1}$ 进行复合，则得到下述两恒等式：
 
-$$f\circ f^{-1}(y)=y,\ y\in R_f;\qquad f^{-1}\circ f(x)=x,\ x\in X.$$
+$$ f\circ f^{-1}(y)=y,\ y\in R_f;\qquad f^{-1}\circ f(x)=x,\ x\in X. $$
 
 **例 1.2.7 (反正弦是逆映射)** @11
 
 $y=\sin x:\left[-\dfrac{\pi}{2},\dfrac{\pi}{2}\right]\to[-1,1]$ 是双射，它的逆映射是
 
-$$x=\arcsin y:[-1,1]\to\left[-\frac{\pi}{2},\frac{\pi}{2}\right].$$
+$$ x=\arcsin y:[-1,1]\to\left[-\frac{\pi}{2},\frac{\pi}{2}\right]. $$
 
 通过复合运算，可得到恒等式
 
-$$\sin(\arcsin y)=y,\ y\in[-1,1];\qquad \arcsin(\sin x)=x,\ x\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right].$$
+$$ \sin(\arcsin y)=y,\ y\in[-1,1];\qquad \arcsin(\sin x)=x,\ x\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]. $$
 
 #### 一元实函数
 
 若在定义 1.2.1 中特殊地取集合 $X\subset\mathbf{R}$，集合 $Y=\mathbf{R}$，则映射
 
-$$f:X\to Y,\qquad x\mapsto y=f(x)$$
+$$ f:X\to Y,\qquad x\mapsto y=f(x) $$
 
 称为**一元实函数**，简称**函数**。由于函数表示的必是实数集合与实数集合之间的对应关系，所以在映射表示中，第一行是不需要的，只要写成
 
-$$y=f(x),\ x\in X\ (=D_f)$$
+$$ y=f(x),\ x\in X\ (=D_f) $$
 
 就可以了，读作“函数 $y=f(x)$”或“函数 $f$”。这里 $f$ 表示一种对应规则，对于每一个 $x\in D_f$，它确定了惟一的 $y=f(x)\in\mathbf{R}$ 与 $x$ 相对应。
 
@@ -410,7 +410,7 @@ $$y=f(x),\ x\in X\ (=D_f)$$
 
 设 $A,B$ 是两个互不相交的实数集合，$\varphi(x)$ 和 $\psi(x)$ 是分别定义在集合 $A$ 和集合 $B$ 上的函数，则
 
-$$f(x)=\begin{cases}\varphi(x), & x\in A,\\\psi(x), & x\in B\end{cases}$$
+$$ f(x)=\begin{cases} \varphi(x), & x\in A,\\ \psi(x), & x\in B \end{cases} $$
 
 是定义在集合 $A\cup B$ 上的函数。这样的表示方法称为函数的**分段表示**。这里函数 $f$ 是分成两段来表示的，事实上，分段表示可以分成任意有限段，甚至无限段。
 
@@ -420,7 +420,7 @@ $$f(x)=\begin{cases}\varphi(x), & x\in A,\\\psi(x), & x\in B\end{cases}$$
 
 解
 
-$$s(t)=\begin{cases}45t, & 0\le t<\dfrac{2}{3},\\[2mm]30+100\left(t-\dfrac{2}{3}\right), & \dfrac{2}{3}\le t<2\dfrac{5}{12},\\[2mm]205+40\left(t-2\dfrac{5}{12}\right), & 2\dfrac{5}{12}\le t\le 2\dfrac{11}{12}.\end{cases}$$
+$$ s(t)=\begin{cases} 45t, & 0\le t<\dfrac{2}{3},\\[2mm] 30+100\left(t-\dfrac{2}{3}\right), & \dfrac{2}{3}\le t<2\dfrac{5}{12},\\[2mm] 205+40\left(t-2\dfrac{5}{12}\right), & 2\dfrac{5}{12}\le t\le 2\dfrac{11}{12}. \end{cases} $$
 
 下面我们介绍几个常用的分段表示函数。
 
@@ -428,7 +428,7 @@ $$s(t)=\begin{cases}45t, & 0\le t<\dfrac{2}{3},\\[2mm]30+100\left(t-\dfrac{2}{3}
 
 符号函数 $\operatorname{sgn} x$（如图 1.2.2）：
 
-$$\operatorname{sgn} x=\begin{cases}1, & x>0,\\0, & x=0,\\-1, & x<0.\end{cases}$$
+$$ \operatorname{sgn} x=\begin{cases} 1, & x>0,\\ 0, & x=0,\\ -1, & x<0. \end{cases} $$
 
 它的定义域是 $D=(-\infty,+\infty)$，值域是 $R=\{-1,0,1\}$。
 
@@ -458,23 +458,23 @@ $$\operatorname{sgn} x=\begin{cases}1, & x>0,\\0, & x=0,\\-1, & x<0.\end{cases}$
 
 天体力学中著名的 **Kepler 方程**：
 
-$$y=x+\varepsilon\sin y,$$
+$$ y=x+\varepsilon\sin y, $$
 
 其中 $\varepsilon\in(0,1)$ 是一个常数，也反映了变量 $x$ 与 $y$ 之间的特定关系，以后我们会知道 $y$ 确实是 $x$ 的函数，因此 Kepler 方程就是这一函数关系的隐式表示形式。
 
 在表示变量 $x$ 与 $y$ 的函数关系时，我们常常需要引入第三个变量（例如参数 $t$），通过建立 $t$ 与 $x$、$t$ 与 $y$ 之间的函数关系，间接地确定 $x$ 与 $y$ 之间的函数关系，即
 
-$$\begin{cases}x=x(t),\\y=y(t),\end{cases}\qquad t\in[a,b].$$
+$$ \begin{cases} x=x(t),\\ y=y(t), \end{cases} \qquad t\in[a,b]. $$
 
 这种方法称为函数的**参数表示**。
 
 设 $X=\{x\mid x=x(t),\ t\in[a,b]\}$，$Y=\{y\mid y=y(t),\ t\in[a,b]\}$，上述参数表示所确定的函数关系即为
 
-$$f:X\to Y,\qquad x=x(t)\mapsto y=y(t).$$
+$$ f:X\to Y,\qquad x=x(t)\mapsto y=y(t). $$
 
 例如，对于例 1.2.13 中的圆方程 $x^2+y^2=R^2$ 所确定的函数关系，可以引入参数 $t$ 表示 $x$ 轴正向按逆时针方向旋转至射线 $OP$ 的角的弧度，其中 $P=P(x,y)$ 表示圆上任意一点（如图 1.2.5）。则对于上半圆周（或下半圆周），$x$ 与 $y$ 的函数关系可表示成
 
-$$\begin{cases}x=R\cos t,\\y=R\sin t,\end{cases}\qquad t\in[0,\pi]\ (\text{或 } t\in[\pi,2\pi]).$$
+$$ \begin{cases} x=R\cos t,\\ y=R\sin t, \end{cases} \qquad t\in[0,\pi]\ (\text{或 } t\in[\pi,2\pi]). $$
 
 旋轮线又称摆线，顾名思义，它表示一只滚动的轮子的边缘上一点的运动轨迹。下面我们通过引入适当的参数，推导旋轮线所表示的函数关系的参数表示。
 
@@ -488,7 +488,7 @@ $$\begin{cases}x=R\cos t,\\y=R\sin t,\end{cases}\qquad t\in[0,\pi]\ (\text{或 }
 
 令参数 $t$ 表示轮子转过的角度的弧度，于是得到
 
-$$\begin{cases}x=t-\sin t,\\y=1-\cos t,\end{cases}\qquad t\in[0,\infty).$$
+$$ \begin{cases} x=t-\sin t,\\ y=1-\cos t, \end{cases} \qquad t\in[0,\infty). $$
 
 此即为旋轮线的参数表示。
 
@@ -498,7 +498,7 @@ $$\begin{cases}x=t-\sin t,\\y=1-\cos t,\end{cases}\qquad t\in[0,\infty).$$
 
 若存在两个常数 $m$ 和 $M$，使函数 $y=f(x),\ x\in D$ 满足
 
-$$m\le f(x)\le M,\qquad x\in D,$$
+$$ m\le f(x)\le M,\qquad x\in D, $$
 
 则称函数 $f$ 在 $D$ **有界**。其中 $m$ 是它的**下界**，$M$ 是它的**上界**。
 
@@ -528,7 +528,7 @@ $$m\le f(x)\le M,\qquad x\in D,$$
 
 解 因为
 
-$$f(-x)=\frac{1}{1+a^{-x}}-\frac{1}{2}=\frac{a^x}{1+a^x}-\frac{1}{2}=\left(\frac{a^x}{1+a^x}-1\right)+\frac{1}{2}=\frac{-1}{1+a^x}+\frac{1}{2}=-f(x),$$
+$$ f(-x)=\frac{1}{1+a^{-x}}-\frac{1}{2}=\frac{a^x}{1+a^x}-\frac{1}{2} =\left(\frac{a^x}{1+a^x}-1\right)+\frac{1}{2}=\frac{-1}{1+a^x}+\frac{1}{2}=-f(x), $$
 
 所以 $f(x)=\dfrac{1}{1+a^x}-\dfrac{1}{2}$ 是奇函数。
 
@@ -546,7 +546,7 @@ $$f(-x)=\frac{1}{1+a^{-x}}-\frac{1}{2}=\frac{a^x}{1+a^x}-\frac{1}{2}=\left(\frac
 
 **Dirichlet 函数**
 
-$$D(x)=\begin{cases}0, & x \text{ 为无理数},\\1, & x \text{ 为有理数}.\end{cases}$$
+$$ D(x)=\begin{cases} 0, & x \text{ 为无理数},\\ 1, & x \text{ 为有理数}. \end{cases} $$
 
 容易判断这是一个周期函数，任何正有理数都是它的周期。因为不存在最小正有理数，所以它不可能有最小周期。
 
@@ -560,7 +560,7 @@ $$D(x)=\begin{cases}0, & x \text{ 为无理数},\\1, & x \text{ 为有理数}.\e
 
 对于任意实数 $a$ 和 $b$，都有
 
-$$\bigl||a|-|b|\bigr|\le|a+b|\le|a|+|b|.$$
+$$ \bigl||a|-|b|\bigr|\le|a+b|\le|a|+|b|. $$
 
 若将 $a$ 和 $b$ 理解为向量，则 $\boldsymbol{a},\boldsymbol{b}$ 和 $\boldsymbol{a}+\boldsymbol{b}$ 正好构成一个三角形，定理 1.2.1 表示的正是三角形任意两边之和大于第三边、任意两边之差小于第三边这一性质，这就是“三角不等式”名称的来源（如图 1.2.7）。
 
@@ -576,7 +576,7 @@ $$\bigl||a|-|b|\bigr|\le|a+b|\le|a|+|b|.$$
 
 对任意 $n$ 个正数 $a_1,a_2,\cdots,a_n$，有
 
-$$\frac{a_1+a_2+\cdots+a_n}{n}\ge\sqrt[n]{a_1a_2\cdots a_n}\ge n\bigg/\left(\frac{1}{a_1}+\frac{1}{a_2}+\cdots+\frac{1}{a_n}\right),$$
+$$ \frac{a_1+a_2+\cdots+a_n}{n}\ge\sqrt[n]{a_1a_2\cdots a_n} \ge n\bigg/\left(\frac{1}{a_1}+\frac{1}{a_2}+\cdots+\frac{1}{a_n}\right), $$
 
 等号当且仅当 $a_1,a_2,\cdots,a_n$ 全部相等时成立。
 
@@ -1242,11 +1242,11 @@ $\{x_{n}\}$ 是无穷小量，$\{y_{n}\}$ 是有界数列，证明 $\{x_{n}y_{n}
 
 **注 (由上述定理直接得出的极限)** @40
 
-根据上面的讨论与定理，可直接求出下列极限：$$\lim_{n\to\infty}(10^n+\sqrt{n})=+\infty,\qquad\lim_{n\to\infty}\left(n-\lg\frac{1}{n}\right)=+\infty,$$$$\lim_{n\to\infty}\sqrt{n}\arctan n=+\infty,\qquad\lim_{n\to\infty}\frac{n}{\sin n}=\infty.$$
+根据上面的讨论与定理，可直接求出下列极限：$$\lim_{n\to\infty}(10^n+\sqrt{n})=+\infty,\qquad \lim_{n\to\infty}\left(n-\lg\frac{1}{n}\right)=+\infty,$$$$\lim_{n\to\infty}\sqrt{n}\arctan n=+\infty,\qquad \lim_{n\to\infty}\frac{n}{\sin n}=\infty.$$
 
 **例 2.3.3 (有理式的极限)** @41
 
-讨论极限$$\lim_{n\to\infty}\frac{a_0n^k+a_1n^{k-1}+\cdots+a_{k-1}n+a_k}{b_0n^l+b_1n^{l-1}+\cdots+b_{l-1}n+b_l},$$其中 $k,l$ 为正整数，$a_0\neq 0$，$b_0\neq 0$。由于$$\lim_{n\to\infty}\frac{a_0+\dfrac{a_1}{n}+\cdots+\dfrac{a_{k-1}}{n^{k-1}}+\dfrac{a_k}{n^k}}{b_0+\dfrac{b_1}{n}+\cdots+\dfrac{b_{l-1}}{n^{l-1}}+\dfrac{b_l}{n^l}}=\frac{a_0}{b_0}\neq 0,$$可以得到$$\lim_{n\to\infty}\frac{a_0n^k+a_1n^{k-1}+\cdots+a_{k-1}n+a_k}{b_0n^l+b_1n^{l-1}+\cdots+b_{l-1}n+b_l}=\begin{cases}0, & k<l,\\[1mm]\dfrac{a_0}{b_0}, & k=l,\\[2mm]\infty, & k>l.\end{cases}$$
+讨论极限$$\lim_{n\to\infty}\frac{a_0n^k+a_1n^{k-1}+\cdots+a_{k-1}n+a_k}{b_0n^l+b_1n^{l-1}+\cdots+b_{l-1}n+b_l},$$其中 $k,l$ 为正整数，$a_0\neq 0$，$b_0\neq 0$。由于$$\lim_{n\to\infty}\frac{a_0+\dfrac{a_1}{n}+\cdots+\dfrac{a_{k-1}}{n^{k-1}}+\dfrac{a_k}{n^k}}{b_0+\dfrac{b_1}{n}+\cdots+\dfrac{b_{l-1}}{n^{l-1}}+\dfrac{b_l}{n^l}}=\frac{a_0}{b_0}\neq 0,$$可以得到$$\lim_{n\to\infty}\frac{a_0n^k+a_1n^{k-1}+\cdots+a_{k-1}n+a_k}{b_0n^l+b_1n^{l-1}+\cdots+b_{l-1}n+b_l}= \begin{cases} 0, & k<l,\\[1mm] \dfrac{a_0}{b_0}, & k=l,\\[2mm] \infty, & k>l. \end{cases}$$
 
 **定义 (待定型)** @41
 
@@ -2658,7 +2658,7 @@ $$\lim_{x\to0}\frac{\ln(1+x^2)}{(\mathrm{e}^{2x}-1)\tan x}=\lim_{x\to0}\frac{x^2
 
 **解**
 
-$$\begin{aligned}\lim_{x\to0}\frac{\sqrt{1+x}-\mathrm{e}^{\frac{x}{3}}}{\ln(1+2x)}&=\lim_{x\to0}\frac{\left(\sqrt{1+x}-1\right)-\left(\mathrm{e}^{\frac{x}{3}}-1\right)}{\ln(1+2x)}\\&=\lim_{x\to0}\frac{\left[\dfrac{x}{2}+o(x)\right]-\left[\dfrac{x}{3}+o(x)\right]}{2x}=\lim_{x\to0}\frac{\dfrac{x}{6}+o(x)}{2x}=\frac{1}{12}.\end{aligned}$$
+$$\begin{aligned} \lim_{x\to0}\frac{\sqrt{1+x}-\mathrm{e}^{\frac{x}{3}}}{\ln(1+2x)} &=\lim_{x\to0}\frac{\left(\sqrt{1+x}-1\right)-\left(\mathrm{e}^{\frac{x}{3}}-1\right)}{\ln(1+2x)}\\ &=\lim_{x\to0}\frac{\left[\dfrac{x}{2}+o(x)\right]-\left[\dfrac{x}{3}+o(x)\right]}{2x} =\lim_{x\to0}\frac{\dfrac{x}{6}+o(x)}{2x}=\frac{1}{12}. \end{aligned}$$
 
 **例 3.3.11 (立方根差的极限)** @89
 
@@ -2666,7 +2666,7 @@ $$\begin{aligned}\lim_{x\to0}\frac{\sqrt{1+x}-\mathrm{e}^{\frac{x}{3}}}{\ln(1+2x
 
 **解**
 
-$$\begin{aligned}\lim_{x\to\infty}x\left(\sqrt[3]{x^3+x}-\sqrt[3]{x^3-x}\right)&=\lim_{x\to\infty}x^2\left[\left(\sqrt[3]{1+\frac{1}{x^2}}-1\right)-\left(\sqrt[3]{1-\frac{1}{x^2}}-1\right)\right]\\&=\lim_{x\to\infty}x^2\left\{\left[\frac{1}{3x^2}+o\left(\frac{1}{x^2}\right)\right]-\left[-\frac{1}{3x^2}+o\left(\frac{1}{x^2}\right)\right]\right\}\\&=\lim_{x\to\infty}x^2\left[\frac{2}{3x^2}+o\left(\frac{1}{x^2}\right)\right]=\frac{2}{3}.\end{aligned}$$
+$$\begin{aligned} \lim_{x\to\infty}x\left(\sqrt[3]{x^3+x}-\sqrt[3]{x^3-x}\right) &=\lim_{x\to\infty}x^2\left[\left(\sqrt[3]{1+\frac{1}{x^2}}-1\right)-\left(\sqrt[3]{1-\frac{1}{x^2}}-1\right)\right]\\ &=\lim_{x\to\infty}x^2\left\{\left[\frac{1}{3x^2}+o\left(\frac{1}{x^2}\right)\right]-\left[-\frac{1}{3x^2}+o\left(\frac{1}{x^2}\right)\right]\right\}\\ &=\lim_{x\to\infty}x^2\left[\frac{2}{3x^2}+o\left(\frac{1}{x^2}\right)\right]=\frac{2}{3}. \end{aligned}$$
 
 **例 3.3.12 (余弦幂的极限)** @90
 
@@ -3090,7 +3090,7 @@ Newton 最早用导数研究力学中运动体的瞬时速度问题。设运动�
 
 求抛物线 $y^2=2px\ (p>0)$ 上任意一点 $(x_0,y_0)$ 处的切线斜率。
 
-解：设 $(x_0,y_0)$ 属于上半平面（属于下半平面时是类似的），将方程改写成$$y=f(x)=\sqrt{2px}\qquad (x\geq 0),$$则它在 $(x_0,y_0)$ 处的切线斜率为$$\lim_{\Delta x\to 0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}=\lim_{\Delta x\to 0}\frac{\sqrt{2p(x_0+\Delta x)}-\sqrt{2px_0}}{\Delta x}=\sqrt{2p}\lim_{\Delta x\to 0}\frac{\Delta x}{\left(\sqrt{x_0+\Delta x}+\sqrt{x_0}\right)\Delta x}=\frac{\sqrt{p}}{\sqrt{2x_0}}.$$
+解：设 $(x_0,y_0)$ 属于上半平面（属于下半平面时是类似的），将方程改写成$$y=f(x)=\sqrt{2px}\qquad (x\geq 0),$$则它在 $(x_0,y_0)$ 处的切线斜率为$$\lim_{\Delta x\to 0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}=\lim_{\Delta x\to 0}\frac{\sqrt{2p(x_0+\Delta x)}-\sqrt{2px_0}}{\Delta x} =\sqrt{2p}\lim_{\Delta x\to 0}\frac{\Delta x}{\left(\sqrt{x_0+\Delta x}+\sqrt{x_0}\right)\Delta x}=\frac{\sqrt{p}}{\sqrt{2x_0}}.$$
 
 由此很容易求得它在任意一点处的切线方程。
 
@@ -3098,7 +3098,7 @@ Newton 最早用导数研究力学中运动体的瞬时速度问题。设运动�
 
 求椭圆 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1\ (a,b>0)$ 上任意一点 $(x_0,y_0)$ 处的切线方程。
 
-解：设 $(x_0,y_0)$ 属于上半平面（属于下半平面时是类似的），将此区域中的椭圆方程改写成$$y=f(x)=\frac{b}{a}\sqrt{a^2-x^2}\qquad (-a<x<a),$$则它在 $(x_0,y_0)$ 处的切线斜率应为$$\lim_{\Delta x\to 0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}=\frac{b}{a}\lim_{\Delta x\to 0}\frac{\sqrt{a^2-(x_0+\Delta x)^2}-\sqrt{a^2-x_0^2}}{\Delta x}=\frac{b}{a}\cdot\frac{-x_0}{\sqrt{a^2-x_0^2}}.$$于是它在 $(x_0,y_0)$ 处的切线方程为$$y-y_0=\frac{b}{a}\cdot\frac{-x_0}{\sqrt{a^2-x_0^2}}(x-x_0),$$注意到 $(x_0,y_0)$ 位于椭圆上，即满足$$y_0=\frac{b}{a}\sqrt{a^2-x_0^2},$$两边整理后便得到切线方程$$\frac{x_0x}{a^2}+\frac{y_0y}{b^2}=1,$$这正是平面解析几何中已知的结论。
+解：设 $(x_0,y_0)$ 属于上半平面（属于下半平面时是类似的），将此区域中的椭圆方程改写成$$y=f(x)=\frac{b}{a}\sqrt{a^2-x^2}\qquad (-a<x<a),$$则它在 $(x_0,y_0)$ 处的切线斜率应为$$\lim_{\Delta x\to 0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}=\frac{b}{a}\lim_{\Delta x\to 0}\frac{\sqrt{a^2-(x_0+\Delta x)^2}-\sqrt{a^2-x_0^2}}{\Delta x} =\frac{b}{a}\cdot\frac{-x_0}{\sqrt{a^2-x_0^2}}.$$于是它在 $(x_0,y_0)$ 处的切线方程为$$y-y_0=\frac{b}{a}\cdot\frac{-x_0}{\sqrt{a^2-x_0^2}}(x-x_0),$$注意到 $(x_0,y_0)$ 位于椭圆上，即满足$$y_0=\frac{b}{a}\sqrt{a^2-x_0^2},$$两边整理后便得到切线方程$$\frac{x_0x}{a^2}+\frac{y_0y}{b^2}=1,$$这正是平面解析几何中已知的结论。
 
 **注 (微分的几何意义)** @108
 
@@ -3116,13 +3116,13 @@ Newton 最早用导数研究力学中运动体的瞬时速度问题。设运动�
 
 **例 4.2.4 (振荡函数的可导性)** @109
 
-考察函数$$f(x)=\begin{cases}x\sin\dfrac{1}{x}, & x>0,\\[2mm]0, & x\leq 0\end{cases}$$在 $x=0$ 处的可导情况。
+考察函数$$f(x)= \begin{cases} x\sin\dfrac{1}{x}, & x>0,\\[2mm] 0, & x\leq 0 \end{cases}$$在 $x=0$ 处的可导情况。
 
 解：当 $\Delta x<0$ 时，$f(\Delta x)=0$，显然有$$f'_-(0)=\lim_{\Delta x\to 0^-}\frac{f(\Delta x)-f(0)}{\Delta x}=0,$$而当 $\Delta x>0$ 时，$$\frac{f(\Delta x)-f(0)}{\Delta x}=\frac{\Delta x\cdot\sin\dfrac{1}{\Delta x}}{\Delta x}=\sin\frac{1}{\Delta x},$$当 $\Delta x\to 0^+$ 时，上式的极限不存在，即函数在 $x=0$ 处的右导数不存在，由定义，它在这一点不可导。
 
 **例 4.2.5 (分段函数的可导条件)** @109
 
-设函数$$f(x)=\begin{cases}x^2+b, & x>2,\\ax+1, & x\leq 2,\end{cases}$$确定 $a,b$，使得 $f(x)$ 在 $x=2$ 处可导。
+设函数$$f(x)= \begin{cases} x^2+b, & x>2,\\ ax+1, & x\leq 2, \end{cases}$$确定 $a,b$，使得 $f(x)$ 在 $x=2$ 处可导。
 
 解：要使 $f(x)$ 在 $x=2$ 处可导，首先它必须在 $x=2$ 处连续，因此$$\lim_{x\to 2^+}f(x)=\lim_{x\to 2^+}(x^2+b)=f(2),$$即$$4+b=2a+1.$$要使 $f(x)$ 在 $x=2$ 处可导，必须成立 $f'_-(2)=f'_+(2)$，由定义及上式，$$f'_-(2)=\lim_{x\to 2^-}\frac{f(x)-f(2)}{x-2}=\lim_{x\to 2^-}\frac{ax+1-(2a+1)}{x-2}=a;$$$$f'_+(2)=\lim_{x\to 2^+}\frac{f(x)-f(2)}{x-2}=\lim_{x\to 2^+}\frac{x^2+b-(4+b)}{x-2}=\lim_{x\to 2^+}\frac{x^2-4}{x-2}=4.$$因此 $a=4$。将 $a=4$ 代入 $4+b=2a+1$ 即得 $b=5$。这时 $f'(2)=4$。
 
@@ -3610,7 +3610,7 @@ $$S_3=\{(x,y)\mid \text{过 }(x,y)\text{ 不能作该抛物线的切线}\},$$
 
 设 $f_{ij}(x)\ (i,j=1,2,\cdots,n)$ 为同一区间上的可导函数，证明在该区域上成立
 
-$$\frac{\mathrm{d}}{\mathrm{d}x}\begin{vmatrix}f_{11}(x) & f_{12}(x) & \cdots & f_{1n}(x)\\f_{21}(x) & f_{22}(x) & \cdots & f_{2n}(x)\\\vdots & \vdots & & \vdots\\f_{n1}(x) & f_{n2}(x) & \cdots & f_{nn}(x)\end{vmatrix}=\sum_{k=1}^{n}\begin{vmatrix}f_{11}(x) & f_{12}(x) & \cdots & f_{1n}(x)\\\vdots & \vdots & & \vdots\\f'_{k1}(x) & f'_{k2}(x) & \cdots & f'_{kn}(x)\\\vdots & \vdots & & \vdots\\f_{n1}(x) & f_{n2}(x) & \cdots & f_{nn}(x)\end{vmatrix}.$$
+$$\frac{\mathrm{d}}{\mathrm{d}x}\begin{vmatrix} f_{11}(x) & f_{12}(x) & \cdots & f_{1n}(x)\\ f_{21}(x) & f_{22}(x) & \cdots & f_{2n}(x)\\ \vdots & \vdots & & \vdots\\ f_{n1}(x) & f_{n2}(x) & \cdots & f_{nn}(x) \end{vmatrix} =\sum_{k=1}^{n}\begin{vmatrix} f_{11}(x) & f_{12}(x) & \cdots & f_{1n}(x)\\ \vdots & \vdots & & \vdots\\ f'_{k1}(x) & f'_{k2}(x) & \cdots & f'_{kn}(x)\\ \vdots & \vdots & & \vdots\\ f_{n1}(x) & f_{n2}(x) & \cdots & f_{nn}(x) \end{vmatrix}.$$
 
 ### 4.4 复合函数求导法则及其应用（p119–128）
 
@@ -4434,7 +4434,7 @@ $$\left(x^{n-1}e^{\frac{1}{x}}\right)^{(n)}=\frac{(-1)^n}{x^{n+1}}e^{\frac{1}{x}
 
 由以上定义可知：
 
-1. 所谓“极大”和“极小”只是指在 $x_0$ 附近的一个局部范围中的函数值的大小关系，因而是一个局部性质。2. 在一个区间内，$f(x)$ 的一个极小值完全有可能大于 $f(x)$ 的某些极大值（如图 5.1.2 中 $x_1$ 是极小值点，$x_2$ 是极大值点，而 $f(x_1)>f(x_2)$）。3. $f(x)$ 在一个区间中极值点可以有无数个。如在 $(0,1)$ 中考虑函数$$f(x)=\sin\frac{1}{x},$$则 $x=\dfrac{2}{(2n+1)\pi}\ (n=0,1,2,\cdots)$ 都是 $f(x)$ 的极值点，当 $n$ 为偶数时是极大值点，为奇数时是极小值点。4. 对极值点的定义并不牵涉函数的其他性质，如连续、可微等。对于区间 $(0,1)$ 上的 Riemann 函数$$R(x)=\begin{cases}\dfrac{1}{p}, & \text{当 } x=\dfrac{q}{p} \text{ 为 } (0,1) \text{ 上的既约分数},\\[2mm]0, & \text{当 } x \text{ 为 } (0,1) \text{ 上的无理数},\end{cases}$$$(0,1)$ 中的每个有理点都是它的极大值点，每个无理点都是它的极小值点，而 Riemann 函数在每个有理点都不连续，在每个无理点都连续。
+1. 所谓“极大”和“极小”只是指在 $x_0$ 附近的一个局部范围中的函数值的大小关系，因而是一个局部性质。2. 在一个区间内，$f(x)$ 的一个极小值完全有可能大于 $f(x)$ 的某些极大值（如图 5.1.2 中 $x_1$ 是极小值点，$x_2$ 是极大值点，而 $f(x_1)>f(x_2)$）。3. $f(x)$ 在一个区间中极值点可以有无数个。如在 $(0,1)$ 中考虑函数$$f(x)=\sin\frac{1}{x},$$则 $x=\dfrac{2}{(2n+1)\pi}\ (n=0,1,2,\cdots)$ 都是 $f(x)$ 的极值点，当 $n$ 为偶数时是极大值点，为奇数时是极小值点。4. 对极值点的定义并不牵涉函数的其他性质，如连续、可微等。对于区间 $(0,1)$ 上的 Riemann 函数$$R(x)= \begin{cases} \dfrac{1}{p}, & \text{当 } x=\dfrac{q}{p} \text{ 为 } (0,1) \text{ 上的既约分数},\\[2mm] 0, & \text{当 } x \text{ 为 } (0,1) \text{ 上的无理数}, \end{cases}$$$(0,1)$ 中的每个有理点都是它的极大值点，每个无理点都是它的极小值点，而 Riemann 函数在每个有理点都不连续，在每个无理点都连续。
 
 **定理 5.1.1 (Fermat 引理)** @141
 
@@ -4450,7 +4450,7 @@ Fermat 引理的几何意义非常明确：若曲线 $y=f(x)$ 在其极值点处
 
 Rolle 定理的几何意义也很清楚：满足定理条件的函数一定在某一点存在一条与 $x$ 轴平行，亦即与曲线两个端点的连线平行的切线（如图 5.1.3）。
 
-定理的条件是充分的。但是，三个条件中的任意一个不满足，都可能导致定理结论不成立。如以下三个函数：$$f_1(x)=\begin{cases}x, & x\in[0,1),\\0, & x=1,\end{cases}\qquadf_2(x)=|1-2x|,\quad x\in[0,1],\qquadf_3(x)=x,\quad x\in[0,1].$$容易验证，$f_1(x)$ 不满足在闭区间 $[0,1]$ 上连续的条件，$f_2(x)$ 不满足在开区间 $(0,1)$ 上可导的条件，而 $f_3(x)$ 不满足 $f_3(a)=f_3(b)$；尽管它们都分别满足其他两个条件，但它们在 $(0,1)$ 中都不存在水平切线。
+定理的条件是充分的。但是，三个条件中的任意一个不满足，都可能导致定理结论不成立。如以下三个函数：$$f_1(x)= \begin{cases} x, & x\in[0,1),\\ 0, & x=1, \end{cases} \qquad f_2(x)=|1-2x|,\quad x\in[0,1], \qquad f_3(x)=x,\quad x\in[0,1].$$容易验证，$f_1(x)$ 不满足在闭区间 $[0,1]$ 上连续的条件，$f_2(x)$ 不满足在开区间 $(0,1)$ 上可导的条件，而 $f_3(x)$ 不满足 $f_3(a)=f_3(b)$；尽管它们都分别满足其他两个条件，但它们在 $(0,1)$ 中都不存在水平切线。
 
 实际中，Rolle 定理常被用来讨论一个函数及其导函数在某范围中的零点问题。
 
@@ -4546,7 +4546,7 @@ Rolle 定理的几何意义也很清楚：满足定理条件的函数一定在�
 
 **例 5.1.4 (用导数证明恒等式)** @148
 
-证明恒等式$$\arctan\frac{1+x}{1-x}-\arctan x=\begin{cases}\dfrac{\pi}{4}, & x<1,\\[2mm]-\dfrac{3\pi}{4}, & x>1.\end{cases}$$
+证明恒等式$$\arctan\frac{1+x}{1-x}-\arctan x= \begin{cases} \dfrac{\pi}{4}, & x<1,\\[2mm] -\dfrac{3\pi}{4}, & x>1. \end{cases}$$
 
 证明：令 $f(x)=\arctan\dfrac{1+x}{1-x}-\arctan x$，当 $x\neq1$ 时由求导得 $f'(x)=0$，故在任何不含 $x=1$ 的区间上 $f(x)\equiv C$；再由 $x=0$ 与 $x\to+\infty$ 定出两段上的常数 $C$。
 
@@ -4556,7 +4556,7 @@ Rolle 定理的几何意义也很清楚：满足定理条件的函数一定在�
 
 考虑更一般的情况：设 $a$ 和 $b$ 是两个不同的正实数，在什么条件下成立 $a^b>b^a$？两边取对数后再整理，即知上式等价于$$\frac{\ln a}{a}>\frac{\ln b}{b},$$所以，判别 $a^b$ 与 $b^a$ 的大小关系可以通过确定函数 $\dfrac{\ln x}{x}$ 的单调情况来得到。
 
-解：记 $f(x)=\dfrac{\ln x}{x}$，则$$f'(x)=\frac{1-\ln x}{x^2}\begin{cases}<0, & x>\mathrm{e},\\>0, & 0<x<\mathrm{e}.\end{cases}$$由定理 5.1.5，$f(x)$ 在 $[\mathrm{e},+\infty)$ 严格单调减少，因此$$\frac{\ln \mathrm{e}}{\mathrm{e}}>\frac{\ln \pi}{\pi},$$即可判别出$$\mathrm{e}^\pi>\pi^\mathrm{e}.$$
+解：记 $f(x)=\dfrac{\ln x}{x}$，则$$f'(x)=\frac{1-\ln x}{x^2} \begin{cases} <0, & x>\mathrm{e},\\ >0, & 0<x<\mathrm{e}. \end{cases}$$由定理 5.1.5，$f(x)$ 在 $[\mathrm{e},+\infty)$ 严格单调减少，因此$$\frac{\ln \mathrm{e}}{\mathrm{e}}>\frac{\ln \pi}{\pi},$$即可判别出$$\mathrm{e}^\pi>\pi^\mathrm{e}.$$
 
 **例 5.1.6 (正弦函数的三次下界)** @149
 
@@ -4590,7 +4590,7 @@ Rolle 定理的几何意义也很清楚：满足定理条件的函数一定在�
 
 显然，当 $g(x)=x$ 时，上式即为 Lagrange 公式，所以 Lagrange 中值定理是 Cauchy 中值定理的特殊情况。
 
-若换一个角度，将 $f(t)$ 和 $g(t)$ 看成 $xy$ 平面上某条曲线 $y=F(x)$ 的参数方程，即 $y=F(x)$ 可以表示为$$\begin{cases}x=g(t),\\y=f(t),\end{cases}\qquad t\in[a,b],$$如图 5.1.7，易知 $y=F(x)$ 在 $[g(a),g(b)]$（或 $[g(b),g(a)]$）上连续，在 $(g(a),g(b))$（或 $(g(b),g(a))$）上可导。由 Lagrange 中值定理的几何意义，存在曲线上一点 $(\eta,F(\eta))$，过该点的切线斜率 $F'(\eta)$ 等于曲线两端连线的斜率 $\dfrac{f(b)-f(a)}{g(b)-g(a)}$。设 $x=\eta$ 对应于 $t=\xi\in(a,b)$，则由参数形式函数的求导公式有$$F'(\eta)=\frac{f'(\xi)}{g'(\xi)}=\frac{f(b)-f(a)}{g(b)-g(a)}.$$所以，Cauchy 中值定理也可以看成是 Lagrange 中值定理的参数表达形式。
+若换一个角度，将 $f(t)$ 和 $g(t)$ 看成 $xy$ 平面上某条曲线 $y=F(x)$ 的参数方程，即 $y=F(x)$ 可以表示为$$\begin{cases} x=g(t),\\ y=f(t), \end{cases}\qquad t\in[a,b],$$如图 5.1.7，易知 $y=F(x)$ 在 $[g(a),g(b)]$（或 $[g(b),g(a)]$）上连续，在 $(g(a),g(b))$（或 $(g(b),g(a))$）上可导。由 Lagrange 中值定理的几何意义，存在曲线上一点 $(\eta,F(\eta))$，过该点的切线斜率 $F'(\eta)$ 等于曲线两端连线的斜率 $\dfrac{f(b)-f(a)}{g(b)-g(a)}$。设 $x=\eta$ 对应于 $t=\xi\in(a,b)$，则由参数形式函数的求导公式有$$F'(\eta)=\frac{f'(\xi)}{g'(\xi)}=\frac{f(b)-f(a)}{g(b)-g(a)}.$$所以，Cauchy 中值定理也可以看成是 Lagrange 中值定理的参数表达形式。
 
 证明既可以采用与证明 Lagrange 中值定理相仿的方法（辅助函数的构造及其几何意义都类似），也可以采用完全不同的思路：由 $g(x)$ 在 $[a,b]$ 上连续、在 $(a,b)$ 上可导且导数恒不为零，可证 $g(x)$ 在 $[a,b]$ 上严格单调，从而存在连续可导的反函数 $g^{-1}(y)$；对 $[\alpha,\beta]=[g(a),g(b)]$ 上的复合函数 $F(y)=f(g^{-1}(y))$ 应用 Lagrange 中值定理，并利用 $[g^{-1}(y)]'=\dfrac{1}{g'(x)}$ 与 $g(\xi)=\eta$，即可得到定理结论。
 
@@ -4618,7 +4618,7 @@ Rolle 定理的几何意义也很清楚：满足定理条件的函数一定在�
 
 设函数 $f(x)$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可微。利用辅助函数
 
-$$\psi(x)=\begin{vmatrix}x & f(x) & 1\\a & f(a) & 1\\b & f(b) & 1\end{vmatrix}$$
+$$\psi(x)=\begin{vmatrix} x & f(x) & 1\\ a & f(a) & 1\\ b & f(b) & 1 \end{vmatrix}$$
 
 证明 Lagrange 中值定理，并说明 $\psi(x)$ 的几何意义。
 
@@ -4626,7 +4626,7 @@ $$\psi(x)=\begin{vmatrix}x & f(x) & 1\\a & f(a) & 1\\b & f(b) & 1\end{vmatrix}$$
 
 设函数 $f(x)$ 和 $g(x)$ 在 $[a,b]$ 上连续，在 $(a,b)$ 上可导，证明在 $(a,b)$ 内存在一点 $\xi$，使得
 
-$$\begin{vmatrix}f(a) & f(b)\\g(a) & g(b)\end{vmatrix}=(b-a)\begin{vmatrix}f(a) & f'(\xi)\\g(a) & g'(\xi)\end{vmatrix}.$$
+$$\begin{vmatrix} f(a) & f(b)\\ g(a) & g(b) \end{vmatrix}=(b-a)\begin{vmatrix} f(a) & f'(\xi)\\ g(a) & g'(\xi) \end{vmatrix}.$$
 
 **习题 6** @153
 
@@ -4724,7 +4724,7 @@ $$\varphi(x)=f(x)-f(a)-\frac{f(b)-f(a)}{g(b)-g(a)}[g(x)-g(a)]$$
 
 和
 
-$$\psi(x)=\begin{vmatrix}g(x) & f(x) & 1\\g(a) & f(a) & 1\\g(b) & f(b) & 1\end{vmatrix},$$
+$$\psi(x)=\begin{vmatrix} g(x) & f(x) & 1\\ g(a) & f(a) & 1\\ g(b) & f(b) & 1 \end{vmatrix},$$
 
 证明 Cauchy 中值定理，并说明 $\varphi(x)$ 和 $\psi(x)$ 的几何意义。
 
@@ -4744,7 +4744,7 @@ $$ae^b-be^a=(1-\xi)e^{\xi}(a-b).$$
 
 设 $f(x)$ 在 $[a,b]$ 上连续（$ab>0$），在 $(a,b)$ 上可导，证明存在 $\xi\in(a,b)$，使得
 
-$$\frac{1}{b-a}\begin{vmatrix}a & b\\f(a) & f(b)\end{vmatrix}=\xi f'(\xi)-f(\xi).$$
+$$\frac{1}{b-a}\begin{vmatrix} a & b\\ f(a) & f(b) \end{vmatrix}=\xi f'(\xi)-f(\xi).$$
 
 **习题 20** @154
 
@@ -4794,7 +4794,7 @@ $$f(b)+f(a)-2f\left(\frac{a+b}{2}\right)=\left(\frac{b-a}{2}\right)^2f''(\eta).$
 
 **注 (待定型)** @155
 
-在计算一个分式函数的极限时，常常会遇到分子分母都趋于零或都趋于无穷大的情况。由于这时无法使用"商的极限等于极限的商"的法则，运算将遇到很大的困难。事实上，这时极限可能存在，也可能不存在；当极限存在时，极限的值也会有各种各样的可能。比如熟知的$$\lim_{x\to\infty}\frac{a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0}{b_mx^m+b_{m-1}x^{m-1}+\cdots+b_1x+b_0}=\begin{cases}\dfrac{a_n}{b_n}, & n=m,\\[2ex]0, & n<m,\\[1ex]\infty, & n>m\end{cases}$$就是一个分子分母都趋于无穷大的例子。我们将这种类型的极限称为 $\dfrac{0}{0}$ 待定型或 $\dfrac{\infty}{\infty}$ 待定型，简称 $\dfrac{0}{0}$ 型或 $\dfrac{\infty}{\infty}$ 型。
+在计算一个分式函数的极限时，常常会遇到分子分母都趋于零或都趋于无穷大的情况。由于这时无法使用"商的极限等于极限的商"的法则，运算将遇到很大的困难。事实上，这时极限可能存在，也可能不存在；当极限存在时，极限的值也会有各种各样的可能。比如熟知的$$\lim_{x\to\infty}\frac{a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0}{b_mx^m+b_{m-1}x^{m-1}+\cdots+b_1x+b_0} =\begin{cases} \dfrac{a_n}{b_n}, & n=m,\\[2ex] 0, & n<m,\\[1ex] \infty, & n>m \end{cases}$$就是一个分子分母都趋于无穷大的例子。我们将这种类型的极限称为 $\dfrac{0}{0}$ 待定型或 $\dfrac{\infty}{\infty}$ 待定型，简称 $\dfrac{0}{0}$ 型或 $\dfrac{\infty}{\infty}$ 型。
 
 待定型极限除了以上两种类型以外，还有 $0\cdot\infty$ 型、$\infty\pm\infty$ 型、$\infty^0$ 型、$1^\infty$ 型、$0^0$ 型等几种。但以后将会看到，后面的几种类型都可以化成前面两种类型进行计算，所以这里主要讨论如何求 $\dfrac{0}{0}$ 型和 $\dfrac{\infty}{\infty}$ 型的极限。
 
@@ -4820,7 +4820,7 @@ $$f(b)+f(a)-2f\left(\frac{a+b}{2}\right)=\left(\frac{b-a}{2}\right)^2f''(\eta).$
 
 求 $\lim\limits_{x\to+\infty}\dfrac{\dfrac{\pi}{2}-\arctan x}{\sin\dfrac{1}{x}}$。
 
-**解** 由 L'Hospital 法则得$$\lim_{x\to+\infty}\frac{\dfrac{\pi}{2}-\arctan x}{\sin\dfrac{1}{x}}=\lim_{x\to+\infty}\frac{-\dfrac{1}{1+x^2}}{\left(\cos\dfrac{1}{x}\right)\left(-\dfrac{1}{x^2}\right)}=\frac{1}{\lim\limits_{x\to+\infty}\left(\cos\dfrac{1}{x}\right)}\cdot\lim_{x\to+\infty}\frac{x^2}{1+x^2}=1.$$
+**解** 由 L'Hospital 法则得$$\lim_{x\to+\infty}\frac{\dfrac{\pi}{2}-\arctan x}{\sin\dfrac{1}{x}} =\lim_{x\to+\infty}\frac{-\dfrac{1}{1+x^2}}{\left(\cos\dfrac{1}{x}\right)\left(-\dfrac{1}{x^2}\right)} =\frac{1}{\lim\limits_{x\to+\infty}\left(\cos\dfrac{1}{x}\right)}\cdot\lim_{x\to+\infty}\frac{x^2}{1+x^2}=1.$$
 
 **注 (法则的重复使用)** @158
 
@@ -4872,7 +4872,7 @@ $$f(b)+f(a)-2f\left(\frac{a+b}{2}\right)=\left(\frac{b-a}{2}\right)^2f''(\eta).$
 
 求 $\lim\limits_{x\to 0+}\left(\ln\dfrac{1}{x}\right)^x$。
 
-**解** 这是 $\infty^0$ 型，将其改写为$$\lim_{x\to 0+}\left(\ln\frac{1}{x}\right)^x=\lim_{x\to 0+}\mathrm{e}^{x\ln\ln\frac{1}{x}}=\mathrm{e}^{\lim\limits_{x\to 0+}x\ln\ln\frac{1}{x}}.$$由 L'Hospital 法则得$$\lim_{x\to 0+}x\ln\ln\frac{1}{x}=\lim_{x\to 0+}\frac{\left(\ln\ln\dfrac{1}{x}\right)'}{\left(\dfrac{1}{x}\right)'}=\lim_{x\to 0+}\frac{\dfrac{1}{\ln\dfrac{1}{x}}\cdot\left(-\dfrac{1}{x}\right)}{-\dfrac{1}{x^2}}=\lim_{x\to 0+}\frac{x}{\ln\dfrac{1}{x}}=0,$$于是$$\lim_{x\to 0+}\left(\ln\frac{1}{x}\right)^x=\mathrm{e}^{\lim\limits_{x\to 0+}x\ln\ln\frac{1}{x}}=\mathrm{e}^{0}=1.$$
+**解** 这是 $\infty^0$ 型，将其改写为$$\lim_{x\to 0+}\left(\ln\frac{1}{x}\right)^x=\lim_{x\to 0+}\mathrm{e}^{x\ln\ln\frac{1}{x}}=\mathrm{e}^{\lim\limits_{x\to 0+}x\ln\ln\frac{1}{x}}.$$由 L'Hospital 法则得$$\lim_{x\to 0+}x\ln\ln\frac{1}{x}=\lim_{x\to 0+}\frac{\left(\ln\ln\dfrac{1}{x}\right)'}{\left(\dfrac{1}{x}\right)'} =\lim_{x\to 0+}\frac{\dfrac{1}{\ln\dfrac{1}{x}}\cdot\left(-\dfrac{1}{x}\right)}{-\dfrac{1}{x^2}}=\lim_{x\to 0+}\frac{x}{\ln\dfrac{1}{x}}=0,$$于是$$\lim_{x\to 0+}\left(\ln\frac{1}{x}\right)^x=\mathrm{e}^{\lim\limits_{x\to 0+}x\ln\ln\frac{1}{x}}=\mathrm{e}^{0}=1.$$
 
 **例 5.2.9** @160
 
@@ -4970,7 +4970,7 @@ $$\lim_{x\to a^+}\frac{f'(x)}{g'(x)}=+\infty\ \text{或}\ -\infty$$
 
 设
 
-$$f(x)=\begin{cases}\dfrac{g(x)}{x}, & x\ne0,\\[6pt]0, & x=0,\end{cases}$$
+$$f(x)=\begin{cases} \dfrac{g(x)}{x}, & x\ne0,\\[6pt] 0, & x=0, \end{cases}$$
 
 其中 $g(0)=0$，$g'(0)=0$，$g''(0)=10$。求 $f'(0)$。
 
@@ -4978,7 +4978,7 @@ $$f(x)=\begin{cases}\dfrac{g(x)}{x}, & x\ne0,\\[6pt]0, & x=0,\end{cases}$$
 
 讨论函数
 
-$$f(x)=\begin{cases}\left[\dfrac{(1+x)^{\frac{1}{x}}}{e}\right]^{\frac{1}{x}}, & x>0,\\[10pt]e^{-\frac{1}{2}}, & x\leqslant0\end{cases}$$
+$$f(x)=\begin{cases} \left[\dfrac{(1+x)^{\frac{1}{x}}}{e}\right]^{\frac{1}{x}}, & x>0,\\[10pt] e^{-\frac{1}{2}}, & x\leqslant0 \end{cases}$$
 
 在 $x=0$ 处的连续性。
 
@@ -5154,7 +5154,7 @@ $$p_n(x)=\sum_{k=0}^{n}f^{(k)}(x_0)q_k(x),$$
 
 解：取 $x_0=1,\ x_1=1.21,\ x_2=1.44$ 为插值节点，则函数 $f(x)=\sqrt{x}$ 的相应的函数值为 $f(x_0)=1,\ f(x_1)=1.1,\ f(x_2)=1.2$。由 Lagrange 插值公式，
 
-$$f(x)\approx p_2(x)=1\cdot\frac{(x-1.21)(x-1.44)}{(1-1.21)(1-1.44)}+1.1\cdot\frac{(x-1)(x-1.44)}{(1.21-1)(1.21-1.44)}+1.2\cdot\frac{(x-1)(x-1.21)}{(1.44-1)(1.44-1.21)}$$
+$$f(x)\approx p_2(x) =1\cdot\frac{(x-1.21)(x-1.44)}{(1-1.21)(1-1.44)}+1.1\cdot\frac{(x-1)(x-1.44)}{(1.21-1)(1.21-1.44)}+1.2\cdot\frac{(x-1)(x-1.21)}{(1.44-1)(1.44-1.21)}$$
 
 $$\approx-0.094\,108\,789\,x^2+0.684\,170\,901\,x+0.409\,937\,888,$$
 
@@ -5256,7 +5256,7 @@ $$\lim_{h\to0}\theta=\frac{1}{n+1}.$$
 
 将插值条件取为 $n+1$ 个节点上的函数值和一阶导数值，即 $p_n(x)$ 满足
 
-$$\begin{cases}p_n(x_i)=f(x_i),\\p'_n(x_i)=f'(x_i),\end{cases}\qquad i=0,1,2,\cdots,n$$
+$$\begin{cases} p_n(x_i)=f(x_i),\\ p'_n(x_i)=f'(x_i), \end{cases}\qquad i=0,1,2,\cdots,n$$
 
 的插值多项式称为 Hermite 插值多项式，在微分方程数值求解等研究领域中具有重要作用。它可以取为
 
@@ -6628,7 +6628,7 @@ $$y-x-\varepsilon\sin y=0\quad(0<\varepsilon<1)$$
 
 **注 (基本不定积分表)** @208
 
-根据微分与不定积分的关系以及基本初等函数的微分公式，可以得到一些最基本的不定积分公式：$$\begin{aligned}&\text{微分} && \text{不定积分}\\&\mathrm{d}(\mathrm{e}^{x})=\mathrm{e}^{x}\,\mathrm{d}x && \int \mathrm{e}^{x}\,\mathrm{d}x=\mathrm{e}^{x}+C\\&\mathrm{d}(\ln x)=\frac{\mathrm{d}x}{x} && \int \frac{\mathrm{d}x}{x}=\ln|x|+C\\&\mathrm{d}(x^{\alpha})=\alpha x^{\alpha-1}\,\mathrm{d}x && \int x^{\alpha}\,\mathrm{d}x=\frac{1}{\alpha+1}x^{\alpha+1}+C\quad(\alpha\neq-1)\\&\mathrm{d}(\sin x)=\cos x\,\mathrm{d}x && \int \cos x\,\mathrm{d}x=\sin x+C\\&\mathrm{d}(\cos x)=-\sin x\,\mathrm{d}x && \int \sin x\,\mathrm{d}x=-\cos x+C\\&\mathrm{d}(\tan x)=\sec^{2}x\,\mathrm{d}x && \int \sec^{2}x\,\mathrm{d}x=\tan x+C\\&\mathrm{d}(\cot x)=-\csc^{2}x\,\mathrm{d}x && \int \csc^{2}x\,\mathrm{d}x=-\cot x+C\\&\mathrm{d}(\sec x)=\tan x\sec x\,\mathrm{d}x && \int \tan x\sec x\,\mathrm{d}x=\sec x+C\\&\mathrm{d}(\csc x)=-\cot x\csc x\,\mathrm{d}x && \int \cot x\csc x\,\mathrm{d}x=-\csc x+C\\&\mathrm{d}(\arcsin x)=\frac{\mathrm{d}x}{\sqrt{1-x^{2}}} && \int \frac{\mathrm{d}x}{\sqrt{1-x^{2}}}=\arcsin x+C\\&\mathrm{d}(\arctan x)=\frac{\mathrm{d}x}{1+x^{2}} && \int \frac{\mathrm{d}x}{1+x^{2}}=\arctan x+C\end{aligned}$$不定积分的线性性质和上面的不定积分表可以帮助我们求出一些简单函数的不定积分。
+根据微分与不定积分的关系以及基本初等函数的微分公式，可以得到一些最基本的不定积分公式：$$ \begin{aligned} &\text{微分} && \text{不定积分}\\ &\mathrm{d}(\mathrm{e}^{x})=\mathrm{e}^{x}\,\mathrm{d}x && \int \mathrm{e}^{x}\,\mathrm{d}x=\mathrm{e}^{x}+C\\ &\mathrm{d}(\ln x)=\frac{\mathrm{d}x}{x} && \int \frac{\mathrm{d}x}{x}=\ln|x|+C\\ &\mathrm{d}(x^{\alpha})=\alpha x^{\alpha-1}\,\mathrm{d}x && \int x^{\alpha}\,\mathrm{d}x=\frac{1}{\alpha+1}x^{\alpha+1}+C\quad(\alpha\neq-1)\\ &\mathrm{d}(\sin x)=\cos x\,\mathrm{d}x && \int \cos x\,\mathrm{d}x=\sin x+C\\ &\mathrm{d}(\cos x)=-\sin x\,\mathrm{d}x && \int \sin x\,\mathrm{d}x=-\cos x+C\\ &\mathrm{d}(\tan x)=\sec^{2}x\,\mathrm{d}x && \int \sec^{2}x\,\mathrm{d}x=\tan x+C\\ &\mathrm{d}(\cot x)=-\csc^{2}x\,\mathrm{d}x && \int \csc^{2}x\,\mathrm{d}x=-\cot x+C\\ &\mathrm{d}(\sec x)=\tan x\sec x\,\mathrm{d}x && \int \tan x\sec x\,\mathrm{d}x=\sec x+C\\ &\mathrm{d}(\csc x)=-\cot x\csc x\,\mathrm{d}x && \int \cot x\csc x\,\mathrm{d}x=-\csc x+C\\ &\mathrm{d}(\arcsin x)=\frac{\mathrm{d}x}{\sqrt{1-x^{2}}} && \int \frac{\mathrm{d}x}{\sqrt{1-x^{2}}}=\arcsin x+C\\ &\mathrm{d}(\arctan x)=\frac{\mathrm{d}x}{1+x^{2}} && \int \frac{\mathrm{d}x}{1+x^{2}}=\arctan x+C \end{aligned} $$不定积分的线性性质和上面的不定积分表可以帮助我们求出一些简单函数的不定积分。
 
 **例 6.1.4** @208
 
@@ -6652,7 +6652,7 @@ $$y-x-\varepsilon\sin y=0\quad(0<\varepsilon<1)$$
 
 求 $\displaystyle\int \frac{x^{4}}{1+x^{2}}\,\mathrm{d}x$。
 
-解：$$\begin{aligned}\int \frac{x^{4}}{1+x^{2}}\,\mathrm{d}x&=\int \frac{x^{4}+x^{2}-x^{2}}{1+x^{2}}\,\mathrm{d}x=\int x^{2}\,\mathrm{d}x-\int \frac{x^{2}}{1+x^{2}}\,\mathrm{d}x\\&=\int x^{2}\,\mathrm{d}x-\int \frac{1+x^{2}-1}{1+x^{2}}\,\mathrm{d}x=\frac{1}{3}x^{3}-\int \mathrm{d}x+\int \frac{1}{1+x^{2}}\,\mathrm{d}x\\&=\frac{1}{3}x^{3}-x+\arctan x+C.\end{aligned}$$
+解：$$ \begin{aligned} \int \frac{x^{4}}{1+x^{2}}\,\mathrm{d}x&=\int \frac{x^{4}+x^{2}-x^{2}}{1+x^{2}}\,\mathrm{d}x=\int x^{2}\,\mathrm{d}x-\int \frac{x^{2}}{1+x^{2}}\,\mathrm{d}x\\ &=\int x^{2}\,\mathrm{d}x-\int \frac{1+x^{2}-1}{1+x^{2}}\,\mathrm{d}x=\frac{1}{3}x^{3}-\int \mathrm{d}x+\int \frac{1}{1+x^{2}}\,\mathrm{d}x\\ &=\frac{1}{3}x^{3}-x+\arctan x+C. \end{aligned} $$
 
 **例 6.1.8 (由切线斜率求曲线)** @209
 
@@ -7888,7 +7888,7 @@ $$\int\frac{\cot x\,\mathrm{d}x}{1+\sin x}=\int\frac{\cos x\,\mathrm{d}x}{\sin x
 
 **注 (性质 4 的逆命题不成立)** @246
 
-由 $|f(x)|$ 在 $[a,b]$ 上可积并不能得出 $f(x)$ 在 $[a,b]$ 上也可积。例如，函数$$f(x)=\begin{cases}1, & x\ \text{为有理数},\\-1, & x\ \text{为无理数},\end{cases}\quad x\in[0,1]$$在任意一个小区间上的振幅恒为 $2$，所以是不可积的。但是$$|f(x)|=1,\quad x\in[0,1],$$它在 $[0,1]$ 上显然是可积的。
+由 $|f(x)|$ 在 $[a,b]$ 上可积并不能得出 $f(x)$ 在 $[a,b]$ 上也可积。例如，函数$$f(x)=\begin{cases} 1, & x\ \text{为有理数},\\ -1, & x\ \text{为无理数}, \end{cases}\quad x\in[0,1]$$在任意一个小区间上的振幅恒为 $2$，所以是不可积的。但是$$|f(x)|=1,\quad x\in[0,1],$$它在 $[0,1]$ 上显然是可积的。
 
 **命题 7.2.5 (区间可加性)** @246
 
@@ -7916,13 +7916,13 @@ $$\int\frac{\cot x\,\mathrm{d}x}{1+\sin x}=\int\frac{\cos x\,\mathrm{d}x}{\sin x
 
 设 $f(x),g(x)$ 在 $[a,b]$ 上连续，$p,q$ 为满足 $\dfrac{1}{p}+\dfrac{1}{q}=1$ 的正数，证明$$\int_a^b|f(x)g(x)|\,\mathrm{d}x\leqslant\left(\int_a^b|f(x)|^p\,\mathrm{d}x\right)^{\frac{1}{p}}\left(\int_a^b|g(x)|^q\,\mathrm{d}x\right)^{\frac{1}{q}}.$$
 
-**证** 当 $f(x)\equiv0$ 或 $g(x)\equiv0$ 时，上式显然成立。否则，令$$\varphi(x)=\frac{|f(x)|}{\left(\int_a^b|f(x)|^p\,\mathrm{d}x\right)^{\frac{1}{p}}},\quad\psi(x)=\frac{|g(x)|}{\left(\int_a^b|g(x)|^q\,\mathrm{d}x\right)^{\frac{1}{q}}},\quad x\in[a,b]$$（注意由本节习题 5 可知 $\int_a^b|f(x)|^p\,\mathrm{d}x$ 和 $\int_a^b|g(x)|^q\,\mathrm{d}x$ 均大于零），由例 5.1.8 得到$$\varphi(x)\psi(x)\leqslant\frac{1}{p}\varphi(x)^p+\frac{1}{q}\psi(x)^q,$$即$$\frac{|f(x)g(x)|}{\left(\int_a^b|f(x)|^p\,\mathrm{d}x\right)^{\frac{1}{p}}\left(\int_a^b|g(x)|^q\,\mathrm{d}x\right)^{\frac{1}{q}}}\leqslant\frac{|f(x)|^p}{p\int_a^b|f(x)|^p\,\mathrm{d}x}+\frac{|g(x)|^q}{q\int_a^b|g(x)|^q\,\mathrm{d}x},\quad x\in[a,b],$$对上式两边在 $[a,b]$ 上求积分，利用定积分的性质得$$\begin{aligned}&\frac{1}{\left(\int_a^b|f(x)|^p\,\mathrm{d}x\right)^{\frac{1}{p}}\left(\int_a^b|g(x)|^q\,\mathrm{d}x\right)^{\frac{1}{q}}}\int_a^b|f(x)g(x)|\,\mathrm{d}x\\&\qquad\leqslant\frac{\int_a^b|f(x)|^p\,\mathrm{d}x}{p\int_a^b|f(x)|^p\,\mathrm{d}x}+\frac{\int_a^b|g(x)|^q\,\mathrm{d}x}{q\int_a^b|g(x)|^q\,\mathrm{d}x}=\frac{1}{p}+\frac{1}{q}=1.\end{aligned}$$在不等式两边同乘以 $\left(\int_a^b|f(x)|^p\,\mathrm{d}x\right)^{\frac{1}{p}}\left(\int_a^b|g(x)|^q\,\mathrm{d}x\right)^{\frac{1}{q}}$，即得所证不等式。
+**证** 当 $f(x)\equiv0$ 或 $g(x)\equiv0$ 时，上式显然成立。否则，令$$\varphi(x)=\frac{|f(x)|}{\left(\int_a^b|f(x)|^p\,\mathrm{d}x\right)^{\frac{1}{p}}},\quad \psi(x)=\frac{|g(x)|}{\left(\int_a^b|g(x)|^q\,\mathrm{d}x\right)^{\frac{1}{q}}},\quad x\in[a,b]$$（注意由本节习题 5 可知 $\int_a^b|f(x)|^p\,\mathrm{d}x$ 和 $\int_a^b|g(x)|^q\,\mathrm{d}x$ 均大于零），由例 5.1.8 得到$$\varphi(x)\psi(x)\leqslant\frac{1}{p}\varphi(x)^p+\frac{1}{q}\psi(x)^q,$$即$$\frac{|f(x)g(x)|}{\left(\int_a^b|f(x)|^p\,\mathrm{d}x\right)^{\frac{1}{p}}\left(\int_a^b|g(x)|^q\,\mathrm{d}x\right)^{\frac{1}{q}}} \leqslant\frac{|f(x)|^p}{p\int_a^b|f(x)|^p\,\mathrm{d}x}+\frac{|g(x)|^q}{q\int_a^b|g(x)|^q\,\mathrm{d}x},\quad x\in[a,b],$$对上式两边在 $[a,b]$ 上求积分，利用定积分的性质得$$\begin{aligned} &\frac{1}{\left(\int_a^b|f(x)|^p\,\mathrm{d}x\right)^{\frac{1}{p}}\left(\int_a^b|g(x)|^q\,\mathrm{d}x\right)^{\frac{1}{q}}}\int_a^b|f(x)g(x)|\,\mathrm{d}x\\ &\qquad\leqslant\frac{\int_a^b|f(x)|^p\,\mathrm{d}x}{p\int_a^b|f(x)|^p\,\mathrm{d}x}+\frac{\int_a^b|g(x)|^q\,\mathrm{d}x}{q\int_a^b|g(x)|^q\,\mathrm{d}x}=\frac{1}{p}+\frac{1}{q}=1. \end{aligned}$$在不等式两边同乘以 $\left(\int_a^b|f(x)|^p\,\mathrm{d}x\right)^{\frac{1}{p}}\left(\int_a^b|g(x)|^q\,\mathrm{d}x\right)^{\frac{1}{q}}$，即得所证不等式。
 
 **例 7.2.3** @249
 
 设函数 $f(x)$ 在 $[a,b]$ 上二阶可导，$f\left(\dfrac{a+b}{2}\right)=0$，记 $M=\sup\limits_{a\leqslant x\leqslant b}|f''(x)|$，证明$$\int_a^b f(x)\,\mathrm{d}x\leqslant\frac{M(b-a)^3}{24}.$$
 
-**证** $f(x)$ 在 $x=\dfrac{a+b}{2}$ 处的带 Lagrange 余项的 Taylor 公式为$$f(x)=f\left(\frac{a+b}{2}\right)+f'\left(\frac{a+b}{2}\right)\left(x-\frac{a+b}{2}\right)+\frac{1}{2}f''(\xi)\left(x-\frac{a+b}{2}\right)^2,$$其中 $a\leqslant\xi\leqslant b$。由 $f\left(\dfrac{a+b}{2}\right)=0$，上式简化为$$f(x)=f'\left(\frac{a+b}{2}\right)\left(x-\frac{a+b}{2}\right)+\frac{1}{2}f''(\xi)\left(x-\frac{a+b}{2}\right)^2,\quad x\in[a,b].$$对等式两边求积分，利用 $\int_a^b\left(x-\dfrac{a+b}{2}\right)\mathrm{d}x=0$，得到$$\begin{aligned}\int_a^b f(x)\,\mathrm{d}x&=f'\left(\frac{a+b}{2}\right)\int_a^b\left(x-\frac{a+b}{2}\right)\mathrm{d}x+\frac{1}{2}\int_a^b f''(\xi)\left(x-\frac{a+b}{2}\right)^2\mathrm{d}x\\&=\frac{1}{2}\int_a^b f''(\xi)\left(x-\frac{a+b}{2}\right)^2\mathrm{d}x,\end{aligned}$$于是$$\left|\int_a^b f(x)\,\mathrm{d}x\right|\leqslant\frac{1}{2}\int_a^b\left|f''(\xi)\left(x-\frac{a+b}{2}\right)^2\right|\mathrm{d}x\leqslant\frac{M}{2}\int_a^b\left(x-\frac{a+b}{2}\right)^2\mathrm{d}x=\frac{M(b-a)^3}{24}.$$
+**证** $f(x)$ 在 $x=\dfrac{a+b}{2}$ 处的带 Lagrange 余项的 Taylor 公式为$$f(x)=f\left(\frac{a+b}{2}\right)+f'\left(\frac{a+b}{2}\right)\left(x-\frac{a+b}{2}\right)+\frac{1}{2}f''(\xi)\left(x-\frac{a+b}{2}\right)^2,$$其中 $a\leqslant\xi\leqslant b$。由 $f\left(\dfrac{a+b}{2}\right)=0$，上式简化为$$f(x)=f'\left(\frac{a+b}{2}\right)\left(x-\frac{a+b}{2}\right)+\frac{1}{2}f''(\xi)\left(x-\frac{a+b}{2}\right)^2,\quad x\in[a,b].$$对等式两边求积分，利用 $\int_a^b\left(x-\dfrac{a+b}{2}\right)\mathrm{d}x=0$，得到$$\begin{aligned} \int_a^b f(x)\,\mathrm{d}x&=f'\left(\frac{a+b}{2}\right)\int_a^b\left(x-\frac{a+b}{2}\right)\mathrm{d}x+\frac{1}{2}\int_a^b f''(\xi)\left(x-\frac{a+b}{2}\right)^2\mathrm{d}x\\ &=\frac{1}{2}\int_a^b f''(\xi)\left(x-\frac{a+b}{2}\right)^2\mathrm{d}x, \end{aligned}$$于是$$\left|\int_a^b f(x)\,\mathrm{d}x\right|\leqslant\frac{1}{2}\int_a^b\left|f''(\xi)\left(x-\frac{a+b}{2}\right)^2\right|\mathrm{d}x\leqslant\frac{M}{2}\int_a^b\left(x-\frac{a+b}{2}\right)^2\mathrm{d}x=\frac{M(b-a)^3}{24}.$$
 
 #### 习题（p250–251）
 
@@ -8398,17 +8398,17 @@ $$\int_0^1\left(\sqrt{x}-x^2\right)\mathrm{d}x=\left.\left(\frac{2}{3}x\sqrt{x}-
 
 解：不妨设 $x>0$，利用对称性，可求出位于第一象限的那部分面积再乘以 2。而对那部分面积，可以先求出由双曲线、$x$ 轴及过点 $(x,y)$ 并与 $y$ 轴平行的直线所围区域的面积，再用大三角形的面积 $\dfrac{xy}{2}$ 减去它：
 
-$$\begin{aligned}t&=2\left(\frac{xy}{2}-\int_1^x\sqrt{u^2-1}\,\mathrm{d}u\right)\\&=xy-\left(x\sqrt{x^2-1}-\ln\left|x+\sqrt{x^2-1}\right|\right)\\&=xy-xy+\ln(x+y)=\ln(x+y).\end{aligned}$$
+$$ \begin{aligned} t&=2\left(\frac{xy}{2}-\int_1^x\sqrt{u^2-1}\,\mathrm{d}u\right)\\ &=xy-\left(x\sqrt{x^2-1}-\ln\left|x+\sqrt{x^2-1}\right|\right)\\ &=xy-xy+\ln(x+y)=\ln(x+y). \end{aligned} $$
 
 由此得到 $x+y=\mathrm{e}^t$，由于 $x^2-y^2=1$，两式相除便有 $x-y=\mathrm{e}^{-t}$，于是解得
 
-$$\begin{cases}x=\dfrac{\mathrm{e}^t+\mathrm{e}^{-t}}{2}=\operatorname{ch} t,\\[2mm]y=\dfrac{\mathrm{e}^t-\mathrm{e}^{-t}}{2}=\operatorname{sh} t.\end{cases}$$
+$$ \begin{cases} x=\dfrac{\mathrm{e}^t+\mathrm{e}^{-t}}{2}=\operatorname{ch} t,\\[2mm] y=\dfrac{\mathrm{e}^t-\mathrm{e}^{-t}}{2}=\operatorname{sh} t. \end{cases} $$
 
 **注 (双曲函数名称的由来)** @269
 
 三角函数又统称为圆函数，这是因为，若在单位圆上取点 $(x,y)$ 和 $(x,-y)$，类似地考虑由圆弧与连接点 $(x,y)$ 和原点的线段、连接点 $(x,-y)$ 和原点的线段所围成的扇形（如图 7.4.5），设扇形的面积为 $t$，则有熟知的结论
 
-$$\begin{cases}x=\cos t,\\y=\sin t.\end{cases}$$
+$$ \begin{cases} x=\cos t,\\ y=\sin t. \end{cases} $$
 
 两相比较，就不难明白，为什么要把 $y=\operatorname{sh} x$、$y=\operatorname{ch} x$ 统称为双曲函数，并分别冠以双曲正弦和双曲余弦的名称。
 
@@ -8416,7 +8416,7 @@ $$\begin{cases}x=\cos t,\\y=\sin t.\end{cases}$$
 
 若 $y=f(x)$ 是用参数形式
 
-$$\begin{cases}x=x(t),\\y=y(t),\end{cases}\qquad t\in[T_1,T_2]$$
+$$ \begin{cases} x=x(t),\\ y=y(t), \end{cases}\qquad t\in[T_1,T_2] $$
 
 表达的，$x(t)$ 在 $[T_1,T_2]$ 上具有连续导数，且 $x'(t)\ne 0$，那么用换元法可证，所求的面积可表示成
 
@@ -8428,7 +8428,7 @@ $$S=\int_{T_1}^{T_2}|y(t)x'(t)|\,\mathrm{d}t.$$
 
 解：利用对称性，只求第一象限的那一块面积（如图 7.4.6）。将椭圆写成参数方程形式
 
-$$\begin{cases}x=a\cos t,\\y=b\sin t,\end{cases}$$
+$$ \begin{cases} x=a\cos t,\\ y=b\sin t, \end{cases} $$
 
 则当 $x$ 从 $0$ 变到 $a$ 时，$t$ 从 $\dfrac{\pi}{2}$ 变到 $0$，所以
 
@@ -8442,7 +8442,7 @@ $$S=\pi ab.$$
 
 求旋轮线（摆线）
 
-$$\begin{cases}x=a(t-\sin t),\\y=a(1-\cos t),\end{cases}\qquad t\in[0,2\pi]$$
+$$ \begin{cases} x=a(t-\sin t),\\ y=a(1-\cos t), \end{cases}\qquad t\in[0,2\pi] $$
 
 与 $x$ 轴所围区域的面积（如图 7.4.7）。
 
@@ -8488,7 +8488,7 @@ $$S=6\cdot\frac{a^2}{2}\int_0^{\frac{\pi}{6}}\sin^2 3\theta\,\mathrm{d}\theta=a^
 
 设平面曲线的参数方程为
 
-$$\begin{cases}x=x(t),\\y=y(t),\end{cases}\qquad t\in[T_1,T_2].$$
+$$ \begin{cases} x=x(t),\\ y=y(t), \end{cases}\qquad t\in[T_1,T_2]. $$
 
 对区间 $[T_1,T_2]$ 作划分
 
@@ -8508,7 +8508,7 @@ $$l=\lim_{\lambda\to 0}\sum_{i=1}^n\overline{P_{i-1}P_i}$$
 
 若 $x'(t)$ 和 $y'(t)$ 在 $[T_1,T_2]$ 上连续，且 $[x'(t)]^2+[y'(t)]^2\ne 0$，则由参数方程
 
-$$\begin{cases}x=x(t),\\y=y(t),\end{cases}\qquad t\in[T_1,T_2]$$
+$$ \begin{cases} x=x(t),\\ y=y(t), \end{cases}\qquad t\in[T_1,T_2] $$
 
 确定的曲线称为**光滑曲线**。
 
@@ -8518,7 +8518,7 @@ $$\begin{cases}x=x(t),\\y=y(t),\end{cases}\qquad t\in[T_1,T_2]$$
 
 若由参数方程
 
-$$\begin{cases}x=x(t),\\y=y(t),\end{cases}\qquad t\in[T_1,T_2]$$
+$$ \begin{cases} x=x(t),\\ y=y(t), \end{cases}\qquad t\in[T_1,T_2] $$
 
 确定的曲线是光滑曲线，则它是可求长的，其弧长为
 
@@ -8552,7 +8552,7 @@ $$l=4\int_0^a\sqrt{1+[f'(x)]^2}\,\mathrm{d}x=4a\int_0^a\frac{\mathrm{d}x}{\sqrt{
 
 解法二：采用直角坐标系下的参数方程
 
-$$\begin{cases}x=a\cos t,\\y=a\sin t,\end{cases}$$
+$$ \begin{cases} x=a\cos t,\\ y=a\sin t, \end{cases} $$
 
 同样只求第一象限部分，
 
@@ -8576,7 +8576,7 @@ $$l=a\int_0^{2\pi}\sqrt{(1-\cos t)^2+\sin^2 t}\,\mathrm{d}t=\sqrt{2}a\int_0^{2\p
 
 用同样的方法，可将定理 7.4.1 的结论推广到求空间曲线的弧长上去。设 $x'(t)$、$y'(t)$、$z'(t)$ 在 $[T_1,T_2]$ 上连续，且 $[x'(t)]^2+[y'(t)]^2+[z'(t)]^2\ne 0$，则由参数方程
 
-$$\begin{cases}x=x(t),\\y=y(t),\\z=z(t),\end{cases}\qquad t\in[T_1,T_2]$$
+$$ \begin{cases} x=x(t),\\ y=y(t),\\ z=z(t), \end{cases}\qquad t\in[T_1,T_2] $$
 
 确定的曲线的弧长为
 
@@ -8586,13 +8586,13 @@ $$l=\int_{T_1}^{T_2}\sqrt{[x'(t)]^2+[y'(t)]^2+[z'(t)]^2}\,\mathrm{d}t.$$
 
 求圆锥螺线
 
-$$\begin{cases}x=at\cos t,\\y=-at\sin t,\\z=bt\end{cases}$$
+$$ \begin{cases} x=at\cos t,\\ y=-at\sin t,\\ z=bt \end{cases} $$
 
 （如图 7.4.12）第一圈的长度。
 
 解：
 
-$$\begin{aligned}l&=\int_0^{2\pi}\sqrt{a^2[\cos t-t\sin t]^2+a^2[-\sin t-t\cos t]^2+b^2}\,\mathrm{d}t\\&=\int_0^{2\pi}\sqrt{a^2t^2+a^2+b^2}\,\mathrm{d}t\\&=\frac{a}{2}\left.\left(t\sqrt{t^2+s^2}+s^2\ln\left|t+\sqrt{t^2+s^2}\right|\right)\right|_0^{2\pi}\qquad\left(\text{记}\ \frac{b^2}{a^2}+1=s^2\right)\\&=a\left(\pi\sqrt{4\pi^2+s^2}+\frac{s^2}{2}\ln\frac{2\pi+\sqrt{4\pi^2+s^2}}{s}\right).\end{aligned}$$
+$$ \begin{aligned} l&=\int_0^{2\pi}\sqrt{a^2[\cos t-t\sin t]^2+a^2[-\sin t-t\cos t]^2+b^2}\,\mathrm{d}t\\ &=\int_0^{2\pi}\sqrt{a^2t^2+a^2+b^2}\,\mathrm{d}t\\ &=\frac{a}{2}\left.\left(t\sqrt{t^2+s^2}+s^2\ln\left|t+\sqrt{t^2+s^2}\right|\right)\right|_0^{2\pi}\qquad\left(\text{记}\ \frac{b^2}{a^2}+1=s^2\right)\\ &=a\left(\pi\sqrt{4\pi^2+s^2}+\frac{s^2}{2}\ln\frac{2\pi+\sqrt{4\pi^2+s^2}}{s}\right). \end{aligned} $$
 
 当 $b=0$ 时，圆锥螺线退化为平面上的 Archimedes 螺线（如图 7.4.13），此时 $s^2=1$，因此
 
@@ -8658,7 +8658,7 @@ $$V=\pi\int_a^b[f(x)]^2\,\mathrm{d}x.$$
 
 设曲线的参数方程为
 
-$$\begin{cases}x=x(t),\\y=y(t),\end{cases}\qquad t\in[T_1,T_2].$$
+$$ \begin{cases} x=x(t),\\ y=y(t), \end{cases}\qquad t\in[T_1,T_2]. $$
 
 假设在 $[T_1,T_2]$ 上，$x'(t)$ 和 $y(t)$ 连续，且 $x'(t)\ne 0$。对上式作变量代换，即得到相应的旋转体的体积公式
 
@@ -8674,7 +8674,7 @@ $$V=\pi\int_{-a}^a(a^2-x^2)\,\mathrm{d}x=\pi\left.\left(a^2x-\frac{x^3}{3}\right
 
 解：将旋轮线的参数方程代入求旋转体体积的公式
 
-$$\begin{aligned}V&=\pi\int_{T_1}^{T_2}y^2(t)|x'(t)|\,\mathrm{d}t\\&=\pi a^3\int_0^{2\pi}(1-\cos t)^3\,\mathrm{d}t=5\pi^2a^3.\end{aligned}$$
+$$ \begin{aligned} V&=\pi\int_{T_1}^{T_2}y^2(t)|x'(t)|\,\mathrm{d}t\\ &=\pi a^3\int_0^{2\pi}(1-\cos t)^3\,\mathrm{d}t=5\pi^2a^3. \end{aligned} $$
 
 **注 (极坐标下旋转体的体积)** @276
 
@@ -8686,7 +8686,7 @@ $$V=\frac{2\pi}{3}\int_\alpha^\beta r^3(\theta)\sin\theta\,\mathrm{d}\theta.$$
 
 设平面上一段光滑曲线
 
-$$\begin{cases}x=x(t),\\y=y(t),\end{cases}\qquad t\in[T_1,T_2]$$
+$$ \begin{cases} x=x(t),\\ y=y(t), \end{cases}\qquad t\in[T_1,T_2] $$
 
 在 $[T_1,T_2]$ 上 $y(t)\ge 0$，它绕 $x$ 轴旋转一周得到一个旋转曲面（如图 7.4.17）。
 
@@ -8724,7 +8724,7 @@ $$S=2\pi\int_{-a}^a f(x)\sqrt{1+[f'(x)]^2}\,\mathrm{d}x=2\pi a\int_{-a}^a\frac{\
 
 解：将旋轮线的参数方程代入求旋转曲面面积的公式
 
-$$\begin{aligned}S&=2\pi a^2\int_0^{2\pi}(1-\cos t)\sqrt{(1-\cos t)^2+\sin^2 t}\,\mathrm{d}t\\&=2\sqrt{2}\pi a^2\int_0^{2\pi}(1-\cos t)\sqrt{1-\cos t}\,\mathrm{d}t\\&=16\pi a^2\int_0^{2\pi}\sin^3\frac{t}{2}\,\mathrm{d}\left(\frac{t}{2}\right)=\frac{64}{3}\pi a^2.\end{aligned}$$
+$$ \begin{aligned} S&=2\pi a^2\int_0^{2\pi}(1-\cos t)\sqrt{(1-\cos t)^2+\sin^2 t}\,\mathrm{d}t\\ &=2\sqrt{2}\pi a^2\int_0^{2\pi}(1-\cos t)\sqrt{1-\cos t}\,\mathrm{d}t\\ &=16\pi a^2\int_0^{2\pi}\sin^3\frac{t}{2}\,\mathrm{d}\left(\frac{t}{2}\right)=\frac{64}{3}\pi a^2. \end{aligned} $$
 
 **附录 (本节计算公式简表)** @278
 
@@ -8770,7 +8770,7 @@ $$K=\lim_{\Delta s\to 0}\left|\frac{\Delta\varphi}{\Delta s}\right|=\left|\frac{
 
 设光滑曲线由参数方程
 
-$$\begin{cases}x=x(t),\\y=y(t),\end{cases}\qquad \alpha\le t\le\beta$$
+$$ \begin{cases} x=x(t),\\ y=y(t), \end{cases}\qquad \alpha\le t\le\beta $$
 
 确定，且 $x(t)$，$y(t)$ 有二阶导数。对于每个 $t\in[\alpha,\beta]$，曲线在对应点的切线斜率为
 
@@ -8834,15 +8834,15 @@ $$K=\frac{|y''|}{\left(1+y'^2\right)^{\frac{3}{2}}}=\left.\frac{y}{a^2}\right/\l
 
 （1）Archimedes 螺线 $r=a\theta$（又称等速螺线）；（2）对数螺线 $r=a\mathrm{e}^\theta$（又称等角螺线）；（3）双曲螺线 $r\theta=a$；（4）圆的渐开线
 
-$$\begin{cases}x=a(\cos t+t\sin t),\\y=a(\sin t-t\cos t);\end{cases}$$
+$$ \begin{cases} x=a(\cos t+t\sin t),\\ y=a(\sin t-t\cos t); \end{cases} $$
 
 （5）摆线
 
-$$\begin{cases}x=a(t-\sin t),\\y=a(1-\cos t)\end{cases}$$
+$$ \begin{cases} x=a(t-\sin t),\\ y=a(1-\cos t) \end{cases} $$
 
 （又称旋轮线）；（6）星形线
 
-$$\begin{cases}x=a\cos^3 t,\\y=a\sin^3 t\end{cases}\qquad\left(\text{或}\ x^{\frac{2}{3}}+y^{\frac{2}{3}}=a^{\frac{2}{3}}\right).$$
+$$ \begin{cases} x=a\cos^3 t,\\ y=a\sin^3 t \end{cases}\qquad\left(\text{或}\ x^{\frac{2}{3}}+y^{\frac{2}{3}}=a^{\frac{2}{3}}\right). $$
 
 **附录 (常用几何曲线图示（二）)** @285
 
@@ -8852,19 +8852,19 @@ $$\begin{cases}x=a\cos^3 t,\\y=a\sin^3 t\end{cases}\qquad\left(\text{或}\ x^{\f
 
 （13）Descartes 叶形线 $x^3+y^3=3axy$，或
 
-$$\begin{cases}x=\dfrac{3at}{1+t^3},\\[2mm]y=\dfrac{3at^2}{1+t^3}\ (=tx);\end{cases}$$
+$$ \begin{cases} x=\dfrac{3at}{1+t^3},\\[2mm] y=\dfrac{3at^2}{1+t^3}\ (=tx); \end{cases} $$
 
 （14）蔓叶线 $y^2(2a-x)=x^3$；
 
 （15）箕舌线 $y=\dfrac{8a^3}{x^2+4a^2}$（或
 
-$$\begin{cases}x=2a\tan\theta,\\y=2a\cos^2\theta\end{cases}$$
+$$ \begin{cases} x=2a\tan\theta,\\ y=2a\cos^2\theta \end{cases} $$
 
 ）；
 
 （16）斜抛物线 $x^{\frac{1}{2}}+y^{\frac{1}{2}}=a^{\frac{1}{2}}$（或
 
-$$\begin{cases}x=a\cos^4 t,\\y=a\sin^4 t\end{cases}$$
+$$ \begin{cases} x=a\cos^4 t,\\ y=a\sin^4 t \end{cases} $$
 
 ）；
 
@@ -9176,7 +9176,7 @@ $$y=a\ln\frac{a+\sqrt{a^2-x^2}}{x}-\sqrt{a^2-x^2}.$$
 
 于是在 $[t,t+\mathrm{d}t]$ 中系统动量的改变量为
 
-$$\begin{aligned}&\left[M(t+\mathrm{d}t)v(t+\mathrm{d}t)+\left[M(t)-M(t+\mathrm{d}t)\right]\left[v(t+\mathrm{d}t)-u\right]\right]-M(t)v(t)\\={}&M(t)\left[v(t+\mathrm{d}t)-v(t)\right]+\left[M(t+\mathrm{d}t)-M(t)\right]u\\={}&M(t)v'(t)\,\mathrm{d}t+uM'(t)\,\mathrm{d}t.\end{aligned}$$
+$$ \begin{aligned} &\left[M(t+\mathrm{d}t)v(t+\mathrm{d}t)+\left[M(t)-M(t+\mathrm{d}t)\right]\left[v(t+\mathrm{d}t)-u\right]\right]-M(t)v(t)\\ ={}&M(t)\left[v(t+\mathrm{d}t)-v(t)\right]+\left[M(t+\mathrm{d}t)-M(t)\right]u\\ ={}&M(t)v'(t)\,\mathrm{d}t+uM'(t)\,\mathrm{d}t. \end{aligned} $$
 
 由冲量定律，动量的改变量等于力与作用时间的乘积 $F\,\mathrm{d}t$，就得到火箭运动的微分方程
 
@@ -9236,7 +9236,7 @@ $$\pi ab=\int_0^T\frac{\mathrm{d}A}{\mathrm{d}t}\,\mathrm{d}t=\frac{1}{2}r^2\ome
 
 记径向速度与径向加速度为 $\dfrac{\mathrm{d}r}{\mathrm{d}t}=\dot{r}$、$\dfrac{\mathrm{d}^2r}{\mathrm{d}t^2}=\ddot{r}$，角加速度为 $\dfrac{\mathrm{d}\omega}{\mathrm{d}t}=\dot{\omega}$，则加速度分量为
 
-$$\begin{aligned}\frac{\mathrm{d}^2(r\cos\theta)}{\mathrm{d}t^2}&=\ddot{r}\cos\theta-2\dot{r}\omega\sin\theta-r\left[\dot{\omega}\sin\theta+\omega^2\cos\theta\right]\\&=(\ddot{r}-r\omega^2)\cos\theta-(2\dot{r}\omega+r\dot{\omega})\sin\theta=(\ddot{r}-r\omega^2)\cos\theta,\\\frac{\mathrm{d}^2(r\sin\theta)}{\mathrm{d}t^2}&=\ddot{r}\sin\theta+2\dot{r}\omega\cos\theta+r\left[\dot{\omega}\cos\theta-\omega^2\sin\theta\right]\\&=(\ddot{r}-r\omega^2)\sin\theta.\end{aligned}$$
+$$ \begin{aligned} \frac{\mathrm{d}^2(r\cos\theta)}{\mathrm{d}t^2}&=\ddot{r}\cos\theta-2\dot{r}\omega\sin\theta-r\left[\dot{\omega}\sin\theta+\omega^2\cos\theta\right]\\ &=(\ddot{r}-r\omega^2)\cos\theta-(2\dot{r}\omega+r\dot{\omega})\sin\theta=(\ddot{r}-r\omega^2)\cos\theta,\\ \frac{\mathrm{d}^2(r\sin\theta)}{\mathrm{d}t^2}&=\ddot{r}\sin\theta+2\dot{r}\omega\cos\theta+r\left[\dot{\omega}\cos\theta-\omega^2\sin\theta\right]\\ &=(\ddot{r}-r\omega^2)\sin\theta. \end{aligned} $$
 
 记 $\boldsymbol{r}_0=\dfrac{\boldsymbol{r}}{r}=(\cos\theta,\sin\theta)$ 为 $r$ 方向的单位向量，得加速度向量
 
@@ -9362,7 +9362,7 @@ $$\int_a^b f(x)\,\mathrm{d}x\approx\int_a^b p_n(x)\,\mathrm{d}x=(b-a)\sum_{i=0}^
 
 这里
 
-$$\begin{aligned}C_i^{(n)}&=\frac{1}{b-a}\int_a^b\prod_{\substack{j=0\\ j\ne i}}^n\frac{x-x_j}{x_i-x_j}\,\mathrm{d}x &&(\text{令 }x=a+th)\\&=\frac{h}{b-a}\int_0^n\prod_{\substack{j=0\\ j\ne i}}^n\frac{t-j}{i-j}\,\mathrm{d}t\\&=\frac{1}{n}\frac{(-1)^{n-i}}{i!\,(n-i)!}\int_0^n\prod_{\substack{j=0\\ j\ne i}}^n(t-j)\,\mathrm{d}t.\end{aligned}$$
+$$ \begin{aligned} C_i^{(n)}&=\frac{1}{b-a}\int_a^b\prod_{\substack{j=0\\ j\ne i}}^n\frac{x-x_j}{x_i-x_j}\,\mathrm{d}x &&(\text{令 }x=a+th)\\ &=\frac{h}{b-a}\int_0^n\prod_{\substack{j=0\\ j\ne i}}^n\frac{t-j}{i-j}\,\mathrm{d}t\\ &=\frac{1}{n}\frac{(-1)^{n-i}}{i!\,(n-i)!}\int_0^n\prod_{\substack{j=0\\ j\ne i}}^n(t-j)\,\mathrm{d}t. \end{aligned} $$
 
 这就是 $n$ 步 Newton–Cotes 求积公式，计算时需取 $n+1$ 个节点，相应的 $C_i^{(n)}$ 称为 Cotes 系数，它与积分区间和被积函数无关，可通过求多项式的积分事先算好。容易看出，Cotes 系数具有如下性质：
 
@@ -9406,9 +9406,9 @@ $$\int_a^b f(x)\,\mathrm{d}x\approx\frac{b-a}{6}\left[f(a)+4f\left(\frac{a+b}{2}
 
 当 $n=4$ 时，
 
-$$C_0^{(4)}=\frac{1}{96}\int_0^4(t-1)(t-2)(t-3)(t-4)\,\mathrm{d}t=\frac{7}{90}=C_4^{(4)},$$
+$$ C_0^{(4)}=\frac{1}{96}\int_0^4(t-1)(t-2)(t-3)(t-4)\,\mathrm{d}t=\frac{7}{90}=C_4^{(4)}, $$
 
-$$C_1^{(4)}=-\frac{1}{24}\int_0^4 t(t-2)(t-3)(t-4)\,\mathrm{d}t=\frac{32}{90}=C_3^{(4)},\qquad C_2^{(4)}=1-2\left(C_0^{(4)}-C_1^{(4)}\right)=\frac{12}{90},$$
+$$ C_1^{(4)}=-\frac{1}{24}\int_0^4 t(t-2)(t-3)(t-4)\,\mathrm{d}t=\frac{32}{90}=C_3^{(4)},\qquad C_2^{(4)}=1-2\left(C_0^{(4)}-C_1^{(4)}\right)=\frac{12}{90}, $$
 
 于是得到 Cotes 公式
 
@@ -9492,7 +9492,7 @@ $$T_m^{(1)}=\frac{h}{2}\left[f(a)+f(b)+2\sum_{i=1}^{m-1}f(x_i)\right],$$
 
 记 $x_{i-\frac{1}{2}}$ 为区间 $[x_{i-1},x_i]$ 的中点，可以完全类似地得到复化 Simpson 公式，
 
-$$\begin{aligned}T_m^{(2)}\equiv S_m&=\frac{h}{6}\sum_{i=1}^m\left[f(x_{i-1})+4f\left(x_{i-\frac{1}{2}}\right)+f(x_i)\right]\\&=\frac{h}{6}\left[f(a)+f(b)+2\sum_{i=1}^{m-1}f(x_i)+4\sum_{i=1}^mf\left(x_{i-\frac{1}{2}}\right)\right].\end{aligned}$$
+$$ \begin{aligned} T_m^{(2)}\equiv S_m&=\frac{h}{6}\sum_{i=1}^m\left[f(x_{i-1})+4f\left(x_{i-\frac{1}{2}}\right)+f(x_i)\right]\\ &=\frac{h}{6}\left[f(a)+f(b)+2\sum_{i=1}^{m-1}f(x_i)+4\sum_{i=1}^mf\left(x_{i-\frac{1}{2}}\right)\right]. \end{aligned} $$
 
 实际计算时并不是直接按这个公式去求 $T_m^{(2)}$ 的。容易证明，复化 Simpson 公式与复化梯形公式之间存在着如下关系：
 
@@ -9512,7 +9512,7 @@ $$T_m^{(k+1)}=\frac{4^kT_{2m}^{(k)}-T_m^{(k)}}{4^k-1},$$
 
 就成了数值积分的 **Romberg 方法**，它的具体过程如下所示。先取适当的初始值 $m$，再按 ①、②、③……次序逐个计算，向下的箭头表示区间再细化一半，向右的箭头表示外推。
 
-$$\begin{array}{ccccccc}①\ T_m^{(1)} & & & & & &\\\downarrow & & & & & &\\②\ T_{2m}^{(1)} & \rightarrow & ③\ T_m^{(2)} & & & &\\\downarrow & & \downarrow & & & &\\④\ T_{4m}^{(1)} & \rightarrow & ⑤\ T_{2m}^{(2)} & \rightarrow & ⑥\ T_m^{(3)} & &\\\downarrow & & \downarrow & & \downarrow & &\\⑦\ T_{8m}^{(1)} & \rightarrow & ⑧\ T_{4m}^{(2)} & \rightarrow & ⑨\ T_{2m}^{(3)} & \rightarrow & ⑩\ T_m^{(4)}\end{array}$$
+$$ \begin{array}{ccccccc} ①\ T_m^{(1)} & & & & & &\\ \downarrow & & & & & &\\ ②\ T_{2m}^{(1)} & \rightarrow & ③\ T_m^{(2)} & & & &\\ \downarrow & & \downarrow & & & &\\ ④\ T_{4m}^{(1)} & \rightarrow & ⑤\ T_{2m}^{(2)} & \rightarrow & ⑥\ T_m^{(3)} & &\\ \downarrow & & \downarrow & & \downarrow & &\\ ⑦\ T_{8m}^{(1)} & \rightarrow & ⑧\ T_{4m}^{(2)} & \rightarrow & ⑨\ T_{2m}^{(3)} & \rightarrow & ⑩\ T_m^{(4)} \end{array} $$
 
 Romberg 方法是计算机上实际使用的求数值积分的最重要的方法之一。具体执行时一般从 $m=1$，$k=1$ 开始，逐个计算 $T_m^{(k)}$。若对某个 $k$ 有 $\left|T_m^{(k)}-T_m^{(k-1)}\right|$ 小于预先设定的精度要求时，就将 $T_m^{(k)}$ 作为积分的近似值，计算结束；否则将小区间长度缩小二分之一，重新由复化梯形公式开始，一直到算出 $T_m^{(k+1)}$，再作上述的比较。这种根据预置的精度要求，由计算机在计算过程中自动将区间划分到最合适程度的算法称为**自适应算法**。
 
@@ -9580,7 +9580,7 @@ $$n=1:\quad I_1=\mathrm{e}^{0.577\,350\,269\,2}+\mathrm{e}^{-0.577\,350\,269\,2}
 
 $$n=2:\quad I_2=\frac{1}{9}\left[5\left(\mathrm{e}^{0.774\,596\,669\,2}+\mathrm{e}^{-0.774\,596\,669\,2}\right)+8\mathrm{e}^0\right]=2.350\,336\,928\cdots;$$
 
-$$\begin{aligned}n=4:\quad I_4={}&0.236\,926\,885\,1\left(\mathrm{e}^{0.906\,179\,845\,9}+\mathrm{e}^{-0.906\,179\,845\,9}\right)\\&+0.478\,628\,670\,5\left(\mathrm{e}^{0.538\,469\,310\,1}+\mathrm{e}^{-0.538\,469\,310\,1}\right)+0.568\,888\,889\,\mathrm{e}^0\\={}&2.350\,402\,386\,58\cdots\end{aligned}$$
+$$ \begin{aligned} n=4:\quad I_4={}&0.236\,926\,885\,1\left(\mathrm{e}^{0.906\,179\,845\,9}+\mathrm{e}^{-0.906\,179\,845\,9}\right)\\ &+0.478\,628\,670\,5\left(\mathrm{e}^{0.538\,469\,310\,1}+\mathrm{e}^{-0.538\,469\,310\,1}\right)+0.568\,888\,889\,\mathrm{e}^0\\ ={}&2.350\,402\,386\,58\cdots \end{aligned} $$
 
 它们所花的代价与例 7.6.1 用的梯形公式、Simpson 公式和 Cotes 公式完全相同，但精度却不可同日而语。如 $n=4$ 时，在同样只计算 $5$ 个函数值情况下，绝对误差由 $O\left(10^{-4}\right)$ 减小到 $O\left(10^{-9}\right)$！
 

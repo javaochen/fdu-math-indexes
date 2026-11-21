@@ -14,15 +14,15 @@
 
 **定义 (n 元线性方程组的标准式)** @1
 
-形如$$\begin{cases}a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n=b_1,\\a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n=b_2,\\\cdots\cdots\cdots\cdots\\a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n=b_m\end{cases}\tag{1.1.1}$$的方程组称为 $n$ 元线性方程组的**标准式**，其中 $a_{ij},b_i\ (i=1,2,\cdots,m;\ j=1,2,\cdots,n)$ 都是常数，$x_j\ (j=1,2,\cdots,n)$ 是未知数。这里 $m$ 与 $n$ 可以不等，即方程组中未知数个数与方程式个数可以不等。凡经过有限次移项、合并同类项可以化为 (1.1.1) 式形状的方程组都称为**线性方程组**。
+形如$$\begin{cases} a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n=b_1,\\ a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n=b_2,\\ \cdots\cdots\cdots\cdots\\ a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n=b_m \end{cases}\tag{1.1.1}$$的方程组称为 $n$ 元线性方程组的**标准式**，其中 $a_{ij},b_i\ (i=1,2,\cdots,m;\ j=1,2,\cdots,n)$ 都是常数，$x_j\ (j=1,2,\cdots,n)$ 是未知数。这里 $m$ 与 $n$ 可以不等，即方程组中未知数个数与方程式个数可以不等。凡经过有限次移项、合并同类项可以化为 (1.1.1) 式形状的方程组都称为**线性方程组**。
 
 **例 1.1.1 (二元一次方程组求解)** @1
 
-求解二元一次方程组$$\begin{cases}2x-y=5,\\3x+2y=11.\end{cases}\tag{1.1.2}$$其唯一解为 $x=3,\ y=1$。
+求解二元一次方程组$$\begin{cases} 2x-y=5,\\ 3x+2y=11. \end{cases}\tag{1.1.2}$$其唯一解为 $x=3,\ y=1$。
 
 **命题 (二元一次方程组的公式解)** @3
 
-设二元一次方程组$$\begin{cases}a_{11}x_1+a_{12}x_2=b_1,\\a_{21}x_1+a_{22}x_2=b_2,\end{cases}\tag{1.1.3}$$则它的解可用二阶行列式表示为$$x_1=\frac{\begin{vmatrix}b_1&a_{12}\\b_2&a_{22}\end{vmatrix}}{\begin{vmatrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{vmatrix}},\qquadx_2=\frac{\begin{vmatrix}a_{11}&b_1\\a_{21}&b_2\end{vmatrix}}{\begin{vmatrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{vmatrix}}.\tag{1.1.4}$$其中 $x_1$ 与 $x_2$ 的分母都是原方程组未知数前的系数按原顺序排成的行列式；$x_1$ 的分子行列式是把分母行列式的第一列换成常数项列而得，$x_2$ 的分子行列式则是把第二列换成常数项列而得。
+设二元一次方程组$$\begin{cases} a_{11}x_1+a_{12}x_2=b_1,\\ a_{21}x_1+a_{22}x_2=b_2, \end{cases}\tag{1.1.3}$$则它的解可用二阶行列式表示为$$x_1=\frac{\begin{vmatrix}b_1&a_{12}\\b_2&a_{22}\end{vmatrix}}{\begin{vmatrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{vmatrix}},\qquad x_2=\frac{\begin{vmatrix}a_{11}&b_1\\a_{21}&b_2\end{vmatrix}}{\begin{vmatrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{vmatrix}}.\tag{1.1.4}$$其中 $x_1$ 与 $x_2$ 的分母都是原方程组未知数前的系数按原顺序排成的行列式；$x_1$ 的分子行列式是把分母行列式的第一列换成常数项列而得，$x_2$ 的分子行列式则是把第二列换成常数项列而得。
 
 **定义 (二阶行列式)** @3
 
@@ -42,7 +42,7 @@
 
 **命题 (性质 4)** @4
 
-交换行列式不同的两行（列），行列式的值改变符号。例如$$\begin{vmatrix}a_{21}&a_{22}\\a_{11}&a_{12}\end{vmatrix}=-\begin{vmatrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{vmatrix},\qquad\begin{vmatrix}a_{12}&a_{11}\\a_{22}&a_{21}\end{vmatrix}=-\begin{vmatrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{vmatrix}.$$
+交换行列式不同的两行（列），行列式的值改变符号。例如$$\begin{vmatrix}a_{21}&a_{22}\\a_{11}&a_{12}\end{vmatrix}=-\begin{vmatrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{vmatrix},\qquad \begin{vmatrix}a_{12}&a_{11}\\a_{22}&a_{21}\end{vmatrix}=-\begin{vmatrix}a_{11}&a_{12}\\a_{21}&a_{22}\end{vmatrix}.$$
 
 **命题 (性质 5)** @4
 
@@ -76,7 +76,7 @@
 
 **定义 (余子式)** @9
 
-将三阶行列式 $|A|$ 划去某个元素 $a_{ij}\ (i,j=1,2,3)$ 所在的一行和一列，剩下的元素按原来的次序组成一个二阶行列式，称这个二阶行列式为元素 $a_{ij}$ 的**余子式**，记为 $M_{ij}$。例如$$M_{11}=\begin{vmatrix}a_{22}&a_{23}\\a_{32}&a_{33}\end{vmatrix},\quadM_{12}=\begin{vmatrix}a_{21}&a_{23}\\a_{31}&a_{33}\end{vmatrix},\quadM_{23}=\begin{vmatrix}a_{11}&a_{12}\\a_{31}&a_{32}\end{vmatrix}.$$
+将三阶行列式 $|A|$ 划去某个元素 $a_{ij}\ (i,j=1,2,3)$ 所在的一行和一列，剩下的元素按原来的次序组成一个二阶行列式，称这个二阶行列式为元素 $a_{ij}$ 的**余子式**，记为 $M_{ij}$。例如$$M_{11}=\begin{vmatrix}a_{22}&a_{23}\\a_{32}&a_{33}\end{vmatrix},\quad M_{12}=\begin{vmatrix}a_{21}&a_{23}\\a_{31}&a_{33}\end{vmatrix},\quad M_{23}=\begin{vmatrix}a_{11}&a_{12}\\a_{31}&a_{32}\end{vmatrix}.$$
 
 **定义 (三阶行列式的值)** @9
 
@@ -96,7 +96,7 @@
 
 **命题 (三元一次方程组的公式解)** @10
 
-设三元一次方程组$$\begin{cases}a_{11}x_1+a_{12}x_2+a_{13}x_3=b_1,\\a_{21}x_1+a_{22}x_2+a_{23}x_3=b_2,\\a_{31}x_1+a_{32}x_2+a_{33}x_3=b_3,\end{cases}\tag{1.2.2}$$则其解可用三阶行列式表示为$$x_1=\frac{\begin{vmatrix}b_1&a_{12}&a_{13}\\b_2&a_{22}&a_{23}\\b_3&a_{32}&a_{33}\end{vmatrix}}{\begin{vmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{vmatrix}},\qquadx_2=\frac{\begin{vmatrix}a_{11}&b_1&a_{13}\\a_{21}&b_2&a_{23}\\a_{31}&b_3&a_{33}\end{vmatrix}}{\begin{vmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{vmatrix}},\qquadx_3=\frac{\begin{vmatrix}a_{11}&a_{12}&b_1\\a_{21}&a_{22}&b_2\\a_{31}&a_{32}&b_3\end{vmatrix}}{\begin{vmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{vmatrix}}.$$即每个 $x_j$ 的分母都是系数行列式，分子是把分母行列式的第 $j$ 列换成常数项列所得的行列式。这与二元一次方程组的公式解完全类似。
+设三元一次方程组$$\begin{cases} a_{11}x_1+a_{12}x_2+a_{13}x_3=b_1,\\ a_{21}x_1+a_{22}x_2+a_{23}x_3=b_2,\\ a_{31}x_1+a_{32}x_2+a_{33}x_3=b_3, \end{cases}\tag{1.2.2}$$则其解可用三阶行列式表示为$$x_1=\frac{\begin{vmatrix}b_1&a_{12}&a_{13}\\b_2&a_{22}&a_{23}\\b_3&a_{32}&a_{33}\end{vmatrix}}{\begin{vmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{vmatrix}},\qquad x_2=\frac{\begin{vmatrix}a_{11}&b_1&a_{13}\\a_{21}&b_2&a_{23}\\a_{31}&b_3&a_{33}\end{vmatrix}}{\begin{vmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{vmatrix}},\qquad x_3=\frac{\begin{vmatrix}a_{11}&a_{12}&b_1\\a_{21}&a_{22}&b_2\\a_{31}&a_{32}&b_3\end{vmatrix}}{\begin{vmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33}\end{vmatrix}}.$$即每个 $x_j$ 的分母都是系数行列式，分子是把分母行列式的第 $j$ 列换成常数项列所得的行列式。这与二元一次方程组的公式解完全类似。
 
 **定义 (系数行列式)** @11
 
@@ -106,13 +106,13 @@
 
 **定义 (n 阶行列式)** @12
 
-称下面用两条竖线围起来的、由 $n$ 行 $n$ 列元素组成的式子为一个 **$n$ 阶行列式**：$$|A|=\begin{vmatrix}a_{11}&a_{12}&\cdots&a_{1n}\\a_{21}&a_{22}&\cdots&a_{2n}\\\vdots&\vdots&&\vdots\\a_{n1}&a_{n2}&\cdots&a_{nn}\end{vmatrix}. \tag{1.3.1}$$
+称下面用两条竖线围起来的、由 $n$ 行 $n$ 列元素组成的式子为一个 **$n$ 阶行列式**：$$|A|=\begin{vmatrix} a_{11}&a_{12}&\cdots&a_{1n}\\ a_{21}&a_{22}&\cdots&a_{2n}\\ \vdots&\vdots&&\vdots\\ a_{n1}&a_{n2}&\cdots&a_{nn} \end{vmatrix}. \tag{1.3.1}$$
 
 它由 $n$ 行 $n$ 列共 $n^2$ 个元素组成。第 $i$ 行上元素全体称为行列式 $|A|$ 的第 $i$ 行，第 $j$ 列上元素全体称为行列式 $|A|$ 的第 $j$ 列。第 $i$ 行第 $j$ 列交点上的元素 $a_{ij}$ 称为行列式 $|A|$ 的 $(i,j)$ 元素。元素 $a_{11},a_{22},\cdots,a_{nn}$ 称为 $|A|$ 的**主对角线**，因为如果把行列式看成一个正方形，这些元素恰在正方形的对角线上。
 
 **定义 1.3.1 (余子式)** @12
 
-定义元素 $a_{ij}$ 的**余子式** $M_{ij}$ 为由行列式 $|A|$ 中划去第 $i$ 行第 $j$ 列后剩下的 $n-1$ 行与 $n-1$ 列元素组成的行列式：$$M_{ij}=\begin{vmatrix}a_{11}&\cdots&a_{1,j-1}&a_{1,j+1}&\cdots&a_{1n}\\\vdots&&\vdots&\vdots&&\vdots\\a_{i-1,1}&\cdots&a_{i-1,j-1}&a_{i-1,j+1}&\cdots&a_{i-1,n}\\a_{i+1,1}&\cdots&a_{i+1,j-1}&a_{i+1,j+1}&\cdots&a_{i+1,n}\\\vdots&&\vdots&\vdots&&\vdots\\a_{n1}&\cdots&a_{n,j-1}&a_{n,j+1}&\cdots&a_{nn}\end{vmatrix}.$$
+定义元素 $a_{ij}$ 的**余子式** $M_{ij}$ 为由行列式 $|A|$ 中划去第 $i$ 行第 $j$ 列后剩下的 $n-1$ 行与 $n-1$ 列元素组成的行列式：$$M_{ij}=\begin{vmatrix} a_{11}&\cdots&a_{1,j-1}&a_{1,j+1}&\cdots&a_{1n}\\ \vdots&&\vdots&\vdots&&\vdots\\ a_{i-1,1}&\cdots&a_{i-1,j-1}&a_{i-1,j+1}&\cdots&a_{i-1,n}\\ a_{i+1,1}&\cdots&a_{i+1,j-1}&a_{i+1,j+1}&\cdots&a_{i+1,n}\\ \vdots&&\vdots&\vdots&&\vdots\\ a_{n1}&\cdots&a_{n,j-1}&a_{n,j+1}&\cdots&a_{nn} \end{vmatrix}.$$
 
 **定义 1.3.2 (行列式的值)** @13
 
@@ -130,17 +130,17 @@
 
 **例 1.3.1 (余子式与代数余子式)** @13
 
-设有五阶行列式$$|A|=\begin{vmatrix}1&0&-1&3&1\\0&2&-5&4&1\\3&-2&-1&1&0\\0&0&2&1&3\\1&3&-1&5&1\end{vmatrix}.$$
+设有五阶行列式$$|A|=\begin{vmatrix} 1&0&-1&3&1\\ 0&2&-5&4&1\\ 3&-2&-1&1&0\\ 0&0&2&1&3\\ 1&3&-1&5&1 \end{vmatrix}.$$
 
-$|A|$ 的第 $(1,1)$ 元素 $a_{11}=1$，它的余子式为$$M_{11}=\begin{vmatrix}2&-5&4&1\\-2&-1&1&0\\0&2&1&3\\3&-1&5&1\end{vmatrix},$$$a_{11}$ 的代数余子式为 $A_{11}=(-1)^{1+1}M_{11}=M_{11}$。
+$|A|$ 的第 $(1,1)$ 元素 $a_{11}=1$，它的余子式为$$M_{11}=\begin{vmatrix} 2&-5&4&1\\ -2&-1&1&0\\ 0&2&1&3\\ 3&-1&5&1 \end{vmatrix},$$$a_{11}$ 的代数余子式为 $A_{11}=(-1)^{1+1}M_{11}=M_{11}$。
 
-$|A|$ 的第 $(3,4)$ 元素 $a_{34}=1$，它的余子式为$$M_{34}=\begin{vmatrix}1&0&-1&1\\0&2&-5&1\\0&0&2&3\\1&3&-1&1\end{vmatrix},$$$a_{34}$ 的代数余子式 $A_{34}=(-1)^{3+4}M_{34}=-M_{34}$。
+$|A|$ 的第 $(3,4)$ 元素 $a_{34}=1$，它的余子式为$$M_{34}=\begin{vmatrix} 1&0&-1&1\\ 0&2&-5&1\\ 0&0&2&3\\ 1&3&-1&1 \end{vmatrix},$$$a_{34}$ 的代数余子式 $A_{34}=(-1)^{3+4}M_{34}=-M_{34}$。
 
-$|A|$ 的第 $(4,1)$ 元素 $a_{41}=0$，它的余子式为$$M_{41}=\begin{vmatrix}0&-1&3&1\\2&-5&4&1\\-2&-1&1&0\\3&-1&5&1\end{vmatrix},$$$a_{41}$ 的代数余子式 $A_{41}=(-1)^{4+1}M_{41}=-M_{41}$。
+$|A|$ 的第 $(4,1)$ 元素 $a_{41}=0$，它的余子式为$$M_{41}=\begin{vmatrix} 0&-1&3&1\\ 2&-5&4&1\\ -2&-1&1&0\\ 3&-1&5&1 \end{vmatrix},$$$a_{41}$ 的代数余子式 $A_{41}=(-1)^{4+1}M_{41}=-M_{41}$。
 
 **命题 (性质 1)** @14
 
-若 $|A|$ 是一个 $n$ 阶行列式，且$$|A|=\begin{vmatrix}a_{11}&a_{12}&\cdots&a_{1n}\\0&a_{22}&\cdots&a_{2n}\\\vdots&\vdots&&\vdots\\0&0&\cdots&a_{nn}\end{vmatrix},\qquad\text{或}\qquad |A|=\begin{vmatrix}a_{11}&0&\cdots&0\\a_{21}&a_{22}&\cdots&0\\\vdots&\vdots&&\vdots\\a_{n1}&a_{n2}&\cdots&a_{nn}\end{vmatrix},$$则 $|A|=a_{11}a_{22}\cdots a_{nn}$。
+若 $|A|$ 是一个 $n$ 阶行列式，且$$|A|=\begin{vmatrix} a_{11}&a_{12}&\cdots&a_{1n}\\ 0&a_{22}&\cdots&a_{2n}\\ \vdots&\vdots&&\vdots\\ 0&0&\cdots&a_{nn} \end{vmatrix},\qquad\text{或}\qquad |A|=\begin{vmatrix} a_{11}&0&\cdots&0\\ a_{21}&a_{22}&\cdots&0\\ \vdots&\vdots&&\vdots\\ a_{n1}&a_{n2}&\cdots&a_{nn} \end{vmatrix},$$则 $|A|=a_{11}a_{22}\cdots a_{nn}$。
 
 上式中左边的行列式称为**上三角行列式**（这时 $a_{ij}=0$ 对一切 $i>j$ 成立），右边的行列式称为**下三角行列式**（这时 $a_{ij}=0$ 对一切 $i<j$ 成立）。
 
@@ -164,11 +164,11 @@ $|A|$ 的第 $(4,1)$ 元素 $a_{41}=0$，它的余子式为$$M_{41}=\begin{vmatr
 
 设 $|A|,|B|,|C|$ 是 $3$ 个 $n$ 阶行列式，它们的第 $(i,j)$ 元素分别记为 $a_{ij},b_{ij},c_{ij}$。$|A|,|B|,|C|$ 的第 $r$ 行元素适合条件$$c_{rj}=a_{rj}+b_{rj}\quad (j=1,2,\cdots,n), \tag{1.3.6}$$而其他元素相同，即 $c_{ij}=a_{ij}=b_{ij}$（$i\neq r$，$j=1,2,\cdots,n$），则$$|C|=|A|+|B|.$$
 
-用行列式具体表示即为$$\begin{vmatrix}a_{11}&a_{12}&\cdots&a_{1n}\\\vdots&\vdots&&\vdots\\a_{r1}+b_{r1}&a_{r2}+b_{r2}&\cdots&a_{rn}+b_{rn}\\\vdots&\vdots&&\vdots\\a_{n1}&a_{n2}&\cdots&a_{nn}\end{vmatrix}=\begin{vmatrix}a_{11}&a_{12}&\cdots&a_{1n}\\\vdots&\vdots&&\vdots\\a_{r1}&a_{r2}&\cdots&a_{rn}\\\vdots&\vdots&&\vdots\\a_{n1}&a_{n2}&\cdots&a_{nn}\end{vmatrix}+\begin{vmatrix}a_{11}&a_{12}&\cdots&a_{1n}\\\vdots&\vdots&&\vdots\\b_{r1}&b_{r2}&\cdots&b_{rn}\\\vdots&\vdots&&\vdots\\a_{n1}&a_{n2}&\cdots&a_{nn}\end{vmatrix}.$$
+用行列式具体表示即为$$\begin{vmatrix} a_{11}&a_{12}&\cdots&a_{1n}\\ \vdots&\vdots&&\vdots\\ a_{r1}+b_{r1}&a_{r2}+b_{r2}&\cdots&a_{rn}+b_{rn}\\ \vdots&\vdots&&\vdots\\ a_{n1}&a_{n2}&\cdots&a_{nn} \end{vmatrix} =\begin{vmatrix} a_{11}&a_{12}&\cdots&a_{1n}\\ \vdots&\vdots&&\vdots\\ a_{r1}&a_{r2}&\cdots&a_{rn}\\ \vdots&\vdots&&\vdots\\ a_{n1}&a_{n2}&\cdots&a_{nn} \end{vmatrix} +\begin{vmatrix} a_{11}&a_{12}&\cdots&a_{1n}\\ \vdots&\vdots&&\vdots\\ b_{r1}&b_{r2}&\cdots&b_{rn}\\ \vdots&\vdots&&\vdots\\ a_{n1}&a_{n2}&\cdots&a_{nn} \end{vmatrix}.$$
 
 **命题 (性质 7)** @18
 
-将行列式的一行乘以某个常数 $c$ 加到另一行上，行列式的值不变，即$$\begin{vmatrix}a_{11}&a_{12}&\cdots&a_{1n}\\\vdots&\vdots&&\vdots\\a_{i1}&a_{i2}&\cdots&a_{in}\\\vdots&\vdots&&\vdots\\a_{j1}+ca_{i1}&a_{j2}+ca_{i2}&\cdots&a_{jn}+ca_{in}\\\vdots&\vdots&&\vdots\\a_{n1}&a_{n2}&\cdots&a_{nn}\end{vmatrix}=\begin{vmatrix}a_{11}&a_{12}&\cdots&a_{1n}\\\vdots&\vdots&&\vdots\\a_{i1}&a_{i2}&\cdots&a_{in}\\\vdots&\vdots&&\vdots\\a_{j1}&a_{j2}&\cdots&a_{jn}\\\vdots&\vdots&&\vdots\\a_{n1}&a_{n2}&\cdots&a_{nn}\end{vmatrix}.$$
+将行列式的一行乘以某个常数 $c$ 加到另一行上，行列式的值不变，即$$\begin{vmatrix} a_{11}&a_{12}&\cdots&a_{1n}\\ \vdots&\vdots&&\vdots\\ a_{i1}&a_{i2}&\cdots&a_{in}\\ \vdots&\vdots&&\vdots\\ a_{j1}+ca_{i1}&a_{j2}+ca_{i2}&\cdots&a_{jn}+ca_{in}\\ \vdots&\vdots&&\vdots\\ a_{n1}&a_{n2}&\cdots&a_{nn} \end{vmatrix} =\begin{vmatrix} a_{11}&a_{12}&\cdots&a_{1n}\\ \vdots&\vdots&&\vdots\\ a_{i1}&a_{i2}&\cdots&a_{in}\\ \vdots&\vdots&&\vdots\\ a_{j1}&a_{j2}&\cdots&a_{jn}\\ \vdots&\vdots&&\vdots\\ a_{n1}&a_{n2}&\cdots&a_{nn} \end{vmatrix}.$$
 
 **注 (行列式性质的行列对偶)** @18
 
@@ -204,11 +204,11 @@ $|A|,|B|,|C|$ 是 $3$ 个 $n$ 阶行列式，$|C|$ 的第 $r$ 列元素等于 $|
 
 **例 1.4.1 (第一行仅一个非零元)** @22
 
-设 $|A|$ 的第一行除第 $s$ 个元素 $a_{1s}$ 外全为零，即$$|A|=\begin{vmatrix}0 & \cdots & 0 & a_{1s} & 0 & \cdots & 0\\a_{21} & \cdots & a_{2,s-1} & a_{2s} & a_{2,s+1} & \cdots & a_{2n}\\\vdots & & \vdots & \vdots & \vdots & & \vdots\\a_{n1} & \cdots & a_{n,s-1} & a_{ns} & a_{n,s+1} & \cdots & a_{nn}\end{vmatrix},$$则 $|A|=a_{1s}A_{1s}$。
+设 $|A|$ 的第一行除第 $s$ 个元素 $a_{1s}$ 外全为零，即$$|A|=\begin{vmatrix} 0 & \cdots & 0 & a_{1s} & 0 & \cdots & 0\\ a_{21} & \cdots & a_{2,s-1} & a_{2s} & a_{2,s+1} & \cdots & a_{2n}\\ \vdots & & \vdots & \vdots & \vdots & & \vdots\\ a_{n1} & \cdots & a_{n,s-1} & a_{ns} & a_{n,s+1} & \cdots & a_{nn} \end{vmatrix},$$则 $|A|=a_{1s}A_{1s}$。
 
 **引理 1.4.1 (按第一行展开)** @23
 
-若$$|A|=\begin{vmatrix}a_{11} & a_{12} & \cdots & a_{1n}\\a_{21} & a_{22} & \cdots & a_{2n}\\\vdots & \vdots & & \vdots\\a_{n1} & a_{n2} & \cdots & a_{nn}\end{vmatrix}, \tag{1.4.5}$$则$$|A|=a_{11}A_{11}+a_{12}A_{12}+\cdots+a_{1n}A_{1n}.$$
+若$$|A|=\begin{vmatrix} a_{11} & a_{12} & \cdots & a_{1n}\\ a_{21} & a_{22} & \cdots & a_{2n}\\ \vdots & \vdots & & \vdots\\ a_{n1} & a_{n2} & \cdots & a_{nn} \end{vmatrix}, \tag{1.4.5}$$则$$|A|=a_{11}A_{11}+a_{12}A_{12}+\cdots+a_{1n}A_{1n}.$$
 
 即行列式可以按第一行展开。
 
@@ -218,7 +218,7 @@ $|A|,|B|,|C|$ 是 $3$ 个 $n$ 阶行列式，$|C|$ 的第 $r$ 列元素等于 $|
 
 **定义 1.4.1 (转置)** @23
 
-设 $|A|$ 是如 (1.4.5) 式所示的行列式，令$$|A'|=\begin{vmatrix}a_{11} & a_{21} & \cdots & a_{n1}\\a_{12} & a_{22} & \cdots & a_{n2}\\\vdots & \vdots & & \vdots\\a_{1n} & a_{2n} & \cdots & a_{nn}\end{vmatrix},$$即 $|A'|$ 的第一行为 $|A|$ 的第一列，$|A'|$ 的第二行为 $|A|$ 的第二列，$\cdots\cdots$，$|A'|$ 的第 $n$ 行为 $|A|$ 的第 $n$ 列，则称 $|A'|$ 是 $|A|$ 的**转置**。换言之，$|A'|$ 可由 $|A|$ 将行变成列、列变成行得到。
+设 $|A|$ 是如 (1.4.5) 式所示的行列式，令$$|A'|=\begin{vmatrix} a_{11} & a_{21} & \cdots & a_{n1}\\ a_{12} & a_{22} & \cdots & a_{n2}\\ \vdots & \vdots & & \vdots\\ a_{1n} & a_{2n} & \cdots & a_{nn} \end{vmatrix},$$即 $|A'|$ 的第一行为 $|A|$ 的第一列，$|A'|$ 的第二行为 $|A|$ 的第二列，$\cdots\cdots$，$|A'|$ 的第 $n$ 行为 $|A|$ 的第 $n$ 列，则称 $|A'|$ 是 $|A|$ 的**转置**。换言之，$|A'|$ 可由 $|A|$ 将行变成列、列变成行得到。
 
 **定理 (性质 8)** @24
 
@@ -226,7 +226,7 @@ $|A|,|B|,|C|$ 是 $3$ 个 $n$ 阶行列式，$|C|$ 的第 $r$ 列元素等于 $|
 
 **定理 1.4.3 (Cramer 法则)** @26
 
-设有线性方程组$$\begin{cases}a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n=b_1,\\a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n=b_2,\\\cdots\cdots\cdots\cdots\\a_{n1}x_1+a_{n2}x_2+\cdots+a_{nn}x_n=b_n.\end{cases} \tag{1.4.9}$$记这个方程组的系数行列式为 $|A|$，若 $|A|\neq 0$，则方程组有且仅有一组解：$$x_1=\frac{|A_1|}{|A|},\quad x_2=\frac{|A_2|}{|A|},\quad \cdots,\quad x_n=\frac{|A_n|}{|A|}, \tag{1.4.10}$$其中 $|A_j|$（$j=1,2,\cdots,n$）是一个 $n$ 阶行列式，它由 $|A|$ 去掉第 $j$ 列换上方程组的常数项 $b_1,b_2,\cdots,b_n$ 组成的列而成。
+设有线性方程组$$\begin{cases} a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n=b_1,\\ a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n=b_2,\\ \cdots\cdots\cdots\cdots\\ a_{n1}x_1+a_{n2}x_2+\cdots+a_{nn}x_n=b_n. \end{cases} \tag{1.4.9}$$记这个方程组的系数行列式为 $|A|$，若 $|A|\neq 0$，则方程组有且仅有一组解：$$x_1=\frac{|A_1|}{|A|},\quad x_2=\frac{|A_2|}{|A|},\quad \cdots,\quad x_n=\frac{|A_n|}{|A|}, \tag{1.4.10}$$其中 $|A_j|$（$j=1,2,\cdots,n$）是一个 $n$ 阶行列式，它由 $|A|$ 去掉第 $j$ 列换上方程组的常数项 $b_1,b_2,\cdots,b_n$ 组成的列而成。
 
 **注 (系数行列式为零的情形)** @27
 
@@ -236,15 +236,15 @@ $|A|,|B|,|C|$ 是 $3$ 个 $n$ 阶行列式，$|C|$ 的第 $r$ 列元素等于 $|
 
 **例 1.5.1 (行列式的降阶处理)** @28
 
-设有行列式$$|A|=\begin{vmatrix}a_{11} & a_{12} & \cdots & a_{1n}\\0 & a_{22} & \cdots & a_{2n}\\\vdots & \vdots & & \vdots\\0 & a_{n2} & \cdots & a_{nn}\end{vmatrix},$$即 $|A|$ 的第一列除了第一个元素外都等于零，则 $|A|=a_{11}M_{11}$。
+设有行列式$$|A|=\begin{vmatrix} a_{11} & a_{12} & \cdots & a_{1n}\\ 0 & a_{22} & \cdots & a_{2n}\\ \vdots & \vdots & & \vdots\\ 0 & a_{n2} & \cdots & a_{nn} \end{vmatrix},$$即 $|A|$ 的第一列除了第一个元素外都等于零，则 $|A|=a_{11}M_{11}$。
 
 注意 $M_{11}$ 是一个 $n-1$ 阶行列式。这说明：若能设法把一个行列式变成上述形状，就可以将这个高阶行列式“降阶处理”；不断重复这个过程，就能把高阶行列式的值计算出来。
 
 **例 1.5.2 (行消去法降阶)** @29
 
-计算下列行列式：$$|A|=\begin{vmatrix}1 & 0 & 2 & 1\\2 & -1 & 1 & 0\\1 & 0 & 0 & 3\\-1 & 0 & 2 & 1\end{vmatrix}.$$
+计算下列行列式：$$|A|=\begin{vmatrix} 1 & 0 & 2 & 1\\ 2 & -1 & 1 & 0\\ 1 & 0 & 0 & 3\\ -1 & 0 & 2 & 1 \end{vmatrix}.$$
 
-用第一行分别乘以 $-2,-1,1$ 加到第二、三、四行上，使第一列除第一个元素外全为零，再按第一列降阶：$$|A|=1\cdot\begin{vmatrix}-1 & -3 & -2\\0 & -2 & 2\\0 & 4 & 2\end{vmatrix}=(-1)\cdot\begin{vmatrix}-2 & 2\\4 & 2\end{vmatrix}=(-1)(-4-8)=12.$$
+用第一行分别乘以 $-2,-1,1$ 加到第二、三、四行上，使第一列除第一个元素外全为零，再按第一列降阶：$$|A|=1\cdot\begin{vmatrix} -1 & -3 & -2\\ 0 & -2 & 2\\ 0 & 4 & 2 \end{vmatrix}=(-1)\cdot\begin{vmatrix} -2 & 2\\ 4 & 2 \end{vmatrix}=(-1)(-4-8)=12.$$
 
 **注 (行消去与列消去)** @30
 
@@ -252,21 +252,21 @@ $|A|,|B|,|C|$ 是 $3$ 个 $n$ 阶行列式，$|C|$ 的第 $r$ 列元素等于 $|
 
 **例 1.5.3 (选取非零主元降阶)** @31
 
-计算行列式：$$|A|=\begin{vmatrix}0 & -2 & 4\\2 & 5 & -1\\6 & 1 & 7\end{vmatrix}.$$
+计算行列式：$$|A|=\begin{vmatrix} 0 & -2 & 4\\ 2 & 5 & -1\\ 6 & 1 & 7 \end{vmatrix}.$$
 
-第一行第一列的元素为零，故不用它而用第二行第二列的元素 $5$ 作主元：将第二行乘以 $-3$ 加到第三行上，再按第二列展开，$$|A|=(-1)^{2+1}\cdot 2\cdot\begin{vmatrix}-2 & 4\\-14 & 10\end{vmatrix}=-2(-20+56)=-72.$$
+第一行第一列的元素为零，故不用它而用第二行第二列的元素 $5$ 作主元：将第二行乘以 $-3$ 加到第三行上，再按第二列展开，$$|A|=(-1)^{2+1}\cdot 2\cdot\begin{vmatrix} -2 & 4\\ -14 & 10 \end{vmatrix}=-2(-20+56)=-72.$$
 
 **例 1.5.4 (避免分数运算的消去)** @31
 
-计算行列式：$$|A|=\begin{vmatrix}7 & 3 & 1 & -5\\2 & 6 & -3 & 0\\3 & 11 & -1 & 4\\-6 & 5 & 2 & -9\end{vmatrix}.$$
+计算行列式：$$|A|=\begin{vmatrix} 7 & 3 & 1 & -5\\ 2 & 6 & -3 & 0\\ 3 & 11 & -1 & 4\\ -6 & 5 & 2 & -9 \end{vmatrix}.$$
 
-若消去第一列将出现分数运算，因此改用消去第三列的方法（用第二行消去第三列其余元素），再逐次按列展开，得$$|A|=(-1)^{1+3}\begin{vmatrix}23 & 15 & -15\\10 & 14 & -1\\-20 & -1 & 1\end{vmatrix}=(-1)^{2+3}\cdot 13\cdot\begin{vmatrix}23 & 15\\-20 & -1\end{vmatrix}=-13(-23+300)=-3601.$$
+若消去第一列将出现分数运算，因此改用消去第三列的方法（用第二行消去第三列其余元素），再逐次按列展开，得$$|A|=(-1)^{1+3}\begin{vmatrix} 23 & 15 & -15\\ 10 & 14 & -1\\ -20 & -1 & 1 \end{vmatrix}=(-1)^{2+3}\cdot 13\cdot\begin{vmatrix} 23 & 15\\ -20 & -1 \end{vmatrix}=-13(-23+300)=-3601.$$
 
 **例 1.5.5 (提取公因子化简)** @32
 
-计算行列式：$$|A|=\begin{vmatrix}3 & 6 & 12\\2 & -3 & 0\\5 & 1 & 2\end{vmatrix}.$$
+计算行列式：$$|A|=\begin{vmatrix} 3 & 6 & 12\\ 2 & -3 & 0\\ 5 & 1 & 2 \end{vmatrix}.$$
 
-第一行有公因子 $3$，先提出：$$|A|=3\begin{vmatrix}1 & 2 & 4\\2 & -3 & 0\\5 & 1 & 2\end{vmatrix}=3\begin{vmatrix}-7 & -8\\-9 & -18\end{vmatrix}=3\times 54=162.$$
+第一行有公因子 $3$，先提出：$$|A|=3\begin{vmatrix} 1 & 2 & 4\\ 2 & -3 & 0\\ 5 & 1 & 2 \end{vmatrix}=3\begin{vmatrix} -7 & -8\\ -9 & -18 \end{vmatrix}=3\times 54=162.$$
 
 **注 (灵活运用行列式性质)** @32
 
@@ -274,7 +274,7 @@ $|A|,|B|,|C|$ 是 $3$ 个 $n$ 阶行列式，$|C|$ 的第 $r$ 列元素等于 $|
 
 **例 1.5.6 (Vandermonde 行列式)** @32
 
-计算 $n$ 阶 Vandermonde（范德蒙）行列式：$$V_n=\begin{vmatrix}1 & x_1 & x_1^2 & \cdots & x_1^{n-2} & x_1^{n-1}\\1 & x_2 & x_2^2 & \cdots & x_2^{n-2} & x_2^{n-1}\\\vdots & \vdots & \vdots & & \vdots & \vdots\\1 & x_{n-1} & x_{n-1}^2 & \cdots & x_{n-1}^{n-2} & x_{n-1}^{n-1}\\1 & x_n & x_n^2 & \cdots & x_n^{n-2} & x_n^{n-1}\end{vmatrix}.$$
+计算 $n$ 阶 Vandermonde（范德蒙）行列式：$$V_n=\begin{vmatrix} 1 & x_1 & x_1^2 & \cdots & x_1^{n-2} & x_1^{n-1}\\ 1 & x_2 & x_2^2 & \cdots & x_2^{n-2} & x_2^{n-1}\\ \vdots & \vdots & \vdots & & \vdots & \vdots\\ 1 & x_{n-1} & x_{n-1}^2 & \cdots & x_{n-1}^{n-2} & x_{n-1}^{n-1}\\ 1 & x_n & x_n^2 & \cdots & x_n^{n-2} & x_n^{n-1} \end{vmatrix}.$$
 
 采用行消去法：将第 $n-1$ 列乘以 $-x_n$ 后加到第 $n$ 列上，再将第 $n-2$ 列乘以 $-x_n$ 加到第 $n-1$ 列上，这样一直做下去，直至将第一列乘以 $-x_n$ 加到第二列上为止。每次变形后行列式的值不变，得到递推公式$$V_n=(x_n-x_1)(x_n-x_2)\cdots(x_n-x_{n-1})V_{n-1}.$$
 
@@ -282,25 +282,25 @@ $|A|,|B|,|C|$ 是 $3$ 个 $n$ 阶行列式，$|C|$ 的第 $r$ 列元素等于 $|
 
 **例 1.5.7 (递推行列式求值)** @34
 
-求下列行列式的值：$$F_n=\begin{vmatrix}\lambda & 0 & 0 & \cdots & 0 & a_n\\-1 & \lambda & 0 & \cdots & 0 & a_{n-1}\\0 & -1 & \lambda & \cdots & 0 & a_{n-2}\\\vdots & \vdots & \vdots & & \vdots & \vdots\\0 & 0 & 0 & \cdots & \lambda & a_2\\0 & 0 & 0 & \cdots & -1 & \lambda+a_1\end{vmatrix}.$$
+求下列行列式的值：$$F_n=\begin{vmatrix} \lambda & 0 & 0 & \cdots & 0 & a_n\\ -1 & \lambda & 0 & \cdots & 0 & a_{n-1}\\ 0 & -1 & \lambda & \cdots & 0 & a_{n-2}\\ \vdots & \vdots & \vdots & & \vdots & \vdots\\ 0 & 0 & 0 & \cdots & \lambda & a_2\\ 0 & 0 & 0 & \cdots & -1 & \lambda+a_1 \end{vmatrix}.$$
 
 按第一行展开：$a_n$ 的余子式是一个上三角行列式，其值等于 $(-1)^{n-1}$；$\lambda$ 的余子式是与 $F_n$ 相似的 $n-1$ 阶行列式，记为 $F_{n-1}$。于是$$F_n=\lambda F_{n-1}+(-1)^{1+n}(-1)^{n-1}a_n=\lambda F_{n-1}+a_n.$$利用递推关系求得$$F_n=\lambda^n+a_1\lambda^{n-1}+a_2\lambda^{n-2}+\cdots+a_n.$$
 
 **例 1.5.8 (逐列拆分求和)** @34
 
-求证：$$|A|=\begin{vmatrix}ax+by & ay+bz & az+bx\\ay+bz & az+bx & ax+by\\az+bx & ax+by & ay+bz\end{vmatrix}=(a^3+b^3)\begin{vmatrix}x & y & z\\y & z & x\\z & x & y\end{vmatrix}.$$
+求证：$$|A|=\begin{vmatrix} ax+by & ay+bz & az+bx\\ ay+bz & az+bx & ax+by\\ az+bx & ax+by & ay+bz \end{vmatrix}=(a^3+b^3)\begin{vmatrix} x & y & z\\ y & z & x\\ z & x & y \end{vmatrix}.$$
 
 $|A|$ 的每个元素都是两个数之和，按行列式性质 6 依次将第一、二、三列拆开，$|A|$ 是 $8$ 个行列式之和，其中 $6$ 个行列式都有两列成比例、值为零，剩下的两个行列式相同，故得上式。
 
 **例 1.5.9 (行和相等的行列式)** @34
 
-计算下列 $n$ 阶行列式：$$|A|=\begin{vmatrix}x & a & a & \cdots & a\\a & x & a & \cdots & a\\a & a & x & \cdots & a\\\vdots & \vdots & \vdots & & \vdots\\a & a & a & \cdots & x\end{vmatrix}.$$
+计算下列 $n$ 阶行列式：$$|A|=\begin{vmatrix} x & a & a & \cdots & a\\ a & x & a & \cdots & a\\ a & a & x & \cdots & a\\ \vdots & \vdots & \vdots & & \vdots\\ a & a & a & \cdots & x \end{vmatrix}.$$
 
-将第二行、第三行直至第 $n$ 行都加到第一行上，$|A|$ 的值不变，提出公因子 $x+(n-1)a$；再将第一行乘以 $-a$ 分别加到第二行、第三行直至第 $n$ 行上，得$$|A|=(x+(n-1)a)\begin{vmatrix}1 & 1 & 1 & \cdots & 1\\0 & x-a & 0 & \cdots & 0\\0 & 0 & x-a & \cdots & 0\\\vdots & \vdots & \vdots & & \vdots\\0 & 0 & 0 & \cdots & x-a\end{vmatrix}=(x+(n-1)a)(x-a)^{n-1}.$$
+将第二行、第三行直至第 $n$ 行都加到第一行上，$|A|$ 的值不变，提出公因子 $x+(n-1)a$；再将第一行乘以 $-a$ 分别加到第二行、第三行直至第 $n$ 行上，得$$|A|=(x+(n-1)a)\begin{vmatrix} 1 & 1 & 1 & \cdots & 1\\ 0 & x-a & 0 & \cdots & 0\\ 0 & 0 & x-a & \cdots & 0\\ \vdots & \vdots & \vdots & & \vdots\\ 0 & 0 & 0 & \cdots & x-a \end{vmatrix}=(x+(n-1)a)(x-a)^{n-1}.$$
 
 **例 1.5.10 (四阶轮换行列式)** @35
 
-计算$$|A|=\begin{vmatrix}x & y & z & w\\y & x & w & z\\z & w & x & y\\w & z & y & x\end{vmatrix}.$$
+计算$$|A|=\begin{vmatrix} x & y & z & w\\ y & x & w & z\\ z & w & x & y\\ w & z & y & x \end{vmatrix}.$$
 
 将第二、三、四列都加到第一列上，提出公因子 $x+y+z+w$；再将第一行乘以 $-1$ 分别加到第二、三、四行上；然后将第二列分别加到第一列和第三列上，得$$|A|=(x+y+z+w)(x+y-z-w)(x+z-y-w)(x+w-y-z).$$
 
@@ -2026,7 +2026,7 @@ Descartes 平面上绕原点的旋转，当旋转角 $\theta\neq k\pi$（$k$ 为
 
 **定理 4.5.1 (不变子空间与分块矩阵)** @205
 
-设 $U$ 是 $V$ 上线性变换 $\varphi$ 的不变子空间，且设 $U$ 的基为 $\{e_1,e_2,\cdots,e_r\}$。将 $\{e_1,e_2,\cdots,e_r\}$ 扩充为 $V$ 的一组基 $\{e_1,e_2,\cdots,e_r,e_{r+1},\cdots,e_n\}$，则 $\varphi$ 在这组基下的表示矩阵具有下列形状：$$\begin{pmatrix}a_{11} & \cdots & a_{r1} & a_{r+1,1} & \cdots & a_{n1}\\\vdots & & \vdots & \vdots & & \vdots\\a_{1r} & \cdots & a_{rr} & a_{r+1,r} & \cdots & a_{nr}\\0 & \cdots & 0 & a_{r+1,r+1} & \cdots & a_{n,r+1}\\\vdots & & \vdots & \vdots & & \vdots\\0 & \cdots & 0 & a_{r+1,n} & \cdots & a_{nn}\end{pmatrix}. \tag{4.5.1}$$
+设 $U$ 是 $V$ 上线性变换 $\varphi$ 的不变子空间，且设 $U$ 的基为 $\{e_1,e_2,\cdots,e_r\}$。将 $\{e_1,e_2,\cdots,e_r\}$ 扩充为 $V$ 的一组基 $\{e_1,e_2,\cdots,e_r,e_{r+1},\cdots,e_n\}$，则 $\varphi$ 在这组基下的表示矩阵具有下列形状：$$\begin{pmatrix} a_{11} & \cdots & a_{r1} & a_{r+1,1} & \cdots & a_{n1}\\ \vdots & & \vdots & \vdots & & \vdots\\ a_{1r} & \cdots & a_{rr} & a_{r+1,r} & \cdots & a_{nr}\\ 0 & \cdots & 0 & a_{r+1,r+1} & \cdots & a_{n,r+1}\\ \vdots & & \vdots & \vdots & & \vdots\\ 0 & \cdots & 0 & a_{r+1,n} & \cdots & a_{nn} \end{pmatrix}. \tag{4.5.1}$$
 
 **注 (定理 4.5.1 的逆命题)** @206
 
@@ -2038,7 +2038,7 @@ Descartes 平面上绕原点的旋转，当旋转角 $\theta\neq k\pi$（$k$ 为
 
 **注 (推广到多个不变子空间的直和)** @206
 
-推论 4.5.1 还可进一步推广。设 $V=V_1\oplus V_2\oplus\cdots\oplus V_m$，其中每个 $V_i$ 都是线性变换 $\varphi$ 的不变子空间，那么在 $V$ 中存在一组基（这组基可由 $V_i$ 的基合并而成），使 $\varphi$ 在这组基下的表示矩阵为分块对角阵：$$\begin{pmatrix}A_1 & & & \\& A_2 & & \\& & \ddots & \\& & & A_m\end{pmatrix},$$其中 $A_i$ 是 $\varphi|_{V_i}$ 的表示矩阵，它是 $r_i$ 阶方阵，$r_i=\dim V_i$。
+推论 4.5.1 还可进一步推广。设 $V=V_1\oplus V_2\oplus\cdots\oplus V_m$，其中每个 $V_i$ 都是线性变换 $\varphi$ 的不变子空间，那么在 $V$ 中存在一组基（这组基可由 $V_i$ 的基合并而成），使 $\varphi$ 在这组基下的表示矩阵为分块对角阵：$$\begin{pmatrix} A_1 & & & \\ & A_2 & & \\ & & \ddots & \\ & & & A_m \end{pmatrix},$$其中 $A_i$ 是 $\varphi|_{V_i}$ 的表示矩阵，它是 $r_i$ 阶方阵，$r_i=\dim V_i$。
 
 **注 (一维不变子空间与对角形)** @206
 
@@ -2046,7 +2046,7 @@ Descartes 平面上绕原点的旋转，当旋转角 $\theta\neq k\pi$（$k$ 为
 
 **例 4.5.4 (验证子空间不变性)** @207
 
-设 $V$ 是数域 $\mathbb{K}$ 上的三维空间，$\{e_1,e_2,e_3\}$ 是 $V$ 的基，$\varphi$ 是 $V$ 上的线性变换，它在这组基下的表示矩阵为$$\begin{pmatrix}3 & 1 & -1\\2 & 2 & -1\\2 & 2 & 0\end{pmatrix}.$$求证：由向量 $\{e_3,\ e_1+e_2+2e_3\}$ 生成的子空间 $U$ 是 $\varphi$ 的不变子空间。
+设 $V$ 是数域 $\mathbb{K}$ 上的三维空间，$\{e_1,e_2,e_3\}$ 是 $V$ 的基，$\varphi$ 是 $V$ 上的线性变换，它在这组基下的表示矩阵为$$\begin{pmatrix} 3 & 1 & -1\\ 2 & 2 & -1\\ 2 & 2 & 0 \end{pmatrix}.$$求证：由向量 $\{e_3,\ e_1+e_2+2e_3\}$ 生成的子空间 $U$ 是 $\varphi$ 的不变子空间。
 
 ## 第5章 多项式
 
@@ -2138,7 +2138,7 @@ $\mathbb{K}[x]$ 中元素的乘积适合下列法则：
 
 设 $f(x)=3x^{4}-4x^{3}+5x-1$，$g(x)=x^{2}-x+1$，试求 (5.2.1) 式中的 $q(x)$ 及 $r(x)$。
 
-**解** 作除法算式：$$\begin{array}{r@{\qquad}l}3x^{4}-4x^{3}+5x-1 & \big|\ x^{2}-x+1\\3x^{4}-3x^{3}+3x^{2} & \big|\ 3x^{2}-x-4\\\hline-x^{3}-3x^{2}+5x-1 & \\-x^{3}+x^{2}-x & \\\hline-4x^{2}+6x-1 & \\-4x^{2}+4x-4 & \\\hline2x+3 &\end{array}$$因此 $q(x)=3x^{2}-x-4$，$r(x)=2x+3$。
+**解** 作除法算式：$$\begin{array}{rl} 3x^{4}-4x^{3}+5x-1 & \big|\ x^{2}-x+1\\ 3x^{4}-3x^{3}+3x^{2} & \big|\ 3x^{2}-x-4\\ \hline -x^{3}-3x^{2}+5x-1 & \\ -x^{3}+x^{2}-x & \\ \hline -4x^{2}+6x-1 & \\ -4x^{2}+4x-4 & \\ \hline 2x+3 & \end{array}$$因此 $q(x)=3x^{2}-x-4$，$r(x)=2x+3$。
 
 ### 5.3 最大公因式（p219–225）
 
@@ -2268,7 +2268,7 @@ $\mathbb{K}[x]$ 中元素的乘积适合下列法则：
 
 若 $f(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0$，则 $f(x)$ 的导数或微商为下列多项式：$$f'(x)=na_nx^{n-1}+(n-1)a_{n-1}x^{n-2}+\cdots+a_1.\tag{5.4.3}$$
 
-事实上，我们也可以直接定义 (5.4.3) 式为多项式 $f(x)$ 的**形式导数**而不借助数学分析中的定义。按此定义不难验证下列公式：$$\begin{aligned}(1)\ &(f(x)+g(x))'=f'(x)+g'(x);\\(2)\ &(cf(x))'=cf'(x);\\(3)\ &(f(x)g(x))'=f'(x)g(x)+f(x)g'(x);\\(4)\ &(f(x)^m)'=mf(x)^{m-1}f'(x).\end{aligned}$$
+事实上，我们也可以直接定义 (5.4.3) 式为多项式 $f(x)$ 的**形式导数**而不借助数学分析中的定义。按此定义不难验证下列公式：$$\begin{aligned} (1)\ &(f(x)+g(x))'=f'(x)+g'(x);\\ (2)\ &(cf(x))'=cf'(x);\\ (3)\ &(f(x)g(x))'=f'(x)g(x)+f(x)g'(x);\\ (4)\ &(f(x)^m)'=mf(x)^{m-1}f'(x). \end{aligned}$$
 
 **定理 5.4.3 (无重因式的充要条件)** @229
 
@@ -2338,7 +2338,7 @@ $\mathbb{K}[x]$ 中元素的乘积适合下列法则：
 
 **定理 5.6.2 (Vieta 定理)** @236
 
-若数域 $\mathbb{K}$ 上的一元 $n$ 次多项式$$f(x)=a_0x^n+a_1x^{n-1}+a_2x^{n-2}+\cdots+a_n$$在 $\mathbb{K}$ 中有 $n$ 个根 $x_1,x_2,\cdots,x_n$，则$$\begin{aligned}\sum_{i=1}^{n}x_i&=-\frac{a_1}{a_0},\\\sum_{1\le i<j\le n}x_ix_j&=\frac{a_2}{a_0},\\\sum_{1\le i<j<k\le n}x_ix_jx_k&=-\frac{a_3}{a_0},\\&\cdots\cdots\cdots\cdots\\x_1x_2\cdots x_n&=(-1)^n\frac{a_n}{a_0}.\end{aligned}$$
+若数域 $\mathbb{K}$ 上的一元 $n$ 次多项式$$f(x)=a_0x^n+a_1x^{n-1}+a_2x^{n-2}+\cdots+a_n$$在 $\mathbb{K}$ 中有 $n$ 个根 $x_1,x_2,\cdots,x_n$，则$$\begin{aligned} \sum_{i=1}^{n}x_i&=-\frac{a_1}{a_0},\\ \sum_{1\le i<j\le n}x_ix_j&=\frac{a_2}{a_0},\\ \sum_{1\le i<j<k\le n}x_ix_jx_k&=-\frac{a_3}{a_0},\\ &\cdots\cdots\cdots\cdots\\ x_1x_2\cdots x_n&=(-1)^n\frac{a_n}{a_0}. \end{aligned}$$
 
 **注 (三次方程的 Cardano 公式)** @236
 
@@ -2348,7 +2348,7 @@ $\mathbb{K}[x]$ 中元素的乘积适合下列法则：
 
 若 $q=0$，则 $x_1=0$，$x_2=\sqrt{-p}$，$x_3=-\sqrt{-p}$ 便是方程的根。若 $p=0$，则 $x_1=\sqrt[3]{-q}$，$x_2=\sqrt[3]{-q}\omega$，$x_3=\sqrt[3]{-q}\omega^2$ 就是方程的根，其中$$\omega=-\frac{1}{2}+\frac{\sqrt{3}}{2}\mathrm{i}.$$因此我们只需讨论 $p\ne 0$，$q\ne 0$ 的情形。
 
-引进新的未知数 $x=u+v$，则$$x^3=u^3+v^3+3uv(u+v)=u^3+v^3+3uvx,$$或$$x^3-3uvx-(u^3+v^3)=0.$$与 (5.6.4) 式比较得$$\begin{cases}uv=-\frac{1}{3}p,\\ u^3+v^3=-q.\end{cases}\tag{5.6.5}$$如可求出 (5.6.5) 式中的 $u,v$ 即可求出 $x$，但 (5.6.5) 式又可变为$$\begin{cases}u^3v^3=-\frac{1}{27}p^3,\\ u^3+v^3=-q.\end{cases}\tag{5.6.6}$$由 Vieta 定理可知 $u^3,v^3$ 是下列二次方程的两个根：$$y^2+qy-\frac{p^3}{27}=0.$$于是$$u^3=-\frac{q}{2}+\sqrt{\frac{q^2}{4}+\frac{p^3}{27}},\quad v^3=-\frac{q}{2}-\sqrt{\frac{q^2}{4}+\frac{p^3}{27}}.$$令$$\Delta=\frac{q^2}{4}+\frac{p^3}{27},$$注意 $u,v$ 必须适合 (5.6.5) 式，故可得方程 (5.6.4) 的根为$$\begin{cases}x_1=\sqrt[3]{-\frac{q}{2}+\sqrt{\Delta}}+\sqrt[3]{-\frac{q}{2}-\sqrt{\Delta}},\\x_2=\omega\sqrt[3]{-\frac{q}{2}+\sqrt{\Delta}}+\omega^2\sqrt[3]{-\frac{q}{2}-\sqrt{\Delta}},\\x_3=\omega^2\sqrt[3]{-\frac{q}{2}+\sqrt{\Delta}}+\omega\sqrt[3]{-\frac{q}{2}-\sqrt{\Delta}}.\end{cases}\tag{5.6.7}$$
+引进新的未知数 $x=u+v$，则$$x^3=u^3+v^3+3uv(u+v)=u^3+v^3+3uvx,$$或$$x^3-3uvx-(u^3+v^3)=0.$$与 (5.6.4) 式比较得$$\begin{cases}uv=-\frac{1}{3}p,\\ u^3+v^3=-q.\end{cases}\tag{5.6.5}$$如可求出 (5.6.5) 式中的 $u,v$ 即可求出 $x$，但 (5.6.5) 式又可变为$$\begin{cases}u^3v^3=-\frac{1}{27}p^3,\\ u^3+v^3=-q.\end{cases}\tag{5.6.6}$$由 Vieta 定理可知 $u^3,v^3$ 是下列二次方程的两个根：$$y^2+qy-\frac{p^3}{27}=0.$$于是$$u^3=-\frac{q}{2}+\sqrt{\frac{q^2}{4}+\frac{p^3}{27}},\quad v^3=-\frac{q}{2}-\sqrt{\frac{q^2}{4}+\frac{p^3}{27}}.$$令$$\Delta=\frac{q^2}{4}+\frac{p^3}{27},$$注意 $u,v$ 必须适合 (5.6.5) 式，故可得方程 (5.6.4) 的根为$$\begin{cases} x_1=\sqrt[3]{-\frac{q}{2}+\sqrt{\Delta}}+\sqrt[3]{-\frac{q}{2}-\sqrt{\Delta}},\\ x_2=\omega\sqrt[3]{-\frac{q}{2}+\sqrt{\Delta}}+\omega^2\sqrt[3]{-\frac{q}{2}-\sqrt{\Delta}},\\ x_3=\omega^2\sqrt[3]{-\frac{q}{2}+\sqrt{\Delta}}+\omega\sqrt[3]{-\frac{q}{2}-\sqrt{\Delta}}. \end{cases}\tag{5.6.7}$$
 
 **注 (四次方程的 Ferrari 解法)** @238
 
@@ -2546,7 +2546,7 @@ $\mathbb{K}[x]$ 中元素的乘积适合下列法则：
 
 **定义 5.10.1 (结式与 Sylvester 行列式)** @256
 
-设$$f(x)=a_0x^n+a_1x^{n-1}+\cdots+a_n,$$$$g(x)=b_0x^m+b_1x^{m-1}+\cdots+b_m,$$定义下列 $m+n$ 阶行列式：$$R(f,g)=\begin{vmatrix}a_0&a_1&a_2&\cdots&a_n&0&\cdots&0\\0&a_0&a_1&\cdots&a_{n-1}&a_n&\cdots&0\\0&0&a_0&\cdots&a_{n-2}&a_{n-1}&\cdots&0\\\vdots&\vdots&\vdots&&\vdots&\vdots&&\vdots\\0&0&\cdots&0&a_0&\cdots&\cdots&a_n\\b_0&b_1&b_2&\cdots&b_m&0&\cdots&0\\0&b_0&b_1&\cdots&b_{m-1}&b_m&\cdots&0\\\vdots&\vdots&\vdots&&\vdots&\vdots&&\vdots\\0&\cdots&0&b_0&b_1&\cdots&\cdots&b_m\end{vmatrix}$$为 $f(x)$ 与 $g(x)$ 的**结式**，或称为 **Sylvester 行列式**。
+设$$f(x)=a_0x^n+a_1x^{n-1}+\cdots+a_n,$$$$g(x)=b_0x^m+b_1x^{m-1}+\cdots+b_m,$$定义下列 $m+n$ 阶行列式：$$R(f,g)=\begin{vmatrix} a_0&a_1&a_2&\cdots&a_n&0&\cdots&0\\ 0&a_0&a_1&\cdots&a_{n-1}&a_n&\cdots&0\\ 0&0&a_0&\cdots&a_{n-2}&a_{n-1}&\cdots&0\\ \vdots&\vdots&\vdots&&\vdots&\vdots&&\vdots\\ 0&0&\cdots&0&a_0&\cdots&\cdots&a_n\\ b_0&b_1&b_2&\cdots&b_m&0&\cdots&0\\ 0&b_0&b_1&\cdots&b_{m-1}&b_m&\cdots&0\\ \vdots&\vdots&\vdots&&\vdots&\vdots&&\vdots\\ 0&\cdots&0&b_0&b_1&\cdots&\cdots&b_m \end{vmatrix}$$为 $f(x)$ 与 $g(x)$ 的**结式**，或称为 **Sylvester 行列式**。
 
 **定理 5.10.1 (有公根的充要条件)** @257
 
@@ -2582,7 +2582,7 @@ $\mathbb{K}[x]$ 中元素的乘积适合下列法则：
 
 **注 (结式消元法解二元高次方程组)** @261
 
-作为结式的应用，考虑二元高次方程组$$\begin{cases}f(x,y)=0,\\g(x,y)=0\end{cases}\tag{5.10.4}$$其中 $f(x,y),g(x,y)$ 是两个二元多项式。将 $f(x,y),g(x,y)$ 整理为关于 $x$ 的多项式：$$f(x,y)=a_0(y)x^n+a_1(y)x^{n-1}+\cdots+a_n(y),\tag{5.10.5}$$$$g(x,y)=b_0(y)x^m+b_1(y)x^{m-1}+\cdots+b_m(y),\tag{5.10.6}$$其中 $a_i(y),b_j(y)$ 都是 $y$ 的多项式且 $a_0(y)\neq 0$，$b_0(y)\neq 0$。令$$R_x(f,g)=\begin{vmatrix}a_0(y)&a_1(y)&a_2(y)&\cdots&a_n(y)&0&\cdots&0\\0&a_0(y)&a_1(y)&\cdots&a_{n-1}(y)&a_n(y)&\cdots&0\\0&0&a_0(y)&\cdots&a_{n-2}(y)&a_{n-1}(y)&\cdots&0\\\vdots&\vdots&\vdots&&\vdots&\vdots&&\vdots\\0&0&\cdots&0&a_0(y)&\cdots&\cdots&a_n(y)\\b_0(y)&b_1(y)&b_2(y)&\cdots&b_m(y)&0&\cdots&0\\0&b_0(y)&b_1(y)&\cdots&b_{m-1}(y)&b_m(y)&\cdots&0\\\vdots&\vdots&\vdots&&\vdots&\vdots&&\vdots\\0&\cdots&0&b_0(y)&b_1(y)&\cdots&\cdots&b_m(y)\end{vmatrix},$$这是一个关于 $y$ 的多项式。如果 $(\alpha,\beta)$ 是方程组 (5.10.4) 的解，则 $\alpha$ 是 $f(x,\beta),g(x,\beta)$ 的公根，从而 $\beta$ 是 $R_x(f,g)$ 的根。因此可先求出 $R_x(f,g)=0$ 的所有根 $\beta_i$，再代入 (5.10.5) 式、(5.10.6) 式；这时，或 $a_0(\beta_i)=b_0(\beta_i)=0$，或存在 $\alpha_i$，使 $(\alpha_i,\beta_i)$ 是方程组 (5.10.4) 的解。由此即可求出方程组 (5.10.4) 的一切解。对于多于两个未知数的高次方程组，也可采用类似方法逐个“消去”未知数，从而求出方程组的解。
+作为结式的应用，考虑二元高次方程组$$\begin{cases}f(x,y)=0,\\g(x,y)=0\end{cases}\tag{5.10.4}$$其中 $f(x,y),g(x,y)$ 是两个二元多项式。将 $f(x,y),g(x,y)$ 整理为关于 $x$ 的多项式：$$f(x,y)=a_0(y)x^n+a_1(y)x^{n-1}+\cdots+a_n(y),\tag{5.10.5}$$$$g(x,y)=b_0(y)x^m+b_1(y)x^{m-1}+\cdots+b_m(y),\tag{5.10.6}$$其中 $a_i(y),b_j(y)$ 都是 $y$ 的多项式且 $a_0(y)\neq 0$，$b_0(y)\neq 0$。令$$R_x(f,g)=\begin{vmatrix} a_0(y)&a_1(y)&a_2(y)&\cdots&a_n(y)&0&\cdots&0\\ 0&a_0(y)&a_1(y)&\cdots&a_{n-1}(y)&a_n(y)&\cdots&0\\ 0&0&a_0(y)&\cdots&a_{n-2}(y)&a_{n-1}(y)&\cdots&0\\ \vdots&\vdots&\vdots&&\vdots&\vdots&&\vdots\\ 0&0&\cdots&0&a_0(y)&\cdots&\cdots&a_n(y)\\ b_0(y)&b_1(y)&b_2(y)&\cdots&b_m(y)&0&\cdots&0\\ 0&b_0(y)&b_1(y)&\cdots&b_{m-1}(y)&b_m(y)&\cdots&0\\ \vdots&\vdots&\vdots&&\vdots&\vdots&&\vdots\\ 0&\cdots&0&b_0(y)&b_1(y)&\cdots&\cdots&b_m(y) \end{vmatrix},$$这是一个关于 $y$ 的多项式。如果 $(\alpha,\beta)$ 是方程组 (5.10.4) 的解，则 $\alpha$ 是 $f(x,\beta),g(x,\beta)$ 的公根，从而 $\beta$ 是 $R_x(f,g)$ 的根。因此可先求出 $R_x(f,g)=0$ 的所有根 $\beta_i$，再代入 (5.10.5) 式、(5.10.6) 式；这时，或 $a_0(\beta_i)=b_0(\beta_i)=0$，或存在 $\alpha_i$，使 $(\alpha_i,\beta_i)$ 是方程组 (5.10.4) 的解。由此即可求出方程组 (5.10.4) 的一切解。对于多于两个未知数的高次方程组，也可采用类似方法逐个“消去”未知数，从而求出方程组的解。
 
 ## 第6章 特征值
 
@@ -2590,7 +2590,7 @@ $\mathbb{K}[x]$ 中元素的乘积适合下列法则：
 
 **注 (化矩阵为对角形的问题)** @267
 
-本章主要研究有限维线性空间上线性变换的化简问题：给定线性空间 $V$ 上的线性变换 $\varphi$，能否找到 $V$ 的一组基 $\{e_1,e_2,\cdots,e_n\}$，使 $\varphi$ 在这组基下的表示矩阵为对角阵$$\begin{pmatrix}a_1 & & & \\& a_2 & & \\& & \ddots & \\& & & a_n\end{pmatrix}?$$这时若 $\alpha=k_1e_1+k_2e_2+\cdots+k_ne_n$，则$$\varphi(\alpha)=a_1k_1e_1+a_2k_2e_2+\cdots+a_nk_ne_n.$$例如，若 $a_1,a_2,\cdots,a_r$ 不为零，而 $a_{r+1}=\cdots=a_n=0$，则 $\varphi$ 的秩为 $r$，且 $\operatorname{Im}\varphi$ 就是由 $\{e_1,e_2,\cdots,e_r\}$ 生成的子空间，而 $\operatorname{Ker}\varphi$ 则是由 $\{e_{r+1},\cdots,e_n\}$ 生成的子空间。由第四章知道，同一线性变换在不同基下的表示矩阵是相似的，因此用矩阵的语言，问题就是：能否找到一类特别简单的矩阵，使任一矩阵都与这类矩阵中的某一个相似？比如，是否所有的矩阵都相似于对角阵？
+本章主要研究有限维线性空间上线性变换的化简问题：给定线性空间 $V$ 上的线性变换 $\varphi$，能否找到 $V$ 的一组基 $\{e_1,e_2,\cdots,e_n\}$，使 $\varphi$ 在这组基下的表示矩阵为对角阵$$\begin{pmatrix} a_1 & & & \\ & a_2 & & \\ & & \ddots & \\ & & & a_n \end{pmatrix}?$$这时若 $\alpha=k_1e_1+k_2e_2+\cdots+k_ne_n$，则$$\varphi(\alpha)=a_1k_1e_1+a_2k_2e_2+\cdots+a_nk_ne_n.$$例如，若 $a_1,a_2,\cdots,a_r$ 不为零，而 $a_{r+1}=\cdots=a_n=0$，则 $\varphi$ 的秩为 $r$，且 $\operatorname{Im}\varphi$ 就是由 $\{e_1,e_2,\cdots,e_r\}$ 生成的子空间，而 $\operatorname{Ker}\varphi$ 则是由 $\{e_{r+1},\cdots,e_n\}$ 生成的子空间。由第四章知道，同一线性变换在不同基下的表示矩阵是相似的，因此用矩阵的语言，问题就是：能否找到一类特别简单的矩阵，使任一矩阵都与这类矩阵中的某一个相似？比如，是否所有的矩阵都相似于对角阵？
 
 若线性空间 $V$ 可分解为$$V=V_1\oplus V_2\oplus\cdots\oplus V_m, \tag{6.1.1}$$其中每个 $V_i$ 都是线性变换 $\varphi$ 的不变子空间，那么 $\varphi$ 可以表示为分块对角阵。$V_i$ 越小越好，最小的非零子空间是一维子空间。若 $V_i$ 是一维子空间，$x$ 是其中的任一非零向量，$\varphi$ 在 $V_i$ 上的作用相当于一个数乘，于是存在 $\lambda_0\in\mathbb{K}$，使$$\varphi(x)=\lambda_0x.$$
 
@@ -2610,7 +2610,7 @@ $\mathbb{K}[x]$ 中元素的乘积适合下列法则：
 
 **注 (特征值的求法)** @268
 
-从 $(6.1.4)$ 式可以看出，要使 $\alpha$ 非零，必须 $|\lambda_0I_n-A|=0$。反过来，若 $\lambda_0\in\mathbb{K}$ 且 $|\lambda_0I_n-A|=0$，则 $(6.1.4)$ 式有非零解 $\alpha$。因此寻找矩阵 $A$ 的特征值等价于寻找行列式 $|\lambda I_n-A|=0$ 时 $\lambda$ 的值。设 $A=(a_{ij})$，则$$|\lambda I_n-A|=\begin{vmatrix}\lambda-a_{11} & -a_{12} & \cdots & -a_{1n}\\-a_{21} & \lambda-a_{22} & \cdots & -a_{2n}\\\vdots & \vdots & & \vdots\\-a_{n1} & -a_{n2} & \cdots & \lambda-a_{nn}\end{vmatrix}, \tag{6.1.5}$$是一个以 $\lambda$ 为未知数的 $n$ 次首一多项式。
+从 $(6.1.4)$ 式可以看出，要使 $\alpha$ 非零，必须 $|\lambda_0I_n-A|=0$。反过来，若 $\lambda_0\in\mathbb{K}$ 且 $|\lambda_0I_n-A|=0$，则 $(6.1.4)$ 式有非零解 $\alpha$。因此寻找矩阵 $A$ 的特征值等价于寻找行列式 $|\lambda I_n-A|=0$ 时 $\lambda$ 的值。设 $A=(a_{ij})$，则$$|\lambda I_n-A|=\begin{vmatrix} \lambda-a_{11} & -a_{12} & \cdots & -a_{1n}\\ -a_{21} & \lambda-a_{22} & \cdots & -a_{2n}\\ \vdots & \vdots & & \vdots\\ -a_{n1} & -a_{n2} & \cdots & \lambda-a_{nn} \end{vmatrix}, \tag{6.1.5}$$是一个以 $\lambda$ 为未知数的 $n$ 次首一多项式。
 
 **定义 6.1.3 (特征多项式)** @269
 
@@ -2634,15 +2634,15 @@ $\mathbb{K}[x]$ 中元素的乘积适合下列法则：
 
 **例 6.1.1 (上三角阵的特征值)** @270
 
-设 $A$ 是一个上三角阵：$$A=\begin{pmatrix}a_{11} & a_{12} & \cdots & a_{1n}\\0 & a_{22} & \cdots & a_{2n}\\\vdots & \vdots & & \vdots\\0 & 0 & \cdots & a_{nn}\end{pmatrix}.$$求 $A$ 的特征值。
+设 $A$ 是一个上三角阵：$$A=\begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n}\\ 0 & a_{22} & \cdots & a_{2n}\\ \vdots & \vdots & & \vdots\\ 0 & 0 & \cdots & a_{nn} \end{pmatrix}.$$求 $A$ 的特征值。
 
 **解** $|\lambda I_n-A|$ 是一个上三角行列式，因此$$|\lambda I_n-A|=(\lambda-a_{11})(\lambda-a_{22})\cdots(\lambda-a_{nn}),$$即 $A$ 的特征值等于 $A$ 主对角线上的元素 $a_{11},a_{22},\cdots,a_{nn}$。对下三角阵也有类似的结论。
 
 **例 6.1.2 (三阶矩阵的特征向量)** @270
 
-求下列三阶矩阵的特征值与特征向量：$$A=\begin{pmatrix}3 & 1 & -1\\2 & 2 & -1\\2 & 2 & 0\end{pmatrix}.$$
+求下列三阶矩阵的特征值与特征向量：$$A=\begin{pmatrix} 3 & 1 & -1\\ 2 & 2 & -1\\ 2 & 2 & 0 \end{pmatrix}.$$
 
-**解** $A$ 的特征多项式为$$\begin{vmatrix}\lambda-3 & -1 & 1\\-2 & \lambda-2 & 1\\-2 & -2 & \lambda\end{vmatrix}=\lambda^3-5\lambda^2+8\lambda-4=(\lambda-1)(\lambda-2)^2,$$因此 $A$ 的特征值为 $1,2$。设特征向量 $x=(x_1,x_2,x_3)'$，将 $\lambda=1$ 代入 $(\lambda I_3-A)x=0$ 得$$\begin{cases}-2x_1-x_2+x_3=0,\\-2x_1-x_2+x_3=0,\\-2x_1-2x_2+x_3=0.\end{cases}$$这个方程组系数矩阵的秩为 $2$，故只有一个线性无关的解，可取为$$\xi_1=\begin{pmatrix}1\\0\\2\end{pmatrix}.$$同理将 $\lambda=2$ 代入 $(\lambda I_3-A)x=0$，解得（也只有一个线性无关的解）$$\xi_2=\begin{pmatrix}1\\1\\2\end{pmatrix}.$$故关于特征值 $1$ 的特征向量为 $c_1\xi_1$，关于特征值 $2$ 的特征向量为 $c_2\xi_2$，其中 $c_1,c_2$ 为 $\mathbb{K}$ 中任意的非零数。
+**解** $A$ 的特征多项式为$$\begin{vmatrix} \lambda-3 & -1 & 1\\ -2 & \lambda-2 & 1\\ -2 & -2 & \lambda \end{vmatrix}=\lambda^3-5\lambda^2+8\lambda-4=(\lambda-1)(\lambda-2)^2,$$因此 $A$ 的特征值为 $1,2$。设特征向量 $x=(x_1,x_2,x_3)'$，将 $\lambda=1$ 代入 $(\lambda I_3-A)x=0$ 得$$\begin{cases} -2x_1-x_2+x_3=0,\\ -2x_1-x_2+x_3=0,\\ -2x_1-2x_2+x_3=0. \end{cases}$$这个方程组系数矩阵的秩为 $2$，故只有一个线性无关的解，可取为$$\xi_1=\begin{pmatrix}1\\0\\2\end{pmatrix}.$$同理将 $\lambda=2$ 代入 $(\lambda I_3-A)x=0$，解得（也只有一个线性无关的解）$$\xi_2=\begin{pmatrix}1\\1\\2\end{pmatrix}.$$故关于特征值 $1$ 的特征向量为 $c_1\xi_1$，关于特征值 $2$ 的特征向量为 $c_2\xi_2$，其中 $c_1,c_2$ 为 $\mathbb{K}$ 中任意的非零数。
 
 **例 6.1.3 (旋转矩阵的特征值)** @271
 
@@ -2868,7 +2868,7 @@ $n$ 阶矩阵 $A$ 的极小多项式和特征多项式有相同的根（不计�
 
 相似关系比相抵关系要更复杂一些，它的全系不变量也比较复杂。我们在上一章中已经知道，矩阵的特征多项式（从而特征值）是相似不变量，但它并不是全系不变量，因为我们很容易举出例子来证明这一点。比如下面两个矩阵的特征多项式相同但不相似:$$A=\begin{pmatrix}0&1\\0&0\end{pmatrix},\quad B=\begin{pmatrix}0&0\\0&0\end{pmatrix}.$$$A$ 的特征多项式与 $B$ 的特征多项式都是 $\lambda^2$，但 $A$ 与 $B$ 绝不相似。
 
-人们经过研究终于发现，两个矩阵 $A$ 与 $B$ 之间的相似和 $\lambda I_n-A$ 与 $\lambda I_n-B$ 的相抵有着密切的联系。注意，$\lambda I_n-A$ 是这样形式的矩阵:$$\begin{pmatrix}\lambda-a_{11}&-a_{12}&\cdots&-a_{1n}\\-a_{21}&\lambda-a_{22}&\cdots&-a_{2n}\\\vdots&\vdots&&\vdots\\-a_{n1}&-a_{n2}&\cdots&\lambda-a_{nn}\end{pmatrix},$$其中的元素含有未定元 $\lambda$。一般地，下列形式的矩阵:$$A(\lambda)=\begin{pmatrix}a_{11}(\lambda)&a_{12}(\lambda)&\cdots&a_{1n}(\lambda)\\a_{21}(\lambda)&a_{22}(\lambda)&\cdots&a_{2n}(\lambda)\\\vdots&\vdots&&\vdots\\a_{m1}(\lambda)&a_{m2}(\lambda)&\cdots&a_{mn}(\lambda)\end{pmatrix},$$其中 $a_{ij}(\lambda)$ 是以 $\lambda$ 为未定元的数域 $\mathbb{K}$ 上的多项式，称为**多项式矩阵**，或 **$\lambda$-矩阵**。$\lambda$-矩阵的加法、数乘及乘法与数域上的矩阵运算一样，只需在运算过程中将数的运算代之以多项式运算即可。
+人们经过研究终于发现，两个矩阵 $A$ 与 $B$ 之间的相似和 $\lambda I_n-A$ 与 $\lambda I_n-B$ 的相抵有着密切的联系。注意，$\lambda I_n-A$ 是这样形式的矩阵:$$\begin{pmatrix} \lambda-a_{11}&-a_{12}&\cdots&-a_{1n}\\ -a_{21}&\lambda-a_{22}&\cdots&-a_{2n}\\ \vdots&\vdots&&\vdots\\ -a_{n1}&-a_{n2}&\cdots&\lambda-a_{nn} \end{pmatrix},$$其中的元素含有未定元 $\lambda$。一般地，下列形式的矩阵:$$A(\lambda)=\begin{pmatrix} a_{11}(\lambda)&a_{12}(\lambda)&\cdots&a_{1n}(\lambda)\\ a_{21}(\lambda)&a_{22}(\lambda)&\cdots&a_{2n}(\lambda)\\ \vdots&\vdots&&\vdots\\ a_{m1}(\lambda)&a_{m2}(\lambda)&\cdots&a_{mn}(\lambda) \end{pmatrix},$$其中 $a_{ij}(\lambda)$ 是以 $\lambda$ 为未定元的数域 $\mathbb{K}$ 上的多项式，称为**多项式矩阵**，或 **$\lambda$-矩阵**。$\lambda$-矩阵的加法、数乘及乘法与数域上的矩阵运算一样，只需在运算过程中将数的运算代之以多项式运算即可。
 
 **定义 7.1.1 (λ-矩阵的初等行变换)** @298
 
@@ -2904,7 +2904,7 @@ $n$ 阶矩阵 $A$ 的极小多项式和特征多项式有相同的根（不计�
 
 (3) 将 $n$ 阶单位阵的第 $i$ 行乘以多项式 $f(\lambda)$ 后加到第 $j$ 行上去得到的矩阵，记为 $T_{ij}(f(\lambda))$。
 
-注意，第一类与第二类初等 $\lambda$-矩阵与数域上的第一类与第二类初等矩阵没有什么区别。第三类初等 $\lambda$-矩阵的形状如下:$$T_{ij}(f(\lambda))=\begin{pmatrix}1&&&&\\&\ddots&&&\\&&1&&\\&&\vdots&\ddots&\\&&f(\lambda)&\cdots&1&\\&&&&&\ddots\\&&&&&&1\end{pmatrix}.$$
+注意，第一类与第二类初等 $\lambda$-矩阵与数域上的第一类与第二类初等矩阵没有什么区别。第三类初等 $\lambda$-矩阵的形状如下:$$T_{ij}(f(\lambda))=\begin{pmatrix} 1&&&&\\ &\ddots&&&\\ &&1&&\\ &&\vdots&\ddots&\\ &&f(\lambda)&\cdots&1&\\ &&&&&\ddots\\ &&&&&&1 \end{pmatrix}.$$
 
 **定理 7.1.1 (初等变换与初等矩阵)** @299
 
@@ -3028,7 +3028,7 @@ $n$ 阶 $\lambda$-矩阵 $A(\lambda)$ 的法式与初等变换的选取无关。
 
 **引理 7.4.1 (Frobenius 块的相伴矩阵)** @311
 
-设 $r$ 阶矩阵$$F=\begin{pmatrix}0&1&0&\cdots&0\\0&0&1&\cdots&0\\\vdots&\vdots&\vdots&&\vdots\\0&0&0&\cdots&1\\-a_r&-a_{r-1}&-a_{r-2}&\cdots&-a_1\end{pmatrix},$$则
+设 $r$ 阶矩阵$$F=\begin{pmatrix} 0&1&0&\cdots&0\\ 0&0&1&\cdots&0\\ \vdots&\vdots&\vdots&&\vdots\\ 0&0&0&\cdots&1\\ -a_r&-a_{r-1}&-a_{r-2}&\cdots&-a_1 \end{pmatrix},$$则
 
 (1) $F$ 的行列式因子为$$1,\cdots,1,f(\lambda),\tag{7.4.1}$$其中共有 $r-1$ 个 $1$，$f(\lambda)=\lambda^r+a_1\lambda^{r-1}+\cdots+a_r$，$F$ 的不变因子也由 (7.4.1) 式给出；
 
@@ -3040,7 +3040,7 @@ $n$ 阶 $\lambda$-矩阵 $A(\lambda)$ 的法式与初等变换的选取无关。
 
 **定理 7.4.1 (有理标准型的存在性)** @312
 
-设 $A$ 是数域 $\mathbb{K}$ 上的 $n$ 阶方阵，$A$ 的不变因子组为$$1,\cdots,1,d_1(\lambda),\cdots,d_k(\lambda),$$其中 $\deg d_i(\lambda)=m_i\ge 1$，则 $A$ 相似于下列分块对角阵:$$F=\begin{pmatrix}F_1&&&\\&F_2&&\\&&\ddots&\\&&&F_k\end{pmatrix},\tag{7.4.4}$$其中 $F_i$ 的阶等于 $m_i$，且 $F_i$ 是形如引理 7.4.1 中的矩阵，$F_i$ 的最后一行由 $d_i(\lambda)$ 的系数（除首项系数之外）的负值组成。
+设 $A$ 是数域 $\mathbb{K}$ 上的 $n$ 阶方阵，$A$ 的不变因子组为$$1,\cdots,1,d_1(\lambda),\cdots,d_k(\lambda),$$其中 $\deg d_i(\lambda)=m_i\ge 1$，则 $A$ 相似于下列分块对角阵:$$F=\begin{pmatrix} F_1&&&\\ &F_2&&\\ &&\ddots&\\ &&&F_k \end{pmatrix},\tag{7.4.4}$$其中 $F_i$ 的阶等于 $m_i$，且 $F_i$ 是形如引理 7.4.1 中的矩阵，$F_i$ 的最后一行由 $d_i(\lambda)$ 的系数（除首项系数之外）的负值组成。
 
 **定义 7.4.1 (有理标准型与 Frobenius 块)** @313
 
@@ -3048,7 +3048,7 @@ $n$ 阶 $\lambda$-矩阵 $A(\lambda)$ 的法式与初等变换的选取无关。
 
 **例 7.4.1 (由不变因子求有理标准型)** @313
 
-设 $6$ 阶矩阵 $A$ 的不变因子为$$1,1,1,\lambda-1,(\lambda-1)^2,(\lambda-1)^2(\lambda+1),$$则 $A$ 的有理标准型为$$\begin{pmatrix}1&&&&&\\&0&1&&&\\&-1&2&&&\\&&&0&1&0\\&&&0&0&1\\&&&-1&1&1\end{pmatrix}.$$
+设 $6$ 阶矩阵 $A$ 的不变因子为$$1,1,1,\lambda-1,(\lambda-1)^2,(\lambda-1)^2(\lambda+1),$$则 $A$ 的有理标准型为$$\begin{pmatrix} 1&&&&&\\ &0&1&&&\\ &-1&2&&&\\ &&&0&1&0\\ &&&0&0&1\\ &&&-1&1&1 \end{pmatrix}.$$
 
 在第六章第 3 节中我们定义了一个矩阵的极小多项式，用有理标准型可以清楚地表明极小多项式与不变因子的关系。
 
@@ -3058,7 +3058,7 @@ $n$ 阶 $\lambda$-矩阵 $A(\lambda)$ 的法式与初等变换的选取无关。
 
 **例 7.4.2 (特征多项式与极小多项式相同但不相似)** @314
 
-下面两个 $4$ 阶矩阵$$A=\begin{pmatrix}0&0&0&0\\0&0&0&0\\0&0&0&1\\0&0&0&0\end{pmatrix},\quadB=\begin{pmatrix}0&1&0&0\\0&0&0&0\\0&0&0&1\\0&0&0&0\end{pmatrix}$$的不变因子分别为 $A:1,\lambda,\lambda,\lambda^2$ 和 $B:1,1,\lambda^2,\lambda^2$。它们的特征多项式和极小多项式分别相等，但它们不相似。
+下面两个 $4$ 阶矩阵$$A=\begin{pmatrix} 0&0&0&0\\ 0&0&0&0\\ 0&0&0&1\\ 0&0&0&0 \end{pmatrix},\quad B=\begin{pmatrix} 0&1&0&0\\ 0&0&0&0\\ 0&0&0&1\\ 0&0&0&0 \end{pmatrix}$$的不变因子分别为 $A:1,\lambda,\lambda,\lambda^2$ 和 $B:1,1,\lambda^2,\lambda^2$。它们的特征多项式和极小多项式分别相等，但它们不相似。
 
 ### 7.5 初等因子（p315–317）
 
@@ -3068,7 +3068,7 @@ $n$ 阶 $\lambda$-矩阵 $A(\lambda)$ 的法式与初等变换的选取无关。
 
 设 $d_1(\lambda),d_2(\lambda),\cdots,d_k(\lambda)$ 是数域 $\mathbb{K}$ 上矩阵 $A$ 的非常数不变因子，在 $\mathbb{K}$ 上把 $d_i(\lambda)$ 分解成不可约因式之积：
 
-$$\begin{aligned}d_1(\lambda)&=p_1(\lambda)^{e_{11}}p_2(\lambda)^{e_{12}}\cdots p_t(\lambda)^{e_{1t}},\\d_2(\lambda)&=p_1(\lambda)^{e_{21}}p_2(\lambda)^{e_{22}}\cdots p_t(\lambda)^{e_{2t}},\\&\cdots\cdots\cdots\\d_k(\lambda)&=p_1(\lambda)^{e_{k1}}p_2(\lambda)^{e_{k2}}\cdots p_t(\lambda)^{e_{kt}},\end{aligned}\tag{7.5.1}$$
+$$ \begin{aligned} d_1(\lambda)&=p_1(\lambda)^{e_{11}}p_2(\lambda)^{e_{12}}\cdots p_t(\lambda)^{e_{1t}},\\ d_2(\lambda)&=p_1(\lambda)^{e_{21}}p_2(\lambda)^{e_{22}}\cdots p_t(\lambda)^{e_{2t}},\\ &\cdots\cdots\cdots\\ d_k(\lambda)&=p_1(\lambda)^{e_{k1}}p_2(\lambda)^{e_{k2}}\cdots p_t(\lambda)^{e_{kt}}, \end{aligned}\tag{7.5.1} $$
 
 其中 $e_{ij}$ 是非负整数（注意 $e_{ij}$ 可以为零！）．由于 $d_i(\lambda)\mid d_{i+1}(\lambda)$，因此
 
@@ -3082,11 +3082,11 @@ $$e_{1j}\le e_{2j}\le\cdots\le e_{kj},\quad j=1,2,\cdots,t.$$
 
 由因式分解的唯一性可知 $A$ 的初等因子被 $A$ 的不变因子唯一确定．反过来，若给定一组初等因子 $p_j(\lambda)^{e_{ij}}$，适当增加一些 $1$（表示为 $p_j(\lambda)^{e_{ij}}$，其中 $e_{ij}=0$），则可将这组初等因子按不可约因式的降幂排列如下：
 
-$$\begin{aligned}&p_1(\lambda)^{e_{k1}},p_1(\lambda)^{e_{k-1,1}},\cdots,p_1(\lambda)^{e_{11}},\\&p_2(\lambda)^{e_{k2}},p_2(\lambda)^{e_{k-1,2}},\cdots,p_2(\lambda)^{e_{12}},\\&\cdots\cdots\cdots\\&p_t(\lambda)^{e_{kt}},p_t(\lambda)^{e_{k-1,t}},\cdots,p_t(\lambda)^{e_{1t}},\end{aligned}\tag{7.5.2}$$
+$$ \begin{aligned} &p_1(\lambda)^{e_{k1}},p_1(\lambda)^{e_{k-1,1}},\cdots,p_1(\lambda)^{e_{11}},\\ &p_2(\lambda)^{e_{k2}},p_2(\lambda)^{e_{k-1,2}},\cdots,p_2(\lambda)^{e_{12}},\\ &\cdots\cdots\cdots\\ &p_t(\lambda)^{e_{kt}},p_t(\lambda)^{e_{k-1,t}},\cdots,p_t(\lambda)^{e_{1t}}, \end{aligned}\tag{7.5.2} $$
 
 令
 
-$$\begin{aligned}d_k(\lambda)&=p_1(\lambda)^{e_{k1}}p_2(\lambda)^{e_{k2}}\cdots p_t(\lambda)^{e_{kt}},\\d_{k-1}(\lambda)&=p_1(\lambda)^{e_{k-1,1}}p_2(\lambda)^{e_{k-1,2}}\cdots p_t(\lambda)^{e_{k-1,t}},\\&\cdots\cdots\cdots\\d_1(\lambda)&=p_1(\lambda)^{e_{11}}p_2(\lambda)^{e_{12}}\cdots p_t(\lambda)^{e_{1t}},\end{aligned}$$
+$$ \begin{aligned} d_k(\lambda)&=p_1(\lambda)^{e_{k1}}p_2(\lambda)^{e_{k2}}\cdots p_t(\lambda)^{e_{kt}},\\ d_{k-1}(\lambda)&=p_1(\lambda)^{e_{k-1,1}}p_2(\lambda)^{e_{k-1,2}}\cdots p_t(\lambda)^{e_{k-1,t}},\\ &\cdots\cdots\cdots\\ d_1(\lambda)&=p_1(\lambda)^{e_{11}}p_2(\lambda)^{e_{12}}\cdots p_t(\lambda)^{e_{1t}}, \end{aligned} $$
 
 则 $d_i(\lambda)\mid d_{i+1}(\lambda)\ (i=1,\cdots,k-1)$，且 $d_1(\lambda),\cdots,d_k(\lambda)$ 的初等因子组就如 (7.5.2) 式所示．因此，给定 $A$ 的初等因子组，我们可唯一地确定 $A$ 的不变因子组．这一事实表明，$A$ 的不变因子组与初等因子组在讨论矩阵相似关系中的作用是相同的．因此我们有下述定理．
 
@@ -3124,7 +3124,7 @@ $$\lambda-1,\ \lambda-1,\ (\lambda-1)^2,\ (\lambda+1)^2,\ (\lambda+1)^3,\ \lambd
 
 **解** 将上述多项式按不可约因式的降幂排列：
 
-$$\begin{aligned}&(\lambda-1)^2,\quad \lambda-1,\quad \lambda-1;\\&(\lambda+1)^3,\quad (\lambda+1)^2,\quad 1;\\&\lambda-2,\quad 1,\quad 1.\end{aligned}$$
+$$ \begin{aligned} &(\lambda-1)^2,\quad \lambda-1,\quad \lambda-1;\\ &(\lambda+1)^3,\quad (\lambda+1)^2,\quad 1;\\ &\lambda-2,\quad 1,\quad 1. \end{aligned} $$
 
 于是
 
@@ -3146,7 +3146,7 @@ $$1,\cdots,1,\lambda-1,(\lambda-1)(\lambda+1)^2,(\lambda-1)^2(\lambda+1)^3(\lamb
 
 $r$ 阶矩阵
 
-$$J=\begin{pmatrix}\lambda_0&1&&&\\&\lambda_0&1&&\\&&\ddots&\ddots&\\&&&\lambda_0&1\\&&&&\lambda_0\end{pmatrix}$$
+$$J=\begin{pmatrix} \lambda_0&1&&&\\ &\lambda_0&1&&\\ &&\ddots&\ddots&\\ &&&\lambda_0&1\\ &&&&\lambda_0 \end{pmatrix}$$
 
 的初等因子组为 $(\lambda-\lambda_0)^r$．
 
@@ -3166,7 +3166,7 @@ $$\operatorname{diag}\{f_1(\lambda),f_2(\lambda),\cdots,f_n(\lambda)\},\tag{7.6.
 
 设 $\lambda I-A$ 经过初等变换后化为下列对角阵：
 
-$$\begin{pmatrix}1&&&&\\&(\lambda-1)^2(\lambda+2)&&&\\&&\lambda+2&&\\&&&1&\\&&&&\lambda-1\end{pmatrix},$$
+$$\begin{pmatrix} 1&&&&\\ &(\lambda-1)^2(\lambda+2)&&&\\ &&\lambda+2&&\\ &&&1&\\ &&&&\lambda-1 \end{pmatrix},$$
 
 求 $A$ 的初等因子组．
 
@@ -3176,7 +3176,7 @@ $$\begin{pmatrix}1&&&&\\&(\lambda-1)^2(\lambda+2)&&&\\&&\lambda+2&&\\&&&1&\\&&&&
 
 设 $J$ 是分块对角阵：
 
-$$J=\begin{pmatrix}J_1&&&\\&J_2&&\\&&\ddots&\\&&&J_k\end{pmatrix},$$
+$$J=\begin{pmatrix} J_1&&&\\ &J_2&&\\ &&\ddots&\\ &&&J_k \end{pmatrix},$$
 
 其中每个 $J_i$ 都是形如引理 7.6.1 中的矩阵，$J_i$ 的初等因子组为 $(\lambda-\lambda_i)^{r_i}$，则 $J$ 的初等因子组为
 
@@ -3190,11 +3190,11 @@ $$(\lambda-\lambda_1)^{r_1},\ (\lambda-\lambda_2)^{r_2},\ \cdots,\ (\lambda-\lam
 
 则 $A$ 相似于分块对角阵：
 
-$$J=\begin{pmatrix}J_1&&&\\&J_2&&\\&&\ddots&\\&&&J_k\end{pmatrix},\tag{7.6.4}$$
+$$J=\begin{pmatrix} J_1&&&\\ &J_2&&\\ &&\ddots&\\ &&&J_k \end{pmatrix},\tag{7.6.4}$$
 
 其中 $J_i$ 为 $r_i$ 阶矩阵，且
 
-$$J_i=\begin{pmatrix}\lambda_i&1&&&\\&\lambda_i&1&&\\&&\ddots&\ddots&\\&&&\lambda_i&1\\&&&&\lambda_i\end{pmatrix}.\tag{7.6.5}$$
+$$J_i=\begin{pmatrix} \lambda_i&1&&&\\ &\lambda_i&1&&\\ &&\ddots&\ddots&\\ &&&\lambda_i&1\\ &&&&\lambda_i \end{pmatrix}.\tag{7.6.5}$$
 
 **定义 7.6.1 (Jordan 标准型与 Jordan 块)** @321
 
@@ -3246,7 +3246,7 @@ $$\lambda-1,\ (\lambda-1)^3,\ (\lambda+1)^2,\ \lambda-2,$$
 
 **解** $A$ 的 Jordan 标准型为
 
-$$J=\begin{pmatrix}1&&&&&&\\&1&1&0&&&\\&0&1&1&&&\\&0&0&1&&&\\&&&&-1&1&\\&&&&0&-1&\\&&&&&&2\end{pmatrix},$$
+$$J=\begin{pmatrix} 1&&&&&&\\ &1&1&0&&&\\ &0&1&1&&&\\ &0&0&1&&&\\ &&&&-1&1&\\ &&&&0&-1&\\ &&&&&&2 \end{pmatrix},$$
 
 $J$ 含有 $4$ 个 Jordan 块．
 
@@ -3254,7 +3254,7 @@ $J$ 含有 $4$ 个 Jordan 块．
 
 设复数域上的四维线性空间 $V$ 上的线性变换 $\varphi$ 在一组基 $\{e_1,e_2,e_3,e_4\}$ 下的表示矩阵为
 
-$$A=\begin{pmatrix}3&1&0&0\\-4&-1&0&0\\6&1&2&1\\-14&-5&-1&0\end{pmatrix},$$
+$$A=\begin{pmatrix} 3&1&0&0\\ -4&-1&0&0\\ 6&1&2&1\\ -14&-5&-1&0 \end{pmatrix},$$
 
 求 $V$ 的一组基，使 $\varphi$ 在这组基下的表示矩阵为 Jordan 标准型，并求出从原来的基到新基的过渡矩阵．
 
@@ -3264,7 +3264,7 @@ $$(\lambda-1)^2,\ (\lambda-1)^2.$$
 
 因此，$A$ 的 Jordan 标准型为
 
-$$J=\begin{pmatrix}1&1&&\\0&1&&\\&&1&1\\&&0&1\end{pmatrix}.$$
+$$J=\begin{pmatrix} 1&1&&\\ 0&1&&\\ &&1&1\\ &&0&1 \end{pmatrix}.$$
 
 设矩阵 $P$ 是从 $\{e_1,e_2,e_3,e_4\}$ 到新基的过渡矩阵，则
 
@@ -3276,19 +3276,19 @@ $$AP=PJ.\tag{7.6.6}$$
 
 设 $P=(\alpha_1,\alpha_2,\alpha_3,\alpha_4)$，其中 $\alpha_i$ 是四维列向量，代入 (7.6.6) 式得
 
-$$(A\alpha_1,A\alpha_2,A\alpha_3,A\alpha_4)=(\alpha_1,\alpha_2,\alpha_3,\alpha_4)\begin{pmatrix}1&1&&\\0&1&&\\&&1&1\\&&0&1\end{pmatrix},$$
+$$(A\alpha_1,A\alpha_2,A\alpha_3,A\alpha_4)=(\alpha_1,\alpha_2,\alpha_3,\alpha_4)\begin{pmatrix} 1&1&&\\ 0&1&&\\ &&1&1\\ &&0&1 \end{pmatrix},$$
 
 化成方程组为
 
-$$\begin{aligned}(A-I)\alpha_1&=0,\\(A-I)\alpha_2&=\alpha_1,\\(A-I)\alpha_3&=0,\\(A-I)\alpha_4&=\alpha_3.\end{aligned}$$
+$$\begin{aligned} (A-I)\alpha_1&=0,\\ (A-I)\alpha_2&=\alpha_1,\\ (A-I)\alpha_3&=0,\\ (A-I)\alpha_4&=\alpha_3. \end{aligned}$$
 
 由于 $\alpha_1,\alpha_3$ 都是 $A$ 的属于特征值 $1$ 的特征向量，故 $\alpha_2,\alpha_4$ 称为属于特征值 $1$ 的**广义特征向量**．我们可取方程组 $(A-I)x=0$ 的两个线性无关的解分别作为 $\alpha_1,\alpha_3$（注意不能取线性相关的两个解，因为 $P$ 是非异阵），然后再分别求出 $\alpha_2,\alpha_4$（注意诸 $\alpha_i$ 的解可能不唯一，只需取比较简单的一组解即可）．经计算可得
 
-$$\alpha_1=\begin{pmatrix}1\\-2\\1\\-5\end{pmatrix},\quad\alpha_2=\begin{pmatrix}0\\1\\0\\0\end{pmatrix},\quad\alpha_3=\begin{pmatrix}0\\0\\1\\-1\end{pmatrix},\quad\alpha_4=\begin{pmatrix}0\\0\\0\\1\end{pmatrix}.$$
+$$\alpha_1=\begin{pmatrix}1\\-2\\1\\-5\end{pmatrix},\quad \alpha_2=\begin{pmatrix}0\\1\\0\\0\end{pmatrix},\quad \alpha_3=\begin{pmatrix}0\\0\\1\\-1\end{pmatrix},\quad \alpha_4=\begin{pmatrix}0\\0\\0\\1\end{pmatrix}.$$
 
 于是
 
-$$P=\begin{pmatrix}1&0&0&0\\-2&1&0&0\\1&0&1&0\\-5&0&-1&1\end{pmatrix}.$$
+$$P=\begin{pmatrix} 1&0&0&0\\ -2&1&0&0\\ 1&0&1&0\\ -5&0&-1&1 \end{pmatrix}.$$
 
 因此新基为
 
@@ -3308,11 +3308,11 @@ $$(\lambda-\lambda_1)^{r_1},\ (\lambda-\lambda_2)^{r_2},\ \cdots,\ (\lambda-\lam
 
 定理 7.6.2 告诉我们，存在 $V$ 的一组基 $\{e_{11},e_{12},\cdots,e_{1r_1};e_{21},e_{22},\cdots,e_{2r_2};\cdots;e_{k1},e_{k2},\cdots,e_{kr_k}\}$，使得 $\varphi$ 在这组基下的表示矩阵为
 
-$$J=\begin{pmatrix}J_1&&&\\&J_2&&\\&&\ddots&\\&&&J_k\end{pmatrix}.$$
+$$ J=\begin{pmatrix} J_1&&&\\ &J_2&&\\ &&\ddots&\\ &&&J_k \end{pmatrix}. $$
 
 上式中每个 $J_i$ 是相应于初等因子 $(\lambda-\lambda_i)^{r_i}$ 的 Jordan 块，其阶正好为 $r_i$．令 $V_i$ 是由基向量 $e_{i1},e_{i2},\cdots,e_{ir_i}$ 生成的子空间，则
 
-$$\begin{aligned}\varphi(e_{i1})&=\lambda_ie_{i1},\\\varphi(e_{i2})&=e_{i1}+\lambda_ie_{i2},\\&\cdots\cdots\cdots\\\varphi(e_{ir_i})&=e_{i,r_i-1}+\lambda_ie_{ir_i}.\end{aligned}\tag{7.7.2}$$
+$$ \begin{aligned} \varphi(e_{i1})&=\lambda_ie_{i1},\\ \varphi(e_{i2})&=e_{i1}+\lambda_ie_{i2},\\ &\cdots\cdots\cdots\\ \varphi(e_{ir_i})&=e_{i,r_i-1}+\lambda_ie_{ir_i}. \end{aligned}\tag{7.7.2} $$
 
 这表明 $\varphi(V_i)\subseteq V_i$，即 $V_i\ (i=1,2,\cdots,k)$ 是 $\varphi$ 的不变子空间．显然我们有
 
@@ -3322,7 +3322,7 @@ $$V=V_1\oplus V_2\oplus\cdots\oplus V_k.$$
 
 线性变换 $\varphi$ 限制在 $V_1$ 上（仍记为 $\varphi$）便成为 $V_1$ 上的线性变换．这个线性变换在基 $\{e_{11},e_{12},\cdots,e_{1r_1}\}$ 下的表示矩阵为
 
-$$J_1=\begin{pmatrix}\lambda_1&1&&&\\&\lambda_1&1&&\\&&\ddots&\ddots&\\&&&\ddots&1\\&&&&\lambda_1\end{pmatrix}.$$
+$$ J_1=\begin{pmatrix} \lambda_1&1&&&\\ &\lambda_1&1&&\\ &&\ddots&\ddots&\\ &&&\ddots&1\\ &&&&\lambda_1 \end{pmatrix}. $$
 
 注意到 $J_1$ 的特征值全为 $\lambda_1$，并且 $\lambda_1I-J_1$ 的秩等于 $r_1-1$，故 $J_1$ 只有一个线性无关的特征向量，不妨选为 $e_{11}$．显然 $e_{11}$ 也是 $\varphi$ 作为 $V$ 上线性变换关于特征值 $\lambda_1$ 的特征向量．不失一般性，不妨设在 $\varphi$ 的初等因子组即 (7.7.1) 式中
 
@@ -3422,7 +3422,7 @@ $$V=R(\lambda_1)\oplus R(\lambda_2)\oplus\cdots\oplus R(\lambda_s),\tag{7.7.6}$$
 
 **证明** 设 $P$ 是非异阵且使 $P^{-1}AP=J$ 为 $A$ 的 Jordan 标准型，于是 $A=PJP^{-1}$．设 $J_i$ 是 $J$ 的第 $i$ 个 Jordan 块，记 $R$ 为反单位阵（副对角线上全为 $1$ 的对称阵），则
 
-$$J_i=\begin{pmatrix}\lambda_i&1&&\\&\lambda_i&1&\\&&\ddots&\ddots\\&&&\lambda_i\end{pmatrix}=\begin{pmatrix}&&&1\\&&1&\lambda_i\\&\iddots&&\\1&\lambda_i&&\end{pmatrix}\begin{pmatrix}&&&1\\&&1&\\&\iddots&&\\1&&&\end{pmatrix}=S_{i1}S_{i2},$$
+$$ J_i=\begin{pmatrix} \lambda_i&1&&\\ &\lambda_i&1&\\ &&\ddots&\ddots\\ &&&\lambda_i \end{pmatrix} =\begin{pmatrix} &&&1\\ &&1&\lambda_i\\ &\text{⋰}&&\\ 1&\lambda_i&& \end{pmatrix} \begin{pmatrix} &&&1\\ &&1&\\ &\text{⋰}&&\\ 1&&& \end{pmatrix} =S_{i1}S_{i2}, $$
 
 即 $J_i$ 可分解为两个对称阵之积．因此 $J$ 也可以分解为两个对称阵之积，记为 $S_1,S_2$，于是
 
@@ -3440,17 +3440,17 @@ $$P^{-1}A^kP=(P^{-1}AP)^k=J^k,$$
 
 故先计算 $J^k$．注意 $J$ 是分块对角阵，它的 $k$ 次方等于将各对角块 $k$ 次方，因此
 
-$$J^k=\begin{pmatrix}1&1&&\\&1&&\\&&1&1\\&&&1\end{pmatrix}^{k}=\begin{pmatrix}1&k&&\\&1&&\\&&1&k\\&&&1\end{pmatrix},$$
+$$ J^k=\begin{pmatrix} 1&1&&\\ &1&&\\ &&1&1\\ &&&1 \end{pmatrix}^{k} =\begin{pmatrix} 1&k&&\\ &1&&\\ &&1&k\\ &&&1 \end{pmatrix}, $$
 
 再由 $P^{-1}AP=J$ 可取
 
-$$P=\begin{pmatrix}1&0&0&0\\-2&1&0&0\\1&0&1&0\\-5&0&-1&1\end{pmatrix},$$
+$$ P=\begin{pmatrix} 1&0&0&0\\ -2&1&0&0\\ 1&0&1&0\\ -5&0&-1&1 \end{pmatrix}, $$
 
 于是
 
-$$A^k=PJ^kP^{-1}=\begin{pmatrix}1&0&0&0\\-2&1&0&0\\1&0&1&0\\-5&0&-1&1\end{pmatrix}\begin{pmatrix}1&k&0&0\\0&1&0&0\\0&0&1&k\\0&0&0&1\end{pmatrix}\begin{pmatrix}1&0&0&0\\-2&1&0&0\\1&0&1&0\\-5&0&-1&1\end{pmatrix}^{-1}$$
+$$ A^k=PJ^kP^{-1}= \begin{pmatrix} 1&0&0&0\\ -2&1&0&0\\ 1&0&1&0\\ -5&0&-1&1 \end{pmatrix} \begin{pmatrix} 1&k&0&0\\ 0&1&0&0\\ 0&0&1&k\\ 0&0&0&1 \end{pmatrix} \begin{pmatrix} 1&0&0&0\\ -2&1&0&0\\ 1&0&1&0\\ -5&0&-1&1 \end{pmatrix}^{-1} $$
 
-$$=\begin{pmatrix}2k+1&k&0&0\\-4k&-2k+1&0&0\\6k&k&k+1&k\\-14k&-5k&-k&-k+1\end{pmatrix}.$$
+$$ =\begin{pmatrix} 2k+1&k&0&0\\ -4k&-2k+1&0&0\\ 6k&k&k+1&k\\ -14k&-5k&-k&-k+1 \end{pmatrix}. $$
 
 **引理 7.7.1 (可交换的可对角化矩阵可同时对角化)** @330
 
@@ -3494,13 +3494,13 @@ $$A^m=(PJP^{-1})^m=PJ^mP^{-1},$$
 
 因此要计算 $f(A)$，只需计算出 $J_i^m$ 即可．设 $J_i$ 是特征值为 $\lambda_i$ 的 $r$ 阶 Jordan 块：
 
-$$J_i=\begin{pmatrix}\lambda_i&1&&&\\&\lambda_i&1&&\\&&\ddots&\ddots&\\&&&\ddots&1\\&&&&\lambda_i\end{pmatrix}.$$
+$$J_i=\begin{pmatrix} \lambda_i&1&&&\\ &\lambda_i&1&&\\ &&\ddots&\ddots&\\ &&&\ddots&1\\ &&&&\lambda_i \end{pmatrix}.$$
 
 **注 (Jordan 块的幂与 Jordan 块的多项式函数)** @335
 
 用数学归纳法不难证明
 
-$$J_i^m=\begin{pmatrix}\lambda_i^m&\mathrm{C}_m^1\lambda_i^{m-1}&\mathrm{C}_m^2\lambda_i^{m-2}&\cdots&\cdots\\&\lambda_i^m&\mathrm{C}_m^1\lambda_i^{m-1}&\cdots&\cdots\\&&\lambda_i^m&\cdots&\cdots\\&&&\ddots&\vdots\\&&&&\lambda_i^m\end{pmatrix}.\tag{7.8.1}$$
+$$ J_i^m=\begin{pmatrix} \lambda_i^m&\mathrm{C}_m^1\lambda_i^{m-1}&\mathrm{C}_m^2\lambda_i^{m-2}&\cdots&\cdots\\ &\lambda_i^m&\mathrm{C}_m^1\lambda_i^{m-1}&\cdots&\cdots\\ &&\lambda_i^m&\cdots&\cdots\\ &&&\ddots&\vdots\\ &&&&\lambda_i^m \end{pmatrix}.\tag{7.8.1} $$
 
 若
 
@@ -3508,11 +3508,11 @@ $$f(x)=a_0+a_1x+\cdots+a_px^p,$$
 
 则不难算出
 
-$$f(J_i)=\begin{pmatrix}f(\lambda_i)&\dfrac{1}{1!}f'(\lambda_i)&\dfrac{1}{2!}f^{(2)}(\lambda_i)&\cdots&\dfrac{1}{(r-1)!}f^{(r-1)}(\lambda_i)\\&f(\lambda_i)&\dfrac{1}{1!}f'(\lambda_i)&\cdots&\dfrac{1}{(r-2)!}f^{(r-2)}(\lambda_i)\\&&f(\lambda_i)&\cdots&\dfrac{1}{(r-3)!}f^{(r-3)}(\lambda_i)\\&&&\ddots&\vdots\\&&&&f(\lambda_i)\end{pmatrix}.\tag{7.8.2}$$
+$$ f(J_i)=\begin{pmatrix} f(\lambda_i)&\dfrac{1}{1!}f'(\lambda_i)&\dfrac{1}{2!}f^{(2)}(\lambda_i)&\cdots&\dfrac{1}{(r-1)!}f^{(r-1)}(\lambda_i)\\ &f(\lambda_i)&\dfrac{1}{1!}f'(\lambda_i)&\cdots&\dfrac{1}{(r-2)!}f^{(r-2)}(\lambda_i)\\ &&f(\lambda_i)&\cdots&\dfrac{1}{(r-3)!}f^{(r-3)}(\lambda_i)\\ &&&\ddots&\vdots\\ &&&&f(\lambda_i) \end{pmatrix}.\tag{7.8.2} $$
 
 再由
 
-$$\begin{aligned}f(A)&=f(PJP^{-1})=Pf(J)P^{-1}\\&=Pf(\operatorname{diag}\{J_1,J_2,\cdots,J_k\})P^{-1}\\&=P\operatorname{diag}\{f(J_1),f(J_2),\cdots,f(J_k)\}P^{-1},\end{aligned}$$
+$$ \begin{aligned} f(A)&=f(PJP^{-1})=Pf(J)P^{-1}\\ &=Pf(\operatorname{diag}\{J_1,J_2,\cdots,J_k\})P^{-1}\\ &=P\operatorname{diag}\{f(J_1),f(J_2),\cdots,f(J_k)\}P^{-1}, \end{aligned} $$
 
 即可计算出 $f(A)$．
 
@@ -3520,7 +3520,7 @@ $$\begin{aligned}f(A)&=f(PJP^{-1})=Pf(J)P^{-1}\\&=Pf(\operatorname{diag}\{J_1,J_
 
 设有 $n$ 阶复方阵序列 $\{A_p\}$：
 
-$$A_p=\begin{pmatrix}a_{11}^{(p)}&\cdots&a_{1n}^{(p)}\\\vdots&&\vdots\\a_{n1}^{(p)}&\cdots&a_{nn}^{(p)}\end{pmatrix},$$
+$$A_p=\begin{pmatrix} a_{11}^{(p)}&\cdots&a_{1n}^{(p)}\\ \vdots&&\vdots\\ a_{n1}^{(p)}&\cdots&a_{nn}^{(p)} \end{pmatrix},$$
 
 $B=(b_{ij})$ 是一个同阶方阵，若对每个 $(i,j)$，序列 $\{a_{ij}^{(p)}\}$ 均收敛于 $b_{ij}$，即
 
@@ -3560,11 +3560,11 @@ $$f(X)=\operatorname{diag}\{f(X_1),\cdots,f(X_k)\};$$
 
 (3) 若 $f(z)$ 的收敛半径为 $r$，$J_0$ 是特征值为 $\lambda_0$ 的 $n$ 阶 Jordan 块
 
-$$J_0=\begin{pmatrix}\lambda_0&1&&&\\&\lambda_0&1&&\\&&\ddots&\ddots&\\&&&\ddots&1\\&&&&\lambda_0\end{pmatrix},$$
+$$J_0=\begin{pmatrix} \lambda_0&1&&&\\ &\lambda_0&1&&\\ &&\ddots&\ddots&\\ &&&\ddots&1\\ &&&&\lambda_0 \end{pmatrix},$$
 
 则当 $|\lambda_0|<r$ 时 $f(J_0)$ 收敛，且
 
-$$f(J_0)=\begin{pmatrix}f(\lambda_0)&\dfrac{1}{1!}f'(\lambda_0)&\dfrac{1}{2!}f^{(2)}(\lambda_0)&\cdots&\dfrac{1}{(n-1)!}f^{(n-1)}(\lambda_0)\\&f(\lambda_0)&\dfrac{1}{1!}f'(\lambda_0)&\cdots&\dfrac{1}{(n-2)!}f^{(n-2)}(\lambda_0)\\&&f(\lambda_0)&\cdots&\dfrac{1}{(n-3)!}f^{(n-3)}(\lambda_0)\\&&&\ddots&\vdots\\&&&&f(\lambda_0)\end{pmatrix}.$$
+$$f(J_0)=\begin{pmatrix} f(\lambda_0)&\dfrac{1}{1!}f'(\lambda_0)&\dfrac{1}{2!}f^{(2)}(\lambda_0)&\cdots&\dfrac{1}{(n-1)!}f^{(n-1)}(\lambda_0)\\ &f(\lambda_0)&\dfrac{1}{1!}f'(\lambda_0)&\cdots&\dfrac{1}{(n-2)!}f^{(n-2)}(\lambda_0)\\ &&f(\lambda_0)&\cdots&\dfrac{1}{(n-3)!}f^{(n-3)}(\lambda_0)\\ &&&\ddots&\vdots\\ &&&&f(\lambda_0) \end{pmatrix}.$$
 
 **定理 7.8.2 (谱半径与收敛性)** @338
 
@@ -3590,11 +3590,11 @@ $$f(\lambda_1),\ f(\lambda_2),\ \cdots,\ f(\lambda_n).$$
 
 由复分析知道：
 
-$$\begin{aligned}\mathrm{e}^z&=1+\frac{1}{1!}z+\frac{1}{2!}z^2+\frac{1}{3!}z^3+\cdots,\\\sin z&=z-\frac{1}{3!}z^3+\frac{1}{5!}z^5-\frac{1}{7!}z^7+\cdots,\\\cos z&=1-\frac{1}{2!}z^2+\frac{1}{4!}z^4-\frac{1}{6!}z^6+\cdots,\\\ln(1+z)&=z-\frac{1}{2}z^2+\frac{1}{3}z^3-\frac{1}{4}z^4+\cdots.\end{aligned}$$
+$$ \begin{aligned} \mathrm{e}^z&=1+\frac{1}{1!}z+\frac{1}{2!}z^2+\frac{1}{3!}z^3+\cdots,\\ \sin z&=z-\frac{1}{3!}z^3+\frac{1}{5!}z^5-\frac{1}{7!}z^7+\cdots,\\ \cos z&=1-\frac{1}{2!}z^2+\frac{1}{4!}z^4-\frac{1}{6!}z^6+\cdots,\\ \ln(1+z)&=z-\frac{1}{2}z^2+\frac{1}{3}z^3-\frac{1}{4}z^4+\cdots. \end{aligned} $$
 
 前 $3$ 个级数在整个复平面上收敛，而 $\ln(1+z)$ 的收敛半径为 $1$，于是对一切方阵，定义
 
-$$\begin{aligned}\mathrm{e}^A&=I+\frac{1}{1!}A+\frac{1}{2!}A^2+\frac{1}{3!}A^3+\cdots,\\\sin A&=A-\frac{1}{3!}A^3+\frac{1}{5!}A^5-\frac{1}{7!}A^7+\cdots,\\\cos A&=I-\frac{1}{2!}A^2+\frac{1}{4!}A^4-\frac{1}{6!}A^6+\cdots\end{aligned}$$
+$$ \begin{aligned} \mathrm{e}^A&=I+\frac{1}{1!}A+\frac{1}{2!}A^2+\frac{1}{3!}A^3+\cdots,\\ \sin A&=A-\frac{1}{3!}A^3+\frac{1}{5!}A^5-\frac{1}{7!}A^7+\cdots,\\ \cos A&=I-\frac{1}{2!}A^2+\frac{1}{4!}A^4-\frac{1}{6!}A^6+\cdots \end{aligned} $$
 
 都有意义．若 $A$ 所有特征值的模长都小于 $1$，则
 
@@ -3630,17 +3630,17 @@ $$\mathrm{e}^N=I+N+\frac{1}{2!}N^2+\frac{1}{3!}N^3+\cdots+\frac{1}{(r-1)!}N^{r-1
 
 因为 $(\lambda_iI)N=N(\lambda_iI)$，故
 
-$$\begin{aligned}\mathrm{e}^{J_i}&=\mathrm{e}^{\lambda_iI+N}=\mathrm{e}^{\lambda_iI}\cdot\mathrm{e}^N=\mathrm{e}^{\lambda_i}\cdot\mathrm{e}^N\\&=\mathrm{e}^{\lambda_i}I+\mathrm{e}^{\lambda_i}N+\frac{1}{2!}\mathrm{e}^{\lambda_i}N^2+\cdots+\frac{1}{(r-1)!}\mathrm{e}^{\lambda_i}N^{r-1}.\end{aligned}$$
+$$ \begin{aligned} \mathrm{e}^{J_i}&=\mathrm{e}^{\lambda_iI+N}=\mathrm{e}^{\lambda_iI}\cdot\mathrm{e}^N=\mathrm{e}^{\lambda_i}\cdot\mathrm{e}^N\\ &=\mathrm{e}^{\lambda_i}I+\mathrm{e}^{\lambda_i}N+\frac{1}{2!}\mathrm{e}^{\lambda_i}N^2+\cdots+\frac{1}{(r-1)!}\mathrm{e}^{\lambda_i}N^{r-1}. \end{aligned} $$
 
 同理
 
-$$\mathrm{e}^{tJ_i}=\mathrm{e}^{t\lambda_i}\cdot\mathrm{e}^{tN}=\mathrm{e}^{t\lambda_i}\begin{pmatrix}1&t&\dfrac{1}{2!}t^2&\dfrac{1}{3!}t^3&\cdots&\dfrac{1}{(r-1)!}t^{r-1}\\&1&t&\dfrac{1}{2!}t^2&\cdots&\dfrac{1}{(r-2)!}t^{r-2}\\&&1&t&\cdots&\dfrac{1}{(r-3)!}t^{r-3}\\&&&\ddots&\ddots&\vdots\\&&&&\ddots&t\\&&&&&1\end{pmatrix}.$$
+$$ \mathrm{e}^{tJ_i}=\mathrm{e}^{t\lambda_i}\cdot\mathrm{e}^{tN}=\mathrm{e}^{t\lambda_i} \begin{pmatrix} 1&t&\dfrac{1}{2!}t^2&\dfrac{1}{3!}t^3&\cdots&\dfrac{1}{(r-1)!}t^{r-1}\\ &1&t&\dfrac{1}{2!}t^2&\cdots&\dfrac{1}{(r-2)!}t^{r-2}\\ &&1&t&\cdots&\dfrac{1}{(r-3)!}t^{r-3}\\ &&&\ddots&\ddots&\vdots\\ &&&&\ddots&t\\ &&&&&1 \end{pmatrix}. $$
 
 现设 $P^{-1}AP=J=\operatorname{diag}\{J_1,\cdots,J_k\}$ 是 $A$ 的 Jordan 标准型，则
 
 $$\mathrm{e}^{tA}=\mathrm{e}^{P(tJ)P^{-1}}=P\mathrm{e}^{tJ}P^{-1},$$
 
-$$\mathrm{e}^{tJ}=\begin{pmatrix}\mathrm{e}^{tJ_1}&&\\&\ddots&\\&&\mathrm{e}^{tJ_k}\end{pmatrix}.$$
+$$\mathrm{e}^{tJ}=\begin{pmatrix} \mathrm{e}^{tJ_1}&&\\ &\ddots&\\ &&\mathrm{e}^{tJ_k} \end{pmatrix}.$$
 
 将 $\mathrm{e}^{tJ_i}$ 的式子代入上面的式子即可求出 $\mathrm{e}^{tA}$．
 
@@ -3652,7 +3652,7 @@ $$\mathrm{e}^{tJ}=\begin{pmatrix}\mathrm{e}^{tJ_1}&&\\&\ddots&\\&&\mathrm{e}^{tJ
 
 设 $f$ 是数域 $\mathbb{K}$ 上的 $n$ 元二次齐次多项式：
 
-$$\begin{aligned}f(x_1,x_2,\cdots,x_n)&=a_{11}x_1^2+2a_{12}x_1x_2+\cdots+2a_{1n}x_1x_n\\&\quad+a_{22}x_2^2+\cdots+2a_{2n}x_2x_n+\cdots+a_{nn}x_n^2,\end{aligned}\tag{8.1.3}$$
+$$ \begin{aligned} f(x_1,x_2,\cdots,x_n)&=a_{11}x_1^2+2a_{12}x_1x_2+\cdots+2a_{1n}x_1x_n\\ &\quad+a_{22}x_2^2+\cdots+2a_{2n}x_2x_n+\cdots+a_{nn}x_n^2, \end{aligned}\tag{8.1.3} $$
 
 称 $f$ 为数域 $\mathbb{K}$ 上的 $n$ 元**二次型**，简称二次型．这里非平方项的系数采用 $2a_{ij}$，主要是为了以后矩阵表示的方便．
 
@@ -3682,7 +3682,7 @@ $$f(x_1,x_2,\cdots,x_n)=x'Ax,\tag{8.1.4}$$
 
 其中
 
-$$A=\begin{pmatrix}a_{11}&a_{12}&\cdots&a_{1n}\\a_{21}&a_{22}&\cdots&a_{2n}\\\vdots&\vdots&&\vdots\\a_{n1}&a_{n2}&\cdots&a_{nn}\end{pmatrix},\qquadx=\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix}.$$
+$$ A=\begin{pmatrix} a_{11}&a_{12}&\cdots&a_{1n}\\ a_{21}&a_{22}&\cdots&a_{2n}\\ \vdots&\vdots&&\vdots\\ a_{n1}&a_{n2}&\cdots&a_{nn} \end{pmatrix},\qquad x=\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix}. $$
 
 在矩阵 $A$ 中，$a_{ij}=a_{ji}$ 对一切 $i,j$ 成立，也就是说矩阵 $A$ 是一个对称阵．由此可知，给定数域 $\mathbb{K}$ 上的一个 $n$ 元二次型，我们就得到了 $\mathbb{K}$ 上的一个 $n$ 阶对称阵 $A$，称为该二次型的**相伴矩阵**或**系数矩阵**．反过来，若给定 $\mathbb{K}$ 上的一个 $n$ 阶对称阵 $A$，则由 (8.1.4) 式可以得到 $\mathbb{K}$ 上的一个二次型，称为对称阵 $A$ 的**相伴二次型**．
 
@@ -3702,7 +3702,7 @@ $$f(x,y)=(x,y)\begin{pmatrix}1&\frac{3}{2}\\[2pt]\frac{3}{2}&1\end{pmatrix}\begi
 
 **解** 所求的对称阵为
 
-$$\begin{pmatrix}1&&&\\&-1&&\\&&2&\\&&&4\end{pmatrix},$$
+$$ \begin{pmatrix} 1&&&\\ &-1&&\\ &&2&\\ &&&4 \end{pmatrix}, $$
 
 这是一个对角阵．显然，一个 $n$ 元二次型只含平方项当且仅当它的相伴矩阵是一个 $n$ 阶对角阵．
 
@@ -3710,7 +3710,7 @@ $$\begin{pmatrix}1&&&\\&-1&&\\&&2&\\&&&4\end{pmatrix},$$
 
 求对称阵
 
-$$\begin{pmatrix}1&\frac{1}{2}&-\sqrt{2}\\[2pt]\frac{1}{2}&-1&0\\[2pt]-\sqrt{2}&0&2\end{pmatrix}$$
+$$ \begin{pmatrix} 1&\frac{1}{2}&-\sqrt{2}\\[2pt] \frac{1}{2}&-1&0\\[2pt] -\sqrt{2}&0&2 \end{pmatrix} $$
 
 所对应的二次型．
 
@@ -3722,7 +3722,7 @@ $$f(x_1,x_2,x_3)=x_1^2-x_2^2+2x_3^2+x_1x_2-2\sqrt{2}x_1x_3.$$
 
 设 $V$ 是 $n$ 维线性空间，二次型 $f(x_1,x_2,\cdots,x_n)$ 可以看成是 $V$ 上的二次函数，即若 $V$ 的一组基为 $\{e_1,e_2,\cdots,e_n\}$，向量 $\alpha$ 在这组基下的坐标向量为 $x$，则 $f$ 便是向量 $\alpha$ 的函数．现假设 $\{f_1,f_2,\cdots,f_n\}$ 是 $V$ 的另一组基，向量 $\alpha$ 在这组基下的坐标向量为 $y=(y_1,y_2,\cdots,y_n)'$，记 $C=(c_{ij})$ 是从基 $\{e_1,e_2,\cdots,e_n\}$ 到基 $\{f_1,f_2,\cdots,f_n\}$ 的过渡矩阵，则
 
-$$\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix}=\begin{pmatrix}c_{11}&c_{12}&\cdots&c_{1n}\\c_{21}&c_{22}&\cdots&c_{2n}\\\vdots&\vdots&&\vdots\\c_{n1}&c_{n2}&\cdots&c_{nn}\end{pmatrix}\begin{pmatrix}y_1\\y_2\\\vdots\\y_n\end{pmatrix},$$
+$$ \begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix}= \begin{pmatrix} c_{11}&c_{12}&\cdots&c_{1n}\\ c_{21}&c_{22}&\cdots&c_{2n}\\ \vdots&\vdots&&\vdots\\ c_{n1}&c_{n2}&\cdots&c_{nn} \end{pmatrix} \begin{pmatrix}y_1\\y_2\\\vdots\\y_n\end{pmatrix}, $$
 
 或简记为
 
@@ -3784,7 +3784,7 @@ $$B=C'AC,$$
 
 配方法的基础是运用下列公式：
 
-$$\begin{aligned}(x_1+x_2+\cdots+x_n)^2&=\ x_1^2+x_2^2+\cdots+x_n^2\\&\quad+2x_1x_2+2x_1x_3+\cdots+2x_1x_n\\&\quad+2x_2x_3+\cdots+2x_2x_n\\&\quad+\cdots\\&\quad+2x_{n-1}x_n.\end{aligned}$$
+$$ \begin{aligned} (x_1+x_2+\cdots+x_n)^2&=\ x_1^2+x_2^2+\cdots+x_n^2\\ &\quad+2x_1x_2+2x_1x_3+\cdots+2x_1x_n\\ &\quad+2x_2x_3+\cdots+2x_2x_n\\ &\quad+\cdots\\ &\quad+2x_{n-1}x_n. \end{aligned} $$
 
 我们通过例子来介绍配方法．
 
@@ -3796,11 +3796,11 @@ $$f(x_1,x_2,x_3)=x_1^2+2x_1x_2-4x_1x_3-3x_2^2-6x_2x_3+x_3^2.$$
 
 **解** 先将含有 $x_1$ 的项放在一起凑成完全平方再减去必要的项：
 
-$$\begin{aligned}f(x_1,x_2,x_3)&=(x_1^2+2x_1x_2-4x_1x_3)-3x_2^2-6x_2x_3+x_3^2\\&=\bigl((x_1+x_2-2x_3)^2-x_2^2-4x_3^2+4x_2x_3\bigr)-3x_2^2-6x_2x_3+x_3^2\\&=(x_1+x_2-2x_3)^2-4x_2^2-2x_2x_3-3x_3^2.\end{aligned}$$
+$$ \begin{aligned} f(x_1,x_2,x_3)&=(x_1^2+2x_1x_2-4x_1x_3)-3x_2^2-6x_2x_3+x_3^2\\ &=\bigl((x_1+x_2-2x_3)^2-x_2^2-4x_3^2+4x_2x_3\bigr)-3x_2^2-6x_2x_3+x_3^2\\ &=(x_1+x_2-2x_3)^2-4x_2^2-2x_2x_3-3x_3^2. \end{aligned} $$
 
 再对后面那些项配方：
 
-$$\begin{aligned}-4x_2^2-2x_2x_3-3x_3^2&=-\Bigl(\bigl(2x_2+\frac12x_3\bigr)^2-\frac14x_3^2\Bigr)-3x_3^2\\&=-\bigl(2x_2+\frac12x_3\bigr)^2-\frac{11}{4}x_3^2.\end{aligned}$$
+$$ \begin{aligned} -4x_2^2-2x_2x_3-3x_3^2&=-\Bigl(\bigl(2x_2+\frac12x_3\bigr)^2-\frac14x_3^2\Bigr)-3x_3^2\\ &=-\bigl(2x_2+\frac12x_3\bigr)^2-\frac{11}{4}x_3^2. \end{aligned} $$
 
 于是
 
@@ -3808,25 +3808,25 @@ $$f(x_1,x_2,x_3)=(x_1+x_2-2x_3)^2-\bigl(2x_2+\frac12x_3\bigr)^2-\frac{11}{4}x_3^
 
 令
 
-$$\begin{cases}y_1=x_1+x_2-2x_3,\\y_2=2x_2+\dfrac12x_3,\\y_3=x_3,\end{cases}$$
+$$ \begin{cases} y_1=x_1+x_2-2x_3,\\ y_2=2x_2+\dfrac12x_3,\\ y_3=x_3, \end{cases} $$
 
 则
 
-$$\begin{pmatrix}y_1\\y_2\\y_3\end{pmatrix}=\begin{pmatrix}1&1&-2\\0&2&\dfrac12\\0&0&1\end{pmatrix}\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}.$$
+$$ \begin{pmatrix}y_1\\y_2\\y_3\end{pmatrix} =\begin{pmatrix} 1&1&-2\\ 0&2&\dfrac12\\ 0&0&1 \end{pmatrix} \begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}. $$
 
 因此 $f=y_1^2-y_2^2-\dfrac{11}{4}y_3^2$，其变换矩阵为
 
-$$C=\begin{pmatrix}1&1&-2\\0&2&\dfrac12\\0&0&1\end{pmatrix}^{-1}=\begin{pmatrix}1&-\dfrac12&\dfrac94\\0&\dfrac12&-\dfrac14\\0&0&1\end{pmatrix}.$$
+$$ C=\begin{pmatrix} 1&1&-2\\ 0&2&\dfrac12\\ 0&0&1 \end{pmatrix}^{-1} =\begin{pmatrix} 1&-\dfrac12&\dfrac94\\ 0&\dfrac12&-\dfrac14\\ 0&0&1 \end{pmatrix}. $$
 
 **注 (变换矩阵必须非异)** @353
 
 在用配方法化二次型为只含平方项的标准型的过程中，必须保证变换矩阵 $C$ 是非异阵．如果我们按照例 8.2.1 的方法，将含 $x_1$ 的项放在一起配成一个完全平方，接下来将含 $x_2$ 的项放在一起再配方，如此不断做下去．最后得到的变换矩阵 $C$ 是一个主对角元全不为零的上三角阵，因此是一个非异阵．有时我们用看似简单的方法得到的结果未必正确．比如用观察法即可得到下列配方：
 
-$$\begin{aligned}f&=2x_1^2+2x_2^2+2x_3^2-2x_1x_2+2x_1x_3+2x_2x_3\\&=(x_1-x_2)^2+(x_1+x_3)^2+(x_2+x_3)^2.\end{aligned}$$
+$$ \begin{aligned} f&=2x_1^2+2x_2^2+2x_3^2-2x_1x_2+2x_1x_3+2x_2x_3\\ &=(x_1-x_2)^2+(x_1+x_3)^2+(x_2+x_3)^2. \end{aligned} $$
 
 若令 $y_1=x_1-x_2,\ y_2=x_1+x_3,\ y_3=x_2+x_3$，则 $f=y_1^2+y_2^2+y_3^2$．由于矩阵
 
-$$\begin{pmatrix}1&-1&0\\1&0&1\\0&1&1\end{pmatrix}$$
+$$ \begin{pmatrix} 1&-1&0\\ 1&0&1\\ 0&1&1 \end{pmatrix} $$
 
 不是非异阵，因此上述配方不是我们所需要的结论．
 
@@ -3842,7 +3842,7 @@ $$f(x_1,x_2,x_3,x_4)=2x_1x_2-x_1x_3+x_1x_4-x_2x_3+x_2x_4-2x_3x_4$$
 
 **解** 这个二次型缺少了 $x_i^2$ 项，因此无法用例 8.2.1 的方法配方，但我们可作如下变换：
 
-$$\begin{cases}x_1=y_1+y_2,\\x_2=y_1-y_2,\\x_3=y_3,\\x_4=y_4.\end{cases}$$
+$$ \begin{cases} x_1=y_1+y_2,\\ x_2=y_1-y_2,\\ x_3=y_3,\\ x_4=y_4. \end{cases} $$
 
 代入原二次型得
 
@@ -3850,11 +3850,11 @@ $$f=2y_1^2-2y_2^2-2y_1y_3+2y_1y_4-2y_3y_4.$$
 
 这时 $y_1^2$ 项不为零，于是
 
-$$\begin{aligned}f&=(2y_1^2-2y_1y_3+2y_1y_4)-2y_2^2-2y_3y_4\\&=2\Bigl(\bigl(y_1-\frac12y_3+\frac12y_4\bigr)^2-\frac14y_3^2-\frac14y_4^2+\frac12y_3y_4\Bigr)-2y_2^2-2y_3y_4\\&=2\bigl(y_1-\frac12y_3+\frac12y_4\bigr)^2-2y_2^2-\frac12y_3^2-y_3y_4-\frac12y_4^2\\&=2\bigl(y_1-\frac12y_3+\frac12y_4\bigr)^2-2y_2^2-\frac12(y_3+y_4)^2.\end{aligned}$$
+$$ \begin{aligned} f&=(2y_1^2-2y_1y_3+2y_1y_4)-2y_2^2-2y_3y_4\\ &=2\Bigl(\bigl(y_1-\frac12y_3+\frac12y_4\bigr)^2-\frac14y_3^2-\frac14y_4^2+\frac12y_3y_4\Bigr)-2y_2^2-2y_3y_4\\ &=2\bigl(y_1-\frac12y_3+\frac12y_4\bigr)^2-2y_2^2-\frac12y_3^2-y_3y_4-\frac12y_4^2\\ &=2\bigl(y_1-\frac12y_3+\frac12y_4\bigr)^2-2y_2^2-\frac12(y_3+y_4)^2. \end{aligned} $$
 
 令
 
-$$\begin{cases}z_1=y_1-\dfrac12y_3+\dfrac12y_4,\\z_2=y_2,\\z_3=y_3+y_4,\\z_4=y_4,\end{cases}$$
+$$ \begin{cases} z_1=y_1-\dfrac12y_3+\dfrac12y_4,\\ z_2=y_2,\\ z_3=y_3+y_4,\\ z_4=y_4, \end{cases} $$
 
 于是
 
@@ -3864,15 +3864,15 @@ $$f=2z_1^2-2z_2^2-\frac12z_3^2,$$
 
 为求变换矩阵 $C$，可从上面 $z_i$ 的表示式中解出 $y_i$：
 
-$$\begin{cases}y_1=z_1+\dfrac12z_3-z_4,\\y_2=z_2,\\y_3=z_3-z_4,\\y_4=z_4,\end{cases}$$
+$$ \begin{cases} y_1=z_1+\dfrac12z_3-z_4,\\ y_2=z_2,\\ y_3=z_3-z_4,\\ y_4=z_4, \end{cases} $$
 
 再将 $x_i$ 求出：
 
-$$\begin{cases}x_1=z_1+z_2+\dfrac12z_3-z_4,\\x_2=z_1-z_2+\dfrac12z_3-z_4,\\x_3=z_3-z_4,\\x_4=z_4.\end{cases}$$
+$$ \begin{cases} x_1=z_1+z_2+\dfrac12z_3-z_4,\\ x_2=z_1-z_2+\dfrac12z_3-z_4,\\ x_3=z_3-z_4,\\ x_4=z_4. \end{cases} $$
 
 于是
 
-$$C=\begin{pmatrix}1&1&\dfrac12&-1\\1&-1&\dfrac12&-1\\0&0&1&-1\\0&0&0&1\end{pmatrix}.$$
+$$ C=\begin{pmatrix} 1&1&\dfrac12&-1\\ 1&-1&\dfrac12&-1\\ 0&0&1&-1\\ 0&0&0&1 \end{pmatrix}. $$
 
 **注 (初等变换法)** @355
 
@@ -3888,9 +3888,9 @@ $$f(x_1,x_2,x_3)=x_1^2-3x_2^2-2x_1x_2+2x_1x_3-6x_2x_3.$$
 
 **解** 记与 $f$ 相伴的对称阵为 $A$，写出 $(A\,|\,I_3)$ 并作初等变换：
 
-$$(A\,|\,I_3)=\begin{pmatrix}1&-1&1&|&1&0&0\\-1&-3&-3&|&0&1&0\\1&-3&0&|&0&0&1\end{pmatrix}\longrightarrow\begin{pmatrix}1&0&1&|&1&0&0\\0&-4&-2&|&1&1&0\\1&-2&0&|&0&0&1\end{pmatrix}$$
+$$ (A\,|\,I_3)=\begin{pmatrix} 1&-1&1&|&1&0&0\\ -1&-3&-3&|&0&1&0\\ 1&-3&0&|&0&0&1 \end{pmatrix} \longrightarrow\begin{pmatrix} 1&0&1&|&1&0&0\\ 0&-4&-2&|&1&1&0\\ 1&-2&0&|&0&0&1 \end{pmatrix} $$
 
-$$\longrightarrow\begin{pmatrix}1&0&0&|&1&0&0\\0&-4&-2&|&1&1&0\\0&-2&-1&|&-1&0&1\end{pmatrix}\longrightarrow\begin{pmatrix}1&0&0&|&1&0&0\\0&-4&0&|&1&1&0\\0&0&0&|&-\dfrac32&-\dfrac12&1\end{pmatrix}.$$
+$$ \longrightarrow\begin{pmatrix} 1&0&0&|&1&0&0\\ 0&-4&-2&|&1&1&0\\ 0&-2&-1&|&-1&0&1 \end{pmatrix} \longrightarrow\begin{pmatrix} 1&0&0&|&1&0&0\\ 0&-4&0&|&1&1&0\\ 0&0&0&|&-\dfrac32&-\dfrac12&1 \end{pmatrix}. $$
 
 其中依次实施了：第 $2$ 行（列）加上第 $1$ 行（列），第 $3$ 行（列）减去第 $1$ 行（列），第 $3$ 行（列）减去第 $2$ 行（列）的 $\dfrac12$ 倍．
 
@@ -3898,7 +3898,7 @@ $$\longrightarrow\begin{pmatrix}1&0&0&|&1&0&0\\0&-4&-2&|&1&1&0\\0&-2&-1&|&-1&0&1
 
 $$y_1^2-4y_2^2,$$
 
-$$C=\begin{pmatrix}1&0&0\\1&1&0\\-\dfrac32&-\dfrac12&1\end{pmatrix}'=\begin{pmatrix}1&1&-\dfrac32\\0&1&-\dfrac12\\0&0&1\end{pmatrix}.$$
+$$ C=\begin{pmatrix} 1&0&0\\ 1&1&0\\ -\dfrac32&-\dfrac12&1 \end{pmatrix}' =\begin{pmatrix} 1&1&-\dfrac32\\ 0&1&-\dfrac12\\ 0&0&1 \end{pmatrix}. $$
 
 这种方法可总结如下：作 $n\times2n$ 矩阵 $(A\,|\,I_n)$，对这个矩阵实施初等行变换，同时施以同样的初等列变换，将它左半边化为对角阵，则这个对角阵就是已化简的二次型的相伴矩阵，右半边的转置便是变换矩阵 $C$．
 
@@ -3910,27 +3910,27 @@ $$C=\begin{pmatrix}1&0&0\\1&1&0\\-\dfrac32&-\dfrac12&1\end{pmatrix}'=\begin{pmat
 
 **解** 写出与 $f$ 相伴的对称阵 $A$，作 $(A\,|\,I_3)$ 并将它的第二行加到第一行上，再将第二列加到第一列上：
 
-$$(A\,|\,I_3)=\begin{pmatrix}0&1&2&|&1&0&0\\1&0&-2&|&0&1&0\\2&-2&0&|&0&0&1\end{pmatrix}\longrightarrow\begin{pmatrix}2&1&0&|&1&1&0\\1&0&-2&|&0&1&0\\0&-2&0&|&0&0&1\end{pmatrix}.$$
+$$ (A\,|\,I_3)=\begin{pmatrix} 0&1&2&|&1&0&0\\ 1&0&-2&|&0&1&0\\ 2&-2&0&|&0&0&1 \end{pmatrix} \longrightarrow\begin{pmatrix} 2&1&0&|&1&1&0\\ 1&0&-2&|&0&1&0\\ 0&-2&0&|&0&0&1 \end{pmatrix}. $$
 
 同例 8.2.3 一样，对上述矩阵进行初等变换得到
 
-$$\begin{pmatrix}2&0&0&|&1&1&0\\0&-\dfrac12&0&|&-\dfrac12&\dfrac12&0\\0&0&8&|&2&-2&1\end{pmatrix}.$$
+$$ \begin{pmatrix} 2&0&0&|&1&1&0\\ 0&-\dfrac12&0&|&-\dfrac12&\dfrac12&0\\ 0&0&8&|&2&-2&1 \end{pmatrix}. $$
 
 因此 $f$ 化简为
 
 $$2y_1^2-\frac12y_2^2+8y_3^2,$$
 
-$$C=\begin{pmatrix}1&-\dfrac12&2\\1&\dfrac12&-2\\0&0&1\end{pmatrix}.$$
+$$ C=\begin{pmatrix} 1&-\dfrac12&2\\ 1&\dfrac12&-2\\ 0&0&1 \end{pmatrix}. $$
 
 ### 8.3 惯性定理（p357–360）
 
 **定理 8.3.1 (惯性定理)** @358
 
-设 $f(x_1,x_2,\cdots,x_n)$ 是一个 $n$ 元实二次型，且 $f$ 可化为两个标准型：$$\begin{aligned}&c_1y_1^2+\cdots+c_py_p^2-c_{p+1}y_{p+1}^2-\cdots-c_ry_r^2,\\&d_1z_1^2+\cdots+d_kz_k^2-d_{k+1}z_{k+1}^2-\cdots-d_rz_r^2,\end{aligned}$$其中 $c_i>0$，$d_i>0$，则必有 $p=k$。
+设 $f(x_1,x_2,\cdots,x_n)$ 是一个 $n$ 元实二次型，且 $f$ 可化为两个标准型：$$ \begin{aligned} &c_1y_1^2+\cdots+c_py_p^2-c_{p+1}y_{p+1}^2-\cdots-c_ry_r^2,\\ &d_1z_1^2+\cdots+d_kz_k^2-d_{k+1}z_{k+1}^2-\cdots-d_rz_r^2, \end{aligned} $$其中 $c_i>0$，$d_i>0$，则必有 $p=k$。
 
 **定义 8.3.1 (秩、惯性指数与符号差)** @359
 
-设 $f(x_1,x_2,\cdots,x_n)$ 是一个实二次型，若它能化为形如$$f=y_1^2+\cdots+y_p^2-y_{p+1}^2-\cdots-y_r^2 \tag{8.3.2}$$的形状，则称 $r$ 是该二次型的**秩**，$p$ 是它的**正惯性指数**，$q=r-p$ 是它的**负惯性指数**，$s=p-q$ 称为 $f$ 的**符号差**。
+设 $f(x_1,x_2,\cdots,x_n)$ 是一个实二次型，若它能化为形如$$ f=y_1^2+\cdots+y_p^2-y_{p+1}^2-\cdots-y_r^2 \tag{8.3.2} $$的形状，则称 $r$ 是该二次型的**秩**，$p$ 是它的**正惯性指数**，$q=r-p$ 是它的**负惯性指数**，$s=p-q$ 称为 $f$ 的**符号差**。
 
 **定理 8.3.2 (合同关系的全系不变量)** @360
 
@@ -4176,21 +4176,21 @@ $n$ 阶 Hermite 矩阵 $A$ 为正定的充分必要条件是它的 $n$ 个顺序
 
 本节只考虑有限维内积空间．第一个问题是：给定内积空间的一组基以后，如何用坐标向量来表示向量的内积．设 $V$ 是欧氏空间（酉空间），$\{v_1,v_2,\cdots,v_n\}$ 是 $V$ 的一组基．若 $(v_i,v_j)=g_{ij}$（$i,j=1,2,\cdots,n$），$\alpha=a_1v_1+a_2v_2+\cdots+a_nv_n$，$\beta=b_1v_1+b_2v_2+\cdots+b_nv_n$，则当 $V$ 是欧氏空间时，由内积的性质可得
 
-$$(\alpha,\beta)=\left(\sum_{i=1}^n a_iv_i,\sum_{j=1}^n b_jv_j\right)=\sum_{i,j=1}^n a_ig_{ij}b_j.$$
+$$ (\alpha,\beta)=\left(\sum_{i=1}^n a_iv_i,\sum_{j=1}^n b_jv_j\right)=\sum_{i,j=1}^n a_ig_{ij}b_j. $$
 
 写成矩阵形式即为
 
-$$(\alpha,\beta)=(a_1,a_2,\cdots,a_n)\begin{pmatrix}g_{11}&g_{12}&\cdots&g_{1n}\\g_{21}&g_{22}&\cdots&g_{2n}\\\vdots&\vdots&&\vdots\\g_{n1}&g_{n2}&\cdots&g_{nn}\end{pmatrix}\begin{pmatrix}b_1\\b_2\\\vdots\\b_n\end{pmatrix}.$$
+$$ (\alpha,\beta)=(a_1,a_2,\cdots,a_n) \begin{pmatrix} g_{11}&g_{12}&\cdots&g_{1n}\\ g_{21}&g_{22}&\cdots&g_{2n}\\ \vdots&\vdots&&\vdots\\ g_{n1}&g_{n2}&\cdots&g_{nn} \end{pmatrix} \begin{pmatrix} b_1\\b_2\\\vdots\\b_n \end{pmatrix}. $$
 
 **定义 (Gram 矩阵与度量矩阵)** @380
 
 设
 
-$$G=\begin{pmatrix}g_{11}&g_{12}&\cdots&g_{1n}\\g_{21}&g_{22}&\cdots&g_{2n}\\\vdots&\vdots&&\vdots\\g_{n1}&g_{n2}&\cdots&g_{nn}\end{pmatrix}=\begin{pmatrix}(v_1,v_1)&(v_1,v_2)&\cdots&(v_1,v_n)\\(v_2,v_1)&(v_2,v_2)&\cdots&(v_2,v_n)\\\vdots&\vdots&&\vdots\\(v_n,v_1)&(v_n,v_2)&\cdots&(v_n,v_n)\end{pmatrix},$$
+$$ G=\begin{pmatrix} g_{11}&g_{12}&\cdots&g_{1n}\\ g_{21}&g_{22}&\cdots&g_{2n}\\ \vdots&\vdots&&\vdots\\ g_{n1}&g_{n2}&\cdots&g_{nn} \end{pmatrix} =\begin{pmatrix} (v_1,v_1)&(v_1,v_2)&\cdots&(v_1,v_n)\\ (v_2,v_1)&(v_2,v_2)&\cdots&(v_2,v_n)\\ \vdots&\vdots&&\vdots\\ (v_n,v_1)&(v_n,v_2)&\cdots&(v_n,v_n) \end{pmatrix}, $$
 
 称 $G$ 为基向量 $\{v_1,v_2,\cdots,v_n\}$ 的 **Gram (格列姆) 矩阵**或内积空间 $V$ 在给定基下的**度量矩阵**．于是内积在给定基下的表示为
 
-$$(\alpha,\beta)=x'Gy,\tag{9.2.1}$$
+$$ (\alpha,\beta)=x'Gy,\tag{9.2.1} $$
 
 其中 $x,y$ 分别是向量 $\alpha,\beta$ 在给定基下的坐标向量．
 
@@ -4198,17 +4198,17 @@ $$(\alpha,\beta)=x'Gy,\tag{9.2.1}$$
 
 设 $V$ 是酉空间，类似可证：令
 
-$$H=\begin{pmatrix}(v_1,v_1)&(v_1,v_2)&\cdots&(v_1,v_n)\\(v_2,v_1)&(v_2,v_2)&\cdots&(v_2,v_n)\\\vdots&\vdots&&\vdots\\(v_n,v_1)&(v_n,v_2)&\cdots&(v_n,v_n)\end{pmatrix},$$
+$$ H=\begin{pmatrix} (v_1,v_1)&(v_1,v_2)&\cdots&(v_1,v_n)\\ (v_2,v_1)&(v_2,v_2)&\cdots&(v_2,v_n)\\ \vdots&\vdots&&\vdots\\ (v_n,v_1)&(v_n,v_2)&\cdots&(v_n,v_n) \end{pmatrix}, $$
 
 则
 
-$$(\alpha,\beta)=x'H\bar{y},\tag{9.2.2}$$
+$$ (\alpha,\beta)=x'H\bar{y},\tag{9.2.2} $$
 
 其中 $x,y$ 分别是 $\alpha,\beta$ 的坐标向量，$H$ 是一个正定 Hermite 矩阵．
 
 若 $G$（或 $H$）等于 $I_n$，则基向量满足的充分必要条件是
 
-$$(v_i,v_j)=0\ (i\ne j),\quad (v_i,v_i)=1.$$
+$$ (v_i,v_j)=0\ (i\ne j),\quad (v_i,v_i)=1. $$
 
 **定义 9.2.1 (正交基与标准正交基)** @381
 
@@ -4230,11 +4230,11 @@ $n$ 维内积空间中任意一个正交非零向量组的向量个数不超过 
 
 若 $\alpha$ 是一个非零向量，则 $\dfrac{1}{\|\alpha\|}\alpha$ 是一个长度等于 $1$ 的向量，这个过程称为**单位化**．因此要证明存在标准正交基，只需先证明存在正交基，然后将正交基单位化即可：从一组线性无关的向量组出发构造正交向量组，采用数学归纳法，利用待定系数法求 $v_{k+1}$，设
 
-$$v_{k+1}=u_{k+1}+a_1v_1+a_2v_2+\cdots+a_kv_k,$$
+$$ v_{k+1}=u_{k+1}+a_1v_1+a_2v_2+\cdots+a_kv_k, $$
 
 两边和 $v_j$（$j\le k$）作内积，便得到 $0=(u_{k+1},v_j)+a_j(v_j,v_j)$，于是
 
-$$a_j=-\frac{(u_{k+1},v_j)}{(v_j,v_j)}.$$
+$$ a_j=-\frac{(u_{k+1},v_j)}{(v_j,v_j)}. $$
 
 **定理 9.2.1 (Gram-Schmidt 正交化)** @382
 
@@ -4242,7 +4242,7 @@ $$a_j=-\frac{(u_{k+1},v_j)}{(v_j,v_j)}.$$
 
 正交化的递推公式为
 
-$$v_{k+1}=u_{k+1}-\sum_{j=1}^k\frac{(u_{k+1},v_j)}{\|v_j\|^2}v_j.\tag{9.2.3}$$
+$$ v_{k+1}=u_{k+1}-\sum_{j=1}^k\frac{(u_{k+1},v_j)}{\|v_j\|^2}v_j.\tag{9.2.3} $$
 
 上述正交化过程通常称为 **Gram-Schmidt (格列姆-施密特) 方法**．
 
@@ -4254,17 +4254,17 @@ $$v_{k+1}=u_{k+1}-\sum_{j=1}^k\frac{(u_{k+1},v_j)}{\|v_j\|^2}v_j.\tag{9.2.3}$$
 
 设 $V$ 是三维实行向量空间，内积为标准内积．又已知 $3$ 个线性无关的向量：
 
-$$u_1=(3,0,4),\quad u_2=(-1,0,7),\quad u_3=(2,9,11),$$
+$$ u_1=(3,0,4),\quad u_2=(-1,0,7),\quad u_3=(2,9,11), $$
 
 用 Gram-Schmidt 方法求 $V$ 的一组标准正交基．
 
 **解** 令
 
-$$\begin{aligned}v_1&=(3,0,4),\\v_2&=(-1,0,7)-\frac{(-1\cdot 3+0+7\cdot 4)}{25}(3,0,4)=(-4,0,3),\\v_3&=(2,9,11)-\frac{(2\cdot 3+0+11\cdot 4)}{25}(3,0,4)\\&\quad-\frac{(2\cdot(-4)+0+11\cdot 3)}{25}(-4,0,3)\\&=(0,9,0),\end{aligned}$$
+$$ \begin{aligned} v_1&=(3,0,4),\\ v_2&=(-1,0,7)-\frac{(-1\cdot 3+0+7\cdot 4)}{25}(3,0,4)=(-4,0,3),\\ v_3&=(2,9,11)-\frac{(2\cdot 3+0+11\cdot 4)}{25}(3,0,4)\\ &\quad-\frac{(2\cdot(-4)+0+11\cdot 3)}{25}(-4,0,3)\\ &=(0,9,0), \end{aligned} $$
 
 再令
 
-$$w_1=\frac{1}{5}(3,0,4),\quad w_2=\frac{1}{5}(-4,0,3),\quad w_3=(0,1,0),$$
+$$ w_1=\frac{1}{5}(3,0,4),\quad w_2=\frac{1}{5}(-4,0,3),\quad w_3=(0,1,0), $$
 
 则 $\{w_1,w_2,w_3\}$ 是 $V$ 的一组标准正交基．
 
@@ -4272,7 +4272,7 @@ $$w_1=\frac{1}{5}(3,0,4),\quad w_2=\frac{1}{5}(-4,0,3),\quad w_3=(0,1,0),$$
 
 设 $U$ 是内积空间 $V$ 的子空间，令
 
-$$U^{\perp}=\{v\in V\mid (v,U)=0\},$$
+$$ U^{\perp}=\{v\in V\mid (v,U)=0\}, $$
 
 这里 $(v,U)=0$ 表示对一切 $u\in U$，均有 $(v,u)=0$．容易验证 $U^{\perp}$ 是 $V$ 的子空间，称为 $U$ 的**正交补空间**．
 
@@ -4288,7 +4288,7 @@ $$U^{\perp}=\{v\in V\mid (v,U)=0\},$$
 
 设 $V$ 是 $n$ 维内积空间，$V_1,V_2,\cdots,V_k$ 是 $V$ 的子空间．如果对任意的 $\alpha\in V_i$ 和任意的 $\beta\in V_j$ 均有 $(\alpha,\beta)=0$，则称子空间 $V_i$ 和 $V_j$ 正交．若 $V=V_1+V_2+\cdots+V_k$ 且 $V_i$ 两两正交，则称 $V$ 是 $V_1,V_2,\cdots,V_k$ 的**正交和**，记为
 
-$$V=V_1\perp V_2\perp\cdots\perp V_k.$$
+$$ V=V_1\perp V_2\perp\cdots\perp V_k. $$
 
 **引理 9.2.3 (正交和必为直和)** @384
 
@@ -4300,7 +4300,7 @@ $$V=V_1\perp V_2\perp\cdots\perp V_k.$$
 
 设 $V=V_1\perp V_2\perp\cdots\perp V_k$，定义 $V$ 上的线性变换 $E_i$（$i=1,2,\cdots,k$）如下：若 $v=v_1+\cdots+v_i+\cdots+v_k$（$v_i\in V_i$），令 $E_i(v)=v_i$．容易验证 $E_i$ 是 $V$ 上的线性变换，且满足
 
-$$E_i^2=E_i,\quad E_iE_j=0\ (i\ne j),\quad E_1+E_2+\cdots+E_k=I_V.$$
+$$ E_i^2=E_i,\quad E_iE_j=0\ (i\ne j),\quad E_1+E_2+\cdots+E_k=I_V. $$
 
 线性变换 $E_i$ 称为 $V$ 到 $V_i$ 上的**正交投影**（简称**投影**）．
 
@@ -4308,13 +4308,13 @@ $$E_i^2=E_i,\quad E_iE_j=0\ (i\ne j),\quad E_1+E_2+\cdots+E_k=I_V.$$
 
 设 $U$ 是内积空间 $V$ 的子空间，$V=U\perp U^{\perp}$．设 $E$ 是 $V$ 到 $U$ 上的正交投影，则对任意的 $\alpha,\beta\in V$，有
 
-$$(E(\alpha),\beta)=(\alpha,E(\beta)).$$
+$$ (E(\alpha),\beta)=(\alpha,E(\beta)). $$
 
 **命题 9.2.2 (Bessel 不等式)** @385
 
 设 $v_1,v_2,\cdots,v_m$ 是内积空间 $V$ 中的正交非零向量组，$y$ 是 $V$ 中任一向量，则
 
-$$\sum_{k=1}^m\frac{|(y,v_k)|^2}{\|v_k\|^2}\le\|y\|^2,$$
+$$ \sum_{k=1}^m\frac{|(y,v_k)|^2}{\|v_k\|^2}\le\|y\|^2, $$
 
 且等号成立的充分必要条件是 $y$ 属于由 $\{v_1,v_2,\cdots,v_m\}$ 张成的子空间．
 
@@ -4576,7 +4576,7 @@ Hermite 矩阵的特征值全是实数，实对称阵的特征值也全是实数
 
 设 $f(x)=x'Ax$ 是 $n$ 元实二次型，系数矩阵 $A$ 的特征值为 $\lambda_1,\lambda_2,\cdots,\lambda_n$，则 $f$ 经过正交变换 $x=Py$ 可以化为下列标准型：
 
-$$\lambda_1y_1^2+\lambda_2y_2^2+\cdots+\lambda_ny_n^2.$$
+$$ \lambda_1y_1^2+\lambda_2y_2^2+\cdots+\lambda_ny_n^2. $$
 
 因此，$f$ 的正惯性指数等于 $A$ 的正特征值的个数，负惯性指数等于 $A$ 的负特征值的个数，$f$ 的秩等于 $A$ 的非零特征值的个数．
 
@@ -4588,35 +4588,35 @@ $$\lambda_1y_1^2+\lambda_2y_2^2+\cdots+\lambda_ny_n^2.$$
 
 求正交矩阵 $P$，使 $P'AP$ 为对角阵，其中
 
-$$A=\begin{pmatrix}4&2&2\\2&4&2\\2&2&4\end{pmatrix}.$$
+$$ A=\begin{pmatrix}4&2&2\\2&4&2\\2&2&4\end{pmatrix}. $$
 
 **解** 先求特征值
 
-$$|\lambda I-A|=\begin{vmatrix}\lambda-4&-2&-2\\-2&\lambda-4&-2\\-2&-2&\lambda-4\end{vmatrix}=(\lambda-8)(\lambda-2)^2.$$
+$$ |\lambda I-A|=\begin{vmatrix}\lambda-4&-2&-2\\-2&\lambda-4&-2\\-2&-2&\lambda-4\end{vmatrix}=(\lambda-8)(\lambda-2)^2. $$
 
 因此，$A$ 的特征值为 $\lambda_1=8$，$\lambda_2=\lambda_3=2$．当 $\lambda=8$ 时，求解齐次线性方程组 $(\lambda I-A)x=0$，得到基础解系（只有一个向量）：
 
-$$\eta_1=(1,1,1)'.$$
+$$ \eta_1=(1,1,1)'. $$
 
 当 $\lambda=2$ 时，求解齐次线性方程组 $(\lambda I-A)x=0$，得到基础解系（有两个向量）：
 
-$$\eta_2=(-1,1,0)',\quad \eta_3=(-1,0,1)'.$$
+$$ \eta_2=(-1,1,0)',\quad \eta_3=(-1,0,1)'. $$
 
 由于实对称阵属于不同特征值的特征向量必正交，因此只要对上面两个向量正交化，用 Gram-Schmidt 方法将 $\eta_2,\eta_3$ 正交化得到
 
-$$\xi_2=(-1,1,0)',\quad \xi_3=\left(-\frac12,-\frac12,1\right)'.$$
+$$ \xi_2=(-1,1,0)',\quad \xi_3=\left(-\frac12,-\frac12,1\right)'. $$
 
 再将 $\eta_1,\xi_2,\xi_3$ 化为单位向量得到
 
-$$v_1=\left(\frac1{\sqrt3},\frac1{\sqrt3},\frac1{\sqrt3}\right)',\quad v_2=\left(-\frac1{\sqrt2},\frac1{\sqrt2},0\right)',\quad v_3=\left(-\frac1{\sqrt6},-\frac1{\sqrt6},\frac2{\sqrt6}\right)'.$$
+$$ v_1=\left(\frac1{\sqrt3},\frac1{\sqrt3},\frac1{\sqrt3}\right)',\quad v_2=\left(-\frac1{\sqrt2},\frac1{\sqrt2},0\right)',\quad v_3=\left(-\frac1{\sqrt6},-\frac1{\sqrt6},\frac2{\sqrt6}\right)'. $$
 
 令
 
-$$P=(v_1,v_2,v_3)=\begin{pmatrix}\dfrac1{\sqrt3}&-\dfrac1{\sqrt2}&-\dfrac1{\sqrt6}\\[4pt]\dfrac1{\sqrt3}&\dfrac1{\sqrt2}&-\dfrac1{\sqrt6}\\[4pt]\dfrac1{\sqrt3}&0&\dfrac2{\sqrt6}\end{pmatrix},$$
+$$ P=(v_1,v_2,v_3)=\begin{pmatrix}\dfrac1{\sqrt3}&-\dfrac1{\sqrt2}&-\dfrac1{\sqrt6}\\[4pt]\dfrac1{\sqrt3}&\dfrac1{\sqrt2}&-\dfrac1{\sqrt6}\\[4pt]\dfrac1{\sqrt3}&0&\dfrac2{\sqrt6}\end{pmatrix}, $$
 
 于是
 
-$$P'AP=\begin{pmatrix}8&0&0\\0&2&0\\0&0&2\end{pmatrix}.$$
+$$ P'AP=\begin{pmatrix}8&0&0\\0&2&0\\0&0&2\end{pmatrix}. $$
 
 **注 (Hermite 矩阵的推广)** @404
 
@@ -4628,19 +4628,19 @@ $$P'AP=\begin{pmatrix}8&0&0\\0&2&0\\0&0&2\end{pmatrix}.$$
 
 **解** 设 $A$ 属于特征值 $3$ 的另一特征向量 $v_3=(x_1,x_2,x_3)'$ 和 $v_1,v_2$ 都正交，则
 
-$$\begin{cases}x_1+x_2+x_3=0,\\-x_1+x_2=0,\end{cases}$$
+$$ \begin{cases} x_1+x_2+x_3=0,\\ -x_1+x_2=0, \end{cases} $$
 
 求出一个非零解 $v_3=(1,1,-2)'$．因为 $v_1,v_2,v_3$ 已经两两正交，故只需将 $v_1,v_2,v_3$ 标准化，得到
 
-$$\xi_1=\begin{pmatrix}\dfrac1{\sqrt3}\\[4pt]\dfrac1{\sqrt3}\\[4pt]\dfrac1{\sqrt3}\end{pmatrix},\quad\xi_2=\begin{pmatrix}-\dfrac1{\sqrt2}\\[4pt]\dfrac1{\sqrt2}\\[4pt]0\end{pmatrix},\quad\xi_3=\begin{pmatrix}\dfrac1{\sqrt6}\\[4pt]\dfrac1{\sqrt6}\\[4pt]-\dfrac2{\sqrt6}\end{pmatrix}.$$
+$$ \xi_1=\begin{pmatrix}\dfrac1{\sqrt3}\\[4pt]\dfrac1{\sqrt3}\\[4pt]\dfrac1{\sqrt3}\end{pmatrix},\quad \xi_2=\begin{pmatrix}-\dfrac1{\sqrt2}\\[4pt]\dfrac1{\sqrt2}\\[4pt]0\end{pmatrix},\quad \xi_3=\begin{pmatrix}\dfrac1{\sqrt6}\\[4pt]\dfrac1{\sqrt6}\\[4pt]-\dfrac2{\sqrt6}\end{pmatrix}. $$
 
 令
 
-$$P=(\xi_1,\xi_2,\xi_3)=\begin{pmatrix}\dfrac1{\sqrt3}&-\dfrac1{\sqrt2}&\dfrac1{\sqrt6}\\[4pt]\dfrac1{\sqrt3}&\dfrac1{\sqrt2}&\dfrac1{\sqrt6}\\[4pt]\dfrac1{\sqrt3}&0&-\dfrac2{\sqrt6}\end{pmatrix},\quadB=\begin{pmatrix}0&0&0\\0&3&0\\0&0&3\end{pmatrix},$$
+$$ P=(\xi_1,\xi_2,\xi_3)=\begin{pmatrix}\dfrac1{\sqrt3}&-\dfrac1{\sqrt2}&\dfrac1{\sqrt6}\\[4pt]\dfrac1{\sqrt3}&\dfrac1{\sqrt2}&\dfrac1{\sqrt6}\\[4pt]\dfrac1{\sqrt3}&0&-\dfrac2{\sqrt6}\end{pmatrix},\quad B=\begin{pmatrix}0&0&0\\0&3&0\\0&0&3\end{pmatrix}, $$
 
 则
 
-$$A=PBP'=\begin{pmatrix}2&-1&-1\\-1&2&-1\\-1&-1&2\end{pmatrix}.$$
+$$ A=PBP'=\begin{pmatrix}2&-1&-1\\-1&2&-1\\-1&-1&2\end{pmatrix}. $$
 
 **例 9.5.4 (实对称阵立方为单位阵)** @405
 
@@ -4664,7 +4664,7 @@ $$A=PBP'=\begin{pmatrix}2&-1&-1\\-1&2&-1\\-1&-1&2\end{pmatrix}.$$
 
 设 $\varphi$ 是内积空间 $V$ 上的正规算子，则对任意的 $\alpha\in V$，成立
 
-$$\|\varphi(\alpha)\|=\|\varphi^{*}(\alpha)\|.$$
+$$ \|\varphi(\alpha)\|=\|\varphi^{*}(\alpha)\|. $$
 
 **命题 9.6.1 (正规算子的特征向量)** @407
 
@@ -4700,13 +4700,13 @@ $$\|\varphi(\alpha)\|=\|\varphi^{*}(\alpha)\|.$$
 
 设 $\varphi$ 是 $n$ 维酉空间 $V$ 上的线性算子，$\lambda_1,\lambda_2,\cdots,\lambda_k$ 是 $\varphi$ 的全体不同特征值，$V_1,V_2,\cdots,V_k$ 是对应的特征子空间，则 $\varphi$ 是正规算子的充分必要条件是
 
-$$V=V_1\perp V_2\perp\cdots\perp V_k. \tag{9.6.1}$$
+$$ V=V_1\perp V_2\perp\cdots\perp V_k. \tag{9.6.1} $$
 
 **定理 9.6.4 (酉矩阵的酉对角化)** @409
 
 任一 $n$ 阶酉矩阵必酉相似于下列对角阵：
 
-$$\operatorname{diag}\{c_1,c_2,\cdots,c_n\},$$
+$$ \operatorname{diag}\{c_1,c_2,\cdots,c_n\}, $$
 
 其中 $c_i$ 为模长等于 $1$ 的复数．
 
@@ -4720,7 +4720,7 @@ $$\operatorname{diag}\{c_1,c_2,\cdots,c_n\},$$
 
 设 $\varphi$ 是欧氏空间 $V$ 上的正规算子，$f(x),g(x)$ 是互素的实系数多项式．假设 $u\in\operatorname{Ker}f(\varphi)$，$v\in\operatorname{Ker}g(\varphi)$，则
 
-$$(u,v)=0.$$
+$$ (u,v)=0. $$
 
 **定理 9.7.1 (实正规算子的正交分解)** @412
 
@@ -4736,7 +4736,7 @@ $$(u,v)=0.$$
 
 设 $V$ 是 $n$ 维欧氏空间，$\varphi$ 是 $V$ 上的正规算子且 $\varphi$ 适合多项式 $g(x)=x^2+1$．设 $v\in V$，$u=\varphi(v)$，则
 
-$$\varphi^{*}(v)=-u,\quad \varphi^{*}(u)=v,$$
+$$ \varphi^{*}(v)=-u,\quad \varphi^{*}(u)=v, $$
 
 且 $\|u\|=\|v\|$，$u\perp v$．
 
@@ -4744,29 +4744,29 @@ $$\varphi^{*}(v)=-u,\quad \varphi^{*}(u)=v,$$
 
 设 $V$ 是 $n$ 维欧氏空间，$\varphi$ 是 $V$ 上的正规算子且 $\varphi$ 适合多项式 $g(x)=(x-a)^2+b^2$，其中 $a,b$ 都是实数且 $b\ne 0$．设 $v\in V$，$u=b^{-1}(\varphi-aI)(v)$，则 $\|u\|=\|v\|$，$u\perp v$，且
 
-$$\varphi(v)=av+bu,\quad \varphi(u)=-bv+au;$$
+$$ \varphi(v)=av+bu,\quad \varphi(u)=-bv+au; $$
 
-$$\varphi^{*}(v)=av-bu,\quad \varphi^{*}(u)=bv+au.$$
+$$ \varphi^{*}(v)=av-bu,\quad \varphi^{*}(u)=bv+au. $$
 
 **定理 9.7.2 (二维不变子空间分解)** @414
 
 设 $\varphi$ 是 $n$ 维欧氏空间 $V$ 上的正规算子，$\varphi$ 的极小多项式为 $g(x)=(x-a)^2+b^2$，其中 $a,b$ 是实数且 $b\ne 0$，则存在 $V$ 的 $s$ 个二维子空间 $V_1,\cdots,V_s$，使
 
-$$V=V_1\perp\cdots\perp V_s,$$
+$$ V=V_1\perp\cdots\perp V_s, $$
 
 且每个 $V_i$ 都有标准正交基 $\{u_i,v_i\}$，满足
 
-$$\varphi(u_i)=au_i-bv_i,\quad \varphi(v_i)=bu_i+av_i. \tag{9.7.2}$$
+$$ \varphi(u_i)=au_i-bv_i,\quad \varphi(v_i)=bu_i+av_i. \tag{9.7.2} $$
 
 **定理 9.7.3 (实正规算子的标准形)** @415
 
 设 $V$ 是 $n$ 维欧氏空间，$\varphi$ 是 $V$ 上的正规算子，则存在一组标准正交基，使 $\varphi$ 在这组基下的表示矩阵为下列分块对角阵：
 
-$$\operatorname{diag}\{A_1,\cdots,A_r,c_{2r+1},\cdots,c_n\}, \tag{9.7.3}$$
+$$ \operatorname{diag}\{A_1,\cdots,A_r,c_{2r+1},\cdots,c_n\}, \tag{9.7.3} $$
 
 其中 $c_j$（$j=2r+1,\cdots,n$）是实数，$A_i$ 为形如
 
-$$\begin{pmatrix}a_i&b_i\\-b_i&a_i\end{pmatrix}$$
+$$ \begin{pmatrix}a_i&b_i\\-b_i&a_i\end{pmatrix} $$
 
 的二阶实矩阵．
 
@@ -4778,21 +4778,21 @@ $$\begin{pmatrix}a_i&b_i\\-b_i&a_i\end{pmatrix}$$
 
 设 $A$ 是 $n$ 阶正交矩阵，则 $A$ 正交相似于下列分块对角阵：
 
-$$\operatorname{diag}\{A_1,\cdots,A_r;1,\cdots,1;-1,\cdots,-1\},$$
+$$ \operatorname{diag}\{A_1,\cdots,A_r;1,\cdots,1;-1,\cdots,-1\}, $$
 
 其中
 
-$$A_i=\begin{pmatrix}\cos\theta_i&\sin\theta_i\\-\sin\theta_i&\cos\theta_i\end{pmatrix},\quad i=1,\cdots,r.$$
+$$ A_i=\begin{pmatrix}\cos\theta_i&\sin\theta_i\\-\sin\theta_i&\cos\theta_i\end{pmatrix},\quad i=1,\cdots,r. $$
 
 **定理 9.7.5 (实反对称阵的标准形)** @416
 
 设 $A$ 是实反对称阵，则 $A$ 正交相似于下列分块对角阵：
 
-$$\operatorname{diag}\{B_1,\cdots,B_r;0,\cdots,0\},$$
+$$ \operatorname{diag}\{B_1,\cdots,B_r;0,\cdots,0\}, $$
 
 其中
 
-$$B_i=\begin{pmatrix}0&b_i\\-b_i&0\end{pmatrix},\quad i=1,\cdots,r.$$
+$$ B_i=\begin{pmatrix}0&b_i\\-b_i&0\end{pmatrix},\quad i=1,\cdots,r. $$
 
 **推论 9.7.1 (反对称阵的特征值)** @416
 
@@ -4804,7 +4804,7 @@ $$B_i=\begin{pmatrix}0&b_i\\-b_i&0\end{pmatrix},\quad i=1,\cdots,r.$$
 
 设 $V$ 是有限维内积空间，$\varphi$ 是 $V$ 上的线性算子，当 $V$ 是酉空间时 $\varphi$ 为正规算子；当 $V$ 是欧氏空间时 $\varphi$ 为自伴随算子．设 $\lambda_1,\lambda_2,\cdots,\lambda_k$ 是 $\varphi$ 的全体不同特征值，$W_i$ 为 $\varphi$ 属于 $\lambda_i$ 的特征子空间，则 $V$ 是 $W_1,W_2,\cdots,W_k$ 的正交直和．设 $E_i$ 是 $V$ 到 $W_i$ 上的正交投影，则 $\varphi$ 有下列分解式：
 
-$$\varphi=\lambda_1E_1+\lambda_2E_2+\cdots+\lambda_kE_k.\tag{9.8.1}$$
+$$ \varphi=\lambda_1E_1+\lambda_2E_2+\cdots+\lambda_kE_k.\tag{9.8.1} $$
 
 **引理 9.8.1 (谱投影的插值表示)** @419
 
@@ -4852,23 +4852,23 @@ $$\varphi=\lambda_1E_1+\lambda_2E_2+\cdots+\lambda_kE_k.\tag{9.8.1}$$
 
 求下列非异阵的极分解：
 
-$$A=\begin{pmatrix}10&7&11\\5&10&5\\-5&-1&2\end{pmatrix}.$$
+$$ A=\begin{pmatrix}10&7&11\\5&10&5\\-5&-1&2\end{pmatrix}. $$
 
 **解** 经计算可得
 
-$$A'A=\begin{pmatrix}150&125&125\\125&150&125\\125&125&150\end{pmatrix}.$$
+$$ A'A=\begin{pmatrix}150&125&125\\125&150&125\\125&125&150\end{pmatrix}. $$
 
 采用与例 9.5.2 相同的计算方法可得正交矩阵
 
-$$P=\begin{pmatrix}-\dfrac1{\sqrt2}&-\dfrac1{\sqrt6}&\dfrac1{\sqrt3}\\[4pt]\dfrac1{\sqrt2}&-\dfrac1{\sqrt6}&\dfrac1{\sqrt3}\\[4pt]0&\dfrac2{\sqrt6}&\dfrac1{\sqrt3}\end{pmatrix},$$
+$$ P=\begin{pmatrix}-\dfrac1{\sqrt2}&-\dfrac1{\sqrt6}&\dfrac1{\sqrt3}\\[4pt]\dfrac1{\sqrt2}&-\dfrac1{\sqrt6}&\dfrac1{\sqrt3}\\[4pt]0&\dfrac2{\sqrt6}&\dfrac1{\sqrt3}\end{pmatrix}, $$
 
 使 $P'A'AP=\operatorname{diag}\{25,25,400\}$．令
 
-$$S=P\begin{pmatrix}5&0&0\\0&5&0\\0&0&20\end{pmatrix}P'=\begin{pmatrix}10&5&5\\5&10&5\\5&5&10\end{pmatrix},$$
+$$ S=P\begin{pmatrix}5&0&0\\0&5&0\\0&0&20\end{pmatrix}P'=\begin{pmatrix}10&5&5\\5&10&5\\5&5&10\end{pmatrix}, $$
 
 则 $S$ 为正定阵且 $A'A=S^2$．再令
 
-$$Q=AS^{-1}=\begin{pmatrix}10&7&11\\5&10&5\\-5&-1&2\end{pmatrix}\begin{pmatrix}10&5&5\\5&10&5\\5&5&10\end{pmatrix}^{-1}=\begin{pmatrix}\dfrac35&0&\dfrac45\\[4pt]0&1&0\\[4pt]-\dfrac45&0&\dfrac35\end{pmatrix},$$
+$$ Q=AS^{-1}=\begin{pmatrix}10&7&11\\5&10&5\\-5&-1&2\end{pmatrix}\begin{pmatrix}10&5&5\\5&10&5\\5&5&10\end{pmatrix}^{-1}=\begin{pmatrix}\dfrac35&0&\dfrac45\\[4pt]0&1&0\\[4pt]-\dfrac45&0&\dfrac35\end{pmatrix}, $$
 
 则 $A=QS$ 即为所求的极分解．
 
@@ -4878,7 +4878,7 @@ $$Q=AS^{-1}=\begin{pmatrix}10&7&11\\5&10&5\\-5&-1&2\end{pmatrix}\begin{pmatrix}1
 
 设 $A$ 是 $m\times n$ 实矩阵，如果存在非负实数 $\sigma$ 以及 $n$ 维非零实列向量 $\alpha$，$m$ 维非零实列向量 $\beta$，使
 
-$$A\alpha=\sigma\beta,\quad A'\beta=\sigma\alpha,$$
+$$ A\alpha=\sigma\beta,\quad A'\beta=\sigma\alpha, $$
 
 则称 $\sigma$ 是 $A$ 的**奇异值**，$\alpha,\beta$ 分别称为 $A$ 关于 $\sigma$ 的**右奇异向量**与**左奇异向量**．
 
@@ -4886,7 +4886,7 @@ $$A\alpha=\sigma\beta,\quad A'\beta=\sigma\alpha,$$
 
 设 $V,U$ 分别是 $n$ 维，$m$ 维欧氏空间，$\varphi$ 是 $V\to U$ 的线性映射．若存在 $U\to V$ 的线性映射 $\varphi^{*}$，使对任意的 $v\in V$，$u\in U$，都有
 
-$$(\varphi(v),u)=(v,\varphi^{*}(u))$$
+$$ (\varphi(v),u)=(v,\varphi^{*}(u)) $$
 
 成立，则称 $\varphi^{*}$ 是 $\varphi$ 的**伴随**．
 
@@ -4898,11 +4898,11 @@ $$(\varphi(v),u)=(v,\varphi^{*}(u))$$
 
 从伴随的定义不难发现，若取定 $V$ 的一组标准正交基 $\{e_1,e_2,\cdots,e_n\}$，$U$ 的一组标准正交基 $\{f_1,f_2,\cdots,f_m\}$，设 $\varphi$ 在这两组基下的表示矩阵为 $A$，则 $\varphi^{*}$ 在这两组基下的表示矩阵为 $A'$．因此，奇异值与奇异向量的几何定义即为下列等式成立：
 
-$$\varphi(v)=\sigma u,\quad \varphi^{*}(u)=\sigma v,$$
+$$ \varphi(v)=\sigma u,\quad \varphi^{*}(u)=\sigma v, $$
 
 其中 $\sigma\ge 0$，$v\in V$，$u\in U$ 都是非零向量．不难验证 $\varphi^{*}\varphi$ 是 $V$ 上的半正定自伴随算子，$\varphi\varphi^{*}$ 是 $U$ 上的半正定自伴随算子．又
 
-$$\varphi^{*}\varphi(v)=\varphi^{*}(\sigma u)=\sigma\varphi^{*}(u)=\sigma^{2}v,$$
+$$ \varphi^{*}\varphi(v)=\varphi^{*}(\sigma u)=\sigma\varphi^{*}(u)=\sigma^{2}v, $$
 
 因此，$\sigma^{2}$ 是 $\varphi^{*}\varphi$ 的特征值，$v$ 是 $\varphi^{*}\varphi$ 的属于 $\sigma^{2}$ 的特征向量．同理，$\sigma^{2}$ 也是 $\varphi\varphi^{*}$ 的特征值，$u$ 是 $\varphi\varphi^{*}$ 的属于 $\sigma^{2}$ 的特征向量．
 
@@ -4910,11 +4910,11 @@ $$\varphi^{*}\varphi(v)=\varphi^{*}(\sigma u)=\sigma\varphi^{*}(u)=\sigma^{2}v,$
 
 设 $V,U$ 分别是 $n$ 维，$m$ 维欧氏空间，$\varphi$ 是 $V\to U$ 的线性映射，则存在 $V$ 和 $U$ 的标准正交基，使 $\varphi$ 在这两组基下的表示矩阵为
 
-$$\begin{pmatrix}S&O\\O&O\end{pmatrix},$$
+$$ \begin{pmatrix}S&O\\O&O\end{pmatrix}, $$
 
 其中
 
-$$S=\begin{pmatrix}\sigma_1&&&\\&\sigma_2&&\\&&\ddots&\\&&&\sigma_r\end{pmatrix}$$
+$$ S=\begin{pmatrix}\sigma_1&&&\\&\sigma_2&&\\&&\ddots&\\&&&\sigma_r\end{pmatrix} $$
 
 是一个 $r$ 阶对角阵，$\sigma_1\ge\sigma_2\ge\cdots\ge\sigma_r>0$ 是 $\varphi$ 的非零奇异值．
 
@@ -4922,11 +4922,11 @@ $$S=\begin{pmatrix}\sigma_1&&&\\&\sigma_2&&\\&&\ddots&\\&&&\sigma_r\end{pmatrix}
 
 设 $A$ 是 $m\times n$ 实矩阵，则存在 $m$ 阶正交矩阵 $P$ 以及 $n$ 阶正交矩阵 $Q$，使
 
-$$P'AQ=\begin{pmatrix}S&O\\O&O\end{pmatrix},$$
+$$ P'AQ=\begin{pmatrix}S&O\\O&O\end{pmatrix}, $$
 
 其中
 
-$$S=\begin{pmatrix}\sigma_1&&&\\&\sigma_2&&\\&&\ddots&\\&&&\sigma_r\end{pmatrix}$$
+$$ S=\begin{pmatrix}\sigma_1&&&\\&\sigma_2&&\\&&\ddots&\\&&&\sigma_r\end{pmatrix} $$
 
 是一个 $r$ 阶对角阵，$\sigma_1\ge\sigma_2\ge\cdots\ge\sigma_r>0$ 是 $A$ 的非零奇异值．
 
@@ -4938,19 +4938,19 @@ $P'AQ=\begin{pmatrix}S&O\\O&O\end{pmatrix}$ 称为矩阵 $A$ 的**正交相抵�
 
 从定理 9.9.2 的证明过程中可以得到具体的计算方法．首先，求出 $A'A$ 的正交相似标准型，即求出 $n$ 阶正交矩阵 $Q$，使
 
-$$Q'A'AQ=\operatorname{diag}\{\lambda_1,\cdots,\lambda_r,0,\cdots,0\},$$
+$$ Q'A'AQ=\operatorname{diag}\{\lambda_1,\cdots,\lambda_r,0,\cdots,0\}, $$
 
 其中 $r=\operatorname{r}(A'A)=\operatorname{r}(A)$ 且 $\lambda_1\ge\cdots\ge\lambda_r>0$ 为 $A'A$ 的正特征值．其次，设 $Q=(\alpha_1,\alpha_2,\cdots,\alpha_n)$ 为列分块，令
 
-$$\sigma_i=\sqrt{\lambda_i},\quad \beta_i=\frac{1}{\sigma_i}A\alpha_i,\quad i=1,2,\cdots,r,$$
+$$ \sigma_i=\sqrt{\lambda_i},\quad \beta_i=\frac{1}{\sigma_i}A\alpha_i,\quad i=1,2,\cdots,r, $$
 
 则 $\beta_1,\beta_2,\cdots,\beta_r$ 是两两正交长度为 $1$ 的 $m$ 维列向量，将它们扩张为 $\mathbb{R}_m$ 的一组标准正交基 $\{\beta_1,\beta_2,\cdots,\beta_m\}$．最后，令 $P=(\beta_1,\beta_2,\cdots,\beta_m)$ 为 $m$ 阶正交矩阵，则
 
-$$AQ=P\begin{pmatrix}S&O\\O&O\end{pmatrix},$$
+$$ AQ=P\begin{pmatrix}S&O\\O&O\end{pmatrix}, $$
 
 从而
 
-$$A=P\begin{pmatrix}S&O\\O&O\end{pmatrix}Q'\tag{9.9.1}$$
+$$ A=P\begin{pmatrix}S&O\\O&O\end{pmatrix}Q'\tag{9.9.1} $$
 
 即为 $A$ 的奇异值分解．
 
@@ -4960,7 +4960,7 @@ $$A=P\begin{pmatrix}S&O\\O&O\end{pmatrix}Q'\tag{9.9.1}$$
 
 从 $n$ 阶矩阵 $A$ 的奇异值分解很容易得到 $A$ 的极分解．事实上，由 (9.9.1) 式可得
 
-$$A=(PQ')Q\begin{pmatrix}S&O\\O&O\end{pmatrix}Q',\tag{9.9.2}$$
+$$ A=(PQ')Q\begin{pmatrix}S&O\\O&O\end{pmatrix}Q',\tag{9.9.2} $$
 
 其中 $R=PQ'$ 是 $n$ 阶正交矩阵，$B=Q\operatorname{diag}\{S,O\}Q'$ 是 $n$ 阶半正定实对称阵，从而 $A=RB$ 即为 $A$ 的极分解．通过奇异值分解来求极分解，在处理奇异阵时很有用．
 
@@ -4968,33 +4968,33 @@ $$A=(PQ')Q\begin{pmatrix}S&O\\O&O\end{pmatrix}Q',\tag{9.9.2}$$
 
 求下列矩阵的奇异值分解和极分解：
 
-$$A=\begin{pmatrix}1&2&5\\1&0&1\\0&1&2\end{pmatrix}.$$
+$$ A=\begin{pmatrix}1&2&5\\1&0&1\\0&1&2\end{pmatrix}. $$
 
 **解** 经计算可得
 
-$$A'A=\begin{pmatrix}2&2&6\\2&5&12\\6&12&30\end{pmatrix}.$$
+$$ A'A=\begin{pmatrix}2&2&6\\2&5&12\\6&12&30\end{pmatrix}. $$
 
 采用与例 9.5.2 相同的计算方法可得正交矩阵
 
-$$Q=\begin{pmatrix}\frac{1}{\sqrt{30}}&\frac{2}{\sqrt{5}}&\frac{1}{\sqrt{6}}\\[2pt]\frac{2}{\sqrt{30}}&-\frac{1}{\sqrt{5}}&\frac{2}{\sqrt{6}}\\[2pt]\frac{5}{\sqrt{30}}&0&-\frac{1}{\sqrt{6}}\end{pmatrix},$$
+$$ Q=\begin{pmatrix}\frac{1}{\sqrt{30}}&\frac{2}{\sqrt{5}}&\frac{1}{\sqrt{6}}\\[2pt] \frac{2}{\sqrt{30}}&-\frac{1}{\sqrt{5}}&\frac{2}{\sqrt{6}}\\[2pt] \frac{5}{\sqrt{30}}&0&-\frac{1}{\sqrt{6}}\end{pmatrix}, $$
 
 使 $Q'A'AQ=\operatorname{diag}\{36,1,0\}$．设 $Q$ 的 $3$ 个列向量依次为 $\alpha_1,\alpha_2,\alpha_3$，令
 
-$$\sigma_1=6,\quad \beta_1=\frac{1}{6}A\alpha_1=\frac{1}{\sqrt{30}}(5,1,2)',$$
+$$ \sigma_1=6,\quad \beta_1=\frac{1}{6}A\alpha_1=\frac{1}{\sqrt{30}}(5,1,2)', $$
 
-$$\sigma_2=1,\quad \beta_2=A\alpha_2=\frac{1}{\sqrt{5}}(0,2,-1)'.$$
+$$ \sigma_2=1,\quad \beta_2=A\alpha_2=\frac{1}{\sqrt{5}}(0,2,-1)'. $$
 
 添加单位向量 $\beta_3=\frac{1}{\sqrt{6}}(-1,1,2)'$，使 $\beta_1,\beta_2,\beta_3$ 成为 $\mathbb{R}_3$ 的一组标准正交基．令 $P=(\beta_1,\beta_2,\beta_3)$，则 $P$ 为正交矩阵．由 (9.9.1) 式可得 $A$ 的奇异值分解为
 
-$$A=\begin{pmatrix}\frac{5}{\sqrt{30}}&0&-\frac{1}{\sqrt{6}}\\[2pt]\frac{1}{\sqrt{30}}&\frac{2}{\sqrt{5}}&\frac{1}{\sqrt{6}}\\[2pt]\frac{2}{\sqrt{30}}&-\frac{1}{\sqrt{5}}&\frac{2}{\sqrt{6}}\end{pmatrix}\begin{pmatrix}6&&\\&1&\\&&0\end{pmatrix}\begin{pmatrix}\frac{1}{\sqrt{30}}&\frac{2}{\sqrt{30}}&\frac{5}{\sqrt{30}}\\[2pt]\frac{2}{\sqrt{5}}&-\frac{1}{\sqrt{5}}&0\\[2pt]\frac{1}{\sqrt{6}}&\frac{2}{\sqrt{6}}&-\frac{1}{\sqrt{6}}\end{pmatrix}.$$
+$$ A=\begin{pmatrix}\frac{5}{\sqrt{30}}&0&-\frac{1}{\sqrt{6}}\\[2pt] \frac{1}{\sqrt{30}}&\frac{2}{\sqrt{5}}&\frac{1}{\sqrt{6}}\\[2pt] \frac{2}{\sqrt{30}}&-\frac{1}{\sqrt{5}}&\frac{2}{\sqrt{6}}\end{pmatrix} \begin{pmatrix}6&&\\&1&\\&&0\end{pmatrix} \begin{pmatrix}\frac{1}{\sqrt{30}}&\frac{2}{\sqrt{30}}&\frac{5}{\sqrt{30}}\\[2pt] \frac{2}{\sqrt{5}}&-\frac{1}{\sqrt{5}}&0\\[2pt] \frac{1}{\sqrt{6}}&\frac{2}{\sqrt{6}}&-\frac{1}{\sqrt{6}}\end{pmatrix}. $$
 
 由 (9.9.2) 式可得 $A$ 的极分解为
 
-$$A=\begin{pmatrix}0&0&1\\1&0&0\\0&1&0\end{pmatrix}\begin{pmatrix}1&0&1\\0&1&2\\1&2&5\end{pmatrix}.$$
+$$ A=\begin{pmatrix}0&0&1\\1&0&0\\0&1&0\end{pmatrix} \begin{pmatrix}1&0&1\\0&1&2\\1&2&5\end{pmatrix}. $$
 
 如果我们选取 $-\beta_3$ 与 $\beta_1,\beta_2$ 组成 $\mathbb{R}_3$ 的一组标准正交基，令 $P_1=(\beta_1,\beta_2,-\beta_3)$，则可得 $A$ 的另一种奇异值分解，由此诱导的 $A$ 的另一种极分解为
 
-$$A=\begin{pmatrix}\frac{1}{3}&\frac{2}{3}&\frac{2}{3}\\[2pt]\frac{2}{3}&-\frac{2}{3}&\frac{1}{3}\\[2pt]-\frac{2}{3}&-\frac{1}{3}&\frac{2}{3}\end{pmatrix}\begin{pmatrix}1&0&1\\0&1&2\\1&2&5\end{pmatrix}.$$
+$$ A=\begin{pmatrix}\frac{1}{3}&\frac{2}{3}&\frac{2}{3}\\[2pt] \frac{2}{3}&-\frac{2}{3}&\frac{1}{3}\\[2pt] -\frac{2}{3}&-\frac{1}{3}&\frac{2}{3}\end{pmatrix} \begin{pmatrix}1&0&1\\0&1&2\\1&2&5\end{pmatrix}. $$
 
 **例 9.9.2 (由伴随刻画线性映射)** @429
 
@@ -5002,9 +5002,9 @@ $$A=\begin{pmatrix}\frac{1}{3}&\frac{2}{3}&\frac{2}{3}\\[2pt]\frac{2}{3}&-\frac{
 
 **证明** 我们将沿用定理 9.9.2 证明中的记号．设在 $V$ 的标准正交基 $\{e_1,e_2,\cdots,e_n\}$ 下，$\varphi^{*}\varphi=\psi^{*}\psi$ 的表示矩阵为 $n$ 阶对角阵 $\operatorname{diag}\{\lambda_1,\cdots,\lambda_r,0,\cdots,0\}$，则由定理 9.9.2 的证明知存在 $U$ 的标准正交基 $\{f_1,f_2,\cdots,f_m\}$，使 $\varphi$ 在这两组基下的表示矩阵为分块对角阵 $\operatorname{diag}\{S,O\}$．同理，存在 $U$ 的另一组标准正交基 $\{g_1,g_2,\cdots,g_m\}$，使 $\psi$ 在 $\{e_1,e_2,\cdots,e_n\}$ 和 $\{g_1,g_2,\cdots,g_m\}$ 下的表示矩阵也是 $\operatorname{diag}\{S,O\}$．现定义 $U$ 上的线性变换 $\omega$ 为 $\omega(g_i)=f_i\,(i=1,2,\cdots,m)$，则 $\omega$ 是 $U$ 上的正交变换且
 
-$$\omega\psi(e_i)=\omega(\sigma_ig_i)=\sigma_i\omega(g_i)=\sigma_if_i=\varphi(e_i),\quad i=1,\cdots,r;$$
+$$ \omega\psi(e_i)=\omega(\sigma_ig_i)=\sigma_i\omega(g_i)=\sigma_if_i=\varphi(e_i),\quad i=1,\cdots,r; $$
 
-$$\omega\psi(e_j)=\omega(0)=0=\varphi(e_j),\quad j=r+1,\cdots,n,$$
+$$ \omega\psi(e_j)=\omega(0)=0=\varphi(e_j),\quad j=r+1,\cdots,n, $$
 
 故 $\varphi=\omega\psi$．$\square$
 
@@ -5016,19 +5016,19 @@ $$\omega\psi(e_j)=\omega(0)=0=\varphi(e_j),\quad j=r+1,\cdots,n,$$
 
 设 $C$ 为向量 $v$ 的终点，$u$ 为 $v$ 在 $W$ 上的垂足对应的向量，则 $v$ 到平面 $W$ 的距离 $d$ 等于 $C$ 到垂足点 $P$ 的距离，即
 
-$$d=\|v-u\|.$$
+$$ d=\|v-u\|. $$
 
 由于 $u\in W$，故可设 $u=\lambda_1e_1+\lambda_2e_2$．由 $(v-u)\perp e_i\ (i=1,2)$ 得 $(v-u,e_i)=0$，因此
 
-$$\lambda_1=(u,e_1)=(v,e_1),\qquad \lambda_2=(u,e_2)=(v,e_2),$$
+$$ \lambda_1=(u,e_1)=(v,e_1),\qquad \lambda_2=(u,e_2)=(v,e_2), $$
 
 即
 
-$$u=(v,e_1)e_1+(v,e_2)e_2.$$
+$$ u=(v,e_1)e_1+(v,e_2)e_2. $$
 
 另一方面 $v=(v,e_1)e_1+(v,e_2)e_2+(v,e_3)e_3$，故
 
-$$d=|(v,e_3)|.\tag{9.10.1}$$
+$$ d=|(v,e_3)|. \tag{9.10.1} $$
 
 **定义 (正交投影向量)** @431
 
@@ -5042,17 +5042,17 @@ $$d=|(v,e_3)|.\tag{9.10.1}$$
 
 (2) 若 $\{e_1,\cdots,e_m\}$ 是 $W$ 的标准正交基，又 $\{e_{m+1},\cdots,e_n\}$ 是 $W^{\perp}$ 的标准正交基，这样 $\{e_1,e_2,\cdots,e_n\}$ 就成为 $V$ 的一组标准正交基，则
 
-$$u=(v,e_1)e_1+(v,e_2)e_2+\cdots+(v,e_m)e_m,$$
+$$ u=(v,e_1)e_1+(v,e_2)e_2+\cdots+(v,e_m)e_m, $$
 
-$$v-u=(v,e_{m+1})e_{m+1}+\cdots+(v,e_n)e_n,$$
+$$ v-u=(v,e_{m+1})e_{m+1}+\cdots+(v,e_n)e_n, $$
 
-$$\|v-u\|=\Big(|(v,e_{m+1})|^2+\cdots+|(v,e_n)|^2\Big)^{\frac12}.\tag{9.10.2}$$
+$$ \|v-u\|=\Big(|(v,e_{m+1})|^2+\cdots+|(v,e_n)|^2\Big)^{\frac12}. \tag{9.10.2} $$
 
 **例 (收入与消费的线性拟合)** @432
 
 在经济学中，个人的收入与消费之间存在密切关系．设 $u$ 表示收入，$v$ 表示支出，则可设
 
-$$u=a+bv,\tag{9.10.3}$$
+$$ u=a+bv, \tag{9.10.3} $$
 
 其中 $a,b$ 是两个待定常数．现有 3 年的统计数据（表 9.1，单位：万元）：
 
@@ -5060,11 +5060,11 @@ $$u=a+bv,\tag{9.10.3}$$
 
 代入 (9.10.3) 得到一个两个未知数、3 个方程式的线性方程组：
 
-$$\begin{cases}a+1.2b=1.6,\\a+1.4b=1.7,\\a+1.8b=2.0.\end{cases}$$
+$$ \begin{cases} a+1.2b=1.6,\\ a+1.4b=1.7,\\ a+1.8b=2.0. \end{cases} $$
 
 由第一、第二个方程解出 $a=1,\ b=0.5$，代入第三个方程得 $1+1.8\times0.5=1.9\neq2.0$，故上述方程组无解．此时可改为要求 $a,b$ 使平方偏差
 
-$$\big((a+1.2b)-1.6\big)^2+\big((a+1.4b)-1.7\big)^2+\big((a+1.8b)-2.0\big)^2$$
+$$ \big((a+1.2b)-1.6\big)^2+\big((a+1.4b)-1.7\big)^2+\big((a+1.8b)-2.0\big)^2 $$
 
 取最小值，这就是所谓**最小二乘问题**．一般地，为了使理论关系式更符合实际，通常要求统计数据多一点，即方程式的个数多一点．
 
@@ -5072,19 +5072,19 @@ $$\big((a+1.2b)-1.6\big)^2+\big((a+1.4b)-1.7\big)^2+\big((a+1.8b)-2.0\big)^2$$
 
 设矛盾线性方程组
 
-$$\begin{cases}a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n=b_1,\\a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n=b_2,\\\qquad\cdots\cdots\cdots\cdots\\a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n=b_m,\end{cases}$$
+$$ \begin{cases} a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n=b_1,\\ a_{21}x_1+a_{22}x_2+\cdots+a_{2n}x_n=b_2,\\ \qquad\cdots\cdots\cdots\cdots\\ a_{m1}x_1+a_{m2}x_2+\cdots+a_{mn}x_n=b_m, \end{cases} $$
 
 其中 $m>n$，其系数矩阵记为 $A$，写成矩阵形式
 
-$$Ax=\beta,\tag{9.10.4}$$
+$$ Ax=\beta, \tag{9.10.4} $$
 
 其中
 
-$$x=\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix},\qquad\beta=\begin{pmatrix}b_1\\b_2\\\vdots\\b_m\end{pmatrix}.$$
+$$ x=\begin{pmatrix}x_1\\x_2\\\vdots\\x_n\end{pmatrix},\qquad \beta=\begin{pmatrix}b_1\\b_2\\\vdots\\b_m\end{pmatrix}. $$
 
 要求出 $x$，使
 
-$$\sum_{i=1}^{m}\Big(\sum_{j=1}^{n}a_{ij}x_j-b_i\Big)^2$$
+$$ \sum_{i=1}^{m}\Big(\sum_{j=1}^{n}a_{ij}x_j-b_i\Big)^2 $$
 
 取最小值，这样的 $x$ 称为线性方程组 (9.10.4) 的**最小二乘解**．
 
@@ -5092,31 +5092,31 @@ $$\sum_{i=1}^{m}\Big(\sum_{j=1}^{n}a_{ij}x_j-b_i\Big)^2$$
 
 记 $A$ 的列向量为
 
-$$\alpha_1=\begin{pmatrix}a_{11}\\a_{21}\\\vdots\\a_{m1}\end{pmatrix},\quad\alpha_2=\begin{pmatrix}a_{12}\\a_{22}\\\vdots\\a_{m2}\end{pmatrix},\quad\cdots,\quad\alpha_n=\begin{pmatrix}a_{1n}\\a_{2n}\\\vdots\\a_{mn}\end{pmatrix}.$$
+$$ \alpha_1=\begin{pmatrix}a_{11}\\a_{21}\\\vdots\\a_{m1}\end{pmatrix},\quad \alpha_2=\begin{pmatrix}a_{12}\\a_{22}\\\vdots\\a_{m2}\end{pmatrix},\quad\cdots,\quad \alpha_n=\begin{pmatrix}a_{1n}\\a_{2n}\\\vdots\\a_{mn}\end{pmatrix}. $$
 
 取 $V=\mathbb{R}^m$ 并赋予标准内积，则 $x_1\alpha_1+x_2\alpha_2+\cdots+x_n\alpha_n-\beta$ 的第 $i$ 个坐标为 $\sum\limits_{j=1}^{n}a_{ij}x_j-b_i$，于是
 
-$$\|x_1\alpha_1+x_2\alpha_2+\cdots+x_n\alpha_n-\beta\|^2=\sum_{i=1}^{m}\Big(\sum_{j=1}^{n}a_{ij}x_j-b_i\Big)^2,$$
+$$ \|x_1\alpha_1+x_2\alpha_2+\cdots+x_n\alpha_n-\beta\|^2=\sum_{i=1}^{m}\Big(\sum_{j=1}^{n}a_{ij}x_j-b_i\Big)^2, $$
 
 且 $\|x_1\alpha_1+\cdots+x_n\alpha_n-\beta\|=\|Ax-\beta\|=\|\beta-Ax\|$．记 $W$ 为 $\alpha_1,\alpha_2,\cdots,\alpha_n$ 张成的子空间，则求 $\|Ax-\beta\|$ 的最小值就是求 $\beta$ 到 $W$ 的距离．由定理 9.10.1，只需求出 $\beta$ 在 $W$ 上的正交投影向量 $\gamma$，问题归结为解线性方程组
 
-$$Ax=\gamma.\tag{9.10.5}$$
+$$ Ax=\gamma. \tag{9.10.5} $$
 
 设 $\mathrm{r}(A)=n$（即 $\alpha_1,\cdots,\alpha_n$ 线性无关），设
 
-$$\gamma=x_1\alpha_1+x_2\alpha_2+\cdots+x_n\alpha_n,\tag{9.10.6}$$
+$$ \gamma=x_1\alpha_1+x_2\alpha_2+\cdots+x_n\alpha_n, \tag{9.10.6} $$
 
 由定理 9.10.1 知 $(\beta-\gamma)\perp W$，故 $(\beta-\gamma)\perp\alpha_i$，即 $(\gamma,\alpha_i)=(\beta,\alpha_i)\ (i=1,2,\cdots,n)$，这便是线性方程组
 
-$$\begin{cases}(\alpha_1,\alpha_1)x_1+(\alpha_2,\alpha_1)x_2+\cdots+(\alpha_n,\alpha_1)x_n=(\beta,\alpha_1),\\(\alpha_1,\alpha_2)x_1+(\alpha_2,\alpha_2)x_2+\cdots+(\alpha_n,\alpha_2)x_n=(\beta,\alpha_2),\\\qquad\cdots\cdots\cdots\cdots\\(\alpha_1,\alpha_n)x_1+(\alpha_2,\alpha_n)x_2+\cdots+(\alpha_n,\alpha_n)x_n=(\beta,\alpha_n).\end{cases}$$
+$$ \begin{cases} (\alpha_1,\alpha_1)x_1+(\alpha_2,\alpha_1)x_2+\cdots+(\alpha_n,\alpha_1)x_n=(\beta,\alpha_1),\\ (\alpha_1,\alpha_2)x_1+(\alpha_2,\alpha_2)x_2+\cdots+(\alpha_n,\alpha_2)x_n=(\beta,\alpha_2),\\ \qquad\cdots\cdots\cdots\cdots\\ (\alpha_1,\alpha_n)x_1+(\alpha_2,\alpha_n)x_2+\cdots+(\alpha_n,\alpha_n)x_n=(\beta,\alpha_n). \end{cases} $$
 
 用矩阵形式可写为
 
-$$A'Ax=A'\beta.$$
+$$ A'Ax=A'\beta. $$
 
 由于 $\mathrm{r}(A)=n$，故 $A'A$ 的秩也是 $n$，即 $A'A$ 为 $n$ 阶非异阵，于是
 
-$$x=(A'A)^{-1}A'\beta.$$
+$$ x=(A'A)^{-1}A'\beta. $$
 
 这就是线性方程组 (9.10.4) 的最小二乘解．
 
@@ -5124,21 +5124,21 @@ $$x=(A'A)^{-1}A'\beta.$$
 
 求前面例子中线性方程组的最小二乘解．这时
 
-$$A=\begin{pmatrix}1&1.2\\1&1.4\\1&1.8\end{pmatrix},\quadA'=\begin{pmatrix}1&1&1\\1.2&1.4&1.8\end{pmatrix},\quad\beta=\begin{pmatrix}1.6\\1.7\\2.0\end{pmatrix}.$$
+$$ A=\begin{pmatrix}1&1.2\\1&1.4\\1&1.8\end{pmatrix},\quad A'=\begin{pmatrix}1&1&1\\1.2&1.4&1.8\end{pmatrix},\quad \beta=\begin{pmatrix}1.6\\1.7\\2.0\end{pmatrix}. $$
 
 $A$ 的秩等于 2，通过计算得
 
-$$A'A=\begin{pmatrix}3&4.4\\4.4&6.64\end{pmatrix},\quad(A'A)^{-1}=\frac1{0.56}\begin{pmatrix}6.64&-4.4\\-4.4&3\end{pmatrix},$$
+$$ A'A=\begin{pmatrix}3&4.4\\4.4&6.64\end{pmatrix},\quad (A'A)^{-1}=\frac1{0.56}\begin{pmatrix}6.64&-4.4\\-4.4&3\end{pmatrix}, $$
 
-$$A'\beta=\begin{pmatrix}5.3\\7.9\end{pmatrix},\quad(A'A)^{-1}A'\beta=\frac1{0.56}\begin{pmatrix}0.432\\0.38\end{pmatrix}\approx\begin{pmatrix}0.77\\0.68\end{pmatrix}.$$
+$$ A'\beta=\begin{pmatrix}5.3\\7.9\end{pmatrix},\quad (A'A)^{-1}A'\beta=\frac1{0.56}\begin{pmatrix}0.432\\0.38\end{pmatrix}\approx\begin{pmatrix}0.77\\0.68\end{pmatrix}. $$
 
 由此得最小二乘解（近似值）
 
-$$\begin{cases}a=0.77,\\ b=0.68,\end{cases}$$
+$$ \begin{cases}a=0.77,\\ b=0.68,\end{cases} $$
 
 因此收入与消费的关系式为
 
-$$u=0.77+0.68v.$$
+$$ u=0.77+0.68v. $$
 
 ## 第10章 双线性型
 
@@ -5396,7 +5396,7 @@ $$g(\varphi(x),\varphi(y))=g(x,y)$$
 
 设 $V_i\ (i=1,2)$ 是有限维线性空间，$g_i\ (i=1,2)$ 是 $V_i$ 上非退化的对称型．若存在 $V_1\to V_2$ 的线性同构 $\eta$，使
 
-$$g_2(\eta(x),\eta(y))=g_1(x,y)$$
+$$ g_2(\eta(x),\eta(y))=g_1(x,y) $$
 
 对一切 $x,y\in V_1$ 成立，则称 $\eta$ 是 $V_1\to V_2$ 的**保距同构**．特别，当 $V_1=V_2=V$，$g_1=g_2=g$ 时，则 $\eta$ 称为 $(V,g)$ 上的一个**正交变换**．
 
@@ -5414,7 +5414,7 @@ $$g_2(\eta(x),\eta(y))=g_1(x,y)$$
 
 给定 $u\in V$ 且 $g(u,u)\neq 0$，构造下列映射 $S_u$：
 
-$$S_u(x)=x-\frac{2g(x,u)}{g(u,u)}u.$$
+$$ S_u(x)=x-\frac{2g(x,u)}{g(u,u)}u. $$
 
 $S_u$ 是正交变换．显然有 $S_u(u)=-u$．又若 $u\perp v$，则 $S_u(v)=v$．$S_u$ 称为 $V$ 上的**镜像变换**，它把 $u$ 映为 $-u$，而一切与 $u$ 正交的向量保持不动．$S_u^2=I$，即 $S_u$ 是一个对合变换．
 
@@ -5432,11 +5432,11 @@ $S_u$ 是正交变换．显然有 $S_u(u)=-u$．又若 $u\perp v$，则 $S_u(v)=
 
 (1) $V$ 是双曲平面的充分必要条件是 $V$ 有一组基 $\{u,v\}$，满足条件：
 
-$$g(u,u)=g(v,v)=0,\quad g(u,v)=g(v,u)=1,$$
+$$ g(u,u)=g(v,v)=0,\quad g(u,v)=g(v,u)=1, $$
 
 即 $g$ 在这组基下的表示矩阵为
 
-$$\begin{pmatrix}0&1\\1&0\end{pmatrix};$$
+$$ \begin{pmatrix}0&1\\1&0\end{pmatrix}; $$
 
 (2) 任何两个双曲平面皆保距同构；
 
@@ -5446,7 +5446,7 @@ $$\begin{pmatrix}0&1\\1&0\end{pmatrix};$$
 
 设 $V$ 是实数域上的四维空间，若 $g$ 是一个非退化的对称型且其正惯性指数等于 $3$，则称 $(V,g)$ 是一个 **Minkowski（闵可夫斯基）空间**．$g$ 在 $V$ 适当的一组基下的表示矩阵为
 
-$$\begin{pmatrix}1&0&0&0\\0&1&0&0\\0&0&1&0\\0&0&0&-1\end{pmatrix}.$$
+$$ \begin{pmatrix} 1&0&0&0\\ 0&1&0&0\\ 0&0&1&0\\ 0&0&0&-1 \end{pmatrix}. $$
 
 $V$ 上的正交变换称为 **Lorentz（洛伦兹）变换**，$V$ 中的迷向向量称为**光向量**，$V$ 中适合 $g(x,x)>0$ 的向量 $x$ 称为**空间向量**，而适合 $g(x,x)<0$ 的向量 $x$ 称为**时间向量**．Minkowski 空间在相对论中有重要的应用．
 

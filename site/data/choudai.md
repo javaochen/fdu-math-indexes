@@ -394,13 +394,13 @@ Abel 群的每个子群都是正规子群。我们有下面的例子：
 
 (3) 记
 
-$$H=\left\{\begin{pmatrix}a&b\\-b&a\end{pmatrix}\Biggm| a,b\in\mathbb{R},\ a^{2}+b^{2}\neq 0\right\}\quad(< \mathrm{GL}_2(\mathbb{R})),$$
+$$ H=\left\{\begin{pmatrix}a&b\\-b&a\end{pmatrix}\Biggm| a,b\in\mathbb{R},\ a^{2}+b^{2}\neq 0\right\}\quad(< \mathrm{GL}_2(\mathbb{R})), $$
 
 定义映射 $\theta:\mathbb{C}^{*}\to H$，$\theta(a+b\mathrm{i})=\begin{pmatrix}a&b\\-b&a\end{pmatrix}\in H$。可以验证 $\theta$ 是群同态，而且是双射。因此，$\theta$ 是群同构。
 
 (4) 设 $G$ 为群，定义
 
-$$\mathrm{Aut}(G)=\{f:G\to G\mid f\text{ 是群同构}\},$$
+$$ \mathrm{Aut}(G)=\{f:G\to G\mid f\text{ 是群同构}\}, $$
 
 $f\in\mathrm{Aut}(G)$ 称为群 $G$ 的**自同构**（automorphism），$\mathrm{Aut}(G)$ 按照映射的复合运算构成群，其恒等元为恒等映射，逆映射即为群中的逆元。$\mathrm{Aut}(G)$ 称为群 $G$ 的**自同构群**。
 
@@ -412,11 +412,11 @@ $f\in\mathrm{Aut}(G)$ 称为群 $G$ 的**自同构**（automorphism），$\mathr
 
 对任意 $g\in G$，作映射 $\theta_g:G\to G$ 使 $\theta_g(x)=g^{-1}xg$，$\forall x\in G$。则对任意 $y\in G$，
 
-$$\theta_g(xy)=g^{-1}xyg=(g^{-1}xg)(g^{-1}yg)=\theta_g(x)\theta_g(y),$$
+$$ \theta_g(xy)=g^{-1}xyg=(g^{-1}xg)(g^{-1}yg)=\theta_g(x)\theta_g(y), $$
 
 故 $\theta_g$ 为群同态。因为 $\theta_{g^{-1}}$ 为 $\theta_g$ 的逆映射，$\theta_g$ 为同构，故 $\theta_g\in\mathrm{Aut}(G)$。若 $g\in C(G)$，则 $\theta_g=\mathrm{id}_G$。通常称 $\theta_g$ 为**内自同构**（inner automorphism）。记
 
-$$\mathrm{Inn}(G)=\{\theta_g\mid g\in G\}$$
+$$ \mathrm{Inn}(G)=\{\theta_g\mid g\in G\} $$
 
 为内自同构的全体，$\mathrm{Inn}(G)\subset\mathrm{Aut}(G)$。
 
@@ -428,7 +428,7 @@ $\mathrm{Inn}(G)\triangleleft\mathrm{Aut}(G)$。
 
 设 $f:G_1\to G_2$ 为群同态，定义 $f$ 的**核**（kernel）和**像**（image）为
 
-$$\mathrm{Ker}\,f=\{x\in G_1\mid f(x)=e_2\},\qquad \mathrm{Im}\,f=\{f(x)\mid x\in G_1\}.$$
+$$ \mathrm{Ker}\,f=\{x\in G_1\mid f(x)=e_2\},\qquad \mathrm{Im}\,f=\{f(x)\mid x\in G_1\}. $$
 
 由定义可知，$\mathrm{Ker}\,f\triangleleft G_1$，$\mathrm{Im}\,f<G_2$，但 $\mathrm{Im}\,f$ 不一定是 $G_2$ 的正规子群（见本节习题）。
 
@@ -436,7 +436,7 @@ $$\mathrm{Ker}\,f=\{x\in G_1\mid f(x)=e_2\},\qquad \mathrm{Im}\,f=\{f(x)\mid x\i
 
 设 $f:G_1\to G_2$ 为群同态，它自然诱导了一个群同构
 
-$$\mathrm{Im}\,f\cong G_1/\mathrm{Ker}\,f.$$
+$$ \mathrm{Im}\,f\cong G_1/\mathrm{Ker}\,f. $$
 
 **例 2 (循环群的结构)** @26
 
@@ -446,7 +446,7 @@ $$\mathrm{Im}\,f\cong G_1/\mathrm{Ker}\,f.$$
 
 设 $G$ 是群，作映射 $\varphi:G\to\mathrm{Inn}(G)$ 使 $\varphi(g)=\theta_{g^{-1}}\in\mathrm{Inn}(G)$，$\forall g\in G$。则对任意 $g_1,g_2\in G$ 及任意 $x\in G$，总有
 
-$$\begin{aligned}\varphi(g_1g_2)(x)&=\theta_{(g_1g_2)^{-1}}(x)=(g_1g_2)x(g_1g_2)^{-1}=g_1(g_2xg_2^{-1})g_1^{-1}\\&=\theta_{g_1^{-1}}\bigl(\theta_{g_2^{-1}}(x)\bigr)=\bigl(\varphi(g_1)\varphi(g_2)\bigr)(x),\end{aligned}$$
+$$ \begin{aligned} \varphi(g_1g_2)(x)&=\theta_{(g_1g_2)^{-1}}(x)=(g_1g_2)x(g_1g_2)^{-1}=g_1(g_2xg_2^{-1})g_1^{-1}\\ &=\theta_{g_1^{-1}}\bigl(\theta_{g_2^{-1}}(x)\bigr)=\bigl(\varphi(g_1)\varphi(g_2)\bigr)(x), \end{aligned} $$
 
 所以 $\varphi$ 是群同态且 $\varphi$ 是满的。注意到 $K=\mathrm{Ker}\,\varphi=\{g\in G\mid \theta_{g^{-1}}=\mathrm{id}_G\}=C(G)$，故 $\mathrm{Inn}(G)\cong G/C(G)$。
 
@@ -454,7 +454,7 @@ $$\begin{aligned}\varphi(g_1g_2)(x)&=\theta_{(g_1g_2)^{-1}}(x)=(g_1g_2)x(g_1g_2)
 
 设 $G$ 是群，$H\triangleleft G$，$j:G\to G/H$ 为自然同态。令
 
-$$\Gamma_1\triangleq\{H_1<G\mid H\subset H_1\},\qquad \Gamma_2\triangleq\{\bar H_2\mid \bar H_2<G/H\},$$
+$$ \Gamma_1\triangleq\{H_1<G\mid H\subset H_1\},\qquad \Gamma_2\triangleq\{\bar H_2\mid \bar H_2<G/H\}, $$
 
 则 $j$ 可以诱导 $\Gamma_1$ 和 $\Gamma_2$ 之间的一一对应。
 
@@ -462,7 +462,7 @@ $$\Gamma_1\triangleq\{H_1<G\mid H\subset H_1\},\qquad \Gamma_2\triangleq\{\bar H
 
 设 $n>1$ 是正整数，下面我们用子群对应定理 5.3 来确定 $\mathbb{Z}/n\mathbb{Z}$ 的子群。我们有商同态 $j:\mathbb{Z}\to\mathbb{Z}/n\mathbb{Z}$。由习题 1.1 第 1 题，$(\mathbb{Z},+)$ 的所有子群是 $m\mathbb{Z}=\{mt\mid t\in\mathbb{Z}\}$，$m\in\mathbb{Z}_{\geqslant 0}$。设 $m\mathbb{Z}$ 是 $\mathbb{Z}$ 的子群，则 $n\mathbb{Z}\subset m\mathbb{Z}$ 当且仅当 $m\mid n$。由定理 5.3，$\mathbb{Z}/n\mathbb{Z}$ 的子群是
 
-$$T_m=\left\{0+n\mathbb{Z},\ m+n\mathbb{Z},\ 2m+n\mathbb{Z},\ \cdots,\ \left(\frac{n}{m}-1\right)m+n\mathbb{Z}\right\}.$$
+$$ T_m=\left\{0+n\mathbb{Z},\ m+n\mathbb{Z},\ 2m+n\mathbb{Z},\ \cdots,\ \left(\frac{n}{m}-1\right)m+n\mathbb{Z}\right\}. $$
 
 这里 $m\mid n$ 取遍 $n$ 的正因子。由定义可知，每个 $T_m=\langle m+n\mathbb{Z}\rangle$ 是 $\frac{n}{m}$ 阶循环群。
 
@@ -470,13 +470,13 @@ $$T_m=\left\{0+n\mathbb{Z},\ m+n\mathbb{Z},\ 2m+n\mathbb{Z},\ \cdots,\ \left(\fr
 
 设 $G$ 是群，$H\triangleleft G$，$N\triangleleft G$ 且 $H\subset N$，则 $H\triangleleft N$，$N/H\triangleleft G/H$ 且
 
-$$(G/H)/(N/H)\cong G/N.$$
+$$ (G/H)/(N/H)\cong G/N. $$
 
 **定理 5.5 (第二同构定理)** @27
 
 设 $G$ 是群，$H\triangleleft G$，$K<G$，则 $HK<G$，$H\triangleleft HK$，$H\cap K\triangleleft K$ 且
 
-$$HK/H\cong K/(H\cap K).$$
+$$ HK/H\cong K/(H\cap K). $$
 
 **例 5 (互素阶与正规子群)** @27
 
@@ -568,15 +568,15 @@ $$HK/H\cong K/(H\cap K).$$
 
 (2) 群 $G$ 可以自然地左乘作用于自身：
 
-$$G\times G\to G,\qquad (g,x)\mapsto gx.$$
+$$ G\times G\to G,\qquad (g,x)\mapsto gx. $$
 
 (3) 群 $G$ 可以共轭地作用于自身，即有映射
 
-$$*:G\times G\to G,\qquad (g,x)\mapsto g*x\triangleq gxg^{-1}.$$
+$$ *:G\times G\to G,\qquad (g,x)\mapsto g*x\triangleq gxg^{-1}. $$
 
 这是一个群作用，因为 $e*x=x$ 并且
 
-$$(g_1g_2)*x=(g_1g_2)x(g_1g_2)^{-1}=g_1(g_2xg_2^{-1})g_1^{-1}=g_1*(g_2*x).$$
+$$ (g_1g_2)*x=(g_1g_2)x(g_1g_2)^{-1}=g_1(g_2xg_2^{-1})g_1^{-1}=g_1*(g_2*x). $$
 
 (4) 若 $H<G$，则 $G$ 有在集合 $G/H=\{aH\mid a\in G\}$ 上的如下作用：$g\cdot aH=(ga)H$。若对任意 $a,a'\in G$，$aH=a'H$，即 $a^{-1}a'\in H$，那么 $(ga)^{-1}(ga')=a^{-1}g^{-1}ga'=a^{-1}a'\in H$，故 $(ga)H=(ga')H$，这是一个有意义的映射。另一方面，对任意 $g_1,g_2,a\in G$，总有 $(g_1g_2)aH=g_1(g_2a)H$。
 
@@ -586,13 +586,13 @@ $$(g_1g_2)*x=(g_1g_2)x(g_1g_2)^{-1}=g_1(g_2xg_2^{-1})g_1^{-1}=g_1*(g_2*x).$$
 
 (1) 若 $\sigma:G\times X\to X$ 是一个群作用，则映射
 
-$$\rho_\sigma:G\to S_X,\qquad g\mapsto(x\mapsto g\cdot x)$$
+$$ \rho_\sigma:G\to S_X,\qquad g\mapsto(x\mapsto g\cdot x) $$
 
 是一个群同态，且 $G=\operatorname{Ker}\rho_\sigma$ 当且仅当 $\sigma$ 是平凡作用。
 
 (2) 若 $\rho:G\to S_X$ 是同态，则
 
-$$\tilde{\rho}:G\times X\to X,\qquad (g,x)\mapsto\rho(g)(x)$$
+$$ \tilde{\rho}:G\times X\to X,\qquad (g,x)\mapsto\rho(g)(x) $$
 
 是一个群作用。
 
@@ -604,11 +604,11 @@ $$\tilde{\rho}:G\times X\to X,\qquad (g,x)\mapsto\rho(g)(x)$$
 
 设群 $G$ 作用于集合 $X$。对任意 $x\in X$，集合
 
-$$Gx\triangleq\{g\cdot x\mid g\in G\}\subseteq X$$
+$$ Gx\triangleq\{g\cdot x\mid g\in G\}\subseteq X $$
 
 称为经过 $x$ 的轨道（orbit）；集合
 
-$$\operatorname{Stab}(x)\triangleq\{g\in G\mid g\cdot x=x\}$$
+$$ \operatorname{Stab}(x)\triangleq\{g\in G\mid g\cdot x=x\} $$
 
 称为 $x$ 的稳定子（stabilizer）。只有一条轨道的作用称为是可迁的（transitive）。
 
@@ -632,7 +632,7 @@ $$\operatorname{Stab}(x)\triangleq\{g\in G\mid g\cdot x=x\}$$
 
 设 $H$ 为有限群 $G$ 的一个子群。记 $X=\{gHg^{-1}\mid g\in G\}$ 是 $H$ 的共轭子群的集合。$G$ 共轭作用在 $X$ 上：
 
-$$G\times X\to X,\qquad (g,T)\mapsto gTg^{-1}.$$
+$$ G\times X\to X,\qquad (g,T)\mapsto gTg^{-1}. $$
 
 由定义可以验证这是一个可迁作用。$H\in X$，且 $\operatorname{Stab}(H)=\{g\in G\mid gHg^{-1}=H\}=N_G(H)$。因此，$|X|=[G:N_G(H)]=|G|/|N_G(H)|$。
 
@@ -640,25 +640,25 @@ $$G\times X\to X,\qquad (g,T)\mapsto gTg^{-1}.$$
 
 群 $G$ 在集合 $X$ 上的作用的所有轨道给出集合 $X$ 的一个划分，即 $X$ 可以写成一些不相交轨道的并集。若 $X$ 为有限集，设 $Gx_i$（$1\leqslant i\leqslant n$）为该群作用下的全部不同轨道，则有
 
-$$|X|=\sum_{i=1}^{n}|Gx_i|=\sum_{i=1}^{n}[G:\operatorname{Stab}(x_i)].$$
+$$ |X|=\sum_{i=1}^{n}|Gx_i|=\sum_{i=1}^{n}[G:\operatorname{Stab}(x_i)]. $$
 
 **例 5 (共轭类方程)** @40
 
 考虑 $G$ 在自身上的共轭作用
 
-$$g\cdot a=gag^{-1},\qquad \forall g,a\in G.$$
+$$ g\cdot a=gag^{-1},\qquad \forall g,a\in G. $$
 
 对任意 $a\in G$，其稳定子群为
 
-$$\operatorname{Stab}(a)=\{g\in G\mid g\cdot a=gag^{-1}=a\}=C_G(a),$$
+$$ \operatorname{Stab}(a)=\{g\in G\mid g\cdot a=gag^{-1}=a\}=C_G(a), $$
 
 并且我们有 $G=\operatorname{Stab}(a)$ 当且仅当 $a\in C(G)$。若 $G$ 为有限群，我们可以通过共轭作用的轨道计算公式给出下面的共轭类方程
 
-$$|G|=|C(G)|+\sum_{i=1}^{m}[G:\operatorname{Stab}(x_i)], \tag{1.3}$$
+$$ |G|=|C(G)|+\sum_{i=1}^{m}[G:\operatorname{Stab}(x_i)], \tag{1.3} $$
 
 这里 $x_i\notin C(G)$ 在不同的共轭类中。特别地，设 $G$ 是有限群，对 $a\in G$，记 $T_a=\{gag^{-1}\mid g\in G\}$ 是 $a$ 所在的共轭类，则 $T_a$ 是上述共轭作用的一条轨道。因此，我们有
 
-$$|T_a|=[G:\operatorname{Stab}(a)]=[G:C_G(a)].$$
+$$ |T_a|=[G:\operatorname{Stab}(a)]=[G:C_G(a)]. $$
 
 **例 6** @40
 
@@ -750,7 +750,7 @@ $p^2$ 阶群必是 Abel 群。
 
 设 $G$ 是群，如果真子群序列 $\{G_i\}$ 满足
 
-$$\{e\}=G_0\triangleleft G_1\triangleleft\cdots\triangleleft G_n=G,$$
+$$ \{e\}=G_0\triangleleft G_1\triangleleft\cdots\triangleleft G_n=G, $$
 
 那么称 $\{G_i\}_{i=0}^n$ 为 $G$ 的一个长度为 $n$ 的**正规群列**。对任意 $i=1,\cdots,n$，$G_i/G_{i-1}$ 称为该群列的**商因子**。进一步，如果对任意 $i>0$，$G_i/G_{i-1}$ 是单群，那么称 $\{G_i\}$ 为 $G$ 的**合成群列**（composition series）。
 
@@ -766,9 +766,9 @@ $$\{e\}=G_0\triangleleft G_1\triangleleft\cdots\triangleleft G_n=G,$$
 
 设 $G$ 为有限群，且有两个不同的合成群列：
 
-$$\{e\}=G_0\triangleleft G_1\triangleleft\cdots\triangleleft G_r=G,$$
+$$ \{e\}=G_0\triangleleft G_1\triangleleft\cdots\triangleleft G_r=G, $$
 
-$$\{e\}=H_0\triangleleft H_1\triangleleft\cdots\triangleleft H_s=G,$$
+$$ \{e\}=H_0\triangleleft H_1\triangleleft\cdots\triangleleft H_s=G, $$
 
 则 $r=s$，且存在 $\sigma\in S_r$，对任意 $i>0$，有 $G_i/G_{i-1}\cong H_{\sigma(i)}/H_{\sigma(i)-1}$。
 
@@ -800,11 +800,11 @@ $D_5=H_5\rtimes H_2$ 是其 Sylow $5$-子群 $H_5$ 和一个 Sylow $2$-子群的
 
 设 $G$ 是群，$H<G$，$N\triangleleft G$。若 $H\cap N=\{e\}$，则
 
-$$\theta:H\times N\to HN,\qquad (x,y)\mapsto xy$$
+$$ \theta:H\times N\to HN,\qquad (x,y)\mapsto xy $$
 
 是一一对应，且 $\theta$ 是群同构当且仅当同态
 
-$$f:H\to \operatorname{Aut}(N),\qquad x\mapsto r_x,\quad \forall x\in H,\ r_x(y)=xyx^{-1},\ \forall y\in N$$
+$$ f:H\to \operatorname{Aut}(N),\qquad x\mapsto r_x,\quad \forall x\in H,\ r_x(y)=xyx^{-1},\ \forall y\in N $$
 
 是平凡的，即对任意 $x\in H$，$f(x)=\operatorname{id}_N$。
 
@@ -812,7 +812,7 @@ $$f:H\to \operatorname{Aut}(N),\qquad x\mapsto r_x,\quad \forall x\in H,\ r_x(y)
 
 (1) 设 $G$ 是群，则存在单同态
 
-$$\theta_L:G\to S_G,\qquad a\mapsto a_L\ (\forall a\in G),\quad a_L(b)=ab\ (\forall b\in G).$$
+$$ \theta_L:G\to S_G,\qquad a\mapsto a_L\ (\forall a\in G),\quad a_L(b)=ab\ (\forall b\in G). $$
 
 (2) 如 $|G|=n<+\infty$，则 $G$ 同构于 $S_n$ 的子群。
 
@@ -826,7 +826,7 @@ $$\theta_L:G\to S_G,\qquad a\mapsto a_L\ (\forall a\in G),\quad a_L(b)=ab\ (\for
 
 (1) 如果存在 $G$ 中元素 $x_1,\cdots,x_n$ 使得 $G=\langle x_1,\cdots,x_n\rangle$，即群 $G$ 中任意元素 $x$ 都可以表示成 $x_1,\cdots,x_n$ 的 $\mathbb{Z}$-线性组合
 
-$$x=m_1x_1+m_2x_2+\cdots+m_nx_n,$$
+$$ x=m_1x_1+m_2x_2+\cdots+m_nx_n, $$
 
 其中 $m_1,\cdots,m_n\in\mathbb{Z}$，则称 $G$ 是一个**有限生成 Abel 群**，$x_1,\cdots,x_n$ 为其**生成元**。
 
@@ -850,7 +850,7 @@ $$x=m_1x_1+m_2x_2+\cdots+m_nx_n,$$
 
 (3) $R$ 的加法与乘法满足分配律，即对任意的 $a,b,c\in R$，都有
 
-$$a\cdot(b+c)=a\cdot b+a\cdot c,\qquad (a+b)\cdot c=a\cdot c+b\cdot c,$$
+$$ a\cdot(b+c)=a\cdot b+a\cdot c,\qquad (a+b)\cdot c=a\cdot c+b\cdot c, $$
 
 则称 $(R,+,\cdot)$ 是一个**环**（ring）。
 
@@ -872,15 +872,15 @@ $\mathbb{Z},\mathbb{Q},\mathbb{R},\mathbb{C}$ 在数的加法、乘法下构成�
 
 设 $R$ 是含幺环，$n$ 是正整数。定义
 
-$$M_n(R)=\{A=(a_{ij})\mid a_{ij}\in R,\ 1\leqslant i,j\leqslant n\}.$$
+$$ M_n(R)=\{A=(a_{ij})\mid a_{ij}\in R,\ 1\leqslant i,j\leqslant n\}. $$
 
 与 $n$ 阶复方阵的加法与乘法的定义相同，对 $A,B\in M_n(R)$，$A=(a_{ij})$，$B=(b_{ij})$，定义 $A+B=(a_{ij}+b_{ij})$，$A\times B=(c_{ij})$，这里
 
-$$c_{ij}=\sum_{k=1}^{n}a_{ik}b_{kj}.$$
+$$ c_{ij}=\sum_{k=1}^{n}a_{ik}b_{kj}. $$
 
 可以验证 $M_n(R)$ 是含幺环，称为 $R$ 上的 $n$ 阶**矩阵环**；它的零元为 $n$ 阶零方阵，幺元为 $n$ 阶单位矩阵
 
-$$I_n=\begin{pmatrix}1&0&\cdots&0\\0&1&\cdots&0\\\vdots&\vdots&&\vdots\\0&0&\cdots&1\end{pmatrix},$$
+$$ I_n=\begin{pmatrix}1&0&\cdots&0\\0&1&\cdots&0\\\vdots&\vdots&&\vdots\\0&0&\cdots&1\end{pmatrix}, $$
 
 这里 $1$ 是 $R$ 的幺元。当 $n\geqslant 2$ 且 $R$ 不是零环时，$M_n(R)$ 都是非交换环。
 
@@ -888,7 +888,7 @@ $$I_n=\begin{pmatrix}1&0&\cdots&0\\0&1&\cdots&0\\\vdots&\vdots&&\vdots\\0&0&\cdo
 
 设 $A$ 是一个加法 Abel 群，$R=\operatorname{End}(A)=\{f:A\to A\mid f\text{ 是群同态}\}$。$A$ 上的加法运算诱导了群同态的加法，即对 $f,g\in R$，可以定义群同态 $f+g$ 为
 
-$$(f+g)(a)=f(a)+g(a),\quad \forall a\in A.$$
+$$ (f+g)(a)=f(a)+g(a),\quad \forall a\in A. $$
 
 另一方面，群同态的复合给了 $R$ 上另一个自然的二元运算 "$\circ$"。容易验证 $R$ 在这两种运算下是一个含幺环，零元为零映射，幺元为恒等映射 $\mathrm{id}_A$。
 
@@ -896,7 +896,7 @@ $$(f+g)(a)=f(a)+g(a),\quad \forall a\in A.$$
 
 设 $C^0(\mathbb{R})=\{f:\mathbb{R}\to\mathbb{R}\mid f\text{ 是连续函数}\}$。对 $f,g\in C^0(\mathbb{R})$，定义它们的和与乘积
 
-$$(f+g)(a)=f(a)+g(a),\quad (fg)(a)=f(a)g(a),\quad \forall a\in\mathbb{R},$$
+$$ (f+g)(a)=f(a)+g(a),\quad (fg)(a)=f(a)g(a),\quad \forall a\in\mathbb{R}, $$
 
 可以验证 $C^0(\mathbb{R})$ 在这两个运算下是一个含幺交换环，零元为零函数，幺元为恒等函数 $\mathrm{id}_{\mathbb{R}}$。
 
@@ -904,11 +904,11 @@ $$(f+g)(a)=f(a)+g(a),\quad (fg)(a)=f(a)g(a),\quad \forall a\in\mathbb{R},$$
 
 设 $R_1,R_2,\cdots,R_n$ 为环。定义
 
-$$R_1\times R_2\times\cdots\times R_n=\{(r_1,r_2,\cdots,r_n)\mid r_i\in R_i,\ 1\leqslant i\leqslant n\},$$
+$$ R_1\times R_2\times\cdots\times R_n=\{(r_1,r_2,\cdots,r_n)\mid r_i\in R_i,\ 1\leqslant i\leqslant n\}, $$
 
 对任意 $x=(x_1,x_2,\cdots,x_n),\ y=(y_1,y_2,\cdots,y_n)\in R_1\times R_2\times\cdots\times R_n$，定义
 
-$$x+y=(x_1+y_1,x_2+y_2,\cdots,x_n+y_n),\quad x\cdot y=(x_1\cdot y_1,x_2\cdot y_2,\cdots,x_n\cdot y_n),$$
+$$ x+y=(x_1+y_1,x_2+y_2,\cdots,x_n+y_n),\quad x\cdot y=(x_1\cdot y_1,x_2\cdot y_2,\cdots,x_n\cdot y_n), $$
 
 则可以验证 $R_1\times R_2\times\cdots\times R_n$ 在上述加法与乘法下构成一个环，称为 $R_1,R_2,\cdots,R_n$ 的**直积**。
 
@@ -918,7 +918,7 @@ $$x+y=(x_1+y_1,x_2+y_2,\cdots,x_n+y_n),\quad x\cdot y=(x_1\cdot y_1,x_2\cdot y_2
 
 若 $R$ 是一个环，$n\in\mathbb{Z}$，$a\in R$，我们记
 
-$$na=\begin{cases}\underbrace{a+\cdots+a}_{n\text{ 个}}, & n>0,\\ 0, & n=0,\\ \underbrace{(-a)+\cdots+(-a)}_{-n\text{ 个}}, & n<0.\end{cases}$$
+$$ na=\begin{cases}\underbrace{a+\cdots+a}_{n\text{ 个}}, & n>0,\\ 0, & n=0,\\ \underbrace{(-a)+\cdots+(-a)}_{-n\text{ 个}}, & n<0.\end{cases} $$
 
 **命题 1.1 (环的基本运算性质)** @59
 
@@ -930,11 +930,11 @@ $$na=\begin{cases}\underbrace{a+\cdots+a}_{n\text{ 个}}, & n>0,\\ 0, & n=0,\\ \
 
 (3) 设 $a_1,\cdots,a_m\in R$，$b_1,\cdots,b_n\in R$，则有
 
-$$\sum_{i=1}^{m}a_i\cdot\sum_{j=1}^{n}b_j=\sum_{i=1}^{m}\sum_{j=1}^{n}a_ib_j.$$
+$$ \sum_{i=1}^{m}a_i\cdot\sum_{j=1}^{n}b_j=\sum_{i=1}^{m}\sum_{j=1}^{n}a_ib_j. $$
 
 (4) 若 $R$ 是交换环，则对任意正整数 $n$，有
 
-$$(a+b)^n=\sum_{i=0}^{n}\binom{n}{i}a^{i}b^{n-i}=a^n+\binom{n}{n-1}a^{n-1}b+\cdots+\binom{n}{1}ab^{n-1}+b^n,$$
+$$ (a+b)^n=\sum_{i=0}^{n}\binom{n}{i}a^{i}b^{n-i}=a^n+\binom{n}{n-1}a^{n-1}b+\cdots+\binom{n}{1}ab^{n-1}+b^n, $$
 
 这里 $\binom{n}{i}=\dfrac{n!}{i!\,(n-i)!}$。
 
@@ -994,7 +994,7 @@ $$(a+b)^n=\sum_{i=0}^{n}\binom{n}{i}a^{i}b^{n-i}=a^n+\binom{n}{n-1}a^{n-1}b+\cdo
 
 设 $R$ 是一个含幺环。记
 
-$$R^{*}=\{a\in R\mid a\text{ 是可逆元}\},$$
+$$ R^{*}=\{a\in R\mid a\text{ 是可逆元}\}, $$
 
 则 $R^{*}$ 在 $R$ 的乘法下构成一个群，称为 $R$ 的**单位群**或**乘法群**。
 
@@ -1016,7 +1016,7 @@ $$R^{*}=\{a\in R\mid a\text{ 是可逆元}\},$$
 
 (2) 矩阵环 $M_n(\mathbb{C})$ 在 $n\geqslant 2$ 时不是整环：对 $0<m<n$，有
 
-$$\begin{pmatrix}I_{n-m}&0\\0&0\end{pmatrix}\begin{pmatrix}0&0\\0&I_m\end{pmatrix}=\begin{pmatrix}0&0\\0&0\end{pmatrix}.$$
+$$ \begin{pmatrix}I_{n-m}&0\\0&0\end{pmatrix} \begin{pmatrix}0&0\\0&I_m\end{pmatrix} =\begin{pmatrix}0&0\\0&0\end{pmatrix}. $$
 
 (3) 两个及以上非零环的直积一定不是整环。若 $R_1,R_2$ 是非零环，取 $a\in R_1\setminus\{0\}$，$b\in R_2\setminus\{0\}$，则 $(a,0)(0,b)=(0,0)$。
 
@@ -1024,15 +1024,15 @@ $$\begin{pmatrix}I_{n-m}&0\\0&0\end{pmatrix}\begin{pmatrix}0&0\\0&I_m\end{pmatri
 
 设 $R$ 是含幺交换环，$A=(a_{ij})\in M_n(R)$，用高等代数中的方法定义 $A$ 的行列式：
 
-$$\det(A)=\sum_{\sigma\in S_n}\operatorname{sgn}(\sigma)a_{1,\sigma(1)}a_{2,\sigma(2)}\cdots a_{n,\sigma(n)}\in R.$$
+$$ \det(A)=\sum_{\sigma\in S_n}\operatorname{sgn}(\sigma)a_{1,\sigma(1)}a_{2,\sigma(2)}\cdots a_{n,\sigma(n)}\in R. $$
 
 记 $B=(A_{ij})$ 是 $A$ 的**伴随矩阵**，这里 $A_{ij}$ 是 $a_{ji}$ 的代数余子式，则
 
-$$AB=BA=\det(A)I_n.$$
+$$ AB=BA=\det(A)I_n. $$
 
 由此
 
-$$\mathrm{GL}_n(R)=M_n(R)^{*}=\{A\in M_n(R)\mid \det(A)\in R^{*}\}.$$
+$$ \mathrm{GL}_n(R)=M_n(R)^{*}=\{A\in M_n(R)\mid \det(A)\in R^{*}\}. $$
 
 特别地，若 $R=F$ 是域，则 $\mathrm{GL}_n(F)=\{A\in M_n(F)\mid \det(A)\neq 0\}$；若 $R=\mathbb{Z}$，则 $\mathrm{GL}_n(\mathbb{Z})=\{A\in M_n(\mathbb{Z})\mid \det(A)=\pm 1\}$。
 
@@ -1040,19 +1040,19 @@ $$\mathrm{GL}_n(R)=M_n(R)^{*}=\{A\in M_n(R)\mid \det(A)\in R^{*}\}.$$
 
 设 $\mathbb{H}$ 是一个 $4$ 维实向量空间，$\{1,\mathrm{i},\mathrm{j},\mathrm{k}\}$ 是其一组基，故
 
-$$\mathbb{H}=\{a+b\mathrm{i}+c\mathrm{j}+d\mathrm{k}\mid a,b,c,d\in\mathbb{R}\}.$$
+$$ \mathbb{H}=\{a+b\mathrm{i}+c\mathrm{j}+d\mathrm{k}\mid a,b,c,d\in\mathbb{R}\}. $$
 
 $\mathbb{H}$ 上已有加法（即向量的加法），定义 $\mathbb{H}$ 上的乘法如下：
 
-$$\begin{aligned}&(a_1+b_1\mathrm{i}+c_1\mathrm{j}+d_1\mathrm{k})(a_2+b_2\mathrm{i}+c_2\mathrm{j}+d_2\mathrm{k})\\={}&(a_1a_2-b_1b_2-c_1c_2-d_1d_2)+(a_1b_2+a_2b_1+c_1d_2-c_2d_1)\mathrm{i}\\&+(a_1c_2+a_2c_1+b_2d_1-b_1d_2)\mathrm{j}+(a_1d_2+a_2d_1+b_1c_2-b_2c_1)\mathrm{k}.\end{aligned}$$
+$$ \begin{aligned} &(a_1+b_1\mathrm{i}+c_1\mathrm{j}+d_1\mathrm{k})(a_2+b_2\mathrm{i}+c_2\mathrm{j}+d_2\mathrm{k})\\ ={}&(a_1a_2-b_1b_2-c_1c_2-d_1d_2)+(a_1b_2+a_2b_1+c_1d_2-c_2d_1)\mathrm{i}\\ &+(a_1c_2+a_2c_1+b_2d_1-b_1d_2)\mathrm{j}+(a_1d_2+a_2d_1+b_1c_2-b_2c_1)\mathrm{k}. \end{aligned} $$
 
 特别地，有
 
-$$\mathrm{i}^{2}=\mathrm{j}^{2}=\mathrm{k}^{2}=-1,\qquad\mathrm{ij}=\mathrm{k},\ \mathrm{jk}=\mathrm{i},\ \mathrm{ki}=\mathrm{j},\qquad\mathrm{ji}=-\mathrm{k},\ \mathrm{kj}=-\mathrm{i},\ \mathrm{ik}=-\mathrm{j}.$$
+$$ \mathrm{i}^{2}=\mathrm{j}^{2}=\mathrm{k}^{2}=-1,\qquad \mathrm{ij}=\mathrm{k},\ \mathrm{jk}=\mathrm{i},\ \mathrm{ki}=\mathrm{j},\qquad \mathrm{ji}=-\mathrm{k},\ \mathrm{kj}=-\mathrm{i},\ \mathrm{ik}=-\mathrm{j}. $$
 
 现在验证 $(\mathbb{H},+,\cdot)$ 构成一个非交换的可除环。首先可以看出，$\mathbb{H}$ 在这两种运算下是一个含幺环，幺元是 $1$。由于 $\mathrm{ij}\neq\mathrm{ji}$，$\mathbb{H}$ 是非交换的。其次可以证明 $\mathbb{H}^{*}=\mathbb{H}\setminus\{0\}$。对 $x=a+b\mathrm{i}+c\mathrm{j}+d\mathrm{k}\in\mathbb{H}$，定义共轭 $\bar{x}=a-b\mathrm{i}-c\mathrm{j}-d\mathrm{k}$。由乘法定义直接计算得
 
-$$x\bar{x}=\bar{x}x=a^{2}+b^{2}+c^{2}+d^{2}\geqslant 0,$$
+$$ x\bar{x}=\bar{x}x=a^{2}+b^{2}+c^{2}+d^{2}\geqslant 0, $$
 
 从而 $x=0$ 当且仅当 $x\bar{x}=0$。对任意 $x\in\mathbb{H}\setminus\{0\}$，令 $y=\dfrac{1}{x\bar{x}}\cdot\bar{x}$，则有 $yx=xy=1$，即 $x^{-1}=y$。综上所述，$\mathbb{H}$ 是非交换的可除环。
 
@@ -1080,11 +1080,11 @@ $$x\bar{x}=\bar{x}x=a^{2}+b^{2}+c^{2}+d^{2}\geqslant 0,$$
 
 设 $I$ 为环 $R$ 的一个理想，由于 $I$ 构成 $R$ 的一个加法子群，因此可构建加法商群 $R/I=\{\bar r=r+I\mid r\in R\}$。鉴于 $(R,+)$ 是 Abel 群，加法商群 $R/I$ 同样也是 Abel 群。接下来探讨 $R/I$ 是否可以定义一种"自然的"乘法运算，从而使其构成一个环。此处的"自然乘法"定义如下：对于任意 $r+I$ 和 $s+I\in R/I$，总有
 
-$$(r+I)\cdot(s+I)=rs+I.$$
+$$ (r+I)\cdot(s+I)=rs+I. $$
 
 由于此乘法运算依赖于陪集代表元的选取，因此需验证其合理性。具体而言，若 $r+I=\tilde r+I$，$s+I=\tilde s+I$，则需证明
 
-$$rs+I=\tilde r\tilde s+I,$$
+$$ rs+I=\tilde r\tilde s+I, $$
 
 即 $rs-\tilde r\tilde s\in I$。根据既有假设，$r-\tilde r\in I$，$s-\tilde s\in I$，这意味着存在 $a,b\in I$ 使得 $r=\tilde r+a$，$s=\tilde s+b$。因此 $rs=(\tilde r+a)(\tilde s+b)=\tilde r\tilde s+\tilde rb+a\tilde s+ab$。由于 $I$ 是理想，故 $\tilde rb,a\tilde s,ab$ 均属于 $I$。因此 $rs-\tilde r\tilde s=\tilde rb+a\tilde s+ab\in I$。这表明在 $I$ 为理想的条件下，可以在商群 $R/I$ 上定义自然的乘法运算。
 
@@ -1128,13 +1128,13 @@ $$rs+I=\tilde r\tilde s+I,$$
 
 设 $R$ 是含幺环，$S$ 是 $R$ 的一个非空子集，我们有
 
-$$(S)=\left\{\sum_{i=1}^{m}a_is_ib_i\Biggm| a_i,b_i\in R,\ s_i\in S,\ 1\leqslant i\leqslant m,\ m\in\mathbb{N}\right\}.$$
+$$ (S)=\left\{\sum_{i=1}^{m}a_is_ib_i\Biggm| a_i,b_i\in R,\ s_i\in S,\ 1\leqslant i\leqslant m,\ m\in\mathbb{N}\right\}. $$
 
 **推论 3.5** @68
 
 设 $R$ 是含幺交换环，$S$ 是 $R$ 的一个非空子集，则有
 
-$$(S)=\left\{\sum_{i=1}^{m}a_is_i\Biggm| a_i\in R,\ s_i\in S,\ 1\leqslant i\leqslant m,\ m\in\mathbb{N}\right\}.$$
+$$ (S)=\left\{\sum_{i=1}^{m}a_is_i\Biggm| a_i\in R,\ s_i\in S,\ 1\leqslant i\leqslant m,\ m\in\mathbb{N}\right\}. $$
 
 **定义 (理想的加法与乘法)** @68
 
@@ -1154,11 +1154,11 @@ $$(S)=\left\{\sum_{i=1}^{m}a_is_i\Biggm| a_i\in R,\ s_i\in S,\ 1\leqslant i\leqs
 
 由例 2 知，$\mathbb{Z}$ 的所有理想是 $n\mathbb{Z}=(n)$，$n=0,1,2,\cdots$。设 $a,b$ 是正整数，我们有
 
-$$a\mathbb{Z}+b\mathbb{Z}=d\mathbb{Z},$$
+$$ a\mathbb{Z}+b\mathbb{Z}=d\mathbb{Z}, $$
 
-$$(a\mathbb{Z})(b\mathbb{Z})=(ab)\mathbb{Z},$$
+$$ (a\mathbb{Z})(b\mathbb{Z})=(ab)\mathbb{Z}, $$
 
-$$a\mathbb{Z}\cap b\mathbb{Z}=c\mathbb{Z},$$
+$$ a\mathbb{Z}\cap b\mathbb{Z}=c\mathbb{Z}, $$
 
 其中 $d=\gcd(a,b)$，即 $a,b$ 的最大公因子；$c=\operatorname{lcm}(a,b)$，即 $a,b$ 的最小公倍数。
 
@@ -1170,7 +1170,7 @@ $$a\mathbb{Z}\cap b\mathbb{Z}=c\mathbb{Z},$$
 
 (2) 我们有如下一一对应关系：
 
-$$\begin{aligned}\{T\mid T\text{ 为 }R/I\text{ 的理想}\}&\longleftrightarrow\{J\mid J\text{ 是 }R\text{ 的理想且 }J\supseteq I\},\\T&\longmapsto j^{-1}(T),\\J/I&\longmapsfrom J.\end{aligned}$$
+$$ \begin{aligned} \{T\mid T\text{ 为 }R/I\text{ 的理想}\}&\longleftrightarrow\{J\mid J\text{ 是 }R\text{ 的理想且 }J\supseteq I\},\\ T&\longmapsto j^{-1}(T),\\ J/I&\longleftarrow J. \end{aligned} $$
 
 **例 5 (商环的理想)** @69
 
@@ -1252,7 +1252,7 @@ $$\begin{aligned}\{T\mid T\text{ 为 }R/I\text{ 的理想}\}&\longleftrightarrow
 
 设 $f:R_1\to R_2$ 是环同态，根据定义，$f$ 是相应的加法群同态，故有 $f(0)=0$，$f(-a)=-f(a)$，$\forall a\in R_1$。对任意有限多个元素 $a_1,a_2,\cdots,a_n\in R_1$，我们有
 
-$$f(a_1+a_2+\cdots+a_n)=f(a_1)+f(a_2)+\cdots+f(a_n),\qquad f(a_1\cdot a_2\cdots a_n)=f(a_1)\cdot f(a_2)\cdots f(a_n).$$
+$$ f(a_1+a_2+\cdots+a_n)=f(a_1)+f(a_2)+\cdots+f(a_n),\qquad f(a_1\cdot a_2\cdots a_n)=f(a_1)\cdot f(a_2)\cdots f(a_n). $$
 
 **例 1 (商映射与嵌入映射)** @72
 
@@ -1262,7 +1262,7 @@ $$f(a_1+a_2+\cdots+a_n)=f(a_1)+f(a_2)+\cdots+f(a_n),\qquad f(a_1\cdot a_2\cdots 
 
 设 $R$ 是含幺环且幺元是 $1$，定义映射 $i:\mathbb{Z}\to R$ 如下：对任意 $n\in\mathbb{Z}$，
 
-$$i(n)=\begin{cases}\underbrace{1+\cdots+1}_{n\text{ 个}}, & n>0,\\[4pt]0, & n=0,\\[4pt]\underbrace{(-1)+\cdots+(-1)}_{-n\text{ 个}}, & n<0.\end{cases}$$
+$$ i(n)=\begin{cases} \underbrace{1+\cdots+1}_{n\text{ 个}}, & n>0,\\[4pt] 0, & n=0,\\[4pt] \underbrace{(-1)+\cdots+(-1)}_{-n\text{ 个}}, & n<0. \end{cases} $$
 
 则 $i$ 是环同态，它是从 $\mathbb{Z}$ 到 $R$ 唯一的非零环同态。
 
@@ -1270,7 +1270,7 @@ $$i(n)=\begin{cases}\underbrace{1+\cdots+1}_{n\text{ 个}}, & n>0,\\[4pt]0, & n=
 
 记 $\mathbb{C}[x]$ 为复数域 $\mathbb{C}$ 上的一元多项式环，设 $a\in\mathbb{C}$，定义映射 $e_a:\mathbb{C}[x]\to\mathbb{C}$，
 
-$$e_a(f)=f(a),\qquad \forall f(x)\in\mathbb{C}[x],$$
+$$ e_a(f)=f(a),\qquad \forall f(x)\in\mathbb{C}[x], $$
 
 则 $e_a$ 是环同态。
 
@@ -1290,11 +1290,11 @@ $$e_a(f)=f(a),\qquad \forall f(x)\in\mathbb{C}[x],$$
 
 设 $R_1,R_2$ 是环，$f:R_1\to R_2$ 是环同态。定义
 
-$$\mathrm{Ker}\,f=\{a\in R_1\mid f(a)=0\},$$
+$$ \mathrm{Ker}\,f=\{a\in R_1\mid f(a)=0\}, $$
 
 称为 $f$ 的**核**。定义
 
-$$\mathrm{Im}\,f=\{f(a)\mid a\in R_1\},$$
+$$ \mathrm{Im}\,f=\{f(a)\mid a\in R_1\}, $$
 
 称为 $f$ 的**像**。
 
@@ -1314,15 +1314,15 @@ $$\mathrm{Im}\,f=\{f(a)\mid a\in R_1\},$$
 
 在这个例子中我们将看到复数域 $\mathbb{C}$ 同构于 $2$ 阶实矩阵环 $M_2(\mathbb{R})$ 的一个子环。定义映射 $f:\mathbb{C}\to M_2(\mathbb{R})$ 如下：对 $z=a+b\mathrm{i}\in\mathbb{C}$，$a,b\in\mathbb{R}$，
 
-$$f(z)=\begin{pmatrix}a&-b\\ b&a\end{pmatrix}\in M_2(\mathbb{R}).$$
+$$ f(z)=\begin{pmatrix}a&-b\\ b&a\end{pmatrix}\in M_2(\mathbb{R}). $$
 
 由定义直接验证得，$f$ 是单的环同态，且
 
-$$\mathrm{Im}\,f=\left\{\begin{pmatrix}a&-b\\ b&a\end{pmatrix}\Biggm| a,b\in\mathbb{R}\right\}.$$
+$$ \mathrm{Im}\,f=\left\{\begin{pmatrix}a&-b\\ b&a\end{pmatrix}\Biggm| a,b\in\mathbb{R}\right\}. $$
 
 由定理 4.2，$\mathrm{Im}\,f$ 是 $M_2(\mathbb{R})$ 的子环，且复数域 $\mathbb{C}$ 同构于 $\mathrm{Im}\,f$。我们进一步可以观察到对 $z=a+b\mathrm{i}\in\mathbb{C}$，记 $\bar z=a-b\mathrm{i}$，则有
 
-$$\det(f(z))=a^2+b^2=|z|^2=z\cdot\bar z.$$
+$$ \det(f(z))=a^2+b^2=|z|^2=z\cdot\bar z. $$
 
 **定理 4.3 (商环的商)** @74
 
@@ -1332,7 +1332,7 @@ $$\det(f(z))=a^2+b^2=|z|^2=z\cdot\bar z.$$
 
 设 $m,n$ 是正整数且 $m\mid n$，$I=n\mathbb{Z}$，$J=m\mathbb{Z}$，则有 $I\subseteq J$，且有环同构
 
-$$(\mathbb{Z}/n\mathbb{Z})/(m\mathbb{Z}/n\mathbb{Z})\cong\mathbb{Z}/m\mathbb{Z},$$
+$$ (\mathbb{Z}/n\mathbb{Z})/(m\mathbb{Z}/n\mathbb{Z})\cong\mathbb{Z}/m\mathbb{Z}, $$
 
 从而 $|m\mathbb{Z}/n\mathbb{Z}|=\dfrac{n}{m}$。
 
@@ -1348,7 +1348,7 @@ $$(\mathbb{Z}/n\mathbb{Z})/(m\mathbb{Z}/n\mathbb{Z})\cong\mathbb{Z}/m\mathbb{Z},
 
 设 $m_1,m_2,\cdots,m_t$ 是 $t$ 个两两互素的整数，则有自然的环同构
 
-$$g:\mathbb{Z}/m_1m_2\cdots m_t\mathbb{Z}\to\mathbb{Z}/m_1\mathbb{Z}\times\mathbb{Z}/m_2\mathbb{Z}\times\cdots\times\mathbb{Z}/m_t\mathbb{Z},$$
+$$ g:\mathbb{Z}/m_1m_2\cdots m_t\mathbb{Z}\to\mathbb{Z}/m_1\mathbb{Z}\times\mathbb{Z}/m_2\mathbb{Z}\times\cdots\times\mathbb{Z}/m_t\mathbb{Z}, $$
 
 满足 $g(a+m_1m_2\cdots m_t\mathbb{Z})=(a+m_1\mathbb{Z},a+m_2\mathbb{Z},\cdots,a+m_t\mathbb{Z})$。
 
@@ -1358,11 +1358,11 @@ $$g:\mathbb{Z}/m_1m_2\cdots m_t\mathbb{Z}\to\mathbb{Z}/m_1\mathbb{Z}\times\mathb
 
 (1) 有自然的环同构
 
-$$\mathbb{Z}/n\mathbb{Z}\cong\mathbb{Z}/p_1^{e_1}\mathbb{Z}\times\mathbb{Z}/p_2^{e_2}\mathbb{Z}\times\cdots\times\mathbb{Z}/p_t^{e_t}\mathbb{Z},$$
+$$ \mathbb{Z}/n\mathbb{Z}\cong\mathbb{Z}/p_1^{e_1}\mathbb{Z}\times\mathbb{Z}/p_2^{e_2}\mathbb{Z}\times\cdots\times\mathbb{Z}/p_t^{e_t}\mathbb{Z}, $$
 
 (2) 单位群
 
-$$(\mathbb{Z}/n\mathbb{Z})^*\cong(\mathbb{Z}/p_1^{e_1}\mathbb{Z})^*\times(\mathbb{Z}/p_2^{e_2}\mathbb{Z})^*\times\cdots\times(\mathbb{Z}/p_t^{e_t}\mathbb{Z})^*.$$
+$$ (\mathbb{Z}/n\mathbb{Z})^*\cong(\mathbb{Z}/p_1^{e_1}\mathbb{Z})^*\times(\mathbb{Z}/p_2^{e_2}\mathbb{Z})^*\times\cdots\times(\mathbb{Z}/p_t^{e_t}\mathbb{Z})^*. $$
 
 **注 (单位群与环直积)** @76
 
@@ -1378,7 +1378,7 @@ $$(\mathbb{Z}/n\mathbb{Z})^*\cong(\mathbb{Z}/p_1^{e_1}\mathbb{Z})^*\times(\mathb
 
 解：我们有
 
-$$\begin{cases}70\equiv 1\ (\mathrm{mod}\ 3),\quad 70\equiv 0\ (\mathrm{mod}\ 5),\quad 70\equiv 0\ (\mathrm{mod}\ 7),\\21\equiv 0\ (\mathrm{mod}\ 3),\quad 21\equiv 1\ (\mathrm{mod}\ 5),\quad 21\equiv 0\ (\mathrm{mod}\ 7),\\15\equiv 0\ (\mathrm{mod}\ 3),\quad 15\equiv 0\ (\mathrm{mod}\ 5),\quad 15\equiv 1\ (\mathrm{mod}\ 7),\end{cases}$$
+$$ \begin{cases} 70\equiv 1\ (\mathrm{mod}\ 3),\quad 70\equiv 0\ (\mathrm{mod}\ 5),\quad 70\equiv 0\ (\mathrm{mod}\ 7),\\ 21\equiv 0\ (\mathrm{mod}\ 3),\quad 21\equiv 1\ (\mathrm{mod}\ 5),\quad 21\equiv 0\ (\mathrm{mod}\ 7),\\ 15\equiv 0\ (\mathrm{mod}\ 3),\quad 15\equiv 0\ (\mathrm{mod}\ 5),\quad 15\equiv 1\ (\mathrm{mod}\ 7), \end{cases} $$
 
 所以 $2\times 70+3\times 21+2\times 15=233$ 满足所求的同余式。而 $233\equiv 23\pmod{105}$，其中 $105=3\times 5\times 7$。所以 $a=23$。
 
@@ -1392,7 +1392,7 @@ $$\begin{cases}70\equiv 1\ (\mathrm{mod}\ 3),\quad 70\equiv 0\ (\mathrm{mod}\ 5)
 
 设 $R$ 为一个含幺交换环，且 $I_1,I_2,\cdots,I_t$ 为 $R$ 中两两互素的非平凡理想，则有自然的环同构
 
-$$g:R/(I_1I_2\cdots I_t)\to R/I_1\times R/I_2\times\cdots\times R/I_t,$$
+$$ g:R/(I_1I_2\cdots I_t)\to R/I_1\times R/I_2\times\cdots\times R/I_t, $$
 
 其定义如下：对于任意 $r\in R$，有 $g(r+I_1I_2\cdots I_t)=(r+I_1,r+I_2,\cdots,r+I_t)$。
 
@@ -1618,7 +1618,7 @@ $$(\mathbb{Z}[x]/(2))\big/(I/(2))\cong(\mathbb{Z}/2\mathbb{Z})[x]/(\bar f(x)).$$
 
 令
 
-$$K(R)\triangleq \bigl(R\times(R\setminus\{0\})\bigr)/\sim$$
+$$ K(R)\triangleq \bigl(R\times(R\setminus\{0\})\bigr)/\sim $$
 
 为 $R\times(R\setminus\{0\})$ 关于 $\sim$ 的所有等价类的集合。对任意 $(a,b)\in R\times(R\setminus\{0\})$，我们记 $\dfrac{a}{b}\in K(R)$ 为其在 "$\sim$" 下的等价类。
 
@@ -1626,7 +1626,7 @@ $$K(R)\triangleq \bigl(R\times(R\setminus\{0\})\bigr)/\sim$$
 
 $K(R)$ 在如下加法和乘法运算下是一个域：
 
-$$\forall\ \frac{a}{b},\frac{c}{d}\in K(R),\qquad \frac{a}{b}+\frac{c}{d}\triangleq\frac{ad+bc}{bd},\qquad \frac{a}{b}\cdot\frac{c}{d}\triangleq\frac{ac}{bd}.$$
+$$ \forall\ \frac{a}{b},\frac{c}{d}\in K(R),\qquad \frac{a}{b}+\frac{c}{d}\triangleq\frac{ad+bc}{bd},\qquad \frac{a}{b}\cdot\frac{c}{d}\triangleq\frac{ac}{bd}. $$
 
 其零元为 $\dfrac{0}{1}$，幺元为 $\dfrac{1}{1}$。称 $K(R)$ 为 $R$ 的**分式域**（fractional field）或**商域**。
 
@@ -1640,7 +1640,7 @@ $$\forall\ \frac{a}{b},\frac{c}{d}\in K(R),\qquad \frac{a}{b}+\frac{c}{d}\triang
 
 (3) 设 $F$ 是域，则
 
-$$K(F[x])=\left\{\frac{g}{f}\ \middle|\ f,g\in F[x],\ f\neq 0\right\},$$
+$$ K(F[x])=\left\{\frac{g}{f}\ \middle|\ f,g\in F[x],\ f\neq 0\right\}, $$
 
 称为以 $F$ 为系数的**一元有理函数域**。由分式域的定义，$\dfrac{g_1}{f_1}=\dfrac{g_2}{f_2}$ 等价于 $g_1\cdot f_2=f_1\cdot g_2$。通常记 $F(x)=K(F[x])$。对一般的正整数 $n$，$F(x_1,x_2,\cdots,x_n)=K(F[x_1,x_2,\cdots,x_n])$ 称为以 $F$ 为系数的 $n$ 元有理函数域。
 
@@ -1648,7 +1648,7 @@ $$K(F[x])=\left\{\frac{g}{f}\ \middle|\ f,g\in F[x],\ f\neq 0\right\},$$
 
 设 $F$ 是域，$1_F$ 是幺元。考虑由整数环 $\mathbb{Z}$ 到 $F$ 的环同态
 
-$$f:\mathbb{Z}\to F,\qquad f(n)=n\cdot 1_F,$$
+$$ f:\mathbb{Z}\to F,\qquad f(n)=n\cdot 1_F, $$
 
 则 $\operatorname{Ker}f=\{n\in\mathbb{Z}\mid n\cdot 1_F=0\}$ 是一个理想，故 $\operatorname{Ker}f=\{0\}$ 或 $m\mathbb{Z}$（$m$ 是正整数）。
 
@@ -1690,27 +1690,27 @@ $\mathbb{Q}$，$\mathbb{R}$，$\mathbb{C}$，$\mathbb{Q}(x)$ 均为特征零的�
 
 设 $F$ 是域，$p$ 为素数，$\operatorname{char}F=p$，则对任意 $a,b\in F$ 及正整数 $n$ 有
 
-$$(a+b)^{p^{n}}=a^{p^{n}}+b^{p^{n}}.$$
+$$ (a+b)^{p^{n}}=a^{p^{n}}+b^{p^{n}}. $$
 
 **推论 6.6 (多项式环上的 Frobenius)** @90
 
 设 $F$ 是域，$\operatorname{char}F=p$（$p$ 为素数），$F[x]$ 是 $F$ 上的一元多项式环。对任意 $f(x),g(x)\in F[x]$ 及正整数 $n$，都有
 
-$$(f(x)+g(x))^{p^{n}}=(f(x))^{p^{n}}+(g(x))^{p^{n}}.$$
+$$ (f(x)+g(x))^{p^{n}}=(f(x))^{p^{n}}+(g(x))^{p^{n}}. $$
 
 **例 3 (组合数同余)** @90
 
 我们给出第一章引理 8.1 的另一个证明。设 $n=p^{r}s$，其中 $p$ 是素数，$r>0$，$s>1$，$p\nmid s$，则
 
-$$\binom{n}{p^{r}}\equiv s \pmod p.$$
+$$ \binom{n}{p^{r}}\equiv s \pmod p. $$
 
 记 $\mathbb{F}_p=\mathbb{Z}/p\mathbb{Z}$，考虑系数模 $p$ 映射 $\alpha:\mathbb{Z}[x]\to\mathbb{F}_p[x]$：对 $f(x)=a_nx^{n}+\cdots+a_1x+a_0\in\mathbb{Z}[x]$，定义
 
-$$\alpha(f(x))=\overline{a_n}x^{n}+\cdots+\overline{a_1}x+\overline{a_0},$$
+$$ \alpha(f(x))=\overline{a_n}x^{n}+\cdots+\overline{a_1}x+\overline{a_0}, $$
 
 这里 $\overline{a_i}$ 表示模 $p$ 的剩余类 $a_i+p\mathbb{Z}$，$0\leqslant i\leqslant n$。由命题 5.4，$\alpha$ 是环同态。考虑整系数多项式 $f(x)=(1+x)^{n}=\sum\limits_{i=0}^{n}\binom{n}{i}x^{i}$，记 $\bar f(x)=\alpha(f(x))$。由 $\alpha$ 是环同态与推论 6.6，
 
-$$\bar f(x)=\sum_{i=0}^{n}\overline{\binom{n}{i}}x^{i}=(\bar 1+x)^{n}=\bigl((\bar 1+x)^{p^{r}}\bigr)^{s}=(\bar 1+x^{p^{r}})^{s}=\sum_{j=0}^{s}\overline{\binom{s}{j}}(x^{p^{r}})^{j}.$$
+$$ \bar f(x)=\sum_{i=0}^{n}\overline{\binom{n}{i}}x^{i}=(\bar 1+x)^{n}=\bigl((\bar 1+x)^{p^{r}}\bigr)^{s}=(\bar 1+x^{p^{r}})^{s}=\sum_{j=0}^{s}\overline{\binom{s}{j}}(x^{p^{r}})^{j}. $$
 
 比较 $x^{p^{r}}$ 的系数，我们有 $\binom{n}{p^{r}}\equiv s\pmod p$。
 
@@ -1732,19 +1732,19 @@ $$\bar f(x)=\sum_{i=0}^{n}\overline{\binom{n}{i}}x^{i}=(\bar 1+x)^{n}=\bigl((\ba
 
 考虑高斯整数环 $\mathbb{Z}[\mathrm{i}]=\{a+b\mathrm{i}\mid a,b\in\mathbb{Z}\}\subset\mathbb{C}$。此时，在复平面上的范数 $\|z\|^{2}=z\bar z$ 诱导了一个函数：
 
-$$\varphi:\mathbb{Z}[\mathrm{i}]\to\mathbb{Z}_{\geqslant 0},\qquad \varphi(a+b\mathrm{i})=\|a+b\mathrm{i}\|^{2}=a^{2}+b^{2},\quad \forall\, a+b\mathrm{i}\in\mathbb{Z}[\mathrm{i}].$$
+$$ \varphi:\mathbb{Z}[\mathrm{i}]\to\mathbb{Z}_{\geqslant 0},\qquad \varphi(a+b\mathrm{i})=\|a+b\mathrm{i}\|^{2}=a^{2}+b^{2},\quad \forall\, a+b\mathrm{i}\in\mathbb{Z}[\mathrm{i}]. $$
 
 下面我们验证 $\mathbb{Z}[\mathrm{i}]$ 可以通过 $\varphi$ 做带余除法，即对任意非零元 $a+b\mathrm{i},c+d\mathrm{i}\in\mathbb{Z}[\mathrm{i}]$，存在 $q\in\mathbb{Z}[\mathrm{i}]$ 使得
 
-$$\varphi\bigl(a+b\mathrm{i}-q(c+d\mathrm{i})\bigr)<\varphi(c+d\mathrm{i}).$$
+$$ \varphi\bigl(a+b\mathrm{i}-q(c+d\mathrm{i})\bigr)<\varphi(c+d\mathrm{i}). $$
 
 注意到复平面上的范数保持乘法，故 $\varphi$ 是一个保持乘法的函数，即 $\varphi(z_1z_2)=\varphi(z_1)\varphi(z_2)$ 对任意 $z_1,z_2\in\mathbb{Z}[\mathrm{i}]$ 成立。通过两边同除 $\varphi(c+d\mathrm{i})$，我们只需找到 $q\in\mathbb{Z}[\mathrm{i}]$ 使得 $\varphi\left(\dfrac{a+b\mathrm{i}}{c+d\mathrm{i}}-q\right)<1$ 即可。记 $\dfrac{a+b\mathrm{i}}{c+d\mathrm{i}}=u+v\mathrm{i}$，这里 $u,v\in\mathbb{Q}$。取 $q=m+n\mathrm{i}\in\mathbb{Z}[\mathrm{i}]$ 满足 $|m-u|\leqslant\dfrac{1}{2}$，$|n-v|\leqslant\dfrac{1}{2}$，则
 
-$$\varphi\left(\frac{a+b\mathrm{i}}{c+d\mathrm{i}}-q\right)=(m-u)^{2}+(n-v)^{2}\leqslant\frac{1}{4}+\frac{1}{4}<1.$$
+$$ \varphi\left(\frac{a+b\mathrm{i}}{c+d\mathrm{i}}-q\right)=(m-u)^{2}+(n-v)^{2}\leqslant\frac{1}{4}+\frac{1}{4}<1. $$
 
 下面我们计算一个具体的例子。设 $x=2+\mathrm{i}$，$y=1+\mathrm{i}$，$\dfrac{x}{y}=\dfrac{3}{2}-\dfrac{1}{2}\mathrm{i}$，由上面的讨论，我们有带余除法
 
-$$x=2y-\mathrm{i}=(1-\mathrm{i})y+\mathrm{i}.$$
+$$ x=2y-\mathrm{i}=(1-\mathrm{i})y+\mathrm{i}. $$
 
 这里第一个等式表示商是 $2$，余数是 $-\mathrm{i}$；第二个等式表示商是 $1-\mathrm{i}$，余数是 $\mathrm{i}$。这个例子也说明，对于一般的欧氏整区，带余除法的商和余数不一定是唯一的。
 
@@ -1860,7 +1860,7 @@ $$x=2y-\mathrm{i}=(1-\mathrm{i})y+\mathrm{i}.$$
 
 (1) 对任意非零不可逆元 $a\in R$，存在 $R$ 中有限多个不可约元 $p_1,p_2,\cdots,p_n$，使得
 
-$$a=p_1p_2\cdots p_n;$$
+$$ a=p_1p_2\cdots p_n; $$
 
 (2) 若存在另一个分解 $a=q_1q_2\cdots q_m$，这里 $q_j$ 均为不可约元，则有 $n=m$ 且存在一个置换 $\sigma\in S_n$，使得对每个 $i=1,2,\cdots,n$，$p_i$ 与 $q_{\sigma(i)}$ 相伴，
 
@@ -1900,7 +1900,7 @@ $$a=p_1p_2\cdots p_n;$$
 
 (2) 对于任意 $0\neq f(x)=a_nx^n+\cdots+a_1x+a_0\in R[x]$，记 $d=\gcd(a_n,\cdots,a_0)\in R$，
 
-$$\tilde{f}(x)=\frac{a_n}{d}x^n+\cdots+\frac{a_1}{d}x+\frac{a_0}{d}\in R[x],$$
+$$ \tilde{f}(x)=\frac{a_n}{d}x^n+\cdots+\frac{a_1}{d}x+\frac{a_0}{d}\in R[x], $$
 
 由定义可知，$\tilde{f}(x)$ 是本原的。而且我们有 $f(x)=d\tilde{f}(x)$。
 
@@ -2166,7 +2166,7 @@ $$\alpha(\mathrm{GL}(V))=\mathrm{GL}_n(F)=\{A\in M_n(F)\mid A \text{ 可逆}\}.$
 
 设 $G$ 是有限生成 Abel 群，定义 $G$ 的**扭子群**（或称**挠子群**，torsion subgroup）如下：
 
-$$\operatorname{Tor}(G)\triangleq\{a\in G\mid o(a)<\infty\}.$$
+$$ \operatorname{Tor}(G)\triangleq\{a\in G\mid o(a)<\infty\}. $$
 
 运用第一章命题 1.2，容易验证 $\operatorname{Tor}(G)$ 确实是 $G$ 的子群，其中的元素称为**扭元素**（torsion element）。
 
@@ -2182,7 +2182,7 @@ $$\operatorname{Tor}(G)\triangleq\{a\in G\mid o(a)<\infty\}.$$
 
 设 $G$ 是有限生成 Abel 群，则存在唯一的非负整数 $n$ 满足下面的条件：存在 $G$ 的子群 $F\cong\mathbb{Z}^n$，使得 $G$ 有内直和分解
 
-$$G=F\oplus\operatorname{Tor}(G),$$
+$$ G=F\oplus\operatorname{Tor}(G), $$
 
 其中 $F$ 称为 $G$ 的**自由部分**，$n$ 称为 $G$ 的**秩**。特别地，$\operatorname{Tor}(G)$ 是有限 Abel 群。
 
@@ -2190,7 +2190,7 @@ $$G=F\oplus\operatorname{Tor}(G),$$
 
 设 $p$ 为一个素数，$A$ 为有限 Abel $p$-群。则存在正整数 $t$、正整数列 $l_1\geqslant l_2\geqslant\cdots\geqslant l_t$ 及内直和分解
 
-$$A=\bigoplus_{i=1}^{t}A_i,$$
+$$ A=\bigoplus_{i=1}^{t}A_i, $$
 
 其中 $A_i\cong\mathbb{Z}_{p^{l_i}}$，对 $1\leqslant i\leqslant t$。
 
@@ -2198,7 +2198,7 @@ $$A=\bigoplus_{i=1}^{t}A_i,$$
 
 设 $A$ 为非零有限 Abel 群，则存在唯一的正整数组 $(m,d_1,d_2,\cdots,d_m)$ 使得 $A$ 有内直和分解
 
-$$A=\bigoplus_{i=1}^{m}A_i,$$
+$$ A=\bigoplus_{i=1}^{m}A_i, $$
 
 其中 $A_i\cong\mathbb{Z}_{d_i}$，$1<d_m\mid d_{m-1}\mid\cdots\mid d_1$。
 
@@ -2206,11 +2206,11 @@ $$A=\bigoplus_{i=1}^{m}A_i,$$
 
 对于有限生成 Abel 群 $G$，存在内直和分解
 
-$$G=N\oplus\operatorname{Tor}(G),$$
+$$ G=N\oplus\operatorname{Tor}(G), $$
 
 其中 $N\cong\mathbb{Z}^n$ 为自由部分，扭子群 $\operatorname{Tor}(G)$ 为有限 Abel 群且它有标准分解式
 
-$$\operatorname{Tor}(G)=\bigoplus_{i=1}^{m}A_i,$$
+$$ \operatorname{Tor}(G)=\bigoplus_{i=1}^{m}A_i, $$
 
 其中 $A_i\cong\mathbb{Z}_{d_i}$，$1<d_m\mid d_{m-1}\mid\cdots\mid d_1$，并且数组 $(m,d_1,d_2,\cdots,d_m)$ 由 $A$ 唯一确定。
 
@@ -2220,7 +2220,7 @@ $$\operatorname{Tor}(G)=\bigoplus_{i=1}^{m}A_i,$$
 
 解：即寻找所有的 $(m,d_1,d_2,\cdots,d_m)$ 使 $1<d_m\mid d_{m-1}\mid\cdots\mid d_1$，$d_1d_2\cdots d_m=72=2^33^2$。枚举指数 $3$ 和指数 $2$ 的划分：$3=3+0=2+1=1+1+1$（三种），$2=2+0=1+1$（两种），故 $72$ 阶群 $G$ 共有 $3\times 2=6$ 种结构如下：
 
-$$\mathbb{Z}_{72},\ \mathbb{Z}_{24}\oplus\mathbb{Z}_3,\ \mathbb{Z}_{36}\oplus\mathbb{Z}_2,\ \mathbb{Z}_{12}\oplus\mathbb{Z}_6,\ \mathbb{Z}_{18}\oplus\mathbb{Z}_2^2,\ \mathbb{Z}_6^2\oplus\mathbb{Z}_2.$$
+$$ \mathbb{Z}_{72},\ \mathbb{Z}_{24}\oplus\mathbb{Z}_3,\ \mathbb{Z}_{36}\oplus\mathbb{Z}_2,\ \mathbb{Z}_{12}\oplus\mathbb{Z}_6,\ \mathbb{Z}_{18}\oplus\mathbb{Z}_2^2,\ \mathbb{Z}_6^2\oplus\mathbb{Z}_2. $$
 
 **例 2** @118
 
@@ -2234,11 +2234,11 @@ $$\mathbb{Z}_{72},\ \mathbb{Z}_{24}\oplus\mathbb{Z}_3,\ \mathbb{Z}_{36}\oplus\ma
 
 证明：设素因数分解 $m=p_1^{\alpha_1}p_2^{\alpha_2}\cdots p_k^{\alpha_k}$，$n=p_1^{\beta_1}p_2^{\beta_2}\cdots p_k^{\beta_k}$。考虑最小公倍数
 
-$$d_1=[m,n]=p_1^{\max\{\alpha_1,\beta_1\}}p_2^{\max\{\alpha_2,\beta_2\}}\cdots p_k^{\max\{\alpha_k,\beta_k\}},$$
+$$ d_1=[m,n]=p_1^{\max\{\alpha_1,\beta_1\}}p_2^{\max\{\alpha_2,\beta_2\}}\cdots p_k^{\max\{\alpha_k,\beta_k\}}, $$
 
 最大公约数
 
-$$d_2=(m,n)=p_1^{\min\{\alpha_1,\beta_1\}}p_2^{\min\{\alpha_2,\beta_2\}}\cdots p_k^{\min\{\alpha_k,\beta_k\}}.$$
+$$ d_2=(m,n)=p_1^{\min\{\alpha_1,\beta_1\}}p_2^{\min\{\alpha_2,\beta_2\}}\cdots p_k^{\min\{\alpha_k,\beta_k\}}. $$
 
 则 $\mathbb{Z}_m\oplus\mathbb{Z}_n=\mathbb{Z}_{[m,n]}\oplus\mathbb{Z}_{(m,n)}$ 是标准分解。
 
@@ -2248,29 +2248,29 @@ $$d_2=(m,n)=p_1^{\min\{\alpha_1,\beta_1\}}p_2^{\min\{\alpha_2,\beta_2\}}\cdots p
 
 证明：考虑 $u=(1,5)$，$v=(0,1)$，则 $\{u,v\}$ 是 $\mathbb{Z}^2$ 的一组基。故有自同构 $\mathbb{Z}^2\cong\mathbb{Z}^2$ 将 $u$ 映到 $(1,0)$，$v$ 映到 $(0,1)$，从而将 $B$ 映到 $\langle(6,0)\rangle$。于是
 
-$$\mathbb{Z}^2/B\cong\mathbb{Z}_6\oplus\mathbb{Z}.$$
+$$ \mathbb{Z}^2/B\cong\mathbb{Z}_6\oplus\mathbb{Z}. $$
 
 **例 5** @118
 
 设
 
-$$A=\{(p,q)\in\mathbb{Q}^2\mid \forall(x,y)\in\mathbb{Z}^2,\ 4px+2py+2qx+4qy\in\mathbb{Z}\},$$
+$$ A=\{(p,q)\in\mathbb{Q}^2\mid \forall(x,y)\in\mathbb{Z}^2,\ 4px+2py+2qx+4qy\in\mathbb{Z}\}, $$
 
 求商群 $A/\mathbb{Z}^2$ 的结构。
 
 证明：条件式可用二次型写为：$\forall(x,y)\in\mathbb{Z}^2$，
 
-$$(p,q)\begin{pmatrix}4&2\\2&4\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}=(4p+2q,\,2p+4q)\begin{pmatrix}x\\y\end{pmatrix}\in\mathbb{Z}.$$
+$$ (p,q)\begin{pmatrix}4&2\\2&4\end{pmatrix}\begin{pmatrix}x\\y\end{pmatrix}=(4p+2q,\,2p+4q)\begin{pmatrix}x\\y\end{pmatrix}\in\mathbb{Z}. $$
 
 该二次型属于 $A$ 的充分必要条件为 $(4p+2q,2p+4q)\in\mathbb{Z}^2$。求逆，这等价于
 
-$$(p,q)=\left(\frac{2m-n}{6},\,\frac{2n-m}{6}\right),\quad (m,n)\in\mathbb{Z}^2.$$
+$$ (p,q)=\left(\frac{2m-n}{6},\,\frac{2n-m}{6}\right),\quad (m,n)\in\mathbb{Z}^2. $$
 
 故有同构 $A\cong\mathbb{Z}^2$，$(p,q)\mapsto(m,n)$ 将 $(1,0)$ 映到 $(4,2)$，将 $(0,1)$ 映到 $(2,4)$。那么 $A/\mathbb{Z}^2\cong\mathbb{Z}^2/B$，其中 $B=\langle(4,2),(2,4)\rangle$。
 
 考虑 $u=(1,1)$，$v=(2,1)$，则 $\{u,v\}$ 是 $\mathbb{Z}^2$ 的一组基。故有自同构 $\mathbb{Z}^2\cong\mathbb{Z}^2$，将 $u$ 映到 $(1,0)$，$v$ 映到 $(0,1)$，从而将 $B$ 映到
 
-$$\langle(0,2),(6,-2)\rangle=6\mathbb{Z}\oplus2\mathbb{Z}\subset\mathbb{Z}\oplus\mathbb{Z}.$$
+$$ \langle(0,2),(6,-2)\rangle=6\mathbb{Z}\oplus2\mathbb{Z}\subset\mathbb{Z}\oplus\mathbb{Z}. $$
 
 于是 $A/\mathbb{Z}^2\cong\mathbb{Z}_6\oplus\mathbb{Z}_2$。
 
@@ -2280,7 +2280,7 @@ $$\langle(0,2),(6,-2)\rangle=6\mathbb{Z}\oplus2\mathbb{Z}\subset\mathbb{Z}\oplus
 
 证明：由第一章 1.6 节的例 3，我们知道 $\operatorname{Aut}(G)\cong\mathbb{Z}_{24}^{*}$。由中国剩余定理 $\mathbb{Z}_{24}\cong\mathbb{Z}_8\times\mathbb{Z}_3$，所以 $\mathbb{Z}_{24}^{*}\cong\mathbb{Z}_8^{*}\times\mathbb{Z}_3^{*}$。由于 $\mathbb{Z}_8^{*}\cong\{\bar1,\bar3,\bar5,\bar7\}\cong\mathbb{Z}_2\oplus\mathbb{Z}_2$（所有非平凡元素都二阶），$\mathbb{Z}_3^{*}=\{\bar1,\bar2\}\cong\mathbb{Z}_2$，得
 
-$$\operatorname{Aut}(G)\cong\mathbb{Z}_2\oplus\mathbb{Z}_2\oplus\mathbb{Z}_2.$$
+$$ \operatorname{Aut}(G)\cong\mathbb{Z}_2\oplus\mathbb{Z}_2\oplus\mathbb{Z}_2. $$
 
 ### 2.10 环的进一步讨论（p120–124）
 
@@ -2288,7 +2288,7 @@ $$\operatorname{Aut}(G)\cong\mathbb{Z}_2\oplus\mathbb{Z}_2\oplus\mathbb{Z}_2.$$
 
 设 $n$ 是一个正整数，令
 
-$$\mu_n=\{z\in\mathbb{C}\mid z^{n}=1\}$$
+$$ \mu_n=\{z\in\mathbb{C}\mid z^{n}=1\} $$
 
 为 $f(x)=x^{n}-1$ 在复数域 $\mathbb{C}$ 上的零点集，则 $\mu_n$ 是 $\mathbb{C}^{*}$ 的一个 $n$ 阶循环子群。具体地，我们有 $\mu_n=\{\mathrm{e}^{\frac{2\pi l}{n}\mathrm{i}}\mid 1\leqslant l\leqslant n\}$，这里 $\mathrm{e}^{\frac{2\pi l}{n}\mathrm{i}}=\cos\frac{2\pi l}{n}+\mathrm{i}\sin\frac{2\pi l}{n}$。记 $\zeta=\mathrm{e}^{\frac{2\pi}{n}\mathrm{i}}$，则 $\zeta$ 是 $\mu_n$ 的一个生成元。进一步，$\zeta^{l}\,(1\leqslant l\leqslant n)$ 是 $\mu_n$ 的生成元（即 $o(\zeta^{l})=n$）当且仅当 $\gcd(l,n)=1$，即 $l$ 与 $n$ 互素。
 
@@ -2296,13 +2296,13 @@ $$\mu_n=\{z\in\mathbb{C}\mid z^{n}=1\}$$
 
 称
 
-$$\Phi_n(x)=\prod_{\substack{1\leqslant l\leqslant n\\ \gcd(l,n)=1}}(x-\zeta^{l})$$
+$$ \Phi_n(x)=\prod_{\substack{1\leqslant l\leqslant n\\ \gcd(l,n)=1}}(x-\zeta^{l}) $$
 
 为第 $n$ 个**分圆多项式**（cyclotomic polynomial）。
 
 **例 1 (前六个分圆多项式)** @120
 
-$$\Phi_1(x)=x-1,\ \Phi_2(x)=x+1,\ \Phi_3(x)=x^{2}+x+1,\ \Phi_4(x)=x^{2}+1,$$$$\Phi_5(x)=x^{4}+x^{3}+x^{2}+x+1,\ \Phi_6(x)=x^{2}-x+1.$$
+$$ \Phi_1(x)=x-1,\ \Phi_2(x)=x+1,\ \Phi_3(x)=x^{2}+x+1,\ \Phi_4(x)=x^{2}+1, $$$$ \Phi_5(x)=x^{4}+x^{3}+x^{2}+x+1,\ \Phi_6(x)=x^{2}-x+1. $$
 
 由定义，$\Phi_n(x)$ 是一个首一复系数多项式，下面我们将证明 $\Phi_n(x)$ 是首一整数系数多项式。
 
@@ -2334,19 +2334,19 @@ $$\Phi_1(x)=x-1,\ \Phi_2(x)=x+1,\ \Phi_3(x)=x^{2}+x+1,\ \Phi_4(x)=x^{2}+1,$$$$\P
 
 设 $F$ 是域，考虑多项式
 
-$$f(x_1,\cdots,x_n)=\sum_{i_1=0}^{m_1}\cdots\sum_{i_n=0}^{m_n}a_{i_1\cdots i_n}x_1^{i_1}\cdots x_n^{i_n}\in F[x_1,\cdots,x_n],$$
+$$ f(x_1,\cdots,x_n)=\sum_{i_1=0}^{m_1}\cdots\sum_{i_n=0}^{m_n}a_{i_1\cdots i_n}x_1^{i_1}\cdots x_n^{i_n}\in F[x_1,\cdots,x_n], $$
 
 其中 $a_{i_1\cdots i_n}\in F$。对 $(u_1,\cdots,u_n)\in F^{n}$，定义
 
-$$f(u_1,\cdots,u_n)=\sum_{i_1=0}^{m_1}\cdots\sum_{i_n=0}^{m_n}a_{i_1\cdots i_n}u_1^{i_1}\cdots u_n^{i_n}\in F,$$
+$$ f(u_1,\cdots,u_n)=\sum_{i_1=0}^{m_1}\cdots\sum_{i_n=0}^{m_n}a_{i_1\cdots i_n}u_1^{i_1}\cdots u_n^{i_n}\in F, $$
 
 这样 $f$ 定义了一个函数 $f:F^{n}\to F$（$(u_1,\cdots,u_n)\mapsto f(u_1,\cdots,u_n)$）。同样地，若 $f(u_1,\cdots,u_n)=0$，则称 $(u_1,\cdots,u_n)\in F^{n}$ 是 $f(x_1,\cdots,x_n)$ 的一个**零点**（zero）。记
 
-$$V(f)\triangleq\{(u_1,\cdots,u_n)\in F^{n}\mid f(u_1,\cdots,u_n)=0\}$$
+$$ V(f)\triangleq\{(u_1,\cdots,u_n)\in F^{n}\mid f(u_1,\cdots,u_n)=0\} $$
 
 为 $f$ 的**零点集**（zero set），
 
-$$D(f)\triangleq F^{n}\setminus V(f)=\{(u_1,\cdots,u_n)\in F^{n}\mid f(u_1,\cdots,u_n)\neq 0\}$$
+$$ D(f)\triangleq F^{n}\setminus V(f)=\{(u_1,\cdots,u_n)\in F^{n}\mid f(u_1,\cdots,u_n)\neq 0\} $$
 
 为 $f$ 的**非零点集**。我们看到，$F^{n}=V(f)\cup D(f)$，且 $V(f)\cap D(f)=\varnothing$。
 
@@ -2370,11 +2370,11 @@ $$D(f)\triangleq F^{n}\setminus V(f)=\{(u_1,\cdots,u_n)\in F^{n}\mid f(u_1,\cdot
 
 当 $F$ 是域 $K$ 的子域时，我们称 $K$ 是 $F$ 的**扩域**（field extension），并用 $K/F$ 表示，或者通过以下图形来表示：
 
-$$\begin{array}{c}K\\[2pt]|\\[2pt]F\end{array}$$
+$$ \begin{array}{c} K\\[2pt] |\\[2pt] F \end{array} $$
 
 域 $F$ 有时也被称作扩域的**基域**（base field）。在讨论域扩张时，记号 "$/$" 不表示商运算。如果存在三个域 $F\subset E\subset K$，则称 $E$ 是 $F$ 和 $K$ 的**中间域**（intermediate field），其图形表示为：
 
-$$\begin{array}{ccccc}& & K & & \\& \swarrow & & \searrow & \\E & & & & \\& \nwarrow & & \nearrow & \\& & F & &\end{array}$$
+$$ \begin{array}{ccccc} & & K & & \\ & \swarrow & & \searrow & \\ E & & & & \\ & \nwarrow & & \nearrow & \\ & & F & & \end{array} $$
 
 （即 $K$ 在上，$E$ 在中间偏右，$F$ 在下，$F\subset E\subset K$。）
 
@@ -2392,7 +2392,7 @@ $$\begin{array}{ccccc}& & K & & \\& \swarrow & & \searrow & \\E & & & & \\& \nwa
 
 设域扩张 $F\subseteq K\subseteq L$，则
 
-$$[L:F]=[L:K][K:F],$$
+$$ [L:F]=[L:K][K:F], $$
 
 即扩张次数是可乘的。特别地，$L/F$ 是无限扩张当且仅当 $L/K$ 或 $K/F$ 是无限扩张。
 
@@ -2404,7 +2404,7 @@ $$[L:F]=[L:K][K:F],$$
 
 设 $F$ 是域 $K$ 的一个子域，$S$ 是 $K$ 的一个子集。我们定义 $F(S)$ 为所有包含 $S$ 且位于 $F$ 和 $K$ 之间的中间域的交集，即
 
-$$F(S)=\bigcap_{\substack{F\subseteq E\subseteq K\\ S\subseteq E}} E.$$
+$$ F(S)=\bigcap_{\substack{F\subseteq E\subseteq K\\ S\subseteq E}} E. $$
 
 可以明显看出，$F(S)$ 是一个中间域，我们称之为由 $S$ 生成的 $F$ 的扩域，而 $S$ 中的元素则被称为域扩张 $F(S)/F$ 的**生成元**。
 
@@ -2414,7 +2414,7 @@ $$F(S)=\bigcap_{\substack{F\subseteq E\subseteq K\\ S\subseteq E}} E.$$
 
 (1) $F(S)$ 是 $F$ 和 $K$ 之间且包含 $S$ 的最小中间域。
 
-(2)$$F(S)=\left\{\frac{f(a_1,\cdots,a_n)}{g(a_1,\cdots,a_n)}\ \middle|\ n\in\mathbb{N},\ a_i\in S\ (\forall i),\ f,g\in F[x_1,\cdots,x_n],\ g(a_1,\cdots,a_n)\neq 0\right\}.$$
+(2)$$ F(S)=\left\{\frac{f(a_1,\cdots,a_n)}{g(a_1,\cdots,a_n)}\ \middle|\ n\in\mathbb{N},\ a_i\in S\ (\forall i),\ f,g\in F[x_1,\cdots,x_n],\ g(a_1,\cdots,a_n)\neq 0\right\}. $$
 
 **定义 (有限生成与单扩张)** @129
 
@@ -2432,7 +2432,7 @@ $$F(S)=\bigcap_{\substack{F\subseteq E\subseteq K\\ S\subseteq E}} E.$$
 
 设 $K/F$ 为域扩张，$F(\alpha,\beta)/F$ 为中间域，则
 
-$$F(\alpha,\beta)=F(\alpha)F(\beta)=F(\alpha)(\beta),$$
+$$ F(\alpha,\beta)=F(\alpha)F(\beta)=F(\alpha)(\beta), $$
 
 即由 $\alpha$ 和 $\beta$ 生成的域扩张等于两个单扩张的合成。
 
@@ -2440,13 +2440,13 @@ $$F(\alpha,\beta)=F(\alpha)F(\beta)=F(\alpha)(\beta),$$
 
 两个域 $\mathbb{Q}(\sqrt{2})$ 和 $\mathbb{Q}(\sqrt[3]{2})$ 的合成域是域 $\mathbb{Q}(\sqrt[6]{2})$。首先，$\mathbb{Q}(\sqrt[6]{2})$ 包含了这两个子域（$(\sqrt[6]{2})^3=\sqrt{2}$ 和 $(\sqrt[6]{2})^2=\sqrt[3]{2}$）；其次包含 $\sqrt{2}$ 和 $\sqrt[3]{2}$ 的任何域都包含它们的商
 
-$$\frac{\sqrt{2}}{\sqrt[3]{2}}=\sqrt[6]{2}.$$
+$$ \frac{\sqrt{2}}{\sqrt[3]{2}}=\sqrt[6]{2}. $$
 
 **命题 1.4 (合成域的次数估计)** @130
 
 设 $L/F$ 是域扩张，$K_1$ 和 $K_2$ 是两个中间域，且 $K_1/F$ 和 $K_2/F$ 均为有限扩张，则
 
-$$[K_1K_2:F]\leqslant [K_1:F][K_2:F],$$
+$$ [K_1K_2:F]\leqslant [K_1:F][K_2:F], $$
 
 且等式成立当且仅当 $K_2$（或 $K_1$）的一组 $F$-基在 $K_1$（或 $K_2$）上保持线性无关。
 
@@ -2454,25 +2454,25 @@ $$[K_1K_2:F]\leqslant [K_1:F][K_2:F],$$
 
 考虑域 $\mathbb{Q}(\sqrt{2},\sqrt{3})$，它是由 $\sqrt{2}$ 和 $\sqrt{3}$ 生成的 $\mathbb{C}$ 的子域，也可以看成是 $\mathbb{Q}(\sqrt{2})$ 和 $\mathbb{Q}(\sqrt{3})$ 的合成域。根据命题 1.4，我们有
 
-$$[\mathbb{Q}(\sqrt{2},\sqrt{3}):\mathbb{Q}]\leqslant 4,$$
+$$ [\mathbb{Q}(\sqrt{2},\sqrt{3}):\mathbb{Q}]\leqslant 4, $$
 
 且等号成立当且仅当 $\mathbb{Q}(\sqrt{3})$ 的基 $\{1,\sqrt{3}\}$ 在 $\mathbb{Q}(\sqrt{2})$ 上线性无关。假设 $\sqrt{3}\in\mathbb{Q}(\sqrt{2})$，则 $\sqrt{3}=a+b\sqrt{2}$，其中 $a,b\in\mathbb{Q}$。我们得到 $(a^2+2b^2)+2ab\sqrt{2}=3$，注意到 $a,b$ 不同时为 $0$，上式会导出矛盾。这表明 $\sqrt{3}\notin\mathbb{Q}(\sqrt{2})$，从而我们有
 
-$$[\mathbb{Q}(\sqrt{2},\sqrt{3}):\mathbb{Q}]=4.$$
+$$ [\mathbb{Q}(\sqrt{2},\sqrt{3}):\mathbb{Q}]=4. $$
 
 $\mathbb{Q}(\sqrt{2},\sqrt{3})$ 中的元素包括了 $1,\sqrt{2},\sqrt{3},\sqrt{6}$。通过计算发现，这些元素构成了它的一组 $\mathbb{Q}$-基：
 
-$$\mathbb{Q}(\sqrt{2},\sqrt{3})=\{a+b\sqrt{2}+c\sqrt{3}+d\sqrt{6}\mid a,b,c,d\in\mathbb{Q}\}.$$
+$$ \mathbb{Q}(\sqrt{2},\sqrt{3})=\{a+b\sqrt{2}+c\sqrt{3}+d\sqrt{6}\mid a,b,c,d\in\mathbb{Q}\}. $$
 
 命题 1.4 揭示了如下关系：设 $[K_1:F]=n$，$[K_2:F]=m$，则 $K_1K_2$ 相对 $K_1$、$K_2$ 的次数分别不超过 $m$、$n$，即
 
-$$\begin{array}{ccccc}& & K_1K_2 & & \\& \swarrow{\scriptstyle \leqslant n} & & \searrow{\scriptstyle \leqslant m} & \\K_1 & & & & K_2\\& \searrow{\scriptstyle n} & & \swarrow{\scriptstyle m} & \\& & F & &\end{array}$$
+$$ \begin{array}{ccccc} & & K_1K_2 & & \\ & \swarrow{\scriptstyle \leqslant n} & & \searrow{\scriptstyle \leqslant m} & \\ K_1 & & & & K_2\\ & \searrow{\scriptstyle n} & & \swarrow{\scriptstyle m} & \\ & & F & & \end{array} $$
 
 **推论 1.5 (互素次数的合成)** @131
 
 假设同命题 1.4。若 $[K_1:F]=n$，$[K_2:F]=m$，且 $n$ 和 $m$ 互素，则
 
-$$[K_1K_2:F]=[K_1:F][K_2:F]=nm.$$
+$$ [K_1K_2:F]=[K_1:F][K_2:F]=nm. $$
 
 ### 3.2 代数扩张（p133–139）
 
@@ -2494,13 +2494,13 @@ $$[K_1K_2:F]=[K_1:F][K_2:F]=nm.$$
 
 (1) 若 $\alpha$ 在 $F$ 上是代数元，$m_{\alpha}(x)$ 为 $\alpha$ 在 $F$ 上的极小多项式，则有域同构
 
-$$F(\alpha)\cong F[x]/(m_{\alpha}(x)),$$
+$$ F(\alpha)\cong F[x]/(m_{\alpha}(x)), $$
 
 且 $[F(\alpha):F]=\deg m_{\alpha}(x)$。
 
 (2) 若 $\alpha$ 在 $F$ 中是超越的，则有域同构
 
-$$F(\alpha)\cong F(x),$$
+$$ F(\alpha)\cong F(x), $$
 
 这里 $F(x)$ 为有理函数域，即 $F[x]$ 的分式域。
 
@@ -2526,13 +2526,13 @@ $$F(\alpha)\cong F(x),$$
 
 由 Eisenstein 判别法知 $x^{3}-6x^{2}+9x+3$ 在 $\mathbb{Q}$ 上不可约，故 $[\mathbb{Q}(u):\mathbb{Q}]=3$。由 $u^{3}-6u^{2}+9u+3=0$ 知 $u^{3}=6u^{2}-9u-3$，故
 
-$$u^{4}=u(6u^{2}-9u-3)=6(6u^{2}-9u-3)-9u^{2}-3u=27u^{2}-57u-18,$$
+$$ u^{4}=u(6u^{2}-9u-3)=6(6u^{2}-9u-3)-9u^{2}-3u=27u^{2}-57u-18, $$
 
-$$u^{5}=u(27u^{2}-57u-18)=27(6u^{2}-9u-3)-57u^{2}-18u=105u^{2}-261u-81.$$
+$$ u^{5}=u(27u^{2}-57u-18)=27(6u^{2}-9u-3)-57u^{2}-18u=105u^{2}-261u-81. $$
 
 至于 $(1+u)^{-1}$，使用带余除法得
 
-$$u^{3}-6u^{2}+9u+3=(u+1)(u^{2}-7u+16)-13=0,$$
+$$ u^{3}-6u^{2}+9u+3=(u+1)(u^{2}-7u+16)-13=0, $$
 
 从而 $(1+u)^{-1}=\dfrac{1}{13}(u^{2}-7u+16)$。
 
@@ -2540,11 +2540,11 @@ $$u^{3}-6u^{2}+9u+3=(u+1)(u^{2}-7u+16)-13=0,$$
 
 设 $F$ 是特征不为 $2$ 的域，$K$ 是 $F$ 的二次扩域，即 $[K:F]=2$。设 $\alpha$ 是 $K$ 中不包含在 $F$ 中的任意元素，则 $\alpha$ 满足一个关于 $F$ 的最高次数不超过 $2$ 的方程；该方程不能是一次方程，因为 $\alpha$ 不是 $F$ 的元素。因此 $\alpha$ 的极小多项式是一个首一的二次多项式
 
-$$m_{\alpha}(x)=x^{2}+bx+c,\quad b,c\in F.$$
+$$ m_{\alpha}(x)=x^{2}+bx+c,\quad b,c\in F. $$
 
 由 $F\subset F(\alpha)\subseteq K$ 及 $[K:F]=2$ 得 $K=F(\alpha)$。由求根公式
 
-$$\alpha=\frac{-b\pm\sqrt{b^{2}-4c}}{2}$$
+$$ \alpha=\frac{-b\pm\sqrt{b^{2}-4c}}{2} $$
 
 可以证明 $F(\alpha)=F\bigl(\sqrt{b^{2}-4c}\bigr)$。由此可知，$F$ 的任意次数为 $2$ 的域扩张 $K$ 都具有形式 $F(\sqrt{D})$，其中 $D$ 在 $F$ 中非完全平方；反之亦然。为此，域 $F$ 的次数为 $2$ 的扩张被称为 $F$ 的**二次扩张**（quadratic extension）。
 
@@ -2562,7 +2562,7 @@ $$\alpha=\frac{-b\pm\sqrt{b^{2}-4c}}{2}$$
 
 (2) 用 $\sqrt[6]{2}$ 表示 $2$ 的正实数六次根，有 $[\mathbb{Q}(\sqrt[6]{2}):\mathbb{Q}]=6$。由于 $(\sqrt[6]{2})^{3}=\sqrt{2}$，我们有 $\mathbb{Q}(\sqrt{2})\subset\mathbb{Q}(\sqrt[6]{2})$ 且 $[\mathbb{Q}(\sqrt[6]{2}):\mathbb{Q}(\sqrt{2})]=3$。这给出了域图
 
-$$\mathbb{Q}\ \xrightarrow{\ 2\ }\ \mathbb{Q}(\sqrt{2})\ \xrightarrow{\ 3\ }\ \mathbb{Q}(\sqrt[6]{2}),$$
+$$ \mathbb{Q}\ \xrightarrow{\ 2\ }\ \mathbb{Q}(\sqrt{2})\ \xrightarrow{\ 3\ }\ \mathbb{Q}(\sqrt[6]{2}), $$
 
 其中两段扩张的次数分别为 $2$ 和 $3$，合起来为 $6$。
 
@@ -2572,7 +2572,7 @@ $$\mathbb{Q}\ \xrightarrow{\ 2\ }\ \mathbb{Q}(\sqrt{2})\ \xrightarrow{\ 3\ }\ \m
 
 设 $K/F$ 是域扩张，则 $K/F$ 是有限扩张当且仅当 $K/F$ 是有限生成的代数扩张。特别地，若 $a_{1},a_{2},\cdots,a_{n}$ 是 $F$ 上次数为 $m_{1},m_{2},\cdots,m_{n}$ 的代数元，则 $F(a_{1},a_{2},\cdots,a_{n})/F$ 是有限扩张，并且
 
-$$[F(a_{1},a_{2},\cdots,a_{n}):F]\leqslant m_{1}m_{2}\cdots m_{n}.$$
+$$ [F(a_{1},a_{2},\cdots,a_{n}):F]\leqslant m_{1}m_{2}\cdots m_{n}. $$
 
 **推论 2.6 (代数元的封闭性)** @136
 
@@ -2590,7 +2590,7 @@ $$[F(a_{1},a_{2},\cdots,a_{n}):F]\leqslant m_{1}m_{2}\cdots m_{n}.$$
 
 通过计算域扩张次数，容易验证
 
-$$\text{代数元}\pm\text{超越元}=\text{超越元}.$$
+$$ \text{代数元}\pm\text{超越元}=\text{超越元}. $$
 
 但如何判断两个超越元在加减运算之后的代数性或超越性则是当今数学中的一个公认难题。人们甚至无法证明 $\mathrm{e}+\pi$ 是否为一个无理数。
 
@@ -2610,7 +2610,7 @@ $$\text{代数元}\pm\text{超越元}=\text{超越元}.$$
 
 (1) 在 $K[x]$ 中，$f(x)$ 可分解为
 
-$$f(x)=c(x-a_1)(x-a_2)\cdots(x-a_n),\quad a_i\in K\ (\forall i),$$
+$$ f(x)=c(x-a_1)(x-a_2)\cdots(x-a_n),\quad a_i\in K\ (\forall i), $$
 
 其中 $c$ 是 $f(x)$ 的首项系数；
 
@@ -2634,7 +2634,7 @@ $F$ 是 $f(x)$ 在 $F$ 上的分裂域当且仅当 $f(x)$ 在 $F[x]$ 中分解�
 
 设 $F,\tilde{F}$ 是两个域，$\varphi:F\to\tilde{F}$ 是一个域同构。定义映射 $\tilde{\varphi}:F[x]\to\tilde{F}[x]$ 如下：对 $f(x)=a_0+a_1x+\cdots+a_nx^n\in F[x]$，
 
-$$\tilde{\varphi}(f(x))=\varphi(a_0)+\varphi(a_1)x+\cdots+\varphi(a_n)x^n.$$
+$$ \tilde{\varphi}(f(x))=\varphi(a_0)+\varphi(a_1)x+\cdots+\varphi(a_n)x^n. $$
 
 设 $f(x),p(x)\in F[x]$，记 $\tilde{f}(x)=\tilde{\varphi}(f(x))$，$\tilde{p}(x)=\tilde{\varphi}(p(x))\in\tilde{F}[x]$。下列结论成立：
 
@@ -2642,7 +2642,7 @@ $$\tilde{\varphi}(f(x))=\varphi(a_0)+\varphi(a_1)x+\cdots+\varphi(a_n)x^n.$$
 
 (2) 若 $p(x)$ 是一个不可约多项式，则 $\tilde{p}(x)$ 也是不可约多项式；且此时有域同构 $\bar{\varphi}:F[x]/(p(x))\to\tilde{F}[x]/(\tilde{p}(x))$，满足
 
-$$\bar{\varphi}\bigl(h(x)+(p(x))\bigr)=\tilde{\varphi}(h(x))+(\tilde{p}(x)),\quad \forall h(x)\in F[x].$$
+$$ \bar{\varphi}\bigl(h(x)+(p(x))\bigr)=\tilde{\varphi}(h(x))+(\tilde{p}(x)),\quad \forall h(x)\in F[x]. $$
 
 **定理 3.3 (分裂域的唯一性)** @141
 
@@ -2654,7 +2654,7 @@ $$\bar{\varphi}\bigl(h(x)+(p(x))\bigr)=\tilde{\varphi}(h(x))+(\tilde{p}(x)),\qua
 
 设 $F$ 是域，$f(x)\in F[x]$，$n=\deg f(x)\geqslant 1$，$K$ 是 $f(x)$ 在 $F$ 上的分裂域。设
 
-$$f(x)=c(x-a_1)(x-a_2)\cdots(x-a_n),$$
+$$ f(x)=c(x-a_1)(x-a_2)\cdots(x-a_n), $$
 
 $c$ 是 $f(x)$ 的首项系数，$a_i\in K$，$1\leqslant i\leqslant n$。如果 $a_1,a_2,\cdots,a_n$ 是两两不同的，我们称 $f(x)$ 是**无重根**的；否则，称 $f(x)$ 是**有重根**的。
 
@@ -2666,7 +2666,7 @@ $f(x)=x^2+1\in\mathbb{Q}[x]$ 是无重根的，$g(x)=x^2-2x+1=(x-1)^2$ 是有重
 
 设 $F$ 是域，$f(x)=a_nx^n+\cdots+a_1x+a_0\in F[x]$，定义映射 $D:F[x]\to F[x]$ 如下：
 
-$$D(f(x))=na_nx^{n-1}+(n-1)a_{n-1}x^{n-2}+\cdots+2a_2x+a_1.$$
+$$ D(f(x))=na_nx^{n-1}+(n-1)a_{n-1}x^{n-2}+\cdots+2a_2x+a_1. $$
 
 称 $D(f(x))$ 为 $f(x)$ 的**导数多项式**，记为 $f'(x)$。
 
@@ -2676,11 +2676,11 @@ $$D(f(x))=na_nx^{n-1}+(n-1)a_{n-1}x^{n-2}+\cdots+2a_2x+a_1.$$
 
 (1) $D$ 是 $F$-线性映射，即对 $f(x),g(x)\in F[x]$，$a,b\in F$，我们有
 
-$$D\bigl(af(x)+bg(x)\bigr)=aD(f(x))+bD(g(x));$$
+$$ D\bigl(af(x)+bg(x)\bigr)=aD(f(x))+bD(g(x)); $$
 
 (2) 对 $f(x),g(x)\in F[x]$，我们有
 
-$$D\bigl(f(x)g(x)\bigr)=f(x)D(g(x))+D(f(x))g(x).$$
+$$ D\bigl(f(x)g(x)\bigr)=f(x)D(g(x))+D(f(x))g(x). $$
 
 **命题 3.5 (无重根的判定)** @143
 
@@ -2690,7 +2690,7 @@ $$D\bigl(f(x)g(x)\bigr)=f(x)D(g(x))+D(f(x))g(x).$$
 
 设 $F$ 是域，$n$ 是正整数，$f(x)=x^n-1\in F[x]$。我们有 $f'(x)=nx^{n-1}$，则
 
-$$\gcd(f(x),f'(x))=\begin{cases}x^n-1, & \operatorname{char}(F)=p\mid n,\\1, & \text{其他},\end{cases}$$
+$$ \gcd(f(x),f'(x))= \begin{cases} x^n-1, & \operatorname{char}(F)=p\mid n,\\ 1, & \text{其他}, \end{cases} $$
 
 因此 $f(x)=x^n-1$ 有重根当且仅当 $F$ 的特征是一个素数 $p$ 且 $p\mid n$。
 
@@ -2738,7 +2738,7 @@ $$\gcd(f(x),f'(x))=\begin{cases}x^n-1, & \operatorname{char}(F)=p\mid n,\\1, & \
 
 (2) $\varphi_0$ 在 $F[\alpha]$ 上的延拓
 
-$$\varphi:F[\alpha]\to E\quad(\varphi|_{F}=\varphi_0)$$
+$$ \varphi:F[\alpha]\to E\quad(\varphi|_{F}=\varphi_0) $$
 
 的集合与 $\tilde{\varphi}_0(f(x))$ 在 $E$ 中的不同根的集合一一对应。
 
@@ -2746,7 +2746,7 @@ $$\varphi:F[\alpha]\to E\quad(\varphi|_{F}=\varphi_0)$$
 
 设 $F$ 是一个域，而 $L$ 是 $F$ 的一个代数闭包。记 $i:F\hookrightarrow L$ 是自然的包含映射。若有一个域嵌入 $j:F\hookrightarrow E$ 且 $E$ 是 $j(F)$ 的代数扩张，则存在一个域嵌入 $\varphi:E\to L$，满足 $\varphi\circ j=i$，即有如下交换图：
 
-$$\begin{array}{ccc}F & \xrightarrow{\ j\ } & E\\& \searrow{\ i\ } & \downarrow{\ \varphi\ }\\& & L\end{array}$$
+$$ \begin{array}{ccc} F & \xrightarrow{\ j\ } & E\\ & \searrow{\ i\ } & \downarrow{\ \varphi\ }\\ & & L \end{array} $$
 
 特别地，若存在一个域同构 $\sigma:F\cong F'$，并且 $L'$ 是 $F'$ 的任意一个代数闭包，则存在一个域同构 $\varphi:L\to L'$，使得 $\varphi$ 在 $F$ 上的限制等于 $\sigma$。
 
@@ -2778,11 +2778,11 @@ $$\begin{array}{ccc}F & \xrightarrow{\ j\ } & E\\& \searrow{\ i\ } & \downarrow{
 
 在第二章 2.10 节中，我们知道分圆多项式
 
-$$\Phi_n(x)=\prod_{\substack{d=1\\ \gcd(d,n)=1}}^{n}(x-\zeta_n^d)\in\mathbb{Z}[x],$$
+$$ \Phi_n(x)=\prod_{\substack{d=1\\ \gcd(d,n)=1}}^{n}(x-\zeta_n^d)\in\mathbb{Z}[x], $$
 
 且 $\deg\Phi_n(x)=\varphi(n)$，其中 $\varphi$ 是 Euler 函数。在 $\mathbb{Z}[x]$ 中 $\Phi_n(x)\mid(x^n-1)$。在本书习题中，读者将证明 $\Phi_n(x)$ 在 $\mathbb{Q}[x]$ 上不可约，故它是 $\zeta_n$ 在 $\mathbb{Q}$ 上的极小多项式，因而
 
-$$[\mathbb{Q}(\zeta_n):\mathbb{Q}]=\varphi(n).$$
+$$ [\mathbb{Q}(\zeta_n):\mathbb{Q}]=\varphi(n). $$
 
 特别地，$\varphi(n)$ 也是 $n$ 次本原单位根的个数。
 
@@ -2792,13 +2792,13 @@ $$[\mathbb{Q}(\zeta_n):\mathbb{Q}]=\varphi(n).$$
 
 设 $E/F$ 和 $L/F$ 均为域扩张，如果 $\sigma:E\to L$ 是环同态且 $\sigma|_{F}=\mathrm{id}_{F}$，那么称 $\sigma$ 是一个**域扩张嵌入**（field extension embedding），记为 $\sigma:E/F\to L/F$。由定义，一个域扩张嵌入是单射。特别地，取定 $E$ 的一个代数闭包 $\overline{E}$，则
 
-$$\operatorname{Emb}(E/F)\triangleq\{\sigma:E/F\to\overline{E}/F\mid\sigma\ \text{是域扩张嵌入}\}.$$
+$$ \operatorname{Emb}(E/F)\triangleq\{\sigma:E/F\to\overline{E}/F\mid\sigma\ \text{是域扩张嵌入}\}. $$
 
 **定义 (域扩张的自同构群)** @149
 
 设 $E/F$ 为域扩张。我们用 $\operatorname{Aut}(E)$ 表示 $E$ 的自同构全体，它在自同构的复合作用下是一个群。记
 
-$$\operatorname{Aut}(E/F)\triangleq\{\sigma\in\operatorname{Aut}(E)\mid\sigma(a)=a,\ \forall a\in F\}.$$
+$$ \operatorname{Aut}(E/F)\triangleq\{\sigma\in\operatorname{Aut}(E)\mid\sigma(a)=a,\ \forall a\in F\}. $$
 
 $\operatorname{Aut}(E/F)$ 称为域扩张 $E/F$ 的**自同构群**（automorphism group），也称 $\sigma\in\operatorname{Aut}(E/F)$ 为 $E$ 在 $F$ 上的自同构。
 
@@ -2806,7 +2806,7 @@ $\operatorname{Aut}(E/F)$ 称为域扩张 $E/F$ 的**自同构群**（automorphi
 
 设 $E/F$ 为有限扩张，且 $K$ 为中间域，则有
 
-$$|\operatorname{Emb}(E/F)|=|\operatorname{Emb}(K/F)|\cdot|\operatorname{Emb}(E/K)|,$$
+$$ |\operatorname{Emb}(E/F)|=|\operatorname{Emb}(K/F)|\cdot|\operatorname{Emb}(E/K)|, $$
 
 这里 $|\cdot|$ 代表集合的基数。
 
@@ -2814,13 +2814,13 @@ $$|\operatorname{Emb}(E/F)|=|\operatorname{Emb}(K/F)|\cdot|\operatorname{Emb}(E/
 
 设 $\sigma_{i}\,(1\leqslant i\leqslant m)$ 是从群 $G$ 到域 $E$ 的乘法群 $E^{*}$ 的两两不同的群同态，$\lambda_{i}\,(1\leqslant i\leqslant m)$ 是 $E$ 中不全为 $0$ 的元素，则存在 $g\in G$ 使得
 
-$$\sum_{i=1}^{m}\lambda_{i}\sigma_{i}(g)\neq 0.$$
+$$ \sum_{i=1}^{m}\lambda_{i}\sigma_{i}(g)\neq 0. $$
 
 **定理 4.3 (自同构群的上界)** @150
 
 若 $E/F$ 为有限扩张，则有
 
-$$|\operatorname{Aut}(E/F)|\leqslant|\operatorname{Emb}(E/F)|\leqslant[E:F].$$
+$$ |\operatorname{Aut}(E/F)|\leqslant|\operatorname{Emb}(E/F)|\leqslant[E:F]. $$
 
 **注 (不等式取等的条件)** @151
 
@@ -2850,7 +2850,7 @@ $$|\operatorname{Aut}(E/F)|\leqslant|\operatorname{Emb}(E/F)|\leqslant[E:F].$$
 
 设 $E=\mathbb{Q}(\sqrt[3]{2})$，那么 $E/\mathbb{Q}$ 不是正规扩张。这是因为 $\sqrt[3]{2}$ 的极小多项式是 $x^{3}-2$，它的另外两个根 $\sqrt[3]{2}\omega$ 和 $\sqrt[3]{2}\omega^{2}$ 不在 $E$ 中，其中
 
-$$\omega=\cos\left(\frac{2\pi}{3}\right)+\mathrm{i}\sin\left(\frac{2\pi}{3}\right)$$
+$$ \omega=\cos\left(\frac{2\pi}{3}\right)+\mathrm{i}\sin\left(\frac{2\pi}{3}\right) $$
 
 是三次本原单位根。因此 $x^{3}-2$ 的分裂域是 $\mathbb{Q}(\sqrt[3]{2},\omega)$，它真包含 $E$。
 
@@ -2892,7 +2892,7 @@ $$\omega=\cos\left(\frac{2\pi}{3}\right)+\mathrm{i}\sin\left(\frac{2\pi}{3}\righ
 
 设 $E/F$ 是有限扩张，则 $E/F$ 是可分扩张当且仅当
 
-$$|\operatorname{Emb}(E/F)|=[E:F].$$
+$$ |\operatorname{Emb}(E/F)|=[E:F]. $$
 
 **推论 5.6 (可分性的传递)** @156
 
@@ -2906,7 +2906,7 @@ $$|\operatorname{Emb}(E/F)|=[E:F].$$
 
 设 $F$ 为域，若 $0\neq f(x)\in F[x]$ 是一个不可约多项式，则 $f(x)$ 是不可分的当且仅当 $\operatorname{char}F=p>0$ 且
 
-$$f(x)=a_{0}+a_{p}x^{p}+\cdots+a_{mp}x^{mp}.$$
+$$ f(x)=a_{0}+a_{p}x^{p}+\cdots+a_{mp}x^{mp}. $$
 
 **定义 (完全域)** @156
 
@@ -2916,7 +2916,7 @@ $$f(x)=a_{0}+a_{p}x^{p}+\cdots+a_{mp}x^{mp}.$$
 
 考虑 $\mathbb{F}_{p}$ 上的有理函数域 $F=\mathbb{F}_{p}(t)$。对于多项式
 
-$$f(x)=x^{p}-t\in F[x],$$
+$$ f(x)=x^{p}-t\in F[x], $$
 
 根据命题 5.7，$f(x)$ 不可分。此外，$f(x)$ 在其分裂域中只有一个根（重根），容易检验 $f(x)$ 在 $F[x]$ 上不可约（见本节习题）。因此 $F$ 不是完全域。
 
@@ -2930,7 +2930,7 @@ $$f(x)=x^{p}-t\in F[x],$$
 
 设 $E/F$ 是有限扩张，则 $E/F$ 是 Galois 扩张当且仅当
 
-$$|\mathrm{Aut}(E/F)|=[E:F].$$
+$$ |\mathrm{Aut}(E/F)|=[E:F]. $$
 
 **例 1 (三次多项式的分裂域)** @158
 
@@ -2940,7 +2940,7 @@ $$|\mathrm{Aut}(E/F)|=[E:F].$$
 
 设 $E$ 是域，$G<\mathrm{Aut}(E)$ 为有限子群. 令
 
-$$E^{G}=\{a\in E\mid \forall\sigma\in G,\ \sigma(a)=a\},$$
+$$ E^{G}=\{a\in E\mid \forall\sigma\in G,\ \sigma(a)=a\}, $$
 
 用定义容易验证 $E^{G}$ 是 $E$ 的子域，称 $E^{G}$ 为 $E$ 的 **$G$-不变子域**（$G$-invariant subfield）.
 
@@ -2948,7 +2948,7 @@ $$E^{G}=\{a\in E\mid \forall\sigma\in G,\ \sigma(a)=a\},$$
 
 设 $E$ 是域，$G$ 是 $\mathrm{Aut}(E)$ 的有限子群，$F=E^{G}$，则
 
-$$[E:F]\leqslant |G|.$$
+$$ [E:F]\leqslant |G|. $$
 
 特别地，$E/F$ 是 Galois 扩张且 $G=\mathrm{Gal}(E/F)$.
 
@@ -2968,7 +2968,7 @@ $$[E:F]\leqslant |G|.$$
 
 设 $E/F$ 为有限 Galois 扩张，$G\triangleq\mathrm{Aut}(E/F)$，则有如下两个集合之间的一一对应：
 
-$$\begin{array}{ccc}\{H\mid H\text{ 是 }G\text{ 的子群}\} & \longleftrightarrow & \{K\mid K\text{ 是 }E/F\text{ 的中间域}\}\\[2pt]\text{子群 }H<G & \longmapsto & E^{H},\\\mathrm{Aut}(E/K)<G & \longleftarrow & \text{中间域 }K.\end{array}$$
+$$ \begin{array}{ccc} \{H\mid H\text{ 是 }G\text{ 的子群}\} & \longleftrightarrow & \{K\mid K\text{ 是 }E/F\text{ 的中间域}\}\\[2pt] \text{子群 }H<G & \longmapsto & E^{H},\\ \mathrm{Aut}(E/K)<G & \longleftarrow & \text{中间域 }K. \end{array} $$
 
 上述对应具有以下性质：
 
@@ -2984,9 +2984,9 @@ $$\begin{array}{ccc}\{H\mid H\text{ 是 }G\text{ 的子群}\} & \longleftrightar
 
 考虑域扩张 $\mathbb{Q}(\sqrt[3]{2},\omega)/\mathbb{Q}$，其中 $\omega=\cos\left(\frac{2\pi}{3}\right)+\sin\left(\frac{2\pi}{3}\right)\mathrm{i}$ 是三次本原单位根，$\rho=\omega\sqrt[3]{2}$ 为多项式 $x^{3}-2$ 的另一个非平凡根. 这也是一个 Galois 扩张，它的 Galois 群为 $S_{3}$，记两个生成元分别为 $\sigma$ 与 $\tau$，它们分别是 3 阶和 2 阶的，具体地说，它们在 $\omega$ 与 $\sqrt[3]{2}$ 上的作用分别为：
 
-$$\sigma(\omega)=\omega,\quad \sigma(\sqrt[3]{2})=\omega\sqrt[3]{2};$$
+$$ \sigma(\omega)=\omega,\quad \sigma(\sqrt[3]{2})=\omega\sqrt[3]{2}; $$
 
-$$\tau(\omega)=\omega^{2},\quad \tau(\sqrt[3]{2})=\omega\sqrt[3]{2}.$$
+$$ \tau(\omega)=\omega^{2},\quad \tau(\sqrt[3]{2})=\omega\sqrt[3]{2}. $$
 
 于是我们有如下关于 Galois 群的子群的关系图：$\{1\}$ 在最上层，第二层为 $\langle\sigma\rangle$、$\langle\tau\rangle$、$\langle\tau\sigma\rangle$、$\langle\tau\sigma^{2}\rangle$，最下层为 $\langle\sigma,\tau\rangle$；相应地，还有子域之间的关系图：$\mathbb{Q}(\sqrt[3]{2},\omega)$ 在最上层，第二层为 $\mathbb{Q}(\omega)$、$\mathbb{Q}(\omega^{2}\sqrt[3]{2})$、$\mathbb{Q}(\omega\sqrt[3]{2})$、$\mathbb{Q}(\sqrt[3]{2})$，最下层为 $\mathbb{Q}$.
 
@@ -2996,7 +2996,7 @@ $$\tau(\omega)=\omega^{2},\quad \tau(\sqrt[3]{2})=\omega\sqrt[3]{2}.$$
 
 设 $L/F$ 为域扩张，$E,K$ 均为中间域，$E/F$ 是有限 Galois 扩张，则 $EK/K$ 与 $E/E\cap K$ 均为有限 Galois 扩张，其 Galois 群为
 
-$$\mathrm{Gal}(EK/K)\cong\mathrm{Gal}(E/E\cap K).$$
+$$ \mathrm{Gal}(EK/K)\cong\mathrm{Gal}(E/E\cap K). $$
 
 ### 3.7 有限域（p164–171）
 
@@ -3016,21 +3016,21 @@ $$\mathrm{Gal}(EK/K)\cong\mathrm{Gal}(E/E\cap K).$$
 
 设 $p$ 是一个素数，$F=\mathbb{F}_p=\mathbb{Z}/p\mathbb{Z}=\{\overline{0},\overline{1},\overline{2},\cdots,\overline{p-1}\}$，对 $x^p-x\in\mathbb{F}_p[x]$，我们有
 
-$$x^p-x=x(x-\overline{1})\cdots(x-\overline{p-1}),$$
+$$ x^p-x=x(x-\overline{1})\cdots(x-\overline{p-1}), $$
 
-$$x^{p-1}-\overline{1}=(x-\overline{1})\cdots(x-\overline{p-1}).$$
+$$ x^{p-1}-\overline{1}=(x-\overline{1})\cdots(x-\overline{p-1}). $$
 
 取 $x=\overline{0}$，在 $\mathbb{Z}/p\mathbb{Z}$ 中有
 
-$$-\overline{1}=(-\overline{1})(-\overline{2})\cdots(-\overline{p-1}),$$
+$$ -\overline{1}=(-\overline{1})(-\overline{2})\cdots(-\overline{p-1}), $$
 
 即
 
-$$-1\equiv(-1)^{p-1}(p-1)!\pmod p.$$
+$$ -1\equiv(-1)^{p-1}(p-1)!\pmod p. $$
 
 由于 $(-1)^{p-1}\equiv 1\pmod p$，于是有
 
-$$(p-1)!\equiv -1\pmod p.$$
+$$ (p-1)!\equiv -1\pmod p. $$
 
 这是初等数论中的 Wilson 定理。
 
@@ -3038,7 +3038,7 @@ $$(p-1)!\equiv -1\pmod p.$$
 
 设域 $F$ 的特征为 $p$。考虑映射
 
-$$\operatorname{Frob}_F:F\to F,\qquad a\mapsto a^p, \tag{3.3}$$
+$$ \operatorname{Frob}_F:F\to F,\qquad a\mapsto a^p, \tag{3.3} $$
 
 $\forall a,b\in F$，$(a+b)^p=a^p+b^p$，即 $\operatorname{Frob}_F$ 保持加法，并且 $\operatorname{Frob}_F$ 保持乘法和乘法幺元，故它是域的单同态，称为域 $F$ 上的 **Frobenius 同态**。当 $F$ 是有限域时，$\operatorname{Frob}_F\in\operatorname{Aut}(F)$。
 
@@ -3080,7 +3080,7 @@ $\operatorname{Frob}_{\mathbb{F}_p(t)}:\mathbb{F}_p(t)\to\mathbb{F}_p(t)$ 不是
 
 考虑二元有理函数域 $E=\mathbb{F}_p(s,t)$ 和其子域 $F=\mathbb{F}_p(s^p,t^p)$，我们有 $[E:F]=p^2$。对于任意元素 $u\in E$，它满足 $u^p\in F$，故 $u$ 是 $F[x]$ 上 $p$ 次多项式方程
 
-$$x^p-u^p=0$$
+$$ x^p-u^p=0 $$
 
 的根，它在 $F$ 上的次数不大于 $p$。所以 $E/F$ 不可能是单扩张。
 
@@ -3092,7 +3092,7 @@ $$x^p-u^p=0$$
 
 对于 $q$ 元域 $\mathbb{F}_q$ 及 $\mathbb{F}_q[x]$ 中的一个 $d$ 次不可约多项式 $f(x)$，存在同构
 
-$$\mathbb{F}_q[x]/(f(x))\cong\mathbb{F}_{q^d}. \tag{3.4}$$
+$$ \mathbb{F}_q[x]/(f(x))\cong\mathbb{F}_{q^d}. \tag{3.4} $$
 
 **命题 7.10 (不可约因子的判据)** @169
 
@@ -3104,11 +3104,11 @@ $$\mathbb{F}_q[x]/(f(x))\cong\mathbb{F}_{q^d}. \tag{3.4}$$
 
 记 $N_p(n)$ 表示 $\mathbb{F}_p$ 上的 $n$ 次不可约首一多项式的个数，则
 
-$$x^{p^n}-x=\prod_{d\mid n}\prod_{\deg p(x)=d}p(x),\qquad p^n=\sum_{d\mid n}dN_p(d),$$
+$$ x^{p^n}-x=\prod_{d\mid n}\prod_{\deg p(x)=d}p(x),\qquad p^n=\sum_{d\mid n}dN_p(d), $$
 
 其中 $p(x)$ 为 $\mathbb{F}_p$ 上的不可约多项式。根据 Möbius 反演公式，得到 $\mathbb{F}_p$ 上 $n$ 次不可约首一多项式的个数的计算公式：
 
-$$N_p(n)=\frac{1}{n}\sum_{d\mid n}\mu\left(\frac{n}{d}\right)p^d.$$
+$$ N_p(n)=\frac{1}{n}\sum_{d\mid n}\mu\left(\frac{n}{d}\right)p^d. $$
 
 **例 5 (x^p-x-1 的不可约性)** @169
 
@@ -3142,13 +3142,13 @@ $$N_p(n)=\frac{1}{n}\sum_{d\mid n}\mu\left(\frac{n}{d}\right)p^d.$$
 
 考虑 $f(x)=(x^2-2)(x^2-3)\in\mathbb{Q}[x]$，求 $\operatorname{Gal}_{\mathbb{Q}}(f)$.
 
-$E=\mathbb{Q}(\sqrt{2},\sqrt{3})$，$[E:\mathbb{Q}]=4$. $E/\mathbb{Q}$ 上的自同构 $\eta$ 被 $\eta(\sqrt{2})$ 与 $\eta(\sqrt{3})$ 所唯一确定，故 $\eta(\sqrt{2})$ 只能为 $\pm\sqrt{2}$，$\eta(\sqrt{3})$ 只能为 $\pm\sqrt{3}$. 四个自同构为$$\begin{aligned}\operatorname{id}=\eta_1&:\sqrt{2}\mapsto\sqrt{2};\ \sqrt{3}\mapsto\sqrt{3},\\\eta_2&:\sqrt{2}\mapsto\sqrt{2};\ \sqrt{3}\mapsto-\sqrt{3},\\\eta_3&:\sqrt{2}\mapsto-\sqrt{2};\ \sqrt{3}\mapsto\sqrt{3},\\\eta_4&:\sqrt{2}\mapsto-\sqrt{2};\ \sqrt{3}\mapsto-\sqrt{3}.\end{aligned}$$由于 $\eta_2,\eta_3,\eta_4$ 都是二阶元，又因 4 阶群一定是交换群，故 $\operatorname{Gal}(E/\mathbb{Q})\cong\mathbb{Z}_2\oplus\mathbb{Z}_2$.
+$E=\mathbb{Q}(\sqrt{2},\sqrt{3})$，$[E:\mathbb{Q}]=4$. $E/\mathbb{Q}$ 上的自同构 $\eta$ 被 $\eta(\sqrt{2})$ 与 $\eta(\sqrt{3})$ 所唯一确定，故 $\eta(\sqrt{2})$ 只能为 $\pm\sqrt{2}$，$\eta(\sqrt{3})$ 只能为 $\pm\sqrt{3}$. 四个自同构为$$\begin{aligned} \operatorname{id}=\eta_1&:\sqrt{2}\mapsto\sqrt{2};\ \sqrt{3}\mapsto\sqrt{3},\\ \eta_2&:\sqrt{2}\mapsto\sqrt{2};\ \sqrt{3}\mapsto-\sqrt{3},\\ \eta_3&:\sqrt{2}\mapsto-\sqrt{2};\ \sqrt{3}\mapsto\sqrt{3},\\ \eta_4&:\sqrt{2}\mapsto-\sqrt{2};\ \sqrt{3}\mapsto-\sqrt{3}. \end{aligned}$$由于 $\eta_2,\eta_3,\eta_4$ 都是二阶元，又因 4 阶群一定是交换群，故 $\operatorname{Gal}(E/\mathbb{Q})\cong\mathbb{Z}_2\oplus\mathbb{Z}_2$.
 
 **例 2** @173
 
 设 $E$ 为不可约多项式 $f(x)=x^4-2$ 在 $\mathbb{Q}$ 上的分裂域，求 $\operatorname{Gal}(E/\mathbb{Q})$.
 
-$E=\mathbb{Q}(\sqrt[4]{2},\mathrm{i})$，因此 $[E:\mathbb{Q}]=8$. $\operatorname{Gal}(E/\mathbb{Q})$ 中任意元素 $\eta$ 被 $\eta(\sqrt[4]{2})$ 与 $\eta(\mathrm{i})$ 确定，其中 $\eta(\sqrt[4]{2})$ 只能为 $\pm\sqrt[4]{2},\pm\mathrm{i}\sqrt[4]{2}$ 之一，$\eta(\mathrm{i})$ 只能为 $\pm\mathrm{i}$ 之一. 八个自同构为$$\begin{aligned}\operatorname{id}&:\sqrt[4]{2}\mapsto\sqrt[4]{2};\ \mathrm{i}\mapsto\mathrm{i},\\r&:\sqrt[4]{2}\mapsto\sqrt[4]{2}\,\mathrm{i};\ \mathrm{i}\mapsto\mathrm{i},\\r^2&:\sqrt[4]{2}\mapsto-\sqrt[4]{2};\ \mathrm{i}\mapsto\mathrm{i},\\r^3&:\sqrt[4]{2}\mapsto-\sqrt[4]{2}\,\mathrm{i};\ \mathrm{i}\mapsto\mathrm{i},\\\sigma&:\sqrt[4]{2}\mapsto\sqrt[4]{2};\ \mathrm{i}\mapsto-\mathrm{i},\\\sigma r&:\sqrt[4]{2}\mapsto-\sqrt[4]{2}\,\mathrm{i};\ \mathrm{i}\mapsto-\mathrm{i},\\\sigma r^2&:\sqrt[4]{2}\mapsto-\sqrt[4]{2};\ \mathrm{i}\mapsto-\mathrm{i},\\\sigma r^3&:\sqrt[4]{2}\mapsto\sqrt[4]{2}\,\mathrm{i};\ \mathrm{i}\mapsto-\mathrm{i}.\end{aligned}$$故 $\operatorname{Gal}(E/\mathbb{Q})\cong D_4$.
+$E=\mathbb{Q}(\sqrt[4]{2},\mathrm{i})$，因此 $[E:\mathbb{Q}]=8$. $\operatorname{Gal}(E/\mathbb{Q})$ 中任意元素 $\eta$ 被 $\eta(\sqrt[4]{2})$ 与 $\eta(\mathrm{i})$ 确定，其中 $\eta(\sqrt[4]{2})$ 只能为 $\pm\sqrt[4]{2},\pm\mathrm{i}\sqrt[4]{2}$ 之一，$\eta(\mathrm{i})$ 只能为 $\pm\mathrm{i}$ 之一. 八个自同构为$$\begin{aligned} \operatorname{id}&:\sqrt[4]{2}\mapsto\sqrt[4]{2};\ \mathrm{i}\mapsto\mathrm{i},\\ r&:\sqrt[4]{2}\mapsto\sqrt[4]{2}\,\mathrm{i};\ \mathrm{i}\mapsto\mathrm{i},\\ r^2&:\sqrt[4]{2}\mapsto-\sqrt[4]{2};\ \mathrm{i}\mapsto\mathrm{i},\\ r^3&:\sqrt[4]{2}\mapsto-\sqrt[4]{2}\,\mathrm{i};\ \mathrm{i}\mapsto\mathrm{i},\\ \sigma&:\sqrt[4]{2}\mapsto\sqrt[4]{2};\ \mathrm{i}\mapsto-\mathrm{i},\\ \sigma r&:\sqrt[4]{2}\mapsto-\sqrt[4]{2}\,\mathrm{i};\ \mathrm{i}\mapsto-\mathrm{i},\\ \sigma r^2&:\sqrt[4]{2}\mapsto-\sqrt[4]{2};\ \mathrm{i}\mapsto-\mathrm{i},\\ \sigma r^3&:\sqrt[4]{2}\mapsto\sqrt[4]{2}\,\mathrm{i};\ \mathrm{i}\mapsto-\mathrm{i}. \end{aligned}$$故 $\operatorname{Gal}(E/\mathbb{Q})\cong D_4$.
 
 **定义 (一般n次多项式)** @173
 
@@ -3234,7 +3234,7 @@ Eisenstein 判别法不适用，但我们有
 
 设 $K/F$ 为域扩张，如果 $F$ 与 $K$ 之间有一系列单扩张：
 
-$$F=K_0\subset K_1\subset\cdots\subset K_i\subset K_{i+1}\subset\cdots\subset K_s=K,$$
+$$ F=K_0\subset K_1\subset\cdots\subset K_i\subset K_{i+1}\subset\cdots\subset K_s=K, $$
 
 满足：$K_{i+1}=K_i(\sqrt[n_i]{a_i}),\ i=0,1,\cdots,s-1$，其中 $a_i\in K_i$，$\sqrt[n_i]{a_i}$ 是多项式 $x^{n_i}-a_i$ 的某个根，那么称 $K$ 是 $F$ 的**根式扩张**（radical extension）。
 
@@ -3304,7 +3304,7 @@ $A$ 上的关系 $\sim$ 称为：
 
 如果 $A$ 上的关系 $\sim$ 是一个等价关系，那么 $a\in A$ 的**等价类**（equivalence class）定义为子集
 
-$$\{x\in A \mid x\sim a\}.$$
+$$ \{x\in A \mid x\sim a\}. $$
 
 等价类中任意元素称为等价于 $a$。如果 $C$ 是等价类，$C$ 中的任意元素称为该类 $C$ 的**代表元**。
 
@@ -3360,17 +3360,17 @@ $A$ 的一个**划分**（partition）是指 $A$ 的一个非空子集的集合 
 
 (1) 设 $A$ 为某个集合 $X$ 的幂集（即所有子集的集合），并且 $\leqslant$ 是子集包含关系 $\subseteq$。这只是一个偏序，因为 $X$ 的一些子集可能不可比较，例如单元素集合：如果 $x\neq y$，那么 $\{x\}\not\subseteq\{y\}$ 且 $\{y\}\not\subseteq\{x\}$。在这种情况下，一个链的示例是 $X$ 的一系列子集
 
-$$X_1\subseteq X_2\subseteq X_3\subseteq\cdots.$$
+$$ X_1\subseteq X_2\subseteq X_3\subseteq\cdots. $$
 
 集合 $A$ 的任何子集 $B$ 都有一个上界 $b$，具体为
 
-$$b=\bigcup_{x\in B}x.$$
+$$ b=\bigcup_{x\in B}x. $$
 
 这个偏序集 $A$ 有一个（唯一的）极大元 $X$。在许多情况下，集合 $A$ 由集合 $X$ 的一些（但不一定是全部）子集组成（即 $A$ 是 $X$ 的幂集的子集），且 $A$ 上的偏序再次是包含关系，上界和极大元的存在性取决于 $A$ 的性质。
 
 (2) 设 $A$ 是所有正整数集合 $\mathbb{N}$ 的真子集的集合，按包含关系 $\subseteq$ 排序。在这种情况下，链不一定有极大元，例如链
 
-$$\{1\}\subseteq\{1,2\}\subseteq\{1,2,3\}\subseteq\cdots$$
+$$ \{1\}\subseteq\{1,2\}\subseteq\{1,2,3\}\subseteq\cdots $$
 
 没有上界。集合 $A$ 仍然有极大元，例如 $\mathbb{N}\setminus\{n\}$ 是 $A$ 的一个极大元，对于任意 $n\in\mathbb{N}$。
 

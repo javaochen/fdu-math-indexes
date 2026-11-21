@@ -64,7 +64,27 @@ body {
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
 }
-#app { display: flex; min-height: 100vh; }
+#app { display: flex; min-height: 100vh; position: relative; z-index: 1; }
+
+/* 极淡的学科底图：只换图片，不改布局。 */
+body::before {
+  content: "";
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background: url("bg/library-reading-room.jpg") center/cover no-repeat;
+  opacity: .04;
+  filter: grayscale(1) contrast(.9);
+}
+body[data-bg="blackboard"]::before { background-image: url("bg/blackboard.jpg"); opacity: .032; }
+body[data-bg="manuscript"]::before { background-image: url("bg/mathematics-manuscript.jpg"); opacity: .038; }
+body[data-bg="geometry"]::before { background-image: url("bg/geometry-manuscript.jpg"); opacity: .036; }
+body.home-mode::before { opacity: .065; }
+body.network-home::before { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) body::before { opacity: .055; filter: grayscale(1) brightness(.5) contrast(1.05); }
+  :root:not([data-theme="light"]) body[data-bg="blackboard"]::before { opacity: .07; filter: grayscale(1) brightness(.85); }
+}
+:root[data-theme="dark"] body::before { opacity: .055; filter: grayscale(1) brightness(.5) contrast(1.05); }
+:root[data-theme="dark"] body[data-bg="blackboard"]::before { opacity: .07; filter: grayscale(1) brightness(.85); }
 
 /* ---------- sidebar ---------- */
 #sidebar-close, #sidebar-backdrop { display: none; }

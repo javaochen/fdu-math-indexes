@@ -4658,7 +4658,7 @@ $$f(D)=\{y\in\mathbb{R}^m\mid y=f(x),\,x\in D\}$$
 
 **注 (偏导数的几何意义)** @121
 
-考虑函数 $z=f(x,y)$，$(x,y)\in D$，它的图像是一张曲面。平面 $y=y_0$ 与这张曲面的交线 $l$（见图 12.1.1）的方程为$$l:\quad\begin{cases}x=x,\\y=y_0,\\z=f(x,y_0).\end{cases}$$利用曲线的切向量的方向余弦表示式，该曲线在点 $(x_0,y_0)$ 处的切向量 $\boldsymbol{T}$ 的方向余弦满足$$\cos(\boldsymbol{T},x):\cos(\boldsymbol{T},y):\cos(\boldsymbol{T},z)=1:0:f_x(x_0,y_0),$$也就是说，$f_x(x_0,y_0)$ 是平面 $y=y_0$ 上的曲线 $l$ 在点 $(x_0,y_0)$ 处的切线关于 $x$ 轴的斜率。这是一元情况的直接推广。
+考虑函数 $z=f(x,y)$，$(x,y)\in D$，它的图像是一张曲面。平面 $y=y_0$ 与这张曲面的交线 $l$（见图 12.1.1）的方程为$$l:\quad \begin{cases} x=x,\\ y=y_0,\\ z=f(x,y_0). \end{cases}$$利用曲线的切向量的方向余弦表示式，该曲线在点 $(x_0,y_0)$ 处的切向量 $\boldsymbol{T}$ 的方向余弦满足$$\cos(\boldsymbol{T},x):\cos(\boldsymbol{T},y):\cos(\boldsymbol{T},z)=1:0:f_x(x_0,y_0),$$也就是说，$f_x(x_0,y_0)$ 是平面 $y=y_0$ 上的曲线 $l$ 在点 $(x_0,y_0)$ 处的切线关于 $x$ 轴的斜率。这是一元情况的直接推广。
 
 **定义 (n 元函数的偏导数)** @121
 
@@ -4674,7 +4674,7 @@ $$f(D)=\{y\in\mathbb{R}^m\mid y=f(x),\,x\in D\}$$
 
 求函数 $u=\ln(x+y^2+z^3)$ 的偏导数。
 
-解：$$\frac{\partial u}{\partial x}=\frac{1}{x+y^2+z^3},\qquad\frac{\partial u}{\partial y}=\frac{2y}{x+y^2+z^3},\qquad\frac{\partial u}{\partial z}=\frac{3z^2}{x+y^2+z^3}.$$
+解：$$\frac{\partial u}{\partial x}=\frac{1}{x+y^2+z^3},\qquad \frac{\partial u}{\partial y}=\frac{2y}{x+y^2+z^3},\qquad \frac{\partial u}{\partial z}=\frac{3z^2}{x+y^2+z^3}.$$
 
 **例 12.1.3 (验证偏导数恒等式)** @122
 
@@ -4684,7 +4684,7 @@ $$f(D)=\{y\in\mathbb{R}^m\mid y=f(x),\,x\in D\}$$
 
 **例 12.1.4 (可偏导但不连续)** @122
 
-设$$f(x,y)=\begin{cases}\dfrac{xy}{x^2+y^2}, & (x,y)\neq(0,0),\\[2mm]0, & (x,y)=(0,0),\end{cases}$$计算 $f_x(0,0)$，$f_y(0,0)$。
+设$$f(x,y)= \begin{cases} \dfrac{xy}{x^2+y^2}, & (x,y)\neq(0,0),\\[2mm] 0, & (x,y)=(0,0), \end{cases}$$计算 $f_x(0,0)$，$f_y(0,0)$。
 
 解：由定义得到$$f_x(0,0)=\lim_{\Delta x\to 0}\frac{f(0+\Delta x,0)-f(0,0)}{\Delta x}=\lim_{\Delta x\to 0}\frac{\dfrac{\Delta x\cdot 0}{\Delta x^2+0^2}-0}{\Delta x}=\lim_{\Delta x\to 0}\frac{0}{\Delta x}=0 .$$同理 $f_y(0,0)=0$。这说明了 $f(x,y)$ 在 $(0,0)$ 点可偏导，但我们已经知道 $f(x,y)$ 在 $(0,0)$ 点不连续。
 
@@ -4736,11 +4736,11 @@ $$f(D)=\{y\in\mathbb{R}^m\mid y=f(x),\,x\in D\}$$
 
 求函数 $u=x-\cos\dfrac{y}{2}+\arctan\dfrac{z}{y}$ 的全微分。
 
-解：由于$$\frac{\partial u}{\partial x}=1,\qquad\frac{\partial u}{\partial y}=\frac{1}{2}\sin\frac{y}{2}-\frac{z}{y^2+z^2},\qquad\frac{\partial u}{\partial z}=\frac{y}{y^2+z^2},$$所以$$\mathrm{d}u=\mathrm{d}x+\left(\frac{1}{2}\sin\frac{y}{2}-\frac{z}{y^2+z^2}\right)\mathrm{d}y+\frac{y}{y^2+z^2}\mathrm{d}z .$$
+解：由于$$\frac{\partial u}{\partial x}=1,\qquad \frac{\partial u}{\partial y}=\frac{1}{2}\sin\frac{y}{2}-\frac{z}{y^2+z^2},\qquad \frac{\partial u}{\partial z}=\frac{y}{y^2+z^2},$$所以$$\mathrm{d}u=\mathrm{d}x+\left(\frac{1}{2}\sin\frac{y}{2}-\frac{z}{y^2+z^2}\right)\mathrm{d}y+\frac{y}{y^2+z^2}\mathrm{d}z .$$
 
 **例 12.1.8 (连续、方向导数存在但不可微)** @126
 
-设$$f(x,y)=\begin{cases}\dfrac{2xy^3}{x^2+y^4}, & x^2+y^2\neq 0,\\[2mm]0, & x^2+y^2=0 .\end{cases}$$由于$$|f(x,y)|=\left|\frac{2xy^2}{x^2+y^4}y\right|\leqslant\left|\frac{x^2+y^4}{x^2+y^4}y\right|=|y|,$$所以 $f(x,y)$ 在 $(0,0)$ 点连续；而 $f(x,y)$ 在 $(0,0)$ 点沿方向 $\boldsymbol{v}=(\cos\alpha,\sin\alpha)$ 的方向导数为$$\frac{\partial f}{\partial\boldsymbol{v}}=\lim_{t\to 0+}\frac{f(0+t\cos\alpha,0+t\sin\alpha)-f(0,0)}{t}=\lim_{t\to 0+}\frac{2\cos\alpha\sin^3\alpha}{\cos^2\alpha+t^2\sin^4\alpha}\,t=0 .$$因此 $f_x(0,0)=f_y(0,0)=0$。但因为$$f(0+\Delta x,0+\Delta y)-f(0,0)-[f_x(0,0)\Delta x+f_y(0,0)\Delta y]=f(\Delta x,\Delta y),$$而$$\lim_{\substack{\Delta y\to 0+\\ \Delta x=\Delta y^2}}\frac{f(\Delta x,\Delta y)}{\sqrt{\Delta x^2+\Delta y^2}}=\lim_{\Delta y\to 0+}\frac{\dfrac{2\Delta x\Delta y^3}{\Delta x^2+\Delta y^4}}{\sqrt{\Delta x^2+\Delta y^2}}=\lim_{\Delta y\to 0+}\frac{\dfrac{2\Delta y^5}{\Delta y^4+\Delta y^4}}{\Delta y\sqrt{1+\Delta y^2}}=\lim_{\Delta y\to 0+}\frac{1}{\sqrt{1+\Delta y^2}}=1\neq 0,$$即$$f(0+\Delta x,0+\Delta y)-f(0,0)-[f_x(0,0)\Delta x+f_y(0,0)\Delta y]\neq o\left(\sqrt{\Delta x^2+\Delta y^2}\right),$$所以 $f(x,y)$ 在 $(0,0)$ 点不可微。
+设$$f(x,y)= \begin{cases} \dfrac{2xy^3}{x^2+y^4}, & x^2+y^2\neq 0,\\[2mm] 0, & x^2+y^2=0 . \end{cases}$$由于$$|f(x,y)|=\left|\frac{2xy^2}{x^2+y^4}y\right|\leqslant\left|\frac{x^2+y^4}{x^2+y^4}y\right|=|y|,$$所以 $f(x,y)$ 在 $(0,0)$ 点连续；而 $f(x,y)$ 在 $(0,0)$ 点沿方向 $\boldsymbol{v}=(\cos\alpha,\sin\alpha)$ 的方向导数为$$\frac{\partial f}{\partial\boldsymbol{v}}=\lim_{t\to 0+}\frac{f(0+t\cos\alpha,0+t\sin\alpha)-f(0,0)}{t}=\lim_{t\to 0+}\frac{2\cos\alpha\sin^3\alpha}{\cos^2\alpha+t^2\sin^4\alpha}\,t=0 .$$因此 $f_x(0,0)=f_y(0,0)=0$。但因为$$f(0+\Delta x,0+\Delta y)-f(0,0)-[f_x(0,0)\Delta x+f_y(0,0)\Delta y]=f(\Delta x,\Delta y),$$而$$\lim_{\substack{\Delta y\to 0+\\ \Delta x=\Delta y^2}}\frac{f(\Delta x,\Delta y)}{\sqrt{\Delta x^2+\Delta y^2}} =\lim_{\Delta y\to 0+}\frac{\dfrac{2\Delta x\Delta y^3}{\Delta x^2+\Delta y^4}}{\sqrt{\Delta x^2+\Delta y^2}} =\lim_{\Delta y\to 0+}\frac{\dfrac{2\Delta y^5}{\Delta y^4+\Delta y^4}}{\Delta y\sqrt{1+\Delta y^2}} =\lim_{\Delta y\to 0+}\frac{1}{\sqrt{1+\Delta y^2}}=1\neq 0,$$即$$f(0+\Delta x,0+\Delta y)-f(0,0)-[f_x(0,0)\Delta x+f_y(0,0)\Delta y]\neq o\left(\sqrt{\Delta x^2+\Delta y^2}\right),$$所以 $f(x,y)$ 在 $(0,0)$ 点不可微。
 
 **定理 12.1.2 (可微的充分条件)** @126
 
@@ -4778,11 +4778,11 @@ $$f(D)=\{y\in\mathbb{R}^m\mid y=f(x),\,x\in D\}$$
 
 设 $z=\arctan\dfrac{x+y}{1-xy}$，求 $\dfrac{\partial^2 z}{\partial x^2}$，$\dfrac{\partial^2 z}{\partial x\partial y}$，$\dfrac{\partial^2 z}{\partial y\partial x}$，$\dfrac{\partial^2 z}{\partial y^2}$。
 
-解：$$\frac{\partial z}{\partial x}=\frac{1}{1+\left(\dfrac{x+y}{1-xy}\right)^2}\cdot\frac{(1-xy)-(x+y)(-y)}{(1-xy)^2}=\frac{1+y^2}{(1-xy)^2+(x+y)^2}=\frac{1+y^2}{(1+x^2)(1+y^2)}=\frac{1}{1+x^2},$$因此$$\frac{\partial^2 z}{\partial x^2}=\frac{-2x}{(1+x^2)^2},\qquad\frac{\partial^2 z}{\partial y\partial x}=\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial x}\right)=\frac{\partial}{\partial y}\left(\frac{1}{1+x^2}\right)=0 .$$同理 $\dfrac{\partial z}{\partial y}=\dfrac{1}{1+y^2}$，因此$$\frac{\partial^2 z}{\partial x\partial y}=0,\qquad\frac{\partial^2 z}{\partial y^2}=\frac{-2y}{(1+y^2)^2}.$$注意本例中两个混合偏导数是相等的。
+解：$$\frac{\partial z}{\partial x}=\frac{1}{1+\left(\dfrac{x+y}{1-xy}\right)^2}\cdot\frac{(1-xy)-(x+y)(-y)}{(1-xy)^2}=\frac{1+y^2}{(1-xy)^2+(x+y)^2}=\frac{1+y^2}{(1+x^2)(1+y^2)}=\frac{1}{1+x^2},$$因此$$\frac{\partial^2 z}{\partial x^2}=\frac{-2x}{(1+x^2)^2},\qquad \frac{\partial^2 z}{\partial y\partial x}=\frac{\partial}{\partial y}\left(\frac{\partial z}{\partial x}\right)=\frac{\partial}{\partial y}\left(\frac{1}{1+x^2}\right)=0 .$$同理 $\dfrac{\partial z}{\partial y}=\dfrac{1}{1+y^2}$，因此$$\frac{\partial^2 z}{\partial x\partial y}=0,\qquad \frac{\partial^2 z}{\partial y^2}=\frac{-2y}{(1+y^2)^2}.$$注意本例中两个混合偏导数是相等的。
 
 **例 12.1.11 (混合偏导数不相等的函数)** @129
 
-设$$f(x,y)=\begin{cases}xy\dfrac{x^2-y^2}{x^2+y^2}, & x^2+y^2\neq 0,\\[2mm]0, & x^2+y^2=0,\end{cases}$$那么它的一阶偏导数为$$f_x(x,y)=\begin{cases}y\dfrac{x^4+4x^2y^2-y^4}{(x^2+y^2)^2}, & x^2+y^2\neq 0,\\[2mm]0, & x^2+y^2=0,\end{cases}$$$$f_y(x,y)=\begin{cases}x\dfrac{x^4-4x^2y^2-y^4}{(x^2+y^2)^2}, & x^2+y^2\neq 0,\\[2mm]0, & x^2+y^2=0 .\end{cases}$$于是$$\frac{\partial^2 z}{\partial y\partial x}(0,0)=f_{xy}(0,0)=\lim_{\Delta y\to 0}\frac{f_x(0,0+\Delta y)-f_x(0,0)}{\Delta y}=\lim_{\Delta y\to 0}\frac{\dfrac{\Delta y^5}{\Delta y^4}-0}{\Delta y}=-1,$$$$\frac{\partial^2 z}{\partial x\partial y}(0,0)=f_{yx}(0,0)=\lim_{\Delta x\to 0}\frac{f_y(0+\Delta x,0)-f_y(0,0)}{\Delta x}=\lim_{\Delta x\to 0}\frac{\dfrac{\Delta x^5}{\Delta x^4}-0}{\Delta x}=1 .$$注意本例中 $f(x,y)$ 在 $(0,0)$ 点的两个混合偏导数不相等。
+设$$f(x,y)= \begin{cases} xy\dfrac{x^2-y^2}{x^2+y^2}, & x^2+y^2\neq 0,\\[2mm] 0, & x^2+y^2=0, \end{cases}$$那么它的一阶偏导数为$$f_x(x,y)= \begin{cases} y\dfrac{x^4+4x^2y^2-y^4}{(x^2+y^2)^2}, & x^2+y^2\neq 0,\\[2mm] 0, & x^2+y^2=0, \end{cases}$$$$f_y(x,y)= \begin{cases} x\dfrac{x^4-4x^2y^2-y^4}{(x^2+y^2)^2}, & x^2+y^2\neq 0,\\[2mm] 0, & x^2+y^2=0 . \end{cases}$$于是$$\frac{\partial^2 z}{\partial y\partial x}(0,0)=f_{xy}(0,0)=\lim_{\Delta y\to 0}\frac{f_x(0,0+\Delta y)-f_x(0,0)}{\Delta y}=\lim_{\Delta y\to 0}\frac{\dfrac{\Delta y^5}{\Delta y^4}-0}{\Delta y}=-1,$$$$\frac{\partial^2 z}{\partial x\partial y}(0,0)=f_{yx}(0,0)=\lim_{\Delta x\to 0}\frac{f_y(0+\Delta x,0)-f_y(0,0)}{\Delta x}=\lim_{\Delta x\to 0}\frac{\dfrac{\Delta x^5}{\Delta x^4}-0}{\Delta x}=1 .$$注意本例中 $f(x,y)$ 在 $(0,0)$ 点的两个混合偏导数不相等。
 
 **定理 12.1.3 (混合偏导数相等的条件)** @129
 
@@ -4796,7 +4796,7 @@ $$f(D)=\{y\in\mathbb{R}^m\mid y=f(x),\,x\in D\}$$
 
 **定义 (高阶微分)** @131
 
-设 $z=f(x,y)$ 在区域 $D\subset\mathbf{R}^2$ 上具有连续偏导数，那么它是可微的，并且$$\mathrm{d}z=\frac{\partial z}{\partial x}\mathrm{d}x+\frac{\partial z}{\partial y}\mathrm{d}y .$$若 $z$ 还具有二阶连续偏导数，那么 $\dfrac{\partial z}{\partial x}$ 与 $\dfrac{\partial z}{\partial y}$ 也是可微的，从而 $\mathrm{d}z$ 可微。我们称 $\mathrm{d}z$ 的微分为 $z$ 的**二阶微分**，记为$$\mathrm{d}^2z=\mathrm{d}(\mathrm{d}z).$$一般地，可在 $z$ 的 $k$ 阶微分 $\mathrm{d}^kz$ 的基础上定义它的 $k+1$ 阶微分为（如果存在的话）$$\mathrm{d}^{k+1}z=\mathrm{d}\left(\mathrm{d}^kz\right),\qquad k=1,2,\cdots .$$二阶及二阶以上的微分统称为**高阶微分**。由于对自变量 $x,y$ 总有$$\mathrm{d}^2x=\mathrm{d}(\mathrm{d}x)=0,\qquad \mathrm{d}^2y=\mathrm{d}(\mathrm{d}y)=0,$$于是 $z=f(x,y)$ 的二阶微分为$$\mathrm{d}^2z=\mathrm{d}(\mathrm{d}z)=\mathrm{d}\left(\frac{\partial z}{\partial x}\mathrm{d}x+\frac{\partial z}{\partial y}\mathrm{d}y\right)=\frac{\partial^2 z}{\partial x^2}\mathrm{d}x^2+2\frac{\partial^2 z}{\partial x\partial y}\mathrm{d}x\mathrm{d}y+\frac{\partial^2 z}{\partial y^2}\mathrm{d}y^2,$$这里 $\mathrm{d}x^2$ 和 $\mathrm{d}y^2$ 分别表示 $(\mathrm{d}x)^2$ 和 $(\mathrm{d}y)^2$。若将 $\dfrac{\partial}{\partial x}$ 和 $\dfrac{\partial}{\partial y}$ 看作求偏导数的运算符号，并约定$$\left(\frac{\partial}{\partial x}\right)^2=\frac{\partial^2}{\partial x^2},\qquad\left(\frac{\partial}{\partial x}\right)\left(\frac{\partial}{\partial y}\right)=\frac{\partial^2}{\partial x\partial y},\qquad\left(\frac{\partial}{\partial y}\right)^2=\frac{\partial^2}{\partial y^2},$$那么一阶和二阶的微分公式可以分别表示为$$\mathrm{d}z=\left(\mathrm{d}x\frac{\partial}{\partial x}+\mathrm{d}y\frac{\partial}{\partial y}\right)z,$$$$\mathrm{d}^2z=\left(\mathrm{d}x\frac{\partial}{\partial x}+\mathrm{d}y\frac{\partial}{\partial y}\right)^2z .$$同样地约定$$\left(\frac{\partial}{\partial x}\right)^p=\frac{\partial^p}{\partial x^p},\qquad\left(\frac{\partial}{\partial x}\right)^p\left(\frac{\partial}{\partial y}\right)^q=\frac{\partial^{p+q}}{\partial x^p\partial y^q},\qquad\left(\frac{\partial}{\partial y}\right)^q=\frac{\partial^q}{\partial y^q}\qquad(p,q=1,2,\cdots),$$读者不难用数学归纳法证明高阶微分公式$$\mathrm{d}^kz=\left(\mathrm{d}x\frac{\partial}{\partial x}+\mathrm{d}y\frac{\partial}{\partial y}\right)^kz,\qquad k=1,2,\cdots .$$对 $n$ 元函数 $u=f(x_1,x_2,\cdots,x_n)$ 可同样定义各阶微分，并且成立$$\mathrm{d}^ku=\left(\mathrm{d}x_1\frac{\partial}{\partial x_1}+\mathrm{d}x_2\frac{\partial}{\partial x_2}+\cdots+\mathrm{d}x_n\frac{\partial}{\partial x_n}\right)^ku,\qquad k=1,2,\cdots .$$
+设 $z=f(x,y)$ 在区域 $D\subset\mathbf{R}^2$ 上具有连续偏导数，那么它是可微的，并且$$\mathrm{d}z=\frac{\partial z}{\partial x}\mathrm{d}x+\frac{\partial z}{\partial y}\mathrm{d}y .$$若 $z$ 还具有二阶连续偏导数，那么 $\dfrac{\partial z}{\partial x}$ 与 $\dfrac{\partial z}{\partial y}$ 也是可微的，从而 $\mathrm{d}z$ 可微。我们称 $\mathrm{d}z$ 的微分为 $z$ 的**二阶微分**，记为$$\mathrm{d}^2z=\mathrm{d}(\mathrm{d}z).$$一般地，可在 $z$ 的 $k$ 阶微分 $\mathrm{d}^kz$ 的基础上定义它的 $k+1$ 阶微分为（如果存在的话）$$\mathrm{d}^{k+1}z=\mathrm{d}\left(\mathrm{d}^kz\right),\qquad k=1,2,\cdots .$$二阶及二阶以上的微分统称为**高阶微分**。由于对自变量 $x,y$ 总有$$\mathrm{d}^2x=\mathrm{d}(\mathrm{d}x)=0,\qquad \mathrm{d}^2y=\mathrm{d}(\mathrm{d}y)=0,$$于是 $z=f(x,y)$ 的二阶微分为$$\mathrm{d}^2z=\mathrm{d}(\mathrm{d}z)=\mathrm{d}\left(\frac{\partial z}{\partial x}\mathrm{d}x+\frac{\partial z}{\partial y}\mathrm{d}y\right) =\frac{\partial^2 z}{\partial x^2}\mathrm{d}x^2+2\frac{\partial^2 z}{\partial x\partial y}\mathrm{d}x\mathrm{d}y+\frac{\partial^2 z}{\partial y^2}\mathrm{d}y^2,$$这里 $\mathrm{d}x^2$ 和 $\mathrm{d}y^2$ 分别表示 $(\mathrm{d}x)^2$ 和 $(\mathrm{d}y)^2$。若将 $\dfrac{\partial}{\partial x}$ 和 $\dfrac{\partial}{\partial y}$ 看作求偏导数的运算符号，并约定$$\left(\frac{\partial}{\partial x}\right)^2=\frac{\partial^2}{\partial x^2},\qquad \left(\frac{\partial}{\partial x}\right)\left(\frac{\partial}{\partial y}\right)=\frac{\partial^2}{\partial x\partial y},\qquad \left(\frac{\partial}{\partial y}\right)^2=\frac{\partial^2}{\partial y^2},$$那么一阶和二阶的微分公式可以分别表示为$$\mathrm{d}z=\left(\mathrm{d}x\frac{\partial}{\partial x}+\mathrm{d}y\frac{\partial}{\partial y}\right)z,$$$$\mathrm{d}^2z=\left(\mathrm{d}x\frac{\partial}{\partial x}+\mathrm{d}y\frac{\partial}{\partial y}\right)^2z .$$同样地约定$$\left(\frac{\partial}{\partial x}\right)^p=\frac{\partial^p}{\partial x^p},\qquad \left(\frac{\partial}{\partial x}\right)^p\left(\frac{\partial}{\partial y}\right)^q=\frac{\partial^{p+q}}{\partial x^p\partial y^q},\qquad \left(\frac{\partial}{\partial y}\right)^q=\frac{\partial^q}{\partial y^q}\qquad(p,q=1,2,\cdots),$$读者不难用数学归纳法证明高阶微分公式$$\mathrm{d}^kz=\left(\mathrm{d}x\frac{\partial}{\partial x}+\mathrm{d}y\frac{\partial}{\partial y}\right)^kz,\qquad k=1,2,\cdots .$$对 $n$ 元函数 $u=f(x_1,x_2,\cdots,x_n)$ 可同样定义各阶微分，并且成立$$\mathrm{d}^ku=\left(\mathrm{d}x_1\frac{\partial}{\partial x_1}+\mathrm{d}x_2\frac{\partial}{\partial x_2}+\cdots+\mathrm{d}x_n\frac{\partial}{\partial x_n}\right)^ku,\qquad k=1,2,\cdots .$$
 
 **例 12.1.13 (三阶全微分)** @132
 
@@ -4806,9 +4806,9 @@ $$f(D)=\{y\in\mathbb{R}^m\mid y=f(x),\,x\in D\}$$
 
 **定义 (向量值函数的导数)** @132
 
-为方便，本节中总是将向量记号 $\boldsymbol{x},\boldsymbol{f}$ 和 $\boldsymbol{y}$ 等视为列向量。将 $\mathbf{R}^n$ 上区域 $D$ 上的 $n$ 元 $m$ 值向量值函数$$\boldsymbol{f}:D\to\mathbf{R}^m,\qquad \boldsymbol{x}\mapsto\boldsymbol{y}=\boldsymbol{f}(\boldsymbol{x})$$写成坐标分量形式$$\begin{cases}y_1=f_1(x_1,x_2,\cdots,x_n),\\y_2=f_2(x_1,x_2,\cdots,x_n),\\\qquad\cdots\cdots\cdots\cdots\\y_m=f_m(x_1,x_2,\cdots,x_n),\end{cases}\qquad (x_1,x_2,\cdots,x_n)^{\mathrm{T}}\in D,$$并设点 $x^0=(x_1^0,x_2^0,\cdots,x_n^0)^{\mathrm{T}}\in D$（记号 "$\mathrm{T}$" 表示转置）。
+为方便，本节中总是将向量记号 $\boldsymbol{x},\boldsymbol{f}$ 和 $\boldsymbol{y}$ 等视为列向量。将 $\mathbf{R}^n$ 上区域 $D$ 上的 $n$ 元 $m$ 值向量值函数$$\boldsymbol{f}:D\to\mathbf{R}^m,\qquad \boldsymbol{x}\mapsto\boldsymbol{y}=\boldsymbol{f}(\boldsymbol{x})$$写成坐标分量形式$$\begin{cases} y_1=f_1(x_1,x_2,\cdots,x_n),\\ y_2=f_2(x_1,x_2,\cdots,x_n),\\ \qquad\cdots\cdots\cdots\cdots\\ y_m=f_m(x_1,x_2,\cdots,x_n), \end{cases}\qquad (x_1,x_2,\cdots,x_n)^{\mathrm{T}}\in D,$$并设点 $x^0=(x_1^0,x_2^0,\cdots,x_n^0)^{\mathrm{T}}\in D$（记号 "$\mathrm{T}$" 表示转置）。
 
-若 $\boldsymbol{f}$ 的每一个分量函数 $f_i(x_1,x_2,\cdots,x_n)\ (i=1,2,\cdots,m)$ 都在 $x^0$ 点可偏导，就称向量值函数 $\boldsymbol{f}$ 在 $x^0$ 点**可导**，并称矩阵$$\left(\frac{\partial f_i}{\partial x_j}(x^0)\right)_{m\times n}=\begin{pmatrix}\dfrac{\partial f_1}{\partial x_1}(x^0) & \dfrac{\partial f_1}{\partial x_2}(x^0) & \cdots & \dfrac{\partial f_1}{\partial x_n}(x^0)\\[2mm]\dfrac{\partial f_2}{\partial x_1}(x^0) & \dfrac{\partial f_2}{\partial x_2}(x^0) & \cdots & \dfrac{\partial f_2}{\partial x_n}(x^0)\\[2mm]\vdots & \vdots & & \vdots\\[2mm]\dfrac{\partial f_m}{\partial x_1}(x^0) & \dfrac{\partial f_m}{\partial x_2}(x^0) & \cdots & \dfrac{\partial f_m}{\partial x_n}(x^0)\end{pmatrix}$$为向量值函数 $\boldsymbol{f}$ 在 $x^0$ 点的**导数**或 **Jacobi 矩阵**，记为 $\boldsymbol{f}'(x^0)$（或 $\mathrm{D}\boldsymbol{f}(x^0)$，$J_{\boldsymbol{f}}(x^0)$）。
+若 $\boldsymbol{f}$ 的每一个分量函数 $f_i(x_1,x_2,\cdots,x_n)\ (i=1,2,\cdots,m)$ 都在 $x^0$ 点可偏导，就称向量值函数 $\boldsymbol{f}$ 在 $x^0$ 点**可导**，并称矩阵$$\left(\frac{\partial f_i}{\partial x_j}(x^0)\right)_{m\times n}= \begin{pmatrix} \dfrac{\partial f_1}{\partial x_1}(x^0) & \dfrac{\partial f_1}{\partial x_2}(x^0) & \cdots & \dfrac{\partial f_1}{\partial x_n}(x^0)\\[2mm] \dfrac{\partial f_2}{\partial x_1}(x^0) & \dfrac{\partial f_2}{\partial x_2}(x^0) & \cdots & \dfrac{\partial f_2}{\partial x_n}(x^0)\\[2mm] \vdots & \vdots & & \vdots\\[2mm] \dfrac{\partial f_m}{\partial x_1}(x^0) & \dfrac{\partial f_m}{\partial x_2}(x^0) & \cdots & \dfrac{\partial f_m}{\partial x_n}(x^0) \end{pmatrix}$$为向量值函数 $\boldsymbol{f}$ 在 $x^0$ 点的**导数**或 **Jacobi 矩阵**，记为 $\boldsymbol{f}'(x^0)$（或 $\mathrm{D}\boldsymbol{f}(x^0)$，$J_{\boldsymbol{f}}(x^0)$）。
 
 如果向量值函数 $\boldsymbol{f}$ 在 $D$ 上每一点可导，就称 $\boldsymbol{f}$ 在 $D$ 上**可导**，这时对应关系$$\boldsymbol{x}\in D\mapsto\boldsymbol{f}'(x)=J_{\boldsymbol{f}}(x)$$称为 $\boldsymbol{f}$ 在 $D$ 上的导数，记为 $\boldsymbol{f}'(x)$（或 $\mathrm{D}\boldsymbol{f}(x)$，$J_{\boldsymbol{f}}(x)$）。
 
@@ -4818,13 +4818,13 @@ $$f(D)=\{y\in\mathbb{R}^m\mid y=f(x),\,x\in D\}$$
 
 **例 12.1.14 (空间曲线的切向量)** @133
 
-向量值函数$$\boldsymbol{f}:[\alpha,\beta]\to\mathbf{R}^3,\qquadt\mapsto\begin{pmatrix}x(t)\\ y(t)\\ z(t)\end{pmatrix}$$用坐标分量表示就是$$\begin{cases}x=x(t),\\y=y(t),\\z=z(t),\end{cases}\qquad t\in[\alpha,\beta].$$这是空间曲线的参数方程，$\boldsymbol{f}$ 的导数 $(x'(t),y'(t),z'(t))^{\mathrm{T}}$ 就是该空间曲线在 $(x(t),y(t),z(t))^{\mathrm{T}}$ 点的切向量。如果这条曲线是质点关于时间 $t$ 的运动轨迹，那么 $\boldsymbol{f}$ 的导数 $(x'(t),y'(t),z'(t))^{\mathrm{T}}$ 就是质点运动的速度。
+向量值函数$$\boldsymbol{f}:[\alpha,\beta]\to\mathbf{R}^3,\qquad t\mapsto \begin{pmatrix} x(t)\\ y(t)\\ z(t) \end{pmatrix}$$用坐标分量表示就是$$\begin{cases} x=x(t),\\ y=y(t),\\ z=z(t), \end{cases}\qquad t\in[\alpha,\beta].$$这是空间曲线的参数方程，$\boldsymbol{f}$ 的导数 $(x'(t),y'(t),z'(t))^{\mathrm{T}}$ 就是该空间曲线在 $(x(t),y(t),z(t))^{\mathrm{T}}$ 点的切向量。如果这条曲线是质点关于时间 $t$ 的运动轨迹，那么 $\boldsymbol{f}$ 的导数 $(x'(t),y'(t),z'(t))^{\mathrm{T}}$ 就是质点运动的速度。
 
 **例 12.1.15 (向量值函数的导数)** @133
 
-求向量值函数$$\boldsymbol{f}(x,y,z)=\begin{pmatrix}x^3+z\mathrm{e}^y\\y^3+z\ln x\end{pmatrix}$$在 $(1,1,1)$ 点的导数。
+求向量值函数$$\boldsymbol{f}(x,y,z)= \begin{pmatrix} x^3+z\mathrm{e}^y\\ y^3+z\ln x \end{pmatrix}$$在 $(1,1,1)$ 点的导数。
 
-解：这时坐标分量函数为$$f_1(x,y,z)=x^3+z\mathrm{e}^y,\qquad f_2(x,y,z)=y^3+z\ln x,$$因此$$\boldsymbol{f}'(1,1,1)=\begin{pmatrix}\dfrac{\partial f_1}{\partial x} & \dfrac{\partial f_1}{\partial y} & \dfrac{\partial f_1}{\partial z}\\[2mm]\dfrac{\partial f_2}{\partial x} & \dfrac{\partial f_2}{\partial y} & \dfrac{\partial f_2}{\partial z}\end{pmatrix}_{(1,1,1)}=\begin{pmatrix}3x^2 & z\mathrm{e}^y & \mathrm{e}^y\\[2mm]\dfrac{z}{x} & 3y^2 & \ln x\end{pmatrix}_{(1,1,1)}=\begin{pmatrix}3 & \mathrm{e} & \mathrm{e}\\1 & 3 & 0\end{pmatrix}.$$
+解：这时坐标分量函数为$$f_1(x,y,z)=x^3+z\mathrm{e}^y,\qquad f_2(x,y,z)=y^3+z\ln x,$$因此$$\boldsymbol{f}'(1,1,1)= \begin{pmatrix} \dfrac{\partial f_1}{\partial x} & \dfrac{\partial f_1}{\partial y} & \dfrac{\partial f_1}{\partial z}\\[2mm] \dfrac{\partial f_2}{\partial x} & \dfrac{\partial f_2}{\partial y} & \dfrac{\partial f_2}{\partial z} \end{pmatrix}_{(1,1,1)} = \begin{pmatrix} 3x^2 & z\mathrm{e}^y & \mathrm{e}^y\\[2mm] \dfrac{z}{x} & 3y^2 & \ln x \end{pmatrix}_{(1,1,1)} = \begin{pmatrix} 3 & \mathrm{e} & \mathrm{e}\\ 1 & 3 & 0 \end{pmatrix}.$$
 
 **定义 (向量值函数的微分)** @133
 
@@ -4888,7 +4888,7 @@ $$f(D)=\{y\in\mathbb{R}^m\mid y=f(x),\,x\in D\}$$
 
 **习题 4** @135
 
-曲线$$\begin{cases}z=\dfrac{x^{2}+y^{2}}{4},\\y=4\end{cases}$$在点 $(2,4,5)$ 处的切线与 $x$ 轴的正向所夹的角度是多少？
+曲线$$\begin{cases} z=\dfrac{x^{2}+y^{2}}{4},\\ y=4 \end{cases}$$在点 $(2,4,5)$ 处的切线与 $x$ 轴的正向所夹的角度是多少？
 
 **习题 5** @135
 
@@ -4958,15 +4958,15 @@ $$f(D)=\{y\in\mathbb{R}^m\mid y=f(x),\,x\in D\}$$
 
 **习题 13** @136
 
-验证函数$$f(x,y)=\begin{cases}\dfrac{xy}{\sqrt{x^{2}+y^{2}}}, & x^{2}+y^{2}\neq 0,\\[6pt]0, & x^{2}+y^{2}=0\end{cases}$$在原点 $(0,0)$ 连续且可偏导，但它在原点不可微。
+验证函数$$f(x,y)=\begin{cases} \dfrac{xy}{\sqrt{x^{2}+y^{2}}}, & x^{2}+y^{2}\neq 0,\\[6pt] 0, & x^{2}+y^{2}=0 \end{cases}$$在原点 $(0,0)$ 连续且可偏导，但它在原点不可微。
 
 **习题 14** @136
 
-验证函数$$f(x,y)=\begin{cases}(x^{2}+y^{2})\sin\dfrac{1}{x^{2}+y^{2}}, & x^{2}+y^{2}\neq 0,\\[6pt]0, & x^{2}+y^{2}=0\end{cases}$$的偏导函数 $f_{x}(x,y),f_{y}(x,y)$ 在原点 $(0,0)$ 不连续，但它在原点可微。
+验证函数$$f(x,y)=\begin{cases} (x^{2}+y^{2})\sin\dfrac{1}{x^{2}+y^{2}}, & x^{2}+y^{2}\neq 0,\\[6pt] 0, & x^{2}+y^{2}=0 \end{cases}$$的偏导函数 $f_{x}(x,y),f_{y}(x,y)$ 在原点 $(0,0)$ 不连续，但它在原点可微。
 
 **习题 15** @136
 
-证明函数$$f(x,y)=\begin{cases}\dfrac{2xy^{2}}{x^{2}+y^{4}}, & x^{2}+y^{2}\neq 0,\\[6pt]0, & x^{2}+y^{2}=0\end{cases}$$在原点 $(0,0)$ 处沿各个方向的方向导数都存在，但它在原点不连续，因而不可微。
+证明函数$$f(x,y)=\begin{cases} \dfrac{2xy^{2}}{x^{2}+y^{4}}, & x^{2}+y^{2}\neq 0,\\[6pt] 0, & x^{2}+y^{2}=0 \end{cases}$$在原点 $(0,0)$ 处沿各个方向的方向导数都存在，但它在原点不连续，因而不可微。
 
 **习题 16** @136
 
@@ -5098,7 +5098,7 @@ $$\frac{\partial z}{\partial x_i}(\boldsymbol{x}^0)=\frac{\partial z}{\partial y
 
 上式可以用矩阵表示为
 
-$$\left(\frac{\partial z}{\partial x_1},\frac{\partial z}{\partial x_2},\cdots,\frac{\partial z}{\partial x_n}\right)_{\boldsymbol{x}=\boldsymbol{x}^0}=\left(\frac{\partial z}{\partial y_1},\frac{\partial z}{\partial y_2},\cdots,\frac{\partial z}{\partial y_m}\right)_{\boldsymbol{y}=\boldsymbol{y}^0}\begin{pmatrix}\dfrac{\partial y_1}{\partial x_1} & \dfrac{\partial y_1}{\partial x_2} & \cdots & \dfrac{\partial y_1}{\partial x_n}\\[2mm]\dfrac{\partial y_2}{\partial x_1} & \dfrac{\partial y_2}{\partial x_2} & \cdots & \dfrac{\partial y_2}{\partial x_n}\\[2mm]\vdots & \vdots & & \vdots\\[2mm]\dfrac{\partial y_m}{\partial x_1} & \dfrac{\partial y_m}{\partial x_2} & \cdots & \dfrac{\partial y_m}{\partial x_n}\end{pmatrix}_{\boldsymbol{x}=\boldsymbol{x}^0},$$
+$$\left(\frac{\partial z}{\partial x_1},\frac{\partial z}{\partial x_2},\cdots,\frac{\partial z}{\partial x_n}\right)_{\boldsymbol{x}=\boldsymbol{x}^0} =\left(\frac{\partial z}{\partial y_1},\frac{\partial z}{\partial y_2},\cdots,\frac{\partial z}{\partial y_m}\right)_{\boldsymbol{y}=\boldsymbol{y}^0} \begin{pmatrix} \dfrac{\partial y_1}{\partial x_1} & \dfrac{\partial y_1}{\partial x_2} & \cdots & \dfrac{\partial y_1}{\partial x_n}\\[2mm] \dfrac{\partial y_2}{\partial x_1} & \dfrac{\partial y_2}{\partial x_2} & \cdots & \dfrac{\partial y_2}{\partial x_n}\\[2mm] \vdots & \vdots & & \vdots\\[2mm] \dfrac{\partial y_m}{\partial x_1} & \dfrac{\partial y_m}{\partial x_2} & \cdots & \dfrac{\partial y_m}{\partial x_n} \end{pmatrix}_{\boldsymbol{x}=\boldsymbol{x}^0},$$
 
 或用向量值函数的导数记号表为
 
@@ -5110,7 +5110,7 @@ $$(f\circ\mathbf{g})'(\boldsymbol{x}_0)=f'(\boldsymbol{y}_0)\,\mathbf{g}'(\bolds
 
 **解** 由链式法则
 
-$$\frac{\mathrm{d}z}{\mathrm{d}x}=\frac{\partial z}{\partial x}\frac{\mathrm{d}x}{\mathrm{d}x}+\frac{\partial z}{\partial y}\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{y}{1+x^2y^2}\cdot 1+\frac{x}{1+x^2y^2}\cdot \mathrm{e}^{x}=\frac{\mathrm{e}^{x}(1+x)}{1+x^2\mathrm{e}^{2x}} .$$
+$$\frac{\mathrm{d}z}{\mathrm{d}x}=\frac{\partial z}{\partial x}\frac{\mathrm{d}x}{\mathrm{d}x}+\frac{\partial z}{\partial y}\frac{\mathrm{d}y}{\mathrm{d}x} =\frac{y}{1+x^2y^2}\cdot 1+\frac{x}{1+x^2y^2}\cdot \mathrm{e}^{x} =\frac{\mathrm{e}^{x}(1+x)}{1+x^2\mathrm{e}^{2x}} .$$
 
 于是
 
@@ -5122,9 +5122,9 @@ $$\left.\frac{\mathrm{d}z}{\mathrm{d}x}\right|_{x=0}=1 .$$
 
 **解** 由链式法则
 
-$$\frac{\partial z}{\partial u}=\frac{\partial z}{\partial x}\frac{\partial x}{\partial u}+\frac{\partial z}{\partial y}\frac{\partial y}{\partial u}=\frac{2x}{y}\cdot 1+\left(-\frac{x^2}{y^2}\right)\cdot 2=\frac{2(u-2v)}{2u+v}-\frac{2(u-2v)^2}{(2u+v)^2}=\frac{2(u-2v)(u+3v)}{(2u+v)^2};$$
+$$\frac{\partial z}{\partial u}=\frac{\partial z}{\partial x}\frac{\partial x}{\partial u}+\frac{\partial z}{\partial y}\frac{\partial y}{\partial u} =\frac{2x}{y}\cdot 1+\left(-\frac{x^2}{y^2}\right)\cdot 2 =\frac{2(u-2v)}{2u+v}-\frac{2(u-2v)^2}{(2u+v)^2} =\frac{2(u-2v)(u+3v)}{(2u+v)^2};$$
 
-$$\frac{\partial z}{\partial v}=\frac{\partial z}{\partial x}\frac{\partial x}{\partial v}+\frac{\partial z}{\partial y}\frac{\partial y}{\partial v}=\frac{2x}{y}\cdot(-2)+\left(-\frac{x^2}{y^2}\right)\cdot 1=-\frac{4(u-2v)}{2u+v}-\frac{(u-2v)^2}{(2u+v)^2}=\frac{(2v-u)(9u+2v)}{(2u+v)^2}.$$
+$$\frac{\partial z}{\partial v}=\frac{\partial z}{\partial x}\frac{\partial x}{\partial v}+\frac{\partial z}{\partial y}\frac{\partial y}{\partial v} =\frac{2x}{y}\cdot(-2)+\left(-\frac{x^2}{y^2}\right)\cdot 1 =-\frac{4(u-2v)}{2u+v}-\frac{(u-2v)^2}{(2u+v)^2} =\frac{(2v-u)(9u+2v)}{(2u+v)^2}.$$
 
 **例 12.2.4 (幂指函数的偏导数)** @140
 
@@ -5132,11 +5132,11 @@ $$\frac{\partial z}{\partial v}=\frac{\partial z}{\partial x}\frac{\partial x}{\
 
 **解** 设 $u=2x+y$，$v=x+2y$，则 $z=u^{v}$。于是
 
-$$\frac{\partial z}{\partial x}=\frac{\partial z}{\partial u}\frac{\partial u}{\partial x}+\frac{\partial z}{\partial v}\frac{\partial v}{\partial x}=vu^{v-1}\cdot 2+u^{v}\ln u\cdot 1=2(x+2y)(2x+y)^{x+2y-1}+(2x+y)^{x+2y}\ln(2x+y)$$
+$$\frac{\partial z}{\partial x}=\frac{\partial z}{\partial u}\frac{\partial u}{\partial x}+\frac{\partial z}{\partial v}\frac{\partial v}{\partial x} =vu^{v-1}\cdot 2+u^{v}\ln u\cdot 1 =2(x+2y)(2x+y)^{x+2y-1}+(2x+y)^{x+2y}\ln(2x+y)$$
 
 $$=(2x+y)^{x+2y}\left(\frac{2(x+2y)}{2x+y}+\ln(2x+y)\right);$$
 
-$$\frac{\partial z}{\partial y}=\frac{\partial z}{\partial u}\frac{\partial u}{\partial y}+\frac{\partial z}{\partial v}\frac{\partial v}{\partial y}=vu^{v-1}\cdot 1+u^{v}\ln u\cdot 2=(x+2y)(2x+y)^{x+2y-1}+2(2x+y)^{x+2y}\ln(2x+y)$$
+$$\frac{\partial z}{\partial y}=\frac{\partial z}{\partial u}\frac{\partial u}{\partial y}+\frac{\partial z}{\partial v}\frac{\partial v}{\partial y} =vu^{v-1}\cdot 1+u^{v}\ln u\cdot 2 =(x+2y)(2x+y)^{x+2y-1}+2(2x+y)^{x+2y}\ln(2x+y)$$
 
 $$=(2x+y)^{x+2y}\left(\frac{x+2y}{2x+y}+2\ln(2x+y)\right).$$
 
@@ -5162,7 +5162,7 @@ $$\frac{\partial u}{\partial z}=2z,\qquad \frac{\partial v}{\partial z}=xy$$
 
 再运用链式法则就得到
 
-$$\frac{\partial^2 w}{\partial z\partial x}=\frac{\partial}{\partial z}\left(\frac{\partial w}{\partial x}\right)=\frac{\partial}{\partial z}\left(2x\frac{\partial w}{\partial u}+yz\frac{\partial w}{\partial v}\right)$$
+$$\frac{\partial^2 w}{\partial z\partial x}=\frac{\partial}{\partial z}\left(\frac{\partial w}{\partial x}\right) =\frac{\partial}{\partial z}\left(2x\frac{\partial w}{\partial u}+yz\frac{\partial w}{\partial v}\right)$$
 
 $$=2x\frac{\partial}{\partial z}\left(\frac{\partial w}{\partial u}\right)+y\frac{\partial w}{\partial v}+yz\frac{\partial}{\partial z}\left(\frac{\partial w}{\partial v}\right)$$
 
@@ -5222,7 +5222,7 @@ $$\frac{\partial y}{\partial t}(s,t)=\frac{\partial y}{\partial u}(u,v)\frac{\pa
 
 写成矩阵形式就是
 
-$$\begin{pmatrix}\dfrac{\partial x}{\partial s}(s,t) & \dfrac{\partial x}{\partial t}(s,t)\\[2mm] \dfrac{\partial y}{\partial s}(s,t) & \dfrac{\partial y}{\partial t}(s,t)\end{pmatrix}=\begin{pmatrix}\dfrac{\partial x}{\partial u}(u,v) & \dfrac{\partial x}{\partial v}(u,v)\\[2mm] \dfrac{\partial y}{\partial u}(u,v) & \dfrac{\partial y}{\partial v}(u,v)\end{pmatrix}\begin{pmatrix}\dfrac{\partial u}{\partial s}(s,t) & \dfrac{\partial u}{\partial t}(s,t)\\[2mm] \dfrac{\partial v}{\partial s}(s,t) & \dfrac{\partial v}{\partial t}(s,t)\end{pmatrix},$$
+$$\begin{pmatrix}\dfrac{\partial x}{\partial s}(s,t) & \dfrac{\partial x}{\partial t}(s,t)\\[2mm] \dfrac{\partial y}{\partial s}(s,t) & \dfrac{\partial y}{\partial t}(s,t)\end{pmatrix} =\begin{pmatrix}\dfrac{\partial x}{\partial u}(u,v) & \dfrac{\partial x}{\partial v}(u,v)\\[2mm] \dfrac{\partial y}{\partial u}(u,v) & \dfrac{\partial y}{\partial v}(u,v)\end{pmatrix} \begin{pmatrix}\dfrac{\partial u}{\partial s}(s,t) & \dfrac{\partial u}{\partial t}(s,t)\\[2mm] \dfrac{\partial v}{\partial s}(s,t) & \dfrac{\partial v}{\partial t}(s,t)\end{pmatrix},$$
 
 即
 
@@ -5262,13 +5262,13 @@ $$\begin{cases}x=\cos(s+t)\sin(s-t),\\ y=\sin(s+t)\cos(s-t).\end{cases}$$
 
 它们的偏导数可以用如下方式算出来：
 
-$$\begin{pmatrix}\dfrac{\partial x}{\partial s} & \dfrac{\partial x}{\partial t}\\[2mm] \dfrac{\partial y}{\partial s} & \dfrac{\partial y}{\partial t}\end{pmatrix}=\begin{pmatrix}\dfrac{\partial x}{\partial u} & \dfrac{\partial x}{\partial v}\\[2mm] \dfrac{\partial y}{\partial u} & \dfrac{\partial y}{\partial v}\end{pmatrix}\begin{pmatrix}\dfrac{\partial u}{\partial s} & \dfrac{\partial u}{\partial t}\\[2mm] \dfrac{\partial v}{\partial s} & \dfrac{\partial v}{\partial t}\end{pmatrix}$$
+$$\begin{pmatrix}\dfrac{\partial x}{\partial s} & \dfrac{\partial x}{\partial t}\\[2mm] \dfrac{\partial y}{\partial s} & \dfrac{\partial y}{\partial t}\end{pmatrix} =\begin{pmatrix}\dfrac{\partial x}{\partial u} & \dfrac{\partial x}{\partial v}\\[2mm] \dfrac{\partial y}{\partial u} & \dfrac{\partial y}{\partial v}\end{pmatrix} \begin{pmatrix}\dfrac{\partial u}{\partial s} & \dfrac{\partial u}{\partial t}\\[2mm] \dfrac{\partial v}{\partial s} & \dfrac{\partial v}{\partial t}\end{pmatrix}$$
 
-$$=\begin{pmatrix}-\sin u\sin v & \cos u\cos v\\ \cos u\cos v & -\sin u\sin v\end{pmatrix}\begin{pmatrix}1 & 1\\ 1 & -1\end{pmatrix}$$
+$$=\begin{pmatrix}-\sin u\sin v & \cos u\cos v\\ \cos u\cos v & -\sin u\sin v\end{pmatrix} \begin{pmatrix}1 & 1\\ 1 & -1\end{pmatrix}$$
 
 $$=\begin{pmatrix}-\sin u\sin v+\cos u\cos v & -\sin u\sin v-\cos u\cos v\\ \cos u\cos v-\sin u\sin v & \cos u\cos v+\sin u\sin v\end{pmatrix}$$
 
-$$=\begin{pmatrix}\cos(u+v) & -\cos(u-v)\\ \cos(u+v) & \cos(u-v)\end{pmatrix}=\begin{pmatrix}\cos 2s & -\cos 2t\\ \cos 2s & \cos 2t\end{pmatrix}.$$
+$$=\begin{pmatrix}\cos(u+v) & -\cos(u-v)\\ \cos(u+v) & \cos(u-v)\end{pmatrix} =\begin{pmatrix}\cos 2s & -\cos 2t\\ \cos 2s & \cos 2t\end{pmatrix}.$$
 
 #### 二、 一阶全微分的形式不变性
 
@@ -5330,7 +5330,7 @@ $$\mathrm{d}z=\frac{1}{2}\sqrt[4]{\frac{x+y}{x-y}}\cdot\frac{x\,\mathrm{d}y-y\,\
 
 我们还顺便得到了
 
-$$\frac{\partial z}{\partial x}=-\frac{1}{2}\sqrt[4]{\frac{x+y}{x-y}}\cdot\frac{y}{x^2-y^2},\qquad\frac{\partial z}{\partial y}=\frac{1}{2}\sqrt[4]{\frac{x+y}{x-y}}\cdot\frac{x}{x^2-y^2}.$$
+$$\frac{\partial z}{\partial x}=-\frac{1}{2}\sqrt[4]{\frac{x+y}{x-y}}\cdot\frac{y}{x^2-y^2},\qquad \frac{\partial z}{\partial y}=\frac{1}{2}\sqrt[4]{\frac{x+y}{x-y}}\cdot\frac{x}{x^2-y^2}.$$
 
 这是求偏导数的方法之一。
 
@@ -5350,9 +5350,9 @@ $$\mathrm{d}^k u=0,\qquad k\geq 2 .$$
 
 $$\mathrm{d}z=\frac{\mathrm{d}u}{u}=\frac{\mathrm{d}x+\mathrm{d}y}{x+y},$$
 
-$$\mathrm{d}^2z=\mathrm{d}\left(\frac{\mathrm{d}u}{u}\right)=\mathrm{d}\left(\frac{1}{u}\right)\mathrm{d}u+\frac{1}{u}\mathrm{d}^2u=-\frac{\mathrm{d}u^2}{u^2}=-\frac{(\mathrm{d}x+\mathrm{d}y)^2}{(x+y)^2},$$
+$$\mathrm{d}^2z=\mathrm{d}\left(\frac{\mathrm{d}u}{u}\right)=\mathrm{d}\left(\frac{1}{u}\right)\mathrm{d}u+\frac{1}{u}\mathrm{d}^2u =-\frac{\mathrm{d}u^2}{u^2}=-\frac{(\mathrm{d}x+\mathrm{d}y)^2}{(x+y)^2},$$
 
-$$\mathrm{d}^3z=\mathrm{d}\left(-\frac{\mathrm{d}u^2}{u^2}\right)=\mathrm{d}\left(-\frac{1}{u^2}\right)\mathrm{d}u^2-\frac{1}{u^2}\mathrm{d}(\mathrm{d}u^2)=\frac{2!\,\mathrm{d}u^3}{u^3}=\frac{2!\,(\mathrm{d}x+\mathrm{d}y)^3}{(x+y)^3}.$$
+$$\mathrm{d}^3z=\mathrm{d}\left(-\frac{\mathrm{d}u^2}{u^2}\right)=\mathrm{d}\left(-\frac{1}{u^2}\right)\mathrm{d}u^2-\frac{1}{u^2}\mathrm{d}(\mathrm{d}u^2) =\frac{2!\,\mathrm{d}u^3}{u^3}=\frac{2!\,(\mathrm{d}x+\mathrm{d}y)^3}{(x+y)^3}.$$
 
 应用归纳法即可得到
 
@@ -5412,7 +5412,7 @@ $$\mathrm{d}^k z=(-1)^{k+1}\frac{(k-1)!\,(\mathrm{d}x+\mathrm{d}y)^k}{(x+y)^k},\
 
 **习题 7** @145
 
-设 $z=f(x,y)$ 具有二阶连续偏导数，写出 $\dfrac{\partial^{2}z}{\partial x^{2}}+\dfrac{\partial^{2}z}{\partial y^{2}}$ 在坐标变换$$\begin{cases}u=x^{2}-y^{2},\\v=2xy\end{cases}$$下的表达式。
+设 $z=f(x,y)$ 具有二阶连续偏导数，写出 $\dfrac{\partial^{2}z}{\partial x^{2}}+\dfrac{\partial^{2}z}{\partial y^{2}}$ 在坐标变换$$\begin{cases} u=x^{2}-y^{2},\\ v=2xy \end{cases}$$下的表达式。
 
 **习题 8** @145
 
@@ -5432,7 +5432,7 @@ $$\mathrm{d}^k z=(-1)^{k+1}\frac{(k-1)!\,(\mathrm{d}x+\mathrm{d}y)^k}{(x+y)^k},\
 
 **习题 11** @146
 
-设向量值函数 $f:\mathbf{R}^{2}\to\mathbf{R}^{3}$ 的坐标分量函数为$$\begin{cases}x=u^{2}+v^{2},\\y=u^{2}-v^{2},\\z=uv.\end{cases}$$向量值函数 $g:\mathbf{R}^{2}\to\mathbf{R}^{2}$ 的坐标分量函数为$$\begin{cases}u=r\cos\theta,\\v=r\sin\theta.\end{cases}$$求复合函数 $f\circ g$ 的导数。
+设向量值函数 $f:\mathbf{R}^{2}\to\mathbf{R}^{3}$ 的坐标分量函数为$$\begin{cases} x=u^{2}+v^{2},\\ y=u^{2}-v^{2},\\ z=uv. \end{cases}$$向量值函数 $g:\mathbf{R}^{2}\to\mathbf{R}^{2}$ 的坐标分量函数为$$\begin{cases} u=r\cos\theta,\\ v=r\sin\theta. \end{cases}$$求复合函数 $f\circ g$ 的导数。
 
 **习题 12** @146
 
@@ -5504,7 +5504,7 @@ $$f(x_1^0+\Delta x_1,x_2^0+\Delta x_2,\cdots,x_n^0+\Delta x_n)-f(x_1^0,x_2^0,\cd
 
 设函数 $f(x,y)$ 在点 $(x_0,y_0)$ 的邻域 $U=O((x_0,y_0),r)$ 上具有 $k+1$ 阶连续偏导数，那么对于 $U$ 内每一点 $(x_0+\Delta x,y_0+\Delta y)$ 都成立
 
-$$\begin{aligned}f(x_0+\Delta x,y_0+\Delta y)={}&f(x_0,y_0)+\left(\Delta x\frac{\partial}{\partial x}+\Delta y\frac{\partial}{\partial y}\right)f(x_0,y_0)\\&+\frac{1}{2!}\left(\Delta x\frac{\partial}{\partial x}+\Delta y\frac{\partial}{\partial y}\right)^2f(x_0,y_0)+\cdots\\&+\frac{1}{k!}\left(\Delta x\frac{\partial}{\partial x}+\Delta y\frac{\partial}{\partial y}\right)^kf(x_0,y_0)+R_k,\end{aligned}$$
+$$ \begin{aligned} f(x_0+\Delta x,y_0+\Delta y)={}&f(x_0,y_0)+\left(\Delta x\frac{\partial}{\partial x}+\Delta y\frac{\partial}{\partial y}\right)f(x_0,y_0)\\ &+\frac{1}{2!}\left(\Delta x\frac{\partial}{\partial x}+\Delta y\frac{\partial}{\partial y}\right)^2f(x_0,y_0)+\cdots\\ &+\frac{1}{k!}\left(\Delta x\frac{\partial}{\partial x}+\Delta y\frac{\partial}{\partial y}\right)^kf(x_0,y_0)+R_k, \end{aligned} $$
 
 其中
 
@@ -5530,7 +5530,7 @@ $$f(x_0+\Delta x,y_0+\Delta y)-f(x_0,y_0)=f_x(x_0+\theta\Delta x,y_0+\theta\Delt
 
 设 $f(x,y)$ 在点 $(x_0,y_0)$ 的某个邻域上具有 $k+1$ 阶连续偏导数，那么在点 $(x_0,y_0)$ 附近成立
 
-$$\begin{aligned}f(x_0+\Delta x,y_0+\Delta y)={}&f(x_0,y_0)+\left(\Delta x\frac{\partial}{\partial x}+\Delta y\frac{\partial}{\partial y}\right)f(x_0,y_0)\\&+\frac{1}{2!}\left(\Delta x\frac{\partial}{\partial x}+\Delta y\frac{\partial}{\partial y}\right)^2f(x_0,y_0)+\cdots\\&+\frac{1}{k!}\left(\Delta x\frac{\partial}{\partial x}+\Delta y\frac{\partial}{\partial y}\right)^kf(x_0,y_0)+o\left(\left(\sqrt{\Delta x^2+\Delta y^2}\right)^k\right).\end{aligned}$$
+$$ \begin{aligned} f(x_0+\Delta x,y_0+\Delta y)={}&f(x_0,y_0)+\left(\Delta x\frac{\partial}{\partial x}+\Delta y\frac{\partial}{\partial y}\right)f(x_0,y_0)\\ &+\frac{1}{2!}\left(\Delta x\frac{\partial}{\partial x}+\Delta y\frac{\partial}{\partial y}\right)^2f(x_0,y_0)+\cdots\\ &+\frac{1}{k!}\left(\Delta x\frac{\partial}{\partial x}+\Delta y\frac{\partial}{\partial y}\right)^kf(x_0,y_0)+o\left(\left(\sqrt{\Delta x^2+\Delta y^2}\right)^k\right). \end{aligned} $$
 
 **例 12.3.1 (用泰勒公式近似计算)** @149
 
@@ -5568,7 +5568,7 @@ $$\frac{f\left(x+\frac{h}{2},y\right)-f\left(x-\frac{h}{2},y\right)}{h}$$
 
 近似代替 $\dfrac{\partial f}{\partial x}(x,y)$。对 $\dfrac{\partial^2f}{\partial x^2}(x,y)$ 作同样处理，即有
 
-$$\begin{aligned}\frac{\partial^2f}{\partial x^2}(x,y)&\approx\frac{1}{h}\left[\frac{\partial f}{\partial x}\left(x+\frac{h}{2},y\right)-\frac{\partial f}{\partial x}\left(x-\frac{h}{2},y\right)\right]\\&\approx\frac{\dfrac{f(x+h,y)-f(x,y)}{h}-\dfrac{f(x,y)-f(x-h,y)}{h}}{h}\\&=\frac{f(x+h,y)-2f(x,y)+f(x-h,y)}{h^2}.\end{aligned}$$
+$$ \begin{aligned} \frac{\partial^2f}{\partial x^2}(x,y)&\approx\frac{1}{h}\left[\frac{\partial f}{\partial x}\left(x+\frac{h}{2},y\right)-\frac{\partial f}{\partial x}\left(x-\frac{h}{2},y\right)\right]\\ &\approx\frac{\dfrac{f(x+h,y)-f(x,y)}{h}-\dfrac{f(x,y)-f(x-h,y)}{h}}{h}\\ &=\frac{f(x+h,y)-2f(x,y)+f(x-h,y)}{h^2}. \end{aligned} $$
 
 在 $y$ 方向也采用这个方法，并记
 
@@ -5584,7 +5584,7 @@ $$f_{xxxx}(x+\theta h,y)=f_{xxxx}(x,y)+o(1),$$
 
 利用 Taylor 公式，就得到
 
-$$\begin{aligned}f(x\pm h,y)&=f(x,y)\pm hf_x(x,y)+\frac{h^2}{2}f_{xx}(x,y)\pm\frac{h^3}{6}f_{xxx}(x,y)+\frac{h^4}{24}f_{xxxx}(x+\theta h,y)\\&=f(x,y)\pm hf_x(x,y)+\frac{h^2}{2}f_{xx}(x,y)\pm\frac{h^3}{6}f_{xxx}(x,y)+\frac{h^4}{24}f_{xxxx}(x,y)+o(h^4).\end{aligned}$$
+$$ \begin{aligned} f(x\pm h,y)&=f(x,y)\pm hf_x(x,y)+\frac{h^2}{2}f_{xx}(x,y)\pm\frac{h^3}{6}f_{xxx}(x,y)+\frac{h^4}{24}f_{xxxx}(x+\theta h,y)\\ &=f(x,y)\pm hf_x(x,y)+\frac{h^2}{2}f_{xx}(x,y)\pm\frac{h^3}{6}f_{xxx}(x,y)+\frac{h^4}{24}f_{xxxx}(x,y)+o(h^4). \end{aligned} $$
 
 同理有
 
@@ -5598,7 +5598,7 @@ $$\Delta_hf(x,y)-\left(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partia
 
 设 $n$ 元函数 $f(x_1,x_2,\cdots,x_n)$ 在点 $(x_1^0,x_2^0,\cdots,x_n^0)$ 附近具有 $k+1$ 阶连续偏导数，那么在这点附近成立如下的 Taylor 公式：
 
-$$\begin{aligned}&f(x_1^0+\Delta x_1,x_2^0+\Delta x_2,\cdots,x_n^0+\Delta x_n)\\={}&f(x_1^0,x_2^0,\cdots,x_n^0)+\left(\sum_{i=1}^{n}\Delta x_i\frac{\partial}{\partial x_i}\right)f(x_1^0,x_2^0,\cdots,x_n^0)\\&+\frac{1}{2!}\left(\sum_{i=1}^{n}\Delta x_i\frac{\partial}{\partial x_i}\right)^2f(x_1^0,x_2^0,\cdots,x_n^0)+\cdots\\&+\frac{1}{k!}\left(\sum_{i=1}^{n}\Delta x_i\frac{\partial}{\partial x_i}\right)^kf(x_1^0,x_2^0,\cdots,x_n^0)+R_k,\end{aligned}$$
+$$ \begin{aligned} &f(x_1^0+\Delta x_1,x_2^0+\Delta x_2,\cdots,x_n^0+\Delta x_n)\\ ={}&f(x_1^0,x_2^0,\cdots,x_n^0)+\left(\sum_{i=1}^{n}\Delta x_i\frac{\partial}{\partial x_i}\right)f(x_1^0,x_2^0,\cdots,x_n^0)\\ &+\frac{1}{2!}\left(\sum_{i=1}^{n}\Delta x_i\frac{\partial}{\partial x_i}\right)^2f(x_1^0,x_2^0,\cdots,x_n^0)+\cdots\\ &+\frac{1}{k!}\left(\sum_{i=1}^{n}\Delta x_i\frac{\partial}{\partial x_i}\right)^kf(x_1^0,x_2^0,\cdots,x_n^0)+R_k, \end{aligned} $$
 
 其中
 
@@ -6218,7 +6218,7 @@ $$\frac{\partial(x,y)}{\partial(r,\theta)}=\begin{vmatrix}\cos\theta&-r\sin\thet
 
 **习题 7** @166
 
-设 $\begin{cases}x=x(y),\\ z=z(y)\end{cases}$ 是由方程组$$\begin{cases}F(y-x,y-z)=0,\\G\left(xy,\dfrac{z}{y}\right)=0\end{cases}$$所确定的向量值隐函数，其中二元函数 $F$ 和 $G$ 分别具有连续的偏导数，求 $\dfrac{\mathrm{d}x}{\mathrm{d}y}$ 和 $\dfrac{\mathrm{d}z}{\mathrm{d}y}$。
+设 $\begin{cases}x=x(y),\\ z=z(y)\end{cases}$ 是由方程组$$\begin{cases} F(y-x,y-z)=0,\\ G\left(xy,\dfrac{z}{y}\right)=0 \end{cases}$$所确定的向量值隐函数，其中二元函数 $F$ 和 $G$ 分别具有连续的偏导数，求 $\dfrac{\mathrm{d}x}{\mathrm{d}y}$ 和 $\dfrac{\mathrm{d}z}{\mathrm{d}y}$。
 
 **习题 8** @166
 
@@ -6226,7 +6226,7 @@ $$\frac{\partial(x,y)}{\partial(r,\theta)}=\begin{vmatrix}\cos\theta&-r\sin\thet
 
 **习题 9** @166
 
-设二元函数 $f$ 具有二阶连续偏导数。证明：通过适当线性变换$$\begin{cases}u=x+\lambda y,\\v=x+\mu y,\end{cases}$$可以将方程$$A\frac{\partial^{2}f}{\partial x^{2}}+2B\frac{\partial^{2}f}{\partial x\partial y}+C\frac{\partial^{2}f}{\partial y^{2}}=0\qquad (AC-B^{2}<0)$$化简为$$\frac{\partial^{2}f}{\partial u\partial v}=0,$$并说明此时 $\lambda,\mu$ 为一元二次方程 $A+2Bt+Ct^{2}=0$ 的两个相异实根。
+设二元函数 $f$ 具有二阶连续偏导数。证明：通过适当线性变换$$\begin{cases} u=x+\lambda y,\\ v=x+\mu y, \end{cases}$$可以将方程$$A\frac{\partial^{2}f}{\partial x^{2}}+2B\frac{\partial^{2}f}{\partial x\partial y}+C\frac{\partial^{2}f}{\partial y^{2}}=0\qquad (AC-B^{2}<0)$$化简为$$\frac{\partial^{2}f}{\partial u\partial v}=0,$$并说明此时 $\lambda,\mu$ 为一元二次方程 $A+2Bt+Ct^{2}=0$ 的两个相异实根。
 
 **习题 10** @167
 
@@ -6260,7 +6260,7 @@ $$\frac{\partial(x,y)}{\partial(r,\theta)}=\begin{vmatrix}\cos\theta&-r\sin\thet
 
 一条空间曲线可以看成一个质点在空间运动的轨迹。取定一个直角坐标系，设质点在时刻 $t$ 位于点 $P(x(t),y(t),z(t))$ 处，也就是它在任一时刻的坐标可用
 
-$$\begin{cases}x=x(t),\\y=y(t),\\z=z(t),\end{cases}\qquad a\le t\le b$$
+$$ \begin{cases} x=x(t),\\ y=y(t),\\ z=z(t), \end{cases} \qquad a\le t\le b $$
 
 来表示，随着 $t$ 的连续变动，相应点 $(x,y,z)$ 的轨迹就是空间中的一条曲线。这种表达式称为空间曲线的参数方程，它也可以写成向量的形式
 
@@ -6310,7 +6310,7 @@ $$y=f(x),\quad z=g(x),$$
 
 把它看成以 $x$ 为参数的参数方程
 
-$$\begin{cases}x=x,\\y=f(x),\\z=g(x),\end{cases}$$
+$$ \begin{cases} x=x,\\ y=f(x),\\ z=g(x), \end{cases} $$
 
 即得到它在 $P_0(x_0,f(x_0),g(x_0))$ 点的切线方程为
 
@@ -6324,7 +6324,7 @@ $$(x-x_0)+f'(x_0)(y-f(x_0))+g'(x_0)(z-g(x_0))=0.$$
 
 空间曲线还可以表示为空间中两张曲面的交。设曲线 $\Gamma$ 的方程为
 
-$$\begin{cases}F(x,y,z)=0,\\G(x,y,z)=0.\end{cases}$$
+$$ \begin{cases} F(x,y,z)=0,\\ G(x,y,z)=0. \end{cases} $$
 
 $P_0(x_0,y_0,z_0)$ 为 $\Gamma$ 上一点，且 Jacobi 矩阵
 
@@ -6374,7 +6374,7 @@ $$x=a\cos\theta=a\cos\omega t,\qquad y=a\sin\theta=a\sin\omega t.$$
 
 又因为质点以匀速 $c$ 上升，于是 $z=ct$。那么质点运动的轨迹方程为
 
-$$\begin{cases}x=a\cos\omega t,\\y=a\sin\omega t,\\z=ct,\end{cases}\qquad t\ge0,$$
+$$ \begin{cases} x=a\cos\omega t,\\ y=a\sin\omega t,\\ z=ct, \end{cases} \qquad t\ge0, $$
 
 这样的曲线称为螺旋线（helix）。
 
@@ -6388,7 +6388,7 @@ $$\boldsymbol{r}'(t)=(-a\omega\sin\omega t,a\omega\cos\omega t,c).$$
 
 (3) 当 $\omega=1$ 时，曲线 $\Gamma$ 的方程即为
 
-$$\begin{cases}x=a\cos t,\\y=a\sin t,\\z=ct,\end{cases}$$
+$$ \begin{cases} x=a\cos t,\\ y=a\sin t,\\ z=ct, \end{cases} $$
 
 而 $t=\dfrac{\pi}{2}$ 时对应曲线上的点 $M_0\left(0,a,\dfrac{c\pi}{2}\right)$。由于 $\boldsymbol{r}'(t)=(-a\sin t,a\cos t,c)$，从而
 
@@ -6400,7 +6400,7 @@ $$\frac{x-0}{-a}=\frac{y-a}{0}=\frac{z-\dfrac{c\pi}{2}}{c},$$
 
 或
 
-$$\begin{cases}\dfrac{x}{-a}=\dfrac{z-\dfrac{c\pi}{2}}{c},\\[2mm]y=a.\end{cases}$$
+$$ \begin{cases} \dfrac{x}{-a}=\dfrac{z-\dfrac{c\pi}{2}}{c},\\[2mm] y=a. \end{cases} $$
 
 曲线 $\Gamma$ 在 $M_0$ 点的法平面方程为
 
@@ -6414,7 +6414,7 @@ $$-ax+cz-\frac{c^2\pi}{2}=0.$$
 
 曲线 $\Gamma$ 的方程为
 
-$$\begin{cases}F(x,y,z)=x^2+y^2+z^2-2y-4=0,\\G(x,y,z)=x+y+z=0.\end{cases}$$
+$$ \begin{cases} F(x,y,z)=x^2+y^2+z^2-2y-4=0,\\ G(x,y,z)=x+y+z=0. \end{cases} $$
 
 所以
 
@@ -6438,7 +6438,7 @@ $$4(x-1)-6(y-1)+2(z+2)=0,\quad\text{即}\quad 2x-3y+z+3=0.$$
 
 在所给的两个曲面方程两边对 $x$ 求导，
 
-$$\begin{cases}2x+2y\dfrac{\mathrm{d}y}{\mathrm{d}x}+2z\dfrac{\mathrm{d}z}{\mathrm{d}x}-2\dfrac{\mathrm{d}y}{\mathrm{d}x}=0,\\[2mm]1+\dfrac{\mathrm{d}y}{\mathrm{d}x}+\dfrac{\mathrm{d}z}{\mathrm{d}x}=0.\end{cases}$$
+$$ \begin{cases} 2x+2y\dfrac{\mathrm{d}y}{\mathrm{d}x}+2z\dfrac{\mathrm{d}z}{\mathrm{d}x}-2\dfrac{\mathrm{d}y}{\mathrm{d}x}=0,\\[2mm] 1+\dfrac{\mathrm{d}y}{\mathrm{d}x}+\dfrac{\mathrm{d}z}{\mathrm{d}x}=0. \end{cases} $$
 
 解这个方程组，得到
 
@@ -6468,7 +6468,7 @@ $$F(x,y,z)=0,\qquad (x,y,z)\in D,$$
 
 记以上方程确定的曲面为 $S$，并设 $P_0(x_0,y_0,z_0)$ 为 $S$ 上一点。考察曲面 $S$ 上过点 $P_0$ 的任意一条光滑曲线 $\Gamma$：
 
-$$\begin{cases}x=x(t),\\y=y(t),\\z=z(t),\end{cases}$$
+$$ \begin{cases} x=x(t),\\ y=y(t),\\ z=z(t), \end{cases} $$
 
 并设 $x_0=x(t_0)$，$y_0=y(t_0)$，$z_0=z(t_0)$。由于曲线 $\Gamma$ 在 $S$ 上，因此
 
@@ -6532,7 +6532,7 @@ $$f(x,y)-f(x_0,y_0)=f_x(x_0,y_0)(x-x_0)+f_y(x_0,y_0)(y-y_0)+o\left(\sqrt{\Delta 
 
 曲面方程也可以表示成参数形式：
 
-$$\begin{cases}x=x(u,v),\\y=y(u,v),\\z=z(u,v),\end{cases}\qquad (u,v)\in D,$$
+$$ \begin{cases} x=x(u,v),\\ y=y(u,v),\\ z=z(u,v), \end{cases} \qquad (u,v)\in D, $$
 
 其中 $D$ 是 $\mathbf{R}^2$ 中的区域，它称为曲面的参数方程，它也可以表为向量形式
 
@@ -6546,7 +6546,7 @@ $$\boldsymbol{J}=\begin{pmatrix}x_u & x_v\\ y_u & y_v\\ z_u & z_v\end{pmatrix}$$
 
 记由上述参数形式表示的曲面为 $S$，并设 $P_0(x_0,y_0,z_0)$（$x_0=x(u_0,v_0)$，$y_0=y(u_0,v_0)$，$z_0=z(u_0,v_0)$）为 $S$ 上一点。由于矩阵 $\boldsymbol{J}$ 是满秩的，不失一般性，假设 $\dfrac{\partial(x,y)}{\partial(u,v)}\bigg|_{(u_0,v_0)}\neq0$。那么由隐函数定理（或逆映射定理），可以由 $\begin{cases}x=x(u,v),\\ y=y(u,v)\end{cases}$ 在某个邻域 $O((x_0,y_0),\rho)$ 上惟一确定逆映射
 
-$$\begin{cases}u=u(x,y),\\v=v(x,y),\end{cases}\qquad (u_0=u(x_0,y_0),\ v_0=v(x_0,y_0)).$$
+$$ \begin{cases} u=u(x,y),\\ v=v(x,y), \end{cases} \qquad (u_0=u(x_0,y_0),\ v_0=v(x_0,y_0)). $$
 
 代入 $z=z(u,v)$，就得到曲面 $S$ 在 $P_0$ 附近的显式表示
 
@@ -6590,13 +6590,13 @@ $$1\cdot(x-2)+2\cdot(y-1)+0\cdot(z-0)=0,\quad\text{即}\quad x+2y-4=0;$$
 
 法线方程为
 
-$$\begin{cases}\dfrac{x-2}{1}=\dfrac{y-1}{2},\\[2mm]z=0.\end{cases}$$
+$$ \begin{cases} \dfrac{x-2}{1}=\dfrac{y-1}{2},\\[2mm] z=0. \end{cases} $$
 
 **例 12.5.4 (参数曲面的切平面)** @175
 
 求曲面
 
-$$\begin{cases}x=a\operatorname{ch}u\cos v,\\y=b\operatorname{ch}u\sin v,\\z=\operatorname{sh}u\end{cases}$$
+$$ \begin{cases} x=a\operatorname{ch}u\cos v,\\ y=b\operatorname{ch}u\sin v,\\ z=\operatorname{sh}u \end{cases} $$
 
 在 $(u,v)=\left(0,\dfrac{\pi}{4}\right)$ 所对应的点处的切平面和法线方程。
 
@@ -6626,7 +6626,7 @@ $$-\frac{b}{\sqrt{2}}\left(x-\frac{a}{\sqrt{2}}\right)-\frac{a}{\sqrt{2}}\left(y
 
 法线方程为
 
-$$\begin{cases}\dfrac{x-\dfrac{a}{\sqrt{2}}}{-\dfrac{b}{\sqrt{2}}}=\dfrac{y-\dfrac{b}{\sqrt{2}}}{-\dfrac{a}{\sqrt{2}}},\\[3mm]z=0,\end{cases}\qquad\text{即}\qquad\begin{cases}\dfrac{x-\dfrac{a}{\sqrt{2}}}{b}=\dfrac{y-\dfrac{b}{\sqrt{2}}}{a},\\[3mm]z=0.\end{cases}$$
+$$ \begin{cases} \dfrac{x-\dfrac{a}{\sqrt{2}}}{-\dfrac{b}{\sqrt{2}}}=\dfrac{y-\dfrac{b}{\sqrt{2}}}{-\dfrac{a}{\sqrt{2}}},\\[3mm] z=0, \end{cases} \qquad\text{即}\qquad \begin{cases} \dfrac{x-\dfrac{a}{\sqrt{2}}}{b}=\dfrac{y-\dfrac{b}{\sqrt{2}}}{a},\\[3mm] z=0. \end{cases} $$
 
 **注 (曲线、曲面的夹角与正交)** @176
 
@@ -6658,7 +6658,7 @@ $$\boldsymbol{n}\cdot\boldsymbol{a}=2\pi\mathrm{e}^{2x-z}-2\sqrt{2}\pi f'(\pi y-
 
 **证** 球面 $x^2+y^2+z^2=2ax$ 在两球面的任一交点 $(x,y,z)$ 处的法向量为 $\boldsymbol{n}_1=(x-a,y,z)$；球面 $x^2+y^2+z^2=2by$ 在点 $(x,y,z)$ 处的法向量为 $\boldsymbol{n}_2=(x,y-b,z)$。于是，在两球面的任一交点 $(x,y,z)$ 处，
 
-$$\begin{aligned}\boldsymbol{n}_1\cdot\boldsymbol{n}_2&=(x-a)\cdot x+y(y-b)+z\cdot z=x^2+y^2+z^2-ax-by\\&=\frac{1}{2}(x^2+y^2+z^2-2ax)+\frac{1}{2}(x^2+y^2+z^2-2by)=0.\end{aligned}$$
+$$ \begin{aligned} \boldsymbol{n}_1\cdot\boldsymbol{n}_2&=(x-a)\cdot x+y(y-b)+z\cdot z=x^2+y^2+z^2-ax-by\\ &=\frac{1}{2}(x^2+y^2+z^2-2ax)+\frac{1}{2}(x^2+y^2+z^2-2by)=0. \end{aligned} $$
 
 因此两球面是正交的。
 
@@ -6720,7 +6720,7 @@ $$\begin{aligned}\boldsymbol{n}_1\cdot\boldsymbol{n}_2&=(x-a)\cdot x+y(y-b)+z\cd
 
 **习题 11** @177
 
-证明：曲线$$\begin{cases}x=ae^{t}\cos t,\\y=ae^{t}\sin t,\\z=ae^{t}\end{cases}$$与锥面 $x^{2}+y^{2}=z^{2}$ 的各母线相交的角度相同。
+证明：曲线$$\begin{cases} x=ae^{t}\cos t,\\ y=ae^{t}\sin t,\\ z=ae^{t} \end{cases}$$与锥面 $x^{2}+y^{2}=z^{2}$ 的各母线相交的角度相同。
 
 **习题 12** @177
 
@@ -7620,7 +7620,7 @@ $$v^*=\frac{4000-108.57\ln 1\,000\,000+\dfrac{1}{0.000\,58}-108.57}{1-0.000\,58\
 
 (2) $f(x,y,z)=x-2y+2z$，约束条件为 $x^{2}+y^{2}+z^{2}=1$；
 
-(3) $f(x,y,z)=\dfrac{x^{2}}{a^{2}}+\dfrac{y^{2}}{b^{2}}+\dfrac{z^{2}}{c^{2}}$，约束条件为$$\begin{cases}x^{2}+y^{2}+z^{2}=1,\\Ax+By+Cz=0,\end{cases}$$其中 $a>b>c>0$，$A^{2}+B^{2}+C^{2}=1$。
+(3) $f(x,y,z)=\dfrac{x^{2}}{a^{2}}+\dfrac{y^{2}}{b^{2}}+\dfrac{z^{2}}{c^{2}}$，约束条件为$$\begin{cases} x^{2}+y^{2}+z^{2}=1,\\ Ax+By+Cz=0, \end{cases}$$其中 $a>b>c>0$，$A^{2}+B^{2}+C^{2}=1$。
 
 **习题 2** @201
 
@@ -7866,11 +7866,11 @@ $$\iint_D f(x,y)\,\mathrm{d}x\,\mathrm{d}y;$$
 
 在 $\mathbf{R}^3$ 中，$f(x,y,z)$ 在 $\Omega$ 上的三重积分记为
 
-$$\iiint_\Omega f(x,y,z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z\quad\text{或}\quad\iiint_\Omega f(x,y,z)\,\mathrm{d}V;$$
+$$\iiint_\Omega f(x,y,z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z \quad\text{或}\quad \iiint_\Omega f(x,y,z)\,\mathrm{d}V;$$
 
 而在 $\mathbf{R}^n$ 中，$f(x_1,x_2,\cdots,x_n)$ 在 $\Omega$ 上的 $n$ 重积分记为
 
-$$\int_\Omega f(x_1,x_2,\cdots,x_n)\,\mathrm{d}x_1\,\mathrm{d}x_2\cdots\mathrm{d}x_n\quad\text{或}\quad\iint\cdots\int_\Omega f(x_1,x_2,\cdots,x_n)\,\mathrm{d}x_1\,\mathrm{d}x_2\cdots\mathrm{d}x_n.$$
+$$\int_\Omega f(x_1,x_2,\cdots,x_n)\,\mathrm{d}x_1\,\mathrm{d}x_2\cdots\mathrm{d}x_n \quad\text{或}\quad \iint\cdots\int_\Omega f(x_1,x_2,\cdots,x_n)\,\mathrm{d}x_1\,\mathrm{d}x_2\cdots\mathrm{d}x_n.$$
 
 **例 13.1.2 (质量与质心)** @208
 
@@ -7880,15 +7880,15 @@ $$\Omega\ \text{的质量}=\lim_{\lambda\to 0}\sum_{i=1}^n f(\xi_i,\eta_i,\zeta_
 
 若空间上有 $n$ 个质点，它们的质量分别为 $m_1,m_2,\cdots,m_n$，且相应地位于点 $(x_1,y_1,z_1),(x_2,y_2,z_2),\cdots,(x_n,y_n,z_n)$，则这个质点系的质心坐标为
 
-$$\bar x=\frac{\displaystyle\sum_{i=1}^n m_ix_i}{\displaystyle\sum_{i=1}^n m_i},\qquad\bar y=\frac{\displaystyle\sum_{i=1}^n m_iy_i}{\displaystyle\sum_{i=1}^n m_i},\qquad\bar z=\frac{\displaystyle\sum_{i=1}^n m_iz_i}{\displaystyle\sum_{i=1}^n m_i}.$$
+$$\bar x=\frac{\displaystyle\sum_{i=1}^n m_ix_i}{\displaystyle\sum_{i=1}^n m_i},\qquad \bar y=\frac{\displaystyle\sum_{i=1}^n m_iy_i}{\displaystyle\sum_{i=1}^n m_i},\qquad \bar z=\frac{\displaystyle\sum_{i=1}^n m_iz_i}{\displaystyle\sum_{i=1}^n m_i}.$$
 
 当 $\lambda$ 充分小时，将 $\Delta\Omega_i$ 看成质点，$f(\xi_i,\eta_i,\zeta_i)\Delta V_i$ 就近似地为 $\Delta\Omega_i$ 的质量，其质心坐标为
 
-$$\bar x\approx\frac{\displaystyle\sum_{i=1}^n \xi_i f(\xi_i,\eta_i,\zeta_i)\Delta V_i}{\displaystyle\sum_{i=1}^n f(\xi_i,\eta_i,\zeta_i)\Delta V_i},\qquad\bar y\approx\frac{\displaystyle\sum_{i=1}^n \eta_i f(\xi_i,\eta_i,\zeta_i)\Delta V_i}{\displaystyle\sum_{i=1}^n f(\xi_i,\eta_i,\zeta_i)\Delta V_i},\qquad\bar z\approx\frac{\displaystyle\sum_{i=1}^n \zeta_i f(\xi_i,\eta_i,\zeta_i)\Delta V_i}{\displaystyle\sum_{i=1}^n f(\xi_i,\eta_i,\zeta_i)\Delta V_i}.$$
+$$\bar x\approx\frac{\displaystyle\sum_{i=1}^n \xi_i f(\xi_i,\eta_i,\zeta_i)\Delta V_i}{\displaystyle\sum_{i=1}^n f(\xi_i,\eta_i,\zeta_i)\Delta V_i},\qquad \bar y\approx\frac{\displaystyle\sum_{i=1}^n \eta_i f(\xi_i,\eta_i,\zeta_i)\Delta V_i}{\displaystyle\sum_{i=1}^n f(\xi_i,\eta_i,\zeta_i)\Delta V_i},\qquad \bar z\approx\frac{\displaystyle\sum_{i=1}^n \zeta_i f(\xi_i,\eta_i,\zeta_i)\Delta V_i}{\displaystyle\sum_{i=1}^n f(\xi_i,\eta_i,\zeta_i)\Delta V_i}.$$
 
 因此当 $\lambda$ 趋于零就得到
 
-$$\bar x=\frac{\displaystyle\iiint_\Omega x f(x,y,z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z}{\displaystyle\iiint_\Omega f(x,y,z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z},\quad\bar y=\frac{\displaystyle\iiint_\Omega y f(x,y,z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z}{\displaystyle\iiint_\Omega f(x,y,z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z},\quad\bar z=\frac{\displaystyle\iiint_\Omega z f(x,y,z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z}{\displaystyle\iiint_\Omega f(x,y,z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z}.$$
+$$\bar x=\frac{\displaystyle\iiint_\Omega x f(x,y,z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z}{\displaystyle\iiint_\Omega f(x,y,z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z},\quad \bar y=\frac{\displaystyle\iiint_\Omega y f(x,y,z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z}{\displaystyle\iiint_\Omega f(x,y,z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z},\quad \bar z=\frac{\displaystyle\iiint_\Omega z f(x,y,z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z}{\displaystyle\iiint_\Omega f(x,y,z)\,\mathrm{d}x\,\mathrm{d}y\,\mathrm{d}z}.$$
 
 注意上式的分母就是 $\Omega$ 的质量。
 
@@ -9528,7 +9528,7 @@ $$\eta=b_1\,\mathrm{d}x_1\wedge\mathrm{d}x_2+b_2\,\mathrm{d}x_1\wedge\mathrm{d}x
 
 求
 
-$$\begin{aligned}\omega={}&x_1\,\mathrm{d}x_1\wedge\mathrm{d}x_2+x_3\,\mathrm{d}x_2\wedge\mathrm{d}x_3+(1+x_2^2)\,\mathrm{d}x_1\wedge\mathrm{d}x_3+x_2^2\,\mathrm{d}x_3\wedge\mathrm{d}x_1\\&+(x_3^2+x_2^2)\,\mathrm{d}x_2\wedge\mathrm{d}x_1\wedge\mathrm{d}x_3-x_1^2\,\mathrm{d}x_3\wedge\mathrm{d}x_2\end{aligned}$$
+$$\begin{aligned} \omega={}&x_1\,\mathrm{d}x_1\wedge\mathrm{d}x_2+x_3\,\mathrm{d}x_2\wedge\mathrm{d}x_3+(1+x_2^2)\,\mathrm{d}x_1\wedge\mathrm{d}x_3+x_2^2\,\mathrm{d}x_3\wedge\mathrm{d}x_1\\ &+(x_3^2+x_2^2)\,\mathrm{d}x_2\wedge\mathrm{d}x_1\wedge\mathrm{d}x_3-x_1^2\,\mathrm{d}x_3\wedge\mathrm{d}x_2 \end{aligned}$$
 
 的标准形式。
 
@@ -10020,7 +10020,7 @@ $$\frac{h}{2(R+h)}=\frac{36\,000\,000}{2(6\,371\,000+36\,000\,000)}\approx0.424\
 
 (5) 抛物面 $x^2+y^2=2az$ 包含在柱面 $(x^2+y^2)^2=2a^2xy\ (a>0)$ 内的部分；
 
-(6) 环面$$\begin{cases}x=(b+a\cos\theta)\cos\varphi,\\y=(b+a\cos\theta)\sin\varphi,\\z=a\sin\theta,\end{cases}\qquad 0\leqslant\theta\leqslant 2\pi,\ 0\leqslant\varphi\leqslant 2\pi,$$其中 $0<a<b$。
+(6) 环面$$\begin{cases} x=(b+a\cos\theta)\cos\varphi,\\ y=(b+a\cos\theta)\sin\varphi,\\ z=a\sin\theta, \end{cases}\qquad 0\leqslant\theta\leqslant 2\pi,\ 0\leqslant\varphi\leqslant 2\pi,$$其中 $0<a<b$。
 
 **习题 4** @264
 
@@ -10136,7 +10136,7 @@ $$\mathbf{f}(x,y,z)=P(x,y,z)\mathbf{i}+Q(x,y,z)\mathbf{j}+R(x,y,z)\mathbf{k}$$
 
 在 $L$ 上连续，则由第一类曲线积分的计算公式得到
 
-$$\begin{aligned}&\int_L P(x,y,z)\,\mathrm{d}x+Q(x,y,z)\,\mathrm{d}y+R(x,y,z)\,\mathrm{d}z\\&\quad=\int_L\bigl[P\cos\alpha+Q\cos\beta+R\cos\gamma\bigr]\mathrm{d}s\\&\quad=\int_a^b\bigl[P(x(t),y(t),z(t))x'(t)+Q(x(t),y(t),z(t))y'(t)+R(x(t),y(t),z(t))z'(t)\bigr]\mathrm{d}t.\end{aligned}$$
+$$\begin{aligned} &\int_L P(x,y,z)\,\mathrm{d}x+Q(x,y,z)\,\mathrm{d}y+R(x,y,z)\,\mathrm{d}z\\ &\quad=\int_L\bigl[P\cos\alpha+Q\cos\beta+R\cos\gamma\bigr]\mathrm{d}s\\ &\quad=\int_a^b\bigl[P(x(t),y(t),z(t))x'(t)+Q(x(t),y(t),z(t))y'(t)+R(x(t),y(t),z(t))z'(t)\bigr]\mathrm{d}t. \end{aligned}$$
 
 特别地，如果 $L$ 的方程是
 
@@ -10164,7 +10164,7 @@ $$x=R\cos t,\qquad y=R\sin t,\qquad t:0\to\pi,$$
 
 因此
 
-$$\begin{aligned}\int_L y^2\,\mathrm{d}x+x^2\,\mathrm{d}y&=\int_0^{\pi}\bigl[R^2\sin^2t\,(-R\sin t)+R^2\cos^2t\,(R\cos t)\bigr]\mathrm{d}t\\&=R^3\int_0^{\pi}\bigl[(1-\cos^2t)(-\sin t)+(1-\sin^2t)\cos t\bigr]\mathrm{d}t\\&=-\frac{4}{3}R^3 .\end{aligned}$$
+$$\begin{aligned} \int_L y^2\,\mathrm{d}x+x^2\,\mathrm{d}y&=\int_0^{\pi}\bigl[R^2\sin^2t\,(-R\sin t)+R^2\cos^2t\,(R\cos t)\bigr]\mathrm{d}t\\ &=R^3\int_0^{\pi}\bigl[(1-\cos^2t)(-\sin t)+(1-\sin^2t)\cos t\bigr]\mathrm{d}t\\ &=-\frac{4}{3}R^3 . \end{aligned}$$
 
 (2) 这时 $L$ 的方程为 $y=y(x)=0,\ x:R\to -R$，因此
 
@@ -10196,7 +10196,7 @@ $$x=0,\qquad y=\cos t,\qquad z=\sin t,\qquad t:\frac{\pi}{2}\to 0,$$
 
 因此
 
-$$\begin{aligned}&\int_{\widehat{AB}}(y^2-z^2)\,\mathrm{d}x+(z^2-x^2)\,\mathrm{d}y+(x^2-y^2)\,\mathrm{d}z\\&\quad=\int_{\frac{\pi}{2}}^{0}\bigl[\sin^2t\,(-\sin t)-\cos^2t\,(\cos t)\bigr]\mathrm{d}t=\int_0^{\frac{\pi}{2}}\bigl(\sin^3t+\cos^3t\bigr)\mathrm{d}t=\frac{4}{3}.\end{aligned}$$
+$$\begin{aligned} &\int_{\widehat{AB}}(y^2-z^2)\,\mathrm{d}x+(z^2-x^2)\,\mathrm{d}y+(x^2-y^2)\,\mathrm{d}z\\ &\quad=\int_{\frac{\pi}{2}}^{0}\bigl[\sin^2t\,(-\sin t)-\cos^2t\,(\cos t)\bigr]\mathrm{d}t=\int_0^{\frac{\pi}{2}}\bigl(\sin^3t+\cos^3t\bigr)\mathrm{d}t=\frac{4}{3}. \end{aligned}$$
 
 由对称性，在 $\widehat{BC}$ 和 $\widehat{CA}$ 上的积分（被积表达式同上）都等于 $\dfrac{4}{3}$，于是
 
@@ -10296,7 +10296,7 @@ $$\mathrm{d}x\wedge\mathrm{d}y=\begin{cases}\mathrm{d}\sigma, & \text{当}\ \cos
 
 类似地有 $\mathrm{d}y\wedge\mathrm{d}z=\cos\alpha\,\mathrm{d}S$，$\mathrm{d}z\wedge\mathrm{d}x=\cos\beta\,\mathrm{d}S$。为方便起见，常简记 $\mathrm{d}x\wedge\mathrm{d}y$ 为 $\mathrm{d}x\mathrm{d}y$，$\mathrm{d}y\wedge\mathrm{d}z$ 为 $\mathrm{d}y\mathrm{d}z$，$\mathrm{d}z\wedge\mathrm{d}x$ 为 $\mathrm{d}z\mathrm{d}x$。于是第二类曲面积分又可以表示为
 
-$$\begin{aligned}\iint_\Sigma\mathbf{f}\cdot\mathrm{d}\mathbf{S}&=\iint_\Sigma P\,\mathrm{d}y\wedge\mathrm{d}z+Q\,\mathrm{d}z\wedge\mathrm{d}x+R\,\mathrm{d}x\wedge\mathrm{d}y\\&=\iint_\Sigma P\,\mathrm{d}y\mathrm{d}z+Q\,\mathrm{d}z\mathrm{d}x+R\,\mathrm{d}x\mathrm{d}y .\end{aligned}$$
+$$\begin{aligned} \iint_\Sigma\mathbf{f}\cdot\mathrm{d}\mathbf{S}&=\iint_\Sigma P\,\mathrm{d}y\wedge\mathrm{d}z+Q\,\mathrm{d}z\wedge\mathrm{d}x+R\,\mathrm{d}x\wedge\mathrm{d}y\\ &=\iint_\Sigma P\,\mathrm{d}y\mathrm{d}z+Q\,\mathrm{d}z\mathrm{d}x+R\,\mathrm{d}x\mathrm{d}y . \end{aligned}$$
 
 这也称为 2-形式
 
@@ -10316,7 +10316,7 @@ $$(\cos\alpha,\cos\beta,\cos\gamma)=\frac{\pm 1}{\sqrt{EG-F^2}}\left(\frac{\part
 
 以及 $\mathrm{d}S=\sqrt{EG-F^2}\,\mathrm{d}u\mathrm{d}v$，则由第一类曲面积分的计算公式，第二类曲面积分可由如下公式计算：
 
-$$\begin{aligned}&\iint_\Sigma P\,\mathrm{d}y\mathrm{d}z+Q\,\mathrm{d}z\mathrm{d}x+R\,\mathrm{d}x\mathrm{d}y\\&\quad=\iint_\Sigma\bigl[P\cos\alpha+Q\cos\beta+R\cos\gamma\bigr]\mathrm{d}S\\&\quad=\pm\iint_D\Bigl[P(x(u,v),y(u,v),z(u,v))\frac{\partial(y,z)}{\partial(u,v)}+Q(\cdots)\frac{\partial(z,x)}{\partial(u,v)}+R(\cdots)\frac{\partial(x,y)}{\partial(u,v)}\Bigr]\mathrm{d}u\mathrm{d}v .\end{aligned}$$
+$$\begin{aligned} &\iint_\Sigma P\,\mathrm{d}y\mathrm{d}z+Q\,\mathrm{d}z\mathrm{d}x+R\,\mathrm{d}x\mathrm{d}y\\ &\quad=\iint_\Sigma\bigl[P\cos\alpha+Q\cos\beta+R\cos\gamma\bigr]\mathrm{d}S\\ &\quad=\pm\iint_D\Bigl[P(x(u,v),y(u,v),z(u,v))\frac{\partial(y,z)}{\partial(u,v)} +Q(\cdots)\frac{\partial(z,x)}{\partial(u,v)}+R(\cdots)\frac{\partial(x,y)}{\partial(u,v)}\Bigr]\mathrm{d}u\mathrm{d}v . \end{aligned}$$
 
 式中符号由曲面的侧，即方向余弦（或单位法向量）的计算公式中所取符号决定。
 
@@ -10378,7 +10378,7 @@ $$\frac{\partial(y,z)}{\partial(\varphi,\theta)}=bc\sin^2\varphi\cos\theta,\quad
 
 因此
 
-$$\begin{aligned}&\iint_\Sigma x^3\,\mathrm{d}y\mathrm{d}z+y^3\,\mathrm{d}z\mathrm{d}x+z^3\,\mathrm{d}x\mathrm{d}y\\&\quad=\iint_{\substack{0\leqslant\theta\leqslant 2\pi\\ 0\leqslant\varphi\leqslant\frac{\pi}{2}}}\bigl(a^3bc\sin^5\varphi\cos^4\theta+b^3ac\sin^5\varphi\sin^4\theta+c^3ab\sin\varphi\cos^4\varphi\bigr)\mathrm{d}\varphi\mathrm{d}\theta\\&\quad=abc\int_0^{\frac{\pi}{2}}\mathrm{d}\varphi\int_0^{2\pi}\bigl(a^2\sin^5\varphi\cos^4\theta+b^2\sin^5\varphi\sin^4\theta+c^2\sin\varphi\cos^4\varphi\bigr)\mathrm{d}\theta\\&\quad=\frac{2}{5}\pi abc\,(a^2+b^2+c^2).\end{aligned}$$
+$$\begin{aligned} &\iint_\Sigma x^3\,\mathrm{d}y\mathrm{d}z+y^3\,\mathrm{d}z\mathrm{d}x+z^3\,\mathrm{d}x\mathrm{d}y\\ &\quad=\iint_{\substack{0\leqslant\theta\leqslant 2\pi\\ 0\leqslant\varphi\leqslant\frac{\pi}{2}}}\bigl(a^3bc\sin^5\varphi\cos^4\theta+b^3ac\sin^5\varphi\sin^4\theta+c^3ab\sin\varphi\cos^4\varphi\bigr)\mathrm{d}\varphi\mathrm{d}\theta\\ &\quad=abc\int_0^{\frac{\pi}{2}}\mathrm{d}\varphi\int_0^{2\pi}\bigl(a^2\sin^5\varphi\cos^4\theta+b^2\sin^5\varphi\sin^4\theta+c^2\sin\varphi\cos^4\varphi\bigr)\mathrm{d}\theta\\ &\quad=\frac{2}{5}\pi abc\,(a^2+b^2+c^2). \end{aligned}$$
 
 我们说明一下为什么这里积分号前取 “$+$”。因为曲面的定向为上侧，所以在 $\Sigma$ 上方方向余弦 $\cos\gamma>0$（除去 $\varphi=\dfrac{\pi}{2}$ 时的边界），而由方向余弦的计算公式知
 
@@ -10400,7 +10400,7 @@ $$\cos\alpha=\frac{x}{\sqrt{1+x^2+y^2}},\qquad \cos\gamma=-\frac{1}{\sqrt{1+x^2+
 
 注意到 $\Sigma$ 在 $xy$ 平面的投影区域为 $D=\{(x,y)\mid x^2+y^2\leqslant 2^2\}$，就有
 
-$$\begin{aligned}&\iint_\Sigma(z^2+x)\,\mathrm{d}y\mathrm{d}z+\sqrt{z}\,\mathrm{d}x\mathrm{d}y=\iint_D\bigl[(z^2+x)(-x)+\sqrt{z}\bigr]\mathrm{d}x\mathrm{d}y\\&\quad=-\iint_D\left[\left(\left(\frac{1}{2}(x^2+y^2)\right)^2+x\right)(-x)+\sqrt{\frac{1}{2}(x^2+y^2)}\right]\mathrm{d}x\mathrm{d}y\\&\quad=-\int_0^{2\pi}\mathrm{d}\theta\int_0^2\left(-\frac{1}{4}r^5\cos\theta-r^2\cos^2\theta+\sqrt{\frac{1}{2}}\,r\right)r\,\mathrm{d}r=\left(4-\frac{8}{3}\sqrt{2}\right)\pi .\end{aligned}$$
+$$\begin{aligned} &\iint_\Sigma(z^2+x)\,\mathrm{d}y\mathrm{d}z+\sqrt{z}\,\mathrm{d}x\mathrm{d}y=\iint_D\bigl[(z^2+x)(-x)+\sqrt{z}\bigr]\mathrm{d}x\mathrm{d}y\\ &\quad=-\iint_D\left[\left(\left(\frac{1}{2}(x^2+y^2)\right)^2+x\right)(-x)+\sqrt{\frac{1}{2}(x^2+y^2)}\right]\mathrm{d}x\mathrm{d}y\\ &\quad=-\int_0^{2\pi}\mathrm{d}\theta\int_0^2\left(-\frac{1}{4}r^5\cos\theta-r^2\cos^2\theta+\sqrt{\frac{1}{2}}\,r\right)r\,\mathrm{d}r=\left(4-\frac{8}{3}\sqrt{2}\right)\pi . \end{aligned}$$
 
 #### 习题（p275–276）
 
@@ -10418,9 +10418,9 @@ $$\begin{aligned}&\iint_\Sigma(z^2+x)\,\mathrm{d}y\mathrm{d}z+\sqrt{z}\,\mathrm{
 
 (5) $\displaystyle\int_L x\,\mathrm{d}x+y\,\mathrm{d}y+(x+y-1)\,\mathrm{d}z$，其中 $L$ 是从点 $(1,1,1)$ 到点 $(2,3,4)$ 的直线段；
 
-(6) $\displaystyle\int_L y\,\mathrm{d}x+z\,\mathrm{d}y+x\,\mathrm{d}z$，其中 $L$ 为曲线$$\begin{cases}x^2+y^2+z^2=2az,\\x+z=a\ (a>0),\end{cases}$$若从 $z$ 轴的正向看去，$L$ 的方向为逆时针方向；
+(6) $\displaystyle\int_L y\,\mathrm{d}x+z\,\mathrm{d}y+x\,\mathrm{d}z$，其中 $L$ 为曲线$$\begin{cases} x^2+y^2+z^2=2az,\\ x+z=a\ (a>0), \end{cases}$$若从 $z$ 轴的正向看去，$L$ 的方向为逆时针方向；
 
-(7) $\displaystyle\int_L (y-z)\,\mathrm{d}x+(z-x)\,\mathrm{d}y+(x-y)\,\mathrm{d}z$，$L$ 为圆周$$\begin{cases}x^2+y^2+z^2=1,\\y=x\tan\alpha\quad\left(0<\alpha<\dfrac{\pi}{2}\right),\end{cases}$$若从 $x$ 轴的正向看去，这个圆周的方向为逆时针方向。
+(7) $\displaystyle\int_L (y-z)\,\mathrm{d}x+(z-x)\,\mathrm{d}y+(x-y)\,\mathrm{d}z$，$L$ 为圆周$$\begin{cases} x^2+y^2+z^2=1,\\ y=x\tan\alpha\quad\left(0<\alpha<\dfrac{\pi}{2}\right), \end{cases}$$若从 $x$ 轴的正向看去，这个圆周的方向为逆时针方向。
 
 **习题 2** @275
 
@@ -10490,7 +10490,7 @@ $$\cos(\boldsymbol{n},y)=-\cos(\boldsymbol{\tau},x),\qquad \cos(\boldsymbol{n},x
 
 因此得到 Green 公式的另一种常用表示形式
 
-$$\begin{aligned}\iint_D\left(\frac{\partial F}{\partial x}+\frac{\partial G}{\partial y}\right)\mathrm{d}x\mathrm{d}y&=\int_{\partial D}F\,\mathrm{d}y-G\,\mathrm{d}x=\int_{\partial D}\bigl[F\sin(\boldsymbol{\tau},x)-G\cos(\boldsymbol{\tau},x)\bigr]\mathrm{d}s\\&=\int_{\partial D}\bigl[F\cos(\boldsymbol{n},x)+G\cos(\boldsymbol{n},y)\bigr]\mathrm{d}s.\end{aligned}$$
+$$\begin{aligned} \iint_D\left(\frac{\partial F}{\partial x}+\frac{\partial G}{\partial y}\right)\mathrm{d}x\mathrm{d}y&=\int_{\partial D}F\,\mathrm{d}y-G\,\mathrm{d}x=\int_{\partial D}\bigl[F\sin(\boldsymbol{\tau},x)-G\cos(\boldsymbol{\tau},x)\bigr]\mathrm{d}s\\ &=\int_{\partial D}\bigl[F\cos(\boldsymbol{n},x)+G\cos(\boldsymbol{n},y)\bigr]\mathrm{d}s. \end{aligned}$$
 
 这个形式便于记忆和推广。
 
@@ -10602,7 +10602,7 @@ $$\int_{\widehat{AB}}P\,\mathrm{d}x+Q\,\mathrm{d}y=U(x_B,y_B)-U(x_A,y_A)$$
 
 求 $P\,\mathrm{d}x+Q\,\mathrm{d}y$ 的原函数常用的是如图 14.3.11 所示的两个积分路径。由于 $U(x,y)-U(x_0,y_0)=\displaystyle\int_{(x_0,y_0)}^{(x,y)}P\,\mathrm{d}x+Q\,\mathrm{d}y$，那么如果积分路径取 $ANB$，则
 
-$$\begin{aligned}U(x,y)&=\int_{(x_0,y_0)}^{(x,y)}P\,\mathrm{d}x+Q\,\mathrm{d}y+U(x_0,y_0)\\&=\int_{\overline{AN}}P\,\mathrm{d}x+Q\,\mathrm{d}y+\int_{\overline{NB}}P\,\mathrm{d}x+Q\,\mathrm{d}y+U(x_0,y_0)\\&=\int_{x_0}^{x}P(x,y_0)\,\mathrm{d}x+\int_{y_0}^{y}Q(x,y)\,\mathrm{d}y+c,\end{aligned}$$
+$$\begin{aligned} U(x,y)&=\int_{(x_0,y_0)}^{(x,y)}P\,\mathrm{d}x+Q\,\mathrm{d}y+U(x_0,y_0)\\ &=\int_{\overline{AN}}P\,\mathrm{d}x+Q\,\mathrm{d}y+\int_{\overline{NB}}P\,\mathrm{d}x+Q\,\mathrm{d}y+U(x_0,y_0)\\ &=\int_{x_0}^{x}P(x,y_0)\,\mathrm{d}x+\int_{y_0}^{y}Q(x,y)\,\mathrm{d}y+c, \end{aligned}$$
 
 其中 $c=U(x_0,y_0)$ 为任意常数。若积分路径取 $AMB$，同样可以得到
 
@@ -10624,7 +10624,7 @@ $$\frac{\partial P}{\partial y}=\mathrm{e}^x\cos y-m=\frac{\partial Q}{\partial 
 
 取路径如图 14.3.12，那么它的一个原函数为
 
-$$\begin{aligned}U(x,y)&=\int_{(0,0)}^{(x,y)}\left(\mathrm{e}^x\sin y-my\right)\mathrm{d}x+\left(\mathrm{e}^x\cos y-mx\right)\mathrm{d}y\\&=\left(\int_{\overline{OA}}+\int_{\overline{AB}}\right)\left(\mathrm{e}^x\sin y-my\right)\mathrm{d}x+\left(\mathrm{e}^x\cos y-mx\right)\mathrm{d}y\\&=\int_0^x0\,\mathrm{d}x+\int_0^y\left(\mathrm{e}^x\cos y-mx\right)\mathrm{d}y=\mathrm{e}^x\sin y-mxy.\end{aligned}$$
+$$\begin{aligned} U(x,y)&=\int_{(0,0)}^{(x,y)}\left(\mathrm{e}^x\sin y-my\right)\mathrm{d}x+\left(\mathrm{e}^x\cos y-mx\right)\mathrm{d}y\\ &=\left(\int_{\overline{OA}}+\int_{\overline{AB}}\right)\left(\mathrm{e}^x\sin y-my\right)\mathrm{d}x+\left(\mathrm{e}^x\cos y-mx\right)\mathrm{d}y\\ &=\int_0^x0\,\mathrm{d}x+\int_0^y\left(\mathrm{e}^x\cos y-mx\right)\mathrm{d}y=\mathrm{e}^x\sin y-mxy. \end{aligned}$$
 
 于是由定理 14.3.3 得
 
@@ -10696,7 +10696,7 @@ $$\frac{\partial(x,y)}{\partial(\varphi,\theta)}=ab\sin\varphi\cos\varphi.$$
 
 所以，由以上公式得椭球的体积为
 
-$$\begin{aligned}V&=\iint_{\partial\Omega}z\,\mathrm{d}x\mathrm{d}y=\iint_{\substack{0\leqslant\theta\leqslant2\pi\\ 0\leqslant\varphi\leqslant\pi}}c\cos\varphi\,\frac{\partial(x,y)}{\partial(\varphi,\theta)}\,\mathrm{d}\varphi\mathrm{d}\theta\\&=abc\iint_{\substack{0\leqslant\theta\leqslant2\pi\\ 0\leqslant\varphi\leqslant\pi}}\sin\varphi\cos^2\varphi\,\mathrm{d}\varphi\mathrm{d}\theta=abc\int_0^{2\pi}\mathrm{d}\theta\int_0^{\pi}\sin\varphi\cos^2\varphi\,\mathrm{d}\varphi=\frac43\pi abc.\end{aligned}$$
+$$\begin{aligned} V&=\iint_{\partial\Omega}z\,\mathrm{d}x\mathrm{d}y=\iint_{\substack{0\leqslant\theta\leqslant2\pi\\ 0\leqslant\varphi\leqslant\pi}}c\cos\varphi\,\frac{\partial(x,y)}{\partial(\varphi,\theta)}\,\mathrm{d}\varphi\mathrm{d}\theta\\ &=abc\iint_{\substack{0\leqslant\theta\leqslant2\pi\\ 0\leqslant\varphi\leqslant\pi}}\sin\varphi\cos^2\varphi\,\mathrm{d}\varphi\mathrm{d}\theta=abc\int_0^{2\pi}\mathrm{d}\theta\int_0^{\pi}\sin\varphi\cos^2\varphi\,\mathrm{d}\varphi=\frac43\pi abc. \end{aligned}$$
 
 请读者想想，为什么在运算中第一步到第二步时积分号前取“$+$”号。
 
@@ -10706,7 +10706,7 @@ $$\begin{aligned}V&=\iint_{\partial\Omega}z\,\mathrm{d}x\mathrm{d}y=\iint_{\subs
 
 **解** 由 Gauss 公式并应用球面坐标变换得
 
-$$\begin{aligned}\iint_{\Sigma}x^3\,\mathrm{d}y\mathrm{d}z+y^3\,\mathrm{d}z\mathrm{d}x+z^3\,\mathrm{d}x\mathrm{d}y&=3\iiint_{x^2+y^2+z^2\leqslant a^2}\left(x^2+y^2+z^2\right)\mathrm{d}x\mathrm{d}y\mathrm{d}z\\&=3\int_0^{2\pi}\mathrm{d}\theta\int_0^{\pi}\mathrm{d}\varphi\int_0^ar^4\sin\varphi\,\mathrm{d}r=\frac{12}{5}\pi a^5.\end{aligned}$$
+$$\begin{aligned} \iint_{\Sigma}x^3\,\mathrm{d}y\mathrm{d}z+y^3\,\mathrm{d}z\mathrm{d}x+z^3\,\mathrm{d}x\mathrm{d}y&=3\iiint_{x^2+y^2+z^2\leqslant a^2}\left(x^2+y^2+z^2\right)\mathrm{d}x\mathrm{d}y\mathrm{d}z\\ &=3\int_0^{2\pi}\mathrm{d}\theta\int_0^{\pi}\mathrm{d}\varphi\int_0^ar^4\sin\varphi\,\mathrm{d}r=\frac{12}{5}\pi a^5. \end{aligned}$$
 
 **例 14.3.8 (用高斯公式求流量)** @286
 
@@ -10742,7 +10742,7 @@ $$\Phi=\iint_{\Sigma}x\,\mathrm{d}y\mathrm{d}z+y\,\mathrm{d}z\mathrm{d}x+z\,\mat
 
 设 $\Sigma$ 为光滑曲面，其边界 $\partial\Sigma$ 为分段光滑闭曲线。若函数 $P(x,y,z)$，$Q(x,y,z)$，$R(x,y,z)$ 在 $\Sigma$ 及其边界 $\partial\Sigma$ 上具有连续偏导数，则成立
 
-$$\begin{aligned}\int_{\partial\Sigma}P\,\mathrm{d}x+Q\,\mathrm{d}y+R\,\mathrm{d}z&=\iint_{\Sigma}\left(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}\right)\mathrm{d}y\mathrm{d}z+\left(\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}\right)\mathrm{d}z\mathrm{d}x+\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\mathrm{d}x\mathrm{d}y\\&=\iint_{\Sigma}\left[\left(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}\right)\cos\alpha+\left(\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}\right)\cos\beta+\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\cos\gamma\right]\mathrm{d}S,\end{aligned}$$
+$$\begin{aligned} \int_{\partial\Sigma}P\,\mathrm{d}x+Q\,\mathrm{d}y+R\,\mathrm{d}z&=\iint_{\Sigma}\left(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}\right)\mathrm{d}y\mathrm{d}z+\left(\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}\right)\mathrm{d}z\mathrm{d}x+\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\mathrm{d}x\mathrm{d}y\\ &=\iint_{\Sigma}\left[\left(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}\right)\cos\alpha+\left(\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}\right)\cos\beta+\left(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\right)\cos\gamma\right]\mathrm{d}S, \end{aligned}$$
 
 其中 $\partial\Sigma$ 取诱导定向。
 
@@ -10760,7 +10760,7 @@ Stokes 定理说明了沿曲面 $\Sigma$ 的曲面积分与沿其边界 $\partia
 
 **解** 由 Stokes 公式得
 
-$$\begin{aligned}I&=\int_L\left(y^2-z^2\right)\mathrm{d}x+\left(z^2-x^2\right)\mathrm{d}y+\left(x^2-y^2\right)\mathrm{d}z\\&=\iint_{\Sigma}\begin{vmatrix}\cos\alpha&\cos\beta&\cos\gamma\\[2pt]\dfrac{\partial}{\partial x}&\dfrac{\partial}{\partial y}&\dfrac{\partial}{\partial z}\\[6pt]y^2-z^2&z^2-x^2&x^2-y^2\end{vmatrix}\mathrm{d}S\\&=-2\iint_{\Sigma}\bigl[(y+z)\cos\alpha+(x+z)\cos\beta+(x+y)\cos\gamma\bigr]\mathrm{d}S.\end{aligned}$$
+$$\begin{aligned} I&=\int_L\left(y^2-z^2\right)\mathrm{d}x+\left(z^2-x^2\right)\mathrm{d}y+\left(x^2-y^2\right)\mathrm{d}z\\ &=\iint_{\Sigma}\begin{vmatrix}\cos\alpha&\cos\beta&\cos\gamma\\[2pt]\dfrac{\partial}{\partial x}&\dfrac{\partial}{\partial y}&\dfrac{\partial}{\partial z}\\[6pt]y^2-z^2&z^2-x^2&x^2-y^2\end{vmatrix}\mathrm{d}S\\ &=-2\iint_{\Sigma}\bigl[(y+z)\cos\alpha+(x+z)\cos\beta+(x+y)\cos\gamma\bigr]\mathrm{d}S. \end{aligned}$$
 
 由于 $\Sigma$ 的方程为 $x+y+z=1$，定向为上侧（这是要与 $L$ 的定向相配合来使用 Stokes 公式），则易计算
 
@@ -10780,7 +10780,7 @@ $$\cos\alpha=\frac{x-R}{R},\qquad \cos\beta=\frac{y}{R},\qquad \cos\gamma=\frac{
 
 于是由 Stokes 定理得
 
-$$\begin{aligned}I&=\int_L\left(y^2+z^2\right)\mathrm{d}x+\left(z^2+x^2\right)\mathrm{d}y+\left(x^2+y^2\right)\mathrm{d}z\\&=\iint_{\Sigma}\begin{vmatrix}\cos\alpha&\cos\beta&\cos\gamma\\[2pt]\dfrac{\partial}{\partial x}&\dfrac{\partial}{\partial y}&\dfrac{\partial}{\partial z}\\[6pt]y^2+z^2&z^2+x^2&x^2+y^2\end{vmatrix}\mathrm{d}S\\&=2\iint_{\Sigma}\bigl[(y-z)\cos\alpha+(z-x)\cos\beta+(x-y)\cos\gamma\bigr]\mathrm{d}S\\&=2\iint_{\Sigma}\left[(y-z)\frac{x-R}{R}+(z-x)\frac{y}{R}+(x-y)\frac{z}{R}\right]\mathrm{d}S\\&=2\left(\iint_{\Sigma}z\,\mathrm{d}S-\iint_{\Sigma}y\,\mathrm{d}S\right).\end{aligned}$$
+$$\begin{aligned} I&=\int_L\left(y^2+z^2\right)\mathrm{d}x+\left(z^2+x^2\right)\mathrm{d}y+\left(x^2+y^2\right)\mathrm{d}z\\ &=\iint_{\Sigma}\begin{vmatrix}\cos\alpha&\cos\beta&\cos\gamma\\[2pt]\dfrac{\partial}{\partial x}&\dfrac{\partial}{\partial y}&\dfrac{\partial}{\partial z}\\[6pt]y^2+z^2&z^2+x^2&x^2+y^2\end{vmatrix}\mathrm{d}S\\ &=2\iint_{\Sigma}\bigl[(y-z)\cos\alpha+(z-x)\cos\beta+(x-y)\cos\gamma\bigr]\mathrm{d}S\\ &=2\iint_{\Sigma}\left[(y-z)\frac{x-R}{R}+(z-x)\frac{y}{R}+(x-y)\frac{z}{R}\right]\mathrm{d}S\\ &=2\left(\iint_{\Sigma}z\,\mathrm{d}S-\iint_{\Sigma}y\,\mathrm{d}S\right). \end{aligned}$$
 
 由于曲面 $\Sigma$ 关于 $xz$ 平面对称，因此
 
@@ -10826,7 +10826,7 @@ $$I=2\iint_{\Sigma}z\,\mathrm{d}S=2\iint_{(x-r)^2+y^2\leqslant r^2}z\frac{R}{z}\
 
 (2) 抛物线 $(x+y)^2=ax\ (a>0)$ 与 $x$ 轴；
 
-(3) 旋轮线的一段：$$\begin{cases}x=a(t-\sin t),\\y=a(1-\cos t),\end{cases}\quad t\in[0,2\pi]$$与 $x$ 轴。
+(3) 旋轮线的一段：$$\begin{cases} x=a(t-\sin t),\\ y=a(1-\cos t), \end{cases}\quad t\in[0,2\pi]$$与 $x$ 轴。
 
 **习题 3** @290
 
@@ -10932,7 +10932,7 @@ $$I=2\iint_{\Sigma}z\,\mathrm{d}S=2\iint_{(x-r)^2+y^2\leqslant r^2}z\frac{R}{z}\
 
 **习题 18** @292
 
-设 $L$ 是平面 $x\cos\alpha+y\cos\beta+z\cos\gamma-p=0$ 上的简单闭曲线，它所包围的区域 $D$ 的面积为 $S$，其中 $(\cos\alpha,\cos\beta,\cos\gamma)$ 是平面取定方向上的单位向量。证明$$S=\frac{1}{2}\int_L\begin{vmatrix}\mathrm{d}x & \mathrm{d}y & \mathrm{d}z\\\cos\alpha & \cos\beta & \cos\gamma\\x & y & z\end{vmatrix} ,$$其中 $L$ 的定向与平面的定向符合右手定则。
+设 $L$ 是平面 $x\cos\alpha+y\cos\beta+z\cos\gamma-p=0$ 上的简单闭曲线，它所包围的区域 $D$ 的面积为 $S$，其中 $(\cos\alpha,\cos\beta,\cos\gamma)$ 是平面取定方向上的单位向量。证明$$S=\frac{1}{2}\int_L\begin{vmatrix} \mathrm{d}x & \mathrm{d}y & \mathrm{d}z\\ \cos\alpha & \cos\beta & \cos\gamma\\ x & y & z \end{vmatrix} ,$$其中 $L$ 的定向与平面的定向符合右手定则。
 
 ### 14.4 微分形式的外微分（p292–295）
 
@@ -10952,7 +10952,7 @@ $$\omega=\sum_{1\le i_1<i_2<\cdots<i_k\le n} g_{i_1i_2\cdots i_k}(\boldsymbol{x}
 
 定义
 
-$$\begin{aligned}\mathrm{d}\omega&=\sum_{1\le i_1<i_2<\cdots<i_k\le n}\bigl(\mathrm{d}g_{i_1i_2\cdots i_k}(\boldsymbol{x})\bigr)\wedge\mathrm{d}x_{i_1}\wedge\mathrm{d}x_{i_2}\wedge\cdots\wedge\mathrm{d}x_{i_k}\\&=\sum_{1\le i_1<i_2<\cdots<i_k\le n}\ \sum_{i=1}^{n}\frac{\partial g_{i_1i_2\cdots i_k}}{\partial x_i}\,\mathrm{d}x_i\wedge\mathrm{d}x_{i_1}\wedge\mathrm{d}x_{i_2}\wedge\cdots\wedge\mathrm{d}x_{i_k}.\end{aligned}$$
+$$\begin{aligned} \mathrm{d}\omega&=\sum_{1\le i_1<i_2<\cdots<i_k\le n}\bigl(\mathrm{d}g_{i_1i_2\cdots i_k}(\boldsymbol{x})\bigr)\wedge\mathrm{d}x_{i_1}\wedge\mathrm{d}x_{i_2}\wedge\cdots\wedge\mathrm{d}x_{i_k}\\ &=\sum_{1\le i_1<i_2<\cdots<i_k\le n}\ \sum_{i=1}^{n}\frac{\partial g_{i_1i_2\cdots i_k}}{\partial x_i}\,\mathrm{d}x_i\wedge\mathrm{d}x_{i_1}\wedge\mathrm{d}x_{i_2}\wedge\cdots\wedge\mathrm{d}x_{i_k}. \end{aligned}$$
 
 同时，对空间 $\Lambda=\Lambda^0+\Lambda^1+\cdots+\Lambda^n$ 上的任意一个元素
 
@@ -10974,13 +10974,13 @@ $$\mathrm{d}(\mathrm{d}x_{i_1}\wedge\mathrm{d}x_{i_2}\wedge\cdots\wedge\mathrm{d
 
 设 $\omega=P(x,y)\,\mathrm{d}x+Q(x,y)\,\mathrm{d}y$ 为 $\mathbf{R}^2$ 上的 $1$-形式，则
 
-$$\begin{aligned}\mathrm{d}\omega&=(\mathrm{d}P)\wedge\mathrm{d}x+(\mathrm{d}Q)\wedge\mathrm{d}y\\&=\Bigl(\frac{\partial P}{\partial x}\mathrm{d}x+\frac{\partial P}{\partial y}\mathrm{d}y\Bigr)\wedge\mathrm{d}x+\Bigl(\frac{\partial Q}{\partial x}\mathrm{d}x+\frac{\partial Q}{\partial y}\mathrm{d}y\Bigr)\wedge\mathrm{d}y\\&=\frac{\partial P}{\partial y}\,\mathrm{d}y\wedge\mathrm{d}x+\frac{\partial Q}{\partial x}\,\mathrm{d}x\wedge\mathrm{d}y=\Bigl(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\Bigr)\mathrm{d}x\wedge\mathrm{d}y.\end{aligned}$$
+$$\begin{aligned} \mathrm{d}\omega&=(\mathrm{d}P)\wedge\mathrm{d}x+(\mathrm{d}Q)\wedge\mathrm{d}y\\ &=\Bigl(\frac{\partial P}{\partial x}\mathrm{d}x+\frac{\partial P}{\partial y}\mathrm{d}y\Bigr)\wedge\mathrm{d}x+\Bigl(\frac{\partial Q}{\partial x}\mathrm{d}x+\frac{\partial Q}{\partial y}\mathrm{d}y\Bigr)\wedge\mathrm{d}y\\ &=\frac{\partial P}{\partial y}\,\mathrm{d}y\wedge\mathrm{d}x+\frac{\partial Q}{\partial x}\,\mathrm{d}x\wedge\mathrm{d}y=\Bigl(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\Bigr)\mathrm{d}x\wedge\mathrm{d}y. \end{aligned}$$
 
 **例 14.4.2 (空间 1-形式的外微分)** @293
 
 设 $\omega=P(x,y,z)\,\mathrm{d}x+Q(x,y,z)\,\mathrm{d}y+R(x,y,z)\,\mathrm{d}z$ 为 $\mathbf{R}^3$ 上的 $1$-形式，则
 
-$$\begin{aligned}\mathrm{d}\omega&=(\mathrm{d}P)\wedge\mathrm{d}x+(\mathrm{d}Q)\wedge\mathrm{d}y+(\mathrm{d}R)\wedge\mathrm{d}z\\&=\Bigl(\frac{\partial P}{\partial x}\mathrm{d}x+\frac{\partial P}{\partial y}\mathrm{d}y+\frac{\partial P}{\partial z}\mathrm{d}z\Bigr)\wedge\mathrm{d}x+\Bigl(\frac{\partial Q}{\partial x}\mathrm{d}x+\frac{\partial Q}{\partial y}\mathrm{d}y+\frac{\partial Q}{\partial z}\mathrm{d}z\Bigr)\wedge\mathrm{d}y\\&\qquad+\Bigl(\frac{\partial R}{\partial x}\mathrm{d}x+\frac{\partial R}{\partial y}\mathrm{d}y+\frac{\partial R}{\partial z}\mathrm{d}z\Bigr)\wedge\mathrm{d}z\\&=\Bigl(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}\Bigr)\mathrm{d}y\wedge\mathrm{d}z+\Bigl(\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}\Bigr)\mathrm{d}z\wedge\mathrm{d}x+\Bigl(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\Bigr)\mathrm{d}x\wedge\mathrm{d}y.\end{aligned}$$
+$$\begin{aligned} \mathrm{d}\omega&=(\mathrm{d}P)\wedge\mathrm{d}x+(\mathrm{d}Q)\wedge\mathrm{d}y+(\mathrm{d}R)\wedge\mathrm{d}z\\ &=\Bigl(\frac{\partial P}{\partial x}\mathrm{d}x+\frac{\partial P}{\partial y}\mathrm{d}y+\frac{\partial P}{\partial z}\mathrm{d}z\Bigr)\wedge\mathrm{d}x+\Bigl(\frac{\partial Q}{\partial x}\mathrm{d}x+\frac{\partial Q}{\partial y}\mathrm{d}y+\frac{\partial Q}{\partial z}\mathrm{d}z\Bigr)\wedge\mathrm{d}y\\ &\qquad+\Bigl(\frac{\partial R}{\partial x}\mathrm{d}x+\frac{\partial R}{\partial y}\mathrm{d}y+\frac{\partial R}{\partial z}\mathrm{d}z\Bigr)\wedge\mathrm{d}z\\ &=\Bigl(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}\Bigr)\mathrm{d}y\wedge\mathrm{d}z+\Bigl(\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}\Bigr)\mathrm{d}z\wedge\mathrm{d}x+\Bigl(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\Bigr)\mathrm{d}x\wedge\mathrm{d}y. \end{aligned}$$
 
 **例 14.4.3 (空间 2-形式的外微分)** @293
 
@@ -10990,7 +10990,7 @@ $$\omega=P(x,y,z)\,\mathrm{d}y\wedge\mathrm{d}z+Q(x,y,z)\,\mathrm{d}z\wedge\math
 
 为 $\mathbf{R}^3$ 上的 $2$-形式，则
 
-$$\begin{aligned}\mathrm{d}\omega&=(\mathrm{d}P)\wedge\mathrm{d}y\wedge\mathrm{d}z+(\mathrm{d}Q)\wedge\mathrm{d}z\wedge\mathrm{d}x+(\mathrm{d}R)\wedge\mathrm{d}x\wedge\mathrm{d}y\\&=\Bigl(\frac{\partial P}{\partial x}\mathrm{d}x+\frac{\partial P}{\partial y}\mathrm{d}y+\frac{\partial P}{\partial z}\mathrm{d}z\Bigr)\wedge\mathrm{d}y\wedge\mathrm{d}z+\Bigl(\frac{\partial Q}{\partial x}\mathrm{d}x+\frac{\partial Q}{\partial y}\mathrm{d}y+\frac{\partial Q}{\partial z}\mathrm{d}z\Bigr)\wedge\mathrm{d}z\wedge\mathrm{d}x\\&\qquad+\Bigl(\frac{\partial R}{\partial x}\mathrm{d}x+\frac{\partial R}{\partial y}\mathrm{d}y+\frac{\partial R}{\partial z}\mathrm{d}z\Bigr)\wedge\mathrm{d}x\wedge\mathrm{d}y\\&=\Bigl(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}\Bigr)\mathrm{d}x\wedge\mathrm{d}y\wedge\mathrm{d}z.\end{aligned}$$
+$$\begin{aligned} \mathrm{d}\omega&=(\mathrm{d}P)\wedge\mathrm{d}y\wedge\mathrm{d}z+(\mathrm{d}Q)\wedge\mathrm{d}z\wedge\mathrm{d}x+(\mathrm{d}R)\wedge\mathrm{d}x\wedge\mathrm{d}y\\ &=\Bigl(\frac{\partial P}{\partial x}\mathrm{d}x+\frac{\partial P}{\partial y}\mathrm{d}y+\frac{\partial P}{\partial z}\mathrm{d}z\Bigr)\wedge\mathrm{d}y\wedge\mathrm{d}z+\Bigl(\frac{\partial Q}{\partial x}\mathrm{d}x+\frac{\partial Q}{\partial y}\mathrm{d}y+\frac{\partial Q}{\partial z}\mathrm{d}z\Bigr)\wedge\mathrm{d}z\wedge\mathrm{d}x\\ &\qquad+\Bigl(\frac{\partial R}{\partial x}\mathrm{d}x+\frac{\partial R}{\partial y}\mathrm{d}y+\frac{\partial R}{\partial z}\mathrm{d}z\Bigr)\wedge\mathrm{d}x\wedge\mathrm{d}y\\ &=\Bigl(\frac{\partial P}{\partial x}+\frac{\partial Q}{\partial y}+\frac{\partial R}{\partial z}\Bigr)\mathrm{d}x\wedge\mathrm{d}y\wedge\mathrm{d}z. \end{aligned}$$
 
 **命题 (外微分的乘积法则)** @294
 
@@ -11028,7 +11028,7 @@ $$\int_{\partial D}\omega=\iint_{D}\mathrm{d}\omega .$$
 
 再看 Stokes 公式
 
-$$\begin{aligned}&\int_{\partial\Sigma}P\,\mathrm{d}x+Q\,\mathrm{d}y+R\,\mathrm{d}z\\&\qquad=\iint_{\Sigma}\Bigl(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}\Bigr)\mathrm{d}y\wedge\mathrm{d}z+\Bigl(\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}\Bigr)\mathrm{d}z\wedge\mathrm{d}x+\Bigl(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\Bigr)\mathrm{d}x\wedge\mathrm{d}y,\end{aligned}$$
+$$\begin{aligned} &\int_{\partial\Sigma}P\,\mathrm{d}x+Q\,\mathrm{d}y+R\,\mathrm{d}z\\ &\qquad=\iint_{\Sigma}\Bigl(\frac{\partial R}{\partial y}-\frac{\partial Q}{\partial z}\Bigr)\mathrm{d}y\wedge\mathrm{d}z+\Bigl(\frac{\partial P}{\partial z}-\frac{\partial R}{\partial x}\Bigr)\mathrm{d}z\wedge\mathrm{d}x+\Bigl(\frac{\partial Q}{\partial x}-\frac{\partial P}{\partial y}\Bigr)\mathrm{d}x\wedge\mathrm{d}y, \end{aligned}$$
 
 其中 $\partial\Sigma$ 取 $\Sigma$ 的诱导定向。等式左边和右边分别是 $1$-形式和 $2$-形式在定向曲线和曲面上的积分，因此由例 14.4.2 可知，对于 $1$-形式 $\omega=P(x,y,z)\,\mathrm{d}x+Q(x,y,z)\,\mathrm{d}y+R(x,y,z)\,\mathrm{d}z$，上式就是
 

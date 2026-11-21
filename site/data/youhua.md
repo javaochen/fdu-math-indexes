@@ -458,7 +458,7 @@ $$\nabla f(x)=\left[\frac{\partial f(x)}{\partial x_1},\frac{\partial f(x)}{\par
 
 如果函数 $f(x):\mathbb{R}^n\to\mathbb{R}$ 在点 $x$ 处的二阶偏导数 $\dfrac{\partial^2 f(x)}{\partial x_i\partial x_j}$，$i,j=1,2,\cdots,n$ 都存在，则
 
-$$\nabla^2 f(x)=\begin{bmatrix}\dfrac{\partial^2 f(x)}{\partial x_1^2} & \dfrac{\partial^2 f(x)}{\partial x_1\partial x_2} & \dfrac{\partial^2 f(x)}{\partial x_1\partial x_3} & \cdots & \dfrac{\partial^2 f(x)}{\partial x_1\partial x_n}\\[2mm]\dfrac{\partial^2 f(x)}{\partial x_2\partial x_1} & \dfrac{\partial^2 f(x)}{\partial x_2^2} & \dfrac{\partial^2 f(x)}{\partial x_2\partial x_3} & \cdots & \dfrac{\partial^2 f(x)}{\partial x_2\partial x_n}\\[2mm]\vdots & \vdots & \vdots & & \vdots\\[2mm]\dfrac{\partial^2 f(x)}{\partial x_n\partial x_1} & \dfrac{\partial^2 f(x)}{\partial x_n\partial x_2} & \dfrac{\partial^2 f(x)}{\partial x_n\partial x_3} & \cdots & \dfrac{\partial^2 f(x)}{\partial x_n^2}\end{bmatrix}$$
+$$\nabla^2 f(x)=\begin{bmatrix} \dfrac{\partial^2 f(x)}{\partial x_1^2} & \dfrac{\partial^2 f(x)}{\partial x_1\partial x_2} & \dfrac{\partial^2 f(x)}{\partial x_1\partial x_3} & \cdots & \dfrac{\partial^2 f(x)}{\partial x_1\partial x_n}\\[2mm] \dfrac{\partial^2 f(x)}{\partial x_2\partial x_1} & \dfrac{\partial^2 f(x)}{\partial x_2^2} & \dfrac{\partial^2 f(x)}{\partial x_2\partial x_3} & \cdots & \dfrac{\partial^2 f(x)}{\partial x_2\partial x_n}\\[2mm] \vdots & \vdots & \vdots & & \vdots\\[2mm] \dfrac{\partial^2 f(x)}{\partial x_n\partial x_1} & \dfrac{\partial^2 f(x)}{\partial x_n\partial x_2} & \dfrac{\partial^2 f(x)}{\partial x_n\partial x_3} & \cdots & \dfrac{\partial^2 f(x)}{\partial x_n^2} \end{bmatrix}$$
 
 称为 $f$ 在点 $x$ 处的**海瑟矩阵**。
 
@@ -468,7 +468,7 @@ $$\nabla^2 f(x)=\begin{bmatrix}\dfrac{\partial^2 f(x)}{\partial x_1^2} & \dfrac{
 
 当 $f:\mathbb{R}^n\to\mathbb{R}^m$ 是向量值函数时，我们可以定义它的雅可比（Jacobi）矩阵 $J(x)\in\mathbb{R}^{m\times n}$，它的第 $i$ 行是分量 $f_i(x)$ 梯度的转置，即
 
-$$J(x)=\begin{bmatrix}\dfrac{\partial f_1(x)}{\partial x_1} & \dfrac{\partial f_1(x)}{\partial x_2} & \cdots & \dfrac{\partial f_1(x)}{\partial x_n}\\[2mm]\dfrac{\partial f_2(x)}{\partial x_1} & \dfrac{\partial f_2(x)}{\partial x_2} & \cdots & \dfrac{\partial f_2(x)}{\partial x_n}\\[2mm]\vdots & \vdots & & \vdots\\[2mm]\dfrac{\partial f_m(x)}{\partial x_1} & \dfrac{\partial f_m(x)}{\partial x_2} & \cdots & \dfrac{\partial f_m(x)}{\partial x_n}\end{bmatrix}.$$
+$$J(x)=\begin{bmatrix} \dfrac{\partial f_1(x)}{\partial x_1} & \dfrac{\partial f_1(x)}{\partial x_2} & \cdots & \dfrac{\partial f_1(x)}{\partial x_n}\\[2mm] \dfrac{\partial f_2(x)}{\partial x_1} & \dfrac{\partial f_2(x)}{\partial x_2} & \cdots & \dfrac{\partial f_2(x)}{\partial x_n}\\[2mm] \vdots & \vdots & & \vdots\\[2mm] \dfrac{\partial f_m(x)}{\partial x_1} & \dfrac{\partial f_m(x)}{\partial x_2} & \cdots & \dfrac{\partial f_m(x)}{\partial x_n} \end{bmatrix}.$$
 
 此外容易看出，梯度 $\nabla f(x)$ 的雅可比矩阵就是 $f(x)$ 的海瑟矩阵。
 
@@ -522,7 +522,7 @@ $$\lim_{V\to 0}\frac{f(X+V)-f(X)-\langle G,V\rangle}{\|V\|}=0,$$
 
 其中 $\|\cdot\|$ 是任意矩阵范数，就称矩阵变量函数 $f$ 在 $X$ 处 Fréchet 可微，称 $G$ 为 $f$ 在 Fréchet 可微意义下的梯度。类似于向量情形，矩阵变量函数 $f(X)$ 的梯度可以用其偏导数表示为
 
-$$\nabla f(X)=\begin{bmatrix}\dfrac{\partial f}{\partial x_{11}} & \dfrac{\partial f}{\partial x_{12}} & \cdots & \dfrac{\partial f}{\partial x_{1n}}\\[2mm]\dfrac{\partial f}{\partial x_{21}} & \dfrac{\partial f}{\partial x_{22}} & \cdots & \dfrac{\partial f}{\partial x_{2n}}\\[2mm]\vdots & \vdots & & \vdots\\[2mm]\dfrac{\partial f}{\partial x_{m1}} & \dfrac{\partial f}{\partial x_{m2}} & \cdots & \dfrac{\partial f}{\partial x_{mn}}\end{bmatrix}.$$
+$$\nabla f(X)=\begin{bmatrix} \dfrac{\partial f}{\partial x_{11}} & \dfrac{\partial f}{\partial x_{12}} & \cdots & \dfrac{\partial f}{\partial x_{1n}}\\[2mm] \dfrac{\partial f}{\partial x_{21}} & \dfrac{\partial f}{\partial x_{22}} & \cdots & \dfrac{\partial f}{\partial x_{2n}}\\[2mm] \vdots & \vdots & & \vdots\\[2mm] \dfrac{\partial f}{\partial x_{m1}} & \dfrac{\partial f}{\partial x_{m2}} & \cdots & \dfrac{\partial f}{\partial x_{mn}} \end{bmatrix}.$$
 
 其中 $\dfrac{\partial f}{\partial x_{ij}}$ 表示 $f$ 关于 $x_{ij}$ 的偏导数。
 
@@ -1918,15 +1918,15 @@ $f$ 的选取范围非常重要，它实际决定了需要使用什么类别的�
 
 线性规划问题的一般形式如下：
 
-$$\begin{aligned}\min_{x\in\mathbb{R}^n}\quad & c^{\mathrm{T}}x,\\\text{s.t.}\quad & Ax=b,\\& Gx\leqslant e,\end{aligned}\tag{4.1.1}$$
+$$ \begin{aligned} \min_{x\in\mathbb{R}^n}\quad & c^{\mathrm{T}}x,\\ \text{s.t.}\quad & Ax=b,\\ & Gx\leqslant e, \end{aligned}\tag{4.1.1} $$
 
 其中 $c\in\mathbb{R}^n$，$A\in\mathbb{R}^{m\times n}$，$b\in\mathbb{R}^m$，$G\in\mathbb{R}^{p\times n}$ 和 $e\in\mathbb{R}^p$ 是给定的矩阵和向量，$x\in\mathbb{R}^n$ 是决策变量。在实际中，我们考虑问题 (4.1.1) 的两种特殊形式（其他形式都可以转化成这两种形式）：标准形（等式约束和决策变量非负）
 
-$$\begin{aligned}\min_{x\in\mathbb{R}^n}\quad & c^{\mathrm{T}}x,\\\text{s.t.}\quad & Ax=b,\\& x\geqslant 0,\end{aligned}\tag{4.1.2}$$
+$$ \begin{aligned} \min_{x\in\mathbb{R}^n}\quad & c^{\mathrm{T}}x,\\ \text{s.t.}\quad & Ax=b,\\ & x\geqslant 0, \end{aligned}\tag{4.1.2} $$
 
 以及不等式形（没有等式约束）
 
-$$\begin{aligned}\min_{x\in\mathbb{R}^n}\quad & c^{\mathrm{T}}x,\\\text{s.t.}\quad & Ax\leqslant b.\end{aligned}\tag{4.1.3}$$
+$$ \begin{aligned} \min_{x\in\mathbb{R}^n}\quad & c^{\mathrm{T}}x,\\ \text{s.t.}\quad & Ax\leqslant b. \end{aligned}\tag{4.1.3} $$
 
 线性规划最先在第二次世界大战时被提出，用于最大化资源的利用效率。其中的“规划”也是一个军事词汇，指按照既定的时刻表去执行任务或者用最佳方式做人员部署。线性规划问题的研究很快得到了大家的关注。二战之后，美国空军启动了一项关于军事规划和分配模型的项目。在 1947 年，著名的单纯形方法被提出，使得线性规划问题可以被有效地求解。之后，线性规划用到了更多其他领域当中，如农业、石油、钢铁、运输、通信和运筹学等。线性规划的有效应用节省了大量的人力、物力和财力。随着计算机以及求解算法的快速发展，我们可以求解更大规模的线性规划问题，保证了线性规划问题的应用前景。
 
@@ -1958,7 +1958,7 @@ $$x_{ij}\geqslant 0,\quad i=1,2,\cdots,I,\quad j=1,2,\cdots,J.\tag{4.1.7}$$
 
 因此，我们想要在约束 (4.1.5)—(4.1.7) 成立的情况下极小化 (4.1.4) 式。针对决策变量的 $I\times J$ 矩阵 $(x_{ij})$，我们可以得到如下线性规划问题：
 
-$$\begin{aligned}\min_{x}\quad & \sum_{i=1}^{I}\sum_{j=1}^{J}x_{ij}b_{ij},\\\text{s.t.}\quad & \sum_{j=1}^{J}x_{ij}=s_i,\quad i=1,2,\cdots,I,\\& \sum_{i=1}^{I}x_{ij}=r_j,\quad j=1,2,\cdots,J,\\& x_{ij}\geqslant 0,\quad i=1,2,\cdots,I,\ j=1,2,\cdots,J.\end{aligned}$$
+$$ \begin{aligned} \min_{x}\quad & \sum_{i=1}^{I}\sum_{j=1}^{J}x_{ij}b_{ij},\\ \text{s.t.}\quad & \sum_{j=1}^{J}x_{ij}=s_i,\quad i=1,2,\cdots,I,\\ & \sum_{i=1}^{I}x_{ij}=r_j,\quad j=1,2,\cdots,J,\\ & x_{ij}\geqslant 0,\quad i=1,2,\cdots,I,\ j=1,2,\cdots,J. \end{aligned} $$
 
 这个问题还有更一般的版本，即最优运输问题。它是关心两个（离散、连续）测度的对应关系。具体地，若测度是离散的，我们想要确定的是离散点之间的对应关系；若测度是连续的，我们想要确定的是区域之间的对应关系。
 
@@ -1966,7 +1966,7 @@ $$\begin{aligned}\min_{x}\quad & \sum_{i=1}^{I}\sum_{j=1}^{J}x_{ij}b_{ij},\\\tex
 
 在马尔可夫决策过程中，考虑终止时间 $T=\infty$ 的情形。因为折现因子 $0<\gamma<1$，所以如果单步奖励是有界的，则策略对应的奖励和是有界的。否则，如果奖励和无界，任意一个策略的奖励和都是无限的，失去了研究价值。在有界的假设下，Bellman 方程 (3.13.2) 可以转化为如下线性规划问题：
 
-$$\begin{aligned}\max_{V\in\mathbb{R}^{|\mathcal{S}|}}\quad & \sum_{i}V(i)\\\text{s.t.}\quad & V(i)\geqslant \sum_{j}P_a(i,j)\left(r(i,a)+\gamma V(j)\right),\quad \forall i\in\mathcal{S},\ \forall a\in\mathcal{A},\end{aligned}$$
+$$ \begin{aligned} \max_{V\in\mathbb{R}^{|\mathcal{S}|}}\quad & \sum_{i}V(i)\\ \text{s.t.}\quad & V(i)\geqslant \sum_{j}P_a(i,j)\left(r(i,a)+\gamma V(j)\right),\quad \forall i\in\mathcal{S},\ \forall a\in\mathcal{A}, \end{aligned} $$
 
 其中 $V(i)$ 是向量 $V$ 的第 $i$ 个分量，表示从状态 $i$ 出发得到的累积奖励，$P_a(i,j)$ 是转移概率，$r(i,a)$ 是单步奖励以及 $\gamma$ 为折现因子。通过求解上述优化问题，我们可以求出最优动作 $a(i)$ 以及最优期望奖励。
 
@@ -1974,15 +1974,15 @@ $$\begin{aligned}\max_{V\in\mathbb{R}^{|\mathcal{S}|}}\quad & \sum_{i}V(i)\\\tex
 
 基追踪问题是压缩感知中的一个基本问题，可以写为
 
-$$\begin{aligned}\min_{x\in\mathbb{R}^n}\quad & \|x\|_1,\\\text{s.t.}\quad & Ax=b.\end{aligned}\tag{4.1.8}$$
+$$ \begin{aligned} \min_{x\in\mathbb{R}^n}\quad & \|x\|_1,\\ \text{s.t.}\quad & Ax=b. \end{aligned}\tag{4.1.8} $$
 
 对每个 $|x_i|$ 引入一个新的变量 $z_i$，可以将问题 (4.1.8) 转化为
 
-$$\begin{aligned}\min_{z\in\mathbb{R}^n}\quad & \sum_{i=1}^{n}z_i,\\\text{s.t.}\quad & Ax=b,\\& -z_i\leqslant x_i\leqslant z_i,\quad i=1,2,\cdots,n,\end{aligned}$$
+$$ \begin{aligned} \min_{z\in\mathbb{R}^n}\quad & \sum_{i=1}^{n}z_i,\\ \text{s.t.}\quad & Ax=b,\\ & -z_i\leqslant x_i\leqslant z_i,\quad i=1,2,\cdots,n, \end{aligned} $$
 
 这是一个线性规划问题。另外，我们也可以引入 $x_i$ 的正部和负部 $x_i^+,x_i^-\geqslant 0$，利用 $x_i=x_i^+-x_i^-$，$|x_i|=x_i^++x_i^-$，问题 (4.1.8) 的另外一种等价的线性规划形式可以写成
 
-$$\begin{aligned}\min_{x^+,x^-\in\mathbb{R}^n}\quad & \sum_{i=1}^{n}\left(x_i^++x_i^-\right),\\\text{s.t.}\quad & Ax^+-Ax^-=b,\\& x^+,x^-\geqslant 0.\end{aligned}$$
+$$ \begin{aligned} \min_{x^+,x^-\in\mathbb{R}^n}\quad & \sum_{i=1}^{n}\left(x_i^++x_i^-\right),\\ \text{s.t.}\quad & Ax^+-Ax^-=b,\\ & x^+,x^-\geqslant 0. \end{aligned} $$
 
 **例 (数据拟合)** @126
 
@@ -1996,15 +1996,15 @@ $$\min_{x\in\mathbb{R}^n}\ \|Ax-b\|_\infty.\tag{4.1.10}$$
 
 这两个问题都可以转化成线性规划的形式。对于问题 (4.1.9)，通过引入变量 $y=Ax-b$，可以得到如下等价问题：
 
-$$\begin{aligned}\min_{x,y\in\mathbb{R}^n}\quad & \|y\|_1,\\\text{s.t.}\quad & y=Ax-b.\end{aligned}$$
+$$ \begin{aligned} \min_{x,y\in\mathbb{R}^n}\quad & \|y\|_1,\\ \text{s.t.}\quad & y=Ax-b. \end{aligned} $$
 
 利用基追踪问题中类似的技巧，我们可以将上述绝对值优化问题转化成线性规划问题。对于问题 (4.1.10)，令 $t=\|Ax-b\|_\infty$，则得到等价问题
 
-$$\begin{aligned}\min_{x\in\mathbb{R}^n,\ t\in\mathbb{R}}\quad & t,\\\text{s.t.}\quad & \|Ax-b\|_\infty\leqslant t.\end{aligned}$$
+$$ \begin{aligned} \min_{x\in\mathbb{R}^n,\ t\in\mathbb{R}}\quad & t,\\ \text{s.t.}\quad & \|Ax-b\|_\infty\leqslant t. \end{aligned} $$
 
 利用 $\ell_\infty$ 范数的定义，可以进一步写为
 
-$$\begin{aligned}\min_{x\in\mathbb{R}^n,\ t\in\mathbb{R}}\quad & t,\\\text{s.t.}\quad & -t\mathbf{1}\leqslant Ax-b\leqslant t\mathbf{1},\end{aligned}$$
+$$ \begin{aligned} \min_{x\in\mathbb{R}^n,\ t\in\mathbb{R}}\quad & t,\\ \text{s.t.}\quad & -t\mathbf{1}\leqslant Ax-b\leqslant t\mathbf{1}, \end{aligned} $$
 
 这是一个线性规划问题。
 
@@ -2080,7 +2080,7 @@ $$\mathrm{ReLU}(t)=\begin{cases}t, & t\geqslant 0,\\ 0, & \text{其他}.\end{cas
 
 这样的做法往往会带来更多未知的非线性，因而可能在更大的函数空间中得到了未知函数的一个更好的逼近。将点 $a_i$ 处的取值代入，我们得到如下非线性方程组：
 
-$$\begin{aligned}f(a_i)-b_i&=\phi_n\left(X_n\phi_{n-1}\left(X_{n-1}\cdots\phi_1(X_1a_i+y_1)\cdots+y_{n-1}\right)+y_n\right)-b_i\\&=0,\quad i=1,2,\cdots,n.\end{aligned}$$
+$$ \begin{aligned} f(a_i)-b_i&=\phi_n\left(X_n\phi_{n-1}\left(X_{n-1}\cdots\phi_1(X_1a_i+y_1)\cdots+y_{n-1}\right)+y_n\right)-b_i\\ &=0,\quad i=1,2,\cdots,n. \end{aligned} $$
 
 这里，需要求解的是关于 $X_1\in\mathbb{R}^{q\times p}$，$X_i\in\mathbb{R}^{q\times q}$，$i=2,3,\cdots,n$，$y_i\in\mathbb{R}^q$，$i=1,2,\cdots,n$ 的非线性方程组。我们一般考虑替代的最小二乘问题
 
@@ -2128,11 +2128,11 @@ $$y_i=r(s,a)+\gamma\sum_{s'}P_a(s,s')\max_{a'}\left\{Q_{\theta_{i-1}}(s',a')\rig
 
 当约束中含微分方程时，我们称相应的优化问题为带微分方程约束的优化问题。它在最优控制、形状优化等各种领域中有着广泛应用。这里，我们以瓦斯油催化裂解为例。这个问题求解瓦斯油催化裂解生成气体和其他副产物的反应系数。反应过程可以由如下非线性常微分方程组表示：
 
-$$\begin{cases}\dot{y}_1=-(\theta_1+\theta_3)y_1^2,\\\dot{y}_2=\theta_1y_1^2-\theta_2y_2,\end{cases}\tag{4.2.6}$$
+$$ \begin{cases} \dot{y}_1=-(\theta_1+\theta_3)y_1^2,\\ \dot{y}_2=\theta_1y_1^2-\theta_2y_2, \end{cases}\tag{4.2.6} $$
 
 其中系数 $\theta_i\geqslant 0$，$i=1,2,3$，且 $y_1,y_2$ 的初值条件是已知的。我们考虑的问题是
 
-$$\begin{aligned}\min_{\theta\in\mathbb{R}^3}\quad & \sum_{j=1}^{n}\left\|y(\tau_j;\theta)-z_j\right\|^2,\\\text{s.t.}\quad & y(\tau;\theta)\ \text{满足方程组}\ (4.2.6),\end{aligned}$$
+$$ \begin{aligned} \min_{\theta\in\mathbb{R}^3}\quad & \sum_{j=1}^{n}\left\|y(\tau_j;\theta)-z_j\right\|^2,\\ \text{s.t.}\quad & y(\tau;\theta)\ \text{满足方程组}\ (4.2.6), \end{aligned} $$
 
 这里 $z_j$ 是在时刻 $\tau_j$ 的 $y$ 的测量值，$n$ 为测量的时刻数量。
 
@@ -2230,7 +2230,7 @@ $$\min_{x\in\mathcal{X}}\ f(x)\overset{\text{def}}{=\!=}\frac{1}{N}\sum_{i=1}^{N
 
 在主成分分析 (3.7.1) 中，如果样本点 $\xi$ 服从某个零均值分布 $\mathcal{D}$，那么找方差最大的 $d$ 维子空间的优化问题可以写成
 
-$$\max_{X\in\mathbb{R}^{p\times d}}\ \mathrm{Tr}\left(X^{\mathrm{T}}\mathbb{E}_{\xi\sim\mathcal{D}}\left[\xi\xi^{\mathrm{T}}\right]X\right)\qquad\text{s.t.}\quad X^{\mathrm{T}}X=I,\tag{4.4.2}$$
+$$ \max_{X\in\mathbb{R}^{p\times d}}\ \mathrm{Tr}\left(X^{\mathrm{T}}\mathbb{E}_{\xi\sim\mathcal{D}}\left[\xi\xi^{\mathrm{T}}\right]X\right)\qquad \text{s.t.}\quad X^{\mathrm{T}}X=I,\tag{4.4.2} $$
 
 其中 $\mathbb{E}_{\xi\sim\mathcal{D}}[\xi\xi^{\mathrm{T}}]$ 为 $\xi$ 的协方差矩阵。在实际中，分布 $\mathcal{D}$ 是未知的，已知的只是关于分布 $\mathcal{D}$ 的采样。比如在在线主成分分析中，样本 $\xi_t$ 是随着时间流逝依次获得的。这些已有的样本可以看作训练集。随机主成分分析关心的问题是在求得问题 (4.4.2) 的高逼近解过程中需要的样本数量以及所消耗的时间。受制于计算机内存的限制，我们还需要考虑在有限内存情况下的逼近解的计算与分析。
 
@@ -2256,15 +2256,15 @@ $$\min_{h}\max_{\hat{z}\in\Gamma}\ \mathbb{E}_{\hat{z}}\left[F(h,\hat{z})\right]
 
 半定规划问题的一般形式如下：
 
-$$\begin{aligned}\min\quad & c^{\mathrm{T}}x,\\\text{s.t.}\quad & x_1A_1+x_2A_2+\cdots+x_nA_n+B\preceq0,\\& Gx=h,\end{aligned}\tag{4.5.1}$$
+$$ \begin{aligned} \min\quad & c^{\mathrm{T}}x,\\ \text{s.t.}\quad & x_1A_1+x_2A_2+\cdots+x_nA_n+B\preceq0,\\ & Gx=h, \end{aligned}\tag{4.5.1} $$
 
 其中 $c\in\mathbb{R}^n$，$A_i\in\mathcal{S}^m$，$i=1,2,\cdots,m$，$B\in\mathcal{S}^m$，$G\in\mathbb{R}^{p\times n}$，$h\in\mathbb{R}^p$ 为已知的向量和矩阵，$x=(x_1,x_2,\cdots,x_n)\in\mathbb{R}^n$ 是自变量。这里，如果矩阵 $A_i$，$B$ 是对角的，那么问题 (4.5.1) 退化为线性规划问题。类似于线性规划问题，我们考虑半定规划的标准形式
 
-$$\begin{aligned}\min\quad & \langle C,X\rangle,\\\text{s.t.}\quad & \langle A_1,X\rangle=b_1,\\& \cdots\\& \langle A_m,X\rangle=b_m,\\& X\succeq0,\end{aligned}\tag{4.5.2}$$
+$$ \begin{aligned} \min\quad & \langle C,X\rangle,\\ \text{s.t.}\quad & \langle A_1,X\rangle=b_1,\\ & \cdots\\ & \langle A_m,X\rangle=b_m,\\ & X\succeq0, \end{aligned}\tag{4.5.2} $$
 
 和不等式形式
 
-$$\begin{aligned}\min\quad & c^{\mathrm{T}}x,\\\text{s.t.}\quad & x_1A_1+x_2A_2+\cdots+x_nA_n+B\preceq0.\end{aligned}\tag{4.5.3}$$
+$$ \begin{aligned} \min\quad & c^{\mathrm{T}}x,\\ \text{s.t.}\quad & x_1A_1+x_2A_2+\cdots+x_nA_n+B\preceq0. \end{aligned}\tag{4.5.3} $$
 
 形如 (4.5.1) 式的优化问题都可以转化成 (4.5.2) 式或者 (4.5.3) 式的形式。
 
@@ -2276,7 +2276,7 @@ $$\begin{aligned}\min\quad & c^{\mathrm{T}}x,\\\text{s.t.}\quad & x_1A_1+x_2A_2+
 
 考虑二次约束二次规划问题
 
-$$\begin{aligned}\min_{x\in\mathbb{R}^n}\quad & x^{\mathrm{T}}A_0x+2b_0^{\mathrm{T}}x+c_0,\\\text{s.t.}\quad & x^{\mathrm{T}}A_ix+2b_i^{\mathrm{T}}x+c_i\leqslant0,\quad i=1,2,\cdots,m,\end{aligned}\tag{4.5.4}$$
+$$ \begin{aligned} \min_{x\in\mathbb{R}^n}\quad & x^{\mathrm{T}}A_0x+2b_0^{\mathrm{T}}x+c_0,\\ \text{s.t.}\quad & x^{\mathrm{T}}A_ix+2b_i^{\mathrm{T}}x+c_i\leqslant0,\quad i=1,2,\cdots,m, \end{aligned}\tag{4.5.4} $$
 
 其中 $A_i$ 为 $n\times n$ 对称矩阵。当部分 $A_i$ 为对称不定矩阵时，问题 (4.5.4) 是 NP 难的非凸优化问题。
 
@@ -2290,15 +2290,15 @@ $$x^{\mathrm{T}}A_ix+2b_i^{\mathrm{T}}x+c_i=\left\langle A_i,xx^{\mathrm{T}}\rig
 
 所以，原始问题等价于
 
-$$\begin{aligned}\min_{x\in\mathbb{R}^n}\quad & \langle A_0,X\rangle+2b_0^{\mathrm{T}}x+c_0\\\text{s.t.}\quad & \langle A_i,X\rangle+2b_i^{\mathrm{T}}x+c_i\leqslant0,\quad i=1,2,\cdots,m,\\& X=xx^{\mathrm{T}}.\end{aligned}\tag{4.5.5}$$
+$$ \begin{aligned} \min_{x\in\mathbb{R}^n}\quad & \langle A_0,X\rangle+2b_0^{\mathrm{T}}x+c_0\\ \text{s.t.}\quad & \langle A_i,X\rangle+2b_i^{\mathrm{T}}x+c_i\leqslant0,\quad i=1,2,\cdots,m,\\ & X=xx^{\mathrm{T}}. \end{aligned}\tag{4.5.5} $$
 
 进一步地，
 
-$$\begin{aligned}x^{\mathrm{T}}A_ix+2b_i^{\mathrm{T}}x+c_i&=\left\langle\begin{pmatrix}A_i & b_i\\ b_i^{\mathrm{T}} & c_i\end{pmatrix},\begin{pmatrix}X & x\\ x^{\mathrm{T}} & 1\end{pmatrix}\right\rangle\\&\overset{\text{def}}{=\!=}\left\langle\overline{A_i},\overline{X}\right\rangle,\quad i=0,1,\cdots,m.\end{aligned}$$
+$$ \begin{aligned} x^{\mathrm{T}}A_ix+2b_i^{\mathrm{T}}x+c_i&=\left\langle\begin{pmatrix}A_i & b_i\\ b_i^{\mathrm{T}} & c_i\end{pmatrix},\begin{pmatrix}X & x\\ x^{\mathrm{T}} & 1\end{pmatrix}\right\rangle\\ &\overset{\text{def}}{=\!=}\left\langle\overline{A_i},\overline{X}\right\rangle,\quad i=0,1,\cdots,m. \end{aligned} $$
 
 接下来将等价问题 (4.5.5) 松弛为半定规划问题。在问题 (4.5.5) 中，唯一的非线性部分是约束 $X=xx^{\mathrm{T}}$，我们将其松弛成半正定约束 $X\succeq xx^{\mathrm{T}}$。可以证明，$\overline{X}\succeq0$ 与 $X\succeq xx^{\mathrm{T}}$ 是等价的。因此这个问题的半定规划松弛可以写成
 
-$$\begin{aligned}\min\quad & \left\langle\overline{A_0},\overline{X}\right\rangle\\\text{s.t.}\quad & \left\langle\overline{A_i},\overline{X}\right\rangle\leqslant0,\quad i=1,2,\cdots,m,\\& \overline{X}\succeq0,\\& \overline{X}_{n+1,n+1}=1,\end{aligned}$$
+$$ \begin{aligned} \min\quad & \left\langle\overline{A_0},\overline{X}\right\rangle\\ \text{s.t.}\quad & \left\langle\overline{A_i},\overline{X}\right\rangle\leqslant0,\quad i=1,2,\cdots,m,\\ & \overline{X}\succeq0,\\ & \overline{X}_{n+1,n+1}=1, \end{aligned} $$
 
 其中“松弛”来源于我们将 $X=xx^{\mathrm{T}}$ 替换成了 $X\succeq xx^{\mathrm{T}}$。
 
@@ -2306,21 +2306,21 @@ $$\begin{aligned}\min\quad & \left\langle\overline{A_0},\overline{X}\right\rangl
 
 令 $G$ 为一个无向图，其节点集合为 $V=\{1,2,\cdots,n\}$ 和边的集合为 $E$。令 $w_{ij}=w_{ji}$ 为边 $(i,j)\in E$ 上的权重，并假设 $w_{ij}\geqslant0$，$(i,j)\in E$。最大割问题是找到节点集合 $V$ 的一个子集 $S$ 使得 $S$ 与它的补集 $\bar{S}$ 之间相连边的权重之和最大化。我们可以将最大割问题写成如下整数规划的形式：令 $x_j=1$，$j\in S$ 和 $x_j=-1$，$j\in\bar{S}$，则
 
-$$\begin{aligned}\max\quad & \frac{1}{2}\sum_{i<j}(1-x_ix_j)w_{ij}\\\text{s.t.}\quad & x_j\in\{-1,1\},\quad j=1,2,\cdots,n.\end{aligned}\tag{4.5.6}$$
+$$ \begin{aligned} \max\quad & \frac{1}{2}\sum_{i<j}(1-x_ix_j)w_{ij}\\ \text{s.t.}\quad & x_j\in\{-1,1\},\quad j=1,2,\cdots,n. \end{aligned}\tag{4.5.6} $$
 
 在问题 (4.5.6) 中，只有当 $x_i$ 与 $x_j$ 不同时，目标函数中 $w_{ij}$ 的系数非零。最大割问题是一个离散优化问题，很难在多项式时间内找到它的最优解。接下来介绍如何将问题 (4.5.6) 松弛成一个半定规划问题。
 
 令 $W=(w_{ij})\in\mathcal{S}^n$，并定义 $C=-\dfrac{1}{4}\left(\mathrm{Diag}(W\mathbf{1})-W\right)$ 为图 $G$ 的拉普拉斯矩阵的 $-\dfrac{1}{4}$ 倍，则问题 (4.5.6) 可以等价地写为
 
-$$\begin{aligned}\min\quad & x^{\mathrm{T}}Cx,\\\text{s.t.}\quad & x_i^2=1,\quad i=1,2,\cdots,n.\end{aligned}$$
+$$ \begin{aligned} \min\quad & x^{\mathrm{T}}Cx,\\ \text{s.t.}\quad & x_i^2=1,\quad i=1,2,\cdots,n. \end{aligned} $$
 
 由于目标函数是关于 $x$ 的二次函数，利用前面的技巧可将其等价替换为 $\langle C,xx^{\mathrm{T}}\rangle$。接下来令 $X=xx^{\mathrm{T}}$，注意到约束 $x_i^2=1$，这意味着矩阵 $X$ 对角线元素 $X_{ii}=1$。因此利用矩阵形式我们将最大割问题转化为
 
-$$\begin{aligned}\min\quad & \langle C,X\rangle,\\\text{s.t.}\quad & X_{ii}=1,\quad i=1,2,\cdots,n,\\& X\succeq0,\ \mathrm{rank}(X)=1.\end{aligned}\tag{4.5.7}$$
+$$ \begin{aligned} \min\quad & \langle C,X\rangle,\\ \text{s.t.}\quad & X_{ii}=1,\quad i=1,2,\cdots,n,\\ & X\succeq0,\ \mathrm{rank}(X)=1. \end{aligned}\tag{4.5.7} $$
 
 问题 (4.5.7) 和 (4.5.6) 是等价的，这是因为 $X=xx^{\mathrm{T}}$ 可以用约束 $X\succeq0$ 和 $\mathrm{rank}(X)=1$ 等价刻画。若在问题 (4.5.7) 中将秩一约束去掉，我们就可以得到最大割问题的半定规划松弛形式
 
-$$\begin{aligned}\min\quad & \langle C,X\rangle\\\text{s.t.}\quad & X_{ii}=1,\quad i=1,2,\cdots,n,\\& X\succeq0.\end{aligned}\tag{4.5.8}$$
+$$ \begin{aligned} \min\quad & \langle C,X\rangle\\ \text{s.t.}\quad & X_{ii}=1,\quad i=1,2,\cdots,n,\\ & X\succeq0. \end{aligned}\tag{4.5.8} $$
 
 问题 (4.5.8) 是原最大割问题的一个松弛，因此它们并不等价。求解问题 (4.5.8) 可以给出原最大割问题的一个 0.8786-近似解。
 
@@ -2332,7 +2332,7 @@ $$\min_{z\in\mathbb{R}^m}\ \lambda_{\max}(M(z))\tag{4.5.9}$$
 
 利用上方图的等价转换技巧容易将问题 (4.5.9) 转化为上方图的形式：
 
-$$\begin{aligned}\min\quad & t,\\\text{s.t.}\quad & t\geqslant\lambda_{\max}(M(z)).\end{aligned}\tag{4.5.10}$$
+$$ \begin{aligned} \min\quad & t,\\ \text{s.t.}\quad & t\geqslant\lambda_{\max}(M(z)). \end{aligned}\tag{4.5.10} $$
 
 注意，问题 (4.5.10) 中 $t$ 和 $z$ 都是自变量。在实际应用中，$M(z)$ 线性依赖于 $z$ 的情形比较常见，即
 
@@ -2340,7 +2340,7 @@ $$M(z)=A_0+\sum_{i=1}^{m}z_iA_i,$$
 
 其中 $A_0,A_1,\cdots,A_m$ 为对称矩阵。我们指出，当 $M(z)$ 为 $z$ 的上述线性映射时，问题 (4.5.10) 实际上等价于一个半定规划问题。实际上，$\lambda_{\max}(M(z))\leqslant\eta$ 当且仅当 $\eta I-M(z)\succeq0$。因此我们得到半定规划问题
 
-$$\begin{aligned}\min\quad & \eta,\\\text{s.t.}\quad & \eta I-A_0-\sum_{i=1}^{m}z_iA_i\succeq0,\end{aligned}$$
+$$ \begin{aligned} \min\quad & \eta,\\ \text{s.t.}\quad & \eta I-A_0-\sum_{i=1}^{m}z_iA_i\succeq0, \end{aligned} $$
 
 其中变量为 $\eta,z$。读者很容易将该形式转化为标准形式 (4.5.2)。
 
@@ -2386,13 +2386,13 @@ $$\nabla\psi(X)=-2AA^{\mathrm{T}}X.$$
 
 - 矩阵分离问题 (3.8.2)：
 
-$$\begin{aligned}\min_{X,S\in\mathbb{R}^{m\times n}}\quad & \psi(X,S)=\|X\|_*+\lambda\|S\|_1\\\text{s.t.}\quad & X+S=M.\end{aligned}$$
+$$ \begin{aligned} \min_{X,S\in\mathbb{R}^{m\times n}}\quad & \psi(X,S)=\|X\|_*+\lambda\|S\|_1\\ \text{s.t.}\quad & X+S=M. \end{aligned} $$
 
 在这里自变量 $X$ 与 $S$ 均为矩阵，$\psi(X,S)$ 关于 $X$ 和 $S$ 均为不可微函数。
 
 - 字典学习问题 (3.9.1)：
 
-$$\begin{aligned}\min_{D,X}\quad & \frac{1}{2n}\|DX-A\|_F^2+\lambda\|X\|_1,\\\text{s.t.}\quad & \|D\|_F\leqslant1.\end{aligned}$$
+$$ \begin{aligned} \min_{D,X}\quad & \frac{1}{2n}\|DX-A\|_F^2+\lambda\|X\|_1,\\ \text{s.t.}\quad & \|D\|_F\leqslant1. \end{aligned} $$
 
 令 $f(X,D)=\dfrac{1}{2n}\|DX-A\|_F^2$，我们有
 
@@ -2416,7 +2416,7 @@ $$\|A-XY\|_F^2,$$
 
 我们考虑如下优化问题
 
-$$\begin{aligned}\min_{X\in\mathbb{R}^{d\times p},\ Y\in\mathbb{R}^{p\times n}}\quad & \|A-XY\|_F^2,\\\text{s.t.}\quad & X\geqslant0,\ Y\geqslant0,\end{aligned}\tag{4.6.1}$$
+$$ \begin{aligned} \min_{X\in\mathbb{R}^{d\times p},\ Y\in\mathbb{R}^{p\times n}}\quad & \|A-XY\|_F^2,\\ \text{s.t.}\quad & X\geqslant0,\ Y\geqslant0, \end{aligned}\tag{4.6.1} $$
 
 其中“$\geqslant0$”表示矩阵的每个元素是非负的。
 
@@ -2424,7 +2424,7 @@ $$\begin{aligned}\min_{X\in\mathbb{R}^{d\times p},\ Y\in\mathbb{R}^{p\times n}}\
 
 我们称问题 (4.6.1) 为基本的非负矩阵分解模型。根据具体应用的不同，有时还考虑带正则项的非负矩阵分解模型
 
-$$\begin{aligned}\min_{X\in\mathbb{R}^{d\times p},\ Y\in\mathbb{R}^{p\times n}}\quad & \|A-XY\|_F^2+\alpha r_1(X)+\beta r_2(Y),\\\text{s.t.}\quad & X\geqslant0,\ Y\geqslant0,\end{aligned}\tag{4.6.2}$$
+$$ \begin{aligned} \min_{X\in\mathbb{R}^{d\times p},\ Y\in\mathbb{R}^{p\times n}}\quad & \|A-XY\|_F^2+\alpha r_1(X)+\beta r_2(Y),\\ \text{s.t.}\quad & X\geqslant0,\ Y\geqslant0, \end{aligned}\tag{4.6.2} $$
 
 其中 $r_1(X)$ 和 $r_2(Y)$ 是正则项，$\alpha,\beta>0$ 是用来权衡拟合项和正则项的正则化参数。比如，如果 $Y$ 的列是稀疏的，那么每一个观测值都可以用少数几个基向量来表示。相应地，我们可以惩罚 $Y$ 的每一列的 $\ell_1$ 范数。为了保证基向量的线性无关性，往往还要求 $X$ 的列之间是相互正交的。此外，如果数据矩阵 $A$ 分布在一个低维的非线性流形上，则考虑流形或者图上的非负矩阵分解模型。
 
@@ -2434,11 +2434,11 @@ $$\begin{aligned}\min_{X\in\mathbb{R}^{d\times p},\ Y\in\mathbb{R}^{p\times n}}\
 
 给定对称矩阵 $C\in\mathcal{S}^n$ 和非负对称权重矩阵 $H\in\mathcal{S}^n$，低秩相关系数矩阵估计问题是从给定的矩阵 $C$ 出发，求解一个秩小于等于 $p$ 的相关系数矩阵 $X$，使得在结合了权重矩阵的某种度量下最小化：
 
-$$\begin{aligned}\min_{X\succeq0}\quad & \frac{1}{2}\left\|H\odot(X-C)\right\|_F^2,\\\text{s.t.}\quad & X_{ii}=1,\quad i=1,2,\cdots,n,\\& \mathrm{rank}(X)\leqslant p.\end{aligned}\tag{4.6.3}$$
+$$ \begin{aligned} \min_{X\succeq0}\quad & \frac{1}{2}\left\|H\odot(X-C)\right\|_F^2,\\ \text{s.t.}\quad & X_{ii}=1,\quad i=1,2,\cdots,n,\\ & \mathrm{rank}(X)\leqslant p. \end{aligned}\tag{4.6.3} $$
 
 将 $X$ 上的秩约束 $\mathrm{rank}(X)\leqslant p$ 表示为 $X=V^{\mathrm{T}}V$，其中 $V=[V_1,V_2,\cdots,V_n]\in\mathbb{R}^{p\times n}$，问题 (4.6.3) 可以转化为多球约束的四次多项式优化问题
 
-$$\begin{aligned}\min_{V\in\mathbb{R}^{p\times n}}\quad & \frac{1}{2}\left\|H\odot\left(V^{\mathrm{T}}V-C\right)\right\|_F^2,\\\text{s.t.}\quad & \|V_i\|_2=1,\quad i=1,2,\cdots,n.\end{aligned}$$
+$$ \begin{aligned} \min_{V\in\mathbb{R}^{p\times n}}\quad & \frac{1}{2}\left\|H\odot\left(V^{\mathrm{T}}V-C\right)\right\|_F^2,\\ \text{s.t.}\quad & \|V_i\|_2=1,\quad i=1,2,\cdots,n. \end{aligned} $$
 
 **例 (电子结构计算)** @145
 
@@ -2472,7 +2472,7 @@ $$\min_{X\in\mathbb{C}^{n\times n_e}}\ E_{\mathrm{KS}}(X)\qquad\text{s.t.}\quad 
 
 不同于线性规划，整数规划要求优化变量必须取整数值，而不能是分数值。一般形式如下：
 
-$$\begin{aligned}\min\quad & c^{\top}x\\\text{s.t.}\quad & Ax\leqslant b,\\& x_i\geqslant0,\quad i=1,2,\cdots,n,\\& x_i\in\mathbb{Z},\quad i=1,2,\cdots,n,\end{aligned}$$
+$$ \begin{aligned} \min\quad & c^{\top}x\\ \text{s.t.}\quad & Ax\leqslant b,\\ & x_i\geqslant0,\quad i=1,2,\cdots,n,\\ & x_i\in\mathbb{Z},\quad i=1,2,\cdots,n, \end{aligned} $$
 
 其中 $A\in\mathbb{R}^{m\times n}$，$c\in\mathbb{R}^n$，$b\in\mathbb{R}^m$ 是给定的矩阵和向量，$\mathbb{Z}$ 是整数集合。如果只要求部分 $x_i$ 是整数，该问题被称为混合整数规划问题。整数规划问题广泛存在于资本预算（决策变量的取值于 $\{0,1\}$）、仓库位置选取、调度问题等不同的应用中。
 
@@ -2482,7 +2482,7 @@ $$\begin{aligned}\min\quad & c^{\top}x\\\text{s.t.}\quad & Ax\leqslant b,\\& x_i
 
 在经典的资本预算问题中，我们需要对一些潜在的投资进行选择。选择合适的工厂位置或者对现有资本进行分配，放弃一些没有意义的项目，也就是决策变量 $x_j=0$ 或者 1，意味着第 $j$ 个投资被拒绝或者接受。假设 $c_j$ 为投资 $j$ 项目的回报，$a_{ij}$ 为将资源 $i$（例如现金或者人手）用在项目 $j$ 上的数量。那么资本预算问题可以表示为
 
-$$\begin{aligned}\max\quad & \sum_{j=1}^{n}c_jx_j\\\text{s.t.}\quad & \sum_{j=1}^{n}a_{ij}x_j\leqslant b_i,\quad i=1,\cdots,m\\& x_j=0\ \text{或者}\ 1,\end{aligned}$$
+$$ \begin{aligned} \max\quad & \sum_{j=1}^{n}c_jx_j\\ \text{s.t.}\quad & \sum_{j=1}^{n}a_{ij}x_j\leqslant b_i,\quad i=1,\cdots,m\\ & x_j=0\ \text{或者}\ 1, \end{aligned} $$
 
 即在有限的资源 $b_i$ 下找到一个投资项目使得回报在所有投资中最大化。
 
@@ -2500,7 +2500,7 @@ $$c_{ij}=\text{从仓库 } i \text{ 运输物资到消费者 } j \text{ 的运�
 
 该问题有三个条件：(1) 消费者的需求 $d_j$ 必须被满足；(2) 只有已修建的仓库才能提供物资运输，如果仓库 $i$ 未被修建（$y_i=0$），那么 $x_{ij}=0$；(3) 每个仓库 $i$ 的容量（所能提供的物资数量）是有限的，即 $\displaystyle\sum_{j=1}^{n}x_{ij}\leqslant u_i$，其中 $u_i>0$ 为仓库的容量。那么仓库位置选取问题可以写为
 
-$$\begin{aligned}\min_{x,y}\quad & \sum_{i=1}^{m}\sum_{j=1}^{n}c_{ij}x_{ij}+\sum_{i=1}^{m}f_iy_i,\\\text{s.t.}\quad & \sum_{i=1}^{m}x_{ij}=d_j,\quad j=1,2,\cdots,n,\\& \sum_{j=1}^{n}x_{ij}-y_iu_i\leqslant0,\quad i=1,2,\cdots,m,\\& x_{ij}\geqslant0,\quad i=1,\cdots,m;\ j=1,2,\cdots,n,\\& y_i=0\ \text{或者}\ 1,\quad i=1,\cdots,m,\end{aligned}$$
+$$ \begin{aligned} \min_{x,y}\quad & \sum_{i=1}^{m}\sum_{j=1}^{n}c_{ij}x_{ij}+\sum_{i=1}^{m}f_iy_i,\\ \text{s.t.}\quad & \sum_{i=1}^{m}x_{ij}=d_j,\quad j=1,2,\cdots,n,\\ & \sum_{j=1}^{n}x_{ij}-y_iu_i\leqslant0,\quad i=1,2,\cdots,m,\\ & x_{ij}\geqslant0,\quad i=1,\cdots,m;\ j=1,2,\cdots,n,\\ & y_i=0\ \text{或者}\ 1,\quad i=1,\cdots,m, \end{aligned} $$
 
 其中，第一行约束表示运输的物资数量需要满足消费者的需求。第二行约束有两个作用：如果仓库 $i$ 未被修建（$y_i=0$），那么所能运输的物资数量为 0（对应条件 (2)）；如果仓库 $i$ 已被修建（$y_i=1$），则从仓库 $i$ 运输的物资总量不能高于该仓库的容量上限（对应条件 (3)）。在这个模型中运输量应该满足非负性，且仓库修建与否为整数变量。
 
@@ -2512,7 +2512,7 @@ $$x_{ij}=\begin{cases}1, & \text{如果他从城市 } i \text{ 到城市 } j,\\ 
 
 并令 $u_i$，$i=2,3,\cdots,n$ 为辅助变量，旅行商问题可以写成如下整数规划的形式：
 
-$$\begin{aligned}\min\quad & \sum_{i=1}^{n}\sum_{j=1,j\neq i}^{n}c_{ij}x_{ij},\\\text{s.t.}\quad & \sum_{i=1,i\neq j}^{n}x_{ij}=1,\quad j=1,2,\cdots,n,\\& \sum_{j=1,j\neq i}^{n}x_{ij}=1,\quad i=1,2,\cdots,n,\\& x_{ij}\in\{0,1\},\quad i,j=1,2,\cdots,n,\\& u_i-u_j+nx_{ij}\leqslant n-1,\quad 2\leqslant i\neq j\leqslant n,\\& u_i\in\{1,2,\cdots,n\},\quad 2\leqslant i\leqslant n,\end{aligned}$$
+$$ \begin{aligned} \min\quad & \sum_{i=1}^{n}\sum_{j=1,j\neq i}^{n}c_{ij}x_{ij},\\ \text{s.t.}\quad & \sum_{i=1,i\neq j}^{n}x_{ij}=1,\quad j=1,2,\cdots,n,\\ & \sum_{j=1,j\neq i}^{n}x_{ij}=1,\quad i=1,2,\cdots,n,\\ & x_{ij}\in\{0,1\},\quad i,j=1,2,\cdots,n,\\ & u_i-u_j+nx_{ij}\leqslant n-1,\quad 2\leqslant i\neq j\leqslant n,\\ & u_i\in\{1,2,\cdots,n\},\quad 2\leqslant i\leqslant n, \end{aligned} $$
 
 其中，第一个约束和第二个约束要求每个城市在路径中必须且只能出现一次，而且路径中不能出现自环（即从一个城市必须前往另一不同城市）。最后两行约束保证了此“路径”只有一个连通分支，而不是由多条不相交的路径合成的。
 
@@ -2556,7 +2556,7 @@ $$\begin{aligned}\min\quad & \sum_{i=1}^{n}\sum_{j=1,j\neq i}^{n}c_{ij}x_{ij},\\
 
 CVX 是一个以 MATLAB 为基础的优化模型语言，用来求解凸优化问题。它允许将优化问题的目标函数以及约束用 MATLAB 语法来写。比如考虑如下优化问题：
 
-$$\begin{aligned}\min\quad & \|Ax-b\|_2,\\\text{s.t.}\quad & Cx=d,\\& \|x\|_\infty\leqslant e,\end{aligned}$$
+$$ \begin{aligned} \min\quad & \|Ax-b\|_2,\\ \text{s.t.}\quad & Cx=d,\\ & \|x\|_\infty\leqslant e, \end{aligned} $$
 
 它可以写成
 
@@ -2580,7 +2580,7 @@ AMPL（a mathematical programming language）是用来描述高复杂度的大�
 
 考虑优化问题 (1.1.1)
 
-$$\begin{aligned}\min_{x\in\mathbb{R}^n}\ & f(x),\\\text{s.t.}\ & x\in\mathcal{X},\end{aligned}\tag{5.1.1}$$
+$$ \begin{aligned} \min_{x\in\mathbb{R}^n}\ & f(x),\\ \text{s.t.}\ & x\in\mathcal{X}, \end{aligned} \tag{5.1.1} $$
 
 其中 $\mathcal{X}\subseteq\mathbb{R}^n$ 为可行域。对于问题 (5.1.1)，首先要考虑的是最优解的存在性，然后考虑如何求出其最优解。在数学分析课程中，我们学习过 Weierstrass 定理，即定义在紧集上的连续函数一定存在最大（最小）值点。而在许多实际问题中，定义域可能不是紧的，目标函数也不一定连续，因此需要将此定理推广来保证最优化问题解的存在性。
 
@@ -2592,13 +2592,13 @@ $$\begin{aligned}\min_{x\in\mathbb{R}^n}\ & f(x),\\\text{s.t.}\ & x\in\mathcal{X
 
 (2) 存在一个常数 $\bar\gamma$ 使得下水平集
 
-$$C_{\bar\gamma}\overset{\text{def}}{=}\{x\in\mathcal{X}: f(x)\leqslant\bar\gamma\}$$
+$$ C_{\bar\gamma}\overset{\text{def}}{=}\{x\in\mathcal{X}: f(x)\leqslant\bar\gamma\} $$
 
 是非空且有界的；
 
 (3) $f$ 是强制的，即对于任一满足 $\|x^k\|\to+\infty$ 的点列 $\{x^k\}\subset\mathcal{X}$，都有
 
-$$\lim_{k\to\infty}f(x^k)=+\infty,$$
+$$ \lim_{k\to\infty}f(x^k)=+\infty, $$
 
 那么，问题 (5.1.1) 的最小值点集 $\{x\in\mathcal{X}\mid f(x)\leqslant f(y),\ \forall y\in\mathcal{X}\}$ 是非空且紧的。
 
@@ -2616,7 +2616,7 @@ $$\lim_{k\to\infty}f(x^k)=+\infty,$$
 
 给定凸集 $\mathcal{X}$ 和函数 $f:\mathcal{X}\to(-\infty,+\infty]$。如果对任意的 $x\neq y$ 和 $\lambda\in(0,1)$，都有
 
-$$f(\lambda x+(1-\lambda)y)<\max\{f(x),f(y)\},$$
+$$ f(\lambda x+(1-\lambda)y)<\max\{f(x),f(y)\}, $$
 
 那么我们称函数 $f$ 是强拟凸的。
 
@@ -2628,7 +2628,7 @@ $$f(\lambda x+(1-\lambda)y)<\max\{f(x),f(y)\},$$
 
 对于问题 (5.1.1)，设 $\mathcal{X}$ 是 $\mathbb{R}^n$ 的一个非空、紧且凸的子集，如果 $f:\mathcal{X}\to(-\infty,+\infty]$ 是适当、闭且强拟凸函数，那么存在唯一的 $x^*$ 满足
 
-$$f(x^*)<f(x),\quad \forall x\in\mathcal{X}\backslash\{x^*\}.$$
+$$ f(x^*)<f(x),\quad \forall x\in\mathcal{X}\backslash\{x^*\}. $$
 
 **注 (强凸与强拟凸)** @162
 
@@ -2640,7 +2640,7 @@ $$f(x^*)<f(x),\quad \forall x\in\mathcal{X}\backslash\{x^*\}.$$
 
 无约束可微优化问题通常表示为如下形式：
 
-$$\min_{x\in\mathbb{R}^n}\ f(x),\tag{5.2.1}$$
+$$ \min_{x\in\mathbb{R}^n}\ f(x), \tag{5.2.1} $$
 
 其中假设 $f$ 是连续可微函数。第一章已经引入了局部最优解和全局最优解的定义。给定一个点 $\bar x$，我们想要知道这个点是否是函数 $f$ 的一个局部极小解或者全局极小解。如果从定义出发，需要对其邻域内的所有点进行判断，这是不可行的。因此，需要一个更简单的方式来验证一个点是否为极小值点，即最优性条件。它主要包含一阶最优性条件和二阶最优性条件。
 
@@ -2652,13 +2652,13 @@ $$\min_{x\in\mathbb{R}^n}\ f(x),\tag{5.2.1}$$
 
 对于可微函数 $f$ 和点 $x\in\mathbb{R}^n$，如果存在向量 $d$ 满足
 
-$$\nabla f(x)^{\mathrm{T}}d<0,$$
+$$ \nabla f(x)^{\mathrm{T}}d<0, $$
 
 那么称 $d$ 为 $f$ 在点 $x$ 处的一个下降方向。
 
 由下降方向的定义，容易验证：如果 $f$ 在点 $x$ 处存在一个下降方向 $d$，那么对于任意的 $T>0$，存在 $t\in(0,T]$，使得
 
-$$f(x+td)<f(x).$$
+$$ f(x+td)<f(x). $$
 
 因此，在局部最优点处不能有下降方向。由此得到如下一阶必要条件。
 
@@ -2666,7 +2666,7 @@ $$f(x+td)<f(x).$$
 
 假设 $f$ 在全空间 $\mathbb{R}^n$ 可微。如果 $x^*$ 是一个局部极小点，那么
 
-$$\nabla f(x^*)=0.$$
+$$ \nabla f(x^*)=0. $$
 
 **注 (稳定点)** @163
 
@@ -2678,11 +2678,11 @@ $$\nabla f(x^*)=0.$$
 
 假设 $f$ 在点 $x$ 的一个开邻域内是二阶连续可微的，在点 $x$ 附近考虑泰勒展开
 
-$$f(x+d)=f(x)+\nabla f(x)^{\mathrm{T}}d+\frac12 d^{\mathrm{T}}\nabla^2 f(x)d+o(\|d\|^2).$$
+$$ f(x+d)=f(x)+\nabla f(x)^{\mathrm{T}}d+\frac12 d^{\mathrm{T}}\nabla^2 f(x)d+o(\|d\|^2). $$
 
 当一阶必要条件满足时，$\nabla f(x)=0$，上面的展开式简化为
 
-$$f(x+d)=f(x)+\frac12 d^{\mathrm{T}}\nabla^2 f(x)d+o(\|d\|^2).\tag{5.2.2}$$
+$$ f(x+d)=f(x)+\frac12 d^{\mathrm{T}}\nabla^2 f(x)d+o(\|d\|^2). \tag{5.2.2} $$
 
 **定理 5.4** @164
 
@@ -2690,11 +2690,11 @@ $$f(x+d)=f(x)+\frac12 d^{\mathrm{T}}\nabla^2 f(x)d+o(\|d\|^2).\tag{5.2.2}$$
 
 **二阶必要条件** 如果 $x^*$ 是 $f$ 的一个局部极小点，那么
 
-$$\nabla f(x^*)=0,\quad \nabla^2 f(x^*)\succeq 0;$$
+$$ \nabla f(x^*)=0,\quad \nabla^2 f(x^*)\succeq 0; $$
 
 **二阶充分条件** 如果在点 $x^*$ 处有
 
-$$\nabla f(x^*)=0,\quad \nabla^2 f(x^*)\succ 0$$
+$$ \nabla f(x^*)=0,\quad \nabla^2 f(x^*)\succ 0 $$
 
 成立，那么 $x^*$ 为 $f$ 的一个局部极小点。
 
@@ -2712,11 +2712,11 @@ $$\nabla f(x^*)=0,\quad \nabla^2 f(x^*)\succ 0$$
 
 线性最小二乘问题可以表示为
 
-$$\min_{x\in\mathbb{R}^n}\ f(x)\overset{\text{def}}{=}\frac12\|b-Ax\|_2^2,$$
+$$ \min_{x\in\mathbb{R}^n}\ f(x)\overset{\text{def}}{=}\frac12\|b-Ax\|_2^2, $$
 
 其中 $A\in\mathbb{R}^{m\times n},\ b\in\mathbb{R}^m$ 分别是给定的矩阵和向量。易知 $f(x)$ 是可微且凸的，因此 $x^*$ 为一个全局最优解当且仅当
 
-$$\nabla f(x^*)=A^{\mathrm{T}}(Ax^*-b)=0.$$
+$$ \nabla f(x^*)=A^{\mathrm{T}}(Ax^*-b)=0. $$
 
 因此，线性最小二乘问题本质上等于求解线性方程组，可以利用数值代数知识对其有效求解。
 
@@ -2724,25 +2724,25 @@ $$\nabla f(x^*)=A^{\mathrm{T}}(Ax^*-b)=0.$$
 
 非线性最小二乘问题，如实数情形的相位恢复问题 (3.6.4)，其一般形式如下：
 
-$$\min_{x\in\mathbb{R}^n}\ f(x)\overset{\text{def}}{=}\sum_{i=1}^m r_i^2(x),\tag{5.2.3}$$
+$$ \min_{x\in\mathbb{R}^n}\ f(x)\overset{\text{def}}{=}\sum_{i=1}^m r_i^2(x), \tag{5.2.3} $$
 
 其中非线性函数 $r_i(x)=(a_i^{\mathrm{T}}x)^2-b_i^2,\ i=1,2,\cdots,m$。这个问题是非凸的。在点 $x\in\mathbb{R}^n$ 处，有
 
-$$\nabla f(x)=2\sum_{i=1}^m r_i(x)\nabla r_i(x)=4\sum_{i=1}^m\big((a_i^{\mathrm{T}}x)^2-b_i^2\big)(a_i^{\mathrm{T}}x)a_i,$$
+$$ \nabla f(x)=2\sum_{i=1}^m r_i(x)\nabla r_i(x)=4\sum_{i=1}^m\big((a_i^{\mathrm{T}}x)^2-b_i^2\big)(a_i^{\mathrm{T}}x)a_i, $$
 
-$$\begin{aligned}\nabla^2 f(x)&=2\sum_{i=1}^m\nabla r_i(x)\nabla r_i(x)^{\mathrm{T}}+2\sum_{i=1}^m r_i(x)\nabla^2 r_i(x)\\&=8\sum_{i=1}^m(a_i^{\mathrm{T}}x)^2a_ia_i^{\mathrm{T}}+4\sum_{i=1}^m\big((a_i^{\mathrm{T}}x)^2-b_i^2\big)a_ia_i^{\mathrm{T}}\\&=\sum_{i=1}^m\big(12(a_i^{\mathrm{T}}x)^2-4b_i^2\big)a_ia_i^{\mathrm{T}}.\end{aligned}$$
+$$ \begin{aligned} \nabla^2 f(x)&=2\sum_{i=1}^m\nabla r_i(x)\nabla r_i(x)^{\mathrm{T}}+2\sum_{i=1}^m r_i(x)\nabla^2 r_i(x)\\ &=8\sum_{i=1}^m(a_i^{\mathrm{T}}x)^2a_ia_i^{\mathrm{T}}+4\sum_{i=1}^m\big((a_i^{\mathrm{T}}x)^2-b_i^2\big)a_ia_i^{\mathrm{T}}\\ &=\sum_{i=1}^m\big(12(a_i^{\mathrm{T}}x)^2-4b_i^2\big)a_ia_i^{\mathrm{T}}. \end{aligned} $$
 
 如果 $x^*$ 为问题 (5.2.3) 的一个局部最优解，那么其满足一阶必要条件 $\nabla f(x^*)=0$，即
 
-$$\sum_{i=1}^m\big((a_i^{\mathrm{T}}x^*)^2-b_i^2\big)(a_i^{\mathrm{T}}x^*)a_i=0,$$
+$$ \sum_{i=1}^m\big((a_i^{\mathrm{T}}x^*)^2-b_i^2\big)(a_i^{\mathrm{T}}x^*)a_i=0, $$
 
 以及二阶必要条件 $\nabla^2 f(x^*)\succeq 0$，即
 
-$$\sum_{i=1}^m\big(12(a_i^{\mathrm{T}}x^*)^2-4b_i^2\big)a_ia_i^{\mathrm{T}}\succeq 0.$$
+$$ \sum_{i=1}^m\big(12(a_i^{\mathrm{T}}x^*)^2-4b_i^2\big)a_ia_i^{\mathrm{T}}\succeq 0. $$
 
 如果一个点 $x^{\#}$ 满足二阶充分条件 $\nabla f(x^{\#})=0,\ \nabla^2 f(x^{\#})\succ 0$，即
 
-$$\sum_{i=1}^m\big((a_i^{\mathrm{T}}x^{\#})^2-b_i^2\big)(a_i^{\mathrm{T}}x^{\#})a_i=0,\qquad\sum_{i=1}^m\big(12(a_i^{\mathrm{T}}x^{\#})^2-4b_i^2\big)a_ia_i^{\mathrm{T}}\succ 0,$$
+$$ \sum_{i=1}^m\big((a_i^{\mathrm{T}}x^{\#})^2-b_i^2\big)(a_i^{\mathrm{T}}x^{\#})a_i=0,\qquad \sum_{i=1}^m\big(12(a_i^{\mathrm{T}}x^{\#})^2-4b_i^2\big)a_ia_i^{\mathrm{T}}\succ 0, $$
 
 那么 $x^{\#}$ 为问题 (5.2.3) 的一个局部最优解。
 
@@ -2752,7 +2752,7 @@ $$\sum_{i=1}^m\big((a_i^{\mathrm{T}}x^{\#})^2-b_i^2\big)(a_i^{\mathrm{T}}x^{\#})
 
 本节仍考虑问题 (5.2.1)
 
-$$\min_{x\in\mathbb{R}^n}\ f(x),$$
+$$ \min_{x\in\mathbb{R}^n}\ f(x), $$
 
 但其中 $f(x)$ 为不可微函数。很多实际问题的目标函数不是光滑的，例如 $f(x)=\|x\|_1$。对于此类问题，由于目标函数可能不存在梯度和海瑟矩阵，因此第 5.2 节中的一阶和二阶条件不适用。此时必须使用其他最优性条件来判断不可微问题的最优点。
 
@@ -2764,7 +2764,7 @@ $$\min_{x\in\mathbb{R}^n}\ f(x),$$
 
 假设 $f$ 是适当且凸的函数，则 $x^*$ 为问题 (5.2.1) 的一个全局极小点当且仅当
 
-$$0\in\partial f(x^*).$$
+$$ 0\in\partial f(x^*). $$
 
 **注 (凸问题最优性条件的意义)** @167
 
@@ -2774,7 +2774,7 @@ $$0\in\partial f(x^*).$$
 
 在实际问题中，目标函数不一定是凸函数，但它可以写成一个光滑函数与一个非光滑凸函数的和，例如第 4.3 节介绍的复合优化问题就具有这样的形式。其中目标函数的光滑项可能是凸的，比如 LASSO 问题、图像去噪问题和盲反卷积问题；也可能是非凸的，例如字典学习问题和神经网络的损失函数。因此研究此类问题的最优性条件十分必要。考虑一般复合优化问题
 
-$$\min_{x\in\mathbb{R}^n}\ \psi(x)\overset{\text{def}}{=}f(x)+h(x),\tag{5.3.1}$$
+$$ \min_{x\in\mathbb{R}^n}\ \psi(x)\overset{\text{def}}{=}f(x)+h(x), \tag{5.3.1} $$
 
 其中 $f$ 为光滑函数（可能非凸），$h$ 为凸函数（可能非光滑）。对于其任何局部最优解，有如下一阶必要条件。
 
@@ -2782,7 +2782,7 @@ $$\min_{x\in\mathbb{R}^n}\ \psi(x)\overset{\text{def}}{=}f(x)+h(x),\tag{5.3.1}$$
 
 令 $x^*$ 为问题 (5.3.1) 的一个局部极小点，那么
 
-$$-\nabla f(x^*)\in\partial h(x^*),$$
+$$ -\nabla f(x^*)\in\partial h(x^*), $$
 
 其中 $\partial h(x^*)$ 为凸函数 $h$ 在点 $x^*$ 处的次梯度集合。
 
@@ -2800,13 +2800,13 @@ $$-\nabla f(x^*)\in\partial h(x^*),$$
 
 (1) 对给定的 $x\in\operatorname{dom} f$，满足如下条件的所有向量 $u\in\mathbb{R}^n$ 的集合定义为 $f$ 在点 $x$ 处的 Fréchet 次微分：
 
-$$\liminf_{y\to x,\,y\neq x}\frac{f(y)-f(x)-\langle u,y-x\rangle}{\|y-x\|}\geqslant 0,$$
+$$ \liminf_{y\to x,\,y\neq x}\frac{f(y)-f(x)-\langle u,y-x\rangle}{\|y-x\|}\geqslant 0, $$
 
 记为 $\hat\partial f(x)$。当 $x\notin\operatorname{dom} f$ 时，将 $\hat\partial f(x)$ 定义为空集 $\varnothing$。
 
 (2) $f$ 在点 $x\in\mathbb{R}^n$ 处的极限次微分（或简称为次微分）定义为
 
-$$\partial f(x)=\{u\in\mathbb{R}^n:\ \exists x^k\to x,\ f(x^k)\to f(x),\ u^k\in\hat\partial f(x^k)\to u\}.$$
+$$ \partial f(x)=\{u\in\mathbb{R}^n:\ \exists x^k\to x,\ f(x^k)\to f(x),\ u^k\in\hat\partial f(x^k)\to u\}. $$
 
 即极限次微分是通过对 $x$ 附近的点处的 Fréchet 次微分取极限得到的。
 
@@ -2816,7 +2816,7 @@ $$\partial f(x)=\{u\in\mathbb{R}^n:\ \exists x^k\to x,\ f(x^k)\to f(x),\ u^k\in\
 
 (2) 和凸函数次微分（定义 2.21）比较可知，凸函数的次梯度要求不等式
 
-$$f(y)\geqslant f(x)+\langle g,y-x\rangle,\quad g\in\partial f(x)$$
+$$ f(y)\geqslant f(x)+\langle g,y-x\rangle,\quad g\in\partial f(x) $$
 
 在定义域内全局成立，而对非凸函数只需要其在极限意义下成立即可。
 
@@ -2826,7 +2826,7 @@ $$f(y)\geqslant f(x)+\langle g,y-x\rangle,\quad g\in\partial f(x)$$
 
 设 $f$ 是适当下半连续函数。若 $x^*$ 是 $f(x)$ 的一个局部极小点，则有
 
-$$0\in\partial f(x^*).$$
+$$ 0\in\partial f(x^*). $$
 
 #### 5.3.4 实例 @170
 
@@ -2834,15 +2834,15 @@ $$0\in\partial f(x^*).$$
 
 $\ell_1$ 范数优化问题的一般形式可以写成
 
-$$\min_{x\in\mathbb{R}^n}\ \psi(x)\overset{\text{def}}{=}f(x)+\mu\|x\|_1,\tag{5.3.2}$$
+$$ \min_{x\in\mathbb{R}^n}\ \psi(x)\overset{\text{def}}{=}f(x)+\mu\|x\|_1, \tag{5.3.2} $$
 
 其中 $f(x):\mathbb{R}^n\to\mathbb{R}$ 为光滑函数，正则系数 $\mu>0$ 用来调节解的稀疏度。尽管 $\|x\|_1$ 不是可微的，但可以计算其次微分
 
-$$\partial_i\|x\|_1=\begin{cases}\{1\}, & x_i>0,\\[-1,1], & x_i=0,\\\{-1\}, & x_i<0.\end{cases}$$
+$$ \partial_i\|x\|_1= \begin{cases} \{1\}, & x_i>0,\\ [-1,1], & x_i=0,\\ \{-1\}, & x_i<0. \end{cases} $$
 
 因此，如果 $x^*$ 是问题 (5.3.2) 的一个局部最优解，那么其满足 $-\nabla f(x^*)\in\mu\partial\|x^*\|_1$，即
 
-$$\nabla_i f(x^*)=\begin{cases}-\mu, & x_i^*>0,\\a\in[-\mu,\mu], & x_i^*=0,\\\mu, & x_i^*<0.\end{cases}$$
+$$ \nabla_i f(x^*)= \begin{cases} -\mu, & x_i^*>0,\\ a\in[-\mu,\mu], & x_i^*=0,\\ \mu, & x_i^*<0. \end{cases} $$
 
 进一步地，如果 $f(x)$ 是凸的（比如在 LASSO 问题中 $f(x)=\frac12\|Ax-b\|^2$），那么满足上式的 $x^*$ 就是问题 (5.3.2) 的全局最优解。
 
@@ -2852,11 +2852,11 @@ $$\nabla_i f(x^*)=\begin{cases}-\mu, & x_i^*>0,\\a\in[-\mu,\mu], & x_i^*=0,\\\mu
 
 这一节以及本章之后的章节考虑一般的约束优化问题
 
-$$\begin{aligned}\min_{x\in\mathbb{R}^n}\ & f(x),\\\text{s.t.}\ & c_i(x)\leqslant 0,\quad i\in\mathcal{I},\\& c_i(x)=0,\quad i\in\mathcal{E},\end{aligned}\tag{5.4.1}$$
+$$ \begin{aligned} \min_{x\in\mathbb{R}^n}\ & f(x),\\ \text{s.t.}\ & c_i(x)\leqslant 0,\quad i\in\mathcal{I},\\ & c_i(x)=0,\quad i\in\mathcal{E}, \end{aligned} \tag{5.4.1} $$
 
 其中 $c_i$ 为定义在 $\mathbb{R}^n$ 或其子集上的实值函数，$\mathcal{I}$ 和 $\mathcal{E}$ 分别表示不等式约束和等式约束对应的下标集合且各下标互不相同。这个问题的可行域定义为
 
-$$\mathcal{X}=\{x\in\mathbb{R}^n\mid c_i(x)\leqslant 0,\ i\in\mathcal{I}\ \text{且}\ c_i(x)=0,\ i\in\mathcal{E}\}.$$
+$$ \mathcal{X}=\{x\in\mathbb{R}^n\mid c_i(x)\leqslant 0,\ i\in\mathcal{I}\ \text{且}\ c_i(x)=0,\ i\in\mathcal{E}\}. $$
 
 我们可以通过将 $\mathcal{X}$ 的示性函数加到目标函数中得到无约束优化问题。但是转化后问题的目标函数是不连续的、不可微的以及不是有限的，这导致难以分析其理论性质以及设计有效的算法。对于约束优化问题，可行性问题是应该最先考虑的。因此，对其约束集合的几何性质以及代数性质的分析尤为重要。
 
@@ -2868,7 +2868,7 @@ $$\mathcal{X}=\{x\in\mathbb{R}^n\mid c_i(x)\leqslant 0,\ i\in\mathcal{I}\ \text{
 
 记 $m=|\mathcal{I}|,\ p=|\mathcal{E}|$，则拉格朗日函数的具体形式 $L:\mathbb{R}^n\times\mathbb{R}^m_+\times\mathbb{R}^p\to\mathbb{R}$ 定义为
 
-$$L(x,\lambda,\nu)=f(x)+\sum_{i\in\mathcal{I}}\lambda_ic_i(x)+\sum_{i\in\mathcal{E}}\nu_ic_i(x).\tag{5.4.2}$$
+$$ L(x,\lambda,\nu)=f(x)+\sum_{i\in\mathcal{I}}\lambda_ic_i(x)+\sum_{i\in\mathcal{E}}\nu_ic_i(x). \tag{5.4.2} $$
 
 注意，函数 (5.4.2) 中的加号也可以修改为减号，同时调整相应乘子的约束条件使得上述下界原则满足即可。
 
@@ -2876,7 +2876,7 @@ $$L(x,\lambda,\nu)=f(x)+\sum_{i\in\mathcal{I}}\lambda_ic_i(x)+\sum_{i\in\mathcal
 
 拉格朗日对偶函数 $g:\mathbb{R}^m_+\times\mathbb{R}^p\to[-\infty,+\infty)$ 是拉格朗日函数 $L(x,\lambda,\nu)$ 对于 $\lambda\in\mathbb{R}^m_+,\ \nu\in\mathbb{R}^p$ 关于 $x$ 取的下确界：
 
-$$g(\lambda,\nu)=\inf_{x\in\mathbb{R}^n}L(x,\lambda,\nu).\tag{5.4.3}$$
+$$ g(\lambda,\nu)=\inf_{x\in\mathbb{R}^n}L(x,\lambda,\nu). \tag{5.4.3} $$
 
 固定 $(\lambda,\nu)$，如果拉格朗日函数关于 $x$ 无界，那么对偶函数在 $(\lambda,\nu)$ 处的取值为 $-\infty$。因为拉格朗日对偶函数是逐点定义的一族关于 $(\lambda,\nu)$ 的仿射函数的下确界，根据定理 2.13 的 (5) 可知其为凹函数（无论原始问题是否为凸问题）。这个性质十分重要，它能帮助推导出许多拥有良好性质的算法。
 
@@ -2886,17 +2886,17 @@ $$g(\lambda,\nu)=\inf_{x\in\mathbb{R}^n}L(x,\lambda,\nu).\tag{5.4.3}$$
 
 对于任意的 $\lambda\geqslant 0$ 和 $\nu$，拉格朗日对偶函数给出了优化问题 (5.4.1) 最优值的一个下界，即
 
-$$g(\lambda,\nu)\leqslant p^*,\quad \lambda\geqslant 0.\tag{5.4.4}$$
+$$ g(\lambda,\nu)\leqslant p^*,\quad \lambda\geqslant 0. \tag{5.4.4} $$
 
 **注 (拉格朗日对偶问题与对偶间隙)** @173
 
 从拉格朗日对偶函数获得的下界中，哪个是最优的？为了求解该最优的下界，便有如下拉格朗日对偶问题：
 
-$$\max_{\lambda\geqslant 0,\,\nu}\,g(\lambda,\nu)=\max_{\lambda\geqslant 0,\,\nu}\inf_{x\in\mathbb{R}^n}L(x,\lambda,\nu).\tag{5.4.8}$$
+$$ \max_{\lambda\geqslant 0,\,\nu}\,g(\lambda,\nu)=\max_{\lambda\geqslant 0,\,\nu}\inf_{x\in\mathbb{R}^n}L(x,\lambda,\nu). \tag{5.4.8} $$
 
 向量 $\lambda$ 和 $\nu$ 也称为问题 (5.4.1) 的对偶变量或者拉格朗日乘子向量。由于其目标函数的凹性和约束集合的凸性，拉格朗日对偶问题是一个凸优化问题（见注 1.1）。当 $g(\lambda,\nu)=-\infty$ 时，对偶函数提供的 $p^*$ 的下界变得没有实际意义。只有当 $g(\lambda,\nu)>-\infty$ 时，对偶函数生成的关于原始问题最优解 $p^*$ 的下界才是非平凡的。因此规定拉格朗日对偶函数的定义域
 
-$$\operatorname{dom} g=\{(\lambda,\nu)\mid \lambda\geqslant 0,\ g(\lambda,\nu)>-\infty\}.$$
+$$ \operatorname{dom} g=\{(\lambda,\nu)\mid \lambda\geqslant 0,\ g(\lambda,\nu)>-\infty\}. $$
 
 当 $(\lambda,\nu)\in\operatorname{dom} g$ 时，称其为对偶可行解。记对偶问题的最优值为 $q^*$。称 $p^*-q^*\ (\geqslant 0)$ 为对偶间隙。如果对偶间隙为 $0$（$p^*=q^*$），称强对偶原理成立。假设 $(\lambda^*,\nu^*)$ 是使得对偶问题取得最优值的解，称其为对偶最优解或者最优拉格朗日乘子。
 
@@ -2904,11 +2904,11 @@ $$\operatorname{dom} g=\{(\lambda,\nu)\mid \lambda\geqslant 0,\ g(\lambda,\nu)>-
 
 推导拉格朗日对偶问题最重要的是能把拉格朗日对偶函数的具体形式方便地写出来。需要指出的是，拉格朗日对偶问题的写法并不唯一。如果问题 (5.4.1) 中有些约束，比如对应于下标集 $\mathcal{I}_1=\{i_1,i_2,\cdots,i_q\}$ 的不等式约束，比较简单，则可以不把这些约束松弛到拉格朗日函数里。此时拉格朗日函数为
 
-$$L(x,s,\nu)=f(x)+\sum_{i\in\mathcal{I}\backslash\mathcal{I}_1}s_ic_i(x)+\sum_{i\in\mathcal{E}}\nu_ic_i(x),\quad s\geqslant 0,\ c_i(x)\leqslant 0,\ i\in\mathcal{I}_1,\tag{5.4.9}$$
+$$ L(x,s,\nu)=f(x)+\sum_{i\in\mathcal{I}\backslash\mathcal{I}_1}s_ic_i(x)+\sum_{i\in\mathcal{E}}\nu_ic_i(x),\quad s\geqslant 0,\ c_i(x)\leqslant 0,\ i\in\mathcal{I}_1, \tag{5.4.9} $$
 
 相应地，对偶问题为
 
-$$\max_{s\geqslant 0,\,\nu}\left\{\inf_{x\in\mathbb{R}^n}L(x,s,\nu),\quad \text{s.t.}\ c_i(x)\leqslant 0,\ i\in\mathcal{I}_1\right\}.\tag{5.4.10}$$
+$$ \max_{s\geqslant 0,\,\nu}\left\{\inf_{x\in\mathbb{R}^n}L(x,s,\nu),\quad \text{s.t.}\ c_i(x)\leqslant 0,\ i\in\mathcal{I}_1\right\}. \tag{5.4.10} $$
 
 对于强对偶原理满足的凸问题，不同写法的拉格朗日对偶问题是等价的。
 
@@ -2936,11 +2936,11 @@ $$\max_{s\geqslant 0,\,\nu}\left\{\inf_{x\in\mathbb{R}^n}L(x,s,\nu),\quad \text{
 
 适当锥 $K$ 可以诱导出广义不等式，它定义了全空间上的偏序关系：
 
-$$x\preceq_K y\iff y-x\in K.$$
+$$ x\preceq_K y\iff y-x\in K. $$
 
 类似地，可以定义严格广义不等式：
 
-$$x\prec_K y\iff y-x\in\operatorname{int}K.$$
+$$ x\prec_K y\iff y-x\in\operatorname{int}K. $$
 
 本书常用的是 $K=\mathbb{R}^n_+$（非负锥）和 $K=\mathcal{S}^n_+$（半正定锥）。当 $K=\mathbb{R}^n_+$ 时，$x\preceq_K y$ 是之前经常使用的记号 $x\leqslant y$，即 $x$ 每个分量小于等于 $y$ 的对应分量；当 $K=\mathcal{S}^n_+$ 时，$X\preceq_K Y$ 的含义为 $Y-X\succeq 0$，即 $Y-X$ 是半正定矩阵。
 
@@ -2954,7 +2954,7 @@ $$x\prec_K y\iff y-x\in\operatorname{int}K.$$
 
 令 $K$ 为全空间 $\Omega$ 的子集，称集合
 
-$$K^*=\{y\in\Omega\mid \langle x,y\rangle\geqslant 0,\ \forall x\in K\}$$
+$$ K^*=\{y\in\Omega\mid \langle x,y\rangle\geqslant 0,\ \forall x\in K\} $$
 
 为其对偶锥，其中 $\langle\cdot,\cdot\rangle$ 是 $\Omega$ 上的一个内积。
 
@@ -2964,7 +2964,7 @@ $$K^*=\{y\in\Omega\mid \langle x,y\rangle\geqslant 0,\ \forall x\in K\}$$
 
 如果 $K=\mathbb{R}^n_+$，$\Omega=\mathbb{R}^n$ 并且定义 $\langle x,y\rangle=x^{\mathrm{T}}y$，那么易知 $K^*=\mathbb{R}^n_+$。假设 $K=\mathcal{S}^n_+$，$\Omega=\mathcal{S}^n$ 并且定义 $\langle X,Y\rangle=\operatorname{Tr}(XY^{\mathrm{T}})$，可以证明（见习题 5.3）
 
-$$\langle X,Y\rangle\geqslant 0,\ \forall X\in\mathcal{S}^n_+\iff Y\in\mathcal{S}^n_+,$$
+$$ \langle X,Y\rangle\geqslant 0,\ \forall X\in\mathcal{S}^n_+\iff Y\in\mathcal{S}^n_+, $$
 
 即半正定锥的对偶锥仍为半正定锥。此外，称满足 $K=K^*$ 的锥 $K$ 为自对偶锥，因此非负锥和半正定锥都是自对偶锥。
 
@@ -2976,21 +2976,21 @@ $$\langle X,Y\rangle\geqslant 0,\ \forall X\in\mathcal{S}^n_+\iff Y\in\mathcal{S
 
 如果将不等式约束函数换成向量函数，并且推广定义相应的广义不等式约束，可以得到如下形式的优化问题：
 
-$$\begin{aligned}\min_{x\in\mathbb{R}^n}\ & f(x),\\\text{s.t.}\ & c_i(x)\preceq_{K_i}0,\quad i\in\mathcal{I},\\& c_i(x)=0,\quad i\in\mathcal{E},\end{aligned}\tag{5.4.11}$$
+$$ \begin{aligned} \min_{x\in\mathbb{R}^n}\ & f(x),\\ \text{s.t.}\ & c_i(x)\preceq_{K_i}0,\quad i\in\mathcal{I},\\ & c_i(x)=0,\quad i\in\mathcal{E}, \end{aligned} \tag{5.4.11} $$
 
 其中 $f:\mathbb{R}^n\to\mathbb{R}$，$c_i:\mathbb{R}^n\to\mathbb{R},\ i\in\mathcal{E}$ 为实值函数，$c_i:\mathbb{R}^n\to\mathbb{R}^{k_i},\ k_i\in\mathbb{N}_+,\ i\in\mathcal{I}$ 为向量值函数，$K_i$ 为某种适当锥且 $\preceq_{K_i}$ 表示由锥 $K_i$ 定义的广义不等式。因此，问题 (5.4.1) 是在问题 (5.4.11) 中取 $k_i=1,\ K_i=\mathbb{R}_+,\ \forall i\in\mathcal{I}$ 时的特殊情形。
 
 根据 $K_i,\ i\in\mathcal{I}$ 的对偶锥 $K_i^*$，对广义不等式约束分别引入乘子 $\lambda_i\in K_i^*,\ i\in\mathcal{I}$，对等式约束引入乘子 $\nu_i\in\mathbb{R},\ i\in\mathcal{E}$，构造如下拉格朗日函数：
 
-$$L(x,\lambda,\nu)=f(x)+\sum_{i\in\mathcal{I}}\langle c_i(x),\lambda_i\rangle+\sum_{i\in\mathcal{E}}\nu_ic_i(x),\quad \lambda_i\in K_i^*,\ \nu_i\in\mathbb{R}.$$
+$$ L(x,\lambda,\nu)=f(x)+\sum_{i\in\mathcal{I}}\langle c_i(x),\lambda_i\rangle+\sum_{i\in\mathcal{E}}\nu_ic_i(x),\quad \lambda_i\in K_i^*,\ \nu_i\in\mathbb{R}. $$
 
 容易验证 $L(x,\lambda,\nu)\leqslant f(x),\ \forall x\in\mathcal{X},\ \lambda_i\in K_i^*,\ \nu_i\in\mathbb{R}$。类似于 (5.4.3) 式，定义拉格朗日对偶函数
 
-$$g(\lambda,\nu)=\inf_{x\in\mathbb{R}^n}L(x,\lambda,\nu),$$
+$$ g(\lambda,\nu)=\inf_{x\in\mathbb{R}^n}L(x,\lambda,\nu), $$
 
 因此，对偶问题为
 
-$$\max_{\lambda_i\in K_i^*,\ \nu_i\in\mathbb{R}}\,g(\lambda,\nu).$$
+$$ \max_{\lambda_i\in K_i^*,\ \nu_i\in\mathbb{R}}\,g(\lambda,\nu). $$
 
 **注 (对偶问题的作用)** @176
 
@@ -3006,41 +3006,41 @@ $$\max_{\lambda_i\in K_i^*,\ \nu_i\in\mathbb{R}}\,g(\lambda,\nu).$$
 
 考虑如下线性规划问题：
 
-$$\begin{aligned}\min_{x}\ & c^{\mathrm{T}}x,\\\text{s.t.}\ & Ax=b,\\& x\geqslant 0.\end{aligned}\tag{5.4.12}$$
+$$ \begin{aligned} \min_{x}\ & c^{\mathrm{T}}x,\\ \text{s.t.}\ & Ax=b,\\ & x\geqslant 0. \end{aligned} \tag{5.4.12} $$
 
 对于等式约束 $Ax=b$，引入拉格朗日乘子 $\nu$；对于非负约束 $x\geqslant 0$，引入拉格朗日乘子 $s\geqslant 0$。由此构造拉格朗日函数
 
-$$L(x,s,\nu)=c^{\mathrm{T}}x+\nu^{\mathrm{T}}(Ax-b)-s^{\mathrm{T}}x=-b^{\mathrm{T}}\nu+(A^{\mathrm{T}}\nu-s+c)^{\mathrm{T}}x,$$
+$$ L(x,s,\nu)=c^{\mathrm{T}}x+\nu^{\mathrm{T}}(Ax-b)-s^{\mathrm{T}}x=-b^{\mathrm{T}}\nu+(A^{\mathrm{T}}\nu-s+c)^{\mathrm{T}}x, $$
 
 其拉格朗日对偶函数为
 
-$$g(s,\nu)=\inf_x L(x,s,\nu)=\begin{cases}-b^{\mathrm{T}}\nu, & A^{\mathrm{T}}\nu-s+c=0,\\-\infty, & \text{其他}.\end{cases}$$
+$$ g(s,\nu)=\inf_x L(x,s,\nu)= \begin{cases} -b^{\mathrm{T}}\nu, & A^{\mathrm{T}}\nu-s+c=0,\\ -\infty, & \text{其他}. \end{cases} $$
 
 注意到只需考虑 $A^{\mathrm{T}}\nu-s+c=0$ 情形，其余情况对应于不可行情形，因此线性规划问题 (5.4.12) 的对偶问题是
 
-$$\begin{aligned}\max_{s,\nu}\ & -b^{\mathrm{T}}\nu,\\\text{s.t.}\ & A^{\mathrm{T}}\nu-s+c=0,\\& s\geqslant 0.\end{aligned}$$
+$$ \begin{aligned} \max_{s,\nu}\ & -b^{\mathrm{T}}\nu,\\ \text{s.t.}\ & A^{\mathrm{T}}\nu-s+c=0,\\ & s\geqslant 0. \end{aligned} $$
 
 经过变量代换 $y=-\nu$ 后，上述问题等价于常见的形式
 
-$$\begin{aligned}\max_{s,y}\ & b^{\mathrm{T}}y,\\\text{s.t.}\ & A^{\mathrm{T}}y+s=c,\\& s\geqslant 0.\end{aligned}\tag{5.4.13}$$
+$$ \begin{aligned} \max_{s,y}\ & b^{\mathrm{T}}y,\\ \text{s.t.}\ & A^{\mathrm{T}}y+s=c,\\ & s\geqslant 0. \end{aligned} \tag{5.4.13} $$
 
 线性规划问题 (5.4.12) 的对偶问题也可以通过保留约束 $x\geqslant 0$ 写出。对于等式约束 $Ax=b$ 引入乘子 $y$，相应的对偶问题需要将 $x\geqslant 0$ 添加到约束里：
 
-$$\max_y\left\{\inf_x b^{\mathrm{T}}y+(c-A^{\mathrm{T}}y)^{\mathrm{T}}x,\quad \text{s.t.}\ x\geqslant 0\right\}.$$
+$$ \max_y\left\{\inf_x b^{\mathrm{T}}y+(c-A^{\mathrm{T}}y)^{\mathrm{T}}x,\quad \text{s.t.}\ x\geqslant 0\right\}. $$
 
 简化后得出
 
-$$\begin{aligned}\max_y\ & b^{\mathrm{T}}y,\\\text{s.t.}\ & A^{\mathrm{T}}y\leqslant c.\end{aligned}\tag{5.4.14}$$
+$$ \begin{aligned} \max_y\ & b^{\mathrm{T}}y,\\ \text{s.t.}\ & A^{\mathrm{T}}y\leqslant c. \end{aligned} \tag{5.4.14} $$
 
 由对偶问题 (5.4.13) 也可以消掉变量 $s$ 得到 (5.4.14)。
 
 对问题 (5.4.14) 再求对偶：先通过极小化目标函数的相反数将其等价地转化为极小化问题 $\min_y -b^{\mathrm{T}}y,\ \text{s.t.}\ A^{\mathrm{T}}y\leqslant c$；对不等式约束引入拉格朗日乘子 $x\geqslant 0$，得到对偶函数
 
-$$g(x)=\inf_y L(y,x)=\begin{cases}-c^{\mathrm{T}}x, & Ax=b,\\-\infty, & \text{其他},\end{cases}$$
+$$ g(x)=\inf_y L(y,x)= \begin{cases} -c^{\mathrm{T}}x, & Ax=b,\\ -\infty, & \text{其他}, \end{cases} $$
 
 相应的对偶问题是
 
-$$\begin{aligned}\max_x\ & -c^{\mathrm{T}}x,\\\text{s.t.}\ & Ax=b,\\& x\geqslant 0.\end{aligned}\tag{5.4.15}$$
+$$ \begin{aligned} \max_x\ & -c^{\mathrm{T}}x,\\ \text{s.t.}\ & Ax=b,\\ & x\geqslant 0. \end{aligned} \tag{5.4.15} $$
 
 观察到问题 (5.4.15) 与问题 (5.4.12) 完全等价，这表明线性规划问题与其对偶问题互为对偶。
 
@@ -3050,23 +3050,23 @@ $$\begin{aligned}\max_x\ & -c^{\mathrm{T}}x,\\\text{s.t.}\ & Ax=b,\\& x\geqslant
 
 对于 $\ell_1$ 正则化问题
 
-$$\min_{x\in\mathbb{R}^n}\ \frac12\|Ax-b\|^2+\mu\|x\|_1,\tag{5.4.16}$$
+$$ \min_{x\in\mathbb{R}^n}\ \frac12\|Ax-b\|^2+\mu\|x\|_1, \tag{5.4.16} $$
 
 其中 $A\in\mathbb{R}^{m\times n},\ b\in\mathbb{R}^m$ 分别为给定的矩阵和向量，$\mu$ 为正则化参数来控制稀疏度。通过引入 $Ax-b=r$，可以将问题 (5.4.16) 转化为如下等价的形式：
 
-$$\min_{x\in\mathbb{R}^n}\ \frac12\|r\|^2+\mu\|x\|_1,\quad \text{s.t.}\ Ax-b=r,\tag{5.4.17}$$
+$$ \min_{x\in\mathbb{R}^n}\ \frac12\|r\|^2+\mu\|x\|_1,\quad \text{s.t.}\ Ax-b=r, \tag{5.4.17} $$
 
 其拉格朗日函数为
 
-$$\begin{aligned}L(x,r,\lambda)&=\frac12\|r\|^2+\mu\|x\|_1-\langle\lambda,Ax-b-r\rangle\\&=\frac12\|r\|^2+\lambda^{\mathrm{T}}r+\mu\|x\|_1-(A^{\mathrm{T}}\lambda)^{\mathrm{T}}x+b^{\mathrm{T}}\lambda.\end{aligned}$$
+$$ \begin{aligned} L(x,r,\lambda)&=\frac12\|r\|^2+\mu\|x\|_1-\langle\lambda,Ax-b-r\rangle\\ &=\frac12\|r\|^2+\lambda^{\mathrm{T}}r+\mu\|x\|_1-(A^{\mathrm{T}}\lambda)^{\mathrm{T}}x+b^{\mathrm{T}}\lambda. \end{aligned} $$
 
 利用二次函数最小值的性质及 $\|\cdot\|_1$ 的对偶范数的定义，有
 
-$$g(\lambda)=\inf_{x,r}L(x,r,\lambda)=\begin{cases}b^{\mathrm{T}}\lambda-\frac12\|\lambda\|^2, & \|A^{\mathrm{T}}\lambda\|_\infty\leqslant\mu,\\-\infty, & \text{其他}.\end{cases}$$
+$$ g(\lambda)=\inf_{x,r}L(x,r,\lambda)= \begin{cases} b^{\mathrm{T}}\lambda-\frac12\|\lambda\|^2, & \|A^{\mathrm{T}}\lambda\|_\infty\leqslant\mu,\\ -\infty, & \text{其他}. \end{cases} $$
 
 那么对偶问题为
 
-$$\max\ b^{\mathrm{T}}\lambda-\frac12\|\lambda\|^2,\quad \text{s.t.}\ \|A^{\mathrm{T}}\lambda\|_\infty\leqslant\mu.$$
+$$ \max\ b^{\mathrm{T}}\lambda-\frac12\|\lambda\|^2,\quad \text{s.t.}\ \|A^{\mathrm{T}}\lambda\|_\infty\leqslant\mu. $$
 
 #### 半定规划问题的对偶问题 @179
 
@@ -3074,35 +3074,35 @@ $$\max\ b^{\mathrm{T}}\lambda-\frac12\|\lambda\|^2,\quad \text{s.t.}\ \|A^{\math
 
 考虑标准形式的半定规划问题
 
-$$\begin{aligned}\min_{X\in\mathcal{S}^n}\ & \langle C,X\rangle,\\\text{s.t.}\ & \langle A_i,X\rangle=b_i,\quad i=1,2,\cdots,m,\\& X\succeq 0,\end{aligned}\tag{5.4.18}$$
+$$ \begin{aligned} \min_{X\in\mathcal{S}^n}\ & \langle C,X\rangle,\\ \text{s.t.}\ & \langle A_i,X\rangle=b_i,\quad i=1,2,\cdots,m,\\ & X\succeq 0, \end{aligned} \tag{5.4.18} $$
 
 其中 $A_i\in\mathcal{S}^n,\ i=1,2,\cdots,m$，$C\in\mathcal{S}^n,\ b\in\mathbb{R}^m$。对于等式约束和半正定锥约束分别引入乘子 $y\in\mathbb{R}^m$ 和 $S\in\mathcal{S}^n_+$，拉格朗日函数可以写为
 
-$$L(X,y,S)=\langle C,X\rangle-\sum_{i=1}^m y_i(\langle A_i,X\rangle-b_i)-\langle S,X\rangle,\quad S\succeq 0,$$
+$$ L(X,y,S)=\langle C,X\rangle-\sum_{i=1}^m y_i(\langle A_i,X\rangle-b_i)-\langle S,X\rangle,\quad S\succeq 0, $$
 
 则对偶函数为
 
-$$g(y,S)=\inf_X L(X,y,S)=\begin{cases}b^{\mathrm{T}}y, & \sum_{i=1}^m y_iA_i-C+S=0,\\-\infty, & \text{其他}.\end{cases}$$
+$$ g(y,S)=\inf_X L(X,y,S)= \begin{cases} b^{\mathrm{T}}y, & \sum_{i=1}^m y_iA_i-C+S=0,\\ -\infty, & \text{其他}. \end{cases} $$
 
 因此，对偶问题为
 
-$$\begin{aligned}\min_{y\in\mathbb{R}^m}\ & -b^{\mathrm{T}}y,\\\text{s.t.}\ & \sum_{i=1}^m y_iA_i-C+S=0,\\& S\succeq 0,\end{aligned}\tag{5.4.19}$$
+$$ \begin{aligned} \min_{y\in\mathbb{R}^m}\ & -b^{\mathrm{T}}y,\\ \text{s.t.}\ & \sum_{i=1}^m y_iA_i-C+S=0,\\ & S\succeq 0, \end{aligned} \tag{5.4.19} $$
 
 它也可以写成不等式形式
 
-$$\begin{aligned}\min_{y\in\mathbb{R}^m}\ & -b^{\mathrm{T}}y,\\\text{s.t.}\ & \sum_{i=1}^m y_iA_i\preceq C.\end{aligned}\tag{5.4.20}$$
+$$ \begin{aligned} \min_{y\in\mathbb{R}^m}\ & -b^{\mathrm{T}}y,\\ \text{s.t.}\ & \sum_{i=1}^m y_iA_i\preceq C. \end{aligned} \tag{5.4.20} $$
 
 对偶问题 (5.4.20) 还可以再求其对偶问题。对不等式约束引入乘子 $X\in\mathcal{S}^n$ 并且 $X\succeq 0$，拉格朗日函数为
 
-$$L(y,X)=-b^{\mathrm{T}}y+\left\langle X,\left(\sum_{i=1}^m y_iA_i\right)-C\right\rangle=\sum_{i=1}^m y_i(-b_i+\langle A_i,X\rangle)-\langle C,X\rangle.$$
+$$ L(y,X)=-b^{\mathrm{T}}y+\left\langle X,\left(\sum_{i=1}^m y_iA_i\right)-C\right\rangle=\sum_{i=1}^m y_i(-b_i+\langle A_i,X\rangle)-\langle C,X\rangle. $$
 
 因为上式对 $y$ 是仿射的，故对偶函数可以描述为
 
-$$g(X)=\inf_y L(y,X)=\begin{cases}-\langle C,X\rangle, & \langle A_i,X\rangle=b_i,\ i=1,2,\cdots,m,\\-\infty, & \text{其他}.\end{cases}$$
+$$ g(X)=\inf_y L(y,X)= \begin{cases} -\langle C,X\rangle, & \langle A_i,X\rangle=b_i,\ i=1,2,\cdots,m,\\ -\infty, & \text{其他}. \end{cases} $$
 
 因此，对偶问题可以写成
 
-$$\begin{aligned}\min_{X\in\mathcal{S}^n}\ & \langle C,X\rangle,\\\text{s.t.}\ & \langle A_i,X\rangle=b_i,\quad i=1,2,\cdots,m,\\& X\succeq 0.\end{aligned}\tag{5.4.21}$$
+$$ \begin{aligned} \min_{X\in\mathcal{S}^n}\ & \langle C,X\rangle,\\ \text{s.t.}\ & \langle A_i,X\rangle=b_i,\quad i=1,2,\cdots,m,\\ & X\succeq 0. \end{aligned} \tag{5.4.21} $$
 
 这就是问题 (5.4.18)，即半定规划问题与其对偶问题互为对偶。
 
@@ -3112,33 +3112,33 @@ $$\begin{aligned}\min_{X\in\mathcal{S}^n}\ & \langle C,X\rangle,\\\text{s.t.}\ &
 
 考虑最大割问题 (4.5.6)：
 
-$$\begin{aligned}\max_{x\in\mathbb{R}^n}\ & x^{\mathrm{T}}Cx,\\\text{s.t.}\ & x_i^2=1,\quad i=1,2,\cdots,n,\end{aligned}\tag{5.4.22}$$
+$$ \begin{aligned} \max_{x\in\mathbb{R}^n}\ & x^{\mathrm{T}}Cx,\\ \text{s.t.}\ & x_i^2=1,\quad i=1,2,\cdots,n, \end{aligned} \tag{5.4.22} $$
 
 其中 $C\in\mathbb{R}^{n\times n}$ 为图的拉普拉斯矩阵。这里 $x_i^2=1$ 表明 $x_i=1$ 或者 $x_i=-1$。引入拉格朗日乘子 $y\in\mathbb{R}^n$，拉格朗日函数可以写为
 
-$$L(x,y)=-x^{\mathrm{T}}Cx+\sum_{i=1}^n y_i(x_i^2-1)=x^{\mathrm{T}}(\operatorname{Diag}(y)-C)x-\mathbf{1}^{\mathrm{T}}y,$$
+$$ L(x,y)=-x^{\mathrm{T}}Cx+\sum_{i=1}^n y_i(x_i^2-1)=x^{\mathrm{T}}(\operatorname{Diag}(y)-C)x-\mathbf{1}^{\mathrm{T}}y, $$
 
 则对偶函数为
 
-$$g(y)=\inf_x L(x,y)=\begin{cases}-\mathbf{1}^{\mathrm{T}}y, & \operatorname{Diag}(y)-C\succeq 0,\\-\infty, & \text{其他}.\end{cases}$$
+$$ g(y)=\inf_x L(x,y)= \begin{cases} -\mathbf{1}^{\mathrm{T}}y, & \operatorname{Diag}(y)-C\succeq 0,\\ -\infty, & \text{其他}. \end{cases} $$
 
 因此，对偶问题为
 
-$$\begin{aligned}\min_{y\in\mathbb{R}^n}\ & \mathbf{1}^{\mathrm{T}}y\\\text{s.t.}\ & \operatorname{Diag}(y)-C\succeq 0.\end{aligned}\tag{5.4.23}$$
+$$ \begin{aligned} \min_{y\in\mathbb{R}^n}\ & \mathbf{1}^{\mathrm{T}}y\\ \text{s.t.}\ & \operatorname{Diag}(y)-C\succeq 0. \end{aligned} \tag{5.4.23} $$
 
 这是一个半定规划问题。
 
 对于对偶问题 (5.4.23) 再求其对偶：对于半正定约束，引入拉格朗日乘子 $X\succeq 0$，拉格朗日函数可以写为
 
-$$L(y,X)=\mathbf{1}^{\mathrm{T}}y-\langle\operatorname{Diag}(y)-C,X\rangle=\sum_{i=1}^n(1-X_{ii})y_i+\langle C,X\rangle.$$
+$$ L(y,X)=\mathbf{1}^{\mathrm{T}}y-\langle\operatorname{Diag}(y)-C,X\rangle=\sum_{i=1}^n(1-X_{ii})y_i+\langle C,X\rangle. $$
 
 则对偶函数为
 
-$$g(X)=\inf_y L(y,X)=\begin{cases}\langle C,X\rangle, & X_{ii}=1,\ i=1,2,\cdots,n,\\-\infty, & \text{其他}.\end{cases}$$
+$$ g(X)=\inf_y L(y,X)= \begin{cases} \langle C,X\rangle, & X_{ii}=1,\ i=1,2,\cdots,n,\\ -\infty, & \text{其他}. \end{cases} $$
 
 因此，问题 (5.4.23) 的对偶问题为
 
-$$\begin{aligned}\max\ & \langle C,X\rangle,\\\text{s.t.}\ & X_{ii}=1,\quad i=1,2,\cdots,n,\\& X\succeq 0.\end{aligned}$$
+$$ \begin{aligned} \max\ & \langle C,X\rangle,\\ \text{s.t.}\ & X_{ii}=1,\quad i=1,2,\cdots,n,\\ & X\succeq 0. \end{aligned} $$
 
 容易看出，此问题不是最大割问题，而是一个半定规划问题。这个分析也给出了最大割问题半定松弛的一种理解方式，参见第四章中问题 (4.5.8)。
 
@@ -5336,7 +5336,7 @@ $$c_1=\begin{cases}+1, & \text{依概率}\ 0.25,\\ -1, & \text{依概率}\ 0.25,
 
 流形优化一般指一类带有流形约束的优化问题．问题可表述为
 
-$$\min\ f(x),\quad \text{s.t.}\ x\in\mathcal{M}, \tag{7.4.1}$$
+$$ \min\ f(x),\quad \text{s.t.}\ x\in\mathcal{M}, \tag{7.4.1} $$
 
 其中 $\mathcal{M}$ 是某种黎曼流形，$f:\mathcal{M}\to\mathbb{R}$ 是定义在 $\mathcal{M}$ 上的实值函数．它描述了计算与应用数学、统计学、机器学习、数据科学和材料科学等等很多领域中的重要科学问题．这些问题的研究成果曾获多项诺贝尔物理奖和化学奖．流形约束的存在是这些非凸优化问题算法设计和理论分析的主要困难之一．作为一种具有特殊形式的约束优化问题，流形约束优化问题具有特殊的理论性质和求解方法．
 
@@ -5374,7 +5374,7 @@ $$\min\ f(x),\quad \text{s.t.}\ x\in\mathcal{M}, \tag{7.4.1}$$
 
 令 $f$ 为从 $d_1$ 维流形 $\mathcal{M}_1$ 映射到 $d_2$ 维流形 $\mathcal{M}_2$ 上的实值函数．令 $x$ 为流形 $\mathcal{M}_1$ 上的点，分别选择 $\mathcal{M}_1$ 与 $\mathcal{M}_2$ 上的图卡 $(\mathcal{U}_1,\varphi_1)$ 与 $(\mathcal{U}_2,\varphi_2)$，其中 $x\in\mathcal{U}_1$ 且 $f(x)\in\mathcal{U}_2$．则我们可以定义函数：
 
-$$\hat{f}=\varphi_2\circ f\circ\varphi_1^{-1}:\mathbb{R}^{d_1}\to\mathbb{R}^{d_2}.$$
+$$ \hat{f}=\varphi_2\circ f\circ\varphi_1^{-1}:\mathbb{R}^{d_1}\to\mathbb{R}^{d_2}. $$
 
 若 $\hat{f}\in C^\infty,\ \forall x\in\mathcal{M}$，则我们称 $f$ 为一个**光滑映射**，并称 $\hat{f}$ 为函数 $f$ 的**坐标表示**．
 
@@ -5394,7 +5394,7 @@ $$\hat{f}=\varphi_2\circ f\circ\varphi_1^{-1}:\mathbb{R}^{d_1}\to\mathbb{R}^{d_2
 
 若存在一条定义在 $\mathcal{M}$ 上的曲线 $\gamma$，该曲线满足 $\gamma(0)=x$ 并且
 
-$$D(f(x))[\xi_x]=D(f(x))[\dot{\gamma}(0)]:=\frac{d(f(\gamma(t)))}{dt}\Big|_{t=0},\quad \forall f\in\mathfrak{I}_x(\mathcal{M}),$$
+$$ D(f(x))[\xi_x]=D(f(x))[\dot{\gamma}(0)]:=\frac{d(f(\gamma(t)))}{dt}\Big|_{t=0},\quad \forall f\in\mathfrak{I}_x(\mathcal{M}), $$
 
 其中 $\mathfrak{I}_x(\mathcal{M})$ 表示定义在 $\mathcal{M}$ 上的所有实值函数．则我们称 $\xi_x$ 为在点 $x$ 处的**切向量**．
 
@@ -5406,17 +5406,17 @@ $$D(f(x))[\xi_x]=D(f(x))[\dot{\gamma}(0)]:=\frac{d(f(\gamma(t)))}{dt}\Big|_{t=0}
 
 一个常见的矩阵流形是斯蒂夫尔流形 $\mathrm{St}(n,p)$，其中
 
-$$\mathrm{St}(n,p):=\{X\in\mathbb{R}^{n\times p}:\ X^TX=I_p\}$$
+$$ \mathrm{St}(n,p):=\{X\in\mathbb{R}^{n\times p}:\ X^TX=I_p\} $$
 
 及 $g_X(U,V):=\mathrm{Tr}(U^TV),\ U,V\in T_X\mathcal{M}$．其在 $X$ 点处的切空间为
 
-$$T_X\mathcal{M}=\{U:\ X^TU+U^TX=0\}.$$
+$$ T_X\mathcal{M}=\{U:\ X^TU+U^TX=0\}. $$
 
 **定义 7.16 (黎曼梯度)** @345
 
 对于点 $x\in\mathcal{M}$，给定定义在 $\mathcal{M}$ 上的函数 $f$，其黎曼梯度 $\mathrm{grad}\,f(x)$ 为 $x$ 处的一个切向量，并且满足
 
-$$\langle \mathrm{grad}\,f(x),\xi\rangle_x=Df(x)[\xi],\quad \forall\xi\in T_x\mathcal{M}. \tag{7.4.2}$$
+$$ \langle \mathrm{grad}\,f(x),\xi\rangle_x=Df(x)[\xi],\quad \forall\xi\in T_x\mathcal{M}. \tag{7.4.2} $$
 
 其中 $Df(x)[\xi]$ 为 $f(\gamma(t))$ 在 $t=0$ 处的导数，$\gamma(t)$ 为一条定义在 $\mathcal{M}$ 上的曲线并且满足 $\gamma(0)=x$ 且 $\dot{\gamma}(0)=\xi$．
 
@@ -5426,7 +5426,7 @@ $$\langle \mathrm{grad}\,f(x),\xi\rangle_x=Df(x)[\xi],\quad \forall\xi\in T_x\ma
 
 设 $\chi(\mathcal{M})$ 表示 $\mathcal{M}$ 上光滑向量场的集合，$\mathfrak{I}(\mathcal{M})$ 表示定义在 $\mathcal{M}$ 上的所有实值函数．流形 $\mathcal{M}$ 上的**仿射联络** $\nabla$ 是一个映射：
 
-$$\nabla:\chi(\mathcal{M})\times\chi(\mathcal{M})\to\chi(\mathcal{M}):\ (X,Y)\mapsto\nabla_XY, \tag{7.4.3}$$
+$$ \nabla:\chi(\mathcal{M})\times\chi(\mathcal{M})\to\chi(\mathcal{M}):\ (X,Y)\mapsto\nabla_XY, \tag{7.4.3} $$
 
 并且需要满足如下性质：
 
@@ -5434,7 +5434,7 @@ $$\nabla:\chi(\mathcal{M})\times\chi(\mathcal{M})\to\chi(\mathcal{M}):\ (X,Y)\ma
 
 其中 $X,Y,Z\in\chi(\mathcal{M}),\ f,g\in\mathfrak{I}(\mathcal{M}),\ a,b\in\mathbb{R}$．这里 $Xf(x):=Df(x)[X_x]$，$X_x$ 表示 $X$ 在 $x$ 点处的切向量，称 $\nabla_XY$ 为 $Y$ 沿着 $X$ 的关于 $\nabla$ 的**协变微分**．例如对于任意向量场 $Y$，
 
-$$\nabla_{\mathrm{grad}\,f(x)}Y:=DY(x)[\mathrm{grad}\,f(x)]$$
+$$ \nabla_{\mathrm{grad}\,f(x)}Y:=DY(x)[\mathrm{grad}\,f(x)] $$
 
 即为一个仿射联络．
 
@@ -5454,13 +5454,13 @@ $$\nabla_{\mathrm{grad}\,f(x)}Y:=DY(x)[\mathrm{grad}\,f(x)]$$
 
 对于点 $x\in\mathcal{M}$，一个定义在 $\mathcal{M}$ 上的函数 $f$ 的黎曼海瑟矩阵记为 $\mathrm{Hess}\,f(x)$，且 $\mathrm{Hess}\,f(x)$ 为从 $T_x\mathcal{M}$ 到 $T_x\mathcal{M}$ 的映射
 
-$$\mathrm{Hess}\,f(x)[\xi]:=\tilde{\nabla}_\xi\,\mathrm{grad}\,f(x), \tag{7.4.4}$$
+$$ \mathrm{Hess}\,f(x)[\xi]:=\tilde{\nabla}_\xi\,\mathrm{grad}\,f(x), \tag{7.4.4} $$
 
 其中 $\tilde{\nabla}$ 为黎曼联络．
 
 对 $\bar{f}:\mathbb{R}^n\to\mathbb{R}$，令 $f$ 为其在黎曼子流形 $\mathcal{M}$ 上的限制．如果 $\mathcal{M}$ 的黎曼度量选为欧氏内积，那么有：
 
-$$\begin{aligned}\mathrm{grad}\,f(x)&=\mathbb{P}(\nabla\bar{f}(x)),\\\mathrm{Hess}\,f(x)[u]&=\mathbb{P}(D\,\mathrm{grad}\,f(x)[u]),\quad u\in T_x\mathcal{M},\end{aligned} \tag{7.4.5}$$
+$$ \begin{aligned} \mathrm{grad}\,f(x)&=\mathbb{P}(\nabla\bar{f}(x)),\\ \mathrm{Hess}\,f(x)[u]&=\mathbb{P}(D\,\mathrm{grad}\,f(x)[u]),\quad u\in T_x\mathcal{M}, \end{aligned} \tag{7.4.5} $$
 
 其中 $D$ 为欧氏导数并且 $\mathbb{P}(u):=\arg\min\limits_{z\in T_x\mathcal{M}}\|x-z\|^2$ 表示到 $T_x\mathcal{M}$ 的投影算子．
 
@@ -5488,7 +5488,7 @@ $\mathrm{Hess}\,f(x)[u]$ 表示函数 $f$ 在 $x$ 点处的黎曼海瑟矩阵作
 
 对于 $x\in\mathcal{M}$，并且 $\mathcal{M}$ 为欧氏空间 $\mathbb{R}^n$ 的嵌入子流形．$U$ 为 $x$ 在 $\mathbb{R}^n$ 中的邻域．如果 $h:U\to\mathbb{R}^k$ 为光滑函数，
 
-$$\mathcal{M}\cap U=\{x\in U:\ h(x)=0\},$$
+$$ \mathcal{M}\cap U=\{x\in U:\ h(x)=0\}, $$
 
 并且 $Dh(x):\mathbb{R}^n\to\mathbb{R}^k$ 的秩为 $k$，则我们称 $h$ 为流形 $\mathcal{M}$ 在 $x$ 处的**局部定义函数**．如果 $\mathcal{M}\subset U$，则我们称 $h$ 为流形 $\mathcal{M}$ 的**定义函数**．
 
@@ -5510,15 +5510,15 @@ $$\mathcal{M}\cap U=\{x\in U:\ h(x)=0\},$$
 
 其切空间与投影算子为
 
-$$T_x\mathrm{Sp}(n-1)=\{z\in\mathbb{R}^n:\ z^Tx=0\};\qquad \mathbf{P}_{T_x\mathrm{Sp}(n-1)}(z)=(I-xx^T)z;$$
+$$ T_x\mathrm{Sp}(n-1)=\{z\in\mathbb{R}^n:\ z^Tx=0\};\qquad \mathbf{P}_{T_x\mathrm{Sp}(n-1)}(z)=(I-xx^T)z; $$
 
 在 $x$ 处的黎曼梯度为
 
-$$\mathrm{grad}\,f(x)=\mathbf{P}_{T_x\mathrm{Sp}(n-1)}(\nabla f(x))=(I-xx^T)\nabla f(x);$$
+$$ \mathrm{grad}\,f(x)=\mathbf{P}_{T_x\mathrm{Sp}(n-1)}(\nabla f(x))=(I-xx^T)\nabla f(x); $$
 
 在 $x$ 处的黎曼海瑟矩阵为
 
-$$\mathrm{Hess}\,f(x)[u]=\mathbf{P}_{T_x\mathrm{Sp}(n-1)}(\nabla^2f(x)[u]-ux^T\nabla f(x)), \tag{7.4.6}$$
+$$ \mathrm{Hess}\,f(x)[u]=\mathbf{P}_{T_x\mathrm{Sp}(n-1)}(\nabla^2f(x)[u]-ux^T\nabla f(x)), \tag{7.4.6} $$
 
 其中 $u\in T_x\mathrm{Sp}(n-1)$．
 
@@ -5526,15 +5526,15 @@ $$\mathrm{Hess}\,f(x)[u]=\mathbf{P}_{T_x\mathrm{Sp}(n-1)}(\nabla^2f(x)[u]-ux^T\n
 
 其切空间为
 
-$$T_X\mathrm{St}(n,p)=\{Z\in\mathbb{R}^{n\times p}:\ Z^TX+X^TZ=0\};$$
+$$ T_X\mathrm{St}(n,p)=\{Z\in\mathbb{R}^{n\times p}:\ Z^TX+X^TZ=0\}; $$
 
 投影算子为
 
-$$\mathbf{P}_{T_X\mathrm{St}(n,p)}(Z)=Z-X\,\mathrm{Sym}(X^TZ),$$
+$$ \mathbf{P}_{T_X\mathrm{St}(n,p)}(Z)=Z-X\,\mathrm{Sym}(X^TZ), $$
 
 其中 $\mathrm{Sym}(Z):=(Z+Z^T)/2$．在 $X$ 处的黎曼梯度与黎曼海瑟矩阵为：
 
-$$\begin{aligned}\mathrm{grad}\,f(X)&=\mathbf{P}_{T_X\mathrm{St}(n,p)}(\nabla f(X)),\\\mathrm{Hess}\,f(X)[U]&=\mathbf{P}_{T_X\mathrm{St}(n,p)}(\nabla^2f(X)[U]-U\,\mathrm{Sym}(X^T\nabla f(X))),\end{aligned} \tag{7.4.7}$$
+$$ \begin{aligned} \mathrm{grad}\,f(X)&=\mathbf{P}_{T_X\mathrm{St}(n,p)}(\nabla f(X)),\\ \mathrm{Hess}\,f(X)[U]&=\mathbf{P}_{T_X\mathrm{St}(n,p)}(\nabla^2f(X)[U]-U\,\mathrm{Sym}(X^T\nabla f(X))), \end{aligned} \tag{7.4.7} $$
 
 其中 $U\in T_X\mathrm{St}(n,p)$．
 
@@ -5542,99 +5542,99 @@ $$\begin{aligned}\mathrm{grad}\,f(X)&=\mathbf{P}_{T_X\mathrm{St}(n,p)}(\nabla f(
 
 其切空间为
 
-$$T_X\mathrm{Ob}(n,p)=\{Z\mid Z\in\mathbb{R}^{n\times p}:\ \mathrm{diag}(X^TZ)=0\};$$
+$$ T_X\mathrm{Ob}(n,p)=\{Z\mid Z\in\mathbb{R}^{n\times p}:\ \mathrm{diag}(X^TZ)=0\}; $$
 
 投影算子为
 
-$$\mathbf{P}_{T_X\mathrm{Ob}(n,p)}(Z)=Z-X\,\mathrm{diag}(X^TZ);$$
+$$ \mathbf{P}_{T_X\mathrm{Ob}(n,p)}(Z)=Z-X\,\mathrm{diag}(X^TZ); $$
 
 在 $X$ 处的黎曼梯度与黎曼海瑟矩阵为
 
-$$\begin{aligned}\mathrm{grad}\,f(X)&=\nabla f(X)-X\,\mathrm{diag}(X^T\nabla f(X)),\\\mathrm{Hess}\,f(X)[U]&=\mathbf{P}_{T_X\mathrm{Ob}(n,p)}(\nabla^2f(X)[U]-U\,\mathrm{diag}(X^T\nabla f(X))).\end{aligned}$$
+$$ \begin{aligned} \mathrm{grad}\,f(X)&=\nabla f(X)-X\,\mathrm{diag}(X^T\nabla f(X)),\\ \mathrm{Hess}\,f(X)[U]&=\mathbf{P}_{T_X\mathrm{Ob}(n,p)}(\nabla^2f(X)[U]-U\,\mathrm{diag}(X^T\nabla f(X))). \end{aligned} $$
 
 **例 7.8 (秩固定矩阵流形 $\mathrm{Fr}(n,p,r):=\{X\in\mathbb{R}^{n\times p}:\mathrm{rank}(X)=r\}$)** @352
 
 该流形的切空间为
 
-$$\begin{aligned}T_X\mathrm{Fr}(n,p,r)&=\left\{[U,U_\perp]\begin{pmatrix}\mathbb{R}^{r\times r}&\mathbb{R}^{r\times(p-r)}\\ \mathbb{R}^{(n-r)\times r}&0_{(n-r)\times(p-r)}\end{pmatrix}[V,V_\perp]^T\right\}\\&=\{UMV^T+U_pV^T+UV_p^T:\ M\in\mathbb{R}^{r\times r},\ U_p\in\mathbb{R}^{n\times r},\ U_p^TU=0,\ V_p\in\mathbb{R}^{p\times r},\ V_p^TV=0\},\end{aligned} \tag{7.4.9}$$
+$$ \begin{aligned} T_X\mathrm{Fr}(n,p,r)&=\left\{[U,U_\perp]\begin{pmatrix}\mathbb{R}^{r\times r}&\mathbb{R}^{r\times(p-r)}\\ \mathbb{R}^{(n-r)\times r}&0_{(n-r)\times(p-r)}\end{pmatrix}[V,V_\perp]^T\right\}\\ &=\{UMV^T+U_pV^T+UV_p^T:\ M\in\mathbb{R}^{r\times r},\ U_p\in\mathbb{R}^{n\times r},\ U_p^TU=0,\ V_p\in\mathbb{R}^{p\times r},\ V_p^TV=0\}, \end{aligned} \tag{7.4.9} $$
 
 投影算子为
 
-$$\mathbf{P}_{T_X\mathrm{Fr}(n,p,r)}(Z)=P_UZP_V+P_U^\perp ZP_V+P_UZP_V^\perp;$$
+$$ \mathbf{P}_{T_X\mathrm{Fr}(n,p,r)}(Z)=P_UZP_V+P_U^\perp ZP_V+P_UZP_V^\perp; $$
 
 黎曼梯度为
 
-$$\mathrm{grad}\,f(X)=ZP_V+P_UZ-P_UZP_V;$$
+$$ \mathrm{grad}\,f(X)=ZP_V+P_UZ-P_UZP_V; $$
 
 在 $X$ 处的黎曼海瑟矩阵为
 
-$$\mathrm{Hess}\,f(X)[H]=U\hat{M}V^T+\hat{U}_pV^T+U\hat{V}_p^T,\quad H\in T_X\mathrm{Fr}(n,p,r),$$
+$$ \mathrm{Hess}\,f(X)[H]=U\hat{M}V^T+\hat{U}_pV^T+U\hat{V}_p^T,\quad H\in T_X\mathrm{Fr}(n,p,r), $$
 
 其中
 
-$$\begin{aligned}\hat{M}&=M(\nabla^2f(X)[H];X),\\\hat{U}_p&=U_p(\nabla^2f(X)[H];X)+P_U^\perp\nabla f(X)V_p(H;X)/\Sigma,\\\hat{V}_p&=V_p(\nabla^2f(X)[H];X)+P_V^\perp\nabla f(X)U_p(H;X)/\Sigma.\end{aligned}$$
+$$ \begin{aligned} \hat{M}&=M(\nabla^2f(X)[H];X),\\ \hat{U}_p&=U_p(\nabla^2f(X)[H];X)+P_U^\perp\nabla f(X)V_p(H;X)/\Sigma,\\ \hat{V}_p&=V_p(\nabla^2f(X)[H];X)+P_V^\perp\nabla f(X)U_p(H;X)/\Sigma. \end{aligned} $$
 
 **例 7.9 (正定矩阵流形：$\mathcal{S}^p_+=\{X\in\mathbb{R}^{n\times n}:X^T=X,\ X\succ0\}$)** @352
 
 该集合为一个流形，并且其切空间为
 
-$$T_X\mathcal{S}^p_+=\{Z\in\mathbb{R}^{n\times n}:\ Z^T=Z\};$$
+$$ T_X\mathcal{S}^p_+=\{Z\in\mathbb{R}^{n\times n}:\ Z^T=Z\}; $$
 
 投影算子为
 
-$$\mathbf{P}_{T_X\mathcal{S}^p_+}(Z)=(Z^T+Z)/2;$$
+$$ \mathbf{P}_{T_X\mathcal{S}^p_+}(Z)=(Z^T+Z)/2; $$
 
 在 $X$ 处的黎曼梯度与黎曼海瑟矩阵可表示为
 
-$$\begin{aligned}\mathrm{grad}\,f(X)&=\mathbf{P}_{T_X\mathcal{S}^p_+}(\nabla f(X)),\\\mathrm{Hess}\,f(X)[U]&=\mathbf{P}_{T_X\mathcal{S}^p_+}(\nabla^2f(X)[U]),\quad U\in T_X\mathcal{S}^p_+.\end{aligned} \tag{7.4.10}$$
+$$ \begin{aligned} \mathrm{grad}\,f(X)&=\mathbf{P}_{T_X\mathcal{S}^p_+}(\nabla f(X)),\\ \mathrm{Hess}\,f(X)[U]&=\mathbf{P}_{T_X\mathcal{S}^p_+}(\nabla^2f(X)[U]),\quad U\in T_X\mathcal{S}^p_+. \end{aligned} \tag{7.4.10} $$
 
 **例 7.10 (格拉斯曼流形 $\mathrm{Grass}(n,p):=\{\mathrm{span}(X):X\in\mathbb{R}^{n\times p},X^TX=I_p\}$)** @353
 
 由定义可知其表示 $\mathbb{R}^n$ 的所有 $p$-维子空间．该流形与上述流形不同，其表示一个商流形，因为所有元素等价一个 $n\times p$ 矩阵．给定 $X\in\mathbb{R}^{n\times p}$，并且 $X^TX=I_p$，则其水平空间为
 
-$$\mathcal{H}_X\mathrm{Grass}(n,p)=\{Z\in\mathbb{R}^{n\times p}:\ Z^TX=0\}.$$
+$$ \mathcal{H}_X\mathrm{Grass}(n,p)=\{Z\in\mathbb{R}^{n\times p}:\ Z^TX=0\}. $$
 
 在计算黎曼梯度与黎曼海瑟矩阵时，水平空间的函数类似于切空间．映射到水平空间上的投影
 
-$$\mathbf{P}_{\mathcal{H}_X\mathrm{Grass}(n,p)}(Z)=Z-XX^TZ.$$
+$$ \mathbf{P}_{\mathcal{H}_X\mathrm{Grass}(n,p)}(Z)=Z-XX^TZ. $$
 
 其在 $X$ 点处的黎曼梯度与黎曼海瑟矩阵可表示为
 
-$$\begin{aligned}\mathrm{grad}\,f(X)&=\nabla^2f(X)[U]-UX^T\nabla f(X))-XS,\\\mathrm{Hess}\,f(X)[U]&=\mathbf{P}_{\mathcal{H}_X\mathrm{Grass}(n,p)}(\nabla^2f(X)[U]-UX^T\nabla f(X)),\quad U\in T_X\mathrm{Grass}(n,p).\end{aligned}$$
+$$ \begin{aligned} \mathrm{grad}\,f(X)&=\nabla^2f(X)[U]-UX^T\nabla f(X))-XS,\\ \mathrm{Hess}\,f(X)[U]&=\mathbf{P}_{\mathcal{H}_X\mathrm{Grass}(n,p)}(\nabla^2f(X)[U]-UX^T\nabla f(X)),\quad U\in T_X\mathrm{Grass}(n,p). \end{aligned} $$
 
 #### 7.4.3 最优性条件 @354
 
 设 $f\in\mathfrak{I}_x(\mathcal{M})$，$\mathcal{M}$ 维数为 $n$．对于 $x\in\mathcal{M}$，取在该点附近的图卡 $\varphi$．令
 
-$$\hat{f}=f\circ\varphi^{-1}:\mathbb{R}^n\to\mathbb{R},$$
+$$ \hat{f}=f\circ\varphi^{-1}:\mathbb{R}^n\to\mathbb{R}, $$
 
 则 $\hat{f}$ 为局部定义在欧氏空间中的函数．流形上一般约束优化问题的形式为
 
-$$\min_{x\in\mathcal{M}}\ f(x),\quad \text{s.t.}\ \begin{cases}c_i(x)=0,& i\in\mathcal{E},\\ c_i(x)\leqslant0,& i\in\mathcal{I},\end{cases} \tag{7.4.11}$$
+$$ \min_{x\in\mathcal{M}}\ f(x),\quad \text{s.t.}\ \begin{cases}c_i(x)=0,& i\in\mathcal{E},\\ c_i(x)\leqslant0,& i\in\mathcal{I},\end{cases} \tag{7.4.11} $$
 
 其中 $\mathcal{E}$ 和 $\mathcal{I}$ 分别表示等式约束与不等式约束的下标，并且 $c_i:\mathcal{M}\to\mathbb{R},\ i\in\mathcal{E}\cup\mathcal{I}$ 为定义在 $\mathcal{M}$ 上的光滑函数．考虑在 $x$ 处附近的局部图卡 $(\mathcal{U},\varphi)$，则我们可以将问题 (7.4.11) 表示为
 
-$$\min_{\hat{x}\in\varphi(\mathcal{U})}\ \hat{f}(\hat{x}),\quad \text{s.t.}\ \begin{cases}\hat{c}_i(\hat{x})=0,& i\in\mathcal{E},\\ \hat{c}_i(\hat{x})\leqslant0,& i\in\mathcal{I},\end{cases} \tag{7.4.12}$$
+$$ \min_{\hat{x}\in\varphi(\mathcal{U})}\ \hat{f}(\hat{x}),\quad \text{s.t.}\ \begin{cases}\hat{c}_i(\hat{x})=0,& i\in\mathcal{E},\\ \hat{c}_i(\hat{x})\leqslant0,& i\in\mathcal{I},\end{cases} \tag{7.4.12} $$
 
 其中 $\hat{f}=f\circ\varphi^{-1}$，$\hat{c}_i=c_i\circ\varphi^{-1},\ i\in\mathcal{E}\cup\mathcal{I}$ 且 $\hat{x}=\varphi(x)$．
 
 这样我们就建立了原问题 (7.4.11) 在欧氏空间中的形式．首先定义问题 (7.4.12) 的可行域为
 
-$$X=\{\hat{x}\in\mathbb{R}^n\mid \hat{c}_i(\hat{x})\leqslant0,\ i\in\mathcal{I};\ \hat{c}_i(\hat{x})=0,\ i\in\mathcal{E}\ \text{且}\ \hat{x}\in\varphi(\mathcal{U})\}.$$
+$$ X=\{\hat{x}\in\mathbb{R}^n\mid \hat{c}_i(\hat{x})\leqslant0,\ i\in\mathcal{I};\ \hat{c}_i(\hat{x})=0,\ i\in\mathcal{E}\ \text{且}\ \hat{x}\in\varphi(\mathcal{U})\}. $$
 
 根据第五章的结论，对于可行点 $\hat{x}\in X$，该点处的**积极集** $\mathcal{A}(\hat{x})$ 定义为两部分下标的集合，一部分是等式约束对应的下标，另外一部分是不等式约束中等号成立的约束对应的下标，即
 
-$$\mathcal{A}(\hat{x})=\mathcal{E}\cup\{i\in\mathcal{I}:\ c_i(\hat{x})=0\}.$$
+$$ \mathcal{A}(\hat{x})=\mathcal{E}\cup\{i\in\mathcal{I}:\ c_i(\hat{x})=0\}. $$
 
 进一步地，点 $\hat{x}$ 处的**线性化可行方向锥**定义为
 
-$$\mathcal{F}(\hat{x})=\left\{\hat{d}\ \middle|\ \begin{aligned}&\hat{d}^T\nabla\hat{c}_i(\hat{x})=0,\ \forall i\in\mathcal{E},\\ &\hat{d}^T\nabla\hat{c}_i(\hat{x})\leqslant0,\ \forall i\in\mathcal{A}(\hat{x})\cap\mathcal{I}\end{aligned}\right\}.$$
+$$ \mathcal{F}(\hat{x})=\left\{\hat{d}\ \middle|\ \begin{aligned}&\hat{d}^T\nabla\hat{c}_i(\hat{x})=0,\ \forall i\in\mathcal{E},\\ &\hat{d}^T\nabla\hat{c}_i(\hat{x})\leqslant0,\ \forall i\in\mathcal{A}(\hat{x})\cap\mathcal{I}\end{aligned}\right\}. $$
 
 对应的我们给出原问题 (7.4.11) 的积极集 $\mathcal{A}(x)$ 以及线性化可行方向锥 $\mathcal{F}(x)$ 的定义
 
-$$\mathcal{A}(x)=\mathcal{E}\cup\{i\in\mathcal{I}:\ c_i(x)=0\},$$
+$$ \mathcal{A}(x)=\mathcal{E}\cup\{i\in\mathcal{I}:\ c_i(x)=0\}, $$
 
-$$\mathcal{F}(x)=\left\{d\ \middle|\ \begin{aligned}&d^T\nabla c_i(x)=0,\ \forall i\in\mathcal{E},\\ &d^T\nabla c_i(x)\leqslant0,\ \forall i\in\mathcal{A}(x)\cap\mathcal{I}\end{aligned}\right\}.$$
+$$ \mathcal{F}(x)=\left\{d\ \middle|\ \begin{aligned}&d^T\nabla c_i(x)=0,\ \forall i\in\mathcal{E},\\ &d^T\nabla c_i(x)\leqslant0,\ \forall i\in\mathcal{A}(x)\cap\mathcal{I}\end{aligned}\right\}. $$
 
 根据欧氏空间中的最优性理论我们可以知道若 $\{\nabla\hat{c}_i(\hat{x}),\ i\in\mathcal{A}\}$ 线性无关，则在 $\hat{x}$ 处满足 LICQ．
 
@@ -5642,7 +5642,7 @@ $$\mathcal{F}(x)=\left\{d\ \middle|\ \begin{aligned}&d^T\nabla c_i(x)=0,\ \foral
 
 给定可行点 $x\in\mathcal{M}$ 以及相应的积极集 $\mathcal{A}(x)$．如果有
 
-$$\mathrm{grad}\,c_i(x),\ i\in\mathcal{A}(x)\ \text{在}\ T_x\mathcal{M}\ \text{中线性无关},$$
+$$ \mathrm{grad}\,c_i(x),\ i\in\mathcal{A}(x)\ \text{在}\ T_x\mathcal{M}\ \text{中线性无关}, $$
 
 则称流形上的**线性无关约束品性**在该点 $x$ 处成立．
 
@@ -5654,37 +5654,37 @@ $$\mathrm{grad}\,c_i(x),\ i\in\mathcal{A}(x)\ \text{在}\ T_x\mathcal{M}\ \text{
 
 假设 $x^*$ 是问题 (7.4.11) 的局部最小值并且在 $x^*$ 满足线性无关约束品性，则存在拉格朗日乘子 $\lambda_i^*,\ i\in\mathcal{E}\cup\mathcal{I}$ 使得下列 KKT 条件满足：
 
-$$\begin{aligned}&\mathrm{grad}\,f(x^*)+\sum_{i\in\mathcal{E}\cup\mathcal{I}}\lambda_i^*\,\mathrm{grad}\,c_i(x^*)=0,\\&c_i(x^*)=0,\quad \forall i\in\mathcal{E},\\&c_i(x^*)\leqslant0,\quad \lambda_i^*\geqslant0,\quad \lambda_i^*c_i(x^*)=0,\quad \forall i\in\mathcal{I}.\end{aligned} \tag{7.4.13}$$
+$$ \begin{aligned} &\mathrm{grad}\,f(x^*)+\sum_{i\in\mathcal{E}\cup\mathcal{I}}\lambda_i^*\,\mathrm{grad}\,c_i(x^*)=0,\\ &c_i(x^*)=0,\quad \forall i\in\mathcal{E},\\ &c_i(x^*)\leqslant0,\quad \lambda_i^*\geqslant0,\quad \lambda_i^*c_i(x^*)=0,\quad \forall i\in\mathcal{I}. \end{aligned} \tag{7.4.13} $$
 
 令 $x^*$ 与 $\lambda_i^*,\ i\in\mathcal{E}\cup\mathcal{I}$ 为 (7.4.13) 条件的一个解．类比线性化可行方向的推导，我们直接给出问题 (7.4.11) 的**临界锥** $\mathcal{C}(x^*,\lambda^*)$ 的形式为：
 
-$$w\in\mathcal{C}(x^*,\lambda^*)\iff\begin{cases}w\in T_{x^*}\mathcal{M},\\\langle\mathrm{grad}\,c_i(x^*),w\rangle=0, & \forall i\in\mathcal{E},\\\langle\mathrm{grad}\,c_i(x^*),w\rangle=0, & \forall i\in\mathcal{A}(x^*)\cap\mathcal{I}\ \text{其中}\ \lambda_i^*>0,\\\langle\mathrm{grad}\,c_i(x^*),w\rangle\leqslant0, & \forall i\in\mathcal{A}(x^*)\cap\mathcal{I}\ \text{其中}\ \lambda_i^*=0.\end{cases}$$
+$$ w\in\mathcal{C}(x^*,\lambda^*)\iff \begin{cases} w\in T_{x^*}\mathcal{M},\\ \langle\mathrm{grad}\,c_i(x^*),w\rangle=0, & \forall i\in\mathcal{E},\\ \langle\mathrm{grad}\,c_i(x^*),w\rangle=0, & \forall i\in\mathcal{A}(x^*)\cap\mathcal{I}\ \text{其中}\ \lambda_i^*>0,\\ \langle\mathrm{grad}\,c_i(x^*),w\rangle\leqslant0, & \forall i\in\mathcal{A}(x^*)\cap\mathcal{I}\ \text{其中}\ \lambda_i^*=0. \end{cases} $$
 
 **定理 7.15 (二阶最优性条件)** @356
 
 - **二阶必要条件**：假设 $x^*$ 为问题 (7.4.11) 的局部极小值并且流形上的线性无关约束品性在 $x^*$ 处成立．令 $\lambda^*$ 为使得 (7.4.13) 条件成立的乘子．则我们有
 
-$$\langle \mathrm{Hess}\,\mathcal{L}(x^*,\lambda^*)[w],w\rangle\geqslant0,\quad \forall w\in\mathcal{C}(x^*,\lambda^*),$$
+$$ \langle \mathrm{Hess}\,\mathcal{L}(x^*,\lambda^*)[w],w\rangle\geqslant0,\quad \forall w\in\mathcal{C}(x^*,\lambda^*), $$
 
 其中 $\mathrm{Hess}\,\mathcal{L}(x^*,\lambda^*)$ 为在 $(x^*,\lambda^*)$ 处关于 $x$ 的 $\mathcal{L}$ 的黎曼海瑟矩阵．
 
 - **二阶充分条件**：假设 $x^*$ 与 $\lambda^*$ 满足 KKT 条件 (7.4.13)．如果我们有
 
-$$\langle \mathrm{Hess}\,\mathcal{L}(x^*,\lambda^*)[w],w\rangle>0,\quad \forall w\in\mathcal{C}(x^*,\lambda^*),\ w\neq0,$$
+$$ \langle \mathrm{Hess}\,\mathcal{L}(x^*,\lambda^*)[w],w\rangle>0,\quad \forall w\in\mathcal{C}(x^*,\lambda^*),\ w\neq0, $$
 
 则 $x^*$ 为问题 (7.4.13) 的严格局部极小值．
 
 假设问题只有流形约束，即 $\mathcal{E}\cup\mathcal{I}$ 为空集．对于定义在 $\mathcal{M}$ 上的光滑函数 $f$，该问题的最优性条件与欧氏约束情况下的情况类似．特别地，如果 $x^*$ 为一阶驻点，则有
 
-$$\mathrm{grad}\,f(x^*)=0.$$
+$$ \mathrm{grad}\,f(x^*)=0. $$
 
 如果 $x^*$ 为二阶驻点，则
 
-$$\mathrm{grad}\,f(x^*)=0,\quad \mathrm{Hess}\,f(x^*)\succeq0.$$
+$$ \mathrm{grad}\,f(x^*)=0,\quad \mathrm{Hess}\,f(x^*)\succeq0. $$
 
 如果 $x^*$ 满足
 
-$$\mathrm{grad}\,f(x^*)=0,\quad \mathrm{Hess}\,f(x^*)\succ0,$$
+$$ \mathrm{grad}\,f(x^*)=0,\quad \mathrm{Hess}\,f(x^*)\succ0, $$
 
 则 $x^*$ 为严格极小值点．
 
@@ -5692,7 +5692,7 @@ $$\mathrm{grad}\,f(x^*)=0,\quad \mathrm{Hess}\,f(x^*)\succ0,$$
 
 对于线搜索算法，如果 $\mathcal{M}$ 是欧式空间 $\mathbb{R}^n$，则线搜索
 
-$$x^{k+1}=x^k+t_k\eta_k \tag{7.4.14}$$
+$$ x^{k+1}=x^k+t_k\eta_k \tag{7.4.14} $$
 
 将可以实现，但是 (7.4.14) 不适用于流形上的优化方法，这是因为 $x^k+t_k\eta_k$ 未必还在流形 $\mathcal{M}$ 上．为此我们介绍收缩映射算子的概念．
 
@@ -5714,11 +5714,11 @@ $$x^{k+1}=x^k+t_k\eta_k \tag{7.4.14}$$
 
 给定集合
 
-$$\mathcal{O}=\{(x,v)\in\mathcal{M}\times T_x\mathcal{M}:\ \gamma_v\ \text{为定义在包含}\ [0,1]\ \text{区间内的极大测地线}\}.$$
+$$ \mathcal{O}=\{(x,v)\in\mathcal{M}\times T_x\mathcal{M}:\ \gamma_v\ \text{为定义在包含}\ [0,1]\ \text{区间内的极大测地线}\}. $$
 
 则**指数映射** $\mathrm{Exp}:\mathcal{O}\to\mathcal{M}$ 定义为
 
-$$\mathrm{Exp}(x,v)=\mathrm{Exp}_x(v)=\gamma_v(1).$$
+$$ \mathrm{Exp}(x,v)=\mathrm{Exp}_x(v)=\gamma_v(1). $$
 
 其中 $\mathrm{Exp}_x$ 定义在 $\mathcal{O}_x=\{v\in T_x\mathcal{M}:(x,v)\in\mathcal{O}\}$ 上．
 
@@ -5736,47 +5736,47 @@ $$\mathrm{Exp}(x,v)=\mathrm{Exp}_x(v)=\gamma_v(1).$$
 
 向量移动为一般化的平行移动 [110] 第 5.4 节．令 $\xi_k\in T_x\mathcal{M}$ 为下降方向，即
 
-$$\langle \mathrm{grad}\,f(x^k),\xi_k\rangle_{x^k}<0.$$
+$$ \langle \mathrm{grad}\,f(x^k),\xi_k\rangle_{x^k}<0. $$
 
 关于收缩算子与向量移动算子的研究有很多，我们这里以斯蒂夫尔流形 $\mathrm{St}(n,p)$ 为例子来引出一些在当前点 $X$ 并且给定步长 $\tau$ 与下降方向 $-D$ 的不同的收缩算子：
 
 1. **指数映射**
 
-$$R_X^{\mathrm{geo}}(-\tau D)=[X,Q]\exp\left(\tau\begin{pmatrix}-X^TD&-R^T\\ R&0\end{pmatrix}\right)\begin{pmatrix}I_p\\ 0\end{pmatrix},$$
+$$ R_X^{\mathrm{geo}}(-\tau D)=[X,Q]\exp\left(\tau\begin{pmatrix}-X^TD&-R^T\\ R&0\end{pmatrix}\right)\begin{pmatrix}I_p\\ 0\end{pmatrix}, $$
 
 其中 $QR=-(I_n-XX^T)D$ 为 $-(I_n-XX^T)D$ 的 QR 分解．该格式需要计算一个指数形式的 $2p\times2p$ 矩阵并且需要一个 $n\times p$ 矩阵的 QR 分解．
 
 2. **凯莱变换**
 
-$$R_X^{\mathrm{wy}}(-\tau D)=X-\tau U\left(I_{2p}+\frac{\tau}{2}V^TU\right)^{-1}V^TX, \tag{7.4.15}$$
+$$ R_X^{\mathrm{wy}}(-\tau D)=X-\tau U\left(I_{2p}+\frac{\tau}{2}V^TU\right)^{-1}V^TX, \tag{7.4.15} $$
 
 其中 $U=[P_XD,\ X],\ V=[X,\ -P_XD]\in\mathbb{R}^{n\times 2p}$，其中 $P_X:=(I-\frac{1}{2}XX^T)$．当 $p<n/2$，该格式的计算量比指数映射小．由于 $X$ 和 $D$ 通常是低秩矩阵，矩阵 $V$ 和 $U$ 也是低秩矩阵，因此可以利用 SMW 公式将 (7.4.15) 的求逆运算量进一步减小．对应的向量移动算子为
 
-$$\mathcal{T}_{\eta_X}^{\mathrm{wy}}(\xi_X)=\left(I-\frac{1}{2}W_{\eta_X}\right)^{-1}\left(I+\frac{1}{2}W_{\eta_X}\right)\xi_X,$$
+$$ \mathcal{T}_{\eta_X}^{\mathrm{wy}}(\xi_X)=\left(I-\frac{1}{2}W_{\eta_X}\right)^{-1}\left(I+\frac{1}{2}W_{\eta_X}\right)\xi_X, $$
 
 其中 $W_{\eta_X}=P_X\eta_XX-X\eta_XP_X$．
 
 3. **极分解**
 
-$$R_X^{\mathrm{pd}}(-\tau D)=(X-\tau D)(I_p+\tau^2D^TD)^{-1/2}.$$
+$$ R_X^{\mathrm{pd}}(-\tau D)=(X-\tau D)(I_p+\tau^2D^TD)^{-1/2}. $$
 
 该格式的计算量比凯莱变换低，但是凯莱变换可能会对指数映射有一个更好的逼近．对应的向量移动算子如下：
 
-$$\mathcal{T}_{\eta_X}^{\mathrm{pd}}\xi_X=Y\Omega+(I-YY^T)\xi_X(Y^T(X+\eta_X))^{-1},$$
+$$ \mathcal{T}_{\eta_X}^{\mathrm{pd}}\xi_X=Y\Omega+(I-YY^T)\xi_X(Y^T(X+\eta_X))^{-1}, $$
 
 其中 $Y=R_X\eta_X$，$\mathrm{vec}(\Omega)=(Y^T(X+\eta_X))\oplus(Y^T(X+\eta_X))^{-1}\mathrm{vec}(Y^T\xi_X-\xi_X^TY)$ 并且 $\oplus$ 为 Kronecker 和，即 $A\oplus B=A\otimes I+I\otimes B$，其中 $\otimes$ 为 Kronecker 乘积．由于迭代总次数会被收缩算子的选择所影响，因此在解决优化问题时，极分解与凯莱变换相比可能需要更多的迭代次数．
 
 4. **QR 分解**
 
-$$R_X^{\mathrm{qr}}(-\tau D)=\mathrm{qr}(X-\tau D).$$
+$$ R_X^{\mathrm{qr}}(-\tau D)=\mathrm{qr}(X-\tau D). $$
 
 该格式可以看做是极分解的逼近，主要计算开销为 $N\times p$ 矩阵的 QR 分解．对应的向量移动算子定义为
 
-$$\mathcal{T}_{\eta_X}^{\mathrm{qr}}\xi_X=Y\rho_{\mathrm{Skew}}(Y^T\xi_X(Y^T(X+\eta_X))^{-1})+(I-YY^T)\xi_X(Y^T(X+\eta_X))^{-1},$$
+$$ \mathcal{T}_{\eta_X}^{\mathrm{qr}}\xi_X=Y\rho_{\mathrm{Skew}}(Y^T\xi_X(Y^T(X+\eta_X))^{-1})+(I-YY^T)\xi_X(Y^T(X+\eta_X))^{-1}, $$
 
 其中 $Y=R_X(\eta_X)$ 和 $\rho_{\mathrm{Skew}}(A)$ 定义为
 
-$$\rho_{\mathrm{Skew}}(A)=\begin{cases}A_{ij}, & \text{if}\ i>j,\\ 0, & \text{if}\ i=j,\\ -A_{ji}, & \text{if}\ i<j.\end{cases}$$
+$$ \rho_{\mathrm{Skew}}(A)=\begin{cases}A_{ij}, & \text{if}\ i>j,\\ 0, & \text{if}\ i=j,\\ -A_{ji}, & \text{if}\ i<j.\end{cases} $$
 
 不同收缩算子的计算复杂度与收敛性表现会有很大不同．类似地，向量移动在共轭梯度法与拟牛顿方法中也有着很重要的作用．
 
@@ -5784,7 +5784,7 @@ $$\rho_{\mathrm{Skew}}(A)=\begin{cases}A_{ij}, & \text{if}\ i>j,\\ 0, & \text{if
 
 有了收缩算子与向量移动的工具，一般化的一阶流形优化框架可表示为
 
-$$x^{k+1}=R_{x^k}(t_k\xi_k), \tag{7.4.16}$$
+$$ x^{k+1}=R_{x^k}(t_k\xi_k), \tag{7.4.16} $$
 
 其中 $t_k$ 为选择好的步长．与欧氏空间中的线搜索方法类似，步长 $t_k$ 可通过在流形上的曲线搜索得到．
 
@@ -5792,27 +5792,27 @@ $$x^{k+1}=R_{x^k}(t_k\xi_k), \tag{7.4.16}$$
 
 给定 $\rho,\delta\in(0,1)$，单调与非单调搜索的目的是找到最小的非负整数 $h$ 分别满足
 
-$$f(R_{x^k}(t_k\xi_k))\leqslant f(x^k)+\rho t_k\langle \mathrm{grad}\,f(x^k),\xi_k\rangle_{x^k}, \tag{7.4.17}$$
+$$ f(R_{x^k}(t_k\xi_k))\leqslant f(x^k)+\rho t_k\langle \mathrm{grad}\,f(x^k),\xi_k\rangle_{x^k}, \tag{7.4.17} $$
 
-$$f(R_{x^k}(t_k\xi_k))\leqslant C_k+\rho t_k\langle \mathrm{grad}\,f(x^k),\xi_k\rangle_{x^k}, \tag{7.4.18}$$
+$$ f(R_{x^k}(t_k\xi_k))\leqslant C_k+\rho t_k\langle \mathrm{grad}\,f(x^k),\xi_k\rangle_{x^k}, \tag{7.4.18} $$
 
 其中 $t_k=\gamma_k\delta^h$ 并且 $\gamma_k$ 为初始步长．参考值 $C_{k+1}$ 为 $C_k$ 与 $f(x^{k+1})$ 的凸组合，且可以通过 $C_{k+1}=(\varrho Q_kC_k+f(x^{k+1}))/Q_{k+1}$ 计算，其中 $\varrho\in[0,1]$，$C_0=f(x^0)$，$Q_{k+1}=\varrho Q_k+1$ 与 $Q_0=1$．
 
 在一般的一阶优化算法中，梯度类算法是最常用的，也即 $\xi_k=\mathrm{grad}\,f(x^k)$．从欧氏空间的优化我们知道选择 BB 步长通常可以加速收敛性．事实上 BB 步长的方法也可被一般化到黎曼流形上 [48]，$\gamma_k^{(1)}$ 与 $\gamma_k^{(2)}$ 分别定义为
 
-$$\gamma_k^{(1)}=\frac{\langle s_{k-1},s_{k-1}\rangle_{x^k}}{\left|\langle s_{k-1},v_{k-1}\rangle_{x^k}\right|}, \tag{7.4.19}$$
+$$ \gamma_k^{(1)}=\frac{\langle s_{k-1},s_{k-1}\rangle_{x^k}}{\left|\langle s_{k-1},v_{k-1}\rangle_{x^k}\right|}, \tag{7.4.19} $$
 
 与
 
-$$\gamma_k^{(2)}=\frac{\left|\langle s_{k-1},v_{k-1}\rangle_{x^k}\right|}{\langle v_{k-1},v_{k-1}\rangle_{x^k}},$$
+$$ \gamma_k^{(2)}=\frac{\left|\langle s_{k-1},v_{k-1}\rangle_{x^k}\right|}{\langle v_{k-1},v_{k-1}\rangle_{x^k}}, $$
 
 其中
 
-$$s_{k-1}=-t_{k-1}\cdot\mathcal{T}_{x^{k-1}\to x^k}(\mathrm{grad}\,f(x^{k-1})),\quad v_{k-1}=\mathrm{grad}\,f(x^k)+t_{k-1}^{-1}\cdot s_{k-1}.$$
+$$ s_{k-1}=-t_{k-1}\cdot\mathcal{T}_{x^{k-1}\to x^k}(\mathrm{grad}\,f(x^{k-1})),\quad v_{k-1}=\mathrm{grad}\,f(x^k)+t_{k-1}^{-1}\cdot s_{k-1}. $$
 
 并且 $\mathcal{T}_{x^{k-1}\to x^k}:T_{x^{k-1}}\mathcal{M}\mapsto T_{x^k}\mathcal{M}$ 表示一种合适的向量移动映射来连接 $x^{k-1}$ 与 $x^k$．当 $\mathcal{M}$ 为欧氏空间的子流形时，如果欧氏内积运用到 (7.4.19)，则欧氏差分
 
-$$s_{k-1}=x^k-x^{k-1},\quad v_{k-1}=\mathrm{grad}\,f(x^k)-\mathrm{grad}\,f(x^{k-1}),$$
+$$ s_{k-1}=x^k-x^{k-1},\quad v_{k-1}=\mathrm{grad}\,f(x^k)-\mathrm{grad}\,f(x^{k-1}), $$
 
 为一种加速方法．这种方法一般是比较实用的，因为在该算法中不需要利用到向量移动算子 [46,48]．一阶优化算法与二阶优化算法的区别主要体现在如何构造 $\xi_k$．
 
@@ -5830,31 +5830,31 @@ $$s_{k-1}=x^k-x^{k-1},\quad v_{k-1}=\mathrm{grad}\,f(x^k)-\mathrm{grad}\,f(x^{k-
 
 通过利用切空间、黎曼梯度和海瑟矩阵，在黎曼流形上也可以设计信赖域 (RTR) 算法 [110,112]．在第 $k$ 步迭代点 $x^k$，通过流形上的泰勒展开，RTR 算法在切空间中构建了如下子问题：
 
-$$\min_{\xi\in T_{x^k}\mathcal{M}}\ m_k(\xi):=\langle \mathrm{grad}\,f(x^k),\xi\rangle_{x^k}+\frac{1}{2}\langle \mathrm{Hess}\,f(x^k)[\xi],\xi\rangle_{x^k},\quad \text{s.t.}\ \|\xi\|_{x^k}\leqslant\Delta_k, \tag{7.4.20}$$
+$$ \min_{\xi\in T_{x^k}\mathcal{M}}\ m_k(\xi):=\langle \mathrm{grad}\,f(x^k),\xi\rangle_{x^k}+\frac{1}{2}\langle \mathrm{Hess}\,f(x^k)[\xi],\xi\rangle_{x^k},\quad \text{s.t.}\ \|\xi\|_{x^k}\leqslant\Delta_k, \tag{7.4.20} $$
 
 其中 $\Delta_k$ 为信赖域半径．由于该子问题为一个带约束的二次问题，在前面我们介绍了欧氏空间中的截断共轭梯度方法．因为切空间的线性结构，可以使用截断共轭梯度法来求解 (7.4.20)，即牛顿方程：
 
-$$\mathrm{grad}\,m_k(x^k)+\mathrm{Hess}\,m_k(x^k)[\xi_k]=0. \tag{7.4.21}$$
+$$ \mathrm{grad}\,m_k(x^k)+\mathrm{Hess}\,m_k(x^k)[\xi_k]=0. \tag{7.4.21} $$
 
 这是因为在迭代过程中，$\mathrm{Hess}\,f(x^k)$ 为 $T_{x^k}\mathcal{M}$ 到 $T_{x^k}\mathcal{M}$ 的映射，保证了最终求解出的方向是在 $T_{x^k}\mathcal{M}$ 上的．如果 $\mathrm{Hess}\,f(x^k)$ 正定并且满足
 
-$$\|\mathrm{Hess}\,f(x^k)^{-1}\mathrm{grad}\,f(x^k)\|\leqslant\Delta_k,$$
+$$ \|\mathrm{Hess}\,f(x^k)^{-1}\mathrm{grad}\,f(x^k)\|\leqslant\Delta_k, $$
 
 那么截断信赖域求解 (7.4.20) 得到的解就是牛顿方向．因为每一步只需要计算黎曼海瑟矩阵-向量乘法，具有相对比较小的计算开销，同时满足定理 6.13．在截断共轭梯度法中选取初始方向为 $-\mathrm{grad}\,f(x^k)$，可以保证得到的下降方向满足柯西下降量，即
 
-$$m_{x^k}(0)-m_{x^k}(\xi_k)\geqslant c_1\|\mathrm{grad}\,f(x^k)\|\min\left(\Delta_k,\frac{\|\mathrm{grad}\,f(x^k)\|}{\|H_k\|}\right),$$
+$$ m_{x^k}(0)-m_{x^k}(\xi_k)\geqslant c_1\|\mathrm{grad}\,f(x^k)\|\min\left(\Delta_k,\frac{\|\mathrm{grad}\,f(x^k)\|}{\|H_k\|}\right), $$
 
 其中 $c_1$ 为固定的常数．我们可以通过 $z^k=R_{x^k}(\xi)$ 计算试验点，其中 $\xi$ 为子问题 (7.4.20) 的解，步长选择为 $1$．为了确定是否接受试验点 $z^k$，我们计算实际下降量与目标下降量的比值
 
-$$\rho_k:=\frac{f(x^k)-f(R_{x^k}(\xi_k))}{m_k(0)-m_k(\xi_k)}. \tag{7.4.22}$$
+$$ \rho_k:=\frac{f(x^k)-f(R_{x^k}(\xi_k))}{m_k(0)-m_k(\xi_k)}. \tag{7.4.22} $$
 
 如果 $\rho_k\geqslant\eta_1>0$，则我们认为迭代是成功的并且令 $x^{k+1}=z^k$；否则我们认为迭代不成功，所以令 $x^{k+1}=x^k$，也即
 
-$$x^{k+1}=\begin{cases}z^k, & \text{如果}\ \rho_k\geqslant\eta_1,\\ x^k, & \text{否则}.\end{cases} \tag{7.4.23}$$
+$$ x^{k+1}=\begin{cases}z^k, & \text{如果}\ \rho_k\geqslant\eta_1,\\ x^k, & \text{否则}.\end{cases} \tag{7.4.23} $$
 
 信赖域半径也通过 $\rho_k$ 的大小决定扩大或缩小：
 
-$$\Delta_{k+1}=\begin{cases}\dfrac{1}{4}\Delta_k, & \text{如果}\ \rho_k<\dfrac{1}{4},\\ \min(2\Delta_k,\bar{\Delta}), & \text{如果}\ \rho_k>\dfrac{3}{4},\\ \Delta_k, & \text{否则}.\end{cases} \tag{7.4.24}$$
+$$ \Delta_{k+1}=\begin{cases}\dfrac{1}{4}\Delta_k, & \text{如果}\ \rho_k<\dfrac{1}{4},\\ \min(2\Delta_k,\bar{\Delta}), & \text{如果}\ \rho_k>\dfrac{3}{4},\\ \Delta_k, & \text{否则}.\end{cases} \tag{7.4.24} $$
 
 **算法 7.2 (黎曼信赖域方法)** @363
 
@@ -5864,23 +5864,23 @@ $$\Delta_{k+1}=\begin{cases}\dfrac{1}{4}\Delta_k, & \text{如果}\ \rho_k<\dfrac
 
 借鉴欧氏空间逼近的观点，解决一般黎曼子流形上的特定问题也可以考虑一种自适应的正则化牛顿法 [48]．在该子问题中，目标函数通过式空间中的二阶泰勒展开加上一个正则项组成，并且流形约束被保留，特别地，该问题的数学表达式为
 
-$$\min_{x\in\mathcal{M}}\ \hat{m}_k(x):=\langle \mathrm{grad}\,f(x),x-x^k\rangle+\frac{1}{2}\langle H_k[x-x^k],x-x^k\rangle+\frac{\sigma_k}{2}\|x-x^k\|^2, \tag{7.4.25}$$
+$$ \min_{x\in\mathcal{M}}\ \hat{m}_k(x):=\langle \mathrm{grad}\,f(x),x-x^k\rangle+\frac{1}{2}\langle H_k[x-x^k],x-x^k\rangle+\frac{\sigma_k}{2}\|x-x^k\|^2, \tag{7.4.25} $$
 
 其中 $H_k$ 为欧氏空间中的海瑟矩阵或者它的逼近．子问题 (7.4.25) 的近似解可以通过修正的共轭梯度法求解黎曼牛顿方程：
 
-$$\mathrm{grad}\,\hat{m}_k(x^k)+\mathrm{Hess}\,\hat{m}_k(x^k)[\xi_k]=0. \tag{7.4.26}$$
+$$ \mathrm{grad}\,\hat{m}_k(x^k)+\mathrm{Hess}\,\hat{m}_k(x^k)[\xi_k]=0. \tag{7.4.26} $$
 
 该修正的共轭梯度法跟截断共轭梯度法的主要区别是遇到负曲率时策略不同，这里可以采用负曲率方向为新的搜索方向．得到 $\xi_k$ 之后再利用 Armijo 搜索得到试验点 $z^k$．在得到 $z^k$ 后，我们计算函数实际下降量与预测下降量的比值 $\hat{\rho}_k$，即
 
-$$\hat{\rho}_k=\frac{f(z^k)-f(x^k)}{\hat{m}_k(z^k)}. \tag{7.4.27}$$
+$$ \hat{\rho}_k=\frac{f(z^k)-f(x^k)}{\hat{m}_k(z^k)}. \tag{7.4.27} $$
 
 如果 $\hat{\rho}_k\geqslant\eta_1>0$，则我们认为迭代是成功的并且令 $x^{k+1}=z^k$；否则我们认为迭代不成功，所以令 $x^{k+1}=x^k$．也即
 
-$$x^{k+1}=\begin{cases}z^k, & \text{如果}\ \hat{\rho}_k\geqslant\eta_1,\\ x^k, & \text{否则}.\end{cases} \tag{7.4.28}$$
+$$ x^{k+1}=\begin{cases}z^k, & \text{如果}\ \hat{\rho}_k\geqslant\eta_1,\\ x^k, & \text{否则}.\end{cases} \tag{7.4.28} $$
 
 并且正则化参数 $\sigma_{k+1}$ 根据下式更新
 
-$$\sigma_{k+1}\in\begin{cases}(0,\gamma_0\sigma_k] & \text{如果}\ \hat{\rho}_k\geqslant\eta_2,\\ [\gamma_0\sigma_k,\gamma_1\sigma_k] & \text{如果}\ \eta_1\leqslant\hat{\rho}_k<\eta_2,\\ [\gamma_1\sigma_k,\gamma_2\sigma_k] & \text{否则},\end{cases} \tag{7.4.29}$$
+$$ \sigma_{k+1}\in\begin{cases}(0,\gamma_0\sigma_k] & \text{如果}\ \hat{\rho}_k\geqslant\eta_2,\\ [\gamma_0\sigma_k,\gamma_1\sigma_k] & \text{如果}\ \eta_1\leqslant\hat{\rho}_k<\eta_2,\\ [\gamma_1\sigma_k,\gamma_2\sigma_k] & \text{否则},\end{cases} \tag{7.4.29} $$
 
 其中 $0<\eta_1\leqslant\eta_2<1$ 并且 $0<\gamma_0<1<\gamma_1\leqslant\gamma_2$．这些系数决定了在迭代成功或者不成功时正则化参数应该如何调整．
 
@@ -5888,11 +5888,11 @@ $$\sigma_{k+1}\in\begin{cases}(0,\gamma_0\sigma_k] & \text{如果}\ \hat{\rho}_k
 
 我们同样给出该问题的子空间形式：
 
-$$\min_{\xi\in T_{x^k}\mathcal{M}}\ \check{m}_k(\xi):=\langle \mathrm{grad}\,f(x^k),\xi\rangle_{x^k}+\frac{1}{2}\langle H_k[\xi],\xi\rangle_{x^k}+\frac{\sigma_k}{2}\|\xi\|^2. \tag{7.4.30}$$
+$$ \min_{\xi\in T_{x^k}\mathcal{M}}\ \check{m}_k(\xi):=\langle \mathrm{grad}\,f(x^k),\xi\rangle_{x^k}+\frac{1}{2}\langle H_k[\xi],\xi\rangle_{x^k}+\frac{\sigma_k}{2}\|\xi\|^2. \tag{7.4.30} $$
 
 由于两个问题的定义域不同，所以该问题与 (7.4.25) 不同点在于 $\check{\rho}_k$ 的更新：
 
-$$\check{\rho}_k=\frac{f(z^k)-f(x^k)}{\check{m}_k(\xi)}.$$
+$$ \check{\rho}_k=\frac{f(z^k)-f(x^k)}{\check{m}_k(\xi)}. $$
 
 #### 7.4.7 应用举例 @364
 
@@ -5900,61 +5900,61 @@ $$\check{\rho}_k=\frac{f(z^k)-f(x^k)}{\check{m}_k(\xi)}.$$
 
 下面介绍如何利用流形优化方法求解半定规划问题．第四章介绍了最大割问题的半定规划松弛问题，其有如下形式
 
-$$\min_X\ \langle C,X\rangle,\quad \text{s.t.}\ \begin{cases}X_{ii}=1, & i=1,2,\cdots,n,\\ X\succeq0,\\ \mathrm{rank}(X)=p,\end{cases} \tag{7.4.31}$$
+$$ \min_X\ \langle C,X\rangle,\quad \text{s.t.}\ \begin{cases}X_{ii}=1, & i=1,2,\cdots,n,\\ X\succeq0,\\ \mathrm{rank}(X)=p,\end{cases} \tag{7.4.31} $$
 
 其中 $C\in\mathbb{R}^{n\times n}$ 为对称矩阵，$p$ 为矩阵指定的维数．因此我们可将问题 (7.4.31) 改写为
 
-$$\min_V\ \langle C,V^TV\rangle,\quad \text{s.t.}\ V\in\mathrm{Ob}(p,n). \tag{7.4.32}$$
+$$ \min_V\ \langle C,V^TV\rangle,\quad \text{s.t.}\ V\in\mathrm{Ob}(p,n). \tag{7.4.32} $$
 
 该问题可看做在斜流形上的优化问题．根据例 7.7 可知斜流形切空间与投影算子为
 
-$$T_X\mathrm{Ob}(p,n)=\{Z\mid Z\in\mathbb{R}^{p\times n}:\ \mathrm{diag}(X^TZ)=0\},\qquad \mathbf{P}_{T_X\mathrm{Ob}(p,n)}(Z)=Z-X\,\mathrm{diag}(X^TZ).$$
+$$ T_X\mathrm{Ob}(p,n)=\{Z\mid Z\in\mathbb{R}^{p\times n}:\ \mathrm{diag}(X^TZ)=0\},\qquad \mathbf{P}_{T_X\mathrm{Ob}(p,n)}(Z)=Z-X\,\mathrm{diag}(X^TZ). $$
 
 接下来我们计算出目标函数的方向导数：
 
-$$Df(V)[U]=\lim_{t\to0}\frac{\mathrm{Tr}(C(V+tU)^T(V+tU))-\mathrm{Tr}(CV^TV)}{t}=2\langle VC,U\rangle.$$
+$$ Df(V)[U]=\lim_{t\to0}\frac{\mathrm{Tr}(C(V+tU)^T(V+tU))-\mathrm{Tr}(CV^TV)}{t}=2\langle VC,U\rangle. $$
 
 由此可知目标函数的欧氏梯度与欧氏海瑟矩阵为
 
-$$\nabla f(V)=2VC,\qquad \nabla^2f(V)=2C.$$
+$$ \nabla f(V)=2VC,\qquad \nabla^2f(V)=2C. $$
 
 所以在 $X$ 处的黎曼梯度与黎曼海瑟矩阵作用在 $U\in\mathbb{R}^n$ 上的表达式为
 
-$$\begin{aligned}\mathrm{grad}\,f(X)&=\nabla f(X)-X\,\mathrm{diag}(X^T\nabla f(X)),\\\mathrm{Hess}\,f(X)[U]&=\mathbf{P}_{T_X\mathrm{Ob}(p,n)}(\nabla^2f(X)[U]-U\,\mathrm{diag}(X^T\nabla f(X))),\end{aligned}$$
+$$ \begin{aligned} \mathrm{grad}\,f(X)&=\nabla f(X)-X\,\mathrm{diag}(X^T\nabla f(X)),\\ \mathrm{Hess}\,f(X)[U]&=\mathbf{P}_{T_X\mathrm{Ob}(p,n)}(\nabla^2f(X)[U]-U\,\mathrm{diag}(X^T\nabla f(X))), \end{aligned} $$
 
 其中 $U\in T_X\mathrm{Ob}(p,n)$．我们选取 $p=10$，并且采用 Gset 数据集中的 G5 数据．该数据对应的图具有 $800$ 个顶点，$19176$ 条权重为 $1$ 的边，其余为 $0$．设 $W$ 为对应的邻接矩阵，则有
 
-$$C=\frac{1}{4}(\mathrm{Diag}(W)\mathbf{1}-W).$$
+$$ C=\frac{1}{4}(\mathrm{Diag}(W)\mathbf{1}-W). $$
 
 **2. KS 全局能量极小化问题**
 
 由第四章介绍可知离散 KS 总能量函数为：
 
-$$E_{\mathrm{KS}}(X)\overset{\text{def}}{=\!=}\frac{1}{2}\mathrm{Tr}(\overline{X}^TLX)+\mathrm{Tr}(\overline{X}^TV_{\mathrm{ion}}X)+\frac{1}{2}\rho^TL^{\dagger}\rho+e^T\varepsilon_{\mathrm{xc}}(\rho).$$
+$$ E_{\mathrm{KS}}(X)\overset{\text{def}}{=\!=}\frac{1}{2}\mathrm{Tr}(\overline{X}^TLX)+\mathrm{Tr}(\overline{X}^TV_{\mathrm{ion}}X)+\frac{1}{2}\rho^TL^{\dagger}\rho+e^T\varepsilon_{\mathrm{xc}}(\rho). $$
 
 根据第四章的介绍，可知离散形式下的 KS 能量极小化问题可以表示成
 
-$$\min_{X\in\mathbb{C}^{n\times n_e}}\ E_{\mathrm{KS}}(X),\quad \text{s.t.}\ \overline{X}^TX=I_{n_e}.$$
+$$ \min_{X\in\mathbb{C}^{n\times n_e}}\ E_{\mathrm{KS}}(X),\quad \text{s.t.}\ \overline{X}^TX=I_{n_e}. $$
 
 这是一个正交约束优化问题．该问题的欧氏梯度为
 
-$$\nabla E_{\mathrm{KS}}(X)=H(X)X,\qquad H(X):=\frac{1}{2}L+V_{\mathrm{ion}}+\mathrm{diag}((\Re L^{\dagger})\rho)+\mathrm{diag}(\mu_{\mathrm{xc}}^T\rho),$$
+$$ \nabla E_{\mathrm{KS}}(X)=H(X)X,\qquad H(X):=\frac{1}{2}L+V_{\mathrm{ion}}+\mathrm{diag}((\Re L^{\dagger})\rho)+\mathrm{diag}(\mu_{\mathrm{xc}}^T\rho), $$
 
 其中 $\mu_{\mathrm{xc}}=\frac{\partial\varepsilon_{\mathrm{xc}}}{\partial\rho}\in\mathbb{R}^{n\times n}$．欧氏海瑟矩阵作用在 $Z$ 上的表达式为
 
-$$\nabla^2(E_{\mathrm{KS}}(X))[Z]:=H(X)Z+\mathrm{diag}(J((\overline{X}\odot Z+X\odot\overline{Z})\rho))X,$$
+$$ \nabla^2(E_{\mathrm{KS}}(X))[Z]:=H(X)Z+\mathrm{diag}(J((\overline{X}\odot Z+X\odot\overline{Z})\rho))X, $$
 
 其中 $J=\Re L^{\dagger}+\frac{\partial^2\varepsilon_{\mathrm{xc}}}{\partial\rho^2}\rho$．由此可知该问题在欧氏空间的最优性条件为
 
-$$H(X)X=X\Lambda,\qquad \overline{X}^TX=I_{n_e},$$
+$$ H(X)X=X\Lambda,\qquad \overline{X}^TX=I_{n_e}, $$
 
 其中 $\Lambda$ 为拉格朗日乘子，并且为厄米特矩阵．根据例 7.5 可知斯蒂夫尔流形的切空间与投影算子为
 
-$$T_X\mathrm{St}(n,p)=\{Z\mid Z\in\mathbb{C}^{n\times p}:\ \mathrm{Diag}(X^TZ)=0\},\qquad \mathbf{P}_{T_X\mathrm{St}(n,p)}(Z)=Z-X\,\mathrm{Sym}(X^TZ).$$
+$$ T_X\mathrm{St}(n,p)=\{Z\mid Z\in\mathbb{C}^{n\times p}:\ \mathrm{Diag}(X^TZ)=0\},\qquad \mathbf{P}_{T_X\mathrm{St}(n,p)}(Z)=Z-X\,\mathrm{Sym}(X^TZ). $$
 
 因此在 $X$ 处的黎曼梯度与黎曼海瑟矩阵作用在 $U$ 上表示为：
 
-$$\begin{aligned}\mathrm{grad}\,E_{\mathrm{KS}}(X)&=\mathbf{P}_{T_X\mathrm{St}(n,p)}(\nabla f(X)),\\\mathrm{Hess}\,E_{\mathrm{KS}}(X)[U]&=\mathbf{P}_{T_X\mathrm{St}(n,p)}(\nabla^2f(X)[U]-U\,\mathrm{Sym}(X^T\nabla f(X))),\end{aligned} \tag{7.4.33}$$
+$$ \begin{aligned} \mathrm{grad}\,E_{\mathrm{KS}}(X)&=\mathbf{P}_{T_X\mathrm{St}(n,p)}(\nabla f(X)),\\ \mathrm{Hess}\,E_{\mathrm{KS}}(X)[U]&=\mathbf{P}_{T_X\mathrm{St}(n,p)}(\nabla^2f(X)[U]-U\,\mathrm{Sym}(X^T\nabla f(X))), \end{aligned} \tag{7.4.33} $$
 
 其中 $U\in T_X\mathrm{St}(n,p)$．
 
@@ -5978,23 +5978,23 @@ $$\begin{aligned}\mathrm{grad}\,E_{\mathrm{KS}}(X)&=\mathbf{P}_{T_X\mathrm{St}(n
 
 (b) 存在常数 $\beta_{\mathrm{Hess}}>0$ 使得
 
-$$\|\mathrm{Hess}\,f(x^k)\|\leqslant\beta_{\mathrm{Hess}},\quad \forall k=0,1,2,\dots.$$
+$$ \|\mathrm{Hess}\,f(x^k)\|\leqslant\beta_{\mathrm{Hess}},\quad \forall k=0,1,2,\dots. $$
 
 **注 (假设 7.2：利普希茨型连续性)** @368
 
 算法 7.2 也需要目标函数 $f$ 具有利普希茨类型的连续性性质 [110] 定义 7.4.1：存在常数 $\beta_{RL}>0$ 与 $\delta_{RL}>0$ 使得对于所有 $x\in\mathcal{M}$ 与 $\xi\in T_x\mathcal{M}$ 并且 $\|\xi\|=1$，
 
-$$\left|\frac{d}{dt}f\circ R_x(t\xi)\Big|_{t=\tau}-\frac{d}{dt}f\circ R_x(t\xi)\Big|_{t=0}\right|\leqslant\tau\beta_{RL},\quad \forall\tau\leqslant\delta_{RL}.$$
+$$ \left|\frac{d}{dt}f\circ R_x(t\xi)\Big|_{t=\tau}-\frac{d}{dt}f\circ R_x(t\xi)\Big|_{t=0}\right|\leqslant\tau\beta_{RL},\quad \forall\tau\leqslant\delta_{RL}. $$
 
 **定理 7.17** @368
 
 令 $\{x^k\}$ 为算法 7.2 得到的序列．如果假设 7.1 与 7.2 成立，并且算法 7.2 得到的 $\xi_k$ 满足
 
-$$m_{x^k}(0)-m_{x^k}(\xi_k)\geqslant c_1\|\mathrm{grad}\,f(x^k)\|\min\left(\Delta_k,\frac{\|\mathrm{grad}\,f(x^k)\|}{\|H_k\|}\right), \tag{7.4.36}$$
+$$ m_{x^k}(0)-m_{x^k}(\xi_k)\geqslant c_1\|\mathrm{grad}\,f(x^k)\|\min\left(\Delta_k,\frac{\|\mathrm{grad}\,f(x^k)\|}{\|H_k\|}\right), \tag{7.4.36} $$
 
 则
 
-$$\liminf_{k\to\infty}\|\mathrm{grad}\,f(x^k)\|=0. \tag{7.4.37}$$
+$$ \liminf_{k\to\infty}\|\mathrm{grad}\,f(x^k)\|=0. \tag{7.4.37} $$
 
 证明全序列的收敛性，需要额外的假设．首先我们引入单射半径的概念．
 
@@ -6002,7 +6002,7 @@ $$\liminf_{k\to\infty}\|\mathrm{grad}\,f(x^k)\|=0. \tag{7.4.37}$$
 
 流形 $\mathcal{M}$ 的**单射半径**定义为：
 
-$$i(\mathcal{M}):=\inf_{x\in\mathcal{M}}i_x,$$
+$$ i(\mathcal{M}):=\inf_{x\in\mathcal{M}}i_x, $$
 
 其中 $i_x:=\sup\{\varepsilon>0:\ \mathrm{Exp}_x|_{B_\varepsilon(0_x)}\ \text{为一个微分同胚},\ \forall x\in\mathcal{M}\}$，$\mathrm{Exp}_x$ 为定义在 $x$ 处的指数映射．
 
@@ -6012,17 +6012,17 @@ $$i(\mathcal{M}):=\inf_{x\in\mathcal{M}}i_x,$$
 
 (b) 存在常数 $\mu>0$ 与 $\delta_\mu>0$ 使得：
 
-$$\|\xi\|\geqslant\mu\,\mathrm{dist}(x,R_x\xi),\quad \forall x\in\mathcal{M},\ \forall\xi\in T_x\mathcal{M},\ \|\xi\|\leqslant\delta_\mu.$$
+$$ \|\xi\|\geqslant\mu\,\mathrm{dist}(x,R_x\xi),\quad \forall x\in\mathcal{M},\ \forall\xi\in T_x\mathcal{M},\ \|\xi\|\leqslant\delta_\mu. $$
 
 **定理 7.18** @371
 
 令 $\{x^k\}$ 为算法 7.2 得到的序列，其中 $\rho'\in(0,\frac{1}{4})$．如果假设 7.1、7.2 与 7.3 均满足，并且算法 7.2 得到的 $\xi_k$ 满足
 
-$$m_{x^k}(0)-m_{x^k}(\xi_k)\geqslant c_1\|\mathrm{grad}\,f(x^k)\|\min\left(\Delta_k,\frac{\|\mathrm{grad}\,f(x^k)\|}{\|H_k\|}\right), \tag{7.4.44}$$
+$$ m_{x^k}(0)-m_{x^k}(\xi_k)\geqslant c_1\|\mathrm{grad}\,f(x^k)\|\min\left(\Delta_k,\frac{\|\mathrm{grad}\,f(x^k)\|}{\|H_k\|}\right), \tag{7.4.44} $$
 
 则
 
-$$\lim_{k\to\infty}\|\mathrm{grad}\,f(x^k)\|=0. \tag{7.4.45}$$
+$$ \lim_{k\to\infty}\|\mathrm{grad}\,f(x^k)\|=0. \tag{7.4.45} $$
 
 ## 第8章 复合优化算法
 
@@ -6642,7 +6642,7 @@ $$(x^{k+1},y^{k+1})\approx\arg\min_{x,y}\left\{\psi(x,y)+\frac{1}{2t_k}\left(\|x
 
 其中 $t_k$ 为步长。由于问题 (8.3.9) 没有显式解，需要采用迭代算法求解，比如罚函数法、增广拉格朗日函数法等。另一种比较实用的方式是通过对偶问题的解来构造 $(x^{k+1},y^{k+1})$。引入拉格朗日乘子 $z$，问题 (8.3.9) 的对偶函数为
 
-$$\begin{aligned}\Phi_k(z)=&\inf_x\left\{\mu\|x\|_1+z^{\mathrm{T}}Ax+\frac{1}{2t_k}\|x-x^k\|_2^2\right\}+\inf_y\left\{\frac{1}{2}\|y\|_2^2-z^{\mathrm{T}}y+\frac{1}{2t_k}\|y-y^k\|_2^2\right\}-b^{\mathrm{T}}z\\=&\mu\Gamma_{\mu t_k}(x^k-t_kA^{\mathrm{T}}z)-\frac{1}{2t_k}\left(\|x^k-t_kA^{\mathrm{T}}z\|_2^2-\|x^k\|_2^2\right)\\&-\frac{t_k}{2(t_k+1)}\|z\|_2^2-\frac{1}{t_k+1}z^{\mathrm{T}}y^k+\frac{1}{2(t_k+1)}\|y^k\|_2^2-b^{\mathrm{T}}z.\end{aligned}$$
+$$ \begin{aligned} \Phi_k(z)=&\inf_x\left\{\mu\|x\|_1+z^{\mathrm{T}}Ax+\frac{1}{2t_k}\|x-x^k\|_2^2\right\}+\inf_y\left\{\frac{1}{2}\|y\|_2^2-z^{\mathrm{T}}y+\frac{1}{2t_k}\|y-y^k\|_2^2\right\}-b^{\mathrm{T}}z\\ =&\mu\Gamma_{\mu t_k}(x^k-t_kA^{\mathrm{T}}z)-\frac{1}{2t_k}\left(\|x^k-t_kA^{\mathrm{T}}z\|_2^2-\|x^k\|_2^2\right)\\ &-\frac{t_k}{2(t_k+1)}\|z\|_2^2-\frac{1}{t_k+1}z^{\mathrm{T}}y^k+\frac{1}{2(t_k+1)}\|y^k\|_2^2-b^{\mathrm{T}}z. \end{aligned} $$
 
 这里
 
@@ -6696,7 +6696,7 @@ $$\min_{X,Y}\ \psi(X,Y)+\frac{1}{2t_k}\left(\|X-X^k\|_F^2+\|Y-Y^k\|_F^2\right).\
 
 类似于 LASSO 问题的求解，通过求解问题 (8.3.13) 的对偶问题来构造逼近解 $(X^{k+1},Y^{k+1})$。引入乘子 $Z$，问题 (8.3.13) 的对偶函数可以写为
 
-$$\begin{aligned}\Phi_k(Z)=&\inf_X\left\{-\ln\det X+\langle Z,X\rangle+\frac{1}{2t_k}\|X-X^k\|_F^2\right\}+\inf_Y\left\{\lambda\|Y\|_1+\langle S-Z,Y\rangle+\frac{1}{2t_k}\|Y-Y^k\|_F^2\right\}\\=&\inf_X\left\{-\ln\det X+\frac{1}{2t_k}\|X-X^k+t_kZ\|_F^2\right\}-\frac{1}{2t_k}\left(\|X^k-t_kZ\|_F^2-\|X^k\|_F^2\right)\\&+\inf_Y\left\{\lambda\|Y\|_1+\frac{1}{2t_k}\|Y-Y^k+t_k(S-Z)\|_F^2\right\}-\frac{1}{2t_k}\left(\|Y^k-t_k(S-Z)\|_F^2-\|Y^k\|_F^2\right)\\=&\ \Gamma_{t_k}^1(X^k-t_kZ)-\frac{1}{2t_k}\left(\|X^k-t_kZ\|_F^2-\|X^k\|_F^2\right)\\&+\lambda\Gamma_{\lambda t_k}^2\left(Y^k-t_k(S-Z)\right)-\frac{1}{2t_k}\left(\|Y^k-t_k(S-Z)\|_F^2-\|Y^k\|_F^2\right),\end{aligned}$$
+$$ \begin{aligned} \Phi_k(Z)=&\inf_X\left\{-\ln\det X+\langle Z,X\rangle+\frac{1}{2t_k}\|X-X^k\|_F^2\right\}+\inf_Y\left\{\lambda\|Y\|_1+\langle S-Z,Y\rangle+\frac{1}{2t_k}\|Y-Y^k\|_F^2\right\}\\ =&\inf_X\left\{-\ln\det X+\frac{1}{2t_k}\|X-X^k+t_kZ\|_F^2\right\}-\frac{1}{2t_k}\left(\|X^k-t_kZ\|_F^2-\|X^k\|_F^2\right)\\ &+\inf_Y\left\{\lambda\|Y\|_1+\frac{1}{2t_k}\|Y-Y^k+t_k(S-Z)\|_F^2\right\}-\frac{1}{2t_k}\left(\|Y^k-t_k(S-Z)\|_F^2-\|Y^k\|_F^2\right)\\ =&\ \Gamma_{t_k}^1(X^k-t_kZ)-\frac{1}{2t_k}\left(\|X^k-t_kZ\|_F^2-\|X^k\|_F^2\right)\\ &+\lambda\Gamma_{\lambda t_k}^2\left(Y^k-t_k(S-Z)\right)-\frac{1}{2t_k}\left(\|Y^k-t_k(S-Z)\|_F^2-\|Y^k\|_F^2\right), \end{aligned} $$
 
 其中
 
@@ -7084,7 +7084,7 @@ $$D^{k+1}=A(X^{k+1})^{\mathrm{T}}\left(X^{k+1}(X^{k+1})^{\mathrm{T}}+n\mu I\righ
 
 最大割问题的半定松弛 (4.5.8) 之外，在实际算法设计中也会考虑一种基于半定松弛的非凸松弛：
 
-$$\begin{aligned}(\text{半定松弛})\quad &\min\ \langle C,X\rangle,\\&\ \text{s.t.}\ \ X_{ii}=1,\ i=1,2,\cdots,n,\quad X\succeq0.\\(\text{非凸松弛})\quad &\min\ \langle C,V^{\mathrm{T}}V\rangle,\\&\ \text{s.t.}\ \ v_i\in\mathbb{R}^p,\ \|v_i\|=1,\ i=1,2,\cdots,n,\quad V=[v_1,v_2,\cdots,v_n].\end{aligned}\tag{8.4.20}$$
+$$ \begin{aligned} (\text{半定松弛})\quad &\min\ \langle C,X\rangle,\\ &\ \text{s.t.}\ \ X_{ii}=1,\ i=1,2,\cdots,n,\quad X\succeq0.\\ (\text{非凸松弛})\quad &\min\ \langle C,V^{\mathrm{T}}V\rangle,\\ &\ \text{s.t.}\ \ v_i\in\mathbb{R}^p,\ \|v_i\|=1,\ i=1,2,\cdots,n,\quad V=[v_1,v_2,\cdots,v_n]. \end{aligned}\tag{8.4.20} $$
 
 比较两种松弛方式可知，非凸松弛通过引入分解 $X=V^{\mathrm{T}}V$ 并限制 $V$ 的每一列的 $\ell_2$ 范数为 $1$，将半定松弛中的 $X$ 对角线元素为 $1$ 以及 $X$ 半正定的约束消去了。但这两个问题一般不等价，当 $p$ 充分大时二者等价；实际计算中通常选取一个较小的 $p$。
 
@@ -7668,69 +7668,69 @@ $$D(B_1,B_2)=\sup_{(x,z)\in B_1\times B_2}\left\{\frac{\|x-x^{0}\|^2}{2t}+\frac{
 
 本节考虑如下凸问题：
 
-$$\begin{aligned}\min_{x_1,x_2}\ & f_1(x_1)+f_2(x_2),\\\text{s.t.}\ & A_1x_1+A_2x_2=b,\end{aligned}\tag{8.6.1}$$
+$$ \begin{aligned} \min_{x_1,x_2}\ & f_1(x_1)+f_2(x_2),\\ \text{s.t.}\ & A_1x_1+A_2x_2=b, \end{aligned}\tag{8.6.1} $$
 
 其中 $f_1,f_2$ 是适当的闭凸函数，但不要求是光滑的，$x_1\in\mathbb{R}^n$，$x_2\in\mathbb{R}^m$，$A_1\in\mathbb{R}^{p\times n}$，$A_2\in\mathbb{R}^{p\times m}$，$b\in\mathbb{R}^p$．这个问题的特点是目标函数可以分成彼此分离的两块，但是变量被线性约束结合在一起．常见的一些无约束和带约束的优化问题都可以表示成这一形式．下面的一些例子将展示如何把某些一般的优化问题转化为适用交替方向乘子法求解的标准形式．
 
 **例 8.19 (可以分成两块的无约束优化问题)** @468
 
-$$\min_x\ f_1(x)+f_2(x).$$
+$$ \min_x\ f_1(x)+f_2(x). $$
 
 为了将此问题转化为标准形式 (8.6.1)，需要将目标函数改成可分的形式．我们可以通过引入一个新的变量 $z$ 并令 $x=z$，将问题转化为
 
-$$\begin{aligned}\min_{x,z}\ & f_1(x)+f_2(z),\\\text{s.t.}\ & x-z=0.\end{aligned}$$
+$$ \begin{aligned} \min_{x,z}\ & f_1(x)+f_2(z),\\ \text{s.t.}\ & x-z=0. \end{aligned} $$
 
 **例 8.20 (带线性变换的无约束优化问题)** @468
 
-$$\min_x\ f_1(x)+f_2(Ax).$$
+$$ \min_x\ f_1(x)+f_2(Ax). $$
 
 类似地，我们可以引入一个新的变量 $z$，令 $z=Ax$，则问题变为
 
-$$\begin{aligned}\min_{x,z}\ & f_1(x)+f_2(z),\\\text{s.t.}\ & Ax-z=0.\end{aligned}$$
+$$ \begin{aligned} \min_{x,z}\ & f_1(x)+f_2(z),\\ \text{s.t.}\ & Ax-z=0. \end{aligned} $$
 
 对比问题 (8.6.1) 可知 $A_1=A$ 和 $A_2=-I$．
 
 **例 8.21 (凸集上的约束优化问题)** @468
 
-$$\begin{aligned}\min_x\ & f(x),\\\text{s.t.}\ & Ax\in C,\end{aligned}$$
+$$ \begin{aligned} \min_x\ & f(x),\\ \text{s.t.}\ & Ax\in C, \end{aligned} $$
 
 其中 $C\subset\mathbb{R}^n$ 为凸集．对于集合约束 $Ax\in C$，我们可以用示性函数 $I_C(\cdot)$ 将其添加到目标函数中，那么问题可以转化为例 8.20 中的形式：
 
-$$\min_x\ f(x)+I_C(Ax),$$
+$$ \min_x\ f(x)+I_C(Ax), $$
 
 其中 $I_C(z)$ 是集合 $C$ 的示性函数，即
 
-$$I_C(z)=\begin{cases}0, & z\in C,\\+\infty, & \text{其他}.\end{cases}$$
+$$ I_C(z)=\begin{cases} 0, & z\in C,\\ +\infty, & \text{其他}. \end{cases} $$
 
 再引入约束 $z=Ax$，那么问题转化为
 
-$$\begin{aligned}\min_{x,z}\ & f(x)+I_C(z),\\\text{s.t.}\ & Ax-z=0.\end{aligned}$$
+$$ \begin{aligned} \min_{x,z}\ & f(x)+I_C(z),\\ \text{s.t.}\ & Ax-z=0. \end{aligned} $$
 
 **例 8.22 (全局一致性问题)** @469
 
 全局一致性问题（global consensus problem）[128]：
 
-$$\min_x\ \sum_{i=1}^{N}\phi_i(x).$$
+$$ \min_x\ \sum_{i=1}^{N}\phi_i(x). $$
 
 令 $x=z$，并将 $x$ 复制 $N$ 份，分别为 $x_i$，那么问题转化为
 
-$$\begin{aligned}\min_{x_i,z}\ & \sum_{i=1}^{N}\phi_i(x_i),\\\text{s.t.}\ & x_i-z=0,\ i=1,2,\cdots,N.\end{aligned}$$
+$$ \begin{aligned} \min_{x_i,z}\ & \sum_{i=1}^{N}\phi_i(x_i),\\ \text{s.t.}\ & x_i-z=0,\ i=1,2,\cdots,N. \end{aligned} $$
 
 在这里注意，从形式上看全局一致性问题仍然具有问题 (8.6.1) 的结构：如果令
 
-$$x=(x_1^{\mathrm{T}},x_2^{\mathrm{T}},\cdots,x_N^{\mathrm{T}})^{\mathrm{T}}$$
+$$ x=(x_1^{\mathrm{T}},x_2^{\mathrm{T}},\cdots,x_N^{\mathrm{T}})^{\mathrm{T}} $$
 
 以及
 
-$$f_1(x)=\sum_{i=1}^{N}\phi_i(x_i),\quad f_2(z)=0,$$
+$$ f_1(x)=\sum_{i=1}^{N}\phi_i(x_i),\quad f_2(z)=0, $$
 
 则此问题可以化为
 
-$$\begin{aligned}\min_{x,z}\ & f_1(x)+f_2(z),\\\text{s.t.}\ & A_1x-A_2z=0,\end{aligned}$$
+$$ \begin{aligned} \min_{x,z}\ & f_1(x)+f_2(z),\\ \text{s.t.}\ & A_1x-A_2z=0, \end{aligned} $$
 
 其中矩阵 $A_1,A_2$ 定义为：
 
-$$A_1=\begin{bmatrix}I & & &\\& I & &\\& & \ddots &\\& & & I\end{bmatrix},\quadA_2=\begin{bmatrix}I\\ I\\ \vdots\\ I\end{bmatrix}.$$
+$$ A_1=\begin{bmatrix} I & & &\\ & I & &\\ & & \ddots &\\ & & & I \end{bmatrix},\quad A_2=\begin{bmatrix} I\\ I\\ \vdots\\ I \end{bmatrix}. $$
 
 在全局一致性问题的例子中，我们将问题重写为具有两个变量块的形式，而不是简单地将问题 (8.6.1) 推广为多个变量块的形式．这样做是有一定原因的，我们将在应用举例部分给出解答．
 
@@ -7738,31 +7738,31 @@ $$A_1=\begin{bmatrix}I & & &\\& I & &\\& & \ddots &\\& & & I\end{bmatrix},\quadA
 
 共享问题（Sharing Problem）[128]：
 
-$$\min_{x_i}\ \sum_{i=1}^{N}f_i(x_i)+g\left(\sum_{i=1}^{N}x_i\right).$$
+$$ \min_{x_i}\ \sum_{i=1}^{N}f_i(x_i)+g\left(\sum_{i=1}^{N}x_i\right). $$
 
 为了使目标函数可分，我们将 $g$ 的变量 $x_i$ 分别复制一份为 $z_i$，那么问题转化为
 
-$$\begin{aligned}\min_{x_i,z_i}\ & \sum_{i=1}^{N}f_i(x_i)+g\left(\sum_{i=1}^{N}z_i\right),\\\text{s.t.}\ & x_i-z_i=0,\ i=1,2,\cdots,N.\end{aligned}$$
+$$ \begin{aligned} \min_{x_i,z_i}\ & \sum_{i=1}^{N}f_i(x_i)+g\left(\sum_{i=1}^{N}z_i\right),\\ \text{s.t.}\ & x_i-z_i=0,\ i=1,2,\cdots,N. \end{aligned} $$
 
 容易验证此问题也具有问题 (8.6.1) 的形式．
 
 下面给出交替方向乘子法（alternating direction method of multipliers, ADMM）的迭代格式，首先写出问题 (8.6.1) 的增广拉格朗日函数
 
-$$\begin{aligned}L_\rho(x_1,x_2,y)=&f_1(x_1)+f_2(x_2)+y^{\mathrm{T}}(A_1x_1+A_2x_2-b)\\&+\frac{\rho}{2}\|A_1x_1+A_2x_2-b\|_2^2,\end{aligned}\tag{8.6.2}$$
+$$ \begin{aligned} L_\rho(x_1,x_2,y)=&f_1(x_1)+f_2(x_2)+y^{\mathrm{T}}(A_1x_1+A_2x_2-b)\\ &+\frac{\rho}{2}\|A_1x_1+A_2x_2-b\|_2^2, \end{aligned}\tag{8.6.2} $$
 
 其中 $\rho>0$ 是二次罚项的系数．常见的求解带约束问题的增广拉格朗日函数法为如下更新：
 
-$$(x_1^{k+1},x_2^{k+1})=\arg\min_{x_1,x_2}L_\rho(x_1,x_2,y^k),\tag{8.6.3}$$
+$$ (x_1^{k+1},x_2^{k+1})=\arg\min_{x_1,x_2}L_\rho(x_1,x_2,y^k),\tag{8.6.3} $$
 
-$$y^{k+1}=y^k+\tau\rho(A_1x_1^{k+1}+A_2x_2^{k+1}-b),\tag{8.6.4}$$
+$$ y^{k+1}=y^k+\tau\rho(A_1x_1^{k+1}+A_2x_2^{k+1}-b),\tag{8.6.4} $$
 
 其中 $\tau$ 为步长．在实际求解中，第一步迭代 (8.6.3) 同时对 $x_1$ 和 $x_2$ 进行优化有时候比较困难，而固定一个变量求解关于另一个变量的极小问题可能比较简单，因此我们可以考虑对 $x_1$ 和 $x_2$ 交替求极小，这就是交替方向乘子法的基本思路．其迭代格式可以总结如下：
 
-$$x_1^{k+1}=\arg\min_{x_1}L_\rho(x_1,x_2^k,y^k),\tag{8.6.5}$$
+$$ x_1^{k+1}=\arg\min_{x_1}L_\rho(x_1,x_2^k,y^k),\tag{8.6.5} $$
 
-$$x_2^{k+1}=\arg\min_{x_2}L_\rho(x_1^{k+1},x_2,y^k),\tag{8.6.6}$$
+$$ x_2^{k+1}=\arg\min_{x_2}L_\rho(x_1^{k+1},x_2,y^k),\tag{8.6.6} $$
 
-$$y^{k+1}=y^k+\tau\rho(A_1x_1^{k+1}+A_2x_2^{k+1}-b),\tag{8.6.7}$$
+$$ y^{k+1}=y^k+\tau\rho(A_1x_1^{k+1}+A_2x_2^{k+1}-b),\tag{8.6.7} $$
 
 其中 $\tau$ 为步长，通常取值于 $\left(0,\frac{1+\sqrt5}{2}\right]$．关于这样选择步长的收敛性，我们将在证明收敛性的小节中介绍．
 
@@ -7774,87 +7774,87 @@ $$y^{k+1}=y^k+\tau\rho(A_1x_1^{k+1}+A_2x_2^{k+1}-b),\tag{8.6.7}$$
 
 与无约束优化问题不同，交替方向乘子法针对的问题 (8.6.1) 是带约束的优化问题，因此算法的收敛准则应当借助约束优化问题的最优性条件（KKT 条件）．因为 $f_1,f_2$ 均为闭凸函数，约束为线性约束，所以当 Slater 条件成立时，可以使用凸优化问题的 KKT 条件来作为交替方向乘子法的收敛准则．问题 (8.6.1) 的拉格朗日函数为
 
-$$L(x_1,x_2,y)=f_1(x_1)+f_2(x_2)+y^{\mathrm{T}}(A_1x_1+A_2x_2-b).$$
+$$ L(x_1,x_2,y)=f_1(x_1)+f_2(x_2)+y^{\mathrm{T}}(A_1x_1+A_2x_2-b). $$
 
 根据定理 5.13，若 $x_1^*,x_2^*$ 为问题 (8.6.1) 的最优解，$y^*$ 为对应的拉格朗日乘子，则以下条件满足：
 
-$$0\in\partial_{x_1}L(x_1^*,x_2^*,y^*)=\partial f_1(x_1^*)+A_1^{\mathrm{T}}y^*,\tag{8.6.8a}$$
+$$ 0\in\partial_{x_1}L(x_1^*,x_2^*,y^*)=\partial f_1(x_1^*)+A_1^{\mathrm{T}}y^*,\tag{8.6.8a} $$
 
-$$0\in\partial_{x_2}L(x_1^*,x_2^*,y^*)=\partial f_2(x_2^*)+A_2^{\mathrm{T}}y^*,\tag{8.6.8b}$$
+$$ 0\in\partial_{x_2}L(x_1^*,x_2^*,y^*)=\partial f_2(x_2^*)+A_2^{\mathrm{T}}y^*,\tag{8.6.8b} $$
 
-$$A_1x_1^*+A_2x_2^*=b.\tag{8.6.8c}$$
+$$ A_1x_1^*+A_2x_2^*=b.\tag{8.6.8c} $$
 
 在这里条件 (8.6.8c) 又称为原始可行性条件，条件 (8.6.8a) 和条件 (8.6.8b) 又称为对偶可行性条件．由于问题中只含等式约束，KKT 条件中的互补松弛条件可以不加考虑．在 ADMM 迭代中，我们得到的迭代点实际为 $(x_1^k,x_2^k,y^k)$，因此收敛准则应当针对 $(x_1^k,x_2^k,y^k)$ 检测条件 (8.6.8)．接下来讨论如何具体计算这些收敛准则．
 
 一般来说，原始可行性条件 (8.6.8c) 在迭代中是不满足的，为了检测这个条件，需要计算原始可行性残差
 
-$$r^k=A_1x_1^k+A_2x_2^k-b$$
+$$ r^k=A_1x_1^k+A_2x_2^k-b $$
 
 的模长，这一计算是比较容易的．下面来看两个对偶可行性条件．考虑 ADMM 迭代更新 $x_2$ 的步骤
 
-$$x_2^k=\arg\min_x\left\{f_2(x)+\frac{\rho}{2}\left\|A_1x_1^k+A_2x-b+\frac{y^{k-1}}{\rho}\right\|^2\right\},$$
+$$ x_2^k=\arg\min_x\left\{f_2(x)+\frac{\rho}{2}\left\|A_1x_1^k+A_2x-b+\frac{y^{k-1}}{\rho}\right\|^2\right\}, $$
 
 假设这一子问题有显式解或能够精确求解，根据最优性条件不难推出
 
-$$0\in\partial f_2(x_2^k)+A_2^{\mathrm{T}}[y^{k-1}+\rho(A_1x_1^k+A_2x_2^k-b)].\tag{8.6.9}$$
+$$ 0\in\partial f_2(x_2^k)+A_2^{\mathrm{T}}[y^{k-1}+\rho(A_1x_1^k+A_2x_2^k-b)].\tag{8.6.9} $$
 
 注意到当 ADMM 步长 $\tau=1$ 时，根据迭代 (8.6.7) 可知上式方括号中的表达式就是 $y^k$，最终我们有
 
-$$0\in\partial f_2(x_2^k)+A_2^{\mathrm{T}}y^k,$$
+$$ 0\in\partial f_2(x_2^k)+A_2^{\mathrm{T}}y^k, $$
 
 这恰好就是条件 (8.6.8b)．上面的分析说明在 ADMM 迭代过程中，若 $x_2$ 的更新能取到精确解且步长 $\tau=1$，对偶可行性条件 (8.6.8b) 是自然成立的，因此无需针对条件 (8.6.8b) 单独验证最优性条件．然而，在迭代过程中条件 (8.6.8a) 却不能自然满足．实际上，由 $x_1$ 的更新公式
 
-$$x_1^k=\arg\min_x\left\{f_1(x)+\frac{\rho}{2}\left\|A_1x+A_2x_2^{k-1}-b+\frac{y^{k-1}}{\rho}\right\|^2\right\},$$
+$$ x_1^k=\arg\min_x\left\{f_1(x)+\frac{\rho}{2}\left\|A_1x+A_2x_2^{k-1}-b+\frac{y^{k-1}}{\rho}\right\|^2\right\}, $$
 
 假设子问题能精确求解，根据最优性条件
 
-$$0\in\partial f_1(x_1^k)+A_1^{\mathrm{T}}[\rho(A_1x_1^k+A_2x_2^{k-1}-b)+y^{k-1}].$$
+$$ 0\in\partial f_1(x_1^k)+A_1^{\mathrm{T}}[\rho(A_1x_1^k+A_2x_2^{k-1}-b)+y^{k-1}]. $$
 
 注意，这里 $x_2$ 上标是 $k-1$，因此根据 ADMM 的第三式 (8.6.7)，同样取 $\tau=1$，我们有
 
-$$0\in\partial f_1(x_1^k)+A_1^{\mathrm{T}}(y^k+\rho A_2(x_2^{k-1}-x_2^k)).\tag{8.6.10}$$
+$$ 0\in\partial f_1(x_1^k)+A_1^{\mathrm{T}}(y^k+\rho A_2(x_2^{k-1}-x_2^k)).\tag{8.6.10} $$
 
 对比条件 (8.6.8a) 可知多出来的项为 $\rho A_1^{\mathrm{T}}A_2(x_2^{k-1}-x_2^k)$，因此要检测对偶可行性只需要检测残差
 
-$$s^k=A_1^{\mathrm{T}}A_2(x_2^{k-1}-x_2^k)$$
+$$ s^k=A_1^{\mathrm{T}}A_2(x_2^{k-1}-x_2^k) $$
 
 是否充分小，这一检测同样也是比较容易的．综上，当 $x_2$ 更新取到精确解且 $\tau=1$ 时，判断 ADMM 是否收敛只需要检测前述两个残差 $r^k,s^k$ 是否充分小：
 
-$$\begin{aligned}0\approx\|r^k\|&=\|A_1x_1^k+A_2x_2^k-b\|\quad(\text{原始可行性}),\\0\approx\|s^k\|&=\|A_1^{\mathrm{T}}A_2(x_2^{k-1}-x_2^k)\|\quad(\text{对偶可行性}).\end{aligned}\tag{8.6.11}$$
+$$ \begin{aligned} 0\approx\|r^k\|&=\|A_1x_1^k+A_2x_2^k-b\|\quad(\text{原始可行性}),\\ 0\approx\|s^k\|&=\|A_1^{\mathrm{T}}A_2(x_2^{k-1}-x_2^k)\|\quad(\text{对偶可行性}). \end{aligned}\tag{8.6.11} $$
 
 #### 8.6.2 Douglas-Rachford Splitting 算法 @473
 
 Douglas-Rachford Splitting（DRS）算法是一类非常重要的算子分裂算法．它可以用于求解下面的无约束优化问题：
 
-$$\min_x\ \psi(x)=f(x)+h(x),\tag{8.6.12}$$
+$$ \min_x\ \psi(x)=f(x)+h(x),\tag{8.6.12} $$
 
 其中 $f$ 和 $h$ 是闭凸函数．DRS 算法的迭代格式是
 
-$$x^{k+1}=\mathrm{prox}_{th}(z^k),\tag{8.6.13}$$
+$$ x^{k+1}=\mathrm{prox}_{th}(z^k),\tag{8.6.13} $$
 
-$$y^{k+1}=\mathrm{prox}_{tf}(2x^{k+1}-z^k),\tag{8.6.14}$$
+$$ y^{k+1}=\mathrm{prox}_{tf}(2x^{k+1}-z^k),\tag{8.6.14} $$
 
-$$z^{k+1}=z^k+y^{k+1}-x^{k+1},\tag{8.6.15}$$
+$$ z^{k+1}=z^k+y^{k+1}-x^{k+1},\tag{8.6.15} $$
 
 其中 $t$ 是一个正的常数．我们还可以通过一系列变形来得到 DRS 格式的等价迭代．首先在原始 DRS 格式中按照 $y,z,x$ 的顺序进行更新，则有
 
-$$\begin{aligned}y^{k+1}&=\mathrm{prox}_{tf}(2x^k-z^k),\\z^{k+1}&=z^k+y^{k+1}-x^k,\\x^{k+1}&=\mathrm{prox}_{th}(z^{k+1}).\end{aligned}$$
+$$ \begin{aligned} y^{k+1}&=\mathrm{prox}_{tf}(2x^k-z^k),\\ z^{k+1}&=z^k+y^{k+1}-x^k,\\ x^{k+1}&=\mathrm{prox}_{th}(z^{k+1}). \end{aligned} $$
 
 引入辅助变量 $w^k=z^k-x^k$，并注意到上面迭代中变量 $z^k,z^{k+1}$ 可以消去，则得到 DRS 算法的等价迭代格式
 
-$$y^{k+1}=\mathrm{prox}_{tf}(x^k-w^k),\tag{8.6.16}$$
+$$ y^{k+1}=\mathrm{prox}_{tf}(x^k-w^k),\tag{8.6.16} $$
 
-$$x^{k+1}=\mathrm{prox}_{th}(w^k+y^{k+1}),\tag{8.6.17}$$
+$$ x^{k+1}=\mathrm{prox}_{th}(w^k+y^{k+1}),\tag{8.6.17} $$
 
-$$w^{k+1}=w^k+y^{k+1}-x^{k+1}.\tag{8.6.18}$$
+$$ w^{k+1}=w^k+y^{k+1}-x^{k+1}.\tag{8.6.18} $$
 
 DRS 格式还可以写成关于 $z^k$ 的不动点迭代的形式
 
-$$z^{k+1}=T(z^k),\tag{8.6.19}$$
+$$ z^{k+1}=T(z^k),\tag{8.6.19} $$
 
 其中
 
-$$T(z)=z+\mathrm{prox}_{tf}\left(2\mathrm{prox}_{th}(z)-z\right)-\mathrm{prox}_{th}(z).$$
+$$ T(z)=z+\mathrm{prox}_{tf}\left(2\mathrm{prox}_{th}(z)-z\right)-\mathrm{prox}_{th}(z). $$
 
 将 DRS 格式写成不动点迭代的形式是有好处的：第一，它去掉了迭代中的 $x^k,y^k$ 变量，使得算法形式更加简洁；第二，对不动点迭代的收敛性研究有一些常用的工具和技术手段，例如泛函分析中的压缩映射原理；第三，针对不动点迭代可写出很多种不同类型的加速算法．
 
@@ -7868,23 +7868,23 @@ $$T(z)=z+\mathrm{prox}_{tf}\left(2\mathrm{prox}_{th}(z)-z\right)-\mathrm{prox}_{
 
 对于不动点迭代，我们可以通过添加松弛项来加快收敛速度，即
 
-$$z^{k+1}=z^k+\rho(T(z^k)-z^k),$$
+$$ z^{k+1}=z^k+\rho(T(z^k)-z^k), $$
 
 其中，当 $1<\rho<2$ 时是超松弛，$0<\rho<1$ 是欠松弛．从而得到 DRS 算法的松弛版本
 
-$$\begin{aligned}x^{k+1}&=\mathrm{prox}_{th}(z^k),\\y^{k+1}&=\mathrm{prox}_{tf}(2x^{k+1}-z^k),\\z^{k+1}&=z^k+\rho(y^{k+1}-x^{k+1}),\end{aligned}$$
+$$ \begin{aligned} x^{k+1}&=\mathrm{prox}_{th}(z^k),\\ y^{k+1}&=\mathrm{prox}_{tf}(2x^{k+1}-z^k),\\ z^{k+1}&=z^k+\rho(y^{k+1}-x^{k+1}), \end{aligned} $$
 
 其等价形式为
 
-$$\begin{aligned}y^{k+1}&=\mathrm{prox}_{tf}(x^k-w^k),\\x^{k+1}&=\mathrm{prox}_{th}((1-\rho)x^k+\rho y^{k+1}+w^k),\\w^{k+1}&=w^k+\rho y^{k+1}+(1-\rho)x^k-x^{k+1}.\end{aligned}$$
+$$ \begin{aligned} y^{k+1}&=\mathrm{prox}_{tf}(x^k-w^k),\\ x^{k+1}&=\mathrm{prox}_{th}((1-\rho)x^k+\rho y^{k+1}+w^k),\\ w^{k+1}&=w^k+\rho y^{k+1}+(1-\rho)x^k-x^{k+1}. \end{aligned} $$
 
 DRS 算法和 ADMM 有一定的等价关系．考虑本章开始引入的可分的凸问题 (8.6.1)：
 
-$$\begin{aligned}\min_{x_1,x_2}\ & f_1(x_1)+f_2(x_2),\\\text{s.t.}\ & A_1x_1+A_2x_2=b,\end{aligned}$$
+$$ \begin{aligned} \min_{x_1,x_2}\ & f_1(x_1)+f_2(x_2),\\ \text{s.t.}\ & A_1x_1+A_2x_2=b, \end{aligned} $$
 
 它的对偶问题为无约束复合优化问题
 
-$$\min_z\ \underbrace{b^{\mathrm{T}}z+f_1^*(-A_1^{\mathrm{T}}z)}_{f(z)}+\underbrace{f_2^*(-A_2^{\mathrm{T}}z)}_{h(z)},\tag{8.6.20}$$
+$$ \min_z\ \underbrace{b^{\mathrm{T}}z+f_1^*(-A_1^{\mathrm{T}}z)}_{f(z)}+\underbrace{f_2^*(-A_2^{\mathrm{T}}z)}_{h(z)},\tag{8.6.20} $$
 
 根据问题 (8.6.20) 的结构拆分出 $f(z)$ 和 $h(z)$，我们对该问题使用 DRS 算法求解．下面这个定理表明，对原始问题 (8.6.1) 使用 ADMM 求解就等价于将 DRS 算法应用在对偶问题 (8.6.20) 上．
 
@@ -7902,19 +7902,19 @@ $$\min_z\ \underbrace{b^{\mathrm{T}}z+f_1^*(-A_1^{\mathrm{T}}z)}_{f(z)}+\underbr
 
 不失一般性，我们考虑第一个子问题，即
 
-$$\min_{x_1}\ f_1(x_1)+\frac{\rho}{2}\|A_1x_1-v^k\|^2,\tag{8.6.23}$$
+$$ \min_{x_1}\ f_1(x_1)+\frac{\rho}{2}\|A_1x_1-v^k\|^2,\tag{8.6.23} $$
 
 其中
 
-$$v^k=b-A_2x_2^k-\frac{1}{\rho}y^k.\tag{8.6.24}$$
+$$ v^k=b-A_2x_2^k-\frac{1}{\rho}y^k.\tag{8.6.24} $$
 
 当子问题不能显式求解时，可采用线性化的方法 [129] 近似求解问题 (8.6.23)．线性化技巧实际上是使用近似点项对子问题目标函数进行二次近似．当子问题目标函数可微时，线性化将问题 (8.6.23) 变为
 
-$$x_1^{k+1}=\arg\min_{x_1}\left\{\left(\nabla f_1(x_1^k)+\rho A_1^{\mathrm{T}}\left(A_1x_1^k-v^k\right)\right)^{\mathrm{T}}x_1+\frac{1}{2\eta_k}\|x_1-x^k\|_2^2\right\},$$
+$$ x_1^{k+1}=\arg\min_{x_1}\left\{\left(\nabla f_1(x_1^k)+\rho A_1^{\mathrm{T}}\left(A_1x_1^k-v^k\right)\right)^{\mathrm{T}}x_1+\frac{1}{2\eta_k}\|x_1-x^k\|_2^2\right\}, $$
 
 其中 $\eta_k$ 是步长参数，这等价于做一步梯度下降．当目标函数不可微时，可以考虑只将二次项线性化，即
 
-$$x_1^{k+1}=\arg\min_{x_1}\left\{f_1(x_1)+\rho\left(A_1^{\mathrm{T}}(A_1x_1^k-v^k)\right)^{\mathrm{T}}x_1+\frac{1}{2\eta_k}\|x_1-x^k\|_2^2\right\},$$
+$$ x_1^{k+1}=\arg\min_{x_1}\left\{f_1(x_1)+\rho\left(A_1^{\mathrm{T}}(A_1x_1^k-v^k)\right)^{\mathrm{T}}x_1+\frac{1}{2\eta_k}\|x_1-x^k\|_2^2\right\}, $$
 
 这等价于求解子问题 (8.6.23) 时做一步近似点梯度步．当然，若 $f_1(x_1)$ 是可微函数与不可微函数的和时，也可将其可微部分线性化．
 
@@ -7922,7 +7922,7 @@ $$x_1^{k+1}=\arg\min_{x_1}\left\{f_1(x_1)+\rho\left(A_1^{\mathrm{T}}(A_1x_1^k-v^
 
 如果目标函数中含二次函数，例如 $f_1(x_1)=\frac{1}{2}\|Cx_1-d\|_2^2$，那么针对 $x_1$ 的更新 (8.6.5) 等价于求解线性方程组
 
-$$(C^{\mathrm{T}}C+\rho A_1^{\mathrm{T}}A_1)x_1=C^{\mathrm{T}}d+\rho A_1^{\mathrm{T}}v^k,$$
+$$ (C^{\mathrm{T}}C+\rho A_1^{\mathrm{T}}A_1)x_1=C^{\mathrm{T}}d+\rho A_1^{\mathrm{T}}v^k, $$
 
 其中 $v^k$ 的定义如 (8.6.24) 式．虽然子问题有显式解，但是每步求解的复杂度仍然比较高，这时候可以考虑用缓存分解的方法．首先对 $C^{\mathrm{T}}C+\rho A_1^{\mathrm{T}}A_1$ 进行 Cholesky 分解并缓存分解的结果，在每步迭代中只需要求解简单的三角形方程组；当 $\rho$ 发生更新时，就要重新进行分解．特别地，当 $C^{\mathrm{T}}C+\rho A_1^{\mathrm{T}}A_1$ 一部分容易求逆，另一部分是低秩的情形时，可以用 SMW 公式 (B.1.2) 来求逆．
 
@@ -7930,7 +7930,7 @@ $$(C^{\mathrm{T}}C+\rho A_1^{\mathrm{T}}A_1)x_1=C^{\mathrm{T}}d+\rho A_1^{\mathr
 
 有时候为了方便求解子问题，可以用一个性质好的矩阵 $D$ 近似二次项 $A_1^{\mathrm{T}}A_1$，此时子问题 (8.6.23) 替换为
 
-$$x_1^{k+1}=\arg\min_{x_1}\left\{f_1(x_1)+\frac{\rho}{2}\|A_1x_1-v^k\|_2^2+\frac{\rho}{2}(x_1-x^k)^{\mathrm{T}}(D-A_1^{\mathrm{T}}A_1)(x_1-x^k)\right\},$$
+$$ x_1^{k+1}=\arg\min_{x_1}\left\{f_1(x_1)+\frac{\rho}{2}\|A_1x_1-v^k\|_2^2+\frac{\rho}{2}(x_1-x^k)^{\mathrm{T}}(D-A_1^{\mathrm{T}}A_1)(x_1-x^k)\right\}, $$
 
 其中 $v^k$ 的定义如 (8.6.24) 式，这种方法也称为优化转移．通过选取合适的 $D$，当计算 $\arg\min_{x_1}\left\{f_1(x_1)+\frac{\rho}{2}x_1^{\mathrm{T}}Dx_1\right\}$ 明显比计算 $\arg\min_{x_1}\{f_1(x_1)+\frac{\rho}{2}x_1^{\mathrm{T}}A_1^{\mathrm{T}}A_1x_1\}$ 要容易时，优化转移可以极大地简化子问题的计算．特别地，当 $D=\frac{\eta_k}{\rho}I$ 时，优化转移等价于做单步的近似点梯度步．
 
@@ -7938,7 +7938,7 @@ $$x_1^{k+1}=\arg\min_{x_1}\left\{f_1(x_1)+\frac{\rho}{2}\|A_1x_1-v^k\|_2^2+\frac
 
 动态调节二次罚项系数在交替方向乘子法的实际应用中是一个非常重要的数值技巧．在介绍 ADMM 时我们引入了原始可行性和对偶可行性（分别用 $\|r^k\|$ 和 $\|s^k\|$ 度量），见 (8.6.11) 式．在实际求解过程中，二次罚项系数 $\rho$ 太大会导致原始可行性 $\|r^k\|$ 下降很快，但是对偶可行性 $\|s^k\|$ 下降很慢；二次罚项系数太小，则会有相反的效果．这样都会导致收敛比较慢或得到的解的可行性很差．一个自然的想法是在每次迭代时动态调节惩罚系数 $\rho$ 的大小，从而使得原始可行性和对偶可行性能够以比较一致的速度下降到零．这种做法通常可以改善算法在实际中的收敛效果，以及使算法表现更少地依赖于惩罚系数的初始选择．一个简单有效的方式是令
 
-$$\rho^{k+1}=\begin{cases}\gamma_p\rho^k, & \|r^k\|>\mu\|s^k\|,\\\dfrac{\rho^k}{\gamma_d}, & \|s^k\|>\mu\|r^k\|,\\\rho^k, & \text{其他},\end{cases}$$
+$$ \rho^{k+1}=\begin{cases} \gamma_p\rho^k, & \|r^k\|>\mu\|s^k\|,\\ \dfrac{\rho^k}{\gamma_d}, & \|s^k\|>\mu\|r^k\|,\\ \rho^k, & \text{其他}, \end{cases} $$
 
 其中 $\mu>1,\gamma_p>1,\gamma_d>1$ 是参数．常见的选择为 $\mu=10,\gamma_p=\gamma_d=2$．该惩罚参数更新方式背后的想法是在迭代过程中，将原始可行性 $\|r^k\|$ 和对偶可行性 $\|s^k\|$ 保持在彼此的 $\mu$ 倍内．如果发现 $\|r^k\|$ 或 $\|s^k\|$ 下降过慢就应该相应增大或减小二次罚项系数 $\rho^k$．但在改变 $\rho^k$ 的时候需要注意，若之前利用了缓存分解的技巧，此时分解需要重新计算．更一般地，我们可以考虑对每一个约束给一个不同的惩罚系数，甚至可以将增广拉格朗日函数 (8.6.2) 中的二次项 $\frac{\rho}{2}\|r\|^2$ 替换为 $\frac{\rho}{2}r^{\mathrm{T}}Pr$，其中 $P$ 是一个对称正定矩阵．如果 $P$ 在整个迭代过程中是不变的，我们可以将这个一般的交替方向乘子法解释为将标准的交替方向乘子法应用在修改后的初始问题上——等式约束 $A_1x_1+A_2x_2-b=0$ 替换为 $F(A_1x_1+A_2x_2-b)=0$，其中 $F$ 为 $P$ 的 Cholesky 因子，即 $P=F^{\mathrm{T}}F$，且 $F$ 是对角元为正数的上三角矩阵．
 
@@ -7946,7 +7946,7 @@ $$\rho^{k+1}=\begin{cases}\gamma_p\rho^k, & \|r^k\|>\mu\|s^k\|,\\\dfrac{\rho^k}{
 
 另外一种想法是用超松弛的技巧，在 (8.6.6) 式与 (8.6.7) 式中，$A_1x_1^{k+1}$ 可以被替换为
 
-$$\alpha_kA_1x_1^{k+1}+(1-\alpha_k)(A_2x_2^k-b),$$
+$$ \alpha_kA_1x_1^{k+1}+(1-\alpha_k)(A_2x_2^k-b), $$
 
 其中 $\alpha_k\in(0,2)$ 是一个松弛参数．当 $\alpha_k>1$ 时，这种技巧称为超松弛；当 $\alpha_k<1$ 时，这种技巧称为欠松弛．实验表明 $\alpha_k\in[1.5,1.8]$ 的超松弛可以提高收敛速度．
 
@@ -7954,11 +7954,11 @@ $$\alpha_kA_1x_1^{k+1}+(1-\alpha_k)(A_2x_2^k-b),$$
 
 在引入问题 (8.6.1) 时，我们提到了有两块变量 $x_1,x_2$．这个问题不难推广到有多块变量的情形：
 
-$$\begin{aligned}\min_{x_1,x_2,\cdots,x_N}\ & f_1(x_1)+f_2(x_2)+\cdots+f_N(x_N),\\\text{s.t.}\ & A_1x_1+A_2x_2+\cdots+A_Nx_N=b.\end{aligned}\tag{8.6.25}$$
+$$ \begin{aligned} \min_{x_1,x_2,\cdots,x_N}\ & f_1(x_1)+f_2(x_2)+\cdots+f_N(x_N),\\ \text{s.t.}\ & A_1x_1+A_2x_2+\cdots+A_Nx_N=b. \end{aligned}\tag{8.6.25} $$
 
 这里 $f_i(x_i)$ 是闭凸函数，$x_i\in\mathbb{R}^{n_i}$，$A_i\in\mathbb{R}^{m\times n_i}$．同样可以写出问题 (8.6.25) 的增广拉格朗日函数 $L_\rho(x_1,x_2,\cdots,x_N,y)$，相应的多块 ADMM 迭代格式为
 
-$$\begin{aligned}x_1^{k+1}&=\arg\min_x L_\rho(x,x_2^k,\cdots,x_N^k,y^k),\\x_2^{k+1}&=\arg\min_x L_\rho(x_1^{k+1},x,\cdots,x_N^k,y^k),\\&\cdots\cdots\cdots\cdots\cdots\\x_N^{k+1}&=\arg\min_x L_\rho(x_1^{k+1},x_2^{k+1},\cdots,x,y^k),\\y^{k+1}&=y^k+\tau\rho(A_1x_1^{k+1}+A_2x_2^{k+1}+\cdots+A_Nx_N^{k+1}-b),\end{aligned}$$
+$$ \begin{aligned} x_1^{k+1}&=\arg\min_x L_\rho(x,x_2^k,\cdots,x_N^k,y^k),\\ x_2^{k+1}&=\arg\min_x L_\rho(x_1^{k+1},x,\cdots,x_N^k,y^k),\\ &\cdots\cdots\cdots\cdots\cdots\\ x_N^{k+1}&=\arg\min_x L_\rho(x_1^{k+1},x_2^{k+1},\cdots,x,y^k),\\ y^{k+1}&=y^k+\tau\rho(A_1x_1^{k+1}+A_2x_2^{k+1}+\cdots+A_Nx_N^{k+1}-b), \end{aligned} $$
 
 其中 $\tau\in\left(0,\frac{1}{2}(\sqrt5+1)\right)$ 为步长参数．
 
@@ -7974,47 +7974,47 @@ $$\begin{aligned}x_1^{k+1}&=\arg\min_x L_\rho(x,x_2^k,\cdots,x_N^k,y^k),\\x_2^{k
 
 LASSO 问题为
 
-$$\min\ \mu\|x\|_1+\frac{1}{2}\|Ax-b\|^2.$$
+$$ \min\ \mu\|x\|_1+\frac{1}{2}\|Ax-b\|^2. $$
 
 这是典型的无约束复合优化问题，我们可以很容易地将其写成 ADMM 标准问题形式：
 
-$$\begin{aligned}\min_{x,z}\ & f(x)+h(z),\\\text{s.t.}\ & x=z,\end{aligned}$$
+$$ \begin{aligned} \min_{x,z}\ & f(x)+h(z),\\ \text{s.t.}\ & x=z, \end{aligned} $$
 
 其中 $f(x)=\frac{1}{2}\|Ax-b\|^2$，$h(z)=\mu\|z\|_1$．对于此问题，交替方向乘子法迭代格式为
 
-$$\begin{aligned}x^{k+1}&=\arg\min_x\left\{\frac{1}{2}\|Ax-b\|^2+\frac{\rho}{2}\left\|x-z^k+\frac{1}{\rho}y^k\right\|_2^2\right\},\\&=(A^{\mathrm{T}}A+\rho I)^{-1}(A^{\mathrm{T}}b+\rho z^k-y^k),\\z^{k+1}&=\arg\min_z\left\{\mu\|z\|_1+\frac{\rho}{2}\left\|x^{k+1}-z+\frac{1}{\rho}y^k\right\|_2^2\right\},\\&=\mathrm{prox}_{(\mu/\rho)\|\cdot\|_1}\left(x^{k+1}+\frac{1}{\rho}y^k\right),\\y^{k+1}&=y^k+\tau\rho(x^{k+1}-z^{k+1}).\end{aligned}$$
+$$ \begin{aligned} x^{k+1}&=\arg\min_x\left\{\frac{1}{2}\|Ax-b\|^2+\frac{\rho}{2}\left\|x-z^k+\frac{1}{\rho}y^k\right\|_2^2\right\},\\ &=(A^{\mathrm{T}}A+\rho I)^{-1}(A^{\mathrm{T}}b+\rho z^k-y^k),\\ z^{k+1}&=\arg\min_z\left\{\mu\|z\|_1+\frac{\rho}{2}\left\|x^{k+1}-z+\frac{1}{\rho}y^k\right\|_2^2\right\},\\ &=\mathrm{prox}_{(\mu/\rho)\|\cdot\|_1}\left(x^{k+1}+\frac{1}{\rho}y^k\right),\\ y^{k+1}&=y^k+\tau\rho(x^{k+1}-z^{k+1}). \end{aligned} $$
 
 注意，因为 $\rho>0$，所以 $A^{\mathrm{T}}A+\rho I$ 总是可逆的．$x$ 迭代本质上是计算一个岭回归问题（$\ell_2$ 范数平方正则化的最小二乘问题）；而对 $z$ 的更新为 $\ell_1$ 范数的邻近算子，同样有显式解．在求解 $x$ 迭代时，若使用固定的罚因子 $\rho$，我们可以缓存矩阵 $A^{\mathrm{T}}A+\rho I$ 的初始分解，从而减小后续迭代中的计算量．需要注意的是，在 LASSO 问题中，矩阵 $A\in\mathbb{R}^{m\times n}$ 通常有较多的列（即 $m\ll n$），因此 $A^{\mathrm{T}}A\in\mathbb{R}^{n\times n}$ 是一个低秩矩阵，二次罚项的作用就是将 $A^{\mathrm{T}}A$ 增加了一个正定项．该 ADMM 主要运算量来自更新 $x$ 变量时求解线性方程组，复杂度为 $\mathcal{O}(n^3)$（若使用缓存分解技术或 SMW 公式 (B.1.2) 则可进一步降低每次迭代的运算量）．
 
 接下来考虑 LASSO 问题的对偶问题
 
-$$\begin{aligned}\min\ & b^{\mathrm{T}}y+\frac{1}{2}\|y\|^2,\\\text{s.t.}\ & \|A^{\mathrm{T}}y\|_\infty\leqslant\mu.\end{aligned}\tag{8.6.26}$$
+$$ \begin{aligned} \min\ & b^{\mathrm{T}}y+\frac{1}{2}\|y\|^2,\\ \text{s.t.}\ & \|A^{\mathrm{T}}y\|_\infty\leqslant\mu. \end{aligned}\tag{8.6.26} $$
 
 将 $\|A^{\mathrm{T}}y\|_\infty\leqslant\mu$ 变成示性函数放在目标函数中，并引入约束 $A^{\mathrm{T}}y+z=0$，可以得到如下等价问题：
 
-$$\begin{aligned}\min\ & \underbrace{b^{\mathrm{T}}y+\frac{1}{2}\|y\|^2}_{f(y)}+\underbrace{I_{\|z\|_\infty\leqslant\mu}(z)}_{h(z)},\\\text{s.t.}\ & A^{\mathrm{T}}y+z=0.\end{aligned}\tag{8.6.27}$$
+$$ \begin{aligned} \min\ & \underbrace{b^{\mathrm{T}}y+\frac{1}{2}\|y\|^2}_{f(y)}+\underbrace{I_{\|z\|_\infty\leqslant\mu}(z)}_{h(z)},\\ \text{s.t.}\ & A^{\mathrm{T}}y+z=0. \end{aligned}\tag{8.6.27} $$
 
 对约束 $A^{\mathrm{T}}y+z=0$ 引入乘子 $x$，对偶问题的增广拉格朗日函数为
 
-$$L_\rho(y,z,x)=b^{\mathrm{T}}y+\frac{1}{2}\|y\|^2+I_{\|z\|_\infty\leqslant\mu}(z)-x^{\mathrm{T}}(A^{\mathrm{T}}y+z)+\frac{\rho}{2}\|A^{\mathrm{T}}y+z\|^2.$$
+$$ L_\rho(y,z,x)=b^{\mathrm{T}}y+\frac{1}{2}\|y\|^2+I_{\|z\|_\infty\leqslant\mu}(z)-x^{\mathrm{T}}(A^{\mathrm{T}}y+z)+\frac{\rho}{2}\|A^{\mathrm{T}}y+z\|^2. $$
 
 在这里我们故意引入符号 $x$ 作为拉格朗日乘子，实际上可以证明（见习题 8.18）$x$ 恰好对应的是原始问题的自变量．以下说明如何求解每个子问题．当固定 $y,x$ 时，对 $z$ 的更新即向无穷范数球 $\{z\mid\|z\|_\infty\leqslant\mu\}$ 做欧几里得投影，即将每个分量截断在区间 $[-\mu,\mu]$ 中；当固定 $z,x$ 时，对 $y$ 的更新即求解线性方程组
 
-$$(I+\rho AA^{\mathrm{T}})y=A(x^k-\rho z^{k+1})-b.$$
+$$ (I+\rho AA^{\mathrm{T}})y=A(x^k-\rho z^{k+1})-b. $$
 
 因此得到 ADMM 迭代格式为
 
-$$\begin{aligned}z^{k+1}&=\mathcal{P}_{\|z\|_\infty\leqslant\mu}\left(\frac{x^k}{\rho}-A^{\mathrm{T}}y^k\right),\\y^{k+1}&=(I+\rho AA^{\mathrm{T}})^{-1}\left(A(x^k-\rho z^{k+1})-b\right),\\x^{k+1}&=x^k-\tau\rho(A^{\mathrm{T}}y^{k+1}+z^{k+1}).\end{aligned}$$
+$$ \begin{aligned} z^{k+1}&=\mathcal{P}_{\|z\|_\infty\leqslant\mu}\left(\frac{x^k}{\rho}-A^{\mathrm{T}}y^k\right),\\ y^{k+1}&=(I+\rho AA^{\mathrm{T}})^{-1}\left(A(x^k-\rho z^{k+1})-b\right),\\ x^{k+1}&=x^k-\tau\rho(A^{\mathrm{T}}y^{k+1}+z^{k+1}). \end{aligned} $$
 
 注意，虽然 ADMM 应用于对偶问题也需要求解一个线性方程组，但由于 LASSO 问题的特殊性（$m\ll n$），求解 $y$ 更新的线性方程组需要的计算量是 $\mathcal{O}(m^3)$，使用缓存分解技巧后可进一步降低至 $\mathcal{O}(m^2)$，这大大小于针对原始问题的 ADMM．
 
 对原始问题，另一种可能的拆分方法是
 
-$$\begin{aligned}\min\ & \underbrace{\mu\|x\|_1}_{f(x)}+\underbrace{\frac{1}{2}\|z\|^2}_{h(z)},\\\text{s.t.}\ & z=Ax-b,\end{aligned}$$
+$$ \begin{aligned} \min\ & \underbrace{\mu\|x\|_1}_{f(x)}+\underbrace{\frac{1}{2}\|z\|^2}_{h(z)},\\ \text{s.t.}\ & z=Ax-b, \end{aligned} $$
 
 可以写出其增广拉格朗日函数为
 
-$$L_\rho(x,z,y)=\mu\|x\|_1+\frac{1}{2}\|z\|^2+y^{\mathrm{T}}(Ax-b-z)+\frac{\rho}{2}\|Ax-b-z\|^2.$$
+$$ L_\rho(x,z,y)=\mu\|x\|_1+\frac{1}{2}\|z\|^2+y^{\mathrm{T}}(Ax-b-z)+\frac{\rho}{2}\|Ax-b-z\|^2. $$
 
 但是如果对这种拆分方式使用 ADMM，求解 $x$ 的更新本质上还是在求解一个 LASSO 问题！这种变形方式将问题绕回了起点，因此并不是一个实用的方法．
 
@@ -8024,31 +8024,31 @@ $$L_\rho(x,z,y)=\mu\|x\|_1+\frac{1}{2}\|z\|^2+y^{\mathrm{T}}(Ax-b-z)+\frac{\rho}
 
 广义 LASSO 问题的定义为
 
-$$\min_x\ \mu\|Fx\|_1+\frac{1}{2}\|Ax-b\|^2.\tag{8.6.28}$$
+$$ \min_x\ \mu\|Fx\|_1+\frac{1}{2}\|Ax-b\|^2.\tag{8.6.28} $$
 
 在 LASSO 问题中，增加 $\|x\|_1$ 项是要保证 $x$ 的稀疏性，而对许多问题，$x$ 本身不稀疏，但在某种变换下是稀疏的．一个重要的例子是当 $F\in\mathbb{R}^{(n-1)\times n}$ 是一阶差分矩阵
 
-$$F_{ij}=\begin{cases}1, & j=i+1,\\-1, & j=i,\\0, & \text{其他},\end{cases}$$
+$$ F_{ij}=\begin{cases} 1, & j=i+1,\\ -1, & j=i,\\ 0, & \text{其他}, \end{cases} $$
 
 且 $A=I$ 时，广义 LASSO 问题为
 
-$$\min_x\ \frac{1}{2}\|x-b\|^2+\mu\sum_{i=1}^{n-1}|x_{i+1}-x_i|,$$
+$$ \min_x\ \frac{1}{2}\|x-b\|^2+\mu\sum_{i=1}^{n-1}|x_{i+1}-x_i|, $$
 
 这个问题就是图像去噪问题的 TV 模型 [130]；当 $A=I$ 且 $F$ 是二阶差分矩阵时，问题 (8.6.28) 被称为一范数趋势滤波 [131]．下面介绍如何使用 ADMM 求解问题 (8.6.28)．通过引入约束 $Fx=z$，我们将问题 (8.6.28) 写为交替方向乘子法所对应问题的形式：
 
-$$\begin{aligned}\min_{x,z}\ & \frac{1}{2}\|Ax-b\|^2+\mu\|z\|_1,\\\text{s.t.}\ & Fx-z=0,\end{aligned}\tag{8.6.29}$$
+$$ \begin{aligned} \min_{x,z}\ & \frac{1}{2}\|Ax-b\|^2+\mu\|z\|_1,\\ \text{s.t.}\ & Fx-z=0, \end{aligned}\tag{8.6.29} $$
 
 引入乘子 $y$，其增广拉格朗日函数为
 
-$$L_\rho(x,z,y)=\frac{1}{2}\|Ax-b\|^2+\mu\|z\|_1+y^{\mathrm{T}}(Fx-z)+\frac{\rho}{2}\|Fx-z\|^2.$$
+$$ L_\rho(x,z,y)=\frac{1}{2}\|Ax-b\|^2+\mu\|z\|_1+y^{\mathrm{T}}(Fx-z)+\frac{\rho}{2}\|Fx-z\|^2. $$
 
 此问题的 $x$ 迭代是求解方程组
 
-$$(A^{\mathrm{T}}A+\rho F^{\mathrm{T}}F)x=A^{\mathrm{T}}b+\rho F^{\mathrm{T}}\left(z^k-\frac{y^k}{\rho}\right),$$
+$$ (A^{\mathrm{T}}A+\rho F^{\mathrm{T}}F)x=A^{\mathrm{T}}b+\rho F^{\mathrm{T}}\left(z^k-\frac{y^k}{\rho}\right), $$
 
 而 $z$ 迭代依然通过 $\ell_1$ 范数的邻近算子．因此交替方向乘子法所产生的迭代为
 
-$$\begin{aligned}x^{k+1}&=(A^{\mathrm{T}}A+\rho F^{\mathrm{T}}F)^{-1}\left(A^{\mathrm{T}}b+\rho F^{\mathrm{T}}\left(z^k-\frac{y^k}{\rho}\right)\right),\\z^{k+1}&=\mathrm{prox}_{(\mu/\rho)\|\cdot\|_1}\left(Fx^{k+1}+\frac{y^k}{\rho}\right),\\y^{k+1}&=y^k+\tau\rho(Fx^{k+1}-z^{k+1}).\end{aligned}$$
+$$ \begin{aligned} x^{k+1}&=(A^{\mathrm{T}}A+\rho F^{\mathrm{T}}F)^{-1}\left(A^{\mathrm{T}}b+\rho F^{\mathrm{T}}\left(z^k-\frac{y^k}{\rho}\right)\right),\\ z^{k+1}&=\mathrm{prox}_{(\mu/\rho)\|\cdot\|_1}\left(Fx^{k+1}+\frac{y^k}{\rho}\right),\\ y^{k+1}&=y^k+\tau\rho(Fx^{k+1}-z^{k+1}). \end{aligned} $$
 
 在这个问题中，ADMM 迭代的主要计算量仍在 $x$ 更新上．由于图像去噪问题涉及的变量数量可能有上百万，这一步迭代就要涉及求解一个百万量级的线性方程组．在这种数据规模下不适合再使用矩阵分解的方式求解方程组，而应当注意系数矩阵的特殊结构．对于全变差去噪问题，$A^{\mathrm{T}}A+\rho F^{\mathrm{T}}F$ 是三对角矩阵，所以此时 $x$ 迭代可以在 $\mathcal{O}(n)$ 的时间复杂度内解决 [132]；对于图像去模糊问题，$A$ 是卷积算子，则利用傅里叶变换可将求解方程组的复杂度降低至 $\mathcal{O}(n\log n)$；对于一范数趋势滤波问题，$A^{\mathrm{T}}A+\rho F^{\mathrm{T}}F$ 是五对角矩阵，所以 $x$ 迭代仍可以在 $\mathcal{O}(n)$ 的时间复杂度内解决．
 
@@ -8056,29 +8056,29 @@ $$\begin{aligned}x^{k+1}&=(A^{\mathrm{T}}A+\rho F^{\mathrm{T}}F)^{-1}\left(A^{\m
 
 第三章介绍了概率图模型和逆协方差矩阵估计问题．该问题的基本形式是
 
-$$\min_X\ \langle S,X\rangle-\ln\det X+\mu\|X\|_1,\tag{8.6.30}$$
+$$ \min_X\ \langle S,X\rangle-\ln\det X+\mu\|X\|_1,\tag{8.6.30} $$
 
 其中 $S$ 是已知的对称矩阵，通常由样本协方差矩阵得到．变量 $X\in\mathcal{S}^n_{++}$，$\|\cdot\|_1$ 定义为矩阵所有元素绝对值的和．文献 [133] 说明在这个问题上，交替方向乘子法具有非常好的表现．接下来我们说明如何应用交替方向乘子法．
 
 目标函数由光滑项和非光滑项组成，因此引入约束 $X=Z$ 将问题的两部分分离：
 
-$$\begin{aligned}\min\ & \underbrace{\langle S,X\rangle-\ln\det X}_{f(X)}+\underbrace{\mu\|Z\|_1}_{h(Z)},\\\text{s.t.}\ & X=Z.\end{aligned}$$
+$$ \begin{aligned} \min\ & \underbrace{\langle S,X\rangle-\ln\det X}_{f(X)}+\underbrace{\mu\|Z\|_1}_{h(Z)},\\ \text{s.t.}\ & X=Z. \end{aligned} $$
 
 引入乘子 $U$ 作用在约束 $X-Z=0$ 上，可得增广拉格朗日函数为
 
-$$L_\rho(X,Z,U)=\langle S,X\rangle-\ln\det X+\mu\|Z\|_1+\langle U,X-Z\rangle+\frac{\rho}{2}\|X-Z\|_F^2.$$
+$$ L_\rho(X,Z,U)=\langle S,X\rangle-\ln\det X+\mu\|Z\|_1+\langle U,X-Z\rangle+\frac{\rho}{2}\|X-Z\|_F^2. $$
 
 这里注意，针对矩阵情形我们应当使用 $F$ 范数替换 $\ell_2$ 范数作为增广拉格朗日函数法的罚项．接下来就是分别写出 ADMM 子问题的显式解．首先，固定 $Z^k,U^k$，则 $X$ 子问题是凸光滑问题，对 $X$ 求矩阵导数并令其为零，
 
-$$S-X^{-1}+U^k+\rho(X-Z^k)=0.$$
+$$ S-X^{-1}+U^k+\rho(X-Z^k)=0. $$
 
 这是一个关于 $X$ 的矩阵方程，可以求出满足上述矩阵方程的唯一正定的 $X$ 为
 
-$$X^{k+1}=Q\,\mathrm{Diag}(x_1,x_2,\cdots,x_n)\,Q^{\mathrm{T}},$$
+$$ X^{k+1}=Q\,\mathrm{Diag}(x_1,x_2,\cdots,x_n)\,Q^{\mathrm{T}}, $$
 
 其中 $Q$ 包含矩阵 $S-\rho Z^k+U^k$ 的所有特征向量，$x_i$ 的表达式为
 
-$$x_i=\frac{-d_i+\sqrt{d_i^2+4\rho}}{2\rho},$$
+$$ x_i=\frac{-d_i+\sqrt{d_i^2+4\rho}}{2\rho}, $$
 
 $d_i$ 为矩阵 $S-\rho Z^k+U^k$ 的第 $i$ 个特征值．其次，固定 $X^{k+1},U^k$，则 $Z$ 的更新为矩阵 $\ell_1$ 范数的邻近算子．最后是常规的乘子更新．读者可在习题 8.4 中推导相关结论．
 
@@ -8086,97 +8086,97 @@ $d_i$ 为矩阵 $S-\rho Z^k+U^k$ 的第 $i$ 个特征值．其次，固定 $X^{k
 
 考虑矩阵分离问题 (3.8.2)：
 
-$$\begin{aligned}\min_{X,S}\ & \|X\|_*+\mu\|S\|_1,\\\text{s.t.}\ & X+S=M,\end{aligned}\tag{8.6.31}$$
+$$ \begin{aligned} \min_{X,S}\ & \|X\|_*+\mu\|S\|_1,\\ \text{s.t.}\ & X+S=M, \end{aligned}\tag{8.6.31} $$
 
 其中 $\|\cdot\|_1$ 与 $\|\cdot\|_*$ 分别表示矩阵 $\ell_1$ 范数与核范数．引入乘子 $Y$ 作用在约束 $X+S=M$ 上，我们可以得到此问题的增广拉格朗日函数
 
-$$L_\rho(X,S,Y)=\|X\|_*+\mu\|S\|_1+\langle Y,X+S-M\rangle+\frac{\rho}{2}\|X+S-M\|_F^2.\tag{8.6.32}$$
+$$ L_\rho(X,S,Y)=\|X\|_*+\mu\|S\|_1+\langle Y,X+S-M\rangle+\frac{\rho}{2}\|X+S-M\|_F^2.\tag{8.6.32} $$
 
 在第 $(k+1)$ 步，交替方向乘子法分别求解关于 $X$ 和 $S$ 的子问题来更新得到 $X^{k+1}$ 和 $S^{k+1}$．对于 $X$ 子问题，
 
-$$\begin{aligned}X^{k+1}&=\arg\min_X L_\rho(X,S^k,Y^k)\\&=\arg\min_X\left\{\|X\|_*+\frac{\rho}{2}\left\|X+S^k-M+\frac{Y^k}{\rho}\right\|_F^2\right\},\\&=\arg\min_X\left\{\frac{1}{\rho}\|X\|_*+\frac{1}{2}\left\|X+S^k-M+\frac{Y^k}{\rho}\right\|_F^2\right\},\\&=U\,\mathrm{Diag}\left(\mathrm{prox}_{(1/\rho)\|\cdot\|_1}(\sigma(A))\right)V^{\mathrm{T}},\end{aligned}$$
+$$ \begin{aligned} X^{k+1}&=\arg\min_X L_\rho(X,S^k,Y^k)\\ &=\arg\min_X\left\{\|X\|_*+\frac{\rho}{2}\left\|X+S^k-M+\frac{Y^k}{\rho}\right\|_F^2\right\},\\ &=\arg\min_X\left\{\frac{1}{\rho}\|X\|_*+\frac{1}{2}\left\|X+S^k-M+\frac{Y^k}{\rho}\right\|_F^2\right\},\\ &=U\,\mathrm{Diag}\left(\mathrm{prox}_{(1/\rho)\|\cdot\|_1}(\sigma(A))\right)V^{\mathrm{T}}, \end{aligned} $$
 
 其中 $A=M-S^k-\frac{Y^k}{\rho}$，$\sigma(A)$ 为 $A$ 的所有非零奇异值构成的向量并且 $U\,\mathrm{Diag}(\sigma(A))V^{\mathrm{T}}$ 为 $A$ 的约化奇异值分解．对于 $S$ 子问题，
 
-$$\begin{aligned}S^{k+1}&=\arg\min_S L_\rho(X^{k+1},S,Y^k)\\&=\arg\min_S\left\{\mu\|S\|_1+\frac{\rho}{2}\left\|X^{k+1}+S-M+\frac{Y^k}{\rho}\right\|_F^2\right\}\\&=\mathrm{prox}_{(\mu/\rho)\|\cdot\|_1}\left(M-X^{k+1}-\frac{Y^k}{\rho}\right).\end{aligned}$$
+$$ \begin{aligned} S^{k+1}&=\arg\min_S L_\rho(X^{k+1},S,Y^k)\\ &=\arg\min_S\left\{\mu\|S\|_1+\frac{\rho}{2}\left\|X^{k+1}+S-M+\frac{Y^k}{\rho}\right\|_F^2\right\}\\ &=\mathrm{prox}_{(\mu/\rho)\|\cdot\|_1}\left(M-X^{k+1}-\frac{Y^k}{\rho}\right). \end{aligned} $$
 
 对于乘子 $Y$，依然使用常规更新，即
 
-$$Y^{k+1}=Y^k+\tau\rho(X^{k+1}+S^{k+1}-M).$$
+$$ Y^{k+1}=Y^k+\tau\rho(X^{k+1}+S^{k+1}-M). $$
 
 那么，交替方向乘子法的迭代格式为
 
-$$\begin{aligned}X^{k+1}&=U\,\mathrm{Diag}\left(\mathrm{prox}_{(1/\rho)\|\cdot\|_1}(\sigma(A))\right)V^{\mathrm{T}},\\S^{k+1}&=\mathrm{prox}_{(\mu/\rho)\|\cdot\|_1}\left(M-X^{k+1}-\frac{Y^k}{\rho}\right),\\Y^{k+1}&=Y^k+\tau\rho(X^{k+1}+S^{k+1}-M).\end{aligned}$$
+$$ \begin{aligned} X^{k+1}&=U\,\mathrm{Diag}\left(\mathrm{prox}_{(1/\rho)\|\cdot\|_1}(\sigma(A))\right)V^{\mathrm{T}},\\ S^{k+1}&=\mathrm{prox}_{(\mu/\rho)\|\cdot\|_1}\left(M-X^{k+1}-\frac{Y^k}{\rho}\right),\\ Y^{k+1}&=Y^k+\tau\rho(X^{k+1}+S^{k+1}-M). \end{aligned} $$
 
 **例 (全局一致性优化问题)** @487
 
 第 8.6.1 小节介绍了全局一致性优化问题
 
-$$\min_x\ \sum_{i=1}^{N}\phi_i(x)$$
+$$ \min_x\ \sum_{i=1}^{N}\phi_i(x) $$
 
 并给出了一个拆分方式
 
-$$\begin{aligned}\min_{x_i,z}\ & \sum_{i=1}^{N}\phi_i(x_i),\\\text{s.t.}\ & x_i-z=0,\ i=1,2,\cdots,N,\end{aligned}$$
+$$ \begin{aligned} \min_{x_i,z}\ & \sum_{i=1}^{N}\phi_i(x_i),\\ \text{s.t.}\ & x_i-z=0,\ i=1,2,\cdots,N, \end{aligned} $$
 
 其增广拉格朗日函数为
 
-$$L_\rho(x_1,x_2,\cdots,x_N,z,y_1,y_2,\cdots,y_N)=\sum_{i=1}^{N}\phi_i(x_i)+\sum_{i=1}^{N}y_i^{\mathrm{T}}(x_i-z)+\frac{\rho}{2}\sum_{i=1}^{N}\|x_i-z\|^2.$$
+$$ L_\rho(x_1,x_2,\cdots,x_N,z,y_1,y_2,\cdots,y_N)=\sum_{i=1}^{N}\phi_i(x_i)+\sum_{i=1}^{N}y_i^{\mathrm{T}}(x_i-z)+\frac{\rho}{2}\sum_{i=1}^{N}\|x_i-z\|^2. $$
 
 固定 $z^k,y_i^k$，更新 $x_i$ 的公式为
 
-$$x_i^{k+1}=\arg\min_x\left\{\phi_i(x)+\frac{\rho}{2}\left\|x-z^k+\frac{y_i^k}{\rho}\right\|^2\right\}.\tag{8.6.33}$$
+$$ x_i^{k+1}=\arg\min_x\left\{\phi_i(x)+\frac{\rho}{2}\left\|x-z^k+\frac{y_i^k}{\rho}\right\|^2\right\}.\tag{8.6.33} $$
 
 在这里注意，虽然表面上看增广拉格朗日函数有 $(N+1)$ 个变量块，但本质上还是两个变量块．这是因为在更新某 $x_i$ 时并没有利用其他 $x_i$ 的信息，所有 $x_i$ 可以看成一个整体．相应地，所有乘子 $y_i$ 也可以看成一个整体．迭代式 (8.6.33) 的具体计算依赖于 $\phi_i$ 的形式，在一般情况下更新 $x_i$ 的表达式为
 
-$$x_i^{k+1}=\mathrm{prox}_{\phi_i/\rho}\left(z^k-\frac{y_i^k}{\rho}\right).$$
+$$ x_i^{k+1}=\mathrm{prox}_{\phi_i/\rho}\left(z^k-\frac{y_i^k}{\rho}\right). $$
 
 固定 $x_i^{k+1},y_i^k$，问题关于 $z$ 是二次函数，因此可以直接写出显式解：
 
-$$z^{k+1}=\frac{1}{N}\sum_{i=1}^{N}\left(x_i^{k+1}+\frac{y_i^k}{\rho}\right).$$
+$$ z^{k+1}=\frac{1}{N}\sum_{i=1}^{N}\left(x_i^{k+1}+\frac{y_i^k}{\rho}\right). $$
 
 综上，该问题的交替方向乘子法迭代格式为
 
-$$\begin{aligned}x_i^{k+1}&=\mathrm{prox}_{\phi_i/\rho}\left(z^k-\frac{y_i^k}{\rho}\right),\quad i=1,2,\cdots,N,\\z^{k+1}&=\frac{1}{N}\sum_{i=1}^{N}\left(x_i^{k+1}+\frac{y_i^k}{\rho}\right),\\y_i^{k+1}&=y_i^k+\tau\rho(x_i^{k+1}-z^{k+1}),\quad i=1,2,\cdots,N.\end{aligned}$$
+$$ \begin{aligned} x_i^{k+1}&=\mathrm{prox}_{\phi_i/\rho}\left(z^k-\frac{y_i^k}{\rho}\right),\quad i=1,2,\cdots,N,\\ z^{k+1}&=\frac{1}{N}\sum_{i=1}^{N}\left(x_i^{k+1}+\frac{y_i^k}{\rho}\right),\\ y_i^{k+1}&=y_i^k+\tau\rho(x_i^{k+1}-z^{k+1}),\quad i=1,2,\cdots,N. \end{aligned} $$
 
 **例 (非凸集合上的优化问题)** @488
 
 非凸集合上的优化问题可以表示为
 
-$$\begin{aligned}\min\ & f(x),\\\text{s.t.}\ & x\in S,\end{aligned}\tag{8.6.34}$$
+$$ \begin{aligned} \min\ & f(x),\\ \text{s.t.}\ & x\in S, \end{aligned}\tag{8.6.34} $$
 
 其中 $f$ 是闭凸函数，但 $S$ 是非凸集合．利用例 8.21 的技巧，对集合 $S$ 引入示性函数 $I_S(z)$ 并做拆分，可得到问题 (8.6.34) 的等价优化问题：
 
-$$\begin{aligned}\min\ & f(x)+I_S(z),\\\text{s.t.}\ & x-z=0,\end{aligned}\tag{8.6.35}$$
+$$ \begin{aligned} \min\ & f(x)+I_S(z),\\ \text{s.t.}\ & x-z=0, \end{aligned}\tag{8.6.35} $$
 
 其增广拉格朗日函数为
 
-$$L_\rho(x,z,y)=f(x)+I_S(z)+y^{\mathrm{T}}(x-z)+\frac{\rho}{2}\|x-z\|^2.$$
+$$ L_\rho(x,z,y)=f(x)+I_S(z)+y^{\mathrm{T}}(x-z)+\frac{\rho}{2}\|x-z\|^2. $$
 
 由于 $f$ 是闭凸函数，固定 $z,y$ 后对 $x$ 求极小就是计算邻近算子：
 
-$$x^{k+1}=\mathrm{prox}_{f/\rho}\left(z^k-\frac{y^k}{\rho}\right).$$
+$$ x^{k+1}=\mathrm{prox}_{f/\rho}\left(z^k-\frac{y^k}{\rho}\right). $$
 
 固定 $x,y$，对 $z$ 求极小实际上是到非凸集合上的投影问题：
 
-$$z^{k+1}=\arg\min_{z\in S}\frac{1}{2}\left\|z-\left(x^{k+1}+\frac{y^k}{\rho}\right)\right\|^2=\mathcal{P}_S\left(x^{k+1}+\frac{y^k}{\rho}\right).$$
+$$ z^{k+1}=\arg\min_{z\in S}\frac{1}{2}\left\|z-\left(x^{k+1}+\frac{y^k}{\rho}\right)\right\|^2=\mathcal{P}_S\left(x^{k+1}+\frac{y^k}{\rho}\right). $$
 
 一般来说，由于 $S$ 是非凸集合，计算 $\mathcal{P}_S$ 是比较困难的（例如不能保证存在性和唯一性），但是当 $S$ 有特定结构时，到 $S$ 上的投影可以精确求解．
 
 (1) 基数：如果 $S=\{x\mid\|x\|_0\leqslant c\}$，其中 $\|\cdot\|_0$ 表示 $\ell_0$ 范数，即非零元素的数目，那么计算任意向量 $v$ 到 $S$ 中的投影就是保留 $v$ 分量中绝对值从大到小排列的前 $c$ 个，其余分量变成 0．假设 $v$ 的各个分量满足
 
-$$|v_{i_1}|\geqslant|v_{i_2}|\geqslant\cdots\geqslant|v_{i_n}|,$$
+$$ |v_{i_1}|\geqslant|v_{i_2}|\geqslant\cdots\geqslant|v_{i_n}|, $$
 
 则投影算子可写成
 
-$$(\mathcal{P}_S(v))_i=\begin{cases}v_i, & i\in\{i_1,i_2,\cdots,i_c\},\\0, & \text{其他}.\end{cases}$$
+$$ (\mathcal{P}_S(v))_i=\begin{cases} v_i, & i\in\{i_1,i_2,\cdots,i_c\},\\ 0, & \text{其他}. \end{cases} $$
 
 (2) 低秩投影：当变量 $x\in\mathbb{R}^{m\times n}$ 是矩阵时，一种常见的非凸约束是在低秩矩阵空间中进行优化问题求解，即 $S=\{x\mid\mathrm{rank}(x)\leqslant r\}$．此时到低秩矩阵空间上的投影等价于对 $x$ 做截断奇异值分解．设 $x$ 的奇异值分解为
 
-$$x=\sum_{i=1}^{\min\{m,n\}}\sigma_iu_iv_i^{\mathrm{T}},$$
+$$ x=\sum_{i=1}^{\min\{m,n\}}\sigma_iu_iv_i^{\mathrm{T}}, $$
 
 其中 $\sigma_1\geqslant\cdots\geqslant\sigma_{\min\{m,n\}}\geqslant0$ 为奇异值，$u_i,v_i$ 为对应的左右奇异向量，则 $\mathcal{P}_S$ 的表达式为
 
-$$\mathcal{P}_S(x)=\sum_{i=1}^{r}\sigma_iu_iv_i^{\mathrm{T}}.$$
+$$ \mathcal{P}_S(x)=\sum_{i=1}^{r}\sigma_iu_iv_i^{\mathrm{T}}. $$
 
 (3) 布尔（Bool）约束：如果限制变量 $x$ 只能在 $\{0,1\}$ 中取值，即 $S=\{0,1\}^n$，容易验证 $\mathcal{P}_S(v)$ 就是简单地把 $v$ 的每个分量 $v_i$ 变为 0 和 1 中离它更近的数，一种可能的实现方式是分别对它们做四舍五入操作．
 
@@ -8186,29 +8186,29 @@ $$\mathcal{P}_S(x)=\sum_{i=1}^{r}\sigma_iu_iv_i^{\mathrm{T}}.$$
 
 假设我们有从一个非负、秩为 $r$ 的矩阵 $M\in\mathbb{R}^{m\times n}$ 中采样的部分元素 $M_{i,j},(i,j)\in\Omega\subset\{1,2,\cdots,m\}\times\{1,2,\cdots,n\}$，目标是要找到非负矩阵 $X\in\mathbb{R}^{m\times q},Y\in\mathbb{R}^{q\times n}$ 使得 $\|M-XY\|_F$ 极小．一般地，因为数据和应用问题的不同，$q$ 可以等于、小于或者大于 $r$．定义矩阵 $P\in\mathbb{R}^{m\times n}$：
 
-$$P_{ij}=\begin{cases}1, & (i,j)\in\Omega,\\0, & \text{其他},\end{cases}$$
+$$ P_{ij}=\begin{cases} 1, & (i,j)\in\Omega,\\ 0, & \text{其他}, \end{cases} $$
 
 则非负矩阵分解和补全问题可以写成如下形式：
 
-$$\begin{aligned}\min_{X,Y}\ & \|P\odot(XY-M)\|_F^2,\\\text{s.t.}\ & X_{ij}\geqslant0,\ Y_{ij}\geqslant0,\ \forall i,j.\end{aligned}$$
+$$ \begin{aligned} \min_{X,Y}\ & \|P\odot(XY-M)\|_F^2,\\ \text{s.t.}\ & X_{ij}\geqslant0,\ Y_{ij}\geqslant0,\ \forall i,j. \end{aligned} $$
 
 注意，这个问题是非凸的．
 
 为了利用交替方向乘子法的优势，我们考虑如下等价形式：
 
-$$\begin{aligned}\min_{U,V,X,Y,Z}\ & \frac{1}{2}\|XY-Z\|_F^2,\\\text{s.t.}\ & X=U,\ Y=V,\\& U\geqslant0,\ V\geqslant0,\\& P\odot(Z-M)=0.\end{aligned}$$
+$$ \begin{aligned} \min_{U,V,X,Y,Z}\ & \frac{1}{2}\|XY-Z\|_F^2,\\ \text{s.t.}\ & X=U,\ Y=V,\\ & U\geqslant0,\ V\geqslant0,\\ & P\odot(Z-M)=0. \end{aligned} $$
 
 对于等式约束 $X=U$ 和 $Y=V$ 分别引入拉格朗日乘子 $\Lambda$ 和 $\Pi$，并将非负约束 $U\geqslant0,V\geqslant0$ 和观测值约束 $P\odot(Z-M)=0$ 放到约束中，则增广拉格朗日函数为
 
-$$\begin{aligned}L_{\alpha,\beta}(X,Y,&Z,U,V,\Lambda,\Pi)\\=&\frac{1}{2}\|XY-Z\|_F^2+\langle\Lambda,X-U\rangle+\langle\Pi,Y-V\rangle\\&+\frac{\alpha}{2}\|X-U\|_F^2+\frac{\beta}{2}\|Y-V\|_F^2.\end{aligned}\tag{8.6.36}$$
+$$ \begin{aligned} L_{\alpha,\beta}(X,Y,&Z,U,V,\Lambda,\Pi)\\ =&\frac{1}{2}\|XY-Z\|_F^2+\langle\Lambda,X-U\rangle+\langle\Pi,Y-V\rangle\\ &+\frac{\alpha}{2}\|X-U\|_F^2+\frac{\beta}{2}\|Y-V\|_F^2. \end{aligned}\tag{8.6.36} $$
 
 应用交替方向乘子法，可得
 
-$$\begin{aligned}X^{k+1}&=\arg\min_X L_{\alpha,\beta}(X,Y^k,Z^k,U^k,V^k,\Lambda^k,\Pi^k),\\Y^{k+1}&=\arg\min_Y L_{\alpha,\beta}(X^{k+1},Y,Z^k,U^k,V^k,\Lambda^k,\Pi^k),\\Z^{k+1}&=\arg\min_{P\odot(Z-M)=0}L_{\alpha,\beta}(X^{k+1},Y^{k+1},Z,U^k,V^k,\Lambda^k,\Pi^k),\\U^{k+1}&=\arg\min_{U\geqslant0}L_{\alpha,\beta}(X^{k+1},Y^{k+1},Z^{k+1},U,V^k,\Lambda^k,\Pi^k),\\V^{k+1}&=\arg\min_{V\geqslant0}L_{\alpha,\beta}(X^{k+1},Y^{k+1},Z^{k+1},U^{k+1},V,\Lambda^k,\Pi^k),\\\Lambda^{k+1}&=\Lambda^k+\tau\alpha(X^{k+1}-U^{k+1}),\\\Pi^{k+1}&=\Pi^k+\tau\beta(Y^{k+1}-V^{k+1}).\end{aligned}$$
+$$ \begin{aligned} X^{k+1}&=\arg\min_X L_{\alpha,\beta}(X,Y^k,Z^k,U^k,V^k,\Lambda^k,\Pi^k),\\ Y^{k+1}&=\arg\min_Y L_{\alpha,\beta}(X^{k+1},Y,Z^k,U^k,V^k,\Lambda^k,\Pi^k),\\ Z^{k+1}&=\arg\min_{P\odot(Z-M)=0}L_{\alpha,\beta}(X^{k+1},Y^{k+1},Z,U^k,V^k,\Lambda^k,\Pi^k),\\ U^{k+1}&=\arg\min_{U\geqslant0}L_{\alpha,\beta}(X^{k+1},Y^{k+1},Z^{k+1},U,V^k,\Lambda^k,\Pi^k),\\ V^{k+1}&=\arg\min_{V\geqslant0}L_{\alpha,\beta}(X^{k+1},Y^{k+1},Z^{k+1},U^{k+1},V,\Lambda^k,\Pi^k),\\ \Lambda^{k+1}&=\Lambda^k+\tau\alpha(X^{k+1}-U^{k+1}),\\ \Pi^{k+1}&=\Pi^k+\tau\beta(Y^{k+1}-V^{k+1}). \end{aligned} $$
 
 将子问题求解，可得
 
-$$\begin{aligned}X^{k+1}&=(Z^k(Y^k)^{\mathrm{T}}+\alpha U^k-\Lambda^k)(Y^k(Y^k)^{\mathrm{T}}+\alpha I)^{-1},\\Y^{k+1}&=((X^{k+1})^{\mathrm{T}}X^{k+1}+\beta I)^{-1}((X^{k+1})^{\mathrm{T}}Z^k+\beta V^k-\Pi^k),\\Z^{k+1}&=X^{k+1}Y^{k+1}+P\odot(M-X^{k+1}Y^{k+1}),\\U^{k+1}&=\mathcal{P}_+\left(X^{k+1}+\frac{\Lambda^k}{\alpha}\right),\\V^{k+1}&=\mathcal{P}_+\left(Y^{k+1}+\frac{\Pi^k}{\beta}\right),\\\Lambda^{k+1}&=\Lambda^k+\tau\alpha(X^{k+1}-U^{k+1}),\\\Pi^{k+1}&=\Pi^k+\tau\beta(Y^{k+1}-V^{k+1}),\end{aligned}$$
+$$ \begin{aligned} X^{k+1}&=(Z^k(Y^k)^{\mathrm{T}}+\alpha U^k-\Lambda^k)(Y^k(Y^k)^{\mathrm{T}}+\alpha I)^{-1},\\ Y^{k+1}&=((X^{k+1})^{\mathrm{T}}X^{k+1}+\beta I)^{-1}((X^{k+1})^{\mathrm{T}}Z^k+\beta V^k-\Pi^k),\\ Z^{k+1}&=X^{k+1}Y^{k+1}+P\odot(M-X^{k+1}Y^{k+1}),\\ U^{k+1}&=\mathcal{P}_+\left(X^{k+1}+\frac{\Lambda^k}{\alpha}\right),\\ V^{k+1}&=\mathcal{P}_+\left(Y^{k+1}+\frac{\Pi^k}{\beta}\right),\\ \Lambda^{k+1}&=\Lambda^k+\tau\alpha(X^{k+1}-U^{k+1}),\\ \Pi^{k+1}&=\Pi^k+\tau\beta(Y^{k+1}-V^{k+1}), \end{aligned} $$
 
 其中 $(\mathcal{P}_+(A))_{ij}=\max\{a_{ij},0\}$．注意，该格式为多块交替方向乘子法，其收敛性可能需要较强假设．
 
@@ -8216,31 +8216,31 @@ $$\begin{aligned}X^{k+1}&=(Z^k(Y^k)^{\mathrm{T}}+\alpha U^k-\Lambda^k)(Y^k(Y^k)^
 
 这里给出一个多块交替方向乘子法的例子，并且从数值上说明若直接采用格式 (8.6.25)，则算法未必收敛．考虑最优化问题
 
-$$\begin{aligned}\min\ & 0,\\\text{s.t.}\ & A_1x_1+A_2x_2+A_3x_3=0,\end{aligned}\tag{8.6.37}$$
+$$ \begin{aligned} \min\ & 0,\\ \text{s.t.}\ & A_1x_1+A_2x_2+A_3x_3=0, \end{aligned}\tag{8.6.37} $$
 
 其中 $A_i\in\mathbb{R}^3$，$i=1,2,3$ 为三维空间中的非零向量，$x_i\in\mathbb{R}$，$i=1,2,3$ 是自变量．问题 (8.6.37) 实际上就是求解三维空间中的线性方程组，若 $A_1,A_2,A_3$ 之间线性无关，则问题 (8.6.37) 只有零解．此时容易计算出最优解对应的乘子为 $y=(0,0,0)^{\mathrm{T}}$．
 
 现在推导多块交替方向乘子法的格式．问题 (8.6.37) 的增广拉格朗日函数为
 
-$$L_\rho(x,y)=0+y^{\mathrm{T}}(A_1x_1+A_2x_2+A_3x_3)+\frac{\rho}{2}\|A_1x_1+A_2x_2+A_3x_3\|^2.$$
+$$ L_\rho(x,y)=0+y^{\mathrm{T}}(A_1x_1+A_2x_2+A_3x_3)+\frac{\rho}{2}\|A_1x_1+A_2x_2+A_3x_3\|^2. $$
 
 当固定 $x_2,x_3,y$ 时，对 $x_1$ 求最小可推出
 
-$$A_1^{\mathrm{T}}y+\rho A_1^{\mathrm{T}}(A_1x_1+A_2x_2+A_3x_3)=0,$$
+$$ A_1^{\mathrm{T}}y+\rho A_1^{\mathrm{T}}(A_1x_1+A_2x_2+A_3x_3)=0, $$
 
 整理可得
 
-$$x_1=-\frac{1}{\|A_1\|^2}\left(A_1^{\mathrm{T}}\left(\frac{y}{\rho}+A_2x_2+A_3x_3\right)\right).$$
+$$ x_1=-\frac{1}{\|A_1\|^2}\left(A_1^{\mathrm{T}}\left(\frac{y}{\rho}+A_2x_2+A_3x_3\right)\right). $$
 
 可类似地计算 $x_2,x_3$ 的表达式，因此多块交替方向乘子法的迭代格式可以写为
 
-$$\begin{aligned}x_1^{k+1}&=-\frac{1}{\|A_1\|^2}A_1^{\mathrm{T}}\left(\frac{y^k}{\rho}+A_2x_2^k+A_3x_3^k\right),\\x_2^{k+1}&=-\frac{1}{\|A_2\|^2}A_2^{\mathrm{T}}\left(\frac{y^k}{\rho}+A_1x_1^{k+1}+A_3x_3^k\right),\\x_3^{k+1}&=-\frac{1}{\|A_3\|^2}A_3^{\mathrm{T}}\left(\frac{y^k}{\rho}+A_1x_1^{k+1}+A_2x_2^{k+1}\right),\\y^{k+1}&=y^k+\rho(A_1x_1^{k+1}+A_2x_2^{k+1}+A_3x_3^{k+1}).\end{aligned}\tag{8.6.38}$$
+$$ \begin{aligned} x_1^{k+1}&=-\frac{1}{\|A_1\|^2}A_1^{\mathrm{T}}\left(\frac{y^k}{\rho}+A_2x_2^k+A_3x_3^k\right),\\ x_2^{k+1}&=-\frac{1}{\|A_2\|^2}A_2^{\mathrm{T}}\left(\frac{y^k}{\rho}+A_1x_1^{k+1}+A_3x_3^k\right),\\ x_3^{k+1}&=-\frac{1}{\|A_3\|^2}A_3^{\mathrm{T}}\left(\frac{y^k}{\rho}+A_1x_1^{k+1}+A_2x_2^{k+1}\right),\\ y^{k+1}&=y^k+\rho(A_1x_1^{k+1}+A_2x_2^{k+1}+A_3x_3^{k+1}). \end{aligned}\tag{8.6.38} $$
 
 对此问题而言，罚因子取不同值仅仅是将乘子 $y^k$ 缩放了常数倍，所以罚因子 $\rho$ 的任意取法（包括动态调节）都是等价的．在数值实验中我们不妨取 $\rho=1$．
 
 格式 (8.6.38) 的收敛性与 $A_i$，$i=1,2,3$ 的选取有关．为了方便，令 $A=[A_1,A_2,A_3]$，以及 $x=(x_1,x_2,x_3)^{\mathrm{T}}$，并选取 $A$ 为
 
-$$\tilde A=\begin{bmatrix}1&1&1\\1&1&2\\1&2&2\end{bmatrix}\quad\text{或}\quad\hat A=\begin{bmatrix}1&1&2\\0&1&1\\0&0&1\end{bmatrix}.$$
+$$ \tilde A=\begin{bmatrix}1&1&1\\1&1&2\\1&2&2\end{bmatrix}\quad\text{或}\quad\hat A=\begin{bmatrix}1&1&2\\0&1&1\\0&0&1\end{bmatrix}. $$
 
 在迭代中，自变量初值选为 $(1,1,1)$，乘子选为 $(0,0,0)$．图 8.10 记录了在两种不同 $A$ 条件下，$x$ 和 $y$ 的 $\ell_2$ 范数随迭代的变化过程．可以看到，当 $A=\tilde A$ 时数值结果表明迭代是发散的，而当 $A=\hat A$ 时数值结果表明迭代是收敛的．另一个比较有趣的观察是，在图 8.10（b）中 $\|x\|$ 与 $\|y\|$ 并不是单调下降的，而是在下降的同时有规律地振荡．实际上，文献 [134] 中具体解释了 $A$ 取 $\tilde A$ 会导致发散的原因．
 
@@ -8258,15 +8258,15 @@ $$\tilde A=\begin{bmatrix}1&1&1\\1&1&2\\1&2&2\end{bmatrix}\quad\text{或}\quad\h
 
 由于原始问题解集非空，不妨设 $(x_1^*,x_2^*,y^*)$ 是 KKT 对，即满足条件 (8.6.8)
 
-$$-A_1^{\mathrm{T}}y^*\in\partial f_1(x_1^*),\quad -A_2^{\mathrm{T}}y^*\in\partial f_2(x_2^*),\quad A_1x_1^*+A_2x_2^*=b.$$
+$$ -A_1^{\mathrm{T}}y^*\in\partial f_1(x_1^*),\quad -A_2^{\mathrm{T}}y^*\in\partial f_2(x_2^*),\quad A_1x_1^*+A_2x_2^*=b. $$
 
 我们最终的目的是证明 ADMM 迭代序列 $\{(x_1^k,x_2^k,y^k)\}$ 收敛到原始问题的一个 KKT 对，因此引入如下记号来表示当前迭代点和 KKT 对的误差：
 
-$$(e_1^k,e_2^k,e_y^k)\overset{\text{def}}{=\!=}(x_1^k,x_2^k,y^k)-(x_1^*,x_2^*,y^*).$$
+$$ (e_1^k,e_2^k,e_y^k)\overset{\text{def}}{=\!=}(x_1^k,x_2^k,y^k)-(x_1^*,x_2^*,y^*). $$
 
 我们进一步引入如下辅助变量来简化之后的证明：
 
-$$\begin{aligned}u^k&=-A_1^{\mathrm{T}}[y^k+(1-\tau)\rho(A_1e_1^k+A_2e_2^k)+\rho A_2(x_2^{k-1}-x_2^k)],\\v^k&=-A_2^{\mathrm{T}}[y^k+(1-\tau)\rho(A_1e_1^k+A_2e_2^k)],\\\Psi_k&=\frac{1}{\tau\rho}\|e_y^k\|^2+\rho\|A_2e_2^k\|^2,\\\Phi_k&=\Psi_k+\max(1-\tau,1-\tau^{-1})\rho\|A_1e_1^k+A_2e_2^k\|^2.\end{aligned}\tag{8.6.39}$$
+$$ \begin{aligned} u^k&=-A_1^{\mathrm{T}}[y^k+(1-\tau)\rho(A_1e_1^k+A_2e_2^k)+\rho A_2(x_2^{k-1}-x_2^k)],\\ v^k&=-A_2^{\mathrm{T}}[y^k+(1-\tau)\rho(A_1e_1^k+A_2e_2^k)],\\ \Psi_k&=\frac{1}{\tau\rho}\|e_y^k\|^2+\rho\|A_2e_2^k\|^2,\\ \Phi_k&=\Psi_k+\max(1-\tau,1-\tau^{-1})\rho\|A_1e_1^k+A_2e_2^k\|^2. \end{aligned}\tag{8.6.39} $$
 
 其中 $u^k,v^k$ 和每个子问题的最优性条件有很大联系，见 (8.6.9) 式和 (8.6.10) 式，而 $\Psi_k$ 和 $\Phi_k$ 则是误差向量 $e_1^k,e_2^k,e_y^k$ 的某种度量．
 
@@ -8276,9 +8276,9 @@ $$\begin{aligned}u^k&=-A_1^{\mathrm{T}}[y^k+(1-\tau)\rho(A_1e_1^k+A_2e_2^k)+\rho
 
 假设 $\{(x_1^k,x_2^k,y^k)\}$ 为交替方向乘子法产生一个迭代序列，那么，对任意的 $k\geqslant1$ 有
 
-$$u^k\in\partial f_1(x_1^k),\quad v^k\in\partial f_2(x_2^k),\tag{8.6.40}$$
+$$ u^k\in\partial f_1(x_1^k),\quad v^k\in\partial f_2(x_2^k),\tag{8.6.40} $$
 
-$$\begin{aligned}\Phi_k-\Phi_{k+1}\geqslant&\min(\tau,1+\tau-\tau^2)\rho\|A_2(x_2^k-x_2^{k+1})\|^2\\&+\min(1,1+\tau^{-1}-\tau)\rho\|A_1e_1^{k+1}+A_2e_2^{k+1}\|^2.\end{aligned}\tag{8.6.41}$$
+$$ \begin{aligned} \Phi_k-\Phi_{k+1}\geqslant&\min(\tau,1+\tau-\tau^2)\rho\|A_2(x_2^k-x_2^{k+1})\|^2\\ &+\min(1,1+\tau^{-1}-\tau)\rho\|A_1e_1^{k+1}+A_2e_2^{k+1}\|^2. \end{aligned}\tag{8.6.41} $$
 
 引理 8.7 中 (8.6.40) 式直接利用了每个子问题的最优性条件以及 KKT 条件，不等式 (8.6.41) 的证明比较复杂，它实际上是 [136] 定理 B.1 的一个简化版本．这个不等式的直观解释是迭代点误差的某种度量 $\Phi_k$ 是单调有界的．
 
@@ -8296,15 +8296,15 @@ $$\begin{aligned}\Phi_k-\Phi_{k+1}\geqslant&\min(\tau,1+\tau-\tau^2)\rho\|A_2(x_
 
 为了理解本节主要考虑的问题形式，先介绍机器学习的一个基本模型——监督学习模型。假定 $(a,b)$ 服从概率分布 $P$，其中 $a$ 为输入，$b$ 为标签。任务是要给定输入 $a$ 预测标签 $b$，即要决定一个最优的函数 $\phi$ 使得期望风险 $\mathbb{E}[L(\phi(a),b)]$ 最小，其中 $L(\cdot,\cdot)$ 表示损失函数，用来衡量预测的准确度，函数 $\phi$ 为某个函数空间中的预测函数。实际问题中并不知道真实的概率分布 $P$，而是随机采样得到的一个数据集 $\mathcal{D}=\{(a_1,b_1),(a_2,b_2),\cdots,(a_N,b_N)\}$。然后用经验风险来近似期望风险，并将预测函数 $\phi(\cdot)$ 参数化为 $\phi(\cdot;x)$ 以缩小要找的预测函数的范围，即要求解下面的极小化问题：
 
-$$\min_{x}\ \frac{1}{N}\sum_{i=1}^{N}L(\phi(a_i;x),b_i). \tag{8.7.1}$$
+$$ \min_{x}\ \frac{1}{N}\sum_{i=1}^{N}L(\phi(a_i;x),b_i). \tag{8.7.1} $$
 
 对应于随机优化问题，有 $\xi_i=(a_i,b_i)$ 以及
 
-$$f_i(x)=L(\phi(a_i;x),b_i),\quad h(x)=0.$$
+$$ f_i(x)=L(\phi(a_i;x),b_i),\quad h(x)=0. $$
 
 机器学习中大量的问题都可以表示为问题 (8.7.1) 的形式。由于数据规模巨大，计算目标函数的梯度变得非常困难，但是可以通过采样的方式只计算部分样本的梯度来进行梯度下降，往往也能达到非常好的数值表现，而每步的运算量却得到了极大的减小。本节主要考虑如下随机优化问题：
 
-$$\min_{x\in\mathbb{R}^n}\ f(x)\overset{\text{def}}{=}\frac{1}{N}\sum_{i=1}^{N}f_i(x), \tag{8.7.2}$$
+$$ \min_{x\in\mathbb{R}^n}\ f(x)\overset{\text{def}}{=}\frac{1}{N}\sum_{i=1}^{N}f_i(x), \tag{8.7.2} $$
 
 其中 $f_i(x)$ 对应第 $i$ 个样本的损失函数。问题 (8.7.2) 也称为随机优化问题的有限和形式。
 
@@ -8314,25 +8314,25 @@ $$\min_{x\in\mathbb{R}^n}\ f(x)\overset{\text{def}}{=}\frac{1}{N}\sum_{i=1}^{N}f
 
 为讨论方便，先假设 (8.7.2) 中每一个 $f_i(x)$ 是凸的、可微的，因此可以运用梯度下降算法
 
-$$x^{k+1}=x^k-\alpha_k\nabla f(x^k) \tag{8.7.3}$$
+$$ x^{k+1}=x^k-\alpha_k\nabla f(x^k) \tag{8.7.3} $$
 
 来求解原始的优化问题。在迭代格式 (8.7.3) 中，
 
-$$\nabla f(x^k)=\frac{1}{N}\sum_{i=1}^{N}\nabla f_i(x^k).$$
+$$ \nabla f(x^k)=\frac{1}{N}\sum_{i=1}^{N}\nabla f_i(x^k). $$
 
 绝大多数情况下，不能通过化简的方式得到 $\nabla f(x^k)$ 的表达式，要计算这个梯度必须计算出所有的 $\nabla f_i(x^k)$，$i=1,2,\cdots,N$，然后将它们相加。而机器学习中采集到的样本量是巨大的，因此计算 $\nabla f(x^k)$ 需要非常大的计算量，使用传统的梯度法求解机器学习问题并不是一个很好的做法。
 
 随机梯度下降算法 (SGD) 的基本迭代格式为
 
-$$x^{k+1}=x^k-\alpha_k\nabla f_{s_k}(x^k), \tag{8.7.4}$$
+$$ x^{k+1}=x^k-\alpha_k\nabla f_{s_k}(x^k), \tag{8.7.4} $$
 
 其中 $s_k$ 是从 $\{1,2,\cdots,N\}$ 中随机等可能地抽取的一个样本，$\alpha_k$ 称为步长（在机器学习和深度学习领域中更多时候被称为学习率，learning rate）。对比 (8.7.3) 和 (8.7.4) 可知，随机梯度算法不去计算全梯度 $\nabla f(x^k)$，而是从众多样本中随机抽出一个样本 $s_k$，然后仅仅计算这个样本处的梯度 $\nabla f_{s_k}(x^k)$，以此作为 $\nabla f(x^k)$ 的近似。注意，全梯度 $\nabla f(x^k)$ 的表达式中含系数 $\frac{1}{N}$，而迭代格式 (8.7.4) 中不含 $\frac{1}{N}$，这是因为要保证随机梯度的条件期望恰好是全梯度，即
 
-$$\mathbb{E}_{s_k}[\nabla f_{s_k}(x^k)|x^k]=\nabla f(x^k).$$
+$$ \mathbb{E}_{s_k}[\nabla f_{s_k}(x^k)|x^k]=\nabla f(x^k). $$
 
 这里使用条件期望的符号 $\mathbb{E}[\cdot|x^k]$ 的原因是迭代点 $x^k$ 本身也是一个随机变量。实际计算中每次只抽取一个样本 $s_k$ 的做法比较极端，常用的形式是小批量 (mini-batch) 随机梯度法，即随机选择一个元素个数很少的集合 $\mathcal{I}_k\subset\{1,2,\cdots,N\}$，然后执行迭代格式
 
-$$x^{k+1}=x^k-\frac{\alpha_k}{|\mathcal{I}_k|}\sum_{s\in\mathcal{I}_k}\nabla f_s(x^k),$$
+$$ x^{k+1}=x^k-\frac{\alpha_k}{|\mathcal{I}_k|}\sum_{s\in\mathcal{I}_k}\nabla f_s(x^k), $$
 
 其中 $|\mathcal{I}_k|$ 表示 $\mathcal{I}_k$ 中的元素个数。本节后面的阐述中虽然只考虑最简单形式的随机梯度下降算法 (8.7.4)，但很多变形和分析都可以推广到小批量随机梯度法。
 
@@ -8340,7 +8340,7 @@ $$x^{k+1}=x^k-\frac{\alpha_k}{|\mathcal{I}_k|}\sum_{s\in\mathcal{I}_k}\nabla f_s
 
 当 $f_i(x)$ 是凸函数但不一定可微时，可以用 $f_i(x)$ 的次梯度代替梯度进行迭代，这就是随机次梯度算法，它的迭代格式为
 
-$$x^{k+1}=x^k-\alpha_k g^k, \tag{8.7.5}$$
+$$ x^{k+1}=x^k-\alpha_k g^k, \tag{8.7.5} $$
 
 其中 $\alpha_k$ 为步长，$g^k\in\partial f_{s_k}(x^k)$ 为随机次梯度，其期望为真实的次梯度。随机梯度算法在深度学习中得到了广泛的应用，下面介绍其深度学习中的一些变形。
 
@@ -8352,9 +8352,9 @@ $$x^{k+1}=x^k-\alpha_k g^k, \tag{8.7.5}$$
 
 动量方法的具体迭代格式如下：
 
-$$v^{k+1}=\mu_k v^k-\alpha_k\nabla f_{s_k}(x^k), \tag{8.7.6}$$
+$$ v^{k+1}=\mu_k v^k-\alpha_k\nabla f_{s_k}(x^k), \tag{8.7.6} $$
 
-$$x^{k+1}=x^k+v^{k+1}. \tag{8.7.7}$$
+$$ x^{k+1}=x^k+v^{k+1}. \tag{8.7.7} $$
 
 在计算当前点的随机梯度 $\nabla f_{s_k}(x^k)$ 后，并不是直接将其更新到变量 $x^k$ 上，即不完全相信这个全新的更新方向，而是将其和上一步更新方向 $v^k$ 做线性组合来得到新的更新方向 $v^{k+1}$。由动量方法迭代格式立即得出当 $\mu_k=0$ 时该方法退化成随机梯度下降法。动量方法中参数 $\mu_k$ 的范围是 $[0,1)$，通常取 $\mu_k\geqslant 0.5$，其含义为迭代点带有较大惯性，每次迭代会在原始迭代方向的基础上做一个小修正。在普通的梯度法中，每一步迭代只用到当前点的梯度估计，动量方法的更新方向还使用了之前的梯度信息。当许多连续的梯度指向相同的方向时，步长就会很大，这从直观上看也是非常合理的。
 
@@ -8366,27 +8366,27 @@ $$x^{k+1}=x^k+v^{k+1}. \tag{8.7.7}$$
 
 针对光滑问题，Nesterov 加速算法迭代的随机版本为
 
-$$y^{k+1}=x^k+\mu_k(x^k-x^{k-1}), \tag{8.7.8}$$
+$$ y^{k+1}=x^k+\mu_k(x^k-x^{k-1}), \tag{8.7.8} $$
 
-$$x^{k+1}=y^{k+1}-\alpha_k\nabla f_{s_k}(y^{k+1}), \tag{8.7.9}$$
+$$ x^{k+1}=y^{k+1}-\alpha_k\nabla f_{s_k}(y^{k+1}), \tag{8.7.9} $$
 
 其中 $\mu_k=\dfrac{k-1}{k+2}$，步长 $\alpha_k$ 是一个固定值或者由线搜索确定。通过一些等价变形可以说明 Nesterov 加速算法可以看成是某种动量方法。首先在第 $k$ 步迭代引入速度变量
 
-$$v^k=x^k-x^{k-1},$$
+$$ v^k=x^k-x^{k-1}, $$
 
 再合并原始 Nesterov 加速算法的两步迭代可以得到
 
-$$x^{k+1}=x^k+\mu_k(x^k-x^{k-1})-\alpha_k\nabla f_k\big(x^k+\mu_k(x^k-x^{k-1})\big).$$
+$$ x^{k+1}=x^k+\mu_k(x^k-x^{k-1})-\alpha_k\nabla f_k\big(x^k+\mu_k(x^k-x^{k-1})\big). $$
 
 如果定义有关 $v^{k+1}$ 的迭代式
 
-$$v^{k+1}=\mu_k v^k-\alpha_k\nabla f_k(x^k+\mu_k v^k),$$
+$$ v^{k+1}=\mu_k v^k-\alpha_k\nabla f_k(x^k+\mu_k v^k), $$
 
 则得到关于 $x^k$ 和 $v^k$ 的等价迭代：
 
-$$v^{k+1}=\mu_k v^k-\alpha_k\nabla f_{s_k}(x^k+\mu_k v^k), \tag{8.7.10}$$
+$$ v^{k+1}=\mu_k v^k-\alpha_k\nabla f_{s_k}(x^k+\mu_k v^k), \tag{8.7.10} $$
 
-$$x^{k+1}=x^k+v^{k+1}. \tag{8.7.11}$$
+$$ x^{k+1}=x^k+v^{k+1}. \tag{8.7.11} $$
 
 与动量方法相比，二者的主要差别在梯度的计算上：Nesterov 加速算法先对点施加速度的作用，再求梯度，这可以理解为对标准动量方法做了一个校正。
 
@@ -8398,23 +8398,23 @@ $$x^{k+1}=x^k+v^{k+1}. \tag{8.7.11}$$
 
 令 $g^k=\nabla f_{s_k}(x^k)$，为了记录整个迭代过程中梯度各个分量的累积情况，引入向量
 
-$$G^k=\sum_{i=1}^{k}g^i\odot g^i.$$
+$$ G^k=\sum_{i=1}^{k}g^i\odot g^i. $$
 
 从 $G^k$ 的定义可知其每个分量表示在迭代过程中梯度在该分量处的累积平方和。当 $G^k$ 的某个分量较大时，认为该分量变化比较剧烈，因此应采用小步长，反之亦然。由此得到 AdaGrad 的迭代格式
 
-$$x^{k+1}=x^k-\frac{\alpha}{\sqrt{G^k+\varepsilon\mathbf{1}_n}}\odot g^k, \tag{8.7.12}$$
+$$ x^{k+1}=x^k-\frac{\alpha}{\sqrt{G^k+\varepsilon\mathbf{1}_n}}\odot g^k, \tag{8.7.12} $$
 
-$$G^{k+1}=G^k+g^{k+1}\odot g^{k+1}, \tag{8.7.13}$$
+$$ G^{k+1}=G^k+g^{k+1}\odot g^{k+1}, \tag{8.7.13} $$
 
 这里 $\dfrac{\alpha}{\sqrt{G^k+\varepsilon\mathbf{1}_n}}$ 中的除法和求根运算都是对向量每个分量分别操作的（下同），$\alpha$ 为初始步长，引入 $\varepsilon\mathbf{1}_n$ 这一项是为了防止除零运算。可以看到 AdaGrad 的步长大致反比于历史梯度累计值的算术平方根，所以梯度较大时步长下降很快，反之下降较慢，这样做的效果就是在参数空间更平缓的方向上，前后两次迭代的距离较大。在凸优化问题中 AdaGrad 有比较好的理论性质，但实际应用中也发现在训练深度神经网络模型时，从训练开始就积累梯度平方会导致步长过早或过多减小。
 
 如果在 AdaGrad 中使用真实梯度 $\nabla f(x^k)$，那么 AdaGrad 也可以看成是一种介于二阶和一阶的优化算法。考虑 $f(x)$ 在点 $x^k$ 处的二阶泰勒展开：
 
-$$f(x)\approx f(x^k)+\nabla f(x^k)^{\mathrm{T}}(x-x^k)+\frac{1}{2}(x-x^k)^{\mathrm{T}}B^k(x-x^k),$$
+$$ f(x)\approx f(x^k)+\nabla f(x^k)^{\mathrm{T}}(x-x^k)+\frac{1}{2}(x-x^k)^{\mathrm{T}}B^k(x-x^k), $$
 
 选取不同的 $B^k$ 可以导出不同的优化算法：使用常数倍单位矩阵近似 $B^k$ 时可得梯度法，利用海瑟矩阵作为 $B^k$ 时可得牛顿法，而 AdaGrad 则是使用一个对角矩阵作为 $B^k$。具体地，取
 
-$$B^k=\frac{1}{\alpha}\mathrm{Diag}\big(\sqrt{G^k+\varepsilon\mathbf{1}_n}\big)$$
+$$ B^k=\frac{1}{\alpha}\mathrm{Diag}\big(\sqrt{G^k+\varepsilon\mathbf{1}_n}\big) $$
 
 时导出的算法就是 AdaGrad。
 
@@ -8426,17 +8426,17 @@ RMSProp (root mean square propagation) 是对 AdaGrad 的一个改进，该方�
 
 具体地，令
 
-$$M^{k+1}=\rho M^k+(1-\rho)g^{k+1}\odot g^{k+1},$$
+$$ M^{k+1}=\rho M^k+(1-\rho)g^{k+1}\odot g^{k+1}, $$
 
 再对其每个分量分别求根，就得到均方根 (root mean square)
 
-$$R^k=\sqrt{M^k+\varepsilon\mathbf{1}_n}, \tag{8.7.14}$$
+$$ R^k=\sqrt{M^k+\varepsilon\mathbf{1}_n}, \tag{8.7.14} $$
 
 最后将均方根的倒数作为每个分量步长的修正，得到 RMSProp 迭代格式：
 
-$$x^{k+1}=x^k-\frac{\alpha}{R^k}\odot g^k, \tag{8.7.15}$$
+$$ x^{k+1}=x^k-\frac{\alpha}{R^k}\odot g^k, \tag{8.7.15} $$
 
-$$M^{k+1}=\rho M^k+(1-\rho)g^{k+1}\odot g^{k+1}. \tag{8.7.16}$$
+$$ M^{k+1}=\rho M^k+(1-\rho)g^{k+1}\odot g^{k+1}. \tag{8.7.16} $$
 
 引入参数 $\varepsilon$ 同样是为了防止分母为 $0$ 的情况发生。一般取 $\rho=0.9$，$\alpha=0.001$。可以看到 RMSProp 和 AdaGrad 的唯一区别是将 $G^k$ 替换成了 $M^k$。
 
@@ -8446,9 +8446,9 @@ $$M^{k+1}=\rho M^k+(1-\rho)g^{k+1}\odot g^{k+1}. \tag{8.7.16}$$
 
 AdaDelta 在 RMSProp 的基础上，对历史的 $\Delta x^k$ 也同样累积平方并求均方根：
 
-$$D^k=\rho D^{k-1}+(1-\rho)\Delta x^k\odot\Delta x^k, \tag{8.7.17}$$
+$$ D^k=\rho D^{k-1}+(1-\rho)\Delta x^k\odot\Delta x^k, \tag{8.7.17} $$
 
-$$T^k=\sqrt{D^k+\varepsilon\mathbf{1}_n}, \tag{8.7.18}$$
+$$ T^k=\sqrt{D^k+\varepsilon\mathbf{1}_n}, \tag{8.7.18} $$
 
 然后使用 $T^{k-1}$ 和 $R^k$ 的商对梯度进行校正，其中 $T^k$ 和 $R^k$ 的定义分别为 (8.7.18) 式和 (8.7.14) 式。
 
@@ -8464,19 +8464,19 @@ Adam (adaptive moment estimation) 本质上是带动量项的 RMSProp，它利�
 
 在 Adam 中并不直接使用随机梯度作为基础的更新方向，而是选择了一个动量项进行更新：
 
-$$S^k=\rho_1S^{k-1}+(1-\rho_1)g^k.$$
+$$ S^k=\rho_1S^{k-1}+(1-\rho_1)g^k. $$
 
 与此同时它和 RMSProp 类似，也会记录迭代过程中梯度的二阶矩：
 
-$$M^k=\rho_2M^{k-1}+(1-\rho_2)g^k\odot g^k.$$
+$$ M^k=\rho_2M^{k-1}+(1-\rho_2)g^k\odot g^k. $$
 
 与原始动量方法和 RMSProp 的区别是，由于 $S^k$ 和 $M^k$ 本身带有偏差，Adam 不直接使用这两个量更新，而是在更新前先对其进行修正：
 
-$$\hat{S}^k=\frac{S^k}{1-\rho_1^k},\quad \hat{M}^k=\frac{M^k}{1-\rho_2^k},$$
+$$ \hat{S}^k=\frac{S^k}{1-\rho_1^k},\quad \hat{M}^k=\frac{M^k}{1-\rho_2^k}, $$
 
 这里 $\rho_1^k,\rho_2^k$ 分别表示 $\rho_1,\rho_2$ 的 $k$ 次方。Adam 最终使用修正后的一阶矩和二阶矩进行迭代点的更新：
 
-$$x^{k+1}=x^k-\frac{\alpha}{\sqrt{\hat{M}^k+\varepsilon\mathbf{1}_n}}\odot\hat{S}^k.$$
+$$ x^{k+1}=x^k-\frac{\alpha}{\sqrt{\hat{M}^k+\varepsilon\mathbf{1}_n}}\odot\hat{S}^k. $$
 
 完整的迭代过程如下，其中参数 $\rho_1$ 通常选为 $0.9$，$\rho_2$ 选为 $0.999$，全局步长 $\alpha=0.001$。
 
@@ -8494,15 +8494,15 @@ $$x^{k+1}=x^k-\frac{\alpha}{\sqrt{\hat{M}^k+\varepsilon\mathbf{1}_n}}\odot\hat{S
 
 给定数据集 $\{(a_i,b_i)\}_{i=1}^{N}$，带 $\ell_2$ 范数平方正则项的逻辑回归对应的优化问题 (8.7.2) 可以写成如下形式：
 
-$$\min_{x\in\mathbb{R}^n}\ f(x)=\frac{1}{N}\sum_{i=1}^{N}f_i(x)=\frac{1}{N}\sum_{i=1}^{N}\ln\big(1+\exp(-b_i\cdot a_i^{\mathrm{T}}x)\big)+\lambda\|x\|_2^2,$$
+$$ \min_{x\in\mathbb{R}^n}\ f(x)=\frac{1}{N}\sum_{i=1}^{N}f_i(x)=\frac{1}{N}\sum_{i=1}^{N}\ln\big(1+\exp(-b_i\cdot a_i^{\mathrm{T}}x)\big)+\lambda\|x\|_2^2, $$
 
 其中
 
-$$f_i(x)=\ln\big(1+\exp(-b_i\cdot a_i^{\mathrm{T}}x)\big)+\lambda\|x\|_2^2.$$
+$$ f_i(x)=\ln\big(1+\exp(-b_i\cdot a_i^{\mathrm{T}}x)\big)+\lambda\|x\|_2^2. $$
 
 每步随机取一个下标 $i_k$ 对应的梯度 $\nabla f_{i_k}(x^k)$ 做随机梯度下降，其迭代格式可以写成
 
-$$x^{k+1}=x^k-\alpha_k\nabla f_{i_k}(x^k)=x^k-\alpha_k\left(\frac{-\exp(-b_{i_k}\cdot a_{i_k}^{\mathrm{T}}x^k)b_{i_k}a_{i_k}}{1+\exp(-b_{i_k}\cdot a_{i_k}^{\mathrm{T}}x^k)}+2\lambda x^k\right),$$
+$$ x^{k+1}=x^k-\alpha_k\nabla f_{i_k}(x^k)=x^k-\alpha_k\left(\frac{-\exp(-b_{i_k}\cdot a_{i_k}^{\mathrm{T}}x^k)b_{i_k}a_{i_k}}{1+\exp(-b_{i_k}\cdot a_{i_k}^{\mathrm{T}}x^k)}+2\lambda x^k\right), $$
 
 其中 $i_k$ 为从 $\{1,2,\cdots,N\}$ 中随机抽取的一个样本，$\alpha_k$ 为步长。
 
@@ -8514,25 +8514,25 @@ $$x^{k+1}=x^k-\alpha_k\nabla f_{i_k}(x^k)=x^k-\alpha_k\left(\frac{-\exp(-b_{i_k}
 
 多层感知机也叫全连接神经网络，是一种基本的网络结构。考虑有 $L$ 个隐藏层的多层感知机，给定输入 $a\in\mathbb{R}^p$，则多层感知机的输出可用如下迭代过程表示：
 
-$$y^{(l)}=t\big(x^{(l)}y^{(l-1)}+w^{(l)}\big),\quad l=1,2,\cdots,L+1,$$
+$$ y^{(l)}=t\big(x^{(l)}y^{(l-1)}+w^{(l)}\big),\quad l=1,2,\cdots,L+1, $$
 
 其中 $x^{(l)}\in\mathbb{R}^{m_{l-1}\times m_l}$ 为系数矩阵，$w^{(l)}\in\mathbb{R}^{m_l}$ 为非齐次项，$t(\cdot)$ 为非线性激活函数。该感知机的输出为 $y^{(L+1)}$。
 
 用非线性函数 $h(a;x)$ 来表示该多层感知机，其中
 
-$$x=\big(x^{(1)},x^{(2)},\cdots,x^{(L)},w^{(1)},w^{(2)},\cdots,w^{(L)}\big)$$
+$$ x=\big(x^{(1)},x^{(2)},\cdots,x^{(L)},w^{(1)},w^{(2)},\cdots,w^{(L)}\big) $$
 
 表示所有网络参数的集合，则学习问题可以表示成经验损失函数求极小问题：
 
-$$\min\ \frac{1}{N}\sum_{i=1}^{N}L\big(h(a_i;x),b_i\big).$$
+$$ \min\ \frac{1}{N}\sum_{i=1}^{N}L\big(h(a_i;x),b_i\big). $$
 
 由于目标函数表示成了样本平均的形式，可以用随机梯度算法：
 
-$$x^{k+1}=x^k-\tau_k\nabla_x L\big(h(a_{s_k};x^k),b_{s_k}\big),$$
+$$ x^{k+1}=x^k-\tau_k\nabla_x L\big(h(a_{s_k};x^k),b_{s_k}\big), $$
 
 其中 $s_k$ 为从 $\{1,2,\cdots,N\}$ 中随机抽取的一个样本。算法最核心的部分为求梯度，由于函数具有复合结构，因此可以采用后传算法。假定已经得到关于第 $l$ 隐藏层的导数 $\dfrac{\partial L}{\partial y^{(l)}}$，那么可以通过下面递推公式得到关于第 $l$ 隐藏层参数的导数以及关于前一个隐藏层的导数：
 
-$$\begin{aligned}\frac{\partial L}{\partial w^{(l)}}&=\frac{\partial L}{\partial y^{(l)}}\odot\frac{\partial t}{\partial z},\\\frac{\partial L}{\partial x^{(l)}}&=\left(\frac{\partial L}{\partial y^{(l)}}\odot\frac{\partial t}{\partial z}\right)\big(y^{(l-1)}\big)^{\mathrm{T}},\\\frac{\partial L}{\partial y^{(l-1)}}&=\big(x^{(l)}\big)^{\mathrm{T}}\left(\frac{\partial L}{\partial y^{(l)}}\odot\frac{\partial t}{\partial z}\right),\end{aligned} \tag{8.7.19}$$
+$$ \begin{aligned} \frac{\partial L}{\partial w^{(l)}}&=\frac{\partial L}{\partial y^{(l)}}\odot\frac{\partial t}{\partial z},\\ \frac{\partial L}{\partial x^{(l)}}&=\left(\frac{\partial L}{\partial y^{(l)}}\odot\frac{\partial t}{\partial z}\right)\big(y^{(l-1)}\big)^{\mathrm{T}},\\ \frac{\partial L}{\partial y^{(l-1)}}&=\big(x^{(l)}\big)^{\mathrm{T}}\left(\frac{\partial L}{\partial y^{(l)}}\odot\frac{\partial t}{\partial z}\right), \end{aligned} \tag{8.7.19} $$
 
 其中 $\odot$ 为逐元素相乘。
 
@@ -8558,7 +8558,7 @@ $$\begin{aligned}\frac{\partial L}{\partial w^{(l)}}&=\frac{\partial L}{\partial
 
 （2）随机次梯度二阶矩是一致有界的，即存在 $M$，对任意的 $x\in\mathbb{R}^n$ 以及随机下标 $s_k$，有
 
-$$\mathbb{E}_{s_k}\big[\|g^k\|^2\big]\leqslant M^2<+\infty,\quad g^k\in\partial f_{s_k}(x^k);$$
+$$ \mathbb{E}_{s_k}\big[\|g^k\|^2\big]\leqslant M^2<+\infty,\quad g^k\in\partial f_{s_k}(x^k); $$
 
 （3）迭代的随机点列 $\{x^k\}$ 处处有界，即 $\|x^k-x^*\|\leqslant R,\forall k$，其中 $x^*$ 是问题 (8.7.2) 的最优解。
 
@@ -8566,25 +8566,25 @@ $$\mathbb{E}_{s_k}\big[\|g^k\|^2\big]\leqslant M^2<+\infty,\quad g^k\in\partial 
 
 在假设 8.4 的条件下，令 $\{\alpha_k\}$ 是任一正步长序列，$\{x^k\}$ 是由随机次梯度法产生的序列，那么对所有的 $K\geqslant 1$，有
 
-$$\sum_{k=1}^{K}\alpha_k\mathbb{E}[f(x^k)-f(x^*)]\leqslant\frac{1}{2}\mathbb{E}\big[\|x^1-x^*\|^2\big]+\frac{1}{2}\sum_{k=1}^{K}\alpha_k^2M^2. \tag{8.7.20}$$
+$$ \sum_{k=1}^{K}\alpha_k\mathbb{E}[f(x^k)-f(x^*)]\leqslant\frac{1}{2}\mathbb{E}\big[\|x^1-x^*\|^2\big]+\frac{1}{2}\sum_{k=1}^{K}\alpha_k^2M^2. \tag{8.7.20} $$
 
 **定理 8.17 (随机次梯度算法的收敛性 1)** @511
 
 在假设 8.4 的条件下，令 $A_K=\sum_{i=1}^{K}\alpha_i$，定义 $\bar{x}_K=\dfrac{1}{A_K}\sum_{k=1}^{K}\alpha_k x^k$，则
 
-$$\mathbb{E}[f(\bar{x}_K)-f(x^*)]\leqslant\frac{R^2+\sum\limits_{k=1}^{K}\alpha_k^2M^2}{2\sum\limits_{k=1}^{K}\alpha_k}. \tag{8.7.23}$$
+$$ \mathbb{E}[f(\bar{x}_K)-f(x^*)]\leqslant\frac{R^2+\sum\limits_{k=1}^{K}\alpha_k^2M^2}{2\sum\limits_{k=1}^{K}\alpha_k}. \tag{8.7.23} $$
 
 从定理 8.17 可以看到，当
 
-$$\sum_{k=1}^{\infty}\alpha_k=+\infty,\quad \frac{\sum_{k=1}^{K}\alpha_k^2}{\sum_{k=1}^{K}\alpha_k}\to 0$$
+$$ \sum_{k=1}^{\infty}\alpha_k=+\infty,\quad \frac{\sum_{k=1}^{K}\alpha_k^2}{\sum_{k=1}^{K}\alpha_k}\to 0 $$
 
 时，随机梯度算法收敛。对一个固定的步长 $\alpha$，不等式 (8.7.23) 右侧有一个不随 $K$ 递减的常数，因此固定步长随机梯度算法在函数值取期望意义下是不收敛的，它仅仅能找到一个次优解：
 
-$$\mathbb{E}[f(\bar{x}_K)-f(x^*)]\leqslant\frac{R^2}{2K\alpha}+\frac{\alpha M^2}{2}.$$
+$$ \mathbb{E}[f(\bar{x}_K)-f(x^*)]\leqslant\frac{R^2}{2K\alpha}+\frac{\alpha M^2}{2}. $$
 
 特别地，对于给定的迭代次数 $K$，选取固定步长 $\alpha=\dfrac{R}{M\sqrt{K}}$，可以达到 $\mathcal{O}\left(\dfrac{1}{\sqrt{K}}\right)$ 的精度，即
 
-$$\mathbb{E}[f(\bar{x}_K)-f(x^*)]\leqslant\frac{RM}{\sqrt{K}}.$$
+$$ \mathbb{E}[f(\bar{x}_K)-f(x^*)]\leqslant\frac{RM}{\sqrt{K}}. $$
 
 定理 8.17 的收敛性是在步长加权平均意义下的收敛性，在步长不增的情况下，可以得到直接平均意义下的收敛性。
 
@@ -8592,7 +8592,7 @@ $$\mathbb{E}[f(\bar{x}_K)-f(x^*)]\leqslant\frac{RM}{\sqrt{K}}.$$
 
 在假设 8.4 的条件下，令 $\{\alpha_k\}$ 是一个不增的正步长序列，$\bar{x}_K=\dfrac{1}{K}\sum_{k=1}^{K}x^k$，则
 
-$$\mathbb{E}[f(\bar{x}_K)-f(x^*)]\leqslant\frac{R^2}{2K\alpha_K}+\frac{1}{2K}\sum_{k=1}^{K}\alpha_k M^2. \tag{8.7.24}$$
+$$ \mathbb{E}[f(\bar{x}_K)-f(x^*)]\leqslant\frac{R^2}{2K\alpha_K}+\frac{1}{2K}\sum_{k=1}^{K}\alpha_k M^2. \tag{8.7.24} $$
 
 该定理和定理 8.17 的不同之处在于 $\bar{x}_K$ 的定义。通过选取 $\mathcal{O}\left(\dfrac{1}{\sqrt{k}}\right)$ 阶数的步长，可以得到目标函数的收敛速度为 $\mathcal{O}\left(\dfrac{1}{\sqrt{K}}\right)$。
 
@@ -8600,7 +8600,7 @@ $$\mathbb{E}[f(\bar{x}_K)-f(x^*)]\leqslant\frac{R^2}{2K\alpha_K}+\frac{1}{2K}\su
 
 在假设 8.4 的条件下，令 $\alpha_k=\dfrac{R}{M\sqrt{k}}$，则
 
-$$\mathbb{E}[f(\bar{x}_K)-f(x^*)]\leqslant\frac{3RM}{2\sqrt{K}}, \tag{8.7.25}$$
+$$ \mathbb{E}[f(\bar{x}_K)-f(x^*)]\leqslant\frac{3RM}{2\sqrt{K}}, \tag{8.7.25} $$
 
 其中 $\bar{x}_K$ 的定义和定理 8.18 相同。
 
@@ -8612,7 +8612,7 @@ $$\mathbb{E}[f(\bar{x}_K)-f(x^*)]\leqslant\frac{3RM}{2\sqrt{K}}, \tag{8.7.25}$$
 
 选择推论 8.4 中的步长 $\alpha_k$，使得 $\mathbb{E}[f(\bar{x}_K)-f(x^*)]\to 0$，那么有依概率收敛 $f(\bar{x}_K)-f(x^*)\overset{P}{\to}0$（$K\to\infty$），即对任意的 $\varepsilon>0$，都有
 
-$$\lim_{K\to\infty}P\big(f(\bar{x}_K)-f(x^*)\geqslant\varepsilon\big)=0. \tag{8.7.26}$$
+$$ \lim_{K\to\infty}P\big(f(\bar{x}_K)-f(x^*)\geqslant\varepsilon\big)=0. \tag{8.7.26} $$
 
 上面的定理只保证目标函数值是依概率收敛的，下面进行更加细致的分析，给出其收敛速度。
 
@@ -8620,13 +8620,13 @@ $$\lim_{K\to\infty}P\big(f(\bar{x}_K)-f(x^*)\geqslant\varepsilon\big)=0. \tag{8.
 
 在假设 8.4 的条件下，进一步假设对于所有的随机次梯度 $g$，有 $\|g\|\leqslant M$。那么对任意的 $\varepsilon>0$，
 
-$$f(\bar{x}_K)-f(x^*)\leqslant\frac{R^2}{2K\alpha_K}+\frac{1}{K}\sum_{k=1}^{K}\alpha_k M^2+\frac{RM}{\sqrt{K}}\varepsilon \tag{8.7.27}$$
+$$ f(\bar{x}_K)-f(x^*)\leqslant\frac{R^2}{2K\alpha_K}+\frac{1}{K}\sum_{k=1}^{K}\alpha_k M^2+\frac{RM}{\sqrt{K}}\varepsilon \tag{8.7.27} $$
 
 以大于等于 $1-e^{-\frac{1}{2}\varepsilon^2}$ 的概率成立，其中步长列 $\{\alpha_k\}$ 是单调不增序列，$\bar{x}_K$ 的定义和定理 8.18 中的定义相同。
 
 定理 8.20 给出随机次梯度算法的收敛性更加细致的刻画。如果取 $\alpha_k=\dfrac{R}{\sqrt{k}M}$，并令 $\delta=e^{-\frac{1}{2}\varepsilon^2}$，就有
 
-$$P\left(f(\bar{x}_K)-f(x^*)\leqslant\frac{3RM}{2\sqrt{K}}+\frac{RM\sqrt{2\ln\frac{1}{\delta}}}{\sqrt{K}}\right)\geqslant 1-\delta.$$
+$$ P\left(f(\bar{x}_K)-f(x^*)\leqslant\frac{3RM}{2\sqrt{K}}+\frac{RM\sqrt{2\ln\frac{1}{\delta}}}{\sqrt{K}}\right)\geqslant 1-\delta. $$
 
 可以看到除一个很小的概率外，函数值以 $\mathcal{O}\left(\dfrac{1}{\sqrt{K}}\right)$ 的速度收敛。
 
@@ -8646,13 +8646,13 @@ $$P\left(f(\bar{x}_K)-f(x^*)\leqslant\frac{3RM}{2\sqrt{K}}+\frac{RM\sqrt{2\ln\fr
 
 （4）随机梯度二阶矩是一致有界的，即存在 $M$，对任意的 $x\in\mathbb{R}^n$ 以及随机下标 $s^k$，有
 
-$$\mathbb{E}_{s_k}\big[\|\nabla f_{s_k}(x)\|^2\big]\leqslant M^2<+\infty.$$
+$$ \mathbb{E}_{s_k}\big[\|\nabla f_{s_k}(x)\|^2\big]\leqslant M^2<+\infty. $$
 
 **定理 8.21 (随机梯度算法的收敛性)** @516
 
 在假设 8.5 的条件下，定义 $\Delta_k=\|x^k-x^*\|$。对固定的步长 $\alpha_k=\alpha$，$0<\alpha<\dfrac{1}{2\mu}$，有
 
-$$\mathbb{E}[f(x^{K+1})-f(x^*)]\leqslant\frac{L}{2}\mathbb{E}\big[\Delta_{K+1}^2\big]\leqslant\frac{L}{2}\left[(1-2\alpha\mu)^K\Delta_1^2+\frac{\alpha M^2}{2\mu}\right]. \tag{8.7.29}$$
+$$ \mathbb{E}[f(x^{K+1})-f(x^*)]\leqslant\frac{L}{2}\mathbb{E}\big[\Delta_{K+1}^2\big]\leqslant\frac{L}{2}\left[(1-2\alpha\mu)^K\Delta_1^2+\frac{\alpha M^2}{2\mu}\right]. \tag{8.7.29} $$
 
 可以看到，对于固定的步长，算法不能保证收敛，这是因为 (8.7.29) 的右端有不随 $K$ 变化的常数。如果设置递减的步长，收敛速度可以达到 $\mathcal{O}\left(\dfrac{1}{K}\right)$，这个结论将在下面的定理中给出。
 
@@ -8660,11 +8660,11 @@ $$\mathbb{E}[f(x^{K+1})-f(x^*)]\leqslant\frac{L}{2}\mathbb{E}\big[\Delta_{K+1}^2
 
 在定理 8.21 的结果中，取递减的步长
 
-$$\alpha_k=\frac{\beta}{k+\gamma},$$
+$$ \alpha_k=\frac{\beta}{k+\gamma}, $$
 
 其中 $\beta>\dfrac{1}{2\mu}$，$\gamma>0$，使得 $\alpha_1\leqslant\dfrac{1}{2\mu}$，那么对于任意的 $k\geqslant 1$，都有
 
-$$\mathbb{E}[f(x^k)-f(x^*)]\leqslant\frac{L}{2}\mathbb{E}\big[\Delta_k^2\big]\leqslant\frac{L}{2}\cdot\frac{v}{\gamma+k}, \tag{8.7.33}$$
+$$ \mathbb{E}[f(x^k)-f(x^*)]\leqslant\frac{L}{2}\mathbb{E}\big[\Delta_k^2\big]\leqslant\frac{L}{2}\cdot\frac{v}{\gamma+k}, \tag{8.7.33} $$
 
 这里 $v=\max\left\{\dfrac{\beta^2M^2}{2\beta\mu-1},(\gamma+1)\Delta_1^2\right\}$。
 
@@ -8684,15 +8684,15 @@ $$\mathbb{E}[f(x^k)-f(x^*)]\leqslant\frac{L}{2}\mathbb{E}\big[\Delta_k^2\big]\le
 
 在假设 8.5 的条件下，对梯度下降法有
 
-$$\begin{aligned}\Delta_{k+1}^2&=\|x^{k+1}-x^*\|^2=\|x^k-\alpha\nabla f(x^k)-x^*\|^2\\&=\Delta_k^2-2\alpha\langle\nabla f(x^k),x^k-x^*\rangle+\alpha^2\|\nabla f(x^k)\|^2\\&\leqslant(1-2\alpha\mu)\Delta_k^2+\alpha^2\|\nabla f(x^k)\|_2^2\quad(\mu\text{-强凸})\\&\leqslant(1-2\alpha\mu+\alpha^2L^2)\Delta_k^2.\quad(L\text{-光滑})\end{aligned} \tag{8.7.34}$$
+$$ \begin{aligned} \Delta_{k+1}^2&=\|x^{k+1}-x^*\|^2=\|x^k-\alpha\nabla f(x^k)-x^*\|^2\\ &=\Delta_k^2-2\alpha\langle\nabla f(x^k),x^k-x^*\rangle+\alpha^2\|\nabla f(x^k)\|^2\\ &\leqslant(1-2\alpha\mu)\Delta_k^2+\alpha^2\|\nabla f(x^k)\|_2^2\quad(\mu\text{-强凸})\\ &\leqslant(1-2\alpha\mu+\alpha^2L^2)\Delta_k^2.\quad(L\text{-光滑}) \end{aligned} \tag{8.7.34} $$
 
 对随机梯度下降法，利用条件期望的性质有
 
-$$\begin{aligned}\mathbb{E}[\Delta_{k+1}^2]&=\mathbb{E}\big[\|x^k-\alpha\nabla f_{s_k}(x^k)-x^*\|^2\big]\\&=\mathbb{E}[\Delta_k^2]-2\alpha\mathbb{E}[\langle\nabla f_{s_k}(x^k),x^k-x^*\rangle]+\alpha^2\mathbb{E}[\|\nabla f_{s_k}(x^k)\|^2]\\&=\mathbb{E}[\Delta_k^2]-2\alpha\mathbb{E}[\langle\nabla f(x^k),x^k-x^*\rangle]+\alpha^2\mathbb{E}[\|\nabla f_{s_k}(x^k)\|^2]\\&\leqslant(1-2\alpha\mu)\mathbb{E}[\Delta_k^2]+\alpha^2\mathbb{E}[\|\nabla f_{s_k}(x^k)\|^2]\quad(\mu\text{-强凸})\\&=(1-2\alpha\mu)\mathbb{E}[\Delta_k^2]+\alpha^2\mathbb{E}[\|\nabla f_{s_k}(x^k)-\nabla f(x^k)+\nabla f(x^k)\|^2]\\&\leqslant(1-2\alpha\mu+\alpha^2L^2)\mathbb{E}[\Delta_k^2]+\alpha^2\mathbb{E}[\|\nabla f_{s_k}(x^k)-\nabla f(x^k)\|^2],\end{aligned}$$
+$$ \begin{aligned} \mathbb{E}[\Delta_{k+1}^2]&=\mathbb{E}\big[\|x^k-\alpha\nabla f_{s_k}(x^k)-x^*\|^2\big]\\ &=\mathbb{E}[\Delta_k^2]-2\alpha\mathbb{E}[\langle\nabla f_{s_k}(x^k),x^k-x^*\rangle]+\alpha^2\mathbb{E}[\|\nabla f_{s_k}(x^k)\|^2]\\ &=\mathbb{E}[\Delta_k^2]-2\alpha\mathbb{E}[\langle\nabla f(x^k),x^k-x^*\rangle]+\alpha^2\mathbb{E}[\|\nabla f_{s_k}(x^k)\|^2]\\ &\leqslant(1-2\alpha\mu)\mathbb{E}[\Delta_k^2]+\alpha^2\mathbb{E}[\|\nabla f_{s_k}(x^k)\|^2]\quad(\mu\text{-强凸})\\ &=(1-2\alpha\mu)\mathbb{E}[\Delta_k^2]+\alpha^2\mathbb{E}[\|\nabla f_{s_k}(x^k)-\nabla f(x^k)+\nabla f(x^k)\|^2]\\ &\leqslant(1-2\alpha\mu+\alpha^2L^2)\mathbb{E}[\Delta_k^2]+\alpha^2\mathbb{E}[\|\nabla f_{s_k}(x^k)-\nabla f(x^k)\|^2], \end{aligned} $$
 
 也即
 
-$$\mathbb{E}[\Delta_{k+1}^2]\leqslant\underbrace{(1-2\alpha\mu+\alpha^2L^2)}_{A}\mathbb{E}[\Delta_k^2]+\underbrace{\alpha^2\mathbb{E}[\|\nabla f_{s_k}(x^k)-\nabla f(x^k)\|^2]}_{B}. \tag{8.7.35}$$
+$$ \mathbb{E}[\Delta_{k+1}^2]\leqslant\underbrace{(1-2\alpha\mu+\alpha^2L^2)}_{A}\mathbb{E}[\Delta_k^2]+\underbrace{\alpha^2\mathbb{E}[\|\nabla f_{s_k}(x^k)-\nabla f(x^k)\|^2]}_{B}. \tag{8.7.35} $$
 
 从上面的分析中可以看到两种算法的主要差别就在 $B$ 项上，也就是梯度估计的某种方差。它导致了随机梯度算法只能有 $\mathcal{O}\left(\dfrac{1}{k}\right)$ 的收敛速度。但是在许多机器学习的应用中，随机梯度算法的真实的收敛速度可能会更快一些，这主要是因为许多应用对解的精度要求并没有太高，而在开始部分方差较小，即有 $B\ll A$，那么会观察到近似 Q-线性收敛速度；而随着迭代步数增多，方差逐渐增大，算法最终的收敛速度为 $\mathcal{O}\left(\dfrac{1}{k}\right)$。所以为了能获得比较快的渐近收敛速度，主要目标就是减少方差项 $B$ 来加快随机梯度算法的收敛速度。下面介绍三种减小方差的算法：
 
@@ -8708,19 +8708,19 @@ $$\mathbb{E}[\Delta_{k+1}^2]\leqslant\underbrace{(1-2\alpha\mu+\alpha^2L^2)}_{A}
 
 具体来说，SAG 算法在内存中开辟了存储 $N$ 个随机梯度的空间
 
-$$[g_1^k,g_2^k,\cdots,g_N^k],$$
+$$ [g_1^k,g_2^k,\cdots,g_N^k], $$
 
 分别用于记录和第 $i$ 个样本相关的最新的随机梯度。在第 $k$ 步更新时，若抽取的样本点下标为 $s_k$，则计算随机梯度后将 $g_{s_k}^k$ 的值更新为当前的随机梯度值，而其他未抽取到的下标对应的 $g_i^k$ 保持不变。每次 SAG 算法更新使用的梯度方向是所有 $g_i^k$ 的平均值。它的数学迭代格式为
 
-$$x^{k+1}=x^k-\frac{\alpha_k}{N}\sum_{i=1}^{N}g_i^k, \tag{8.7.36}$$
+$$ x^{k+1}=x^k-\frac{\alpha_k}{N}\sum_{i=1}^{N}g_i^k, \tag{8.7.36} $$
 
 其中 $g_i^k$ 的更新方式为
 
-$$g_i^k=\begin{cases}\nabla f_{s_k}(x^k),& i=s_k,\\ g_i^{k-1},&\text{其他},\end{cases} \tag{8.7.37}$$
+$$ g_i^k=\begin{cases}\nabla f_{s_k}(x^k),& i=s_k,\\ g_i^{k-1},&\text{其他},\end{cases} \tag{8.7.37} $$
 
 这里 $s_k$ 是第 $k$ 次迭代随机抽取的样本。由 $g_i^k$ 的更新方式不难发现，每次迭代时只有一个 $g_i^k$ 的内容发生了改变，而其他的 $g_i^k$ 是直接沿用上一步的值。因此 SAG 迭代公式还可以写成
 
-$$x^{k+1}=x^k-\alpha_k\left(\frac{1}{N}\big(\nabla f_{s_k}(x^k)-g_{s_k}^{k-1}\big)+\frac{1}{N}\sum_{i=1}^{N}g_i^{k-1}\right), \tag{8.7.38}$$
+$$ x^{k+1}=x^k-\alpha_k\left(\frac{1}{N}\big(\nabla f_{s_k}(x^k)-g_{s_k}^{k-1}\big)+\frac{1}{N}\sum_{i=1}^{N}g_i^{k-1}\right), \tag{8.7.38} $$
 
 其中 $g_i^k$ 的更新方式如 (8.7.37) 式。在 SAG 算法中 $\{g_i^k\}$ 的初值可简单地取为零向量或中心化的随机梯度向量。SAG 算法每次使用的随机梯度的条件期望并不是真实梯度 $\nabla f(x^k)$，但随着迭代进行，随机梯度的期望和真实梯度的偏差会越来越小。
 
@@ -8728,7 +8728,7 @@ $$x^{k+1}=x^k-\alpha_k\left(\frac{1}{N}\big(\nabla f_{s_k}(x^k)-g_{s_k}^{k-1}\bi
 
 在假设 8.5 的条件下，取固定步长 $\alpha_k=\dfrac{1}{16L}$，$g_i^k$ 的初值取为零向量，则对任意的 $k$，有
 
-$$\mathbb{E}[f(x^k)]-f(x^*)\leqslant\left(1-\min\left\{\frac{\mu}{16L},\frac{1}{8N}\right\}\right)^{k}C_0,$$
+$$ \mathbb{E}[f(x^k)]-f(x^*)\leqslant\left(1-\min\left\{\frac{\mu}{16L},\frac{1}{8N}\right\}\right)^{k}C_0, $$
 
 其中常数 $C_0$ 为与 $k$ 无关的常数。
 
@@ -8740,11 +8740,11 @@ SAGA 算法是 SAG 算法的一个修正。SAG 算法每一步的随机梯度的
 
 SAGA 的迭代方式为
 
-$$x^{k+1}=x^k-\alpha_k\left(\nabla f_{s_k}(x^k)-g_{s_k}^{k-1}+\frac{1}{N}\sum_{i=1}^{N}g_i^{k-1}\right). \tag{8.7.39}$$
+$$ x^{k+1}=x^k-\alpha_k\left(\nabla f_{s_k}(x^k)-g_{s_k}^{k-1}+\frac{1}{N}\sum_{i=1}^{N}g_i^{k-1}\right). \tag{8.7.39} $$
 
 对比 (8.7.38) 式可以发现，SAGA 算法去掉了 $\nabla f_{s_k}(x^k)-g_{s_k}^{k-1}$ 前面的系数 $\dfrac{1}{N}$。可以证明每次迭代使用的梯度方向都是无偏的，即
 
-$$\mathbb{E}\left[\nabla f_{s_k}(x^k)-g_{s_k}^{k-1}+\frac{1}{N}\sum_{i=1}^{N}g_i^{k-1}\,\middle|\,x^k\right]=\nabla f(x^k).$$
+$$ \mathbb{E}\left[\nabla f_{s_k}(x^k)-g_{s_k}^{k-1}+\frac{1}{N}\sum_{i=1}^{N}g_i^{k-1}\,\middle|\,x^k\right]=\nabla f(x^k). $$
 
 SAGA 算法同样有 Q-线性收敛速度，实际上有如下结果。
 
@@ -8752,7 +8752,7 @@ SAGA 算法同样有 Q-线性收敛速度，实际上有如下结果。
 
 在假设 8.5 的条件下，取固定步长 $\alpha_k=\dfrac{1}{2(\mu N+L)}$。定义 $\Delta_k=\|x^k-x^*\|$，则对任意的 $k\geqslant 1$ 有
 
-$$\mathbb{E}[\Delta_k^2]\leqslant\left(1-\frac{\mu}{2(\mu N+L)}\right)^{k}\left(\Delta_1^2+\frac{N\big(f(x^1)-f(x^*)\big)}{\mu N+L}\right). \tag{8.7.40}$$
+$$ \mathbb{E}[\Delta_k^2]\leqslant\left(1-\frac{\mu}{2(\mu N+L)}\right)^{k}\left(\Delta_1^2+\frac{N\big(f(x^1)-f(x^*)\big)}{\mu N+L}\right). \tag{8.7.40} $$
 
 如果强凸的参数 $\mu$ 是未知的，也可以取 $\alpha=\dfrac{1}{3L}$，此时有类似的收敛结果。
 
@@ -8764,29 +8764,29 @@ $$\mathbb{E}[\Delta_k^2]\leqslant\left(1-\frac{\mu}{2(\mu N+L)}\right)^{k}\left(
 
 令 $\tilde{x}^j$ 是第 $j$ 个检查点，则需要计算点 $\tilde{x}^j$ 处的全梯度
 
-$$\nabla f(\tilde{x}^j)=\frac{1}{N}\sum_{i=1}^{N}\nabla f_i(\tilde{x}^j),$$
+$$ \nabla f(\tilde{x}^j)=\frac{1}{N}\sum_{i=1}^{N}\nabla f_i(\tilde{x}^j), $$
 
 在之后的迭代中使用方向 $v^k$ 作为更新方向：
 
-$$v^k=\nabla f_{s_k}(x^k)-\big(\nabla f_{s_k}(\tilde{x}^j)-\nabla f(\tilde{x}^j)\big), \tag{8.7.41}$$
+$$ v^k=\nabla f_{s_k}(x^k)-\big(\nabla f_{s_k}(\tilde{x}^j)-\nabla f(\tilde{x}^j)\big), \tag{8.7.41} $$
 
 其中 $s_k\in\{1,2,\cdots,N\}$ 是随机选取的一个样本。注意到给定 $s_1,s_2,\cdots,s_{k-1}$ 时 $x^k,\tilde{x}^j$ 均为定值，由 $v^k$ 的表达式可知
 
-$$\mathbb{E}[v^k|s_1,s_2,\cdots,s_{k-1}]=\nabla f(x^k)-0=\nabla f(x^k),$$
+$$ \mathbb{E}[v^k|s_1,s_2,\cdots,s_{k-1}]=\nabla f(x^k)-0=\nabla f(x^k), $$
 
 即 $v^k$ 在条件期望的意义下是 $\nabla f(x^k)$ 的一个无偏估计。公式 (8.7.41) 有简单的直观理解：事实上，希望用 $\nabla f_{s_k}(\tilde{x}^j)$ 去估计 $\nabla f(\tilde{x}^j)$，那么 $\nabla f_{s_k}(\tilde{x}^j)-\nabla f(\tilde{x}^j)$ 就可以看作梯度估计的误差，所以在每一步随机梯度迭代用该项来对 $\nabla f_{s_k}(x^k)$ 做一个校正。
 
 接下来分析方差，并说明为什么选取参考点会使得估计的方差变小。这里需要作一个额外的假设
 
-$$\|\nabla f_i(x)-\nabla f_i(y)\|\leqslant L\|x-y\|,\quad i=1,2,\cdots,N,$$
+$$ \|\nabla f_i(x)-\nabla f_i(y)\|\leqslant L\|x-y\|,\quad i=1,2,\cdots,N, $$
 
 也即 $f(x)$ 的每一个子函数都是梯度 $L$-利普希茨连续的。为记号方便，令 $y=\tilde{x}^j$，$x^*$ 为 $f(x)$ 的最小值点，$\Delta_k=\|x^k-x^*\|$ 为 $x^k$ 与 $x^*$ 的距离，则
 
-$$\begin{aligned}\mathbb{E}\big[\|v^k\|^2\big]&=\mathbb{E}\big[\|\nabla f_{s_k}(x^k)-(\nabla f_{s_k}(y)-\nabla f(y))\|^2\big]\\&=\mathbb{E}\big[\|\nabla f_{s_k}(x^k)-\nabla f_{s_k}(y)+\nabla f(y)+\nabla f_{s_k}(x^*)-\nabla f_{s_k}(x^*)\|^2\big]\\&\leqslant 2\mathbb{E}\big[\|\nabla f_{s_k}(x^k)-\nabla f_{s_k}(x^*)\|^2\big]+2\mathbb{E}\big[\|\nabla f_{s_k}(y)-\nabla f(y)-\nabla f_{s_k}(x^*)\|^2\big]\\&\leqslant 2L^2\mathbb{E}\big[\Delta_k^2\big]+2\mathbb{E}\big[\|\nabla f_{s_k}(y)-\nabla f_{s_k}(x^*)\|^2\big]\\&\leqslant 2L^2\mathbb{E}\big[\Delta_k^2\big]+2L^2\mathbb{E}\big[\|y-x^*\|^2\big],\end{aligned} \tag{8.7.42}$$
+$$ \begin{aligned} \mathbb{E}\big[\|v^k\|^2\big]&=\mathbb{E}\big[\|\nabla f_{s_k}(x^k)-(\nabla f_{s_k}(y)-\nabla f(y))\|^2\big]\\ &=\mathbb{E}\big[\|\nabla f_{s_k}(x^k)-\nabla f_{s_k}(y)+\nabla f(y)+\nabla f_{s_k}(x^*)-\nabla f_{s_k}(x^*)\|^2\big]\\ &\leqslant 2\mathbb{E}\big[\|\nabla f_{s_k}(x^k)-\nabla f_{s_k}(x^*)\|^2\big]+2\mathbb{E}\big[\|\nabla f_{s_k}(y)-\nabla f(y)-\nabla f_{s_k}(x^*)\|^2\big]\\ &\leqslant 2L^2\mathbb{E}\big[\Delta_k^2\big]+2\mathbb{E}\big[\|\nabla f_{s_k}(y)-\nabla f_{s_k}(x^*)\|^2\big]\\ &\leqslant 2L^2\mathbb{E}\big[\Delta_k^2\big]+2L^2\mathbb{E}\big[\|y-x^*\|^2\big], \end{aligned} \tag{8.7.42} $$
 
 其中第一个不等式是因为 $\|a+b\|^2\leqslant 2\|a\|^2+2\|b\|^2$，第二个不等式使用了有关二阶矩的不等式
 
-$$\mathbb{E}\big[\|\xi-\mathbb{E}\xi\|^2\big]\leqslant\mathbb{E}\big[\|\xi\|^2\big].$$
+$$ \mathbb{E}\big[\|\xi-\mathbb{E}\xi\|^2\big]\leqslant\mathbb{E}\big[\|\xi\|^2\big]. $$
 
 从上面的不等式可以看出，如果 $x^k$ 和 $y$ 非常接近 $x^*$，梯度估计的方差就很小。显然频繁地更新 $y$ 可以使得方差更小，但是这样同时也增加了计算全梯度的次数。在 SVRG 方法中，$\tilde{x}^j$ 可以有其他的选法，例如取随机选取前 $m$ 步的 $x^k$ 中的一个。与 SAG 算法和 SAGA 算法不同，SVRG 算法不需要分配存储空间来记录 $N$ 个梯度向量，但它的代价在于每 $m$ 步都要计算一次全梯度，在每次迭代的时候也需要多计算一个梯度 $\nabla f_{s_k}(\tilde{x}^j)$。
 
@@ -8800,11 +8800,11 @@ $$\mathbb{E}\big[\|\xi-\mathbb{E}\xi\|^2\big]\leqslant\mathbb{E}\big[\|\xi\|^2\b
 
 设每个 $f_i(x)$ 是可微凸函数，且梯度为 $L$-利普希茨连续的，函数 $f(x)$ 是强凸的，强凸参数为 $\mu$。在算法 8.16 中取步长 $\alpha\in\left(0,\dfrac{1}{2L}\right]$，并且 $m$ 充分大使得
 
-$$\rho=\frac{1}{\mu\alpha(1-2L\alpha)m}+\frac{2L\alpha}{1-2L\alpha}<1, \tag{8.7.43}$$
+$$ \rho=\frac{1}{\mu\alpha(1-2L\alpha)m}+\frac{2L\alpha}{1-2L\alpha}<1, \tag{8.7.43} $$
 
 那么 SVRG 算法对于参考点 $\tilde{x}^j$ 在函数值期望的意义下有 Q-线性收敛速度：
 
-$$\mathbb{E}f(\tilde{x}^j)-f(x^*)\leqslant\rho\mathbb{E}\big[f(\tilde{x}^{j-1})-f(x^*)\big]. \tag{8.7.44}$$
+$$ \mathbb{E}f(\tilde{x}^j)-f(x^*)\leqslant\rho\mathbb{E}\big[f(\tilde{x}^{j-1})-f(x^*)\big]. \tag{8.7.44} $$
 
 ### 8.8 半光滑牛顿算法（p526–553）
 

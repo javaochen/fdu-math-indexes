@@ -26,7 +26,7 @@
 
 **例 (线性偏微分方程与方程组)** @2
 
-- 调和 (Laplace (拉普拉斯)) 方程$$\Delta u\equiv\sum_{i=1}^{n}\frac{\partial^2 u}{\partial x_i^2}=0,$$其中 $\Delta$ 称为 Laplace 算子。- Poisson (泊松) 方程$$-\Delta u=f.$$- 热方程$$\partial_t u-\Delta u=0.$$- 反应扩散方程$$\partial_t u-\Delta u=f.$$- 波方程$$\partial_t^2 u-\Delta u=f.$$- 弹性力学方程组$$\partial_t^2\boldsymbol{u}-\mu\Delta\boldsymbol{u}-(\lambda+\mu)\nabla\operatorname{div}\boldsymbol{u}=\boldsymbol{f}.$$- Schrödinger (薛定谔) 方程$$\mathrm{i}\partial_t u+\Delta u=0.$$- Maxwell (麦克斯韦) 方程组$$\begin{cases}\partial_t\boldsymbol{E}=\operatorname{curl}\boldsymbol{B},\\\partial_t\boldsymbol{B}=-\operatorname{curl}\boldsymbol{E},\\\operatorname{div}\boldsymbol{E}=\operatorname{div}\boldsymbol{B}=0.\end{cases}$$- Cauchy-Riemann (柯西-黎曼) 方程组$$\begin{cases}\partial_x u=\partial_y v,\\\partial_y u=-\partial_x v.\end{cases}$$
+- 调和 (Laplace (拉普拉斯)) 方程$$\Delta u\equiv\sum_{i=1}^{n}\frac{\partial^2 u}{\partial x_i^2}=0,$$其中 $\Delta$ 称为 Laplace 算子。- Poisson (泊松) 方程$$-\Delta u=f.$$- 热方程$$\partial_t u-\Delta u=0.$$- 反应扩散方程$$\partial_t u-\Delta u=f.$$- 波方程$$\partial_t^2 u-\Delta u=f.$$- 弹性力学方程组$$\partial_t^2\boldsymbol{u}-\mu\Delta\boldsymbol{u}-(\lambda+\mu)\nabla\operatorname{div}\boldsymbol{u}=\boldsymbol{f}.$$- Schrödinger (薛定谔) 方程$$\mathrm{i}\partial_t u+\Delta u=0.$$- Maxwell (麦克斯韦) 方程组$$\begin{cases} \partial_t\boldsymbol{E}=\operatorname{curl}\boldsymbol{B},\\ \partial_t\boldsymbol{B}=-\operatorname{curl}\boldsymbol{E},\\ \operatorname{div}\boldsymbol{E}=\operatorname{div}\boldsymbol{B}=0. \end{cases}$$- Cauchy-Riemann (柯西-黎曼) 方程组$$\begin{cases} \partial_x u=\partial_y v,\\ \partial_y u=-\partial_x v. \end{cases}$$
 
 **定义 (半线性偏微分方程)** @3
 
@@ -34,7 +34,7 @@
 
 **例 (半线性偏微分方程)** @3
 
-- Navier-Stokes (纳维-斯托克斯) 方程组 ($\mu>0$)$$\begin{cases}\partial_t\boldsymbol{u}+(\boldsymbol{u}\cdot\nabla)\boldsymbol{u}-\mu\Delta\boldsymbol{u}=-\nabla p,\\\operatorname{div}\boldsymbol{u}=0.\end{cases}$$- Korteweg-de Vries (KdV) (科尔泰沃赫-德弗里斯) 方程$$\partial_t u+u\partial_x u+\partial_x^3 u=0.$$- Black-Scholes (布莱克-斯科尔斯) 方程$$\partial_t V+\frac{1}{2}\sigma^2 S^2\partial_S^2 V+rS\partial_S V-rV=0.$$
+- Navier-Stokes (纳维-斯托克斯) 方程组 ($\mu>0$)$$\begin{cases} \partial_t\boldsymbol{u}+(\boldsymbol{u}\cdot\nabla)\boldsymbol{u}-\mu\Delta\boldsymbol{u}=-\nabla p,\\ \operatorname{div}\boldsymbol{u}=0. \end{cases}$$- Korteweg-de Vries (KdV) (科尔泰沃赫-德弗里斯) 方程$$\partial_t u+u\partial_x u+\partial_x^3 u=0.$$- Black-Scholes (布莱克-斯科尔斯) 方程$$\partial_t V+\frac{1}{2}\sigma^2 S^2\partial_S^2 V+rS\partial_S V-rV=0.$$
 
 **定义 (拟线性偏微分方程)** @3
 
@@ -168,25 +168,25 @@
 
 **定义 (第一边值问题)** @10
 
-Poisson 方程的第一边值问题是指求解 $u\in C^{2}(\Omega)\cap C(\overline{\Omega})$，使其满足下述方程：$$\begin{cases}-\Delta u=f(x), & x\in\Omega,\\u=g(x), & x\in\partial\Omega,\end{cases} \tag{2.7}$$其中 $\partial\Omega$ 为光滑闭曲面，$f\in C(\overline{\Omega})$，$g\in C(\partial\Omega)$。第一边值问题也称为 **Dirichlet 问题**。
+Poisson 方程的第一边值问题是指求解 $u\in C^{2}(\Omega)\cap C(\overline{\Omega})$，使其满足下述方程：$$\begin{cases} -\Delta u=f(x), & x\in\Omega,\\ u=g(x), & x\in\partial\Omega, \end{cases} \tag{2.7}$$其中 $\partial\Omega$ 为光滑闭曲面，$f\in C(\overline{\Omega})$，$g\in C(\partial\Omega)$。第一边值问题也称为 **Dirichlet 问题**。
 
 **定义 (第二边值问题)** @10
 
-Poisson 方程的第二边值问题是指求解 $u\in C^{2}(\Omega)\cap C^{1}(\overline{\Omega})$，使其满足下述方程：$$\begin{cases}-\Delta u=f(x), & x\in\Omega,\\\dfrac{\partial u}{\partial\boldsymbol{n}}=g(x), & x\in\partial\Omega,\end{cases} \tag{2.8}$$其中 $\boldsymbol{n}$ 表示边界 $\partial\Omega$ 的单位外法向量。这里 $g(x)$ 在静电场模型中表示电场沿着曲面 $\partial\Omega$ 向外穿出的强度。而在定常流模型中，$g$ 表示流体沿曲面 $\partial\Omega$ 流出的外法向速度。第二边值问题也称为 **Neumann 问题**。
+Poisson 方程的第二边值问题是指求解 $u\in C^{2}(\Omega)\cap C^{1}(\overline{\Omega})$，使其满足下述方程：$$\begin{cases} -\Delta u=f(x), & x\in\Omega,\\ \dfrac{\partial u}{\partial\boldsymbol{n}}=g(x), & x\in\partial\Omega, \end{cases} \tag{2.8}$$其中 $\boldsymbol{n}$ 表示边界 $\partial\Omega$ 的单位外法向量。这里 $g(x)$ 在静电场模型中表示电场沿着曲面 $\partial\Omega$ 向外穿出的强度。而在定常流模型中，$g$ 表示流体沿曲面 $\partial\Omega$ 流出的外法向速度。第二边值问题也称为 **Neumann 问题**。
 
 **定义 (第三边值问题)** @10
 
-Poisson 方程的第三边值问题是指求解 $u\in C^{2}(\Omega)\cap C^{1}(\overline{\Omega})$，使其满足下述方程：$$\begin{cases}-\Delta u=f(x), & x\in\Omega,\\\dfrac{\partial u}{\partial\boldsymbol{n}}+\sigma u=g(x), & x\in\partial\Omega,\end{cases} \tag{2.9}$$其中 $\sigma$ 为给定的正常数。第三边值问题也称为 **Robin（罗宾）问题**。
+Poisson 方程的第三边值问题是指求解 $u\in C^{2}(\Omega)\cap C^{1}(\overline{\Omega})$，使其满足下述方程：$$\begin{cases} -\Delta u=f(x), & x\in\Omega,\\ \dfrac{\partial u}{\partial\boldsymbol{n}}+\sigma u=g(x), & x\in\partial\Omega, \end{cases} \tag{2.9}$$其中 $\sigma$ 为给定的正常数。第三边值问题也称为 **Robin（罗宾）问题**。
 
 **注 2.1.1** @10
 
-方程 (2.9) 中的 $\sigma>0$ 是必须的，否则 (2.9) 不一定适定。例如，$0,x_{1},x_{2},\cdots,x_{n}$ 均满足方程$$\begin{cases}-\Delta u=0, & x\in B_{1},\\\dfrac{\partial u}{\partial\boldsymbol{n}}-u=0, & x\in\partial B_{1}.\end{cases}$$
+方程 (2.9) 中的 $\sigma>0$ 是必须的，否则 (2.9) 不一定适定。例如，$0,x_{1},x_{2},\cdots,x_{n}$ 均满足方程$$\begin{cases} -\Delta u=0, & x\in B_{1},\\ \dfrac{\partial u}{\partial\boldsymbol{n}}-u=0, & x\in\partial B_{1}. \end{cases}$$
 
 上述三类边值问题是有界区域上的边值问题。在实际应用中，还会经常遇到无界区域上的边值问题。例如，实心带电物体在其外部产生的电势，在礁石外的河流定常流动问题等。此时，类似有界区域的方式来定义的边值问题一般是不适定的。例如，考虑下述最简单的 Dirichlet 问题：
 
 **例 (无界区域上 Dirichlet 问题解的不唯一)** @10
 
-在$$\begin{cases}\Delta u(x)=0, & x\in H,\\u=0, & x\in\partial H\end{cases} \tag{2.10}$$中，先取 $H=\mathbb{R}^{n}\setminus B_{1}$。这里及以后，我们用 $B_{R}(x)$ 表示球心在 $x$、半径为 $R$ 的球。特别地，当球心为原点时，简记为 $B_{R}$。
+在$$\begin{cases} \Delta u(x)=0, & x\in H,\\ u=0, & x\in\partial H \end{cases} \tag{2.10}$$中，先取 $H=\mathbb{R}^{n}\setminus B_{1}$。这里及以后，我们用 $B_{R}(x)$ 表示球心在 $x$、半径为 $R$ 的球。特别地，当球心为原点时，简记为 $B_{R}$。
 
 显然，$u\equiv 0$ 是方程 (2.10) 的一个解。当 $n=2$ 时，$u(x)=\ln|x|$ 也是 (2.10) 的解且满足 $u(x)\to+\infty$ 当 $|x|\to+\infty$。当 $n=3$ 时，$u(x)=1-\frac{1}{|x|}$ 也是 (2.10) 的解且满足 $u(x)\to 1$ 当 $|x|\to+\infty$，这是一个有界解。若取 $H=\{x\in\mathbb{R}^{n}:x_{n}>0\}$，则 $u=0$ 仍是方程 (2.10) 的一个解，而 $u(x)=x_{n}$ 是 (2.10) 的一个无界解。
 
@@ -194,11 +194,11 @@ Poisson 方程的第三边值问题是指求解 $u\in C^{2}(\Omega)\cap C^{1}(\o
 
 **定义 (Dirichlet 外问题)** @11
 
-Dirichlet 外问题是指求解 $u\in C^{2}(\overline{\Omega}^{c})\cap C(\Omega^{c})$，使其满足下述方程：$$\begin{cases}-\Delta u=f(x), & x\in\overline{\Omega}^{c},\\u=g(x), & x\in\partial\Omega,\\\lim\limits_{|x|\to+\infty}u(x)=0, & n\geqslant 3,\end{cases} \tag{2.11}$$其中 $\partial\Omega$ 为光滑闭曲面，$f\in C(\overline{\Omega}^{c})$，$g\in C(\partial\Omega)$。若上述问题定义在 2 维空间中，我们将条件 $\lim\limits_{|x|\to+\infty}u(x)=0$ 替换为$$\sup_{\Omega^{c}}|u|<+\infty. \tag{2.12}$$
+Dirichlet 外问题是指求解 $u\in C^{2}(\overline{\Omega}^{c})\cap C(\Omega^{c})$，使其满足下述方程：$$\begin{cases} -\Delta u=f(x), & x\in\overline{\Omega}^{c},\\ u=g(x), & x\in\partial\Omega,\\ \lim\limits_{|x|\to+\infty}u(x)=0, & n\geqslant 3, \end{cases} \tag{2.11}$$其中 $\partial\Omega$ 为光滑闭曲面，$f\in C(\overline{\Omega}^{c})$，$g\in C(\partial\Omega)$。若上述问题定义在 2 维空间中，我们将条件 $\lim\limits_{|x|\to+\infty}u(x)=0$ 替换为$$\sup_{\Omega^{c}}|u|<+\infty. \tag{2.12}$$
 
 **定义 (Neumann 外问题)** @11
 
-Neumann 外问题是指求解 $u\in C^{2}(\overline{\Omega}^{c})\cap C^{1}(\Omega^{c})$，使其满足下述方程：$$\begin{cases}-\Delta u=f(x), & x\in\overline{\Omega}^{c},\\\dfrac{\partial u}{\partial\boldsymbol{n}}=g(x), & x\in\partial\Omega,\\\lim\limits_{|x|\to+\infty}u(x)=0, & n\geqslant 3,\end{cases} \tag{2.13}$$其中 $\boldsymbol{n}$ 表示边界 $\partial\Omega$ 的单位外法向量，$f\in C(\overline{\Omega}^{c})$，$g\in C(\partial\Omega)$。上述问题定义在 2 维空间中，则仍只要求 $u$ 为 $\Omega^{c}$ 上的有界函数，即 (2.12) 成立。
+Neumann 外问题是指求解 $u\in C^{2}(\overline{\Omega}^{c})\cap C^{1}(\Omega^{c})$，使其满足下述方程：$$\begin{cases} -\Delta u=f(x), & x\in\overline{\Omega}^{c},\\ \dfrac{\partial u}{\partial\boldsymbol{n}}=g(x), & x\in\partial\Omega,\\ \lim\limits_{|x|\to+\infty}u(x)=0, & n\geqslant 3, \end{cases} \tag{2.13}$$其中 $\boldsymbol{n}$ 表示边界 $\partial\Omega$ 的单位外法向量，$f\in C(\overline{\Omega}^{c})$，$g\in C(\partial\Omega)$。上述问题定义在 2 维空间中，则仍只要求 $u$ 为 $\Omega^{c}$ 上的有界函数，即 (2.12) 成立。
 
 #### 2.1.4 变分原理 @11
 
@@ -212,7 +212,7 @@ Neumann 外问题是指求解 $u\in C^{2}(\overline{\Omega}^{c})\cap C^{1}(\Omeg
 
 **定理 2.1.1 (Dirichlet 原理)** @12
 
-若满足 (2.16) 的基态 $u\in U$ 存在，则它必满足方程$$\begin{cases}\Delta u=0, & x\in\Omega,\\u=g, & x\in\partial\Omega.\end{cases} \tag{2.17}$$反之，若 $u\in U$ 为方程 (2.17) 的解，则 $u$ 必为变分问题 (2.16) 的解。
+若满足 (2.16) 的基态 $u\in U$ 存在，则它必满足方程$$\begin{cases} \Delta u=0, & x\in\Omega,\\ u=g, & x\in\partial\Omega. \end{cases} \tag{2.17}$$反之，若 $u\in U$ 为方程 (2.17) 的解，则 $u$ 必为变分问题 (2.16) 的解。
 
 **引理 (基态的一阶变分为零)** @12
 
@@ -652,11 +652,11 @@ $$\begin{cases}\lim\limits_{x\to 0}|x|^{n-2}u(x)=0, & n\geqslant 3,\\[6pt] \lim\
 
 首先，我们回顾矩阵最基本的特征值理论。设 $A$ 是一个 $n$ 阶半正定矩阵，则 $A$ 有 $n$ 个非负实特征值 $\{\lambda_i\}_{i=1}^n$，对应有 $n$ 个特征（列）向量 $\{u_i\}_{i=1}^n$，满足
 
-$$\begin{cases}0 \leqslant \lambda_1 \leqslant \lambda_2 \leqslant \cdots \leqslant \lambda_n, \\Au_i = \lambda_i u_i, \\\langle u_i, u_j \rangle = \delta_{ij},\end{cases}$$
+$$ \begin{cases} 0 \leqslant \lambda_1 \leqslant \lambda_2 \leqslant \cdots \leqslant \lambda_n, \\ Au_i = \lambda_i u_i, \\ \langle u_i, u_j \rangle = \delta_{ij}, \end{cases} $$
 
 其中
 
-$$\delta_{ij} :=\begin{cases}1, & i = j, \\0, & i \ne j.\end{cases}$$
+$$ \delta_{ij} := \begin{cases} 1, & i = j, \\ 0, & i \ne j. \end{cases} $$
 
 故 $\{u_i\}_{i=1}^n$ 组成 $\mathbb{R}^n$ 的一组标准正交基。由谱定理，$A = \sum_{i=1}^{n} \lambda_i u_i u_i^{\mathrm{T}}$，故矩阵 $A$ 及其对应的线性算子完全由特征值和特征向量决定。
 
@@ -668,15 +668,15 @@ $$\delta_{ij} :=\begin{cases}1, & i = j, \\0, & i \ne j.\end{cases}$$
 
 如果非零函数 $u \in C^2(\Omega) \cap C^1(\overline{\Omega})$ 和 $\lambda \in \mathbb{R}$ 满足
 
-$$\begin{cases}-\Delta u(x) = \lambda u(x), & x \in \Omega, \\u(x) = 0, & x \in \partial\Omega,\end{cases} \tag{I}$$
+$$ \begin{cases} -\Delta u(x) = \lambda u(x), & x \in \Omega, \\ u(x) = 0, & x \in \partial\Omega, \end{cases} \tag{I} $$
 
 或
 
-$$\begin{cases}-\Delta u(x) = \lambda u(x), & x \in \Omega, \\\dfrac{\partial u}{\partial \boldsymbol{n}}(x) = 0, & x \in \partial\Omega,\end{cases} \tag{II}$$
+$$ \begin{cases} -\Delta u(x) = \lambda u(x), & x \in \Omega, \\ \dfrac{\partial u}{\partial \boldsymbol{n}}(x) = 0, & x \in \partial\Omega, \end{cases} \tag{II} $$
 
 或
 
-$$\begin{cases}-\Delta u(x) = \lambda u(x), & x \in \Omega, \\\dfrac{\partial u}{\partial \boldsymbol{n}}(x) + \sigma u = 0, & x \in \partial\Omega, \quad \sigma > 0,\end{cases} \tag{III}$$
+$$ \begin{cases} -\Delta u(x) = \lambda u(x), & x \in \Omega, \\ \dfrac{\partial u}{\partial \boldsymbol{n}}(x) + \sigma u = 0, & x \in \partial\Omega, \quad \sigma > 0, \end{cases} \tag{III} $$
 
 那么分别称 $\lambda$ 是 $\Omega$ 上具有（齐次）Dirichlet 边界条件、Neumann 边界条件或者 Robin 边界条件（对应第一、第二、第三类边界条件 (2.7)、(2.8) 和 (2.9)）的算子 $-\Delta$ 的特征值，$u$ 是对应的特征函数。我们称 $(\lambda, u)$ 是 $\Omega$ 上 Laplace 算子的特征对。
 
@@ -688,7 +688,7 @@ $$\begin{cases}-\Delta u(x) = \lambda u(x), & x \in \Omega, \\\dfrac{\partial u}
 
 若 $\{u_i\}_{i=1}^\infty \subset L^2(\Omega)$ 满足
 
-$$\int_\Omega u_i u_j \mathrm{d}x = \delta_{ij}, \qquad \overline{\operatorname{Span}\left(\{u_i\}_{i=1}^\infty\right)} = L^2(\Omega),$$
+$$ \int_\Omega u_i u_j \mathrm{d}x = \delta_{ij}, \qquad \overline{\operatorname{Span}\left(\{u_i\}_{i=1}^\infty\right)} = L^2(\Omega), $$
 
 则称 $\{u_i\}_{i=1}^\infty$ 是 $L^2(\Omega)$ 的一组完备标准正交基，其中 $\operatorname{Span}\left(\{u_i\}_{i=1}^\infty\right)$ 是指由 $\{u_i\}_{i=1}^\infty$ 生成的线性空间，$\overline{X}$ 表示 $X$ 在 $L^2(\Omega)$ 拓扑下的闭包。
 
@@ -700,15 +700,15 @@ $$\int_\Omega u_i u_j \mathrm{d}x = \delta_{ij}, \qquad \overline{\operatorname{
 
 设 $\Omega = (0, \pi) \subset \mathbb{R}$。求解如下 Dirichlet 边界条件的特征值问题：
 
-$$\begin{cases}-u''(x) = \lambda u(x), & x \in (0, \pi), \\u(0) = u(\pi) = 0.\end{cases} \tag{2.66}$$
+$$ \begin{cases} -u''(x) = \lambda u(x), & x \in (0, \pi), \\ u(0) = u(\pi) = 0. \end{cases} \tag{2.66} $$
 
 由常微分方程理论可知：方程 $-u''(x) = \lambda u(x)$ 的通解为
 
-$$u(x) =\begin{cases}A\cos\sqrt{\lambda}x + B\sin\sqrt{\lambda}x, & \lambda > 0, \\Ax + B, & \lambda = 0, \\A\mathrm{e}^{\sqrt{-\lambda}x} + B\mathrm{e}^{-\sqrt{-\lambda}x}, & \lambda < 0,\end{cases}\qquad A, B \in \mathbb{R}.$$
+$$ u(x) = \begin{cases} A\cos\sqrt{\lambda}x + B\sin\sqrt{\lambda}x, & \lambda > 0, \\ Ax + B, & \lambda = 0, \\ A\mathrm{e}^{\sqrt{-\lambda}x} + B\mathrm{e}^{-\sqrt{-\lambda}x}, & \lambda < 0, \end{cases} \qquad A, B \in \mathbb{R}. $$
 
 注意到边界条件 $u(0) = u(\pi) = 0$，当 $\lambda \leqslant 0$ 时，方程只有零解；当 $\lambda > 0$ 时，方程有非零解当且仅当 $\lambda = \lambda_k = k^2\ (k \in \mathbb{N}_+)$，此时方程的解为 $u_k(x) = \sqrt{\dfrac{2}{\pi}} \sin kx$。这个例子中，所有的特征值都是非负的，且当 $k \to +\infty$ 时，$\lambda_k \to +\infty$。进一步地，
 
-$$\int_0^\pi u_i(x) u_j(x) \mathrm{d}x = \delta_{ij}, \qquad i, j \in \mathbb{N}_+.$$
+$$ \int_0^\pi u_i(x) u_j(x) \mathrm{d}x = \delta_{ij}, \qquad i, j \in \mathbb{N}_+. $$
 
 我们断言 $\{u_k(x)\}_{k=1}^\infty$ 构成 $L^2(0, \pi)$ 的完备标准正交基。
 
@@ -716,11 +716,11 @@ $$\int_0^\pi u_i(x) u_j(x) \mathrm{d}x = \delta_{ij}, \qquad i, j \in \mathbb{N}
 
 设 $\Omega = (0, \pi) \subset \mathbb{R}$。求解如下 Neumann 边界条件的特征值问题：
 
-$$\begin{cases}-u''(x) = \lambda u(x), & x \in (0, \pi), \\u'(0) = u'(\pi) = 0.\end{cases} \tag{2.67}$$
+$$ \begin{cases} -u''(x) = \lambda u(x), & x \in (0, \pi), \\ u'(0) = u'(\pi) = 0. \end{cases} \tag{2.67} $$
 
 由常微分方程理论，只有当 $\lambda = \lambda_k = (k-1)^2\ (k \in \mathbb{N}_+)$ 时，方程有非零解
 
-$$u_k(x) =\begin{cases}\dfrac{1}{\sqrt{\pi}}, & k = 1, \\\sqrt{\dfrac{2}{\pi}} \cos(k-1)x, & k \geqslant 2.\end{cases}$$
+$$ u_k(x) = \begin{cases} \dfrac{1}{\sqrt{\pi}}, & k = 1, \\ \sqrt{\dfrac{2}{\pi}} \cos(k-1)x, & k \geqslant 2. \end{cases} $$
 
 注意到，与 Dirichlet 边界条件不同，Neumann 条件的特征值包含 $0$。另外，$\{u_k(x)\}_{k=1}^\infty$ 也构成 $L^2(0, \pi)$ 的完备标准正交基。
 
@@ -728,19 +728,19 @@ $$u_k(x) =\begin{cases}\dfrac{1}{\sqrt{\pi}}, & k = 1, \\\sqrt{\dfrac{2}{\pi}} \
 
 更一般地，我们不加证明地给出如下 Sturm-Liouville（施图姆–刘维尔）定理。考虑 $\Omega = (0, L) \subset \mathbb{R}$ 上的 Sturm-Liouville 特征值问题：
 
-$$\begin{cases}-u''(x) = \lambda u(x), & x \in (0, L), \\-\alpha_1 u'(0) + \beta_1 u(0) = 0, \\\alpha_2 u'(L) + \beta_2 u(L) = 0,\end{cases} \tag{2.68}$$
+$$ \begin{cases} -u''(x) = \lambda u(x), & x \in (0, L), \\ -\alpha_1 u'(0) + \beta_1 u(0) = 0, \\ \alpha_2 u'(L) + \beta_2 u(L) = 0, \end{cases} \tag{2.68} $$
 
 其中 $\alpha_i \geqslant 0$，$\beta_i \geqslant 0$，$\alpha_i + \beta_i \ne 0\ (i = 1, 2)$。我们有如下结论成立：
 
 1. 所有的特征值 $\lambda$ 都是非负的，且构成趋于 $+\infty$ 的单调递增序列，可记为
 
-$$0 \leqslant \lambda_1 \leqslant \lambda_2 \leqslant \cdots \leqslant \lambda_k \leqslant \cdots \to +\infty,$$
+$$ 0 \leqslant \lambda_1 \leqslant \lambda_2 \leqslant \cdots \leqslant \lambda_k \leqslant \cdots \to +\infty, $$
 
 特别地，$\lambda_1 = 0$ 当且仅当 $\beta_1 = \beta_2 = 0$。
 
 2. 存在一列特征函数 $\{u_k\}_{k=1}^\infty \subset C^\infty([0, L])$（对应特征值 $\lambda_k$），构成 $L^2(0, L)$ 的完备标准正交基。从而任意 $f \in L^2(0, L)$ 可以表示为
 
-$$f(x) = \sum_{k=1}^\infty a_k u_k(x), \tag{2.69}$$
+$$ f(x) = \sum_{k=1}^\infty a_k u_k(x), \tag{2.69} $$
 
 右端在 $L^2(0, L)$ 意义下收敛。
 
@@ -770,19 +770,19 @@ Sturm-Liouville 定理是分离变量法（method of separation of variables）�
 
 (1) 对于 Dirichlet 和 Neumann 边界条件，
 
-$$\lambda = \frac{\displaystyle\int_\Omega |\nabla u|^2 \mathrm{d}x}{\displaystyle\int_\Omega u^2 \mathrm{d}x} \geqslant 0;$$
+$$ \lambda = \frac{\displaystyle\int_\Omega |\nabla u|^2 \mathrm{d}x}{\displaystyle\int_\Omega u^2 \mathrm{d}x} \geqslant 0; $$
 
 并且当且仅当 Neumann 边界条件情形，$\lambda$ 可以取零值。
 
 (2) 对于 Robin 边界条件，
 
-$$\lambda = \frac{\displaystyle\int_\Omega |\nabla u|^2 \mathrm{d}x + \sigma\int_{\partial\Omega} u^2 \mathrm{d}x}{\displaystyle\int_\Omega u^2 \mathrm{d}x} > 0.$$
+$$ \lambda = \frac{\displaystyle\int_\Omega |\nabla u|^2 \mathrm{d}x + \sigma\int_{\partial\Omega} u^2 \mathrm{d}x}{\displaystyle\int_\Omega u^2 \mathrm{d}x} > 0. $$
 
 **定理 2.5.2** @46
 
 进一步，由泛函分析中的紧算子理论和椭圆型方程的估计，可以证明如下结论。区域 $\Omega \subset \mathbb{R}^n$ 上三类边界条件的 Laplace 算子所有特征值是离散集，且按照大小可排列为
 
-$$0 \leqslant \lambda_1 \leqslant \lambda_2 \leqslant \lambda_3 \leqslant \cdots \leqslant \lambda_k \leqslant \cdots \to \infty.$$
+$$ 0 \leqslant \lambda_1 \leqslant \lambda_2 \leqslant \lambda_3 \leqslant \cdots \leqslant \lambda_k \leqslant \cdots \to \infty. $$
 
 其相应的特征函数 $\{u_k\}_{k=1}^\infty$ 满足
 
@@ -804,13 +804,13 @@ Laplace 算子的特征值和特征函数的上述性质，在研究高维空间
 
 在 Dirichlet 边界条件下，
 
-$$\lambda_1 = \inf_{\substack{u \in C^\infty(\overline{\Omega}) \\ u|_{\partial\Omega} = 0,\ u \ne 0}} \frac{\displaystyle\int_\Omega |\nabla u|^2 \mathrm{d}x}{\displaystyle\int_\Omega u^2 \mathrm{d}x}.$$
+$$ \lambda_1 = \inf_{\substack{u \in C^\infty(\overline{\Omega}) \\ u|_{\partial\Omega} = 0,\ u \ne 0}} \frac{\displaystyle\int_\Omega |\nabla u|^2 \mathrm{d}x}{\displaystyle\int_\Omega u^2 \mathrm{d}x}. $$
 
 **定理 2.5.4 (Poincaré 不等式)** @47
 
 极小原理可用来研究 Poincaré（庞加莱）不等式中的最佳常数。首先，我们证明一般区域上的 Poincaré 不等式：对于任意 $u \in C^1(\overline{\Omega})$，$u|_{\partial\Omega} = 0$，成立
 
-$$\int_\Omega |\nabla u|^2 \mathrm{d}x \geqslant \frac{1}{D^2}\int_\Omega u^2 \mathrm{d}x,$$
+$$ \int_\Omega |\nabla u|^2 \mathrm{d}x \geqslant \frac{1}{D^2}\int_\Omega u^2 \mathrm{d}x, $$
 
 其中 $D := \sup\limits_{x, y \in \Omega} |x - y|$ 为 $\Omega$ 的直径。
 
@@ -818,11 +818,11 @@ $$\int_\Omega |\nabla u|^2 \mathrm{d}x \geqslant \frac{1}{D^2}\int_\Omega u^2 \m
 
 由定理 2.5.3 和定理 2.5.4，得到如下推论。第一特征值 $\lambda_1$ 为使得 Poincaré 不等式
 
-$$\int_\Omega |\nabla u|^2 \mathrm{d}x \geqslant c\int_\Omega u^2 \mathrm{d}x, \qquad u \in C^1(\overline{\Omega}),\ u|_{\partial\Omega} = 0$$
+$$ \int_\Omega |\nabla u|^2 \mathrm{d}x \geqslant c\int_\Omega u^2 \mathrm{d}x, \qquad u \in C^1(\overline{\Omega}),\ u|_{\partial\Omega} = 0 $$
 
 成立的最佳（最大）常数，并且成立如下估计：
 
-$$\lambda_1 \geqslant \frac{1}{D^2},$$
+$$ \lambda_1 \geqslant \frac{1}{D^2}, $$
 
 这里 $D$ 为区域 $\Omega$ 的直径。
 
@@ -832,15 +832,15 @@ $$\lambda_1 \geqslant \frac{1}{D^2},$$
 
 设矩形区域 $\Omega = (0, a) \times (0, b) \subset \mathbb{R}^2$。假设 $u(x, y) = v(x)w(y)$，且 $v$ 是 $(0, a)$ 上 Dirichlet 边界条件的 Laplace 算子对应于特征值 $\mu$ 的特征函数，$w$ 是 $(0, b)$ 上 Dirichlet 边界条件的 Laplace 算子对应于特征值 $\rho$ 的特征函数，则
 
-$$-\Delta u = -(v''w + vw'') = (\mu + \rho)u.$$
+$$ -\Delta u = -(v''w + vw'') = (\mu + \rho)u. $$
 
 从而 $u$ 是 $\Omega$ 上的特征函数，其相应的特征值为 $(\mu + \rho)$。类似于例 2.5.1，我们容易得到特征对 $(\mu, v)$ 与 $(\rho, w)$，进而得到 $\Omega = (0, a) \times (0, b)$ 上 Laplace 算子的特征对
 
-$$\left( \pi^2\left(\frac{i^2}{a^2} + \frac{j^2}{b^2}\right),\ \sqrt{\frac{4}{ab}}\sin\frac{i\pi}{a}x\,\sin\frac{j\pi}{b}y \right), \qquad i, j \in \mathbb{N}_+. \tag{2.70}$$
+$$ \left( \pi^2\left(\frac{i^2}{a^2} + \frac{j^2}{b^2}\right),\ \sqrt{\frac{4}{ab}}\sin\frac{i\pi}{a}x\,\sin\frac{j\pi}{b}y \right), \qquad i, j \in \mathbb{N}_+. \tag{2.70} $$
 
 由于
 
-$$\left\{ \sqrt{\frac{4}{ab}}\sin\frac{i\pi}{a}x\,\sin\frac{j\pi}{b}y \right\}_{i, j \in \mathbb{N}_+}$$
+$$ \left\{ \sqrt{\frac{4}{ab}}\sin\frac{i\pi}{a}x\,\sin\frac{j\pi}{b}y \right\}_{i, j \in \mathbb{N}_+} $$
 
 构成 $L^2((0, a) \times (0, b))$ 的一组完备标准正交基，故 (2.70) 给出了所有的特征函数及特征值。
 
@@ -848,23 +848,23 @@ $$\left\{ \sqrt{\frac{4}{ab}}\sin\frac{i\pi}{a}x\,\sin\frac{j\pi}{b}y \right\}_{
 
 下面我们研究平面中单位圆盘上 Laplace 算子的特征值与特征函数。在单位圆盘 $B_1 \subset \mathbb{R}^2$ 上求解带 Dirichlet 边界条件的 Laplace 算子的特征值。令 $(r, \theta)$ 是平面的极坐标，则
 
-$$\Delta u = \frac{\partial^2}{\partial r^2}u + \frac{1}{r}\frac{\partial}{\partial r}u + \frac{1}{r^2}\frac{\partial^2}{\partial\theta^2}u.$$
+$$ \Delta u = \frac{\partial^2}{\partial r^2}u + \frac{1}{r}\frac{\partial}{\partial r}u + \frac{1}{r^2}\frac{\partial^2}{\partial\theta^2}u. $$
 
 构造形如 $u(r, \theta) = v(r)w(\theta)$ 的解，其中 $w$ 是以 $2\pi$ 为周期的周期函数。从而特征方程 $-\Delta u = \lambda u$ 化为
 
-$$\begin{cases}v'' + \dfrac{1}{r}v' + \left(\lambda - \dfrac{k}{r^2}\right)v = 0, \\w'' + kw = 0.\end{cases} \tag{2.71}$$
+$$ \begin{cases} v'' + \dfrac{1}{r}v' + \left(\lambda - \dfrac{k}{r^2}\right)v = 0, \\ w'' + kw = 0. \end{cases} \tag{2.71} $$
 
 注意到边界条件 $u|_{\partial B_1} = 0$ 和 $u$ 的连续性，得到 $v(1) = 0$ 且 $v(0)$ 有界。由 (2.71) 的第二个方程以及 $w$ 的周期性，得到 $k = n^2$，$n \in \mathbb{N}$，且相应的解为
 
-$$w =\begin{cases}\dfrac{1}{\sqrt{2\pi}}, & k = 0, \\\dfrac{1}{\sqrt{\pi}}\cos n\theta,\ \dfrac{1}{\sqrt{\pi}}\sin n\theta, & k = n^2,\ n \geqslant 1.\end{cases}$$
+$$ w = \begin{cases} \dfrac{1}{\sqrt{2\pi}}, & k = 0, \\ \dfrac{1}{\sqrt{\pi}}\cos n\theta,\ \dfrac{1}{\sqrt{\pi}}\sin n\theta, & k = n^2,\ n \geqslant 1. \end{cases} $$
 
 代入第一个方程，得到
 
-$$v'' + \frac{1}{r}v' + \left(\lambda - \frac{n^2}{r^2}\right)v = 0,$$
+$$ v'' + \frac{1}{r}v' + \left(\lambda - \frac{n^2}{r^2}\right)v = 0, $$
 
 作变换 $\tau = \sqrt{\lambda}r$，$v(r) = f(\sqrt{\lambda}r)$，我们得到
 
-$$f'' + \frac{1}{\tau}f' + \left(1 - \frac{n^2}{\tau^2}\right)f = 0,$$
+$$ f'' + \frac{1}{\tau}f' + \left(1 - \frac{n^2}{\tau^2}\right)f = 0, $$
 
 这是 $n$ 阶 Bessel（贝塞尔）方程。该方程有两个线性无关的解，由于 $f(0)$ 有界（因为 $v(0)$ 有界），其中的一个解有意义（另一个解在零点有奇性）。有意义的解（差一个常数因子）称为第一类 $n$ 阶 Bessel 函数，记为 $J_n(r)$。则原方程的解为 $v(r) = CJ_n(\sqrt{\lambda}r)$。第一类 $n$ 阶 Bessel 函数 $J_n(r)$ 是振荡函数，图像如图 2.8 所示。它有无穷多个正零点，记 $j_{n,l}$ 为第 $l$ 个正零点，$l \geqslant 1$。由边界条件 $v(1) = 0$，$v(1) = CJ_n(\sqrt{\lambda}) = 0$，故 $\lambda = j_{n,l}^2$。
 
@@ -872,17 +872,17 @@ $$f'' + \frac{1}{\tau}f' + \left(1 - \frac{n^2}{\tau^2}\right)f = 0,$$
 
 2. $k = n^2 \geqslant 1$。对于 $l \geqslant 1$，特征值 $j_{n,l}^2$ 对应的特征空间由以下函数张成，
 
-$$CJ_n(j_{n,l}r)\cos n\theta, \qquad CJ_n(j_{n,l}r)\sin n\theta.$$
+$$ CJ_n(j_{n,l}r)\cos n\theta, \qquad CJ_n(j_{n,l}r)\sin n\theta. $$
 
 对于给定的正整数 $n$，考虑带权的 $L^2$ 空间 $L^2((0, 1), r\,\mathrm{d}r)$，可以证明 $\{J_n(j_{n,l}r)\}_{l \in \mathbb{N}_+}$ 构成它的一组完备标准正交基。另外，三角函数系
 
-$$\left\{ \frac{1}{\sqrt{2\pi}} \right\} \cup \left\{ \frac{1}{\sqrt{\pi}}\cos n\theta,\ \frac{1}{\sqrt{\pi}}\sin n\theta \right\}_{n \in \mathbb{N}_+}$$
+$$ \left\{ \frac{1}{\sqrt{2\pi}} \right\} \cup \left\{ \frac{1}{\sqrt{\pi}}\cos n\theta,\ \frac{1}{\sqrt{\pi}}\sin n\theta \right\}_{n \in \mathbb{N}_+} $$
 
 构成 $L^2(0, 2\pi)$ 的一组完备标准正交基。由于任意可积函数 $g$，
 
-$$\int_{B_1} g(x)\mathrm{d}x = \int g(r\cos\theta, r\sin\theta)\, r\,\mathrm{d}r\,\mathrm{d}\theta,$$
+$$ \int_{B_1} g(x)\mathrm{d}x = \int g(r\cos\theta, r\sin\theta)\, r\,\mathrm{d}r\,\mathrm{d}\theta, $$
 
-$$\frac{1}{\sqrt{2\pi}}J_0(j_{0,l}r),\quad \frac{1}{\sqrt{\pi}}J_n(j_{n,l}r)\cos n\theta,\quad \frac{1}{\sqrt{\pi}}J_n(j_{n,l}r)\sin n\theta \qquad (n \geqslant 1,\ l \geqslant 1)$$
+$$ \frac{1}{\sqrt{2\pi}}J_0(j_{0,l}r),\quad \frac{1}{\sqrt{\pi}}J_n(j_{n,l}r)\cos n\theta,\quad \frac{1}{\sqrt{\pi}}J_n(j_{n,l}r)\sin n\theta \qquad (n \geqslant 1,\ l \geqslant 1) $$
 
 构成 $L^2(B_1, \mathrm{d}x)$ 的完备标准正交基。从而，我们得到了 $B_1$ 上所有的特征值和对应的特征函数。
 
@@ -892,7 +892,7 @@ $$\frac{1}{\sqrt{2\pi}}J_0(j_{0,l}r),\quad \frac{1}{\sqrt{\pi}}J_n(j_{n,l}r)\cos
 
 设 $u \in C^2(\Omega) \cap C(\overline{\Omega})$ 满足 (2.72)，$c(x) \leqslant 0$，$f(x) \geqslant 0$，$\forall x \in \Omega$，则 $u$ 的非负极大值在边界上达到，即
 
-$$\sup_{\Omega} u \leqslant \sup_{\partial\Omega} u^+,$$
+$$ \sup_{\Omega} u \leqslant \sup_{\partial\Omega} u^+, $$
 
 其中 $u^+ = \max\{u, 0\}$。
 
@@ -912,7 +912,7 @@ $$\sup_{\Omega} u \leqslant \sup_{\partial\Omega} u^+,$$
 
 设 $\boldsymbol{n}$ 为 $x_0$ 处的外法向量，则
 
-$$\liminf_{t \to 0^+} \frac{u(x_0) - u(x_0 - t\boldsymbol{\nu})}{t} > 0 \tag{2.74}$$
+$$ \liminf_{t \to 0^+} \frac{u(x_0) - u(x_0 - t\boldsymbol{\nu})}{t} > 0 \tag{2.74} $$
 
 对任意 $\boldsymbol{\nu} \cdot \boldsymbol{n} > 0$ 成立。
 
@@ -936,7 +936,7 @@ $$\liminf_{t \to 0^+} \frac{u(x_0) - u(x_0 - t\boldsymbol{\nu})}{t} > 0 \tag{2.7
 
 在系数满足光滑性条件的时候，一般椭圆型方程的梯度估计和 Harnack 不等式依然成立。若要得到形如定理 1.2.4 的梯度估计，一般要对系数加额外的结构性条件（对应于流形上的曲率有下界的条件），这里就不具体展开了。对如 (2.72) 的非散度型的椭圆型方程，要得到类似于调和方程的 Harnack 不等式，可以采用 Krylov-Safonov（克雷洛夫–萨弗诺夫）估计技巧。而对于如下散度型的椭圆型方程
 
-$$\sum_{i,j=1}^{n} \partial_{x_i}\left(a_{ij}\partial_{x_j}u\right) + \sum_{i=1}^{n} b_i \partial_{x_i}u + cu = f(x), \qquad x \in \Omega, \tag{2.75}$$
+$$ \sum_{i,j=1}^{n} \partial_{x_i}\left(a_{ij}\partial_{x_j}u\right) + \sum_{i=1}^{n} b_i \partial_{x_i}u + cu = f(x), \qquad x \in \Omega, \tag{2.75} $$
 
 要得到类似于调和方程的 Harnack 不等式，采用的是 De Giorgi-Nash-Moser（德乔吉–纳什–莫泽）迭代技巧。通过建立梯度估计或者 Harnack 不等式，可以对适当条件下的一般椭圆型方程给出全空间有界函数的 Liouville 型定理。
 
@@ -1060,7 +1060,7 @@ $$\|u(t,\cdot)\|_{L^\infty(\mathbb{R})}=\frac{|A|}{2\sqrt{\pi(t+B)}}$$
 
 考虑一维热方程的初边值问题
 
-$$\begin{cases}\partial_t u=\partial_x^2u, & (t,x)\in(0,+\infty)\times(0,\pi),\\u(0,x)=\sin kx, & x\in(0,\pi),\\u(t,0)=u(t,\pi)=0, & t\in(0,+\infty),\end{cases} \tag{3.10}$$
+$$\begin{cases} \partial_t u=\partial_x^2u, & (t,x)\in(0,+\infty)\times(0,\pi),\\ u(0,x)=\sin kx, & x\in(0,\pi),\\ u(t,0)=u(t,\pi)=0, & t\in(0,+\infty), \end{cases} \tag{3.10}$$
 
 其中 $k\in\mathbb{Z}$。易见
 
@@ -1146,13 +1146,13 @@ $$\varphi(0)=\varphi(L)=0,\qquad \varphi''(0)=\varphi''(L)=0,$$
 
 设 $\Omega\subset\mathbb{R}^n$ 是有界区域，$\partial\Omega$ 是 $C^2$ 光滑的，考虑热方程的初边值问题
 
-$$\begin{cases}\partial_t u-\Delta u=0, & (t,x)\in(0,+\infty)\times\Omega,\\u(0,x)=\varphi(x), & x\in\Omega,\\u(t,x)=0, & (t,x)\in(0,+\infty)\times\partial\Omega,\end{cases} \tag{3.15}$$
+$$\begin{cases} \partial_t u-\Delta u=0, & (t,x)\in(0,+\infty)\times\Omega,\\ u(0,x)=\varphi(x), & x\in\Omega,\\ u(t,x)=0, & (t,x)\in(0,+\infty)\times\partial\Omega, \end{cases} \tag{3.15}$$
 
 其中 $\varphi\in C^2(\Omega)\cap C^1(\bar\Omega)$ 满足相容性条件 $\varphi|_{\partial\Omega}=0$。
 
 若 $(\lambda_k,u_k)$ 是 $\Omega$ 上具有 Dirichlet 边界条件的 $-\Delta$ 算子的特征对，取 $u_k$ 为初边值问题的特殊初值。特征函数 $u_k$ 满足
 
-$$\begin{cases}-\Delta u_k=\lambda_ku_k,\\u_k|_{\partial\Omega}=0,\\\displaystyle\int_\Omega u_k^2(x)\,\mathrm{d}x=1 .\end{cases}$$
+$$\begin{cases} -\Delta u_k=\lambda_ku_k,\\ u_k|_{\partial\Omega}=0,\\ \displaystyle\int_\Omega u_k^2(x)\,\mathrm{d}x=1 . \end{cases}$$
 
 因此，以 $u_k$ 为初值的齐次 Dirichlet 初边值问题的解具有变量分离形式 $\mathrm{e}^{-\lambda_kt}u_k(x)$。
 
@@ -1170,15 +1170,15 @@ $$u(t,x)=\sum_{k=1}^{\infty}\varphi_k\mathrm{e}^{-\lambda_kt}u_k(x)$$
 
 考虑区域内部有热源的非齐次方程的初边值问题
 
-$$\begin{cases}\partial_t u-\Delta u=f(t,x), & (t,x)\in(0,+\infty)\times\Omega,\\u(0,x)=\varphi(x), & x\in\Omega,\\u(t,x)=0, & (t,x)\in(0,+\infty)\times\partial\Omega .\end{cases} \tag{3.16}$$
+$$\begin{cases} \partial_t u-\Delta u=f(t,x), & (t,x)\in(0,+\infty)\times\Omega,\\ u(0,x)=\varphi(x), & x\in\Omega,\\ u(t,x)=0, & (t,x)\in(0,+\infty)\times\partial\Omega . \end{cases} \tag{3.16}$$
 
 考察一维情形，先分析具零初边值的如下非齐次热方程定解问题：
 
-$$\begin{cases}\partial_t u-\partial_x^2u=f(t,x), & (t,x)\in(0,+\infty)\times I,\\u(0,x)=0, & x\in I,\\u(t,0)=u(t,L)=0, & t\in(0,+\infty).\end{cases} \tag{3.17}$$
+$$\begin{cases} \partial_t u-\partial_x^2u=f(t,x), & (t,x)\in(0,+\infty)\times I,\\ u(0,x)=0, & x\in I,\\ u(t,0)=u(t,L)=0, & t\in(0,+\infty). \end{cases} \tag{3.17}$$
 
 记 $w=w(t,x;\tau)$ 是一组以参数 $\tau>0$ 为初始时刻、以 $f(\tau,x)$ 为相应初值的齐次热方程的初边值问题
 
-$$\begin{cases}\partial_t w-\partial_x^2w=0, & (t,x)\in(\tau,+\infty)\times I,\\w(\tau,x;\tau)=f(\tau,x), & x\in I,\\w(t,0;\tau)=w(t,L;\tau)=0, & t\in(\tau,+\infty)\end{cases} \tag{3.18}$$
+$$\begin{cases} \partial_t w-\partial_x^2w=0, & (t,x)\in(\tau,+\infty)\times I,\\ w(\tau,x;\tau)=f(\tau,x), & x\in I,\\ w(t,0;\tau)=w(t,L;\tau)=0, & t\in(\tau,+\infty) \end{cases} \tag{3.18}$$
 
 的解。由 (3.15) 的求解过程，要求 $f(t,x)\in C_tC_x^2([0,+\infty)\times\bar I)$ 且满足相容性条件
 
@@ -1200,7 +1200,7 @@ $$u(t,x)=\int_0^tw(t,x;\tau)\,\mathrm{d}\tau=\int_0^t\sum_{k=1}^{\infty}f_k(\tau
 
 对非零初值问题
 
-$$\begin{cases}\partial_t u-\partial_x^2u=f(t,x), & (t,x)\in(0,+\infty)\times I,\\u(0,x)=\varphi(x), & x\in I,\\u(t,0)=u(t,L)=0, & t\in(0,+\infty),\end{cases} \tag{3.20}$$
+$$\begin{cases} \partial_t u-\partial_x^2u=f(t,x), & (t,x)\in(0,+\infty)\times I,\\ u(0,x)=\varphi(x), & x\in I,\\ u(t,0)=u(t,L)=0, & t\in(0,+\infty), \end{cases} \tag{3.20}$$
 
 利用方程的线性性质，将齐次方程具一般初值问题的解与非齐次方程具零初值问题对应的解叠加，即得到 (3.20) 的解：
 
@@ -1208,7 +1208,7 @@ $$u(t,x)=\sum_{k=1}^{\infty}\varphi_k\mathrm{e}^{-\lambda_kt}\sin\sqrt{\lambda_k
 
 其中
 
-$$\lambda_k=\left(\frac{k\pi}{L}\right)^2,\qquad\varphi_k=\frac{2}{L}\int_0^L\varphi(x)\sin\frac{k\pi x}{L}\,\mathrm{d}x,\qquadf_k(\tau)=\frac{2}{L}\int_0^Lf(\tau,x)\sin\frac{k\pi x}{L}\,\mathrm{d}x .$$
+$$\lambda_k=\left(\frac{k\pi}{L}\right)^2,\qquad \varphi_k=\frac{2}{L}\int_0^L\varphi(x)\sin\frac{k\pi x}{L}\,\mathrm{d}x,\qquad f_k(\tau)=\frac{2}{L}\int_0^Lf(\tau,x)\sin\frac{k\pi x}{L}\,\mathrm{d}x .$$
 
 **注 (齐次化原理的微元解释)** @63
 
@@ -1314,7 +1314,7 @@ $$\int_{\mathbb{R}^n}f\bar g\,\mathrm{d}x=\frac{1}{(2\pi)^n}\int_{\mathbb{R}^n}F
 
 考虑 $n$ 维热方程的 Cauchy 问题
 
-$$\begin{cases}\partial_t u=\Delta_xu, & (t,x)\in(0,+\infty)\times\mathbb{R}^n,\\u(0,x)=\varphi(x), & x\in\mathbb{R}^n .\end{cases} \tag{3.21}$$
+$$\begin{cases} \partial_t u=\Delta_xu, & (t,x)\in(0,+\infty)\times\mathbb{R}^n,\\ u(0,x)=\varphi(x), & x\in\mathbb{R}^n . \end{cases} \tag{3.21}$$
 
 假设初值 $\varphi(x)$ 以及对固定 $t$，$u(t,x)$ 均属于速降函数空间，则可以在方程和初值两侧关于 $x$ 进行 Fourier 变换。记
 
@@ -1322,7 +1322,7 @@ $$\hat u(t,\xi)=F[u(t,\cdot)](\xi),\qquad \hat\varphi(\xi)=F[\varphi](\xi).$$
 
 由命题 3.3.2 得
 
-$$\begin{cases}\dfrac{\mathrm{d}}{\mathrm{d}t}\hat u(t,\xi)=-|\xi|^2\hat u(t,\xi),\\\hat u(0,\xi)=\hat\varphi(\xi).\end{cases}$$
+$$\begin{cases} \dfrac{\mathrm{d}}{\mathrm{d}t}\hat u(t,\xi)=-|\xi|^2\hat u(t,\xi),\\ \hat u(0,\xi)=\hat\varphi(\xi). \end{cases}$$
 
 Fourier 变换将原线性偏微分方程问题转化成了线性常微分方程问题，其解为
 
@@ -1330,7 +1330,7 @@ $$\hat u(t,\xi)=\mathrm{e}^{-|\xi|^2t}\hat\varphi(\xi).$$
 
 对上式两边取 Fourier 逆变换，利用命题 3.3.4 及命题 3.3.5 得
 
-$$\begin{aligned}u(t,x)&=F^{-1}[\hat u(t,\cdot)](x)\\&=F^{-1}[\mathrm{e}^{-|\xi|^2t}](x)*\varphi .\end{aligned} \tag{3.22}$$
+$$\begin{aligned} u(t,x)&=F^{-1}[\hat u(t,\cdot)](x)\\ &=F^{-1}[\mathrm{e}^{-|\xi|^2t}](x)*\varphi . \end{aligned} \tag{3.22}$$
 
 **构造 (热核函数与基本解)** @69
 
@@ -1344,7 +1344,7 @@ $$H(t,x)=\frac{1}{(4\pi t)^{\frac n2}}\mathrm{e}^{-\frac{|x|^2}{4t}},\qquad t>0,
 
 并称之为热核函数。这样，就形式地得到了 Cauchy 问题 (3.21) 的解
 
-$$\begin{aligned}u(t,x)&=[H(t,\cdot)*\varphi](x)\\&=\frac{1}{(4\pi t)^{\frac n2}}\int_{\mathbb{R}^n}\mathrm{e}^{-\frac{|x-y|^2}{4t}}\varphi(y)\,\mathrm{d}y .\end{aligned} \tag{3.25}$$
+$$\begin{aligned} u(t,x)&=[H(t,\cdot)*\varphi](x)\\ &=\frac{1}{(4\pi t)^{\frac n2}}\int_{\mathbb{R}^n}\mathrm{e}^{-\frac{|x-y|^2}{4t}}\varphi(y)\,\mathrm{d}y . \end{aligned} \tag{3.25}$$
 
 $H(t,x)$ 给出了求解方程和分析解的性质的极大便利，称为 $n$ 维热方程 Cauchy 问题 (3.21) 的基本解，也称热核函数；热核函数在 $t\to0^+$ 时作为一组卷积核收敛于 Dirac 函数 $\delta(x)$。
 
@@ -1390,7 +1390,7 @@ $$u(t,x)>0,\qquad \text{即}\ \operatorname{supp}u(t,\cdot)=\mathbb{R}^n,$$
 
 利用齐次化原理，非齐次热方程 Cauchy 问题
 
-$$\begin{cases}\partial_tu-\Delta u=f(t,x), & (t,x)\in(0,+\infty)\times\mathbb{R}^n,\\u(0,x)=\varphi(x), & x\in\mathbb{R}^n\end{cases} \tag{3.27}$$
+$$\begin{cases} \partial_tu-\Delta u=f(t,x), & (t,x)\in(0,+\infty)\times\mathbb{R}^n,\\ u(0,x)=\varphi(x), & x\in\mathbb{R}^n \end{cases} \tag{3.27}$$
 
 的解可表示为
 
@@ -1412,23 +1412,23 @@ $$u(t,x)=\frac{1}{(4\pi t)^{\frac n2}}\int_{\mathbb{R}^n}\varphi(y)\mathrm{e}^{-
 
 设 $\Omega$ 是有界光滑区域，$u\in C_t^1C_x^2(\Omega_T)\cap C(\overline{\Omega_T})$ 满足
 
-$$(\partial_t-\Delta)u=0,\qquad (t,x)\in\Omega_T,$$
+$$ (\partial_t-\Delta)u=0,\qquad (t,x)\in\Omega_T, $$
 
 则 $u$ 的最值可在抛物边界 $\Gamma_T$ 上达到，即
 
-$$\max_{\overline{\Omega_T}}u=\max_{\Gamma_T}u,\qquad\min_{\overline{\Omega_T}}u=\min_{\Gamma_T}u. \tag{3.29}$$
+$$ \max_{\overline{\Omega_T}}u=\max_{\Gamma_T}u,\qquad \min_{\overline{\Omega_T}}u=\min_{\Gamma_T}u. \tag{3.29} $$
 
 **注 3.4.1** @76
 
 由定理 3.4.1 的证明过程可知，若 $u\in C_t^1C_x^2(\Omega_T)\cap C(\overline{\Omega_T})$ 在 $\Omega_T$ 上满足 $\partial_t u-\Delta u\leqslant 0$，则仍成立
 
-$$\max_{\overline{\Omega_T}}u=\max_{\Gamma_T}u.$$
+$$ \max_{\overline{\Omega_T}}u=\max_{\Gamma_T}u. $$
 
 **推论 3.4.1 (比较原理)** @76
 
 设 $\Omega$ 是有界光滑区域，$f\in C(\Omega_T)$。设 $u_1,u_2\in C_t^1C_x^2(\Omega_T)\cap C(\overline{\Omega_T})$ 是 $\partial_t u-\Delta u=f$ 在 $\Omega_T$ 上的两个解。如果
 
-$$u_1(t,x)\leqslant u_2(t,x),\qquad \forall (t,x)\in\Gamma_T,$$
+$$ u_1(t,x)\leqslant u_2(t,x),\qquad \forall (t,x)\in\Gamma_T, $$
 
 则在 $\overline{\Omega_T}$ 上 $u_1\leqslant u_2$。
 
@@ -1436,7 +1436,7 @@ $$u_1(t,x)\leqslant u_2(t,x),\qquad \forall (t,x)\in\Gamma_T,$$
 
 设 $\Omega$ 是有界光滑区域，$f\in C(\Omega_T)$，$g\in C(\Gamma_T)$，则初边值问题
 
-$$\begin{cases}\partial_t u-\Delta u=f, & (t,x)\in\Omega_T,\\u(t,x)=g(t,x), & (t,x)\in\Gamma_T\end{cases}$$
+$$ \begin{cases} \partial_t u-\Delta u=f, & (t,x)\in\Omega_T,\\ u(t,x)=g(t,x), & (t,x)\in\Gamma_T \end{cases} $$
 
 在 $C_t^1C_x^2(\Omega_T)\cap C(\overline{\Omega_T})$ 中若存在解，则解必唯一。
 
@@ -1444,25 +1444,25 @@ $$\begin{cases}\partial_t u-\Delta u=f, & (t,x)\in\Omega_T,\\u(t,x)=g(t,x), & (t
 
 本节中，我们研究热方程正解的梯度估计。热核函数
 
-$$H(t,x)=\frac{1}{(4\pi t)^{\frac{n}{2}}}\mathrm{e}^{-\frac{|x|^2}{4t}}$$
+$$ H(t,x)=\frac{1}{(4\pi t)^{\frac{n}{2}}}\mathrm{e}^{-\frac{|x|^2}{4t}} $$
 
 是热方程典型的正解。定义
 
-$$h(t,x)=\ln(H(t,x))=-\frac{|x|^2}{4t}-\frac{n}{2}\ln(4\pi t),$$
+$$ h(t,x)=\ln(H(t,x))=-\frac{|x|^2}{4t}-\frac{n}{2}\ln(4\pi t), $$
 
 计算得到
 
-$$|\nabla h|^2=\frac{|x|^2}{4t^2},\qquad \partial_t h=\frac{|x|^2}{4t^2}-\frac{n}{2t}.$$
+$$ |\nabla h|^2=\frac{|x|^2}{4t^2},\qquad \partial_t h=\frac{|x|^2}{4t^2}-\frac{n}{2t}. $$
 
 从而，$\forall t>0$，$x\in\mathbb{R}^n$，
 
-$$\frac{|\nabla H|^2}{H^2}-\frac{\partial_t H}{H}=\frac{n}{2t}. \tag{3.30}$$
+$$ \frac{|\nabla H|^2}{H^2}-\frac{\partial_t H}{H}=\frac{n}{2t}. \tag{3.30} $$
 
 由此，我们得到了热核函数 $H$ 的空间梯度和时间导数所满足的一个恒等式。注意到，对于任意给定的 $y\in\mathbb{R}^n$，以上恒等式对于 $H(t,x-y)$ 也成立。
 
 但是对于一般热方程的正解，我们并不期望得到这样好的恒等式。考虑 $u(t,x)=|x|^2+2nt$，容易验证这是热方程的正解。通过计算可得，对于任意 $t>0$，$x\in\mathbb{R}^n$，
 
-$$\frac{|\nabla u|^2}{u^2}-\frac{\partial_t u}{u}=\frac{4|x|^2}{(|x|^2+2nt)^2}-\frac{2n}{|x|^2+2nt}\leqslant\frac{4|x|^2}{(|x|^2+2nt)^2}\leqslant\frac{1}{2nt}\leqslant\frac{n}{2t}.$$
+$$ \frac{|\nabla u|^2}{u^2}-\frac{\partial_t u}{u} =\frac{4|x|^2}{(|x|^2+2nt)^2}-\frac{2n}{|x|^2+2nt} \leqslant\frac{4|x|^2}{(|x|^2+2nt)^2} \leqslant\frac{1}{2nt}\leqslant\frac{n}{2t}. $$
 
 因此，我们退而求其次，希望得到关于热方程正解梯度满足的不等式。对于特殊的热方程正解 $u=H*\varphi$，通过热核 $H$ 的表达式，我们可以得到相应的梯度估计。
 
@@ -1470,13 +1470,13 @@ $$\frac{|\nabla u|^2}{u^2}-\frac{\partial_t u}{u}=\frac{4|x|^2}{(|x|^2+2nt)^2}-\
 
 对于 $\mathbb{R}^n$ 上任意不恒等于零的非负有界连续函数 $\varphi$，$u(t,x)=P_t\varphi=H(t,\cdot)*\varphi$ 满足
 
-$$\frac{|\nabla u|^2}{u^2}-\frac{\partial_t u}{u}\leqslant\frac{n}{2t}.$$
+$$ \frac{|\nabla u|^2}{u^2}-\frac{\partial_t u}{u}\leqslant\frac{n}{2t}. $$
 
 **定理 3.4.4 (正解的梯度估计)** @77
 
 设 $u$ 是 $\mathbb{R}^n_T$ 上热方程的正解，则对于任意 $(t,x)\in(0,T]\times\mathbb{R}^n$，
 
-$$\frac{|\nabla u|^2}{u^2}-\frac{\partial_t u}{u}\leqslant\frac{n}{2t}.$$
+$$ \frac{|\nabla u|^2}{u^2}-\frac{\partial_t u}{u}\leqslant\frac{n}{2t}. $$
 
 **注 3.4.2** @78
 
@@ -1486,7 +1486,7 @@ $$\frac{|\nabla u|^2}{u^2}-\frac{\partial_t u}{u}\leqslant\frac{n}{2t}.$$
 
 设 $u$ 是 $(0,T]\times B_R$ 上热方程 $\partial_t u=\Delta u$ 的正解，$\alpha>1$。对于任意 $(t,x)\in(0,T]\times B_{\frac{R}{\alpha}}$，成立
 
-$$\frac{|\nabla u|^2}{u^2}-\alpha\frac{\partial_t u}{u}\leqslant\frac{n\alpha^2}{2t}+\frac{C\alpha^2}{R^2}\left(1+\frac{\alpha^2}{\alpha-1}\right), \tag{3.31}$$
+$$ \frac{|\nabla u|^2}{u^2}-\alpha\frac{\partial_t u}{u} \leqslant\frac{n\alpha^2}{2t}+\frac{C\alpha^2}{R^2}\left(1+\frac{\alpha^2}{\alpha-1}\right), \tag{3.31} $$
 
 其中 $C=C(n)$。
 
@@ -1496,39 +1496,39 @@ $$\frac{|\nabla u|^2}{u^2}-\alpha\frac{\partial_t u}{u}\leqslant\frac{n\alpha^2}
 
 证明定理 3.4.5 的主要方法是用 Bochner 技巧来估计热方程解的梯度，类似于调和方程梯度估计中的 Bochner 技巧。为叙述方便，只证 $\alpha=2$ 的情形。为此记 $f=\ln u$，则 (3.31) 左端为 $|\nabla f|^2-2\partial_t f$；构造
 
-$$F=t\left(|\nabla f|^2-2\partial_t f\right), \tag{3.32}$$
+$$ F=t\left(|\nabla f|^2-2\partial_t f\right), \tag{3.32} $$
 
 问题化为给出 $F$ 的上界。由于 $u$ 是热方程的正解，$f=\ln u$ 满足
 
-$$\partial_t f=\Delta f+|\nabla f|^2,$$
+$$ \partial_t f=\Delta f+|\nabla f|^2, $$
 
 从而
 
-$$\Delta f=-|\nabla f|^2+\partial_t f=-\frac{F}{2t}-\frac{|\nabla f|^2}{2}. \tag{3.33}$$
+$$ \Delta f=-|\nabla f|^2+\partial_t f=-\frac{F}{2t}-\frac{|\nabla f|^2}{2}. \tag{3.33} $$
 
 以下是著名的 Bochner 公式：对于任意的 $g\in C^3$，
 
-$$\frac{1}{2}\Delta|\nabla g|^2=|\nabla^2 g|^2+\langle\nabla g,\nabla\Delta g\rangle, \tag{3.34}$$
+$$ \frac{1}{2}\Delta|\nabla g|^2=|\nabla^2 g|^2+\langle\nabla g,\nabla\Delta g\rangle, \tag{3.34} $$
 
 其中 $|\nabla^2 g|^2=\sum\limits_{i,j=1}^{n}(\partial_{ij}g)^2$，$\langle\cdot,\cdot\rangle$ 表示向量的内积。易知，对于任意 $n\times n$ 矩阵 $A$，
 
-$$|A|^2\geqslant\sum_i a_{ii}^2\geqslant\frac{(\operatorname{tr}A)^2}{n},$$
+$$ |A|^2\geqslant\sum_i a_{ii}^2\geqslant\frac{(\operatorname{tr}A)^2}{n}, $$
 
 对 $\nabla^2 g$ 应用这个结论，得到 Bochner 不等式：
 
-$$\frac{1}{2}\Delta|\nabla g|^2\geqslant\frac{|\Delta g|^2}{n}+\langle\nabla g,\nabla\Delta g\rangle. \tag{3.35}$$
+$$ \frac{1}{2}\Delta|\nabla g|^2\geqslant\frac{|\Delta g|^2}{n}+\langle\nabla g,\nabla\Delta g\rangle. \tag{3.35} $$
 
 **引理 3.4.1** @79
 
 由 (3.32) 定义的函数 $F$ 满足不等式
 
-$$(\partial_t-\Delta)F\leqslant-\frac{F^2}{2nt}-\frac{1}{n}|\nabla f|^2F+2\langle\nabla f,\nabla F\rangle+\frac{F}{t}.$$
+$$ (\partial_t-\Delta)F\leqslant-\frac{F^2}{2nt}-\frac{1}{n}|\nabla f|^2F+2\langle\nabla f,\nabla F\rangle+\frac{F}{t}. $$
 
 **命题 3.4.1 (截断函数的存在性)** @79
 
 存在截断函数 $\eta\in C_c^\infty(B_R)$，$0\leqslant\eta\leqslant1$，在 $B_{\frac{R}{2}}$ 上恒为 $1$，且对于任意 $x\in\mathbb{R}^n$，
 
-$$|\nabla\eta|(x)\leqslant\frac{c}{R}\eta^{\frac{1}{2}},\qquad \Delta\eta(x)\geqslant-\frac{c}{R^2}, \tag{3.36}$$
+$$ |\nabla\eta|(x)\leqslant\frac{c}{R}\eta^{\frac{1}{2}},\qquad \Delta\eta(x)\geqslant-\frac{c}{R^2}, \tag{3.36} $$
 
 其中 $c$ 只依赖于维数 $n$。
 
@@ -1536,7 +1536,7 @@ $$|\nabla\eta|(x)\leqslant\frac{c}{R}\eta^{\frac{1}{2}},\qquad \Delta\eta(x)\geq
 
 在定理 3.4.5 的证明中不妨设 $R=1$。对任意 $T'\in(0,T]$ 与 $(t,x)\in(0,T']\times B_{\frac{1}{2}}$，成立
 
-$$F(t,x)\leqslant 2n+c_3T',$$
+$$ F(t,x)\leqslant 2n+c_3T', $$
 
 其中 $c_3$ 只依赖于 $n$。
 
@@ -1556,7 +1556,7 @@ $u(t,x)=\mathrm{e}^{t+x_1}$ 是 $\mathbb{R}^n$ 上的正古代解。
 
 设 $u$ 是 $\mathbb{R}^n$ 上热方程的正古代解，则
 
-$$\partial_t u\geqslant0,\qquad \forall t\in(-\infty,0],$$
+$$ \partial_t u\geqslant0,\qquad \forall t\in(-\infty,0], $$
 
 即函数 $u$ 关于 $t$ 是单调不减的。
 
@@ -1572,7 +1572,7 @@ $\mathbb{R}^n$ 上热方程的有界古代解是常数。
 
 设 $u$ 是 $(0,T]\times B_R$ 上热方程的正解。对于任意的 $0<t_1<t_2\leqslant T$，$x,y\in B_{\frac{R}{2}}$，成立
 
-$$u(t_1,x)\leqslant u(t_2,y)\left(\frac{t_2}{t_1}\right)^n\mathrm{e}^{\frac{R^2}{2(t_2-t_1)}+c\frac{t_2-t_1}{R^2}}, \tag{3.40}$$
+$$ u(t_1,x)\leqslant u(t_2,y)\left(\frac{t_2}{t_1}\right)^n \mathrm{e}^{\frac{R^2}{2(t_2-t_1)}+c\frac{t_2-t_1}{R^2}}, \tag{3.40} $$
 
 其中 $c=c(n)$ 为只依赖于维数 $n$ 的正常数。
 
@@ -1580,13 +1580,13 @@ $$u(t_1,x)\leqslant u(t_2,y)\left(\frac{t_2}{t_1}\right)^n\mathrm{e}^{\frac{R^2}
 
 设 $\Omega$ 是有界光滑连通区域，$u$ 是 $\Omega_T$ 上热方程的正解。则对于任意 $\Omega'\Subset\Omega$，$0<t_1<t_2\leqslant T$，存在不依赖于 $u$ 的常数 $C=C(n,\Omega',\Omega,t_1,t_2)$ 使得
 
-$$\sup_{x\in\Omega'}u(t_1,x)\leqslant C\inf_{x\in\Omega'}u(t_2,x). \tag{3.41}$$
+$$ \sup_{x\in\Omega'}u(t_1,x)\leqslant C\inf_{x\in\Omega'}u(t_2,x). \tag{3.41} $$
 
 **定理 3.4.9 (强极值原理)** @84
 
 $u$ 是 $\Omega_T$ 上热方程的解，若存在 $(t_0,x_0)\in\Omega_T$，使得
 
-$$u(t_0,x_0)=\max_{\overline{\Omega_T}}u,$$
+$$ u(t_0,x_0)=\max_{\overline{\Omega_T}}u, $$
 
 则 $u$ 在 $\overline{\Omega}_{t_0}$ 上是常数。
 
@@ -1594,37 +1594,37 @@ $$u(t_0,x_0)=\max_{\overline{\Omega_T}}u,$$
 
 我们考虑热方程的 Cauchy 问题
 
-$$\begin{cases}\partial_t u-\Delta u=f, & (t,x)\in\mathbb{R}^n_T,\\u(0,x)=g(x), & x\in\mathbb{R}^n\end{cases}$$
+$$ \begin{cases} \partial_t u-\Delta u=f, & (t,x)\in\mathbb{R}^n_T,\\ u(0,x)=g(x), & x\in\mathbb{R}^n \end{cases} $$
 
 解的唯一性问题。
 
 先考虑一维的简单情形：
 
-$$\begin{cases}\partial_t u-\partial_x^2 u=0, & (t,x)\in\mathbb{R}_T,\\u(0,x)=0, & x\in\mathbb{R}.\end{cases}$$
+$$ \begin{cases} \partial_t u-\partial_x^2 u=0, & (t,x)\in\mathbb{R}_T,\\ u(0,x)=0, & x\in\mathbb{R}. \end{cases} $$
 
 显然 $u\equiv0$ 是方程的一个解。我们用级数的方法，试图构造另一个非平凡解。假设 $u$ 有形式幂级数表示
 
-$$u(t,x)=\sum_{j=0}^{\infty}u_j(t)x^j,\qquad (t,x)\in\mathbb{R}_T.$$
+$$ u(t,x)=\sum_{j=0}^{\infty}u_j(t)x^j,\qquad (t,x)\in\mathbb{R}_T. $$
 
 进一步假设 $u$ 是关于 $x$ 的偶函数，即 $u_{2k+1}\equiv0$，$\forall k\in\mathbb{N}$。作形式计算，通过比较 $x^j$ 前面的系数，热方程 $\partial_t u-\partial_x^2 u=0$ 等价于
 
-$$u'_{2k}=(2k+2)(2k+1)u_{2k+2},\qquad k\in\mathbb{N}.$$
+$$ u'_{2k}=(2k+2)(2k+1)u_{2k+2},\qquad k\in\mathbb{N}. $$
 
 因此，只要选定 $u_0(t)$，由上述关系式，有
 
-$$u_{2k}=\frac{u_0^{(k)}(t)}{(2k)!},\qquad k=1,2,\cdots.$$
+$$ u_{2k}=\frac{u_0^{(k)}(t)}{(2k)!},\qquad k=1,2,\cdots. $$
 
 从而有
 
-$$u(t,x)=\sum_{k=0}^{\infty}\frac{u_0^{(k)}(t)}{(2k)!}x^{2k},\qquad (t,x)\in\mathbb{R}_T. \tag{3.42}$$
+$$ u(t,x)=\sum_{k=0}^{\infty}\frac{u_0^{(k)}(t)}{(2k)!}x^{2k},\qquad (t,x)\in\mathbb{R}_T. \tag{3.42} $$
 
 我们选取适当的 $u_0(t)$ 使得上述幂级数一致收敛。取
 
-$$u_0(t)=\begin{cases}\mathrm{e}^{-t^{-a}}, & t>0,\\0, & t\leqslant0,\end{cases}$$
+$$ u_0(t)= \begin{cases} \mathrm{e}^{-t^{-a}}, & t>0,\\ 0, & t\leqslant0, \end{cases} $$
 
 其中 $a>1$。可以证明：存在常数 $c(a)>0$，使得
 
-$$\left|u_0^{(k)}(t)\right|\leqslant\frac{k!}{(ct)^k}\mathrm{e}^{-\frac{1}{2t^a}},\qquad \forall t>0,\ k\in\mathbb{N}. \tag{3.43}$$
+$$ \left|u_0^{(k)}(t)\right|\leqslant\frac{k!}{(ct)^k}\mathrm{e}^{-\frac{1}{2t^a}},\qquad \forall t>0,\ k\in\mathbb{N}. \tag{3.43} $$
 
 从而 (3.42) 绝对收敛，且 $u,\partial_t u,\partial_x^2u$ 在 $t>0$，$x\in\mathbb{R}$ 上内闭一致收敛，并满足 $\partial_t u-\partial_x^2u=0$。注意到 $u(0,x)\equiv0$，即函数 $u(t,x)$ 满足初值条件。我们得到了一个非零解。
 
@@ -1636,17 +1636,17 @@ $$\left|u_0^{(k)}(t)\right|\leqslant\frac{k!}{(ct)^k}\mathrm{e}^{-\frac{1}{2t^a}
 
 设 $u(t,x)$ 是 $\mathbb{R}^n_T$ 上热方程的解，若存在 $A>0$，$C>0$ 使得
 
-$$u(t,x)\leqslant C\mathrm{e}^{A|x|^2},\qquad \forall (t,x)\in[0,T]\times\mathbb{R}^n, \tag{3.44}$$
+$$ u(t,x)\leqslant C\mathrm{e}^{A|x|^2},\qquad \forall (t,x)\in[0,T]\times\mathbb{R}^n, \tag{3.44} $$
 
 则
 
-$$\sup_{\mathbb{R}^n_T}u\leqslant\sup_{\mathbb{R}^n}u(0,\cdot).$$
+$$ \sup_{\mathbb{R}^n_T}u\leqslant\sup_{\mathbb{R}^n}u(0,\cdot). $$
 
 **注 3.4.4** @86
 
 前面构造的"非物理解"满足：对任意的 $\varepsilon>0$，存在常数 $C,A>0$，使得
 
-$$|u(t,x)|\leqslant C\mathrm{e}^{A|x|^{2+\varepsilon}},\qquad \forall (t,x)\in[0,T]\times\mathbb{R}^n.$$
+$$ |u(t,x)|\leqslant C\mathrm{e}^{A|x|^{2+\varepsilon}},\qquad \forall (t,x)\in[0,T]\times\mathbb{R}^n. $$
 
 故定理中增长条件 $\mathrm{e}^{A|x|^2}$ 的阶数是最优的。
 
@@ -1654,11 +1654,11 @@ $$|u(t,x)|\leqslant C\mathrm{e}^{A|x|^{2+\varepsilon}},\qquad \forall (t,x)\in[0
 
 设 $f\in C([0,T]\times\mathbb{R}^n)$，$g\in C(\mathbb{R}^n)$，则 Cauchy 问题
 
-$$\begin{cases}\partial_t u-\Delta u=f, & (t,x)\in(0,T)\times\mathbb{R}^n,\\u(0,x)=g(x), & x\in\mathbb{R}^n\end{cases}$$
+$$ \begin{cases} \partial_t u-\Delta u=f, & (t,x)\in(0,T)\times\mathbb{R}^n,\\ u(0,x)=g(x), & x\in\mathbb{R}^n \end{cases} $$
 
 至多存在一个满足
 
-$$|u(t,x)|\leqslant C\mathrm{e}^{A|x|^2},\qquad \forall (t,x)\in[0,T]\times\mathbb{R}^n$$
+$$ |u(t,x)|\leqslant C\mathrm{e}^{A|x|^2},\qquad \forall (t,x)\in[0,T]\times\mathbb{R}^n $$
 
 的解 $u$，其中 $C,A>0$。
 
@@ -1666,7 +1666,7 @@ $$|u(t,x)|\leqslant C\mathrm{e}^{A|x|^2},\qquad \forall (t,x)\in[0,T]\times\math
 
 若 $P_t\varphi$ 是 Cauchy 问题 (3.21) 的解，且存在 $A>0$，$C>0$ 使得
 
-$$|P_t\varphi(x)|\leqslant C\mathrm{e}^{A|x|^2},\qquad \forall (t,x)\in[0,T]\times\mathbb{R}^n, \tag{3.46}$$
+$$ |P_t\varphi(x)|\leqslant C\mathrm{e}^{A|x|^2},\qquad \forall (t,x)\in[0,T]\times\mathbb{R}^n, \tag{3.46} $$
 
 则 $P_t\varphi(x)$ 给出该问题满足增长性条件 (3.46) 的唯一解。
 
@@ -1682,7 +1682,7 @@ $$|P_t\varphi(x)|\leqslant C\mathrm{e}^{A|x|^2},\qquad \forall (t,x)\in[0,T]\tim
 
 设 $\Omega$ 是有界光滑区域，$u$ 是 $\Omega_T$ 上热方程的解，满足 $u(t,x)=0$，$\forall t\in[0,T]$，$x\in\partial\Omega$，则
 
-$$\int_{\Omega}u^2(t,x)\,\mathrm{d}x\leqslant\mathrm{e}^{-2\lambda_1 t}\int_{\Omega}u^2(0,x)\,\mathrm{d}x.$$
+$$ \int_{\Omega}u^2(t,x)\,\mathrm{d}x\leqslant\mathrm{e}^{-2\lambda_1 t}\int_{\Omega}u^2(0,x)\,\mathrm{d}x. $$
 
 这里 $\lambda_1$ 是 $\Omega$ 上 Dirichlet 边界条件下，算子 $-\Delta$ 的第一特征值。
 
@@ -1690,23 +1690,23 @@ $$\int_{\Omega}u^2(t,x)\,\mathrm{d}x\leqslant\mathrm{e}^{-2\lambda_1 t}\int_{\Om
 
 若 $u$ 是 $\mathbb{R}^n_T$ 上热方程的有界解，且 $u(0,x)=\varphi(x)$ 是有界连续函数，满足 $\|\varphi\|_{L^1(\mathbb{R}^n)}<+\infty$，则 $\forall t>0$，$x\in\mathbb{R}^n$，
 
-$$|u(t,x)|\leqslant\frac{1}{(4\pi t)^{\frac{n}{2}}}\|\varphi\|_{L^1(\mathbb{R}^n)},$$
+$$ |u(t,x)|\leqslant\frac{1}{(4\pi t)^{\frac{n}{2}}}\|\varphi\|_{L^1(\mathbb{R}^n)}, $$
 
-$$|\nabla u(t,x)|\leqslant\frac{C(n)}{\sqrt{t}}\|\varphi\|_{L^\infty(\mathbb{R}^n)}.$$
+$$ |\nabla u(t,x)|\leqslant\frac{C(n)}{\sqrt{t}}\|\varphi\|_{L^\infty(\mathbb{R}^n)}. $$
 
 **定理 3.4.14** @89
 
 对于 $f\in\mathcal{S}(\mathbb{R}^n)$，对于任意 $t>0$，$x\in\mathbb{R}^n$，
 
-$$\nabla P_tf(x)=P_t(\nabla f)(x),$$
+$$ \nabla P_tf(x)=P_t(\nabla f)(x), $$
 
 其中
 
-$$P_t(\nabla f)(x)=\left(P_t\partial_{x_1}f(x),P_t\partial_{x_2}f(x),\cdots,P_t\partial_{x_n}f(x)\right).$$
+$$ P_t(\nabla f)(x)=\left(P_t\partial_{x_1}f(x),P_t\partial_{x_2}f(x),\cdots,P_t\partial_{x_n}f(x)\right). $$
 
 进一步地，对于任意 $1\leqslant p<+\infty$，
 
-$$|\nabla P_tf|^p\leqslant P_t\left(|\nabla f|^p\right)(x).$$
+$$ |\nabla P_tf|^p\leqslant P_t\left(|\nabla f|^p\right)(x). $$
 
 以上关于梯度的不等式称为热半群的梯度不等式，在概率论和半群理论中有重要应用。
 
@@ -1714,7 +1714,7 @@ $$|\nabla P_tf|^p\leqslant P_t\left(|\nabla f|^p\right)(x).$$
 
 对于任意 $f\in C_c^\infty(\mathbb{R}^n)$，
 
-$$2t|\nabla P_tf|^2\leqslant P_t(f^2)-(P_tf)^2\leqslant 2tP_t|\nabla f|^2.$$
+$$ 2t|\nabla P_tf|^2\leqslant P_t(f^2)-(P_tf)^2\leqslant 2tP_t|\nabla f|^2. $$
 
 **定理 3.4.15 (有界调和函数的 Liouville 定理)** @90
 
@@ -1728,7 +1728,7 @@ $\mathbb{R}^n$ 上的有界调和函数是常数。
 
 对热方程$$\partial_t u-\Delta u=0,$$常用的能量方法是将方程两边同时乘解 $u$，并对空间变量积分，从而得到解的 $L^2$ 范数随时间的变化规律。
 
-考虑初边值问题$$\begin{cases}\partial_t u-\Delta u=f(t,x), & (t,x)\in(0,+\infty)\times\Omega,\\u(0,x)=\varphi(x), & x\in\Omega,\\u(t,x)=g, & (t,x)\in(0,+\infty)\times\partial\Omega,\end{cases}\tag{3.48}$$其中 $\Omega\subset\mathbb{R}^n$ 是具有光滑边界的有界区域，$\varphi\in C^2(\Omega)\cap C(\overline{\Omega})$ 满足相容性条件 $\varphi|_{\partial\Omega}=g|_{\{0\}\times\partial\Omega}$。
+考虑初边值问题$$ \begin{cases} \partial_t u-\Delta u=f(t,x), & (t,x)\in(0,+\infty)\times\Omega,\\ u(0,x)=\varphi(x), & x\in\Omega,\\ u(t,x)=g, & (t,x)\in(0,+\infty)\times\partial\Omega, \end{cases} \tag{3.48} $$其中 $\Omega\subset\mathbb{R}^n$ 是具有光滑边界的有界区域，$\varphi\in C^2(\Omega)\cap C(\overline{\Omega})$ 满足相容性条件 $\varphi|_{\partial\Omega}=g|_{\{0\}\times\partial\Omega}$。
 
 **定理 (初边值问题解的唯一性)** @93
 
@@ -1736,7 +1736,7 @@ $\mathbb{R}^n$ 上的有界调和函数是常数。
 
 **命题 (差函数的能量恒等式)** @94
 
-设 $w$ 满足$$\begin{cases}\partial_t w-\Delta w=0, & (t,x)\in(0,+\infty)\times\Omega,\\w(0,x)=0, & x\in\Omega,\\w(t,x)=0, & (t,x)\in(0,+\infty)\times\partial\Omega,\end{cases}\tag{3.49}$$则$$\frac{1}{2}\frac{\mathrm{d}}{\mathrm{d}t}\int_\Omega w^2\,\mathrm{d}x+\int_\Omega|\nabla w|^2\,\mathrm{d}x=0,$$从而关于 $t$ 积分得$$\frac{1}{2}\int_\Omega w^2(t,x)\,\mathrm{d}x+\int_0^t\int_\Omega|\nabla w(\tau,x)|^2\,\mathrm{d}x\,\mathrm{d}\tau=\frac{1}{2}\int_\Omega w^2(0,x)\,\mathrm{d}x.$$特别地，当 $w(0,x)=0$ 时 $w\equiv 0$。
+设 $w$ 满足$$ \begin{cases} \partial_t w-\Delta w=0, & (t,x)\in(0,+\infty)\times\Omega,\\ w(0,x)=0, & x\in\Omega,\\ w(t,x)=0, & (t,x)\in(0,+\infty)\times\partial\Omega, \end{cases} \tag{3.49} $$则$$\frac{1}{2}\frac{\mathrm{d}}{\mathrm{d}t}\int_\Omega w^2\,\mathrm{d}x+\int_\Omega|\nabla w|^2\,\mathrm{d}x=0,$$从而关于 $t$ 积分得$$\frac{1}{2}\int_\Omega w^2(t,x)\,\mathrm{d}x+\int_0^t\int_\Omega|\nabla w(\tau,x)|^2\,\mathrm{d}x\,\mathrm{d}\tau=\frac{1}{2}\int_\Omega w^2(0,x)\,\mathrm{d}x.$$特别地，当 $w(0,x)=0$ 时 $w\equiv 0$。
 
 #### 3.5.2 倒向唯一性 @94
 
@@ -1744,7 +1744,7 @@ $\mathbb{R}^n$ 上的有界调和函数是常数。
 
 **定理 3.5.1** @94
 
-若 $u_1(t,x)$ 及 $u_2(t,x)$ 分别是热方程初边值问题$$\begin{cases}\partial_t u_i-\Delta u_i=f(t,x), & (t,x)\in(0,+\infty)\times\Omega,\\u_i(0,x)=\varphi_i(x), & x\in\Omega,\\u_i(t,x)=g(t,x), & (t,x)\in(0,+\infty)\times\partial\Omega\end{cases}$$的解，其中 $i=1,2$，并且存在 $T>0$，使得$$u_1(T,x)=u_2(T,x),\qquad \forall x\in\Omega,$$则有$$u_1(t,x)=u_2(t,x),\qquad \forall (t,x)\in[0,T]\times\Omega.$$
+若 $u_1(t,x)$ 及 $u_2(t,x)$ 分别是热方程初边值问题$$ \begin{cases} \partial_t u_i-\Delta u_i=f(t,x), & (t,x)\in(0,+\infty)\times\Omega,\\ u_i(0,x)=\varphi_i(x), & x\in\Omega,\\ u_i(t,x)=g(t,x), & (t,x)\in(0,+\infty)\times\partial\Omega \end{cases} $$的解，其中 $i=1,2$，并且存在 $T>0$，使得$$u_1(T,x)=u_2(T,x),\qquad \forall x\in\Omega,$$则有$$u_1(t,x)=u_2(t,x),\qquad \forall (t,x)\in[0,T]\times\Omega.$$
 
 **引理 (能量的对数凸性)** @95
 
@@ -1756,11 +1756,11 @@ $\mathbb{R}^n$ 上的有界调和函数是常数。
 
 **注 (倒向 Cauchy 问题)** @96
 
-上述定理描述了热方程倒向问题解的唯一性，但由于热方程本身描述了热的传导与物质的扩散，从物理现象上可以猜测热方程的倒向 Cauchy 问题（即其古代解）$$\begin{cases}\partial_t u-\Delta u=0, & (t,x)\in(-\infty,0)\times\mathbb{R}^n,\\u(0,x)=\varphi(x), & x\in\mathbb{R}^n\end{cases}\tag{3.54}$$应当是不适定的。若 (3.54) 的解 $u=u(t,x)$ 在 $t\in[-\tau,0]$ 上存在，则 $u$ 也是以 $u(\tau_0,x)$ 为初值、在 $t\in[-\tau_0,0]$（$\tau_0\in[-\tau,0)$）上正向热方程 Cauchy 问题的解；正向热方程的解关于空间是解析的（热方程 Cauchy 问题的显示表达式可以证明解是解析的），因此对于一般的非解析的 $\varphi(x)$，倒向热方程 Cauchy 问题的解不存在。
+上述定理描述了热方程倒向问题解的唯一性，但由于热方程本身描述了热的传导与物质的扩散，从物理现象上可以猜测热方程的倒向 Cauchy 问题（即其古代解）$$ \begin{cases} \partial_t u-\Delta u=0, & (t,x)\in(-\infty,0)\times\mathbb{R}^n,\\ u(0,x)=\varphi(x), & x\in\mathbb{R}^n \end{cases} \tag{3.54} $$应当是不适定的。若 (3.54) 的解 $u=u(t,x)$ 在 $t\in[-\tau,0]$ 上存在，则 $u$ 也是以 $u(\tau_0,x)$ 为初值、在 $t\in[-\tau_0,0]$（$\tau_0\in[-\tau,0)$）上正向热方程 Cauchy 问题的解；正向热方程的解关于空间是解析的（热方程 Cauchy 问题的显示表达式可以证明解是解析的），因此对于一般的非解析的 $\varphi(x)$，倒向热方程 Cauchy 问题的解不存在。
 
 **命题 (倒向热方程的不稳定性)** @97
 
-对于解析的 $\varphi(x)$，即使倒向热方程的解存在，它也是不稳定的。考虑倒向热方程的初边值问题$$\begin{cases}\partial_t u-\partial_x^2 u=0, & (t,x)\in(-\infty,0)\times(0,\pi),\\u(0,x)=\varphi(x), & x\in(0,\pi),\\u(t,0)=u(t,\pi)=0, & t\in(-\infty,0).\end{cases}\tag{3.55}$$$u\equiv 0$ 是对应 $\varphi(x)\equiv 0$ 的一个特解，但它在 $L^2$ 空间中关于小扰动是不稳定的：对任意给定的一组 $\varepsilon>0$，$M>0$，$t_0>0$，是否存在 $\varphi(x)$ 及问题 (3.55) 的解 $u=u(t,x)$，使得$$\|\varphi\|_{L^2(0,\pi)}\leqslant\varepsilon,\qquad \|u(-t_0,\cdot)\|_{L^2(0,\pi)}\geqslant M\ ?$$
+对于解析的 $\varphi(x)$，即使倒向热方程的解存在，它也是不稳定的。考虑倒向热方程的初边值问题$$ \begin{cases} \partial_t u-\partial_x^2 u=0, & (t,x)\in(-\infty,0)\times(0,\pi),\\ u(0,x)=\varphi(x), & x\in(0,\pi),\\ u(t,0)=u(t,\pi)=0, & t\in(-\infty,0). \end{cases} \tag{3.55} $$$u\equiv 0$ 是对应 $\varphi(x)\equiv 0$ 的一个特解，但它在 $L^2$ 空间中关于小扰动是不稳定的：对任意给定的一组 $\varepsilon>0$，$M>0$，$t_0>0$，是否存在 $\varphi(x)$ 及问题 (3.55) 的解 $u=u(t,x)$，使得$$\|\varphi\|_{L^2(0,\pi)}\leqslant\varepsilon,\qquad \|u(-t_0,\cdot)\|_{L^2(0,\pi)}\geqslant M\ ?$$
 
 **注 (时间不可逆)** @97
 
@@ -1772,7 +1772,7 @@ $\mathbb{R}^n$ 上的有界调和函数是常数。
 
 设区域 $\Omega\subset\mathbb{R}^n$，设算子$$Lu=\sum_{i,j=1}^{n}\partial_{x_i}\big(a_{ij}\partial_{x_j}u\big)+\sum_{i=1}^{n}b_i\partial_{x_i}u+cu,$$其中 $a_{ij},b_i,c\in C^\infty(\overline{\Omega})$，$a_{ij}=a_{ji}$（$i,j=1,2,\cdots,n$），且存在 $\lambda>0$，使得$$\sum_{i,j=1}^{n}a_{ij}(x)\xi_i\xi_j\geqslant\lambda|\xi|^2,\qquad \forall\xi\in\mathbb{R}^n,\ x\in\overline{\Omega}.$$
 
-首先讨论有界区域 $\Omega$ 上一般抛物型方程的初边值问题$$\begin{cases}\partial_t u=Lu+f, & x\in\Omega,\ 0<t\leqslant T,\\u(0,x)=g(x), & x\in\Omega,\\u(t,x)=0, & 0\leqslant t\leqslant T,\ x\in\partial\Omega.\end{cases}\tag{3.56}$$
+首先讨论有界区域 $\Omega$ 上一般抛物型方程的初边值问题$$ \begin{cases} \partial_t u=Lu+f, & x\in\Omega,\ 0<t\leqslant T,\\ u(0,x)=g(x), & x\in\Omega,\\ u(t,x)=0, & 0\leqslant t\leqslant T,\ x\in\partial\Omega. \end{cases} \tag{3.56} $$
 
 记 $H^{-1}(\Omega)$ 为 $H_0^1(\Omega)$ 的对偶空间。
 
@@ -1812,7 +1812,7 @@ $\mathbb{R}^n$ 上的有界调和函数是常数。
 
 **反例 (Kovalevskaya 反例)** @100
 
-以下是 Kovalevskaya（柯瓦列夫斯卡娅）给出的反例的变形：$$\begin{cases}\partial_t u=\partial_x^2 u, & (t,x)\in(0,T)\times\mathbb{R},\\u(0,x)=\dfrac{1}{1+x^2}, & x\in\mathbb{R}.\end{cases}$$对于以上方程的有界解 $u(t,x)$，$u(t,0)$ 在 $t=0$ 处是否解析？
+以下是 Kovalevskaya（柯瓦列夫斯卡娅）给出的反例的变形：$$ \begin{cases} \partial_t u=\partial_x^2 u, & (t,x)\in(0,T)\times\mathbb{R},\\ u(0,x)=\dfrac{1}{1+x^2}, & x\in\mathbb{R}. \end{cases} $$对于以上方程的有界解 $u(t,x)$，$u(t,0)$ 在 $t=0$ 处是否解析？
 
 ## 第4章 波方程
 
@@ -1826,7 +1826,7 @@ $\mathbb{R}^n$ 上的有界调和函数是常数。
 
 若忽略重力，在适当的物理假设下，可认为在弦上任一点处所受弹性张力为一常值 $T>0$，并且一段微小的弦 $[x,x+\Delta x]$ 仅受其左右两侧的竖直方向的张力$$T\bigl(\partial_x u(t,x+\Delta x)-\partial_x u(t,x)\bigr)$$的作用。其在时段 $[t,t+\Delta t]$ 内的冲量为$$\int_t^{t+\Delta t}T\bigl(\partial_x u(s,x+\Delta x)-\partial_x u(s,x)\bigr)\,\mathrm{d}s,$$而此段弦的动量增量为$$\int_x^{x+\Delta x}\rho\bigl(\partial_t u(t+\Delta t,y)-\partial_t u(t,y)\bigr)\,\mathrm{d}y.$$
 
-这里 $\rho>0$ 为此弹性弦的线密度，即单位长度的质量。根据 Newton（牛顿）第二定律可得$$\frac{1}{\Delta t\,\Delta x}\int_t^{t+\Delta t}\!\!\int_x^{x+\Delta x}T\partial_x^2u(s,y)\,\mathrm{d}y\,\mathrm{d}s=\frac{1}{\Delta t\,\Delta x}\int_t^{t+\Delta t}\!\!\int_x^{x+\Delta x}\rho\partial_t^2u(s,y)\,\mathrm{d}y\,\mathrm{d}s.$$
+这里 $\rho>0$ 为此弹性弦的线密度，即单位长度的质量。根据 Newton（牛顿）第二定律可得$$\frac{1}{\Delta t\,\Delta x}\int_t^{t+\Delta t}\!\!\int_x^{x+\Delta x}T\partial_x^2u(s,y)\,\mathrm{d}y\,\mathrm{d}s =\frac{1}{\Delta t\,\Delta x}\int_t^{t+\Delta t}\!\!\int_x^{x+\Delta x}\rho\partial_t^2u(s,y)\,\mathrm{d}y\,\mathrm{d}s.$$
 
 令 $\Delta t\to0$，$\Delta x\to0$，即可得不受外力作用时，弦振动的位移 $u(t,x)$ 满足$$\partial_t^2u-a^2\partial_x^2u=0,\tag{4.1}$$其中 $a=\sqrt{T/\rho}$，这就是弦振动方程。
 
@@ -1876,7 +1876,7 @@ $$\frac{\partial u}{\partial\boldsymbol{n}}+\beta\partial_tu=g(t,x),\qquad (t,x)
 
 **定义 (相容性条件)** @104
 
-与 Cauchy 问题不同，为得到波方程的初边值问题存在光滑的解，就要求初值与边值必须满足一定的相容性条件。以如下的齐次波方程 Dirichlet 边值问题为例：$$\begin{cases}\partial_t^2u-a^2\Delta u=0, & (t,x)\in(0,+\infty)\times\Omega,\\u(0,x)=\varphi(x),\ \partial_tu(0,x)=\psi(x), & x\in\Omega,\\u(t,x)=0, & (t,x)\in(0,+\infty)\times\partial\Omega.\end{cases}$$
+与 Cauchy 问题不同，为得到波方程的初边值问题存在光滑的解，就要求初值与边值必须满足一定的相容性条件。以如下的齐次波方程 Dirichlet 边值问题为例：$$ \begin{cases} \partial_t^2u-a^2\Delta u=0, & (t,x)\in(0,+\infty)\times\Omega,\\ u(0,x)=\varphi(x),\ \partial_tu(0,x)=\psi(x), & x\in\Omega,\\ u(t,x)=0, & (t,x)\in(0,+\infty)\times\partial\Omega. \end{cases} $$
 
 在时空的边界点 $(0,x_0)$，$x_0\in\partial\Omega$，由于初值与边值均应与解相等，故需要如下的 $C^0$ 及 $C^1$ 相容性条件：$$\varphi(x_0)=u(0,x_0)=0,\qquad \psi(x_0)=\partial_tu(0,x_0)=0,\qquad x_0\in\partial\Omega.$$
 
@@ -1896,29 +1896,29 @@ $$\frac{\partial u}{\partial\boldsymbol{n}}+\beta\partial_tu=g(t,x),\qquad (t,x)
 
 **例 4.1.3** @105
 
-考虑下述一维弦振动方程的初边值问题：$$\begin{cases}\partial_t^2u-\partial_x^2u=0, & (t,x)\in(0,+\infty)\times(0,\pi),\\u(0,x)=\sin kx,\ \partial_tu(0,x)=0, & x\in(0,\pi),\\u(t,0)=u(t,\pi)=0,\end{cases}$$其中 $k\in\mathbb{Z}$。易见 $u(t,x)=\cos kt\sin kx$ 为该定解问题的解，且其能量$$E(t)=\frac12\int_0^{\pi}\bigl[(\partial_tu)^2+(\partial_xu)^2\bigr]\mathrm{d}x$$满足 $E(t)=E(0)=\dfrac12\int_0^{\pi}k^2\cos^2kx\,\mathrm{d}x=\dfrac{k^2\pi}{4}$，$\forall t\geqslant0$。
+考虑下述一维弦振动方程的初边值问题：$$ \begin{cases} \partial_t^2u-\partial_x^2u=0, & (t,x)\in(0,+\infty)\times(0,\pi),\\ u(0,x)=\sin kx,\ \partial_tu(0,x)=0, & x\in(0,\pi),\\ u(t,0)=u(t,\pi)=0, \end{cases} $$其中 $k\in\mathbb{Z}$。易见 $u(t,x)=\cos kt\sin kx$ 为该定解问题的解，且其能量$$E(t)=\frac12\int_0^{\pi}\bigl[(\partial_tu)^2+(\partial_xu)^2\bigr]\mathrm{d}x$$满足 $E(t)=E(0)=\dfrac12\int_0^{\pi}k^2\cos^2kx\,\mathrm{d}x=\dfrac{k^2\pi}{4}$，$\forall t\geqslant0$。
 
 ### 4.2 波方程的 Cauchy 问题（p106–116）
 
 **注 (化一般波方程为标准形式)** @106
 
-本节介绍 $a=1$ 时波方程的 Cauchy 问题$$\begin{cases}\partial_t^2u-\Delta u=f(t,x), & (t,x)\in(0,+\infty)\times\mathbb{R}^n,\\u(0,x)=\varphi(x),\ \partial_tu(0,x)=\psi(x), & x\in\mathbb{R}^n\end{cases}\tag{4.10}$$的求解。对 $a\neq1$ 的一般波方程 $\partial_t^2u-a^2\Delta u=0$，可以通过自变量变换 $\tilde{t}=at$，把方程化为 $\partial_t^2u-\Delta u=0$，即 $a=1$ 的情形。
+本节介绍 $a=1$ 时波方程的 Cauchy 问题$$ \begin{cases} \partial_t^2u-\Delta u=f(t,x), & (t,x)\in(0,+\infty)\times\mathbb{R}^n,\\ u(0,x)=\varphi(x),\ \partial_tu(0,x)=\psi(x), & x\in\mathbb{R}^n \end{cases}\tag{4.10} $$的求解。对 $a\neq1$ 的一般波方程 $\partial_t^2u-a^2\Delta u=0$，可以通过自变量变换 $\tilde{t}=at$，把方程化为 $\partial_t^2u-\Delta u=0$，即 $a=1$ 的情形。
 
 **定义 (波算子 $S(t)$)** @106
 
-形式地定义波算子 $S(t):\psi\mapsto u(t,x)=[S(t)\psi](x)$，其中 $u(t,x)$ 是如下波方程的 Cauchy 问题的解：$$\begin{cases}\partial_t^2u-\Delta u=0, & (t,x)\in(0,+\infty)\times\mathbb{R}^n,\\u(0,x)=0,\ \partial_tu(0,x)=\psi(x), & x\in\mathbb{R}^n.\end{cases}\tag{4.11}$$波算子 $S(t)$ 定义的合理性将在后面说明。
+形式地定义波算子 $S(t):\psi\mapsto u(t,x)=[S(t)\psi](x)$，其中 $u(t,x)$ 是如下波方程的 Cauchy 问题的解：$$ \begin{cases} \partial_t^2u-\Delta u=0, & (t,x)\in(0,+\infty)\times\mathbb{R}^n,\\ u(0,x)=0,\ \partial_tu(0,x)=\psi(x), & x\in\mathbb{R}^n. \end{cases}\tag{4.11} $$波算子 $S(t)$ 定义的合理性将在后面说明。
 
 **命题 (由波算子表示零初速 Cauchy 问题的解)** @106
 
-令 $v(t,x)=[S(t)\varphi](x)$，则形式验证可知 $u=\partial_tv(t,x)$ 是如下波方程的 Cauchy 问题的解：$$\begin{cases}\partial_t^2u-\Delta u=0, & (t,x)\in(0,+\infty)\times\mathbb{R}^n,\\u(0,x)=\varphi,\ \partial_tu(0,x)=0, & x\in\mathbb{R}^n.\end{cases}\tag{4.12}$$
+令 $v(t,x)=[S(t)\varphi](x)$，则形式验证可知 $u=\partial_tv(t,x)$ 是如下波方程的 Cauchy 问题的解：$$ \begin{cases} \partial_t^2u-\Delta u=0, & (t,x)\in(0,+\infty)\times\mathbb{R}^n,\\ u(0,x)=\varphi,\ \partial_tu(0,x)=0, & x\in\mathbb{R}^n. \end{cases}\tag{4.12} $$
 
 **命题 (齐次化原理)** @107
 
-受热方程章节中介绍的齐次化原理的启发，可进一步形式地验证$$u(t,x)=\int_0^{t}S(t-\tau)f(\tau,x)\,\mathrm{d}\tau,\qquad (t,x)\in(0,+\infty)\times\mathbb{R}^n\tag{4.13}$$是如下非齐次波方程 Cauchy 问题的解：$$\begin{cases}\partial_t^2u-\Delta u=f, & (t,x)\in(0,+\infty)\times\mathbb{R}^n,\\u(0,x)=0,\ \partial_tu(0,x)=0, & x\in\mathbb{R}^n.\end{cases}\tag{4.14}$$
+受热方程章节中介绍的齐次化原理的启发，可进一步形式地验证$$u(t,x)=\int_0^{t}S(t-\tau)f(\tau,x)\,\mathrm{d}\tau,\qquad (t,x)\in(0,+\infty)\times\mathbb{R}^n\tag{4.13}$$是如下非齐次波方程 Cauchy 问题的解：$$ \begin{cases} \partial_t^2u-\Delta u=f, & (t,x)\in(0,+\infty)\times\mathbb{R}^n,\\ u(0,x)=0,\ \partial_tu(0,x)=0, & x\in\mathbb{R}^n. \end{cases}\tag{4.14} $$
 
 **注 (齐次化原理的物理解释)** @107
 
-任意给定 $t>0$，将时间区间 $[0,t]$ 作如下划分：$$0=\tau_0<\tau_1<\tau_2<\cdots<\tau_N=t.$$当 $\max\limits_{k=0,1,\cdots,N-1}\Delta\tau_k=\max\limits_{k=0,1,\cdots,N-1}(\tau_{k+1}-\tau_k)$ 充分小时，在 $x$ 位置处，我们可以将时间区间 $[\tau_k,\tau_{k+1}]$ 上外力 $f(s,x)$ 的持续作用近似地看作在 $\tau_k$ 时刻给予系统一个瞬时冲量 $f(\tau_k,x)\Delta\tau_k$。因此外力 $f|_{[\tau_k,\tau_{k+1}]}$ 所产生的受迫振动可近似地由$$\begin{cases}\partial_t^2w-\Delta w=0, & (t,x)\in(\tau_k,+\infty)\times\mathbb{R}^n,\\w(\tau_k,x)=0,\ \partial_tw(\tau_k,x)=f(\tau_k,x)\Delta\tau_k, & x\in\mathbb{R}^n\end{cases}\tag{4.15}$$描述。利用方程的线性性质，将各时间段上由 $f$ 的作用所产生的振动相叠加，可得$$\sum_{k=0}^{N-1}w(t,x;\tau_k)=\sum_{k=0}^{N-1}S(t-\tau_k)f(\tau_k,x)\Delta\tau_k$$是 (4.14) 的近似解；令 $\max\limits_{k=0,1,\cdots,N-1}\Delta\tau_k\to0$，即得 $\int_0^{t}S(t-\tau)f(\tau,x)\,\mathrm{d}\tau$。
+任意给定 $t>0$，将时间区间 $[0,t]$ 作如下划分：$$0=\tau_0<\tau_1<\tau_2<\cdots<\tau_N=t.$$当 $\max\limits_{k=0,1,\cdots,N-1}\Delta\tau_k=\max\limits_{k=0,1,\cdots,N-1}(\tau_{k+1}-\tau_k)$ 充分小时，在 $x$ 位置处，我们可以将时间区间 $[\tau_k,\tau_{k+1}]$ 上外力 $f(s,x)$ 的持续作用近似地看作在 $\tau_k$ 时刻给予系统一个瞬时冲量 $f(\tau_k,x)\Delta\tau_k$。因此外力 $f|_{[\tau_k,\tau_{k+1}]}$ 所产生的受迫振动可近似地由$$ \begin{cases} \partial_t^2w-\Delta w=0, & (t,x)\in(\tau_k,+\infty)\times\mathbb{R}^n,\\ w(\tau_k,x)=0,\ \partial_tw(\tau_k,x)=f(\tau_k,x)\Delta\tau_k, & x\in\mathbb{R}^n \end{cases}\tag{4.15} $$描述。利用方程的线性性质，将各时间段上由 $f$ 的作用所产生的振动相叠加，可得$$\sum_{k=0}^{N-1}w(t,x;\tau_k)=\sum_{k=0}^{N-1}S(t-\tau_k)f(\tau_k,x)\Delta\tau_k$$是 (4.14) 的近似解；令 $\max\limits_{k=0,1,\cdots,N-1}\Delta\tau_k\to0$，即得 $\int_0^{t}S(t-\tau)f(\tau,x)\,\mathrm{d}\tau$。
 
 为得到波方程的 Cauchy 问题的解，下面将主要求解波算子 $S(t)$。为方便起见，本节仅讨论空间维数 $n=1,2$ 及 $3$ 的物理情形，一般的高维情形留作习题讨论。
 
@@ -1934,29 +1934,29 @@ $$\frac{\partial u}{\partial\boldsymbol{n}}+\beta\partial_tu=g(t,x),\qquad (t,x)
 
 **定理 4.2.1** @109
 
-设 $\varphi\in C^2(\mathbb{R})$，$\psi\in C^1(\mathbb{R})$，则弦振动方程的 Cauchy 问题$$\begin{cases}\partial_t^2u-\partial_x^2u=0, & (t,x)\in(0,+\infty)\times\mathbb{R},\\u(0,x)=\varphi(x),\ \partial_tu(0,x)=\psi(x), & x\in\mathbb{R}\end{cases}$$存在唯一的经典解，且它由 d'Alembert（达朗贝尔）公式$$u(t,x)=\frac12\bigl[\varphi(x+t)+\varphi(x-t)\bigr]+\frac12\int_{x-t}^{x+t}\psi(y)\,\mathrm{d}y,\qquad (t,x)\in(0,+\infty)\times\mathbb{R}\tag{4.18}$$给出。
+设 $\varphi\in C^2(\mathbb{R})$，$\psi\in C^1(\mathbb{R})$，则弦振动方程的 Cauchy 问题$$ \begin{cases} \partial_t^2u-\partial_x^2u=0, & (t,x)\in(0,+\infty)\times\mathbb{R},\\ u(0,x)=\varphi(x),\ \partial_tu(0,x)=\psi(x), & x\in\mathbb{R} \end{cases} $$存在唯一的经典解，且它由 d'Alembert（达朗贝尔）公式$$u(t,x)=\frac12\bigl[\varphi(x+t)+\varphi(x-t)\bigr]+\frac12\int_{x-t}^{x+t}\psi(y)\,\mathrm{d}y,\qquad (t,x)\in(0,+\infty)\times\mathbb{R}\tag{4.18}$$给出。
 
 从表达式 (4.18) 可以看出弦振动方程的解 $u$ 在 $(t,x)$ 的取值仅依赖于初值 $(\varphi,\psi)$ 在区间 $[x-t,x+t]$ 上的取值。
 
 **命题 (非齐次一维 Cauchy 问题的解)** @109
 
-利用齐次化原理可得$$u(t,x)=\frac12\bigl[\varphi(x+t)+\varphi(x-t)\bigr]+\frac12\int_{x-t}^{x+t}\psi(y)\,\mathrm{d}y+\frac12\int_0^{t}\!\!\int_{x-(t-\tau)}^{x+(t-\tau)}f(\tau,y)\,\mathrm{d}y\,\mathrm{d}\tau,\qquad (t,x)\in(0,+\infty)\times\mathbb{R}$$为非齐次方程 Cauchy 问题$$\begin{cases}\partial_t^2u-\partial_x^2u=f, & (t,x)\in(0,+\infty)\times\mathbb{R},\\u(0,x)=\varphi(x),\ \partial_tu(0,x)=\psi(x), & x\in\mathbb{R}\end{cases}$$的解。
+利用齐次化原理可得$$u(t,x)=\frac12\bigl[\varphi(x+t)+\varphi(x-t)\bigr]+\frac12\int_{x-t}^{x+t}\psi(y)\,\mathrm{d}y+\frac12\int_0^{t}\!\!\int_{x-(t-\tau)}^{x+(t-\tau)}f(\tau,y)\,\mathrm{d}y\,\mathrm{d}\tau,\qquad (t,x)\in(0,+\infty)\times\mathbb{R}$$为非齐次方程 Cauchy 问题$$ \begin{cases} \partial_t^2u-\partial_x^2u=f, & (t,x)\in(0,+\infty)\times\mathbb{R},\\ u(0,x)=\varphi(x),\ \partial_tu(0,x)=\psi(x), & x\in\mathbb{R} \end{cases} $$的解。
 
 **例 4.2.1** @109
 
-求解描述一端固定的半无界弦自由振动的初边值问题$$\begin{cases}\partial_t^2u-\partial_x^2u=0, & (t,x)\in(0,+\infty)\times(0,+\infty),\\u(0,x)=\varphi(x),\ \partial_tu(0,x)=\psi(x), & x\in(0,+\infty),\\u(t,0)=0, & t\in(0,+\infty),\end{cases}\tag{4.19}$$其中 $\varphi$ 及 $\psi$ 满足相容性条件$$\varphi(0)=\varphi''(0)=0,\qquad \psi(0)=0.$$
+求解描述一端固定的半无界弦自由振动的初边值问题$$ \begin{cases} \partial_t^2u-\partial_x^2u=0, & (t,x)\in(0,+\infty)\times(0,+\infty),\\ u(0,x)=\varphi(x),\ \partial_tu(0,x)=\psi(x), & x\in(0,+\infty),\\ u(t,0)=0, & t\in(0,+\infty), \end{cases}\tag{4.19} $$其中 $\varphi$ 及 $\psi$ 满足相容性条件$$\varphi(0)=\varphi''(0)=0,\qquad \psi(0)=0.$$
 
-将初值 $(\varphi,\psi)$ 在 $\mathbb{R}$ 上作奇延拓成为 $(\Phi,\Psi)$，即$$\Phi(x)=\begin{cases}\varphi(x), & x\geqslant0,\\ -\varphi(-x), & x<0,\end{cases}\qquad\Psi(x)=\begin{cases}\psi(x), & x\geqslant0,\\ -\psi(-x), & x<0,\end{cases}$$并要求以 $(\Phi,\Psi)$ 作初值的 Cauchy 问题在 $(0,+\infty)\times\mathbb{R}$ 上的解满足 $x=0$ 处的边界条件。由 d'Alembert 公式，以 $(\Phi,\Psi)$ 作初值的 Cauchy 问题的解为$$U(t,x)=\frac12\bigl[\Phi(x+t)+\Phi(x-t)\bigr]+\frac12\int_{x-t}^{x+t}\Psi(y)\,\mathrm{d}y.\tag{4.20}$$
+将初值 $(\varphi,\psi)$ 在 $\mathbb{R}$ 上作奇延拓成为 $(\Phi,\Psi)$，即$$ \Phi(x)=\begin{cases}\varphi(x), & x\geqslant0,\\ -\varphi(-x), & x<0,\end{cases}\qquad \Psi(x)=\begin{cases}\psi(x), & x\geqslant0,\\ -\psi(-x), & x<0,\end{cases} $$并要求以 $(\Phi,\Psi)$ 作初值的 Cauchy 问题在 $(0,+\infty)\times\mathbb{R}$ 上的解满足 $x=0$ 处的边界条件。由 d'Alembert 公式，以 $(\Phi,\Psi)$ 作初值的 Cauchy 问题的解为$$U(t,x)=\frac12\bigl[\Phi(x+t)+\Phi(x-t)\bigr]+\frac12\int_{x-t}^{x+t}\Psi(y)\,\mathrm{d}y.\tag{4.20}$$
 
-于是，将上述 $\Phi,\Psi$ 代入 (4.20)，就得到原混合初边值问题 (4.19) 的解$$u(t,x)=\begin{cases}\dfrac12\bigl[\varphi(x+t)+\varphi(x-t)\bigr]+\dfrac12\displaystyle\int_{x-t}^{x+t}\psi(y)\,\mathrm{d}y, & 0\leqslant t\leqslant x,\\[2ex]\dfrac12\bigl[\varphi(x+t)-\varphi(t-x)\bigr]+\dfrac12\displaystyle\int_{t-x}^{t+x}\psi(y)\,\mathrm{d}y, & 0\leqslant x<t.\end{cases}\tag{4.21}$$
+于是，将上述 $\Phi,\Psi$ 代入 (4.20)，就得到原混合初边值问题 (4.19) 的解$$ u(t,x)=\begin{cases} \dfrac12\bigl[\varphi(x+t)+\varphi(x-t)\bigr]+\dfrac12\displaystyle\int_{x-t}^{x+t}\psi(y)\,\mathrm{d}y, & 0\leqslant t\leqslant x,\\[2ex] \dfrac12\bigl[\varphi(x+t)-\varphi(t-x)\bigr]+\dfrac12\displaystyle\int_{t-x}^{t+x}\psi(y)\,\mathrm{d}y, & 0\leqslant x<t. \end{cases}\tag{4.21} $$
 
 #### 4.2.2 三维波方程的球平均法 @111
 
 **构造 (球平均函数)** @111
 
-考虑三维波方程的如下 Cauchy 问题：$$\begin{cases}\partial_t^2u-\Delta u=0, & (t,x)\in(0,+\infty)\times\mathbb{R}^3,\\u(0,x)=0,\ \partial_tu(0,x)=\psi(x), & x\in\mathbb{R}^3.\end{cases}\tag{4.22}$$
+考虑三维波方程的如下 Cauchy 问题：$$ \begin{cases} \partial_t^2u-\Delta u=0, & (t,x)\in(0,+\infty)\times\mathbb{R}^3,\\ u(0,x)=0,\ \partial_tu(0,x)=\psi(x), & x\in\mathbb{R}^3. \end{cases}\tag{4.22} $$
 
-我们希望将求解上述问题转化为求解一个一维波方程的定解问题。为此，引入 $u$ 及 $\psi$ 的球平均函数$$\begin{cases}M_u(t,\rho;x)=\dfrac{1}{|\partial B_\rho(x)|}\displaystyle\int_{\partial B_\rho(x)}u(t,y)\,\mathrm{d}S_y,\\[2ex]M_\psi(\rho;x)=\dfrac{1}{|\partial B_\rho(x)|}\displaystyle\int_{\partial B_\rho(x)}\psi(y)\,\mathrm{d}S_y,\end{cases}$$这里参数 $\rho>0$，$\partial B_\rho(x)$ 是 $\mathbb{R}^3$ 中以 $x$ 为心、$\rho$ 为半径的球面。相应地，$$M_u(0,\rho;x)=0,\qquad \partial_tM_u(0,\rho;x)=M_\psi(\rho;x),$$且$$\lim_{\rho\to0}M_u(t,\rho;x)=u(t,x),\qquad \lim_{\rho\to0}M_\psi(\rho;x)=\psi(x).$$
+我们希望将求解上述问题转化为求解一个一维波方程的定解问题。为此，引入 $u$ 及 $\psi$ 的球平均函数$$ \begin{cases} M_u(t,\rho;x)=\dfrac{1}{|\partial B_\rho(x)|}\displaystyle\int_{\partial B_\rho(x)}u(t,y)\,\mathrm{d}S_y,\\[2ex] M_\psi(\rho;x)=\dfrac{1}{|\partial B_\rho(x)|}\displaystyle\int_{\partial B_\rho(x)}\psi(y)\,\mathrm{d}S_y, \end{cases} $$这里参数 $\rho>0$，$\partial B_\rho(x)$ 是 $\mathbb{R}^3$ 中以 $x$ 为心、$\rho$ 为半径的球面。相应地，$$M_u(0,\rho;x)=0,\qquad \partial_tM_u(0,\rho;x)=M_\psi(\rho;x),$$且$$\lim_{\rho\to0}M_u(t,\rho;x)=u(t,x),\qquad \lim_{\rho\to0}M_\psi(\rho;x)=\psi(x).$$
 
 因此，为求解 $u(t,x)$，仅需先求解 $M_u(t,\rho;x)$。将 $M_u(t,\rho;x)$ 视为以 $x$ 为参数、以 $(t,\rho)$ 为自变量的函数，即可推导其满足的方程。
 
@@ -1966,7 +1966,7 @@ $$\frac{\partial u}{\partial\boldsymbol{n}}+\beta\partial_tu=g(t,x),\qquad (t,x)
 
 **命题 (三维波方程初值为零情形的解)** @112
 
-令$$V(t,\rho;x):=\rho M_u(t,\rho;x),\qquad (t,\rho;x)\in(0,+\infty)\times(0,+\infty)\times\mathbb{R}^3,$$则对任意给定的 $x\in\mathbb{R}^3$，$V$ 关于 $(t,\rho)$ 在第一象限满足如下混合初边值问题：$$\begin{cases}\partial_t^2V-\partial_\rho^2V=0, & (t,\rho)\in(0,+\infty)\times(0,+\infty),\\V(0,\rho;x)=0,\ \partial_tV(0,\rho;x)=\rho M_\psi(\rho;x), & \rho\in(0,+\infty),\\V(t,0;x)=0, & t\in(0,+\infty).\end{cases}\tag{4.24}$$
+令$$V(t,\rho;x):=\rho M_u(t,\rho;x),\qquad (t,\rho;x)\in(0,+\infty)\times(0,+\infty)\times\mathbb{R}^3,$$则对任意给定的 $x\in\mathbb{R}^3$，$V$ 关于 $(t,\rho)$ 在第一象限满足如下混合初边值问题：$$ \begin{cases} \partial_t^2V-\partial_\rho^2V=0, & (t,\rho)\in(0,+\infty)\times(0,+\infty),\\ V(0,\rho;x)=0,\ \partial_tV(0,\rho;x)=\rho M_\psi(\rho;x), & \rho\in(0,+\infty),\\ V(t,0;x)=0, & t\in(0,+\infty). \end{cases}\tag{4.24} $$
 
 由 4.2.1 小节例 4.2.1 可得，对 $t>0$，$$V(t,\rho;x)=\frac12\int_{t-\rho}^{t+\rho}rM_\psi(r;x)\,\mathrm{d}r,\qquad (t,\rho;x)\in(0,+\infty)\times(0,t]\times\mathbb{R}^3.\tag{4.25}$$故$$u(t,x)=\lim_{\rho\to0^+}M_u(t,\rho;x)=\lim_{\rho\to0^+}\frac{V(t,\rho;x)}{\rho}=tM_\psi(t;x)=\frac{1}{|\partial B_t(x)|}\int_{\partial B_t(x)}t\psi(y)\,\mathrm{d}S_y,\qquad (t,x)\in(0,+\infty)\times\mathbb{R}^3.\tag{4.26}$$
 
@@ -1974,7 +1974,7 @@ $$\frac{\partial u}{\partial\boldsymbol{n}}+\beta\partial_tu=g(t,x),\qquad (t,x)
 
 **定理 4.2.2** @113
 
-设 $\varphi\in C^3(\mathbb{R}^3)$，$\psi\in C^2(\mathbb{R}^3)$，则三维波方程的 Cauchy 问题$$\begin{cases}\partial_t^2u-\Delta u=0, & (t,x)\in(0,+\infty)\times\mathbb{R}^3,\\u(0,x)=\varphi(x),\ \partial_tu(0,x)=\psi(x), & x\in\mathbb{R}^3\end{cases}\tag{4.27}$$存在唯一的解$$u(t,x)=\partial_t\left(\frac{1}{|\partial B_t(x)|}\int_{\partial B_t(x)}t\varphi(y)\,\mathrm{d}S_y\right)+\frac{1}{|\partial B_t(x)|}\int_{\partial B_t(x)}t\psi(y)\,\mathrm{d}S_y,\qquad (t,x)\in(0,+\infty)\times\mathbb{R}^3.\tag{4.28}$$
+设 $\varphi\in C^3(\mathbb{R}^3)$，$\psi\in C^2(\mathbb{R}^3)$，则三维波方程的 Cauchy 问题$$ \begin{cases} \partial_t^2u-\Delta u=0, & (t,x)\in(0,+\infty)\times\mathbb{R}^3,\\ u(0,x)=\varphi(x),\ \partial_tu(0,x)=\psi(x), & x\in\mathbb{R}^3 \end{cases}\tag{4.27} $$存在唯一的解$$u(t,x)=\partial_t\left(\frac{1}{|\partial B_t(x)|}\int_{\partial B_t(x)}t\varphi(y)\,\mathrm{d}S_y\right)+\frac{1}{|\partial B_t(x)|}\int_{\partial B_t(x)}t\psi(y)\,\mathrm{d}S_y,\qquad (t,x)\in(0,+\infty)\times\mathbb{R}^3.\tag{4.28}$$
 
 从解的表达式 (4.28) 可以看出，三维波方程的解 $u$ 在 $(t,x)$ 的取值只依赖于初值 $(\varphi,\psi)$ 以及 $\nabla\varphi$ 在 $\partial B_t(x)$ 上的取值（唯一性见 4.5 节）。对于非齐次方程 Cauchy 问题，可以利用定理 4.2.2 及齐次化原理给出解的显式表示。
 
@@ -1982,19 +1982,19 @@ $$\frac{\partial u}{\partial\boldsymbol{n}}+\beta\partial_tu=g(t,x),\qquad (t,x)
 
 **构造 (降维法)** @113
 
-考虑$$\begin{cases}\partial_t^2u-\Delta u=0, & (t,x)\in(0,+\infty)\times\mathbb{R}^2,\\u(0,x)=0,\ \partial_tu(0,x)=\psi(x), & x\in\mathbb{R}^2.\end{cases}\tag{4.29}$$
+考虑$$ \begin{cases} \partial_t^2u-\Delta u=0, & (t,x)\in(0,+\infty)\times\mathbb{R}^2,\\ u(0,x)=0,\ \partial_tu(0,x)=\psi(x), & x\in\mathbb{R}^2. \end{cases}\tag{4.29} $$
 
 记 $\tilde{\psi}(z)=\psi(y)$，$z=(y,y_3)\in\mathbb{R}^2\times\mathbb{R}$，我们以之为初值解三维的波方程，可得$$\tilde{u}(t,x,0)=\frac{1}{|\partial B_t(x,0)|}\int_{\partial B_t(x,0)}t\tilde{\psi}(z)\,\mathrm{d}S_z,\qquad t>0,\ x\in\mathbb{R}^2,$$其中$$\partial B_t(x,0)=\{z=(y,y_3):|y-x|^2+|y_3|^2=t^2\}.$$
 
 记 $\mathrm{d}y_1\mathrm{d}y_2$ 为 $\mathrm{d}S_z$ 在二维圆盘 $D_t(x)=\{y\in\mathbb{R}^2:|y-x|<t\}$ 内的投影，则$$\frac{\mathrm{d}y_1\mathrm{d}y_2}{\mathrm{d}S_z}=\left|\boldsymbol{e}_3\cdot\left(\frac{y-x}{y_3-0}\right)\frac{1}{t}\right|=\frac{|y_3|}{t}=\frac{\sqrt{t^2-|y-x|^2}}{t}.$$
 
-再注意到 $n=2$ 时，$|\partial B_t(x,0)|=4\pi t^2$，$|D_t(x)|=\pi t^2$，则$$\begin{aligned}\tilde{u}(t,x,0)&=\frac{1}{|\partial B_t(x,0)|}\cdot2\int_{D_t(x)}t\psi(y)\frac{t}{\sqrt{t^2-|y-x|^2}}\,\mathrm{d}y\\&=\frac{1}{|D_t(x)|}\int_{D_t(x)}t\psi(y)\frac{t}{2\sqrt{t^2-|y-x|^2}}\,\mathrm{d}y.\end{aligned}\tag{4.30}$$
+再注意到 $n=2$ 时，$|\partial B_t(x,0)|=4\pi t^2$，$|D_t(x)|=\pi t^2$，则$$ \begin{aligned} \tilde{u}(t,x,0)&=\frac{1}{|\partial B_t(x,0)|}\cdot2\int_{D_t(x)}t\psi(y)\frac{t}{\sqrt{t^2-|y-x|^2}}\,\mathrm{d}y\\ &=\frac{1}{|D_t(x)|}\int_{D_t(x)}t\psi(y)\frac{t}{2\sqrt{t^2-|y-x|^2}}\,\mathrm{d}y. \end{aligned}\tag{4.30} $$
 
 因 $\tilde{u}(t,x,0)$ 满足 (4.29)，故 $u(t,x)=\tilde{u}(t,x,0)$ 是 Cauchy 问题 (4.29) 的解，这样就得到了 (4.29) 的解的存在性。
 
 **定理 4.2.3** @114
 
-设 $\varphi\in C^3(\mathbb{R}^2)$，$\psi\in C^2(\mathbb{R}^2)$，则二维波方程的 Cauchy 问题$$\begin{cases}\partial_t^2u-\Delta u=0, & (t,x)\in(0,+\infty)\times\mathbb{R}^2,\\u(0,x)=\varphi(x),\ \partial_tu(0,x)=\psi(x), & x\in\mathbb{R}^2\end{cases}\tag{4.31}$$存在唯一的解$$\begin{aligned}u(t,x)={}&\partial_t\left(\frac{1}{|D_t(x)|}\int_{D_t(x)}t\varphi(y)\frac{t}{2\sqrt{t^2-|y-x|^2}}\,\mathrm{d}y\right)\\&+\frac{1}{|D_t(x)|}\int_{D_t(x)}t\psi(y)\frac{t}{2\sqrt{t^2-|y-x|^2}}\,\mathrm{d}y,\qquad (t,x)\in(0,+\infty)\times\mathbb{R}^2.\end{aligned}\tag{4.32}$$
+设 $\varphi\in C^3(\mathbb{R}^2)$，$\psi\in C^2(\mathbb{R}^2)$，则二维波方程的 Cauchy 问题$$ \begin{cases} \partial_t^2u-\Delta u=0, & (t,x)\in(0,+\infty)\times\mathbb{R}^2,\\ u(0,x)=\varphi(x),\ \partial_tu(0,x)=\psi(x), & x\in\mathbb{R}^2 \end{cases}\tag{4.31} $$存在唯一的解$$ \begin{aligned} u(t,x)={}&\partial_t\left(\frac{1}{|D_t(x)|}\int_{D_t(x)}t\varphi(y)\frac{t}{2\sqrt{t^2-|y-x|^2}}\,\mathrm{d}y\right)\\ &+\frac{1}{|D_t(x)|}\int_{D_t(x)}t\psi(y)\frac{t}{2\sqrt{t^2-|y-x|^2}}\,\mathrm{d}y,\qquad (t,x)\in(0,+\infty)\times\mathbb{R}^2. \end{aligned}\tag{4.32} $$
 
 由表达式 (4.32) 可见，二维波方程的解 $u$ 在 $(t,x)$ 处的取值只依赖于初值 $(\varphi,\psi)$ 在圆盘 $D_t(x)$ 上的取值（唯一性见 4.5 节）。
 
@@ -2008,7 +2008,7 @@ $$\frac{\partial u}{\partial\boldsymbol{n}}+\beta\partial_tu=g(t,x),\qquad (t,x)
 
 由 d'Alembert 公式 (4.18) 立即可看出，Cauchy 问题
 
-$$\begin{cases}\partial_t^2u-\partial_x^2u=0, & (t,x)\in(0,+\infty)\times\mathbb{R},\\u(0,x)=\varphi(x),\ \partial_tu(0,x)=\psi(x), & x\in\mathbb{R}\end{cases}$$
+$$\begin{cases} \partial_t^2u-\partial_x^2u=0, & (t,x)\in(0,+\infty)\times\mathbb{R},\\ u(0,x)=\varphi(x),\ \partial_tu(0,x)=\psi(x), & x\in\mathbb{R} \end{cases}$$
 
 的解在上半平面 $\mathbb{R}_+\times\mathbb{R}$ 中的点 $(t_0,x_0)$ 处的值 $u(t_0,x_0)$ 由 $\varphi,\psi$ 在区间 $[x_0-t_0,x_0+t_0]$ 上的值所唯一确定，而与 $\varphi,\psi$ 在该区间外的取值无关。
 
@@ -2084,7 +2084,7 @@ $$\{(t,x)\in(0,+\infty)\times\mathbb{R}^3:|x-x_0|=|t-t_0|\}$$
 
 对波方程的 Cauchy 问题
 
-$$\begin{cases}\partial_t^2u-\Delta u=0, & (t,x)\in(0,+\infty)\times\mathbb{R}^n,\\u(0,x)=0,\ \partial_tu(0,x)=\psi(x), & x\in\mathbb{R}^n.\end{cases} \tag{4.35}$$
+$$\begin{cases} \partial_t^2u-\Delta u=0, & (t,x)\in(0,+\infty)\times\mathbb{R}^n,\\ u(0,x)=0,\ \partial_tu(0,x)=\psi(x), & x\in\mathbb{R}^n. \end{cases} \tag{4.35}$$
 
 **命题 (有限传播速度)** @120
 
@@ -2214,13 +2214,13 @@ $$\partial_tu(t,x)=\sum_{k=1}^{\infty}\frac{k\pi}{L}\left(-A_k\sin\frac{k\pi t}{
 
 从而
 
-$$u(0,x)=\sum_{k=1}^{\infty}A_k\sin\frac{k\pi x}{L}=\varphi(x),\qquad\partial_tu(0,x)=\sum_{k=1}^{\infty}B_k\frac{k\pi}{L}\sin\frac{k\pi x}{L}=\psi(x).$$
+$$u(0,x)=\sum_{k=1}^{\infty}A_k\sin\frac{k\pi x}{L}=\varphi(x),\qquad \partial_tu(0,x)=\sum_{k=1}^{\infty}B_k\frac{k\pi}{L}\sin\frac{k\pi x}{L}=\psi(x).$$
 
 **构造 (由正交性确定系数)** @125
 
 注意到 $\left\{\sin\dfrac{k\pi x}{L}\right\}_{k=1}^{\infty}$ 为 $L^2(I)$ 上的一组正交基，因此
 
-$$A_k=\frac{2}{L}\int_0^L\varphi(y)\sin\frac{k\pi y}{L}\,\mathrm{d}y,\qquadB_k=\frac{2}{k\pi}\int_0^L\psi(y)\sin\frac{k\pi y}{L}\,\mathrm{d}y,\quad k\in\mathbb{N}_+, \tag{4.44}$$
+$$A_k=\frac{2}{L}\int_0^L\varphi(y)\sin\frac{k\pi y}{L}\,\mathrm{d}y,\qquad B_k=\frac{2}{k\pi}\int_0^L\psi(y)\sin\frac{k\pi y}{L}\,\mathrm{d}y,\quad k\in\mathbb{N}_+, \tag{4.44}$$
 
 将其代入 (4.42)，就得到级数形式的初边值问题 (4.39) 的解。为了说明此级数解确实是原问题的解，我们需要假设初值 $\varphi$ 及 $\psi$ 满足一定的条件。
 
@@ -2244,7 +2244,7 @@ $$\varphi(0)=\varphi(L)=0,\quad\psi(0)=\psi(L)=0,\quad\varphi''(0)=\varphi''(L)=
 
 用分离变量法求解如下弦振动方程的初边值问题：
 
-$$\begin{cases}\partial_t^2u-\partial_x^2u=0, & (t,x)\in(0,+\infty)\times(0,1),\\u(0,x)=\varphi(x),\ \partial_tu(0,x)=0, & x\in(0,1),\\u(t,0)=u(t,1)=0, & t\in(0,+\infty),\end{cases}$$
+$$\begin{cases} \partial_t^2u-\partial_x^2u=0, & (t,x)\in(0,+\infty)\times(0,1),\\ u(0,x)=\varphi(x),\ \partial_tu(0,x)=0, & x\in(0,1),\\ u(t,0)=u(t,1)=0, & t\in(0,+\infty), \end{cases}$$
 
 其中
 
@@ -2264,7 +2264,7 @@ $$u(t,x)=\frac{8\varepsilon}{\pi^2}\sum_{k=1}^{\infty}\frac{1}{k^2}\sin\frac{k\p
 
 接下来讨论非齐次弦振动方程的初边值问题
 
-$$\begin{cases}\partial_t^2u-\partial_x^2u=f(t,x), & (t,x)\in(0,+\infty)\times I,\\u(0,x)=0,\ \partial_tu(0,x)=0, & x\in I,\\u(t,0)=u(t,L)=0, & t\in(0,+\infty).\end{cases} \tag{4.45}$$
+$$\begin{cases} \partial_t^2u-\partial_x^2u=f(t,x), & (t,x)\in(0,+\infty)\times I,\\ u(0,x)=0,\ \partial_tu(0,x)=0, & x\in I,\\ u(t,0)=u(t,L)=0, & t\in(0,+\infty). \end{cases} \tag{4.45}$$
 
 类似于非齐次方程的 Cauchy 问题，此时齐次化原理也适用，即
 
@@ -2272,7 +2272,7 @@ $$u(t,x)=\int_0^tw(t,x;\tau)\,\mathrm{d}\tau$$
 
 为 (4.45) 的解，其中 $w(t,x;\tau)$ 为齐次方程的初边值问题
 
-$$\begin{cases}\partial_t^2w-\partial_x^2w=0, & (t,x)\in(\tau,+\infty)\times I,\\w(\tau,x;\tau)=0,\ \partial_tw(\tau,x;\tau)=f(\tau,x), & x\in I,\\w(t,0;\tau)=w(t,L;\tau)=0, & t\in(\tau,+\infty)\end{cases}$$
+$$\begin{cases} \partial_t^2w-\partial_x^2w=0, & (t,x)\in(\tau,+\infty)\times I,\\ w(\tau,x;\tau)=0,\ \partial_tw(\tau,x;\tau)=f(\tau,x), & x\in I,\\ w(t,0;\tau)=w(t,L;\tau)=0, & t\in(\tau,+\infty) \end{cases}$$
 
 的解。利用 (4.42)，我们得到
 
@@ -2300,7 +2300,7 @@ $$u(t,x)=\sum_{k=1}^{\infty}\int_0^tB_k(\tau)\sin\frac{k\pi(t-\tau)}{L}\,\mathrm
 
 最后讨论带有非齐次边值条件的弦振动方程的初边值问题
 
-$$\begin{cases}\partial_t^2u-\partial_x^2u=f(t,x), & (t,x)\in(0,+\infty)\times I,\\u(0,x)=\varphi(x),\ \partial_tu(0,x)=\psi(x), & x\in I,\\u(t,0)=g_0(t),\ u(t,L)=g_1(t), & t\in(0,+\infty).\end{cases} \tag{4.47}$$
+$$\begin{cases} \partial_t^2u-\partial_x^2u=f(t,x), & (t,x)\in(0,+\infty)\times I,\\ u(0,x)=\varphi(x),\ \partial_tu(0,x)=\psi(x), & x\in I,\\ u(t,0)=g_0(t),\ u(t,L)=g_1(t), & t\in(0,+\infty). \end{cases} \tag{4.47}$$
 
 首先可以通过未知函数变换，将 (4.47) 转化为齐次边值问题。令
 
@@ -2308,7 +2308,7 @@ $$u^*(t,x)=g_0(t)+\frac{x}{L}\left[g_1(t)-g_0(t)\right],\quad (t,x)\in[0,+\infty
 
 及 $\tilde{u}(t,x)=u(t,x)-u^*(t,x)$，则函数 $\tilde{u}$ 满足齐次边值问题
 
-$$\begin{cases}\partial_t^2\tilde{u}-\partial_x^2\tilde{u}=\tilde{f}(t,x), & (t,x)\in(0,+\infty)\times I,\\\tilde{u}(0,x)=\tilde{\varphi}(x),\ \partial_t\tilde{u}(0,x)=\tilde{\psi}(x), & x\in I,\\\tilde{u}(t,0)=\tilde{u}(t,L)=0, & t\in(0,+\infty),\end{cases}$$
+$$\begin{cases} \partial_t^2\tilde{u}-\partial_x^2\tilde{u}=\tilde{f}(t,x), & (t,x)\in(0,+\infty)\times I,\\ \tilde{u}(0,x)=\tilde{\varphi}(x),\ \partial_t\tilde{u}(0,x)=\tilde{\psi}(x), & x\in I,\\ \tilde{u}(t,0)=\tilde{u}(t,L)=0, & t\in(0,+\infty), \end{cases}$$
 
 其中
 
@@ -2322,11 +2322,11 @@ $$\tilde{\psi}(x)=\psi(x)-g_0'(0)-\frac{x}{L}\left[g_1'(0)-g_0'(0)\right].$$
 
 进一步地，由叠加原理我们可以分别求解带非齐次初值的齐次方程的初边值问题
 
-$$\begin{cases}\partial_t^2v-\partial_x^2v=0, & (t,x)\in(0,+\infty)\times I,\\v(0,x)=\tilde{\varphi}(x),\ \partial_tv(0,x)=\tilde{\psi}(x), & x\in I,\\v(t,0)=v(t,L)=0, & t\in(0,+\infty),\end{cases}$$
+$$\begin{cases} \partial_t^2v-\partial_x^2v=0, & (t,x)\in(0,+\infty)\times I,\\ v(0,x)=\tilde{\varphi}(x),\ \partial_tv(0,x)=\tilde{\psi}(x), & x\in I,\\ v(t,0)=v(t,L)=0, & t\in(0,+\infty), \end{cases}$$
 
 及带齐次初值的非齐次方程的初边值问题
 
-$$\begin{cases}\partial_t^2w-\partial_x^2w=\tilde{f}(t,x), & (t,x)\in(0,+\infty)\times I,\\w(0,x)=0,\ \partial_tw(0,x)=0, & x\in I,\\w(t,0)=w(t,L)=0, & t\in(0,+\infty).\end{cases}$$
+$$\begin{cases} \partial_t^2w-\partial_x^2w=\tilde{f}(t,x), & (t,x)\in(0,+\infty)\times I,\\ w(0,x)=0,\ \partial_tw(0,x)=0, & x\in I,\\ w(t,0)=w(t,L)=0, & t\in(0,+\infty). \end{cases}$$
 
 最终，我们得到初边值问题 (4.47) 的解为
 
@@ -2348,7 +2348,7 @@ $$E(t)=\frac{1}{2}\int_\Omega\left[(\partial_t u)^2+|\nabla u|^2\right]\mathrm{d
 
 记 $\Omega_T:=(0,T)\times\Omega$，我们首先对初边值问题
 
-$$\begin{cases}\partial_t^2 u-\Delta u=f(t,x), & (t,x)\in\Omega_T,\\u(0,x)=\varphi(x),\ \partial_t u(0,x)=\psi(x), & x\in\Omega,\\u(t,x)=0, & (t,x)\in(0,T)\times\partial\Omega\end{cases} \tag{4.49}$$
+$$\begin{cases} \partial_t^2 u-\Delta u=f(t,x), & (t,x)\in\Omega_T,\\ u(0,x)=\varphi(x),\ \partial_t u(0,x)=\psi(x), & x\in\Omega,\\ u(t,x)=0, & (t,x)\in(0,T)\times\partial\Omega \end{cases} \tag{4.49}$$
 
 的解建立关于 $E(t)$ 的估计。
 
@@ -2372,7 +2372,7 @@ $$E(t)\leqslant C\left[\|\psi\|_{L^2(\Omega)}^2+\|\nabla\varphi\|_{L^2(\Omega)}^
 
 用能量方法证明如下初边值问题解的唯一性：
 
-$$\begin{cases}\partial_t^2 u-\Delta u=0, & (t,x)\in\Omega_T,\\u(0,x)=\varphi(x),\ \partial_t u(0,x)=\psi(x), & x\in\Omega,\\\dfrac{\partial u}{\partial\boldsymbol{n}}+\sigma u=0, & (t,x)\in(0,T)\times\partial\Omega.\end{cases}$$
+$$\begin{cases} \partial_t^2 u-\Delta u=0, & (t,x)\in\Omega_T,\\ u(0,x)=\varphi(x),\ \partial_t u(0,x)=\psi(x), & x\in\Omega,\\ \dfrac{\partial u}{\partial\boldsymbol{n}}+\sigma u=0, & (t,x)\in(0,T)\times\partial\Omega. \end{cases}$$
 
 设 $u\in C^2(\Omega_T)\cap C^1(\overline{\Omega_T})$ 为该初边值问题的解。取
 
@@ -2390,7 +2390,7 @@ $$E_\sigma(t)\equiv E_\sigma(0)=\frac{1}{2}\int_\Omega\left(|\psi|^2+|\nabla\var
 
 考虑如下带有耗散边界条件的弦振动方程的初边值问题：
 
-$$\begin{cases}\partial_t^2 u-\partial_x^2 u=0, & (t,x)\in(0,+\infty)\times(0,1),\\u(0,x)=\varphi(x),\ \partial_t u(0,x)=\psi(x), & x\in(0,1),\\u(t,0)=0, & t\in(0,+\infty),\\\partial_x u(t,1)+\alpha\partial_t u(t,1)=0, & t\in(0,+\infty),\end{cases} \tag{4.52}$$
+$$\begin{cases} \partial_t^2 u-\partial_x^2 u=0, & (t,x)\in(0,+\infty)\times(0,1),\\ u(0,x)=\varphi(x),\ \partial_t u(0,x)=\psi(x), & x\in(0,1),\\ u(t,0)=0, & t\in(0,+\infty),\\ \partial_x u(t,1)+\alpha\partial_t u(t,1)=0, & t\in(0,+\infty), \end{cases} \tag{4.52}$$
 
 其中 $\alpha>0$。定义能量函数
 
@@ -2408,7 +2408,7 @@ $$E(t)\leqslant Ce^{-\mu t}E(0),\qquad t\in[0,+\infty).$$
 
 以三维情形为例，考虑波方程的 Cauchy 问题
 
-$$\begin{cases}\partial_t^2 u-\Delta u=0, & (t,x)\in(0,+\infty)\times\mathbb{R}^3,\\u(0,x)=\varphi(x),\ \partial_t u(0,x)=\psi(x), & x\in\mathbb{R}^3.\end{cases} \tag{4.56}$$
+$$\begin{cases} \partial_t^2 u-\Delta u=0, & (t,x)\in(0,+\infty)\times\mathbb{R}^3,\\ u(0,x)=\varphi(x),\ \partial_t u(0,x)=\psi(x), & x\in\mathbb{R}^3. \end{cases} \tag{4.56}$$
 
 设 $(t_0,x_0)\in(0,+\infty)\times\mathbb{R}^3$，对任意 $t\in[0,t_0]$，定义
 
@@ -2430,7 +2430,7 @@ $$E(t)+F(t)=E(0),\qquad \forall t\in[0,t_0].$$
 
 三维波方程的 Cauchy 问题
 
-$$\begin{cases}\partial_t^2 u-\Delta u=f(t,x), & (t,x)\in(0,+\infty)\times\mathbb{R}^3,\\u(0,x)=\varphi(x),\ \partial_t u(0,x)=\psi(x), & x\in\mathbb{R}^3\end{cases} \tag{4.57}$$
+$$\begin{cases} \partial_t^2 u-\Delta u=f(t,x), & (t,x)\in(0,+\infty)\times\mathbb{R}^3,\\ u(0,x)=\varphi(x),\ \partial_t u(0,x)=\psi(x), & x\in\mathbb{R}^3 \end{cases} \tag{4.57}$$
 
 的 $C^2(\mathbb{R}_+\times\mathbb{R}^3)$ 解若存在，则必是唯一的。
 
@@ -2466,11 +2466,11 @@ $$\partial_t^2 u^{(m)}-a^2\left(u^{(m-1)},\partial_t u^{(m-1)},\nabla u^{(m-1)}\
 
 对于一般的双曲型方程，我们仍然可以提相应的 Cauchy 问题
 
-$$\begin{cases}\partial_t^2 u=Lu+f, & (t,x)\in(0,T)\times\mathbb{R}^n,\\u(0,x)=\varphi(x),\ \partial_t u(0,x)=\psi(x), & x\in\mathbb{R}^n,\end{cases} \tag{4.59}$$
+$$\begin{cases} \partial_t^2 u=Lu+f, & (t,x)\in(0,T)\times\mathbb{R}^n,\\ u(0,x)=\varphi(x),\ \partial_t u(0,x)=\psi(x), & x\in\mathbb{R}^n, \end{cases} \tag{4.59}$$
 
 以及有界区域上的初边值问题
 
-$$\begin{cases}\partial_t^2 u=Lu+f, & (t,x)\in(0,T)\times\Omega,\\u(0,x)=\varphi(x),\ \partial_t u(0,x)=\psi(x), & x\in\Omega,\\u(t,x)=g(t,x), & (t,x)\in(0,T)\times\partial\Omega.\end{cases} \tag{4.60}$$
+$$\begin{cases} \partial_t^2 u=Lu+f, & (t,x)\in(0,T)\times\Omega,\\ u(0,x)=\varphi(x),\ \partial_t u(0,x)=\psi(x), & x\in\Omega,\\ u(t,x)=g(t,x), & (t,x)\in(0,T)\times\partial\Omega. \end{cases} \tag{4.60}$$
 
 这里我们选取了 Dirichlet 边界条件。事实上，我们也可以考虑 Neumann 边界条件、Robin 边界条件、耗散边界条件，以及相对应的初边值问题。
 
@@ -2504,7 +2504,7 @@ $$u_1(t,x)=u_2(t,x),\qquad \forall(t,x)\in\left\{|x-x_0|<R-At,\ 0\leqslant t<\fr
 
 Maxwell 方程组在不同应用需求下往往写作不同的等价形式，其中真空中 Maxwell 方程组的微分形式为
 
-$$\begin{cases}\operatorname{div}\boldsymbol{E}=\dfrac{\rho}{\varepsilon_0}, & \tag{5.1}\\\operatorname{div}\boldsymbol{B}=0, & \tag{5.2}\\\operatorname{curl}\boldsymbol{E}=-\dfrac{\partial \boldsymbol{B}}{\partial t}, & \tag{5.3}\\\operatorname{curl}\boldsymbol{B}=\mu_0\left(\varepsilon_0\dfrac{\partial \boldsymbol{E}}{\partial t}+\boldsymbol{j}\right). & \tag{5.4}\end{cases}$$
+$$ \left\{ \begin{array}{ll} \operatorname{div}\boldsymbol{E}=\dfrac{\rho}{\varepsilon_0}, & \text{(5.1)}\\ \operatorname{div}\boldsymbol{B}=0, & \text{(5.2)}\\ \operatorname{curl}\boldsymbol{E}=-\dfrac{\partial \boldsymbol{B}}{\partial t}, & \text{(5.3)}\\ \operatorname{curl}\boldsymbol{B}=\mu_0\left(\varepsilon_0\dfrac{\partial \boldsymbol{E}}{\partial t}+\boldsymbol{j}\right). & \text{(5.4)} \end{array} \right. $$
 
 这是一组一阶线性偏微分方程组，其中 $\boldsymbol{E}=(E_1,E_2,E_3)^{\mathrm{T}}$ 为电场强度向量，$\boldsymbol{B}=(B_1,B_2,B_3)^{\mathrm{T}}$ 为磁感应强度向量，$\rho$ 为电荷密度函数，$\boldsymbol{j}=(j_1,j_2,j_3)^{\mathrm{T}}$ 为电流密度函数，它们都是时间变量 $t$ 和空间变量 $x$ 的函数，$\varepsilon_0$ 为真空中的介电常数，$\mu_0$ 为真空中的磁导率。
 
@@ -2512,7 +2512,7 @@ $$\begin{cases}\operatorname{div}\boldsymbol{E}=\dfrac{\rho}{\varepsilon_0}, & \
 
 方程组中的第一个方程 $\operatorname{div}\boldsymbol{E}=\rho/\varepsilon_0$ 称为电场的 Gauss 定律。对任意具有光滑边界的有界区域 $\Omega$，将方程两边关于 $x$ 在 $\Omega$ 上积分并使用 Gauss-Green 公式，可得
 
-$$\int_{\partial\Omega}\boldsymbol{E}\cdot\boldsymbol{n}\,\mathrm{d}S=\frac{1}{\varepsilon_0}\int_{\Omega}\rho\,\mathrm{d}x,$$
+$$ \int_{\partial\Omega}\boldsymbol{E}\cdot\boldsymbol{n}\,\mathrm{d}S=\frac{1}{\varepsilon_0}\int_{\Omega}\rho\,\mathrm{d}x, $$
 
 即通过任意封闭曲面 $\partial\Omega$ 向外的电通量等于此曲面内部所包含的电荷的代数和（正负电荷相互抵消）除以 $\varepsilon_0$。
 
@@ -2520,7 +2520,7 @@ $$\int_{\partial\Omega}\boldsymbol{E}\cdot\boldsymbol{n}\,\mathrm{d}S=\frac{1}{\
 
 第二个方程 $\operatorname{div}\boldsymbol{B}=0$ 称为磁场的 Gauss 定律，类似可得
 
-$$\int_{\partial\Omega}\boldsymbol{B}\cdot\boldsymbol{n}\,\mathrm{d}S=0,$$
+$$ \int_{\partial\Omega}\boldsymbol{B}\cdot\boldsymbol{n}\,\mathrm{d}S=0, $$
 
 即通过任意封闭曲面 $\partial\Omega$ 的磁感应通量为 $0$，磁场是一个无源场。时空之中是否存在像电荷一样的磁单极子，一直是物理学中的重要问题：如果磁单极子得以发现，整个 Maxwell 方程组都要进行变化调整。
 
@@ -2528,7 +2528,7 @@ $$\int_{\partial\Omega}\boldsymbol{B}\cdot\boldsymbol{n}\,\mathrm{d}S=0,$$
 
 方程组中的第三个方程 $\operatorname{curl}\boldsymbol{E}=-\partial\boldsymbol{B}/\partial t$ 为 Faraday 电磁感应定律，它定量地表示了变化磁场与其所感应的电场之间的关系。对于任意光滑曲面 $S$，将方程在 $S$ 上作第二类曲面积分并利用 Stokes 公式，有
 
-$$\oint_{\partial S}\boldsymbol{E}\cdot\mathrm{d}\boldsymbol{l}=-\int_{S}\frac{\partial\boldsymbol{B}}{\partial t}\cdot\boldsymbol{n}\,\mathrm{d}S,$$
+$$ \oint_{\partial S}\boldsymbol{E}\cdot\mathrm{d}\boldsymbol{l}=-\int_{S}\frac{\partial\boldsymbol{B}}{\partial t}\cdot\boldsymbol{n}\,\mathrm{d}S, $$
 
 即任何封闭曲线 $\partial S$ 的电场环量，正比于以此曲线为边缘的任一曲面 $S$ 上的磁感应通量的减少率，其中 $\boldsymbol{n}$ 的方向由 $l$ 以右手系决定。
 
@@ -2536,7 +2536,7 @@ $$\oint_{\partial S}\boldsymbol{E}\cdot\mathrm{d}\boldsymbol{l}=-\int_{S}\frac{\
 
 方程组中的第四个方程 $\operatorname{curl}\boldsymbol{B}=\mu_0\left(\varepsilon_0\partial\boldsymbol{E}/\partial t+\boldsymbol{j}\right)$ 是推广的 Ampère 定律。类似上文有
 
-$$\oint_{\partial S}\boldsymbol{B}\cdot\mathrm{d}\boldsymbol{l}=\mu_0\varepsilon_0\int_{S}\frac{\partial\boldsymbol{E}}{\partial t}\cdot\boldsymbol{n}\,\mathrm{d}S+\mu_0\int_{S}\boldsymbol{j}\cdot\boldsymbol{n}\,\mathrm{d}S .$$
+$$ \oint_{\partial S}\boldsymbol{B}\cdot\mathrm{d}\boldsymbol{l}=\mu_0\varepsilon_0\int_{S}\frac{\partial\boldsymbol{E}}{\partial t}\cdot\boldsymbol{n}\,\mathrm{d}S+\mu_0\int_{S}\boldsymbol{j}\cdot\boldsymbol{n}\,\mathrm{d}S . $$
 
 若电磁场定常，即方程组中各个函数均不依赖于 $t$，则稳定电流磁场的环量正比于通过相应曲面上的电流，这就是 Ampère 定律。
 
@@ -2548,19 +2548,19 @@ Maxwell 利用方程组的数学结构深刻地考虑了电磁感应之间的联
 
 利用后两个方程分别关于 $x$ 求旋度和关于 $t$ 求偏导后消去磁感应强度 $\boldsymbol{B}$，有
 
-$$\frac{1}{c^{2}}\frac{\partial^{2}\boldsymbol{E}}{\partial t^{2}}+\operatorname{curl}\operatorname{curl}\boldsymbol{E}=-\mu_0\frac{\partial \boldsymbol{j}}{\partial t},$$
+$$ \frac{1}{c^{2}}\frac{\partial^{2}\boldsymbol{E}}{\partial t^{2}}+\operatorname{curl}\operatorname{curl}\boldsymbol{E}=-\mu_0\frac{\partial \boldsymbol{j}}{\partial t}, $$
 
 其中 $c=(\varepsilon_0\mu_0)^{-1/2}$。再由
 
-$$\operatorname{curl}\operatorname{curl}\boldsymbol{E}=\nabla\operatorname{div}\boldsymbol{E}-\Delta\boldsymbol{E},$$
+$$ \operatorname{curl}\operatorname{curl}\boldsymbol{E}=\nabla\operatorname{div}\boldsymbol{E}-\Delta\boldsymbol{E}, $$
 
 得到一组三个波方程
 
-$$\frac{\partial^{2}\boldsymbol{E}}{\partial t^{2}}-c^{2}\Delta\boldsymbol{E}=-\frac{c^{2}}{\varepsilon_0}\nabla\rho-c^{2}\mu_0\frac{\partial \boldsymbol{j}}{\partial t}.$$
+$$ \frac{\partial^{2}\boldsymbol{E}}{\partial t^{2}}-c^{2}\Delta\boldsymbol{E}=-\frac{c^{2}}{\varepsilon_0}\nabla\rho-c^{2}\mu_0\frac{\partial \boldsymbol{j}}{\partial t}. $$
 
 类似地，对磁场可得到另一组三个波方程
 
-$$\frac{\partial^{2}\boldsymbol{B}}{\partial t^{2}}-c^{2}\Delta\boldsymbol{B}=\frac{1}{\varepsilon_0}\operatorname{curl}\boldsymbol{j}.$$
+$$ \frac{\partial^{2}\boldsymbol{B}}{\partial t^{2}}-c^{2}\Delta\boldsymbol{B}=\frac{1}{\varepsilon_0}\operatorname{curl}\boldsymbol{j}. $$
 
 **命题 (电磁波与光速)** @144
 
@@ -2572,7 +2572,7 @@ $$\frac{\partial^{2}\boldsymbol{B}}{\partial t^{2}}-c^{2}\Delta\boldsymbol{B}=\f
 
 对于可测映射 $T:\mathbb{R}^{n}\to\mathbb{R}^{m}$ 和 $\mathbb{R}^{n}$ 上的测度 $\mu$，定义测度
 
-$$T_{\#}\mu(B)=\mu\left(T^{-1}(B)\right),\quad \forall B\subset\mathbb{R}^{m},$$
+$$ T_{\#}\mu(B)=\mu\left(T^{-1}(B)\right),\quad \forall B\subset\mathbb{R}^{m}, $$
 
 称 $T_{\#}\mu$ 为测度 $\mu$ 沿映射 $T$ 的前推测度。
 
@@ -2580,7 +2580,7 @@ $$T_{\#}\mu(B)=\mu\left(T^{-1}(B)\right),\quad \forall B\subset\mathbb{R}^{m},$$
 
 运送方案 $T$ 要满足约束条件 $T_{\#}\mu=\nu$。对于给定的运送方案 $T$，总花费为 $\int c(x,Tx)\,\mathrm{d}\mu$。Monge 问题即为求解最小化问题
 
-$$\inf_{T}\int c(x,Tx)\,\mathrm{d}\mu,$$
+$$ \inf_{T}\int c(x,Tx)\,\mathrm{d}\mu, $$
 
 其中 $T$ 取遍所有将 $\mu$ 运送至 $\nu$ 的运送方案。
 
@@ -2588,7 +2588,7 @@ $$\inf_{T}\int c(x,Tx)\,\mathrm{d}\mu,$$
 
 设 $T:\mathbb{R}^{n}\to\mathbb{R}^{n}$ 为 $C^{1}$ 映射，概率测度 $\mu(x)=f(x)\,\mathrm{d}x$，$\nu(x)=g(x)\,\mathrm{d}x$ 满足 $\nu=T_{\#}\mu$，则对几乎处处的 $x\in\mathbb{R}^{n}$，
 
-$$f(x)=g(Tx)\left|\operatorname{det}JT(x)\right|,$$
+$$ f(x)=g(Tx)\left|\operatorname{det}JT(x)\right|, $$
 
 其中 $JT$ 是映射 $T$ 的 Jacobi 矩阵。
 
@@ -2596,7 +2596,7 @@ $$f(x)=g(Tx)\left|\operatorname{det}JT(x)\right|,$$
 
 Monge 的传输映射 $T:\mathbb{R}^{n}\to\mathbb{R}^{n}$ 无法分离质量，即 $x$ 处的沙子质量无法运送到不同的目的地。Kantorovich（康托罗维奇）推广了 Monge 的问题：设 $\pi$ 为 $\mathbb{R}^{n}\times\mathbb{R}^{n}$ 上的概率测度，将 $\pi(x,y)$ 理解为从 $x$ 处运送到 $y$ 处的质量，允许 $x$ 处的质量分别送到不同的目的地 $y$。Kantorovich 问题为
 
-$$\inf_{\pi}\int c(x,y)\,\mathrm{d}\pi(x,y),$$
+$$ \inf_{\pi}\int c(x,y)\,\mathrm{d}\pi(x,y), $$
 
 其中 $\pi$ 取遍所有允许的传输方案。
 
@@ -2608,7 +2608,7 @@ $$\inf_{\pi}\int c(x,y)\,\mathrm{d}\pi(x,y),$$
 
 对于满足一定条件的 $\mu$、$\nu$，对于 $c(x,y)=|x-y|^{2}$，存在唯一的最优传输方案 $\pi$，满足
 
-$$\pi=\left(\operatorname{Id}\times\nabla\varphi\right)_{\#}\mu,$$
+$$ \pi=\left(\operatorname{Id}\times\nabla\varphi\right)_{\#}\mu, $$
 
 其中 $\varphi:\mathbb{R}^{n}\to(-\infty,+\infty]$ 为凸函数。
 
@@ -2620,7 +2620,7 @@ $$\pi=\left(\operatorname{Id}\times\nabla\varphi\right)_{\#}\mu,$$
 
 设 $\Omega$ 是 $\mathbb{R}^{n}$ 中的有界光滑区域，则
 
-$$P(\Omega)\geqslant P(B_{r}), \tag{5.5}$$
+$$ P(\Omega)\geqslant P(B_{r}), \tag{5.5} $$
 
 其中 $|B_{r}|=|\Omega|$。等号成立当且仅当在差一个零测集的意义下，$\Omega=B_{r}(x_{0})$，$x_{0}\in\mathbb{R}^{n}$。
 
@@ -2630,11 +2630,11 @@ $$P(\Omega)\geqslant P(B_{r}), \tag{5.5}$$
 
 设 $|B_{r}|=|\Omega|=\omega_{n}$，并考虑概率测度
 
-$$\mu=\frac{\chi_{\Omega}}{|\Omega|}\,\mathrm{d}x=:f\,\mathrm{d}x,\qquad \nu=\frac{\chi_{B_{1}}}{|B_{1}|}\,\mathrm{d}x=:g\,\mathrm{d}x .$$
+$$ \mu=\frac{\chi_{\Omega}}{|\Omega|}\,\mathrm{d}x=:f\,\mathrm{d}x,\qquad \nu=\frac{\chi_{B_{1}}}{|B_{1}|}\,\mathrm{d}x=:g\,\mathrm{d}x . $$
 
 由 Brenier 定理，存在凸函数 $\varphi:\mathbb{R}^{n}\to(-\infty,+\infty]$ 使得 $(\nabla\varphi)_{\#}\mu=\nu$，再由引理 5.2.1，对几乎处处的 $x\in\Omega$，
 
-$$g(\nabla\varphi(x))\left|\operatorname{det}\nabla^{2}\varphi(x)\right|=f(x). \tag{5.6}$$
+$$ g(\nabla\varphi(x))\left|\operatorname{det}\nabla^{2}\varphi(x)\right|=f(x). \tag{5.6} $$
 
 这是一个关于 $\varphi$ 的二阶非线性椭圆型方程，是 Monge-Ampère 方程的一种特殊形式。由于 $\varphi$ 为凸函数，对几乎处处的 $x\in\Omega$ 都有 $\nabla^{2}\varphi(x)\geqslant0$。
 
@@ -2646,15 +2646,15 @@ $$g(\nabla\varphi(x))\left|\operatorname{det}\nabla^{2}\varphi(x)\right|=f(x). \
 
 对几乎处处的 $x\in\Omega$，
 
-$$\operatorname{det}\nabla^{2}\varphi(x)=\frac{f(x)}{g(\nabla\varphi(x))}=1 .$$
+$$ \operatorname{det}\nabla^{2}\varphi(x)=\frac{f(x)}{g(\nabla\varphi(x))}=1 . $$
 
 设 $\lambda_{k}$ 为 $\nabla^{2}\varphi(x)$ 的特征值，则对几乎处处的 $x\in\Omega$，
 
-$$\Delta\varphi(x)=\sum_{k}\lambda_{k}\geqslant n\left(\prod_{k}\lambda_{k}\right)^{\frac{1}{n}}=n\left(\operatorname{det}\nabla^{2}\varphi(x)\right)^{\frac{1}{n}}\geqslant n .$$
+$$ \Delta\varphi(x)=\sum_{k}\lambda_{k}\geqslant n\left(\prod_{k}\lambda_{k}\right)^{\frac{1}{n}}=n\left(\operatorname{det}\nabla^{2}\varphi(x)\right)^{\frac{1}{n}}\geqslant n . $$
 
 由 Green 公式，
 
-$$P(\Omega)=\int_{\partial\Omega}1\geqslant\int_{\partial\Omega}\left\langle\nabla\varphi,\boldsymbol{n}_{\partial\Omega}\right\rangle=\int_{\Omega}\Delta\varphi\geqslant n\int_{\Omega}1=n|\Omega|=n|\Omega|^{\frac{n-1}{n}}\omega_{n}^{\frac{1}{n}},$$
+$$ P(\Omega)=\int_{\partial\Omega}1\geqslant\int_{\partial\Omega}\left\langle\nabla\varphi,\boldsymbol{n}_{\partial\Omega}\right\rangle =\int_{\Omega}\Delta\varphi\geqslant n\int_{\Omega}1=n|\Omega|=n|\Omega|^{\frac{n-1}{n}}\omega_{n}^{\frac{1}{n}}, $$
 
 从而得到等周不等式。对于等号情形 $P(\Omega)=P(B_{1})$，所有不等号都是等号，特别地 $\nabla^{2}\varphi(x)$ 的特征值相等，且由 $\operatorname{det}\nabla^{2}\varphi(x)=1$ 知所有特征值均为 $1$，故对几乎处处的 $x\in\Omega$ 有 $\nabla^{2}\varphi(x)=\operatorname{Id}$，即 $\nabla\varphi$ 为平移映射，从而 $\Omega=B_{1}(x_{0})$。
 
@@ -2668,17 +2668,17 @@ $$P(\Omega)=\int_{\partial\Omega}1\geqslant\int_{\partial\Omega}\left\langle\nab
 
 考虑一个由常微分方程刻画的受控系统
 
-$$\begin{cases}\dot{x}(s)=f(x(s),\alpha(s)), & t<s<T,\\x(t)=x\in\mathbb{R}^{n},\end{cases} \tag{5.7}$$
+$$ \begin{cases} \dot{x}(s)=f(x(s),\alpha(s)), & t<s<T,\\ x(t)=x\in\mathbb{R}^{n}, \end{cases} \tag{5.7} $$
 
 其中 $T>0$ 是给定的终端时刻，$x(s)$ 和 $\alpha(s)$ 分别是时刻 $s$ 的系统状态和控制量，$f:\mathbb{R}^{n}\times A\to\mathbb{R}^{n}$ 是给定的有界 Lipschitz 连续函数，集合 $A$ 是控制集。用 $\mathcal{A}$ 表示取值于 $A$ 的可测函数全体，称其为可允许控制集。对于每一个可允许控制 $\alpha(\cdot)\in\mathcal{A}$，定义成本泛函
 
-$$J(\alpha(\cdot);t,x)=\int_{t}^{T}r(x(s),\alpha(s))\,\mathrm{d}s+g(x(T)).$$
+$$ J(\alpha(\cdot);t,x)=\int_{t}^{T}r(x(s),\alpha(s))\,\mathrm{d}s+g(x(T)). $$
 
 **定义 (最优控制问题)** @148
 
 最优控制的目标是对于给定初始时刻 $t\in[0,T]$ 和初始状态 $x\in\mathbb{R}^{n}$，找到一个控制 $\alpha^{*}(\cdot)\in\mathcal{A}$ 使得上述成本泛函达到最小值，即
 
-$$J(\alpha^{*}(\cdot);t,x)=\min_{\alpha(\cdot)\in\mathcal{A}}J(\alpha(\cdot);t,x).$$
+$$ J(\alpha^{*}(\cdot);t,x)=\min_{\alpha(\cdot)\in\mathcal{A}}J(\alpha(\cdot);t,x). $$
 
 **定理 (Bellman 最优化原理)** @148
 
@@ -2686,11 +2686,11 @@ $$J(\alpha^{*}(\cdot);t,x)=\min_{\alpha(\cdot)\in\mathcal{A}}J(\alpha(\cdot);t,x
 
 为给出这个原理的数学表达，引入值函数的概念，即定义
 
-$$V(t,x)=\inf_{\alpha(\cdot)\in\mathcal{A}}J(\alpha(\cdot);t,x).$$
+$$ V(t,x)=\inf_{\alpha(\cdot)\in\mathcal{A}}J(\alpha(\cdot);t,x). $$
 
 在本书的设定下，Bellman 最优化原理可以如下叙述：对于 $t,h>0$，只要 $t+h\leqslant T$，则
 
-$$V(t,x)=\inf_{\alpha(\cdot)\in\mathcal{A}}\left\{\int_{t}^{t+h}r(x(s),\alpha(s))\,\mathrm{d}s+V\left(t+h,x(t+h)\right)\right\}, \tag{5.8}$$
+$$ V(t,x)=\inf_{\alpha(\cdot)\in\mathcal{A}}\left\{\int_{t}^{t+h}r(x(s),\alpha(s))\,\mathrm{d}s+V\left(t+h,x(t+h)\right)\right\}, \tag{5.8} $$
 
 其中 $x(\cdot)$ 是系统 (5.7) 在控制 $\alpha(\cdot)$ 下的状态。
 
@@ -2698,29 +2698,29 @@ $$V(t,x)=\inf_{\alpha(\cdot)\in\mathcal{A}}\left\{\int_{t}^{t+h}r(x(s),\alpha(s)
 
 假设值函数 $V\in C^{1}\left([0,T]\times\mathbb{R}^{n}\right)$，则 $V$ 满足如下偏微分方程终值问题：
 
-$$\begin{cases}\partial_{t}V+\inf\limits_{a\in A}H\left(x,\partial_{x}V,a\right)=0, & (t,x)\in[0,T]\times\mathbb{R}^{n},\\V(T,x)=g(x), & x\in\mathbb{R}^{n},\end{cases} \tag{5.9}$$
+$$ \begin{cases} \partial_{t}V+\inf\limits_{a\in A}H\left(x,\partial_{x}V,a\right)=0, & (t,x)\in[0,T]\times\mathbb{R}^{n},\\ V(T,x)=g(x), & x\in\mathbb{R}^{n}, \end{cases} \tag{5.9} $$
 
 其中
 
-$$H(x,p,a)=f(x,a)\cdot p+r(x,a),\qquad x,p\in\mathbb{R}^{n},\ a\in A .$$
+$$ H(x,p,a)=f(x,a)\cdot p+r(x,a),\qquad x,p\in\mathbb{R}^{n},\ a\in A . $$
 
 **命题 (由 HJB 方程构造最优控制)** @149
 
 HJB 方程可以帮助寻找最优控制。假设已经通过求解 HJB 方程 (5.9) 获得值函数 $V\in C^{1}\left([0,T]\times\mathbb{R}^{n}\right)$，并且对任意 $(t,x)\in[0,T]\times\mathbb{R}^{n}$ 都存在 $\alpha^{*}(t,x)\in A$ 使得
 
-$$H\left(x,\partial_{x}V(t,x),\alpha^{*}(t,x)\right)=\min_{a\in A}H\left(x,\partial_{x}V(t,x),a\right).$$
+$$ H\left(x,\partial_{x}V(t,x),\alpha^{*}(t,x)\right)=\min_{a\in A}H\left(x,\partial_{x}V(t,x),a\right). $$
 
 进一步假设对任意 $(t,x)\in[0,T]\times\mathbb{R}^{n}$，存在 $x^{*}(\cdot)=x^{*}(\cdot\,;t,x)$ 满足方程
 
-$$\begin{cases}\dot{x}^{*}(s)=f\left(x^{*}(s),\alpha^{*}\left(s,x^{*}(s)\right)\right), & t<s<T,\\x^{*}(t)=x .\end{cases}$$
+$$ \begin{cases} \dot{x}^{*}(s)=f\left(x^{*}(s),\alpha^{*}\left(s,x^{*}(s)\right)\right), & t<s<T,\\ x^{*}(t)=x . \end{cases} $$
 
 记 $\alpha^{*}(s)=\alpha^{*}\left(s,x^{*}(s)\right)$，则
 
-$$\frac{\mathrm{d}}{\mathrm{d}s}V\left(s,x^{*}(s)\right)=\partial_{t}V\left(s,x^{*}(s)\right)+f\left(x^{*}(s),\alpha^{*}(s)\right)\cdot\partial_{x}V\left(s,x^{*}(s)\right)=-r\left(x^{*}(s),\alpha^{*}(s)\right),$$
+$$ \frac{\mathrm{d}}{\mathrm{d}s}V\left(s,x^{*}(s)\right)=\partial_{t}V\left(s,x^{*}(s)\right)+f\left(x^{*}(s),\alpha^{*}(s)\right)\cdot\partial_{x}V\left(s,x^{*}(s)\right) =-r\left(x^{*}(s),\alpha^{*}(s)\right), $$
 
 对 $s$ 从 $t$ 到 $T$ 积分即得
 
-$$V(t,x)=h\left(x^{*}(T)\right)+\int_{t}^{T}r\left(x^{*}(s),\alpha^{*}(s)\right)\mathrm{d}s=J\left(\alpha^{*}(\cdot);t,x\right),$$
+$$ V(t,x)=h\left(x^{*}(T)\right)+\int_{t}^{T}r\left(x^{*}(s),\alpha^{*}(s)\right)\mathrm{d}s =J\left(\alpha^{*}(\cdot);t,x\right), $$
 
 这表明如上获得的控制 $\alpha^{*}(\cdot)$ 是原问题的最优控制。值得注意的是，通过 HJB 方程构造的最优控制可以表示成时间和状态的函数，即所谓的反馈控制，这在应用中具有非常重要的意义。
 

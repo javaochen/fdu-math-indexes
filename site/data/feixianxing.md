@@ -168,7 +168,7 @@ $|f'(x^*)|$ 的幅值给出了稳定性程度的度量，它代表指数式地�
 
 考虑初值问题
 
-$$\dot{x}=f(x),\qquad x(0)=x_0 .$$
+$$ \dot{x}=f(x),\qquad x(0)=x_0 . $$
 
 假定 $f(x)$ 与 $f'(x)$ 在 $x$ 轴的开区间 $R$ 上连续，$x_0$ 为 $R$ 中的点。则上述初值问题在 $t=0$ 附近某个时间段 $(-\tau,\tau)$ 上有解，并且解唯一。
 
@@ -208,7 +208,7 @@ $\dot{x}=f(x)$ 的解不会振动似乎很意外，但考虑机械上的模拟�
 
 假定质量为 $m$ 的物体连接在一个回复力为 $F(x)$ 的非线性弹簧上，其中 $x$ 是相对于原点的位移；再假定物体浸没于含有黏性流体的桶里，如蜂蜜或机油（见图 2.6.2），因此会受到阻尼力 $b\dot{x}$。则牛顿定律为
 
-$$m\ddot{x}+b\dot{x}=F(x).$$
+$$ m\ddot{x}+b\dot{x}=F(x). $$
 
 ### 2.7 势（p30–31）
 
@@ -420,27 +420,27 @@ $$\dot{x}=x\left(1-x^{2}\right)-a\left(1-e^{-bx}\right)$$
 
 取激光场中的光子数 $n(t)$ 为状态变量，其变化率为
 
-$$\dot{n}=\text{增益}-\text{损失}=GnN-kn .$$
+$$ \dot{n}=\text{增益}-\text{损失}=GnN-kn . $$
 
 增益项来自受激辐射：光子刺激受激原子发射另一个光子，该过程通过光子与受激原子的随机相遇发生，比例于 $N(t)$，系数 $G>0$ 称为**增益系数**。损失项刻画光子从激光端面逃逸，$k>0$ 为常数，其倒数 $\tau=1/k$ 是光子的一般生命周期。
 
 受激原子发射光子后跌入低能态、不再被激发，故 $N$ 随发光而减小。设无激光活动时泵维持的受激原子数为 $N_0$，取
 
-$$N(t)=N_0-\alpha n ,$$
+$$ N(t)=N_0-\alpha n , $$
 
 其中 $\alpha>0$ 为原子跌回基态的比率。代入得关于 $n(t)$ 的一阶系统
 
-$$\dot{n}=Gn\left(N_0-\alpha n\right)-kn=\left(GN_0-k\right)n-(\alpha G)n^2 .$$
+$$ \dot{n}=Gn\left(N_0-\alpha n\right)-kn=\left(GN_0-k\right)n-(\alpha G)n^2 . $$
 
 **注 (激光阈值与定态)** @55
 
 方程 $\dot{n}=(GN_0-k)n-(\alpha G)n^2$ 的零点为 $n=0$ 与
 
-$$n^*=\frac{GN_0-k}{\alpha G}.$$
+$$ n^*=\frac{GN_0-k}{\alpha G}. $$
 
 图 3.3.2 给出泵强度 $N_0$ 取不同值时的向量场：$N_0<k/G$ 时只有 $n=0$ 为物理状态；$N_0=k/G$ 为临界情形；$N_0>k/G$ 时出现正的不动点 $n^*>0$，激光开始持续振荡。临界值
 
-$$N_0=\frac{k}{G}$$
+$$ N_0=\frac{k}{G} $$
 
 即**激光阈值**。只有 $n>0$ 在物理上有意义。
 
@@ -456,7 +456,7 @@ $$N_0=\frac{k}{G}$$
 
 超临界叉式分岔的标准形式为
 
-$$\dot{x}=rx-x^{3}. \qquad (1)$$
+$$ \dot{x}=rx-x^{3}. \qquad (1) $$
 
 该方程对变量替换 $x\to -x$ 不变：用 $-x$ 替换 $x$ 并消去两边产生的负号，仍得到式 (1)。这是左右对称性的数学表示（更技术地说，向量场是"等变"的）。图 3.4.1 给出不同 $r$ 值下的向量场。
 
@@ -472,7 +472,7 @@ $$\dot{x}=rx-x^{3}. \qquad (1)$$
 
 在磁场与神经网络的统计力学模型中产生了类似于
 
-$$\dot{x}=-x+\beta\tanh x$$
+$$ \dot{x}=-x+\beta\tanh x $$
 
 的方程［见练习题 3.6.7 与 Palmer (1989) 的著作］。证明该方程随 $\beta$ 的变化出现跨临界叉式分岔，然后给出对于每个 $\beta$ 值的不动点的数值精确图像。
 
@@ -486,7 +486,7 @@ $\dot{x}=-x+\beta\tanh x$ 的不动点由 $y=x$ 与 $y=\beta\tanh x$ 两条曲�
 
 求不动点随参数变化的分岔图时，不必把 $x^{*}$ 看成 $\beta$ 的函数，而可将 $x^{*}$ 视为独立变量，解出
 
-$$\beta=\frac{x^{*}}{\tanh x^{*}},$$
+$$ \beta=\frac{x^{*}}{\tanh x^{*}}, $$
 
 从而得到关于数对 $(x^{*},\beta)$ 的表格；以 $\beta$ 为横轴、$x^{*}$ 为纵轴作图，即得分岔图（图 3.4.4）。这一简捷法利用了 $f(x,\beta)=-x+\beta\tanh x$ 对 $\beta$ 的依赖比对 $x$ 的依赖更简单这一事实，而分岔问题中对控制参数的依赖通常比对 $x$ 的依赖更简单。
 
@@ -498,7 +498,7 @@ $$\beta=\frac{x^{*}}{\tanh x^{*}},$$
 
 由 $\dot{x}=f(x)$ 的势的定义 $f(x)=-\mathrm{d}V/\mathrm{d}x$，解 $-\mathrm{d}V/\mathrm{d}x=rx-x^{3}$ 并忽略积分常数，得
 
-$$V(x)=-\frac{1}{2}rx^{2}+\frac{1}{4}x^{4}.$$
+$$ V(x)=-\frac{1}{2}rx^{2}+\frac{1}{4}x^{4}. $$
 
 当 $r<0$ 时，原点处为二次型的最小值；在分岔值 $r=0$ 处，最小值变为更平缓的四次型最小值；当 $r>0$ 时，原点处出现局部最大值，$x$ 两侧出现对称的最小值（图 3.4.5）。势的极小值对应稳定不动点。
 
@@ -508,7 +508,7 @@ $$V(x)=-\frac{1}{2}rx^{2}+\frac{1}{4}x^{4}.$$
 
 在超临界情形 $\dot{x}=rx-x^{3}$ 中，立方项起稳定作用，扮演把 $x(t)$ 拉回 $x=0$ 的回复力；若立方项起反稳定作用，即
 
-$$\dot{x}=rx+x^{3}, \qquad (2)$$
+$$ \dot{x}=rx+x^{3}, \qquad (2) $$
 
 则得到亚临界叉式分岔，分岔图见图 3.4.6。与图 3.4.2 相比分岔发生了倒置：非零不动点 $x^{*}=\pm\sqrt{-r}$ 不稳定，且只出现在分岔的下方（$r<0$），这正是"亚临界"一词的由来。
 
@@ -520,7 +520,7 @@ $$\dot{x}=rx+x^{3}, \qquad (2)$$
 
 实际物理系统中高次项的稳定效应会阻碍这种爆炸不稳定性。若系统在 $x\to -x$ 下对称，第一个起稳定作用的项必为 $x^{5}$，于是亚临界叉式分岔系统的标准形式为
 
-$$\dot{x}=rx+x^{3}-x^{5}. \qquad (3)$$
+$$ \dot{x}=rx+x^{3}-x^{5}. \qquad (3) $$
 
 不失一般性，可假定 $x^{3}$ 与 $x^{5}$ 的系数为 $1$（练习题 3.5.8）。式 (3) 的分岔图（图 3.4.7）在 $x$ 较小时与图 3.4.6 相似：原点对 $r<0$ 局部稳定；$r=0$ 时从原点分出两个朝后弯曲的不稳定分支。$x^{5}$ 带来的新特点是：不稳定分支在 $r=r_{s}$ 处转弯并变为稳定，其中 $r_{s}<0$，而这些稳定的大振幅分支对所有的 $r>r_{s}$ 都存在。
 
@@ -870,11 +870,11 @@ $$r=\frac{2x^{3}}{(1+x^{2})^{2}}, \qquad k=\frac{2x^{3}}{x^{2}-1}, \qquad \text{
 
 圆上的一点常被称为**角度**或**相位**。最简单的振子，其相位 $\theta$ 是均匀变化的：
 
-$$\dot{\theta}=\omega$$
+$$ \dot{\theta}=\omega $$
 
 其中 $\omega$ 为常数。其解为
 
-$$\theta(t)=\omega t+\theta_0$$
+$$ \theta(t)=\omega t+\theta_0 $$
 
 它对应圆上角频率为 $\omega$ 的均匀运动。
 
@@ -894,7 +894,7 @@ $$\theta(t)=\omega t+\theta_0$$
 
 设 $\theta_1(t)$、$\theta_2(t)$ 分别为跑道上 Speedy 与 Pokey 的位置，角速度 $\omega_1=2\pi/T_1$、$\omega_2=2\pi/T_2$，即 $\dot{\theta}_1=\omega_1$、$\dot{\theta}_2=\omega_2$。定义相位差 $\phi=\theta_1-\theta_2$，则
 
-$$\dot{\phi}=\dot{\theta}_1-\dot{\theta}_2=\omega_1-\omega_2$$
+$$ \dot{\phi}=\dot{\theta}_1-\dot{\theta}_2=\omega_1-\omega_2 $$
 
 Speedy 超过 Pokey 一圈的条件是二人的角度差增加到 $2\pi$，即相位差 $\phi$ 增加到 $2\pi$。
 
@@ -906,7 +906,7 @@ Speedy 超过 Pokey 一圈的条件是二人的角度差增加到 $2\pi$，即�
 
 方程
 
-$$\dot\theta=\omega-a\sin\theta$$
+$$ \dot\theta=\omega-a\sin\theta $$
 
 （式 (1)）出现在许多科学与工程分支中：电子学（锁相环），生物学（振动神经元、萤火虫发光节律、人类睡眠-苏醒周期），凝聚态物理（约瑟夫森结、电荷密度波），力学（不变力矩驱动下的过阻尼摆）。
 
@@ -930,7 +930,7 @@ $$\dot\theta=\omega-a\sin\theta$$
 
 当 $a>\omega$ 时，不动点 $\theta^*$ 满足
 
-$$\sin\theta^*=\frac{\omega}{a},\qquad \cos\theta^*=\pm\sqrt{1-(\omega/a)^2},$$
+$$ \sin\theta^*=\frac{\omega}{a},\qquad \cos\theta^*=\pm\sqrt{1-(\omega/a)^2}, $$
 
 其线性稳定性由 $f'(\theta^*)=-a\cos\theta^*=\mp a\sqrt{1-(\omega/a)^2}$ 决定：对应 $\cos\theta^*>0$ 的不动点是稳定的（$f'(\theta^*)<0$），对应 $\cos\theta^*<0$ 的不动点不稳定。
 
@@ -940,7 +940,7 @@ $$\sin\theta^*=\frac{\omega}{a},\qquad \cos\theta^*=\pm\sqrt{1-(\omega/a)^2},$$
 
 设 $a<\omega$。$\theta$ 改变 $2\pi$ 所需的时间由
 
-$$T=\int_0^{2\pi}\frac{\mathrm{d}\theta}{\omega-a\sin\theta}=\frac{2\pi}{\sqrt{\omega^2-a^2}}$$
+$$ T=\int_0^{2\pi}\frac{\mathrm{d}\theta}{\omega-a\sin\theta}=\frac{2\pi}{\sqrt{\omega^2-a^2}} $$
 
 给出（式 (2)）。当 $a=0$ 时它化为均匀振子的熟知结果 $T=2\pi/\omega$；$T$ 随 $a$ 增加而增大，并在 $a$ 从左边趋于 $\omega$ 时发散（记作 $a\to\omega^-$，图 4.3.4）。
 
@@ -948,7 +948,7 @@ $$T=\int_0^{2\pi}\frac{\mathrm{d}\theta}{\omega-a\sin\theta}=\frac{2\pi}{\sqrt{\
 
 当 $a\to\omega^-$ 时，
 
-$$T\approx\left(\frac{\pi\sqrt{2}}{\sqrt{\omega}}\right)\frac{1}{\sqrt{\omega-a}}$$
+$$ T\approx\left(\frac{\pi\sqrt{2}}{\sqrt{\omega}}\right)\frac{1}{\sqrt{\omega-a}} $$
 
 （式 (3)），即 $T$ 像 $(a_c-a)^{-1/2}$ 般爆炸，其中 $a_c=\omega$。
 
@@ -964,11 +964,11 @@ $$T\approx\left(\frac{\pi\sqrt{2}}{\sqrt{\omega}}\right)\frac{1}{\sqrt{\omega-a}
 
 由于瓶颈内消耗的时间决定其他时间尺度，只需考察 $\dot\theta$ 在其最小值小邻域内的行为；那里 $\dot\theta$ 看起来像抛物线，动力学可简化为鞍-结分岔的标准形式
 
-$$\dot x=r+x^2,$$
+$$ \dot x=r+x^2, $$
 
 其中 $r$ 与到分岔的距离成比例，且 $0<r\ll 1$（图 4.3.7）。从瓶颈一侧（$x=-\infty$）到另一侧（$x=\infty$）所消耗的时间为
 
-$$T_{\text{瓶颈}}\approx\int_{-\infty}^{\infty}\frac{\mathrm{d}x}{r+x^2}=\frac{\pi}{\sqrt{r}}$$
+$$ T_{\text{瓶颈}}\approx\int_{-\infty}^{\infty}\frac{\mathrm{d}x}{r+x^2}=\frac{\pi}{\sqrt{r}} $$
 
 （式 (4)），它显示出平方根标度律的普遍性。
 
@@ -982,7 +982,7 @@ $$T_{\text{瓶颈}}\approx\int_{-\infty}^{\infty}\frac{\mathrm{d}x}{r+x^2}=\frac
 
 考虑一个由不变力矩驱动的过阻尼摆（图 4.4.1）。令 $\theta$ 表示摆与向下的垂线的夹角，并假设 $\theta$ 在逆时针方向上增加。根据牛顿定律，有
 
-$$mL^2\ddot\theta + b\dot\theta + mgL\sin\theta = \Gamma$$
+$$ mL^2\ddot\theta + b\dot\theta + mgL\sin\theta = \Gamma $$
 
 式中，$m$ 为质量；$L$ 为摆的长度；$b$ 为黏性阻尼系数；$g$ 为重力加速度；$\Gamma$ 为不变的作用力矩。所有这些参数都是正数。特别是，$\Gamma>0$ 意味着作用力矩驱动摆逆时针运动。
 
@@ -990,17 +990,17 @@ $$mL^2\ddot\theta + b\dot\theta + mgL\sin\theta = \Gamma$$
 
 式 (1) 为二阶系统，但在 $b$ 值极大时的过阻尼极限中，它可用一阶系统近似。在该极限中，惯性项 $mL^2\ddot\theta$ 可忽略，因而式 (1) 变为
 
-$$b\dot\theta + mgL\sin\theta = \Gamma$$
+$$ b\dot\theta + mgL\sin\theta = \Gamma $$
 
 **命题 (过阻尼摆的无量纲化)** @104
 
 将式 (2) 两边同除以 $mgL$，并令
 
-$$\tau = \frac{mgL}{b}t, \qquad \gamma = \frac{\Gamma}{mgL}$$
+$$ \tau = \frac{mgL}{b}t, \qquad \gamma = \frac{\Gamma}{mgL} $$
 
 则过阻尼摆方程化为
 
-$$\theta' = \gamma - \sin\theta$$
+$$ \theta' = \gamma - \sin\theta $$
 
 式中，$\theta' = \mathrm{d}\theta/\mathrm{d}\tau$。
 
@@ -1160,7 +1160,7 @@ $$\phi'=\frac{I}{I_c}-\sin\phi. \qquad \text{式 (7)}$$
 
 在过阻尼极限 $\beta\ll1$ 下，由式 (2) 与式 (5) 有 $\langle V\rangle=I_cR\langle\phi'\rangle$，其中 $\langle\phi'\rangle$ 是对无量纲时间 $\tau$ 的平均。于是
 
-$$\langle V\rangle=\begin{cases}0, & I\leqslant I_c,\\[4pt]I_cR\sqrt{(I/I_c)^2-1}, & I>I_c.\end{cases}\qquad \text{式 (11)}$$
+$$\langle V\rangle= \begin{cases} 0, & I\leqslant I_c,\\[4pt] I_cR\sqrt{(I/I_c)^2-1}, & I>I_c. \end{cases} \qquad \text{式 (11)}$$
 
 当 $I<I_c$ 时解趋于不动点 $\phi^*=\arcsin(I/I_c)$，$-\pi/2\leqslant\phi^*\leqslant\pi/2$，稳态下 $\phi'=0$；当 $I>I_c$ 时解是周期的，周期为
 
@@ -1180,11 +1180,11 @@ $$T=\frac{2\pi}{\sqrt{(I/I_c)^2-1}}, \qquad \text{式 (9)}$$
 
 一个二维线性系统是形如
 
-$$\dot{x}=ax+by,\qquad \dot{y}=cx+dy$$
+$$ \dot{x}=ax+by,\qquad \dot{y}=cx+dy $$
 
 的系统，式中 $a$、$b$、$c$、$d$ 为参数。用黑体表示向量，该系统可写成更紧凑的矩阵形式 $\dot{\mathbf{x}}=A\mathbf{x}$，其中
 
-$$A=\begin{pmatrix}a&b\\c&d\end{pmatrix},\qquad \mathbf{x}=\begin{pmatrix}x\\y\end{pmatrix}.$$
+$$ A=\begin{pmatrix}a&b\\c&d\end{pmatrix},\qquad \mathbf{x}=\begin{pmatrix}x\\y\end{pmatrix}. $$
 
 这样的系统称为**线性的**，意为若 $\mathbf{x}_1$、$\mathbf{x}_2$ 为其解，则其任意线性组合 $c_1\mathbf{x}_1+c_2\mathbf{x}_2$ 也是解。当 $\mathbf{x}^*=\mathbf{0}$ 时有 $\dot{\mathbf{x}}=\mathbf{0}$，所以 $\mathbf{x}^*=\mathbf{0}$ 对于任意 $A$ 都是不动点。
 
@@ -1196,11 +1196,11 @@ $$A=\begin{pmatrix}a&b\\c&d\end{pmatrix},\qquad \mathbf{x}=\begin{pmatrix}x\\y\e
 
 二阶方程 $m\ddot{x}+kx=0$ 可用位置 $x$ 与速度 $v=\dot{x}$ 改写为一阶系统
 
-$$\dot{x}=v,\qquad \dot{v}=-\frac{k}{m}x.$$
+$$ \dot{x}=v,\qquad \dot{v}=-\frac{k}{m}x. $$
 
 令 $\omega^2=k/m$，则化为
 
-$$\dot{x}=v,\qquad \dot{v}=-\omega^2x,$$
+$$ \dot{x}=v,\qquad \dot{v}=-\omega^2x, $$
 
 它在相平面每一点 $(x,v)$ 分配一个向量 $(\dot{x},\dot{v})=(v,-\omega^2x)$，因而代表相平面上的一个向量场。
 
@@ -1216,7 +1216,7 @@ $$\dot{x}=v,\qquad \dot{v}=-\omega^2x,$$
 
 求解线性系统 $\dot{\mathbf{x}}=A\mathbf{x}$，这里
 
-$$A=\begin{pmatrix}a&0\\0&-1\end{pmatrix}.$$
+$$ A=\begin{pmatrix}a&0\\0&-1\end{pmatrix}. $$
 
 画出当 $a$ 从 $-\infty$ 变化到 $+\infty$ 时的相图，并展示不同的定性情况。
 
@@ -1352,7 +1352,7 @@ $$\lambda_{1,2}=\frac{1}{2}\Bigl(\tau\pm\sqrt{\tau^{2}-4\Delta}\Bigr),\qquad \De
 
 令 $R(t)$ 表示在时刻 $t$ 罗密欧对朱丽叶的爱/恨，$J(t)$ 表示在时刻 $t$ 朱丽叶对罗密欧的爱/恨；$R$、$J$ 为正值表示爱，负值表示恨。设朱丽叶是一个不稳定的爱人（罗密欧越爱她，她越想离开），而罗密欧倾向于模仿她（她爱他时他活跃，她恨他时他冷淡），则模型为
 
-$$\dot{R}=aJ,\qquad \dot{J}=-bR,$$
+$$ \dot{R}=aJ,\qquad \dot{J}=-bR, $$
 
 其中参数 $a$、$b$ 为正数。
 
@@ -1364,7 +1364,7 @@ $$\dot{R}=aJ,\qquad \dot{J}=-bR,$$
 
 更一般的线性系统
 
-$$\dot{R}=aR+bJ,\qquad \dot{J}=cR+dJ$$
+$$ \dot{R}=aR+bJ,\qquad \dot{J}=cR+dJ $$
 
 中参数 $a$、$b$、$c$、$d$ 的符号可正可负，符号的选择指定了恋爱的方式。例如 $a>0$、$b>0$ 时罗密欧是"热心的海狸"：他因朱丽叶爱他而激动，进而被自身对朱丽叶的感情所激励。由此可为各种恋爱方式命名，并预测不同匹配的结局。
 
@@ -1372,11 +1372,11 @@ $$\dot{R}=aR+bJ,\qquad \dot{J}=cR+dJ$$
 
 当两个同样谨慎的爱人在一起会发生什么？此时系统为
 
-$$\dot{R}=aR+bJ,\qquad \dot{J}=bR+aJ,$$
+$$ \dot{R}=aR+bJ,\qquad \dot{J}=bR+aJ, $$
 
 其中 $a<0$、$b>0$：$a$ 是对谨慎程度的度量（两人都避免讨好对方），$b$ 是责任心的度量（两人都会被对方的深情举动所激励）。对应的矩阵为
 
-$$A=\begin{pmatrix} a & b \\ b & a \end{pmatrix}.$$
+$$ A=\begin{pmatrix} a & b \\ b & a \end{pmatrix}. $$
 
 ## 第6章 相平面
 
@@ -1386,7 +1386,7 @@ $$A=\begin{pmatrix} a & b \\ b & a \end{pmatrix}.$$
 
 相平面中向量场的一般表达式为
 
-$$\begin{aligned}\dot{x}_1 &= f_1(x_1,x_2),\\\dot{x}_2 &= f_2(x_1,x_2),\end{aligned}$$
+$$ \begin{aligned} \dot{x}_1 &= f_1(x_1,x_2),\\ \dot{x}_2 &= f_2(x_1,x_2), \end{aligned} $$
 
 其中 $f_1$ 和 $f_2$ 为给定的函数。利用向量的定义，这个系统可以表达为如下简洁的向量形式
 
@@ -1424,7 +1424,7 @@ $$\boldsymbol{x}_{n+1}=\boldsymbol{x}_n+\frac{1}{6}\left(\boldsymbol{k}_1+2\bold
 
 其中
 
-$$\begin{aligned}\boldsymbol{k}_1&=\boldsymbol{f}(\boldsymbol{x}_n)\,\Delta t,\\\boldsymbol{k}_2&=\boldsymbol{f}\left(\boldsymbol{x}_n+\frac{1}{2}\boldsymbol{k}_1\right)\Delta t,\\\boldsymbol{k}_3&=\boldsymbol{f}\left(\boldsymbol{x}_n+\frac{1}{2}\boldsymbol{k}_2\right)\Delta t,\\\boldsymbol{k}_4&=\boldsymbol{f}\left(\boldsymbol{x}_n+\frac{1}{2}\boldsymbol{k}_3\right)\Delta t,\end{aligned}$$
+$$ \begin{aligned} \boldsymbol{k}_1&=\boldsymbol{f}(\boldsymbol{x}_n)\,\Delta t,\\ \boldsymbol{k}_2&=\boldsymbol{f}\left(\boldsymbol{x}_n+\frac{1}{2}\boldsymbol{k}_1\right)\Delta t,\\ \boldsymbol{k}_3&=\boldsymbol{f}\left(\boldsymbol{x}_n+\frac{1}{2}\boldsymbol{k}_2\right)\Delta t,\\ \boldsymbol{k}_4&=\boldsymbol{f}\left(\boldsymbol{x}_n+\frac{1}{2}\boldsymbol{k}_3\right)\Delta t, \end{aligned} $$
 
 步长 $\Delta t=0.1$ 足以保证所需的精确度。画图时通常在向量场中画一个代表性的向量网格；但向量方向和大小的不同会使图像变得混乱，通过使用短线段来表示流的局部方向，能够清楚地表示一个向量场的图像。
 
@@ -1466,11 +1466,11 @@ $$\begin{aligned}\boldsymbol{k}_1&=\boldsymbol{f}(\boldsymbol{x}_n)\,\Delta t,\\
 
 **命题 (扰动方程与线性化系统)** @151
 
-考虑系统$$\dot{x}=f(x,y),\qquad \dot{y}=g(x,y),$$并设 $(x^*,y^*)$ 为一不动点，即 $f(x^*,y^*)=0$，$g(x^*,y^*)=0$。令$$u=x-x^*,\qquad v=y-y^*,$$表示对不动点作小扰动的两个分量。则扰动的微分方程为$$\begin{pmatrix}\dot{u}\\ \dot{v}\end{pmatrix}=\begin{pmatrix}\dfrac{\partial f}{\partial x} & \dfrac{\partial f}{\partial y}\\[2mm]\dfrac{\partial g}{\partial x} & \dfrac{\partial g}{\partial y}\end{pmatrix}\begin{pmatrix}u\\ v\end{pmatrix}+\text{二次项},$$式中的偏导数均在不动点 $(x^*,y^*)$ 处取值。由于二次项很小、几乎可以忽略，忽略后得到线性系统$$\begin{pmatrix}\dot{u}\\ \dot{v}\end{pmatrix}=\begin{pmatrix}\dfrac{\partial f}{\partial x} & \dfrac{\partial f}{\partial y}\\[2mm]\dfrac{\partial g}{\partial x} & \dfrac{\partial g}{\partial y}\end{pmatrix}\begin{pmatrix}u\\ v\end{pmatrix},$$其动力学特性可用 5.2 节的方法分析。
+考虑系统$$ \dot{x}=f(x,y),\qquad \dot{y}=g(x,y), $$并设 $(x^*,y^*)$ 为一不动点，即 $f(x^*,y^*)=0$，$g(x^*,y^*)=0$。令$$ u=x-x^*,\qquad v=y-y^*, $$表示对不动点作小扰动的两个分量。则扰动的微分方程为$$ \begin{pmatrix}\dot{u}\\ \dot{v}\end{pmatrix} = \begin{pmatrix} \dfrac{\partial f}{\partial x} & \dfrac{\partial f}{\partial y}\\[2mm] \dfrac{\partial g}{\partial x} & \dfrac{\partial g}{\partial y} \end{pmatrix} \begin{pmatrix}u\\ v\end{pmatrix} +\text{二次项}, $$式中的偏导数均在不动点 $(x^*,y^*)$ 处取值。由于二次项很小、几乎可以忽略，忽略后得到线性系统$$ \begin{pmatrix}\dot{u}\\ \dot{v}\end{pmatrix} = \begin{pmatrix} \dfrac{\partial f}{\partial x} & \dfrac{\partial f}{\partial y}\\[2mm] \dfrac{\partial g}{\partial x} & \dfrac{\partial g}{\partial y} \end{pmatrix} \begin{pmatrix}u\\ v\end{pmatrix}, $$其动力学特性可用 5.2 节的方法分析。
 
 **定义 (雅可比矩阵)** @152
 
-称矩阵$$A=\begin{pmatrix}\dfrac{\partial f}{\partial x} & \dfrac{\partial f}{\partial y}\\[2mm]\dfrac{\partial g}{\partial x} & \dfrac{\partial g}{\partial y}\end{pmatrix}_{(x^*,y^*)}$$为在不动点 $(x^*,y^*)$ 处的**雅可比矩阵**。它是 2.4 节中导数 $f'(x^*)$ 的多元情形。
+称矩阵$$ A= \begin{pmatrix} \dfrac{\partial f}{\partial x} & \dfrac{\partial f}{\partial y}\\[2mm] \dfrac{\partial g}{\partial x} & \dfrac{\partial g}{\partial y} \end{pmatrix}_{(x^*,y^*)} $$为在不动点 $(x^*,y^*)$ 处的**雅可比矩阵**。它是 2.4 节中导数 $f'(x^*)$ 的多元情形。
 
 #### 微小非线性项的影响 @152
 
@@ -1488,7 +1488,7 @@ $$\begin{aligned}\boldsymbol{k}_1&=\boldsymbol{f}(\boldsymbol{x}_n)\,\Delta t,\\
 
 **例 6.3.2** @153
 
-考虑系统$$\dot{x}=-y+ax(x^2+y^2),\qquad \dot{y}=x+ay(x^2+y^2),$$其中 $a$ 为参数。证明：对所有的 $a$，线性化系统都会错误地得出原点是中心；但事实上，当 $a<0$ 时原点为稳定焦点，当 $a>0$ 时为不稳定焦点。
+考虑系统$$ \dot{x}=-y+ax(x^2+y^2),\qquad \dot{y}=x+ay(x^2+y^2), $$其中 $a$ 为参数。证明：对所有的 $a$，线性化系统都会错误地得出原点是中心；但事实上，当 $a<0$ 时原点为稳定焦点，当 $a>0$ 时为不稳定焦点。
 
 **注 (中心、星形结点与退化结点的扰动)** @155
 
@@ -1530,7 +1530,7 @@ $$\begin{aligned}\boldsymbol{k}_1&=\boldsymbol{f}(\boldsymbol{x}_n)\,\Delta t,\\
 
 在上述假设下，物种竞争模型为
 
-$$\begin{aligned}\dot{x} &= x(3-x-2y),\\\dot{y} &= y(2-x-y),\end{aligned}$$
+$$ \begin{aligned} \dot{x} &= x(3-x-2y),\\ \dot{y} &= y(2-x-y), \end{aligned} $$
 
 其中 $x(t)$ 为兔子的数量，$y(t)$ 为羊的数量，且 $x\geqslant 0$，$y\geqslant 0$。系数被用来反映此情景，其他方面是任意的；若系数改变，相图会随之改变。问题即确定该系统的相图。
 
@@ -1538,11 +1538,11 @@ $$\begin{aligned}\dot{x} &= x(3-x-2y),\\\dot{y} &= y(2-x-y),\end{aligned}$$
 
 令 $\dot{x}=0$、$\dot{y}=0$ 解方程组，得四个不动点
 
-$$(0,0),\quad (0,2),\quad (3,0),\quad (1,1).$$
+$$ (0,0),\quad (0,2),\quad (3,0),\quad (1,1). $$
 
 系统的雅可比矩阵为
 
-$$A=\begin{pmatrix}\dfrac{\partial \dot{x}}{\partial x} & \dfrac{\partial \dot{x}}{\partial y}\\[6pt]\dfrac{\partial \dot{y}}{\partial x} & \dfrac{\partial \dot{y}}{\partial y}\end{pmatrix}=\begin{pmatrix}3-2x-2y & -2x\\-y & 2-x-2y\end{pmatrix},$$
+$$ A=\begin{pmatrix} \dfrac{\partial \dot{x}}{\partial x} & \dfrac{\partial \dot{x}}{\partial y}\\[6pt] \dfrac{\partial \dot{y}}{\partial x} & \dfrac{\partial \dot{y}}{\partial y} \end{pmatrix} =\begin{pmatrix} 3-2x-2y & -2x\\ -y & 2-x-2y \end{pmatrix}, $$
 
 在各不动点处取值即可对它们作线性分类。
 
@@ -1764,7 +1764,7 @@ $$\dot{x}=-2\cos x-\cos y,\qquad \dot{y}=-2\cos y-\cos x$$
 
 于是 $C$ 上任意一点 $\mathbf{x}$ 处，向量 $\dot{\mathbf{x}}=(\dot{x},\dot{y})$ 与 $x$ 轴正方向的夹角 $\phi=\arctan(\dot{y}/\dot{x})$ 有良好定义。向量场光滑，故 $\mathbf{x}$ 沿 $C$ 逆时针移动时 $\phi$ 连续变化；绕行一周 $\mathbf{x}$ 回到出发点、$\phi$ 也回到原方向，因此 $\phi$ 的改变量是 $2\pi$ 的整数倍。记 $[\phi]_C$ 为 $\phi$ 绕一圈的净改变量，定义 $C$ 的指数为
 
-$$I_C=\frac{1}{2\pi}[\phi]_C .$$
+$$ I_C=\frac{1}{2\pi}[\phi]_C . $$
 
 $I_C$ 即 $\mathbf{x}$ 沿 $C$ 逆时针绕行一次时，向量场所产生的逆时针旋转的净值。计算指数不需要知道各处的向量场，只需知道它沿 $C$ 的取值。
 
@@ -1816,7 +1816,7 @@ $I_C$ 即 $\mathbf{x}$ 沿 $C$ 逆时针绕行一次时，向量场所产生的�
 
 如果闭曲线 $C$ 包围 $n$ 个孤立不动点 $x_1^*,x_2^*,\dots,x_n^*$，则
 
-$$I_C=I_1+I_2+\cdots+I_n ,$$
+$$ I_C=I_1+I_2+\cdots+I_n , $$
 
 式中 $I_k$ 是 $x_k^*$ 的指数，$k=1,2,\dots,n$。
 
@@ -1832,7 +1832,7 @@ $$I_C=I_1+I_2+\cdots+I_n ,$$
 
 证明闭轨道不可能存在于 6.4 节研究的“兔子与羊”系统
 
-$$\begin{aligned}\dot{x} &= x(3-x-2y),\\\dot{y} &= y(2-x-y),\end{aligned}$$
+$$ \begin{aligned} \dot{x} &= x(3-x-2y),\\ \dot{y} &= y(2-x-y), \end{aligned} $$
 
 式中 $x\geqslant 0$，$y\geqslant 0$。
 
@@ -1848,7 +1848,7 @@ $$\begin{aligned}\dot{x} &= x(3-x-2y),\\\dot{y} &= y(2-x-y),\end{aligned}$$
 
 考虑系统
 
-$$\dot{r}=r(1-r^{2}),\qquad \dot{\theta}=1$$
+$$ \dot{r}=r(1-r^{2}),\qquad \dot{\theta}=1 $$
 
 式中 $r\geqslant 0$。分析该系统在相平面上的轨线，并指出其极限环。
 
@@ -1862,7 +1862,7 @@ $$\dot{r}=r(1-r^{2}),\qquad \dot{\theta}=1$$
 
 范德波尔方程为
 
-$$\ddot{x}+\mu(x^{2}-1)\dot{x}+x=0$$
+$$ \ddot{x}+\mu(x^{2}-1)\dot{x}+x=0 $$
 
 式中 $\mu\geqslant 0$ 是参数。历史上，这个方程同第一代收音机所使用的非线性电路（见习题 7.1.6 的电路）有很大的联系。方程 (2) 看起来像一个简谐振子，但是有一个非线性阻尼项 $\mu(x^{2}-1)\dot{x}$。
 
@@ -2046,7 +2046,7 @@ $$b^2=\frac{1}{2}\left(1-2a\pm\sqrt{1-8a}\right),$$
 
 许多非线性振荡电路可以用如下形式的二阶微分方程模拟：
 
-$$\ddot{x}+f(x)\dot{x}+g(x)=0$$
+$$ \ddot{x}+f(x)\dot{x}+g(x)=0 $$
 
 这就是**李纳**（Liénard）方程。它是 7.1 节提到的范德波尔振子 $\ddot{x}+\mu(x^{2}-1)\dot{x}+x=0$ 的推广：取 $f(x)=\mu(x^{2}-1)$、$g(x)=x$ 即得范德波尔方程。从力学角度，它可解释为一个单位质量的物体受到非线性阻尼力 $-f(x)\dot{x}$ 和非线性回复力 $-g(x)$ 作用的运动方程。
 
@@ -2054,7 +2054,7 @@ $$\ddot{x}+f(x)\dot{x}+g(x)=0$$
 
 李纳方程 (1) 等价于系统
 
-$$\begin{cases}\dot{x}=y,\\\dot{y}=-g(x)-f(x)y.\end{cases}$$
+$$ \begin{cases} \dot{x}=y,\\ \dot{y}=-g(x)-f(x)y. \end{cases} $$
 
 **定理 (李纳定理)** @215
 
@@ -2284,7 +2284,7 @@ $$\langle\cos^{2n}\rangle=\langle\sin^{2n}\rangle=\frac{1\cdot 3\cdot 5\cdots(2n
 
 二维中最典型的鞍-结分岔系统为
 
-$$\dot{x}=\mu-x^2,\qquad \dot{y}=-y$$
+$$ \dot{x}=\mu-x^2,\qquad \dot{y}=-y $$
 
 在 $x$ 轴方向上它呈现 3.1 节讨论过的分岔行为，在 $y$ 轴方向上运动按指数形式衰减。
 
@@ -2302,7 +2302,7 @@ $$\dot{x}=\mu-x^2,\qquad \dot{y}=-y$$
 
 Griffith (1971) 研究了如下基因控制系统模型。假定某一基因活性能够被其编码的两个蛋白质备份诱发，即基因能够被自身所生成的基因触发，并可能由此导致自催化反馈过程。模型的无量纲表达式为
 
-$$\dot{x}=-ax+y,\qquad \dot{y}=\frac{x^2}{1+x^2}-by$$
+$$ \dot{x}=-ax+y,\qquad \dot{y}=\frac{x^2}{1+x^2}-by $$
 
 式中 $x$ 与 $y$ 分别为蛋白质浓度和其转化成信使核糖核酸（mRNA）浓度的比例，$a$ 与 $b$ 为控制 $x$ 与 $y$ 降解的参数，且 $a>0$，$b>0$。
 
@@ -2318,11 +2318,11 @@ $$\dot{x}=-ax+y,\qquad \dot{y}=\frac{x^2}{1+x^2}-by$$
 
 在稳定不动点处，跨临界分岔与叉式分岔的典型二维系统由第 3 章的正规形给出 $x$ 方向的动力学，而 $y$ 方向的运动为指数衰减：
 
-$$\dot{x}=\mu x-x^2,\quad \dot{y}=-y \qquad (\text{跨临界})$$
+$$ \dot{x}=\mu x-x^2,\quad \dot{y}=-y \qquad (\text{跨临界}) $$
 
-$$\dot{x}=\mu x-x^3,\quad \dot{y}=-y \qquad (\text{超临界叉式})$$
+$$ \dot{x}=\mu x-x^3,\quad \dot{y}=-y \qquad (\text{超临界叉式}) $$
 
-$$\dot{x}=\mu x+x^3,\quad \dot{y}=-y \qquad (\text{亚临界叉式})$$
+$$ \dot{x}=\mu x+x^3,\quad \dot{y}=-y \qquad (\text{亚临界叉式}) $$
 
 三类情形的分析方法相同。
 
@@ -2338,7 +2338,7 @@ $$\dot{x}=\mu x+x^3,\quad \dot{y}=-y \qquad (\text{亚临界叉式})$$
 
 下述系统的原点处存在超临界叉式分岔。确定分岔值 $\mu_c$；当 $\mu$ 略大于 $\mu_c$ 时，绘制出原点处的相图：
 
-$$\dot{x}=\mu x+y+\sin x,\qquad \dot{y}=x-y$$
+$$ \dot{x}=\mu x+y+\sin x,\qquad \dot{y}=x-y $$
 
 ### 8.2 霍普夫分岔（p255–260）
 
@@ -2430,21 +2430,21 @@ $$\ddot x+\mu\dot x+\sin x=0,$$
 
 Lengyel 等人提出的二氧化氯-碘-丙二酸反应（$\mathrm{ClO_2}$-$\mathrm{I_2}$-MA）的实验可归结为下列三个反应组，并由经验速率定律给出系统行为：
 
-$$\mathrm{MA}+\mathrm{I_2}\to \mathrm{IMA}+\mathrm{I^-}+\mathrm{H^+},\qquad\frac{\mathrm{d}[\mathrm{I_2}]}{\mathrm{d}t}=-\frac{k_{1a}[\mathrm{MA}][\mathrm{I_2}]}{k_{1b}+[\mathrm{I_2}]}\qquad (1)$$
+$$ \mathrm{MA}+\mathrm{I_2}\to \mathrm{IMA}+\mathrm{I^-}+\mathrm{H^+},\qquad \frac{\mathrm{d}[\mathrm{I_2}]}{\mathrm{d}t} =-\frac{k_{1a}[\mathrm{MA}][\mathrm{I_2}]}{k_{1b}+[\mathrm{I_2}]} \qquad (1) $$
 
-$$\mathrm{ClO_2}+\mathrm{I^-}\to \mathrm{ClO_2^-}+\tfrac12\mathrm{I_2},\qquad\frac{\mathrm{d}[\mathrm{ClO_2}]}{\mathrm{d}t}=-k_2[\mathrm{ClO_2}][\mathrm{I^-}]\qquad (2)$$
+$$ \mathrm{ClO_2}+\mathrm{I^-}\to \mathrm{ClO_2^-}+\tfrac12\mathrm{I_2},\qquad \frac{\mathrm{d}[\mathrm{ClO_2}]}{\mathrm{d}t}=-k_2[\mathrm{ClO_2}][\mathrm{I^-}] \qquad (2) $$
 
-$$\mathrm{ClO_2}+4\mathrm{I^-}+4\mathrm{H^+}\to \mathrm{Cl^-}+2\mathrm{I_2}+2\mathrm{H_2O},$$
+$$ \mathrm{ClO_2}+4\mathrm{I^-}+4\mathrm{H^+}\to \mathrm{Cl^-}+2\mathrm{I_2}+2\mathrm{H_2O}, $$
 
-$$\frac{\mathrm{d}[\mathrm{ClO_2^-}]}{\mathrm{d}t}=-k_{3a}[\mathrm{ClO_2^-}][\mathrm{I^-}][\mathrm{H^+}]-k_{3b}[\mathrm{ClO_2^-}][\mathrm{I_2}]\frac{[\mathrm{I^-}]}{u+[\mathrm{I^-}]^2}\qquad (3)$$
+$$ \frac{\mathrm{d}[\mathrm{ClO_2^-}]}{\mathrm{d}t} =-k_{3a}[\mathrm{ClO_2^-}][\mathrm{I^-}][\mathrm{H^+}] -k_{3b}[\mathrm{ClO_2^-}][\mathrm{I_2}]\frac{[\mathrm{I^-}]}{u+[\mathrm{I^-}]^2} \qquad (3) $$
 
 **注 (无量纲化的两变量模型)** @264
 
 在一个振荡期内，反应物 MA、$\mathrm{I_2}$、$\mathrm{ClO_2}$ 的浓度变化比媒介 $\mathrm{I^-}$、$\mathrm{ClO_2^-}$ 慢得多。把慢反应物的浓度视为常量并作其他合理简化、再经适当无量纲化，系统化为含两个参数的两变量模型
 
-$$\dot x=a-x-\frac{4xy}{1+x^2}\qquad (4)$$
+$$ \dot x=a-x-\frac{4xy}{1+x^2} \qquad (4) $$
 
-$$\dot y=bx\left(1-\frac{y}{1+x^2}\right)\qquad (5)$$
+$$ \dot y=bx\left(1-\frac{y}{1+x^2}\right) \qquad (5) $$
 
 其中 $x$、$y$ 是 $\mathrm{I^-}$ 和 $\mathrm{ClO_2^-}$ 的无量纲浓度，$a>0$、$b>0$ 分别由经验速率常数和浓度决定。该近似忽略了反应物的缓慢消耗，故模型不能解释系统最终趋近平衡点的行为。
 
@@ -2456,13 +2456,13 @@ $$\dot y=bx\left(1-\frac{y}{1+x^2}\right)\qquad (5)$$
 
 式 (4) 的零集是曲线
 
-$$y=\frac{(a-x)(1+x^2)}{4x},$$
+$$ y=\frac{(a-x)(1+x^2)}{4x}, $$
 
 式 (5) 的零集是 $y$ 轴与抛物线 $y=1+x^2$（图 8.3.1）。以这些零集为边界可作一个矩形框，边界上所有向量都进入框内，故该框是捕获域（图 8.3.2）。
 
 框内零集交点处的不动点为
 
-$$x^*=\frac a5,\qquad y^*=1+(x^*)^2=1+\left(\frac a5\right)^2 .$$
+$$ x^*=\frac a5,\qquad y^*=1+(x^*)^2=1+\left(\frac a5\right)^2 . $$
 
 若此不动点是排斥子，则移去不动点后对它周围作一适当的小圈，在剩余区域内应用庞加莱-本迪克松定理，可知捕获域内存在闭轨。
 
@@ -2470,15 +2470,15 @@ $$x^*=\frac a5,\qquad y^*=1+(x^*)^2=1+\left(\frac a5\right)^2 .$$
 
 系统式 (4)、(5) 在 $(x^*,y^*)$ 处的雅可比矩阵为
 
-$$\frac{1}{1+(x^*)^2}\begin{pmatrix}3(x^*)^2-5 & -4x^*\\[2pt]2b(x^*)^2 & -bx^*\end{pmatrix},$$
+$$ \frac{1}{1+(x^*)^2} \begin{pmatrix} 3(x^*)^2-5 & -4x^*\\[2pt] 2b(x^*)^2 & -bx^* \end{pmatrix}, $$
 
 借助 $y^*=1+(x^*)^2$ 化简后，其行列式与迹分别为
 
-$$\Delta=\frac{5bx^*}{1+(x^*)^2}>0,\qquad\tau=\frac{3(x^*)^2-5-bx^*}{1+(x^*)^2}.$$
+$$ \Delta=\frac{5bx^*}{1+(x^*)^2}>0,\qquad \tau=\frac{3(x^*)^2-5-bx^*}{1+(x^*)^2}. $$
 
 因 $\Delta>0$，不动点永远不是鞍点；$\tau>0$ 时 $(x^*,y^*)$ 是排斥子。代入 $x^*=a/5$，条件 $\tau>0$ 即
 
-$$b<b_c\equiv \frac{3a}{5}-\frac{25}{a}.\qquad (7)$$
+$$ b<b_c\equiv \frac{3a}{5}-\frac{25}{a}. \qquad (7) $$
 
 **例 8.3.2** @266
 
@@ -2500,7 +2500,7 @@ $$b<b_c\equiv \frac{3a}{5}-\frac{25}{a}.\qquad (7)$$
 
 在分岔处，两个极限环重合并消失，这类似不动点的鞍-结分岔，称为**折叠分岔**或**环的鞍-结分岔**。考虑系统
 
-$$\dot{r}=\mu r+r^{3}-r^{5},\qquad \dot{\theta}=\omega+br^{2}.$$
+$$ \dot{r}=\mu r+r^{3}-r^{5},\qquad \dot{\theta}=\omega+br^{2}. $$
 
 在 8.2 节中讨论过 $\mu=0$ 处的亚临界霍普夫分岔，此处关注 $\mu<0$ 时的动力学。把径向方程 $\dot{r}=\mu r+r^{3}-r^{5}$ 看作一维系统，可知它在 $\mu_{c}=-1/4$ 处经历鞍-结分岔；对上述二维系统，这些不动点对应圆形极限环。图 8.4.1 画出了"径向相图"与相应的相平面行为。
 
@@ -2518,7 +2518,7 @@ $$\dot{r}=\mu r+r^{3}-r^{5},\qquad \dot{\theta}=\omega+br^{2}.$$
 
 考虑系统
 
-$$\dot{r}=r(1-r^{2}),\qquad \dot{\theta}=\mu-\sin\theta,$$
+$$ \dot{r}=r(1-r^{2}),\qquad \dot{\theta}=\mu-\sin\theta, $$
 
 其中 $\mu\geqslant 0$。该系统把第 3、4 章研究过的两个一维系统合并起来。径向上，当 $t\to\infty$ 时所有轨迹（除 $r^{*}=0$ 外）单调地接近单位圆；角方向上，$\mu>1$ 时反向运动，$\mu<1$ 时两条不变射线由 $\sin\theta=\mu$ 定义。当 $\mu$ 递减并通过 $\mu_{c}=1$ 时，相图发生改变，如图 8.4.2 所示。
 
@@ -2536,7 +2536,7 @@ $$\dot{r}=r(1-r^{2}),\qquad \dot{\theta}=\mu-\sin\theta,$$
 
 极限环与鞍点越来越近，在分岔处环与鞍点相交而变为一条同宿轨，这是另一种无限周期分岔，称为**鞍-环分岔**或**同宿分岔**。解析例题很难找到，故借助计算机，考虑系统
 
-$$\dot{x}=y,\qquad \dot{y}=\mu y+x-x^{2}+xy.$$
+$$ \dot{x}=y,\qquad \dot{y}=\mu y+x-x^{2}+xy. $$
 
 图 8.4.3 画出了分岔前后的系统相图。数值方法给出分岔发生在 $\mu_{c}\approx-0.8645$ 处：当 $\mu<\mu_{c}$（如 $\mu_{c}=-0.92$）时，一个稳定极限环接近原点处的鞍点（图 8.4.3a）；当 $\mu$ 增加到 $\mu_{c}$ 时，极限环膨胀（图 8.4.3b）并与鞍点碰撞，同时产生一条同宿轨（图 8.4.3c）；一旦 $\mu>\mu_{c}$，鞍形连接分裂，环被摧毁（图 8.4.3d）。
 
@@ -2560,7 +2560,7 @@ $$\dot{x}=y,\qquad \dot{y}=\mu y+x-x^{2}+xy.$$
 
 范·德·波尔振子
 
-$$\ddot{x}+\varepsilon\dot{x}(x^{2}-1)+x=0$$
+$$ \ddot{x}+\varepsilon\dot{x}(x^{2}-1)+x=0 $$
 
 不适合表 8.4.1 中任一情况。在 $\varepsilon=0$ 处，原点的特征值是纯虚数（$\lambda=\pm \mathrm{i}$），意味着此处发生霍普夫分岔；由 7.6 节可知，对 $0<\varepsilon\ll 1$，系统有一个振幅为 $r\approx 2$ 的极限环。解释这时的环为什么不随标度律所预测的 $O(\varepsilon^{1/2})$ 增长。
 
@@ -2576,23 +2576,23 @@ $$\ddot{x}+\varepsilon\dot{x}(x^{2}-1)+x=0$$
 
 约瑟夫森结的控制方程为
 
-$$\frac{\hbar C}{2e}\ddot{\phi}+\frac{\hbar}{2eR}\dot{\phi}+I_c\sin\phi=I_B, \qquad \text{式 (1)}$$
+$$ \frac{\hbar C}{2e}\ddot{\phi}+\frac{\hbar}{2eR}\dot{\phi}+I_c\sin\phi=I_B, \qquad \text{式 (1)} $$
 
 其中 $\hbar$ 表示普朗克常数除以 $2\pi$，$e$ 为电子电量，$I_B$ 为恒定驱动电流，$C$、$R$、$I_c$ 分别为结的电容、电阻和临界电流，$\phi(t)$ 为穿过结的相位差。
 
 为强调阻尼的作用，作无量纲化
 
-$$\bar t=\left(\frac{2eI_c}{\hbar C}\right)^{1/2}t,\qquadI=\frac{I_B}{I_c},\qquad\alpha=\left(\frac{\hbar}{2eI_cR^2C}\right)^{1/2}, \qquad \text{式 (2)}$$
+$$ \bar t=\left(\frac{2eI_c}{\hbar C}\right)^{1/2}t,\qquad I=\frac{I_B}{I_c},\qquad \alpha=\left(\frac{\hbar}{2eI_cR^2C}\right)^{1/2}, \qquad \text{式 (2)} $$
 
 则式 (1) 化为
 
-$$\phi''+\alpha\phi'+\sin\phi=I, \qquad \text{式 (3)}$$
+$$ \phi''+\alpha\phi'+\sin\phi=I, \qquad \text{式 (3)} $$
 
 其中导数关于 $\bar t$，$\alpha$ 与 $I$ 分别为无量纲阻尼和外加电流。物理背景要求 $\alpha>0$；不失一般性可取 $I\geqslant 0$（否则重新定义 $\phi\to-\phi$）。
 
 令 $y=\phi'$，系统等价于一阶系统
 
-$$\begin{aligned}\phi'&=y,\\y'&=I-\sin\phi-\alpha y.\end{aligned} \qquad \text{式 (4)}$$
+$$ \begin{aligned} \phi'&=y,\\ y'&=I-\sin\phi-\alpha y. \end{aligned} \qquad \text{式 (4)} $$
 
 由于 $\phi$ 是角变量而 $y$ 是实数（可理解为一个角速度），相空间是一个柱面。
 
@@ -2604,11 +2604,11 @@ $$\begin{aligned}\phi'&=y,\\y'&=I-\sin\phi-\alpha y.\end{aligned} \qquad \text{�
 
 当不动点存在时，其雅可比矩阵为
 
-$$A=\begin{pmatrix}0 & 1\\ -\cos\phi^* & -\alpha\end{pmatrix}.$$
+$$ A=\begin{pmatrix}0 & 1\\ -\cos\phi^* & -\alpha\end{pmatrix}. $$
 
 记 $\tau=-\alpha<0$、$\Delta=\cos\phi^*=\pm\sqrt{1-I^2}$，故两个不动点中一个是鞍点，另一个是汇。对 $\Delta>0$ 的那个不动点，若
 
-$$\tau^2-4\Delta=\alpha^2-4\sqrt{1-I^2}>0,$$
+$$ \tau^2-4\Delta=\alpha^2-4\sqrt{1-I^2}>0, $$
 
 即阻尼足够大或 $I$ 接近于 $1$，则它是稳定结点，否则该汇是稳定焦点。当 $I=1$ 时，稳定结点与鞍点在鞍-结分岔处合并。
 
@@ -2620,7 +2620,7 @@ $$\tau^2-4\Delta=\alpha^2-4\sqrt{1-I^2}>0,$$
 
 论证可在带 $y_1\leqslant y\leqslant y_2$ 中进行，其中 $y_1,y_2$ 为任意常数并满足
 
-$$0<y_1<\frac{I-1}{\alpha},\qquad y_2>\frac{I+1}{\alpha}.$$
+$$ 0<y_1<\frac{I-1}{\alpha},\qquad y_2>\frac{I+1}{\alpha}. $$
 
 在该带内部 $y>0$，故流恒向右；所有轨线最终进入并永远停留在此带中。又因 $\phi=0$ 与 $\phi=2\pi$ 在柱面上等价，可把注意力限制在矩形盒 $0\leqslant\phi\leqslant 2\pi$、$y_1\leqslant y\leqslant y_2$ 内，它包含了流长期行为的全部信息（图 8.5.1、图 8.5.2）。
 
@@ -2640,7 +2640,7 @@ $$0<y_1<\frac{I-1}{\alpha},\qquad y_2>\frac{I+1}{\alpha}.$$
 
 若存在两个不同的旋转，由于轨线不相交，其中一个必严格位于另一个上方：记高、低旋转分别为 $y_U(\phi)$、$y_L(\phi)$，则对一切 $\phi$ 有 $y_U(\phi)>y_L(\phi)$（图 8.5.6）。但任何旋转都必须满足
 
-$$\int_0^{2\pi}y(\phi)\,\mathrm{d}\phi=\frac{2\pi I}{\alpha}, \qquad \text{式 (9)}$$
+$$ \int_0^{2\pi}y(\phi)\,\mathrm{d}\phi=\frac{2\pi I}{\alpha}, \qquad \text{式 (9)} $$
 
 而 $y_U>y_L$ 给出 $\int_0^{2\pi}y_U\,\mathrm{d}\phi>\int_0^{2\pi}y_L\,\mathrm{d}\phi$，两者不可能同时满足式 (9)，矛盾。
 
@@ -2648,19 +2648,19 @@ $$\int_0^{2\pi}y(\phi)\,\mathrm{d}\phi=\frac{2\pi I}{\alpha}, \qquad \text{式 (
 
 对系统 (4) 定义能量
 
-$$E=\frac12y^2-\cos\phi, \qquad \text{式 (5)}$$
+$$ E=\frac12y^2-\cos\phi, \qquad \text{式 (5)} $$
 
 则
 
-$$\frac{\mathrm{d}E}{\mathrm{d}\phi}=y\frac{\mathrm{d}y}{\mathrm{d}\phi}+\sin\phi, \qquad \text{式 (7)}$$
+$$ \frac{\mathrm{d}E}{\mathrm{d}\phi}=y\frac{\mathrm{d}y}{\mathrm{d}\phi}+\sin\phi, \qquad \text{式 (7)} $$
 
 而由式 (4) 得
 
-$$\frac{\mathrm{d}y}{\mathrm{d}\phi}=\frac{y'}{\phi'}=\frac{I-\sin\phi-\alpha y}{y}. \qquad \text{式 (8)}$$
+$$ \frac{\mathrm{d}y}{\mathrm{d}\phi}=\frac{y'}{\phi'}=\frac{I-\sin\phi-\alpha y}{y}. \qquad \text{式 (8)} $$
 
 代入得 $\mathrm{d}E/\mathrm{d}\phi=I-\alpha y$。沿任一旋转 $y(\phi)$ 绕行一周能量改变 $\Delta E$ 必为零，即
 
-$$0=\Delta E=\int_0^{2\pi}\frac{\mathrm{d}E}{\mathrm{d}\phi}\,\mathrm{d}\phi, \qquad \text{式 (6)}$$
+$$ 0=\Delta E=\int_0^{2\pi}\frac{\mathrm{d}E}{\mathrm{d}\phi}\,\mathrm{d}\phi, \qquad \text{式 (6)} $$
 
 于是得到式 (9)：旋转轨道上的平均速度由 $I/\alpha$ 固定。
 
@@ -2680,7 +2680,7 @@ $$0=\Delta E=\int_0^{2\pi}\frac{\mathrm{d}E}{\mathrm{d}\phi}\,\mathrm{d}\phi, \q
 
 图 8.5.10 的陈述都是启发式的。严格证明见 Levi 等 (1978)。此外 Guckenheimer 和 Holmes (1983, 202 页) 在 $\alpha\ll1$ 时用梅利尼科夫 (Melnikov) 方法推导出同宿分岔处的解析近似：当 $\alpha\to0$ 时分岔曲线同直线
 
-$$I=\frac{4\alpha}{\pi}$$
+$$ I=\frac{4\alpha}{\pi} $$
 
 相切；即使 $\alpha$ 不是很小时，这一近似仍然有效。
 
@@ -2986,7 +2986,7 @@ $$b_1=\frac{Kq_1}{\omega^2+K^2}, \qquad \text{式 (13)}$$
 
 洛伦兹方程为
 
-$$\dot{x}=\sigma(y-x),\qquad\dot{y}=rx-y-xz,\qquad\dot{z}=xy-bz,$$
+$$ \dot{x}=\sigma(y-x),\qquad \dot{y}=rx-y-xz,\qquad \dot{z}=xy-bz, $$
 
 即式 (1)。其中参数 $\sigma>0$，$r>0$，$b>0$：$\sigma$ 是普朗特（Prandtl）数，$r$ 是瑞利数，$b$ 没有特定的称呼（在对流问题中它与卷的纵横比相关）。
 
@@ -3006,21 +3006,21 @@ $$\dot{x}=\sigma(y-x),\qquad\dot{y}=rx-y-xz,\qquad\dot{z}=xy-bz,$$
 
 对任意三维系统 $\dot{\boldsymbol{x}}=\boldsymbol{f}(\boldsymbol{x})$，取相空间中体积 $V(t)$ 的任一封闭曲面 $S(t)$，以 $S$ 上的点为轨迹的初始条件，令其在时间 $\mathrm{d}t$ 内演化。用 $\boldsymbol{n}$ 表示 $S$ 上的外法线，则区域 $\mathrm{d}A$ 扫过的体积为 $(\boldsymbol{f}\cdot\boldsymbol{n}\,\mathrm{d}t)\,\mathrm{d}A$，从而
 
-$$\dot{V}=\frac{V(t+\mathrm{d}t)-V(t)}{\mathrm{d}t}=\oint_S(\boldsymbol{f}\cdot\boldsymbol{n})\,\mathrm{d}A .$$
+$$ \dot{V}=\frac{V(t+\mathrm{d}t)-V(t)}{\mathrm{d}t}=\oint_S(\boldsymbol{f}\cdot\boldsymbol{n})\,\mathrm{d}A . $$
 
 用散度定理改写，得到
 
-$$\dot{V}=\int_V \nabla\cdot\boldsymbol{f}\;\mathrm{d}V .$$
+$$ \dot{V}=\int_V \nabla\cdot\boldsymbol{f}\;\mathrm{d}V . $$
 
 **命题 (洛伦兹系统的体积收缩)** @327
 
 对洛伦兹系统，
 
-$$\nabla\cdot\boldsymbol{f}=\frac{\partial}{\partial x}\bigl[\sigma(y-x)\bigr]+\frac{\partial}{\partial y}\bigl[rx-y-xz\bigr]+\frac{\partial}{\partial z}\bigl[xy-bz\bigr]=-\sigma-1-b<0 .$$
+$$ \nabla\cdot\boldsymbol{f} =\frac{\partial}{\partial x}\bigl[\sigma(y-x)\bigr] +\frac{\partial}{\partial y}\bigl[rx-y-xz\bigr] +\frac{\partial}{\partial z}\bigl[xy-bz\bigr] =-\sigma-1-b<0 . $$
 
 由于散度是常数，体积演化方程简化为 $\dot{V}=-(\sigma+1+b)V$，其解为
 
-$$V(t)=V(0)\,\mathrm{e}^{-(\sigma+1+b)t},$$
+$$ V(t)=V(0)\,\mathrm{e}^{-(\sigma+1+b)t}, $$
 
 即相空间中的体积按指数速度快速缩小。从任意巨大实心区域的初始条件出发，其最终缩小为体积为零的极限集；该极限集由对应于某些参数值的不动点、极限环或奇怪吸引子组成。
 
@@ -3042,7 +3042,7 @@ $$V(t)=V(0)\,\mathrm{e}^{-(\sigma+1+b)t},$$
 
 对所有的参数值，原点 $(x^*,y^*,z^*)=(0,0,0)$ 是一个不动点，如同水车的静止状态。当 $r>1$ 时，还存在一对对称不动点
 
-$$x^*=y^*=\pm\sqrt{b(r-1)},\qquad z^*=r-1,$$
+$$ x^*=y^*=\pm\sqrt{b(r-1)},\qquad z^*=r-1, $$
 
 记为 $C^+$ 和 $C^-$，分别代表向左、右转动的对流卷。当 $r\to 1^+$ 时，$C^+$ 和 $C^-$ 在叉式分岔中与原点合并。
 
@@ -3052,11 +3052,11 @@ $$x^*=y^*=\pm\sqrt{b(r-1)},\qquad z^*=r-1,$$
 
 省略式 (1) 中的非线性项 $xy$ 和 $xz$，得到原点处的线性化方程 $\dot{x}=\sigma(y-x)$，$\dot{y}=rx-y$，$\dot{z}=-bz$。$z$ 方向的方程被解耦且 $z(t)$ 指数趋于 $0$，其余两个方向由系统
 
-$$\begin{pmatrix}\dot{x}\\ \dot{y}\end{pmatrix}=\begin{pmatrix}-\sigma & \sigma\\ r & -1\end{pmatrix}\begin{pmatrix}x\\ y\end{pmatrix}$$
+$$ \begin{pmatrix}\dot{x}\\ \dot{y}\end{pmatrix} =\begin{pmatrix}-\sigma & \sigma\\ r & -1\end{pmatrix} \begin{pmatrix}x\\ y\end{pmatrix} $$
 
 控制。系统矩阵的迹为 $\tau=-\sigma-1<0$，行列式为 $\Delta=\sigma(1-r)$。当 $r>1$ 时 $\Delta<0$，原点是鞍点：这是一个新型的鞍点，因为整个系统是三维的（包括省略的 $z$ 方向），鞍点有一个出方向、两个入方向。当 $r<1$ 时所有方向都是入方向，原点是汇；具体地，此时
 
-$$\tau^2-4\Delta=(\sigma+1)^2-4\sigma(1-r)=(\sigma-1)^2+4\sigma r>0,$$
+$$ \tau^2-4\Delta=(\sigma+1)^2-4\sigma(1-r)=(\sigma-1)^2+4\sigma r>0, $$
 
 故原点是稳定结点。
 
@@ -3070,15 +3070,15 @@ $$\tau^2-4\Delta=(\sigma+1)^2-4\sigma(1-r)=(\sigma-1)^2+4\sigma r>0,$$
 
 取
 
-$$V(x,y,z)=\frac{1}{\sigma}x^2+y^2+z^2 ,$$
+$$ V(x,y,z)=\frac{1}{\sigma}x^2+y^2+z^2 , $$
 
 则 $V$ 为常数时对应的曲面是以原点为中心的同心椭球（图 9.2.3）。沿轨迹计算得
 
-$$\frac{1}{2}\dot{V}=(r+1)xy-x^2-y^2-bz^2,$$
+$$ \frac{1}{2}\dot{V} =(r+1)xy-x^2-y^2-bz^2, $$
 
 利用配方法得到
 
-$$\frac{1}{2}\dot{V}=-\Bigl[x-\frac{r+1}{2}y\Bigr]^2-\Bigl[1-\Bigl(\frac{r+1}{2}\Bigr)^2\Bigr]y^2-bz^2 .$$
+$$ \frac{1}{2}\dot{V} =-\Bigl[x-\frac{r+1}{2}y\Bigr]^2 -\Bigl[1-\Bigl(\frac{r+1}{2}\Bigr)^2\Bigr]y^2-bz^2 . $$
 
 若 $r<1$ 且 $(x,y,z)\neq(0,0,0)$，则 $\dot{V}<0$：等式右边各项为零要求 $y=0$、$z=0$，第一项随即化为 $-x^2$，只有 $x=0$ 时才为零。于是 $\dot{V}=0$ 仅当 $(x,y,z)=(0,0,0)$，否则 $\dot{V}<0$。因此 $V$ 沿轨迹单调下降且有下界 $0$，故 $V(x(t))\to 0$，从而 $x(t)\to 0$。
 
@@ -3088,7 +3088,7 @@ $$\frac{1}{2}\dot{V}=-\Bigl[x-\frac{r+1}{2}y\Bigr]^2-\Bigl[1-\Bigl(\frac{r+1}{2}
 
 设 $r>1$，使 $C^+$ 和 $C^-$ 存在。若 $\sigma-b-1>0$，则 $C^+$ 与 $C^-$ 是线性稳定的，且这一结论在
 
-$$1<r<r_H=\frac{\sigma(\sigma+b+3)}{\sigma-b-1}$$
+$$ 1<r<r_H=\frac{\sigma(\sigma+b+3)}{\sigma-b-1} $$
 
 时成立。$C^+$ 和 $C^-$ 在 $r=r_H$ 时失去稳定性，并产生霍普夫分岔（下标 $H$ 即由此而来）。
 
@@ -3102,7 +3102,7 @@ $r$ 略大于 $r_H$ 时的霍普夫分岔是亚临界的：$C^+$ 和 $C^-$ 被�
 
 洛伦兹采用数值积分研究轨迹的长期动力学，取特例 $\sigma=10$，$b=\frac{8}{3}$，$r=28$。这个 $r$ 值刚刚超过霍普夫分岔值
 
-$$r_H=\frac{\sigma(\sigma+b+3)}{\sigma-b-1}\approx 24.74,$$
+$$ r_H=\frac{\sigma(\sigma+b+3)}{\sigma-b-1}\approx 24.74, $$
 
 因此他知道必然发生一些奇异的事情。数值积分从初始条件 $(0,1,0)$ 出发，该初始条件接近原点的鞍点，图 9.3.1 画出了相应的 $y(t)$。
 
@@ -3124,7 +3124,7 @@ $$r_H=\frac{\sigma(\sigma+b+3)}{\sigma-b-1}\approx 24.74,$$
 
 吸引子上的运动呈现出对初始条件的敏感依赖：从相邻起点出发的两条轨迹会迅速分离，此后有完全不同的走向，相近的轨道可以在吸引子的任何一个地方结束。设 $x(t)$ 是 $t$ 时刻吸引子上的一个点，考虑一个邻近点 $x(t)+\delta(t)$，其中 $\delta$ 是初始长度为 $\|\delta_0\|=10^{-15}$ 的一个微小的分离向量（图 9.3.4）。在洛伦兹吸引子的数值研究中发现
 
-$$\|\delta(t)\|\sim\|\delta_0\|e^{\lambda t},$$
+$$ \|\delta(t)\|\sim\|\delta_0\|e^{\lambda t}, $$
 
 其中 $\lambda\approx 0.9$。因此相邻轨迹呈指数快速分离；画出 $\ln\|\delta(t)\|$ 关于 $t$ 的关系图，曲线近似为斜率是正数 $\lambda$ 的直线（图 9.3.5）。
 
@@ -3136,7 +3136,7 @@ $$\|\delta(t)\|\sim\|\delta_0\|e^{\lambda t},$$
 
 当系统有一个正的李雅普诺夫指数时，存在一个时间范围，超出该范围时预测会失效（图 9.3.6）。设 $a$ 是一个容许的误差限，即预测值与真实状态的误差在 $a$ 之内就认为预测可以接受。由于时间 $t$ 后误差增长为 $\|\delta(t)\|\sim\|\delta_0\|e^{\lambda t}$，若 $\|\delta(t)\|\geqslant a$ 则预测不可接受，这种情况出现在
 
-$$t_{\text{horizon}}\sim O\left(\frac{1}{\lambda}\ln\frac{a}{\|\delta_0\|}\right)$$
+$$ t_{\text{horizon}}\sim O\left(\frac{1}{\lambda}\ln\frac{a}{\|\delta_0\|}\right) $$
 
 之后。这一估计对 $\|\delta_0\|$ 只有对数依赖：无论怎么减小初始测量的误差，都不能预测到 $1/\lambda$ 的几倍之后的时间。
 
@@ -3306,11 +3306,11 @@ $$\eta_{n+p}\approx\bigl[f'(z_{n+p-1})f'(z_{n+p-2})\cdots f'(z_n)\bigr]\eta_n,$$
 
 除关键处用驱动信号 $u(t)$ 代替接收器信号外，接收器电路与发射器相同（图 9.6.5）。由 Kirchhoff 定律并作适当的无量纲化，发射器满足式 (1)：
 
-$$\dot u=\sigma(v-u),\qquad\dot v=ru-v-20uw,\qquad\dot w=5uv-bw,$$
+$$ \dot u=\sigma(v-u),\qquad \dot v=ru-v-20uw,\qquad \dot w=5uv-bw, $$
 
 这恰是经变量调整
 
-$$u=\frac{1}{10}x,\qquad v=\frac{1}{10}y,\qquad w=\frac{1}{20}z$$
+$$ u=\frac{1}{10}x,\qquad v=\frac{1}{10}y,\qquad w=\frac{1}{20}z $$
 
 后的洛伦兹方程组。若一个单位对应 $1\,\mathrm{V}$，这种变换在数学上无关紧要，但可使变量保持在电子装置的适宜范围内，否则解的动力学范围会超出通常电力供应的极限。
 
@@ -3318,7 +3318,7 @@ $$u=\frac{1}{10}x,\qquad v=\frac{1}{10}y,\qquad w=\frac{1}{20}z$$
 
 接收器的变量按式 (2) 演化：
 
-$$\dot u_r=\sigma(v_r-u_r),\qquad\dot v_r=ru(t)-v_r-20u(t)w_r,\qquad\dot w_r=5u(t)v_r-bw_r$$
+$$ \dot u_r=\sigma(v_r-u_r),\qquad \dot v_r=ru(t)-v_r-20u(t)w_r,\qquad \dot w_r=5u(t)v_r-bw_r $$
 
 其中显式写出 $u(t)$ 是为了强调接收器被来自发射器的混沌信号 $u(t)$ 所驱动。
 
@@ -3336,7 +3336,7 @@ $$\dot u_r=\sigma(v_r-u_r),\qquad\dot v_r=ru(t)-v_r-20u(t)w_r,\qquad\dot w_r=5u(
 
 将式 (1) 减去式 (2)，得误差 $\mathbf e=(e_1,e_2,e_3)$ 所满足的线性系统
 
-$$\dot e_1=\sigma(e_2-e_1),\qquad\dot e_2=-e_2-20u(t)e_3,\qquad\dot e_3=5u(t)e_2-be_3,$$
+$$ \dot e_1=\sigma(e_2-e_1),\qquad \dot e_2=-e_2-20u(t)e_3,\qquad \dot e_3=5u(t)e_2-be_3, $$
 
 它含有两项依赖时间的混沌系数 $u(t)$。
 
@@ -3344,11 +3344,11 @@ $$\dot e_1=\sigma(e_2-e_1),\qquad\dot e_2=-e_2-20u(t)e_3,\qquad\dot e_3=5u(t)e_2
 
 设 $\sigma>0$，定义
 
-$$E(\mathbf e,t)=\frac12\left(\frac{1}{\sigma}e_1^2+e_2^2+4e_3^2\right),$$
+$$ E(\mathbf e,t)=\frac12\left(\frac{1}{\sigma}e_1^2+e_2^2+4e_3^2\right), $$
 
 则 $E$ 正定，且沿误差系统的轨线
 
-$$\dot E=-\left(e_1-\frac12 e_2\right)^2-\frac34 e_2^2-4be_3^2\leqslant 0 .$$
+$$ \dot E=-\left(e_1-\frac12 e_2\right)^2-\frac34 e_2^2-4be_3^2\leqslant 0 . $$
 
 特别地，第二个方程乘以 $e_2$ 加上第三个方程乘以 $4e_3$ 时，含 $u(t)$ 的项相消，这是消除混沌、构造上述李雅普诺夫函数的关键。
 
@@ -4146,7 +4146,7 @@ $$(A\ \text{中的最小间隔})\ \ll \varepsilon \ll\ (A\ \text{的直径}).$$
 
 面包师（baker）映射 $B$，把正方形（$0\leqslant x\leqslant 1$，$0\leqslant y\leqslant 1$）映到其自身，由下式给出：
 
-$$(x_{n+1},y_{n+1})=\begin{cases}(2x_n,\,ay_n), & 0\leqslant x_n\leqslant \dfrac12,\\[4pt]\left(2x_n-1,\,ay_n+\dfrac12\right), & \dfrac12\leqslant x_n\leqslant 1,\end{cases}$$
+$$ (x_{n+1},y_{n+1})= \begin{cases} (2x_n,\,ay_n), & 0\leqslant x_n\leqslant \dfrac12,\\[4pt] \left(2x_n-1,\,ay_n+\dfrac12\right), & \dfrac12\leqslant x_n\leqslant 1, \end{cases} $$
 
 式中参数 $a$ 的范围为 $0<a\leqslant \dfrac12$。
 
@@ -4162,7 +4162,7 @@ $B$ 可看成两个更简单变换的复合：先把正方形压扁、拉伸成 
 
 令 $S$ 表示正方形 $0\leqslant x\leqslant 1$，$0\leqslant y\leqslant 1$，它包含所有可能的初始条件。$B^n(S)$ 由 $2^n$ 个高度为 $a^n$ 的条带组成，且这些连续像彼此嵌套，即对所有的 $n$ 有 $B^{n+1}(S)\subset B^n(S)$，每个 $B^n(S)$ 都是紧致集。由紧致集中相互嵌套的可数交集的定理（Munkres 1975），其交是非空紧致集，记为
 
-$$A=B^\infty(S),$$
+$$ A=B^\infty(S), $$
 
 并且对所有的 $n$ 有 $A\subset B^n(S)$。在拓扑结构上，$A$ 是由线段组成的康托尔集。
 
@@ -4178,7 +4178,7 @@ $$A=B^\infty(S),$$
 
 吸引子 $A$ 与 $B^n(S)$ 近似，它包含 $2^n$ 个高为 $a^n$、长为 $1$ 的长条。用边长为 $\varepsilon=a^n$ 的正方形盒子覆盖 $A$：长条长度为 $1$，故大约需要 $a^{-n}$ 个盒子才能完全覆盖一条长条，总共有 $2^n$ 个长条，因此 $N\approx a^{-n}\times 2^n=(a/2)^{-n}$，从而
 
-$$d=\lim_{\varepsilon\to 0}\frac{\ln N}{\ln\left(\dfrac1\varepsilon\right)}=\lim_{n\to 0}\frac{\ln\left[(a/2)^{-n}\right]}{\ln\left(a^{-n}\right)}=1+\frac{\ln\dfrac12}{\ln a}.$$
+$$ d=\lim_{\varepsilon\to 0}\frac{\ln N}{\ln\left(\dfrac1\varepsilon\right)} =\lim_{n\to 0}\frac{\ln\left[(a/2)^{-n}\right]}{\ln\left(a^{-n}\right)} =1+\frac{\ln\dfrac12}{\ln a}. $$
 
 （原书第二个极限的下标印作 $n\to 0$，按上下文应为 $n\to\infty$。）当 $a\to\dfrac12$ 时 $d\to 2$，这与吸引子填充了正方形 $S$ 的绝大部分相符。
 
@@ -4188,7 +4188,7 @@ $$d=\lim_{\varepsilon\to 0}\frac{\ln N}{\ln\left(\dfrac1\varepsilon\right)}=\lim
 
 当 $a<\dfrac12$ 时，面包师映射在相空间中使面积缩小：对正方形中任意给定的区域 $R$，
 
-$$\text{面积}\bigl(B(R)\bigr)<\text{面积}(R).$$
+$$ \text{面积}\bigl(B(R)\bigr)<\text{面积}(R). $$
 
 具体地，$B$ 把 $R$ 的拉伸系数取为 $2$、压缩因子为 $a$，（切割不改变区域面积，）故 $\text{面积}\bigl(B(R)\bigr)=2a\times\text{面积}(R)$；由假设 $a<\dfrac12$ 即得上述不等式。这一收缩与 9.2 节洛伦兹方程中体积的收缩类似。
 
@@ -4276,7 +4276,7 @@ $b$ 的值不能太接近 $0$，否则区域会过度收缩，看不清吸引子
 
 依照糕点映射和面包师映射的烹饪想法，奥托·若斯勒（Otto Rössler, 1976）在类似太妃糖的拉伸器上得到灵感，构造了一个比洛伦兹系统更简单的、具有奇怪吸引子的三维微分方程组。若斯勒系统只有一个二次非线性项 $xz$：
 
-$$\dot{x}=-y-z,\qquad \dot{y}=x+ay,\qquad \dot{z}=b+z(x-c)$$
+$$ \dot{x}=-y-z,\qquad \dot{y}=x+ay,\qquad \dot{z}=b+z(x-c) $$
 
 **注 (混沌的参数取值)** @451
 

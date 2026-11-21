@@ -365,8 +365,22 @@
     });
   }
 
+  const BOOK_BG = {
+    shufen: "blackboard", shufen1: "blackboard",
+    gaodai: "manuscript", choudai: "manuscript",
+    tuopu: "geometry", weifenjihe: "geometry",
+    fanhan: "library", shibian: "library", fubian: "library",
+    gailv: "blackboard", changwei: "blackboard", NumericalDE: "blackboard",
+    kongzhi: "blackboard", shuwuli: "blackboard", youhua: "blackboard", feixianxing: "blackboard",
+  };
+
+  function setBookBackground(meta) {
+    document.body.dataset.bg = meta ? (BOOK_BG[meta.id] || "library") : "library";
+  }
+
   function setBook(meta) {
     currentMeta = meta;
+    setBookBackground(meta);
     document.querySelectorAll(".book-btn").forEach((x) => x.classList.toggle("active", x.dataset.book === meta.id));
     buildToc(meta);
   }
@@ -699,6 +713,7 @@
   }
 
   function renderBookHome(meta, chapterNo = "") {
+    setBookBackground(meta);
     setExerciseView(false);
     setTopbarCopy(null);
     document.body.classList.remove("home-mode", "card-mode");
@@ -865,6 +880,7 @@
 
   async function renderSearch(q) {
     const token = ++loadToken;
+    setBookBackground(null);
     lastSearch = q;
     const h = `#/search/${encodeURIComponent(q)}`;
     if (location.hash !== h) {
@@ -916,6 +932,7 @@
 
   function renderHome() {
     ++loadToken;
+    setBookBackground(null);
     lastSearch = "";
     searchState = null;
     updateDataLink();

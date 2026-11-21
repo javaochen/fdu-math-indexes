@@ -1392,7 +1392,7 @@ $$m^*(E\cap I)\geqslant\alpha m^*(I),$$
 
 **推论 2.3.9 (测度的正则性)** @55
 
-对直线上的 Lebesgue 可测集 $E$，$$\begin{aligned}m(E)&=\inf\{m(U):\ E\subset U,\ U \text{ 是直线中的开集}\} &&(\text{外正则性})\\&=\sup\{m(K):\ E\supset K,\ K \text{ 是直线中的紧集}\} &&(\text{内正则性}).\end{aligned}$$
+对直线上的 Lebesgue 可测集 $E$，$$\begin{aligned} m(E)&=\inf\{m(U):\ E\subset U,\ U \text{ 是直线中的开集}\} &&(\text{外正则性})\\ &=\sup\{m(K):\ E\supset K,\ K \text{ 是直线中的紧集}\} &&(\text{内正则性}). \end{aligned}$$
 
 **定理 2.3.10 (可测集的区间逼近)** @56
 
@@ -2246,7 +2246,7 @@ $$\lim_{n\to\infty} m^*(E(|f_n-f|)\geqslant\varepsilon)=0.$$
 
 **定义 4.1.10 (Lebesgue 上和与下和)** @91
 
-设 $E$ 是 Euclid 空间 $\mathbb{R}^n$ 中的 Lebesgue 可测集，$m(E)<+\infty$，$f$ 是 $E$ 上的有界函数。如下定义 Lebesgue 上和与 Lebesgue 下和：$$\begin{aligned}L^L(f)&=\sup\left\{\int_E\varphi:\ \varphi\ \text{是简单函数},\ \varphi\leqslant f\right\},\\U^L(f)&=\inf\left\{\int_E\varphi:\ \varphi\ \text{是简单函数},\ \varphi\geqslant f\right\}.\end{aligned}\tag{4.4}$$由推论 4.1.8 中的单调性，易得 Lebesgue 上和与 Lebesgue 下和是有限的，且 $U^L(f)\geqslant L^L(f)$。当它们相等时，即 $U^L(f)=L^L(f)$ 时，我们称 $f$ 是 Lebesgue 可积的，并将这个值称为 $f$ 的 Lebesgue 积分，记作 $(L)\int_E f(x)\,dm(x)$ 或 $\int_E f(x)\,dm(x)$。
+设 $E$ 是 Euclid 空间 $\mathbb{R}^n$ 中的 Lebesgue 可测集，$m(E)<+\infty$，$f$ 是 $E$ 上的有界函数。如下定义 Lebesgue 上和与 Lebesgue 下和：$$\begin{aligned} L^L(f)&=\sup\left\{\int_E\varphi:\ \varphi\ \text{是简单函数},\ \varphi\leqslant f\right\},\\ U^L(f)&=\inf\left\{\int_E\varphi:\ \varphi\ \text{是简单函数},\ \varphi\geqslant f\right\}. \end{aligned}\tag{4.4}$$由推论 4.1.8 中的单调性，易得 Lebesgue 上和与 Lebesgue 下和是有限的，且 $U^L(f)\geqslant L^L(f)$。当它们相等时，即 $U^L(f)=L^L(f)$ 时，我们称 $f$ 是 Lebesgue 可积的，并将这个值称为 $f$ 的 Lebesgue 积分，记作 $(L)\int_E f(x)\,dm(x)$ 或 $\int_E f(x)\,dm(x)$。
 
 **例 4.1.11 (简单函数的上下和)** @92
 
@@ -2420,7 +2420,7 @@ Chebyshev 不等式是通过 $f$ 积分判定 $f$ 函数值性质的主要方法
 
 在直线上的 Lebesgue 测度空间 $(\mathbb{R},\mathcal{L},m)$ 上，若函数 $f$ 是 Lebesgue 可积的，那么它的绝对值函数 $|f|$ 也是 Lebesgue 可积的。这个结论在广义 Riemann 积分中是不成立的。
 
-对 $[1,\infty)$ 上的函数 $f(x)=\frac{\sin x}{x}$，由数学分析的知识它是广义 Riemann 可积，但不是广义 Riemann 绝对可积的。由此可知$$\begin{aligned}(L)\int_{[1,\infty)}f^+\,dm(x)&=\lim_{n\to\infty}(R)\int_1^n f^+\,dm(x)\\&=\lim_{n\to\infty}(R)\int_1^n\frac{\left|\frac{\sin x}{x}\right|+\frac{\sin x}{x}}{2}=\infty.\end{aligned}$$
+对 $[1,\infty)$ 上的函数 $f(x)=\frac{\sin x}{x}$，由数学分析的知识它是广义 Riemann 可积，但不是广义 Riemann 绝对可积的。由此可知$$\begin{aligned} (L)\int_{[1,\infty)}f^+\,dm(x)&=\lim_{n\to\infty}(R)\int_1^n f^+\,dm(x)\\ &=\lim_{n\to\infty}(R)\int_1^n\frac{\left|\frac{\sin x}{x}\right|+\frac{\sin x}{x}}{2}=\infty. \end{aligned}$$
 
 类似的，$f^-$ 的积分也是 $\infty$，故 $\int_{[1,\infty)}f\,dm$ 不存在。此时，可仿照 Riemann 积分的处理，研究 $\lim\limits_{M\to\infty}(L)\int_{[1,M]}f\,dm$ 的性质。
 
@@ -2466,7 +2466,7 @@ Chebyshev 不等式是通过 $f$ 积分判定 $f$ 函数值性质的主要方法
 
 **例 4.2.17 (一个 Lebesgue 可积函数)** @100
 
-考察 $(0,\infty)$ 上的函数$$f(x)=\begin{cases}\dfrac{1}{x^2}, & \text{若 }x\geqslant 1;\\[4pt]\dfrac{1}{\sqrt{x}}, & \text{若 }x<1.\end{cases} \tag{4.10}$$则函数 $f$ 是 $(0,\infty)$ 上的 Lebesgue 可积函数。
+考察 $(0,\infty)$ 上的函数$$f(x)=\begin{cases} \dfrac{1}{x^2}, & \text{若 }x\geqslant 1;\\[4pt] \dfrac{1}{\sqrt{x}}, & \text{若 }x<1. \end{cases} \tag{4.10}$$则函数 $f$ 是 $(0,\infty)$ 上的 Lebesgue 可积函数。
 
 #### 习题（p100–101）
 

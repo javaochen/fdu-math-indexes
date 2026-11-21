@@ -20,7 +20,7 @@
 
 从 $n$ 个对象中选 $r$ 个排成队列，不同排列的方法数为
 
-$$(n)_r = n(n-1)\cdots(n-r+1),$$
+$$ (n)_r = n(n-1)\cdots(n-r+1), $$
 
 称为 $n$ 个对象中选 $r$ 个的**排列数**；当 $r=n$ 时即为 $n!$。
 
@@ -28,7 +28,7 @@ $$(n)_r = n(n-1)\cdots(n-r+1),$$
 
 将 $n$ 个对象取 $r$ 个的排列分为两步：先取出 $r$ 个对象，再将它们排顺序。第一步的不同选择数称为 $n$ 个对象中取 $r$ 个的**组合数**，记为 $\binom{n}{r}$ 或 $C_n^r$，它不计顺序；第二步有 $r!$ 种排列。由乘法原理
 
-$$(n)_r=\binom{n}{r}\cdot r!,\qquad\text{因此}\qquad\binom{n}{r}=\frac{(n)_r}{r!}=\frac{n!}{r!\,(n-r)!}.$$
+$$ (n)_r=\binom{n}{r}\cdot r!, \qquad\text{因此}\qquad \binom{n}{r}=\frac{(n)_r}{r!}=\frac{n!}{r!\,(n-r)!}. $$
 
 组合数也可理解为把 $n$ 个不同元素分成含 $r$ 个与 $n-r$ 个的两个组的分组数：排列与组合的差别就在于是否考虑顺序。
 
@@ -44,21 +44,21 @@ $$(n)_r=\binom{n}{r}\cdot r!,\qquad\text{因此}\qquad\binom{n}{r}=\frac{(n)_r}{
 
 组合数对应于二项式展开
 
-$$(x+y)^n=\sum_{k=0}^{n}\binom{n}{k}x^ky^{n-k},$$
+$$ (x+y)^n=\sum_{k=0}^{n}\binom{n}{k}x^ky^{n-k}, $$
 
 即左边展开后的和式中，含 $k$ 个 $x$ 与 $n-k$ 个 $y$ 的项共有 $\binom{n}{k}$ 个。
 
 一般地，把 $n$ 个人分为 $r$ 组、各组分别有 $n_1,n_2,\cdots,n_r$ 个人的分法数为
 
-$$\binom{n}{n_1}\binom{n-n_1}{n_2}\cdots\binom{n-n_1-\cdots-n_{r-1}}{n_r}=\frac{n!}{n_1!\,n_2!\cdots n_r!}.$$
+$$ \binom{n}{n_1}\binom{n-n_1}{n_2}\cdots\binom{n-n_1-\cdots-n_{r-1}}{n_r} =\frac{n!}{n_1!\,n_2!\cdots n_r!}. $$
 
 右边记为
 
-$$\binom{n}{n_1\,n_2\,\cdots\,n_r}:=\frac{n!}{n_1!\,n_2!\cdots n_r!},$$
+$$ \binom{n}{n_1\,n_2\,\cdots\,n_r}:=\frac{n!}{n_1!\,n_2!\cdots n_r!}, $$
 
 称为**多项组合数**。同样有多项式展开公式
 
-$$(x_1+\cdots+x_r)^n=\sum_{n_1+\cdots+n_r=n,\ n_i\ge 0}\binom{n}{n_1\,n_2\,\cdots\,n_r}x_1^{n_1}\cdots x_r^{n_r},$$
+$$ (x_1+\cdots+x_r)^n=\sum_{n_1+\cdots+n_r=n,\ n_i\ge 0}\binom{n}{n_1\,n_2\,\cdots\,n_r}x_1^{n_1}\cdots x_r^{n_r}, $$
 
 且特别地 $\binom{n}{k}=\binom{n}{k\ \ n-k}$。
 
@@ -98,7 +98,7 @@ $$(x_1+\cdots+x_r)^n=\sum_{n_1+\cdots+n_r=n,\ n_i\ge 0}\binom{n}{n_1\,n_2\,\cdot
 
 设随机试验的样本空间 $\Omega$ 是有限的，且设每个样本出现的机会是相同的。那么对事件 $A\subset\Omega$，定义 $A$ 的概率 $\mathbb{P}(A)$ 如下：
 
-$$\mathbb{P}(A)=\frac{|A|}{|\Omega|}.$$
+$$ \mathbb{P}(A)=\frac{|A|}{|\Omega|}. $$
 
 这个概率称为 $\Omega$ 上的**古典概率**。
 
@@ -126,13 +126,13 @@ $$\mathbb{P}(A)=\frac{|A|}{|\Omega|}.$$
 
 设 $A_1,\cdots,A_n\in\mathscr{F}$，那么
 
-$$\begin{aligned}\mathbb{P}\Big(\bigcup_{1\le i\le n}A_i\Big)&=\sum_{1\le i\le n}\mathbb{P}(A_i)-\sum_{1\le i<j\le n}\mathbb{P}(A_i\cap A_j)+\cdots+(-1)^{n-1}\mathbb{P}\Big(\bigcap_{1\le i\le n}A_i\Big)\\&=\sum_{k\ge 1}(-1)^{k-1}\sum_{1\le i_1<\cdots<i_k\le n}\mathbb{P}(A_{i_1}\cap\cdots\cap A_{i_k}).\end{aligned}$$
+$$ \begin{aligned} \mathbb{P}\Big(\bigcup_{1\le i\le n}A_i\Big) &=\sum_{1\le i\le n}\mathbb{P}(A_i)-\sum_{1\le i<j\le n}\mathbb{P}(A_i\cap A_j)+\cdots+(-1)^{n-1}\mathbb{P}\Big(\bigcap_{1\le i\le n}A_i\Big)\\ &=\sum_{k\ge 1}(-1)^{k-1}\sum_{1\le i_1<\cdots<i_k\le n}\mathbb{P}(A_{i_1}\cap\cdots\cap A_{i_k}). \end{aligned} $$
 
 **定理 1.3.2 (独立事件乘法公式)** @12
 
 如果 $A,B$ 分别是两个独立随机试验中的事件，那么
 
-$$\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B).$$
+$$ \mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B). $$
 
 这样的两个事件称为**独立的**。
 
@@ -156,15 +156,15 @@ $$\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B).$$
 
 考虑平面上的整数格点。从格点 $(m,a)$ 到 $(n,b)$ 的一个**格点轨道**是指格点集合
 
-$$z=\{(k,z(k)):m\le k\le n\},$$
+$$ z=\{(k,z(k)):m\le k\le n\}, $$
 
 满足 $z(m)=a$，$z(n)=b$，且对 $m\le k<n$ 有 $z(k+1)-z(k)=\pm 1$。设其中等于 $1$ 的（向上的）$k$ 有 $p$ 个、等于 $-1$ 的（向下的）$k$ 有 $q$ 个，那么
 
-$$p+q=n-m,\qquad p-q=b-a,$$
+$$ p+q=n-m,\qquad p-q=b-a, $$
 
 因此从 $(m,a)$ 到 $(n,b)$ 的格点轨道总数为
 
-$$N_{(m,a)\to(n,b)}=\binom{p+q}{p}=\binom{n-m}{(n-m+b-a)/2}.$$
+$$ N_{(m,a)\to(n,b)}=\binom{p+q}{p}=\binom{n-m}{(n-m+b-a)/2}. $$
 
 **引理 1.3.1 (反射原理)** @15
 
@@ -178,11 +178,11 @@ $$N_{(m,a)\to(n,b)}=\binom{p+q}{p}=\binom{n-m}{(n-m+b-a)/2}.$$
 
 $r$ 个粒子随机占据空间中的 $n$ 个位置。若认为每个粒子等可能地占据一个位置，即样本空间为
 
-$$\Omega=\{(n_1,\cdots,n_r):1\le n_i\le n,\ 1\le i\le r\}$$
+$$ \Omega=\{(n_1,\cdots,n_r):1\le n_i\le n,\ 1\le i\le r\} $$
 
 （其中 $n_i$ 表示第 $i$ 个粒子在第 $n_i$ 个位置上），求各位置上粒子数分别为 $r_1,\cdots,r_n$ 的概率。若不计粒子的区别、只考虑位置及其中粒子个数的区别，并以
 
-$$\Omega'=\Big\{(r_1,r_2,\cdots,r_n):r_1\ge 0,\cdots,r_n\ge 0,\ \sum_{i=1}^n r_i=r\Big\}$$
+$$ \Omega'=\Big\{(r_1,r_2,\cdots,r_n):r_1\ge 0,\cdots,r_n\ge 0,\ \sum_{i=1}^n r_i=r\Big\} $$
 
 为等可能样本空间，该概率又是多少？在这两种假设下，每个位置至多有一个粒子的概率分别是多少？
 
@@ -212,7 +212,7 @@ $n$ 个人随机地取自己存放的帽子，求恰有 $k$ 个人拿到自己�
 
 (3') **可列可加性**：如果 $A_1,A_2,\cdots$ 是一个互相排斥的事件序列，那么其中至少有一个事件发生的概率为
 
-$$\mathbb{P}(A_1\cup A_2\cup\cdots)=\mathbb{P}(A_1)+\mathbb{P}(A_2)+\cdots.$$
+$$ \mathbb{P}(A_1\cup A_2\cup\cdots)=\mathbb{P}(A_1)+\mathbb{P}(A_2)+\cdots. $$
 
 **例 1.3.15 (三人下棋胜率)** @20
 
@@ -1566,7 +1566,7 @@ $$\lim_{x\uparrow+\infty}x^\alpha\mathbb E(|\xi|^\beta;|\xi|>x)=0.$$
 
 $\sigma(\mathscr{A})$ 也称为是由 $\mathscr{A}$ 生成的 $\sigma$-域。这样做的好处是我们知道包含所需子集合的 $\sigma$-域总是存在的，而不必确切地知道它究竟含有哪些集合。实际上，在有些情况下是可以写出所有集合的。例 2.2.1 说明，如果 $\{\Omega_n:n\geqslant1\}$ 是 $\Omega$ 的划分，那么
 
-$$\sigma\big(\{\Omega_n:n\geqslant1\}\big)=\Big\{\bigcup_{i\in I}\Omega_i:\ I\subset\mathbb{N}\Big\}.$$
+$$ \sigma\big(\{\Omega_n:n\geqslant1\}\big)=\Big\{\bigcup_{i\in I}\Omega_i:\ I\subset\mathbb{N}\Big\}. $$
 
 但更多情况下是不可能的。
 
@@ -1578,15 +1578,15 @@ $$\sigma\big(\{\Omega_n:n\geqslant1\}\big)=\Big\{\bigcup_{i\in I}\Omega_i:\ I\su
 
 $\mathscr{B}$ 包含了通常我们知道的集合，开集与闭集，单点集，半开半闭区间等。开集在 $\mathscr{B}$ 中是因为它是开区间的可列并，闭集是开集的余集，单点集是开区间的可列交：
 
-$$\{a\}=\bigcap_{n=1}^{\infty}\Big(a-\frac{1}{n},\,a+\frac{1}{n}\Big),$$
+$$ \{a\}=\bigcap_{n=1}^{\infty}\Big(a-\frac{1}{n},\,a+\frac{1}{n}\Big), $$
 
 而半开半闭区间是开区间与单点集的并。反过来，不难验证 Borel 域可以由下面这样更简单的集类产生：
 
-$$\begin{aligned}\mathscr{B}&=\sigma\big(\{(-\infty,x]:x\in\mathbb{R}\}\big)\\&=\sigma\big(\{(-\infty,x):x\in\mathbb{R}\}\big)\\&=\sigma\big(\{(-\infty,x]:x\in\mathbb{Q}\}\big).\end{aligned}$$
+$$ \begin{aligned} \mathscr{B}&=\sigma\big(\{(-\infty,x]:x\in\mathbb{R}\}\big)\\ &=\sigma\big(\{(-\infty,x):x\in\mathbb{R}\}\big)\\ &=\sigma\big(\{(-\infty,x]:x\in\mathbb{Q}\}\big). \end{aligned} $$
 
 实际上，$\mathscr{B}$ 也是由所有闭区间或者所有左开右闭区间生成的，但不能由所有单点生成（问问自己所有单点集生成的 $\sigma$-域是什么？）。注意 Borel 域虽然包含常见的集合，但不是 $\mathbb{R}$ 的子集全体。类似地，$n$ 维空间上由区间生成的 $\sigma$-域称为是 $n$ 维 Borel 域，记为 $\mathscr{B}^n$ 或者 $\mathscr{B}(\mathbb{R}^n)$。下面的一些定理虽然是对一维情况证明的，但显然证明可以稍加修改用于多维情况。为了叙述的方便，设有 $\Omega$ 到 $\mathbb{R}^n$ 的映射 $\xi$，对 $B\subset\mathbb{R}^n$，$\xi^{-1}(B)$ 是 $B$ 的逆像，是 $\Omega$ 的子集，对 $\mathbb{R}^n$ 的任何子集族 $\mathscr{B}_0$，定义
 
-$$\xi^{-1}(\mathscr{B}_0):=\{\xi^{-1}(B):\ B\in\mathscr{B}_0\},$$
+$$ \xi^{-1}(\mathscr{B}_0):=\{\xi^{-1}(B):\ B\in\mathscr{B}_0\}, $$
 
 它是 $\mathscr{B}_0$ 中集合逆像全体，是 $\Omega$ 的子集族。如果 $\mathscr{B}_0$ 是 $\mathbb{R}^n$ 上的 $\sigma$-域，那么不难验证 $\xi^{-1}(\mathscr{B}_0)$ 是 $\Omega$ 上的 $\sigma$-域。
 
@@ -1594,7 +1594,7 @@ $$\xi^{-1}(\mathscr{B}_0):=\{\xi^{-1}(B):\ B\in\mathscr{B}_0\},$$
 
 设 $(\Omega,\mathscr{F},\mathbb{P})$ 是概率空间，则 $\Omega$ 上的函数 $\xi$ 是随机变量当且仅当
 
-$$\xi^{-1}(\mathscr{B})\subset\mathscr{F}.$$
+$$ \xi^{-1}(\mathscr{B})\subset\mathscr{F}. $$
 
 ### 5.2 分布函数的实现（p95–97）
 
@@ -2946,7 +2946,7 @@ $$\lim_n\max_{1\leqslant i\leqslant k_n}\frac{\sigma_{n,i}}{\sigma_n}=0.$$
 
 如果 $\xi,\eta$ 独立，则对任何 $\mathbb{R}^2$ 上非负或有界 Borel 可测函数 $f$，有
 
-$$\mathbb{E}f(\xi,\eta)=\mathbb{E}\big[\mathbb{E}f(x,\eta)\big]_{x=\xi}=\mathbb{E}\big[\mathbb{E}f(\xi,y)\big]_{y=\eta},\tag{10.1.1}$$
+$$ \mathbb{E}f(\xi,\eta)=\mathbb{E}\big[\mathbb{E}f(x,\eta)\big]_{x=\xi}=\mathbb{E}\big[\mathbb{E}f(\xi,y)\big]_{y=\eta},\tag{10.1.1} $$
 
 右边的含义是先固定 $x$ 求期望然后把 $\xi$ 代入 $x$ 后再求期望，也就是说我们可分两步来求期望。
 
@@ -2954,11 +2954,11 @@ $$\mathbb{E}f(\xi,\eta)=\mathbb{E}\big[\mathbb{E}f(x,\eta)\big]_{x=\xi}=\mathbb{
 
 如果 $F$ 和 $G$ 分别是 $\xi$ 与 $\eta$ 的分布函数，那么 Fubini 定理可以写成积分形式：
 
-$$\int_{\mathbb{R}^2}f(x,y)\,\mathrm{d}_2F(x)G(y)=\int_{\mathbb{R}}\mathrm{d}F(x)\int_{\mathbb{R}}f(x,y)\,\mathrm{d}G(y)=\int_{\mathbb{R}}\mathrm{d}G(y)\int_{\mathbb{R}}f(x,y)\,\mathrm{d}F(x).\tag{10.1.2}$$
+$$ \int_{\mathbb{R}^2}f(x,y)\,\mathrm{d}_2F(x)G(y)=\int_{\mathbb{R}}\mathrm{d}F(x)\int_{\mathbb{R}}f(x,y)\,\mathrm{d}G(y)=\int_{\mathbb{R}}\mathrm{d}G(y)\int_{\mathbb{R}}f(x,y)\,\mathrm{d}F(x).\tag{10.1.2} $$
 
 同样的方法可以证明数学期望和 Riemann 积分是可以交换的。如果 $f$ 是非负 Borel 可测函数，那么
 
-$$\mathbb{E}\Big(\int_{\mathbb{R}}f(\xi,x)\,\mathrm{d}x\Big)=\int_{\mathbb{R}}\mathbb{E}\big[f(\xi,x)\big]\,\mathrm{d}x.\tag{10.1.3}$$
+$$ \mathbb{E}\Big(\int_{\mathbb{R}}f(\xi,x)\,\mathrm{d}x\Big)=\int_{\mathbb{R}}\mathbb{E}\big[f(\xi,x)\big]\,\mathrm{d}x.\tag{10.1.3} $$
 
 **例 10.1.1 (期望的尾概率公式)** @181
 
