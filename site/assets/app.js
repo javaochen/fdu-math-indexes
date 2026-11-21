@@ -547,19 +547,61 @@
       title="${esc(title)}">${esc(label)}</button></div>`;
   }
 
-  const SECTION_LINES = [
-    "证明不在。答案不在。结论在。",
-    "看懂不算会，推出来才算。",
-    "先合上书，再往下看。",
-    "这一步，该你自己走。",
-    "记住的，应该是你推出来的。",
-    "答案不在这里。",
-  ];
+  const PHRASES = {
+    home: [
+      "看一条，考自己一次。",
+      "先自己证，再往下看。",
+      "合上书，把结论讲出来。",
+      "把定理当问题做。",
+      "读到结论，先停三秒。",
+    ],
+    section: [
+      "先自己证一遍，再看下文。",
+      "遮住结论，试着复述。",
+      "先想条件，再想结论。",
+      "回忆证明的第一步。",
+      "试着举一个例子。",
+      "再找一个反例。",
+      "把这条改写成问题考自己。",
+      "合上书，能说出它吗？",
+      "它和上一节哪条连着？",
+      "条件少一个，还成立吗？",
+      "先猜结论，再对照。",
+      "用一句话说出它在做什么。",
+    ],
+    book: [
+      "选一节，先测自己。",
+      "从一条结论开始，自己证。",
+      "先看目录，回忆这一章。",
+    ],
+    exercise: [
+      "先动手，再对照。",
+      "写完再翻答案。",
+      "先做一遍，再检查条件。",
+      "别只看，先算。",
+      "给自己计时，做完再停。",
+    ],
+    search: [
+      "搜到后先回忆，再点开。",
+      "先猜结论，再对照原文。",
+      "用结果自测：它属于哪一节？",
+      "点开前，先说一遍条件。",
+    ],
+    random: [
+      "先答，再显示。",
+      "想清楚，再翻。",
+      "先写一句，再对照。",
+      "别急，先回忆。",
+    ],
+  };
 
-  function sectionTagline(s) {
-    let h = 0;
-    for (const ch of String(s.id || "")) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
-    return SECTION_LINES[h % SECTION_LINES.length];
+  function pickPhrase(kind) {
+    const pool = PHRASES[kind];
+    return pool[Math.floor(Math.random() * pool.length)];
+  }
+
+  function sectionTagline() {
+    return pickPhrase("section");
   }
 
   function sectionHead(s, items) {
@@ -579,7 +621,7 @@
         <span>${esc(s.chapterTitle)}</span>
         <span>${s.items.length} 个条目${items.length !== s.items.length ? `（当前显示 ${items.length}）` : ""}</span>
         ${s.pages ? `<span>原书 p.${esc(s.pages)}</span>` : ""}`,
-      tagline: sectionTagline(s),
+      tagline: sectionTagline(),
       tabs: sectionTabs(s),
       extra: `<div class="filters">${chips}${defsBtn}</div>`,
       copy: copyButton("section", "复制本小节", "复制本小节全部条目（含小标题与导语）的 Markdown/LaTeX 源码"),
@@ -695,7 +737,7 @@
             <h1>${esc(meta.title)}</h1>
             <div class="bh-meta">${esc(meta.author || "作者待确认")} · ${(meta.chapters || []).length} 章 · ${secs.length} 节 · ${meta.count || 0} 条${exerciseCount ? ` · 习题 ${exerciseCount} 题` : ""}</div>
             ${meta.note ? `<p class="book-note">${esc(meta.note)}</p>` : ""}
-            <p class="page-tagline">整本书的结论，按原书顺序。</p>
+            <p class="page-tagline">${esc(pickPhrase("book"))}</p>
           </div>
         </header>
         ${first ? `<p class="bh-start"><a href="#/${esc(meta.id)}/${esc(first.id)}">开始阅读 →</a></p>` : `<div class="empty">这本书还没有录入条目。</div>`}
@@ -763,7 +805,7 @@
       meta: `<span>${esc(book.title)}${book.author ? ` · ${esc(book.author)}` : ""}</span>
         <span>${esc(pick.label)}</span>
         <span>本书共 ${pool.length} 个条目${exerciseTotal ? `（含 ${exerciseTotal} 道习题）` : ""}</span>`,
-      tagline: "想清楚，再显示。",
+      tagline: pickPhrase("random"),
     });
     $("#view").innerHTML = head + itemHtml({ ...pick.it, bookId: book.id, secId: pick.secId }, { hidden: pick.kind === "stmt" })
       + `<p style="margin-top:18px"><button id="again" class="ghost-btn" type="button">换一条（r）</button></p>`;
@@ -865,7 +907,7 @@
         <div class="meta"><span>“${esc(q)}” 命中 ${hitIdx.length} 条${hitIdx.length > shown.length ? `（显示前 ${shown.length} 条）` : ""}</span>
           ${hitIdx.length ? `<button class="sec-copy" type="button" data-copy-search title="复制全部命中结果为 Markdown">复制全部 ${hitIdx.length} 条</button>` : ""}
         </div>
-        <p class="page-tagline">搜到结论，证明自己补。</p>
+        <p class="page-tagline">${esc(pickPhrase("search"))}</p>
       </div>` + (rows || `<div class="empty">没有匹配的条目。</div>`);
     $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <b>搜索</b> “${esc(q)}”`;
     typesetLazy($("#view"), ".hit");
@@ -900,8 +942,8 @@
         <div class="home-head">
           <h1>${esc(SITE.title || "数学命题索引")}</h1>
           <p class="home-sub">${esc(SITE.subtitle || "")}</p>
-          <p class="home-manifesto">证明不在。答案不在。结论在。</p>
-          <p class="home-stat">共 ${BOOKS.length} 本书 · ${total} 条命题${exerciseTotal ? ` · ${exerciseTotal} 道习题` : ""} · 证明与答案都不在</p>
+          <p class="home-manifesto">${esc(pickPhrase("home"))}</p>
+          <p class="home-stat">共 ${BOOKS.length} 本书 · ${total} 条命题${exerciseTotal ? ` · ${exerciseTotal} 道习题` : ""} · 每一条都能当题做</p>
         </div>
         <div class="book-grid">${cards}</div>
         <p class="home-tip">点击书名进入。<kbd>/</kbd> 搜索全部条目，<kbd>s</kbd> 切换源码，条目右上角“复制”直接取走 Markdown/LaTeX，顶栏“复制小节”一次取走整节（含节级习题），习题页可复制本节/本章习题。</p>
@@ -952,7 +994,7 @@
       meta: `<span>${esc(s.book.title)}${s.book.author ? ` · ${esc(s.book.author)}` : ""}</span>
         <span>${esc(s.chapterTitle || "")}</span>
         <span>${esc(exerciseLabel(s))}</span>${info.pages ? `<span>原书 p.${esc(info.pages)}</span>` : ""}`,
-      tagline: "只有题目。答案不在页面上。",
+      tagline: pickPhrase("exercise"),
       tabs: sectionTabs(s, true),
       copy: items.length ? copyButton("exercises", "复制本节习题", "复制本节全部习题的 Markdown/LaTeX 源码") : "",
     });
@@ -1009,7 +1051,7 @@
       meta: `<span>${esc(s.book.title)}${s.book.author ? ` · ${esc(s.book.author)}` : ""}</span>
         <span>${esc(s.chapterTitle || "")}</span>
         <span>${group ? `本主题 ${items.length} 题 · ` : ""}全章 ${info.count} 题</span>${info.pages ? `<span>原书 p.${esc(info.pages)}</span>` : ""}`,
-      tagline: "只有题目。答案不在页面上。",
+      tagline: pickPhrase("exercise"),
       tabs: sectionTabs(s, true),
       copy: allItems.length ? copyButton("exercises", "复制本章习题", "复制本章全部习题（含所有主题）的 Markdown/LaTeX 源码") : "",
     });
