@@ -119,6 +119,20 @@ class ExerciseMarkdownTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "与正文节冲突"):
             exercises.build_data("sample", {"chapter-2"}, {"2"})
 
+    def test_group_sections_link_to_existing_chapter_sections(self):
+        self.write(chapter="2", filename="02.md")
+        self.write_groups({"2": [{"id": "a", "title": "甲", "numbers": [1, 2], "sections": ["2.2", "2.1"]}]})
+        record = exercises.build_data(
+            "sample", {"2.1", "2.2"}, {"2"}, {"2": ["2.1", "2.2"]})["sections"]["chapter-2"]
+        self.assertEqual(record["groups"][0]["sections"], ["2.1", "2.2"])
+        self.assertEqual(record["groups"][0]["numbers"], [1, 2])
+        for sections, message in [(["9.9"], "未知小节"), ([], "非空数组"), (["2.1", "2.1"], "重复")]:
+            with self.subTest(sections=sections):
+                self.write_groups({"2": [{"id": "a", "title": "甲", "numbers": [1, 2],
+                                          "sections": sections}]})
+                with self.assertRaisesRegex(ValueError, message):
+                    exercises.build_data("sample", {"2.1", "2.2"}, {"2"}, {"2": ["2.1", "2.2"]})
+
     def test_chapter_groups_require_exact_unique_coverage(self):
         self.write(chapter="2", filename="02.md")
         cases = [

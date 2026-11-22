@@ -19,8 +19,13 @@ def summary(section: dict | None) -> dict:
     return result
 
 
-def chapter_groups(config: object, chapter: str, items: list[dict], where: str) -> list[dict]:
-    """主题仅引用原题号；不复制题目，也不改变原题顺序。"""
+def chapter_groups(config: object, chapter: str, items: list[dict], where: str,
+                   chapter_sections: dict[str, list[str]] | None = None) -> list[dict]:
+    """主题仅引用原题号；不复制题目，也不改变原题顺序。
+
+    ``sections`` 可选，把主题关联到本章正文节；只做导航，不移动题目。
+    """
+    order = {sid: i for i, sid in enumerate((chapter_sections or {}).get(chapter, []))}
     if not isinstance(config, list) or not config:
         raise ValueError(f"{where}: 第 {chapter} 章必须有非空主题分组")
     known = {int(item["number"].rstrip("*")) for item in items}
@@ -44,14 +49,26 @@ def chapter_groups(config: object, chapter: str, items: list[dict], where: str) 
             if number in seen_numbers:
                 raise ValueError(f"{where}: 第 {chapter} 章题号 {number} 重复分组")
             seen_numbers.add(number)
-        groups.append({"id": gid, "title": title.strip(), "numbers": sorted(numbers), "count": len(numbers)})
+        sections = group.get("sections")
+        if sections is not None:
+            if not isinstance(sections, list) or not sections:
+                raise ValueError(f"{where}: 第 {chapter} 章主题 {gid} 的 sections 必须为非空数组")
+            for sid in sections:
+                if not isinstance(sid, str) or sid not in order:
+                    raise ValueError(f"{where}: 第 {chapter} 章主题 {gid} 引用未知小节 {sid!r}")
+            if len(set(sections)) != len(sections):
+                raise ValueError(f"{where}: 第 {chapter} 章主题 {gid} 的 sections 有重复")
+            sections = sorted(sections, key=order.__getitem__)
+        groups.append({"id": gid, "title": title.strip(), "numbers": sorted(numbers),
+                       "count": len(numbers), **({"sections": sections} if sections else {})})
     missing = sorted(known - seen_numbers)
     if missing:
         raise ValueError(f"{where}: 第 {chapter} 章主题分组未覆盖题号 {missing}")
     return groups
 
 
-def build_data(book_id: str, section_ids: set[str], chapter_ids: set[str] | None = None) -> dict | None:
+def build_data(book_id: str, section_ids: set[str], chapter_ids: set[str] | None = None,
+               chapter_sections: dict[str, list[str]] | None = None) -> dict | None:
     import build
 
     directory = ROOT / "exercises" / book_id
@@ -138,5 +155,6 @@ def build_data(book_id: str, section_ids: set[str], chapter_ids: set[str] | None
         if chapter not in ready_chapters:
             raise ValueError(f"{group_where}: 第 {chapter} 章分组没有对应的已录入章习题")
     for chapter, record in ready_chapters.items():
-        record["groups"] = chapter_groups(config.get(chapter), chapter, record["items"], group_where)
+        record["groups"] = chapter_groups(config.get(chapter), chapter, record["items"], group_where,
+                                          chapter_sections)
     return {"book": book_id, "sections": sections}

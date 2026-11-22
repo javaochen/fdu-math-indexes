@@ -412,7 +412,9 @@ def main() -> int:
     for b in books:
         ids = {s["id"] for c in b["chapters"] for s in c["sections"]}
         try:
-            data = exercises.build_data(b["id"], ids, {str(c["no"]) for c in b["chapters"]})
+            data = exercises.build_data(
+                b["id"], ids, {str(c["no"]) for c in b["chapters"]},
+                {str(c["no"]): [s["id"] for s in c["sections"]] for c in b["chapters"]})
         except (ValueError, OSError, KeyError, TypeError) as err:
             print(f"习题校验失败：{err}", file=sys.stderr)
             return 1

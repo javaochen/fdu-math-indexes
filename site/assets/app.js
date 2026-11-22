@@ -268,6 +268,22 @@
     return id && (s.book.chapters || []).find((ch) => chapterExerciseId(ch) === id);
   }
 
+  // 章末习题主题通过 sections 关联到正文节；只做导航，不复制题目。
+  function chapterGroupsForSection(s) {
+    const chapter = chapterExerciseForSection(s);
+    const info = chapter && chapter.exercises;
+    if (!info || !Array.isArray(info.groups)) return { chapter, groups: [] };
+    return { chapter, groups: info.groups.filter((group) => (group.sections || []).includes(s.id)) };
+  }
+
+  function findSection(book, id) {
+    for (const chapter of book.chapters || []) {
+      const section = chapter.sections.find((x) => x.id === id);
+      if (section) return section;
+    }
+    return null;
+  }
+
   function topicUrl(bookId, chapterId, groupId) {
     return `${sectionUrl(bookId, chapterId, true)}/topic-${encodeURIComponent(groupId)}`;
   }
@@ -628,6 +644,11 @@
       return `<button class="chip${typeFilter === key ? " active" : ""}" type="button" data-filter="${key}">${label}<em>${n}</em></button>`;
     }).join("");
     const defsBtn = `<button class="chip${defsOpen ? " active" : ""}" type="button" data-defs>${defsOpen ? "收起定义" : "展开定义"}</button>`;
+    const related = chapterGroupsForSection(s);
+    const relatedHtml = related.groups.length ? `<div class="section-exercise-links">
+      <span>本章习题相关主题</span>
+      ${related.groups.map((group) => `<a href="${esc(topicUrl(b.id, chapterExerciseId(related.chapter), group.id))}">${esc(group.title)}<em>${group.count} 题</em></a>`).join("")}
+    </div>` : "";
     return pageHead({
       book: b,
       title: `${esc(s.id)}&nbsp;&nbsp;${esc(s.title)}`,
@@ -637,7 +658,7 @@
         ${s.pages ? `<span>原书 p.${esc(s.pages)}</span>` : ""}`,
       tagline: sectionTagline(),
       tabs: sectionTabs(s),
-      extra: `<div class="filters">${chips}${defsBtn}</div>`,
+      extra: `<div class="filters">${chips}${defsBtn}</div>${relatedHtml}`,
       copy: copyButton("section", "复制本小节", "复制本小节全部条目（含小标题与导语）的 Markdown/LaTeX 源码"),
     });
   }
@@ -741,7 +762,7 @@
         </ul>
         ${ch.exercises && ch.exercises.status === "ready" ? `<div class="bh-chapter-exercises">
           <a class="bh-exercises" href="${esc(sectionUrl(meta.id, chapterExerciseId(ch), true))}">本章习题 · ${ch.exercises.count} 题 →</a>
-          <ul class="bh-exercise-topics">${(ch.exercises.groups || []).map((group) => `<li><a href="${esc(topicUrl(meta.id, chapterExerciseId(ch), group.id))}"><span>${esc(group.title)}</span><span>${group.count} 题</span></a></li>`).join("")}</ul>
+          <ul class="bh-exercise-topics">${(ch.exercises.groups || []).map((group) => `<li><a href="${esc(topicUrl(meta.id, chapterExerciseId(ch), group.id))}"><span>${esc(group.title)}${group.sections && group.sections.length ? `<em class="bh-topic-secs">${esc(group.sections.join(" · "))}</em>` : ""}</span><span>${group.count} 题</span></a></li>`).join("")}</ul>
         </div>` : ""}
       </section>`).join("");
     $("#view").innerHTML = `
@@ -1059,6 +1080,10 @@
     } else {
       body = `<p class="exercise-note">本章习题按主题分组，保留原书题号与小问，不附解答。页码均为书内印刷页码。</p>
         <nav class="exercise-topic-links" aria-label="本章习题主题">${groups.map((g) => `<a href="${esc(topicUrl(s.book.id, s.id, g.id))}"${g === group ? ' aria-current="page"' : ""}>${esc(g.title)}<span>${g.count} 题</span></a>`).join("")}</nav>
+        ${group && group.sections && group.sections.length ? `<p class="exercise-section-links">对应小节：${group.sections.map((sid) => {
+          const sec = findSection(s.book, sid);
+          return `<a href="${esc(sectionUrl(s.book.id, sid))}">${esc(sid)}${sec ? ` ${esc(sec.title)}` : ""}</a>`;
+        }).join(" · ")}</p>` : ""}
         <nav class="exercise-question-links" aria-label="本章全部习题题号">${allItems.map((it) => `<a href="${esc(sectionUrl(s.book.id, s.id, true))}/${esc(it.anchor)}"${numbers.has(parseInt(it.number, 10)) ? ' class="in-topic"' : ""}>${esc(it.number)}</a>`).join("")}</nav>
         <div class="exercise-items">${items.map((it) => itemHtml({ ...it, bookId: s.book.id, secId: `${s.id}/exercises` })).join("")}</div>`;
     }

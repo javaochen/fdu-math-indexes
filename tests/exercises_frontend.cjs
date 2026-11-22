@@ -290,6 +290,12 @@ async function checkProbabilityChapters() {
     const numbers = record.groups.flatMap((group) => group.numbers);
     assert.equal(new Set(numbers).size, record.count, "Each question must belong to exactly one topic");
     assert.deepEqual([...numbers].sort((a, b) => a - b), record.items.map((item) => parseInt(item.number, 10)));
+    for (const group of record.groups) {
+      assert.ok(group.sections.length, `${group.id} must link to at least one section`);
+      for (const sid of group.sections) {
+        assert.ok(chapter.sections.some((section) => section.id === sid), `${group.id} links to unknown section ${sid}`);
+      }
+    }
 
     await app.navigate(`#/gailv/${info.id}/exercises`);
     assert.deepEqual(itemAnchors(), record.items.filter((item) => record.groups[0].numbers.includes(parseInt(item.number, 10))).map((item) => item.anchor), "Chapter entry defaults to the first topic");
@@ -321,10 +327,20 @@ async function checkProbabilityChapters() {
     assert.ok(app.jumps.includes(info.id), "Returning to a chapter scrolls to its real book index entry");
     for (const group of record.groups) assert.ok(app.html().includes(`#/gailv/${info.id}/exercises/topic-${group.id}`));
 
-    const section = chapter.sections[0];
+    const section = chapter.sections.find((section) =>
+      record.groups.some((group) => group.sections.includes(section.id)));
+    const related = record.groups.find((group) => group.sections.includes(section.id));
+    assert.ok(section && related, "Each chapter needs at least one section linked to a topic");
     await app.navigate(`#/gailv/${section.id}`);
     assert.ok(app.html().includes(`href="#/gailv/${info.id}/exercises\"`));
     assert.ok(app.html().includes(`本章习题 ${info.count} 题`));
+    assert.match(app.html(), /class="section-exercise-links"/);
+    assert.ok(app.html().includes(`#/gailv/${info.id}/exercises/topic-${related.id}"`),
+      "Section page must link to its related chapter topic");
+    await app.navigate(`#/gailv/${info.id}/exercises/topic-${related.id}`);
+    assert.match(app.html(), /class="exercise-section-links"/);
+    assert.ok(app.html().includes(`href="#/gailv/${section.id}"`),
+      "Topic page must link back to its related section");
     await app.navigate(`#/gailv/${section.id}/exercises`);
     assert.equal(app.location.hash, `#/gailv/${info.id}/exercises`);
     assert.match(app.html(), /class="exercise-items"/);

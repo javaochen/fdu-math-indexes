@@ -689,6 +689,16 @@ kbd {
 .exercise-topic-links a[aria-current="page"] { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
 .exercise-topic-links a > span { flex: 0 0 auto; font-size: 11px; }
 .exercise-question-links a.in-topic { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+/* 章末习题主题 ↔ 正文节的导航；只加链接，不搬题。 */
+.section-exercise-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 10px 0 0; font-size: 12px; color: var(--muted); }
+.section-exercise-links > span { font-size: 11px; letter-spacing: .04em; }
+.section-exercise-links a { padding: 4px 9px; border: 1px solid var(--line); border-radius: 6px; color: var(--ink); text-decoration: none; }
+.section-exercise-links a:hover { color: var(--accent); border-color: var(--accent); }
+.section-exercise-links em { font-style: normal; margin-left: 6px; color: var(--muted); font-size: 11px; }
+.exercise-section-links { margin: 0 0 14px; font-size: 12px; color: var(--muted); }
+.exercise-section-links a { color: var(--accent); text-decoration: none; }
+.exercise-section-links a:hover { text-decoration: underline; }
+.bh-topic-secs { font-style: normal; margin-left: 6px; font-size: 11px; color: var(--muted); }
 
 /* 概率论知识网络：纸面上的提问，墨色展台上的关系。 */
 body.network-home { background: #f5f2e9; }
@@ -790,6 +800,7 @@ body.network-home { background: #f5f2e9; }
 .pn-practice .bh-chapter-exercises { margin: 0; padding: 20px 0; border-top-color: var(--pn-ink); }
 .pn-practice .bh-exercise-topics a { color: var(--pn-ink); }
 .pn-practice .bh-exercise-topics a > span:last-child { color: var(--pn-muted); }
+.pn-practice .bh-topic-secs { color: var(--pn-muted); }
 .pn-footer { display: flex; flex-wrap: wrap; gap: 8px 24px; padding-top: 19px; border-top: 1px solid var(--pn-rule); font-size: 10px; line-height: 1.9; color: var(--pn-muted); }
 .pn-footer a { color: inherit; text-underline-offset: 3px; }
 :root[data-theme="dark"] body.network-home { background: #18231f; }
