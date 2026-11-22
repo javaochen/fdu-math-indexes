@@ -19,7 +19,10 @@ $$\mathbb{P}\left(\max_{1\le k\le n}|S_k-m_k|\ge t\right)\le t^{-2}\mathbb{E}\bi
 $$\sum_k\frac{\sigma_k^2}{k^2}$$
 收敛。事实上，由 Borel–Cantelli 引理，只需证明对任何 $t>0$，
 $$\sum_n\mathbb{P}\left(\frac1n|S_n-m_n|>t\right)<\infty.$$
-对 $k\ge 1$，在 $2^{k-1}<n\le 2^k$ 上应用 Kolmogorov 不等式，右边关于 $k$ 求和后可用 $\sum_{n\ge 1}\frac{16}{3}\frac{\sigma_n^2}{n^2}$ 控制，从而该级数有限；再由 Borel–Cantelli 引理推出
+
+### 注 (判别准则的证明) @142
+
+接上条，对 $k\ge 1$，在 $2^{k-1}<n\le 2^k$ 上应用 Kolmogorov 不等式，右边关于 $k$ 求和后可用 $\sum_{n\ge 1}\frac{16}{3}\frac{\sigma_n^2}{n^2}$ 控制，从而该级数有限；再由 Borel–Cantelli 引理推出
 $$\max_{2^{k-1}<n\le 2^k}\frac1n|S_n-m_n|$$
 几乎处处趋于零，这蕴含着 $\{\xi_n\}$ 服从强大数定律。
 

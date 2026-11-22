@@ -12,14 +12,20 @@ pages: "169–172"
 $$\lim_{n\to\infty}\mathbb{P}\left(\frac{\sum_{i=1}^{n}\xi_i-np}{\sqrt{np(1-p)}}\le x\right)=\Phi(x),$$
 其中 $\Phi$ 是标准正态分布函数。
 
-### 注 (Stirling 公式与常数 $c$) @170
+### 注 (Stirling 公式) @170
 
 估计组合数时要估计 $n!$，有 Stirling 公式
 $$n!\sim\sqrt{2\pi n}\,n^{n+\frac12}\mathrm{e}^{-n}.$$
+
+### 注 ($\log n!$ 的积分估计) @170
+
 由
 $$\int_{k-1}^{k}\log x\,\mathrm{d}x<\log k<\int_{k}^{k+1}\log x\,\mathrm{d}x,$$
 对 $1\le k\le n$ 求和得
 $$n\log n-n<\log n!<(n+1)\log(n+1)-n .$$
+
+### 注 ($d_n$ 的单调性与常数 $c$) @170
+
 令
 $$d_n:=\log n!-\left(n+\frac12\right)\log n+n,$$
 则
@@ -28,15 +34,21 @@ $$d_{n+1}-d_n=\left(n+\frac12\right)\log\frac{n+1}{n}-1<0,$$
 $$n!\sim c\cdot n^{n+\frac12}\mathrm{e}^{-n}.$$
 常数 $c$ 的值由本节末尾的估计定出。
 
-### 注 (二项分布的尾估计与局部估计) @171
+### 注 ($b(k;n,p)$ 的单调性与最大值点) @171
 
 记 $b(k;n,p)=\binom{n}{k}p^{k}q^{n-k}$，$q=1-p$。由
 $$\frac{b(k;n,p)}{b(k-1;n,p)}=\frac{(n-k+1)p}{kq}=1+\frac{(n+1)p-k}{kq}$$
-知 $b(k;n,p)$ 在 $k<(n+1)p$ 时递增、在 $k>(n+1)p$ 时递减；取整数 $m$ 满足 $(n+1)p-1<m\le(n+1)p$，则 $b(k;n,p)$ 在 $k=m$ 时最大。对任何整数 $r>0$，
+知 $b(k;n,p)$ 在 $k<(n+1)p$ 时递增、在 $k>(n+1)p$ 时递减；取整数 $m$ 满足 $(n+1)p-1<m\le(n+1)p$，则 $b(k;n,p)$ 在 $k=m$ 时最大。
+
+### 注 (二项分布的尾估计) @171
+
+接上条，对任何整数 $r>0$，
 $$\mathbb{P}(S_n\ge r)=\sum_{k\ge r}b(k;n,p)\le\frac{rq}{r-np}\le\frac{rq}{(r-np)^{2}},$$
 最后一步用到 $1\ge\sum_{k=m}^{r}b(k;n,p)\ge(r-np)b(r;n,p)$。
 
-记 $\delta:=m-np$，
+### 注 (二项分布的局部估计) @171
+
+沿用上条，记 $\delta:=m-np$，
 $$a_k:=b(m+k;n,p)=\mathbb{P}(S_n=m+k)=\binom{n}{m+k}p^{m+k}q^{n-m-k}.$$
 当 $k\ge0$ 且远小于 $n$ 时，利用对数函数的 Taylor 展开（$|x|<\frac12$ 时 $|x-\log(1+x)|\le2x^{2}$）得局部估计
 $$a_k=a_0\,\mathrm{e}^{-\frac{k^{2}}{2npq}+\rho_k},\qquad |\rho_k|\le\frac{2k^{3}}{(npq)^{2}}+\frac{2k}{npq}.$$

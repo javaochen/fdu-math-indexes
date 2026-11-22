@@ -40,13 +40,15 @@ $$ (n)_r=\binom{n}{r}\cdot r!, \qquad\text{因此}\qquad \binom{n}{r}=\frac{(n)_
 
 从 $n$ 个人中取 $k$ 个人，有多少种方法？更一般地，把 $n$ 个人分为 $r$ 组，各组分别有 $n_1,n_2,\cdots,n_r$ 个人，有多少种不同分法？
 
-**注 (二项式定理与多项组合数)** @5
+**注 (二项式定理)** @5
 
 组合数对应于二项式展开
 
 $$ (x+y)^n=\sum_{k=0}^{n}\binom{n}{k}x^ky^{n-k}, $$
 
 即左边展开后的和式中，含 $k$ 个 $x$ 与 $n-k$ 个 $y$ 的项共有 $\binom{n}{k}$ 个。
+
+**注 (多项组合数与多项式定理)** @5
 
 一般地，把 $n$ 个人分为 $r$ 组、各组分别有 $n_1,n_2,\cdots,n_r$ 个人的分法数为
 
@@ -110,17 +112,19 @@ $$ \mathbb{P}(A)=\frac{|A|}{|\Omega|}. $$
 
 等概率的假设通常应该明确。有些问题中我们经常省略等概率性的假设的明确叙述，作为隐含在语义中的自然假设（除非问题明确叙述其他假设）：比如说掷一个骰子，那么隐含着假设 $1,2,3,4,5,6$ 点出现的可能性是一样的；说从一个盒子里取球时，总是假设取到盒子中任何一个球的可能性都是一样的。
 
-**注 (概率的基本性质)** @10
+**注 (概率空间与概率的公理)** @10
 
 我们关注三个要素：样本空间 $\Omega$；事件的集合 $\mathscr{F}$；事件的概率 $\mathbb{P}$。从数学的角度说，取一个非空的有限集合 $\Omega$ 作为样本空间，$\Omega$ 的某些子集的集合 $\mathscr{F}$ 作为事件的集合（这里简单地取 $\mathscr{F}$ 是 $\Omega$ 的全体子集），以及 $\mathscr{F}$ 到 $\mathbf{R}$ 的映射 $\mathbb{P}$，称为事件的概率，它是一个 $0,1$ 之间的数，还满足下面的性质：
 
 1. 对任何 $A\subset\Omega$，$\mathbb{P}(A)\ge 0$；2. $\mathbb{P}(\Omega)=1$；3. 如果 $A\cap B=\varnothing$，那么 $\mathbb{P}(A\cup B)=\mathbb{P}(A)+\mathbb{P}(B)$。
 
-第 (1) 条称为**非负性**，第 (2) 条称为**正规性**，第 (3) 条称为**有限可加性**。由这三条性质可以推出：
+第 (1) 条称为**非负性**，第 (2) 条称为**正规性**，第 (3) 条称为**有限可加性**。上面三个要素 $(\Omega,\mathscr{F},\mathbb{P})$ 称为此概率模型的**概率空间**。
 
-4. 如果事件 $A_1,\cdots,A_n$ 互相排斥，那么$$\mathbb{P}(A_1\cup\cdots\cup A_n)=\mathbb{P}(A_1)+\cdots+\mathbb{P}(A_n).$$如果进一步 $\Omega=\bigcup_{i=1}^n A_i$，即事件 $\{A_i\}$ 没有两个会同时发生又必有一个发生，称它们是 $\Omega$ 的一个**划分**，这时 $\sum_{i=1}^n\mathbb{P}(A_i)=1$。5. $\mathbb{P}(A^c)=1-\mathbb{P}(A)$。6. 如果 $A$ 发生时 $B$ 也发生，那么 $B$ 发生而 $A$ 不发生的概率为$$\mathbb{P}(B\setminus A)=\mathbb{P}(B)-\mathbb{P}(A).$$
+**注 (概率的基本性质)** @10
 
-上面三个要素 $(\Omega,\mathscr{F},\mathbb{P})$ 称为此概率模型的**概率空间**。
+由非负性、正规性与有限可加性可以推出：
+
+1. 如果事件 $A_1,\cdots,A_n$ 互相排斥，那么$$\mathbb{P}(A_1\cup\cdots\cup A_n)=\mathbb{P}(A_1)+\cdots+\mathbb{P}(A_n).$$如果进一步 $\Omega=\bigcup_{i=1}^n A_i$，即事件 $\{A_i\}$ 没有两个会同时发生又必有一个发生，称它们是 $\Omega$ 的一个**划分**，这时 $\sum_{i=1}^n\mathbb{P}(A_i)=1$。2. $\mathbb{P}(A^c)=1-\mathbb{P}(A)$。3. 如果 $A$ 发生时 $B$ 也发生，那么 $B$ 发生而 $A$ 不发生的概率为$$\mathbb{P}(B\setminus A)=\mathbb{P}(B)-\mathbb{P}(A).$$
 
 **定理 1.3.1 (容斥原理)** @11
 
@@ -572,7 +576,15 @@ $$A^{c}:=\Omega\setminus A.$$
 
 从现在开始，我们通常要在一个概率空间的框架下谈论概率。那么经典的概率问题和概率的公理体系究竟是什么关系呢？理解这种关系对理解概率论是极其重要的。众所周知，经典概率的诸多问题远在公理体系提出前就被人们关注并且由此发展了一系列的方法，直觉在这里是关键。建立公理体系是数学为避免矛盾而设立的游戏规则，由此得到的结论是否与我们的直觉或者经验符合是判断所建立的理论是否合理有意义的一个标准。或者如 Feller 所说：如果概率论对生活是真实的，一个经验必定对应于一个可以证明的命题。概率与几何学的情形很相似，比如人类早已在几何学创立之前就知道怎么计算三角形的面积，而在几何学的框架下我们可以严格地证明这个公式。读者可能还会从许多的例子所涉及的问题和解决方法中注意到概率的公理体系并不能为解决这些经典问题提供更有效的方法，就如同知道交换律与结合律并不能对做数的四则运算有多么有效的帮助一样，可能的好处是帮助人们更清晰地理解这些问题，并由此进一步深入地提出和研究那些只依靠直觉无法触及的问题。
 
-从 §1.2 中诸多例子看，物理世界里可以完成的随机试验通常会有一个概率空间，由此得到的答案看上去也是符合直觉的，至少没有矛盾。但也看到某些不能在物理世界里完成的随机试验则未必有，如没有一个概率空间可以描述等可能地取个自然数这样的随机试验。把可以构造一个符合定义的概率空间来合适地描述的随机试验称为**可以实现的**，或者说**可以模拟的**。这里合适描述是主观的，不能严格判定的，但古典概型应该认为是可以实现的。另外，从理论上讲，概率是可以随意赋予的，但我们在第一章开头就说过，我们讨论的概率模型应该是可以任意重复的随机试验，不能任意重复的试验的概率模型中所谓的概率在实际上是没有意义的。
+**注 (可实现与可模拟的随机试验)** @35
+
+从 §1.2 中诸多例子看，物理世界里可以完成的随机试验通常会有一个概率空间，由此得到的答案看上去也是符合直觉的，至少没有矛盾。但也看到某些不能在物理世界里完成的随机试验则未必有，如没有一个概率空间可以描述等可能地取个自然数这样的随机试验。把可以构造一个符合定义的概率空间来合适地描述的随机试验称为**可以实现的**，或者说**可以模拟的**。这里合适描述是主观的，不能严格判定的，但古典概型应该认为是可以实现的。
+
+**注 (可重复试验与概率的意义)** @35
+
+另外，从理论上讲，概率是可以随意赋予的，但我们在第一章开头就说过，我们讨论的概率模型应该是可以任意重复的随机试验，不能任意重复的试验的概率模型中所谓的概率在实际上是没有意义的。
+
+**注 (概率性质需严格证明)** @35
 
 从定义容易推出概率有下面的性质，大多数看上去是自然的，但我们还是要严格地证明。
 
@@ -646,19 +658,27 @@ $$A^{c}:=\Omega\setminus A.$$
 
 设 $(\Omega,\mathscr{F},\mathbb{P})$ 是概率空间，$\xi:\Omega\to\mathbb{R}$ 是 $\Omega$ 上的函数。称 $\xi$ 是**随机变量**，如果对任何 $x\in\mathbb{R}$，$$\{\xi\le x\}:=\{\omega\in\Omega:\xi(\omega)\le x\}\in\mathscr{F}.$$
 
-**注 2.3.1 (关于随机变量定义)** @41
+**注 2.3.1 (可测性与子 $\sigma$-域)** @41
 
-关于随机变量的定义，要注意以下几点。
+随机变量的定义与概率 $\mathbb{P}$ 无关，而与 $\sigma$-域 $\mathscr{F}$ 有关。如果 $\mathscr{G}$ 是 $\mathscr{F}$ 的一个子 $\sigma$-域，且对任何 $x\in\mathbb{R}$ 有$$\{\xi\le x\}\in\mathscr{G},$$则我们说 $\xi$ 是关于 $\mathscr{G}$ 可测的随机变量；可测是个很抽象的概念，也是很重要的概念，直观地说，可测性可以解释为信息 $\mathscr{G}$ 足够去找到 $\xi$。
 
-(1) 随机变量的定义与概率 $\mathbb{P}$ 无关，而与 $\sigma$-域 $\mathscr{F}$ 有关。如果 $\mathscr{G}$ 是 $\mathscr{F}$ 的一个子 $\sigma$-域，且对任何 $x\in\mathbb{R}$ 有$$\{\xi\le x\}\in\mathscr{G},$$则我们说 $\xi$ 是关于 $\mathscr{G}$ 可测的随机变量；可测是个很抽象的概念，也是很重要的概念，直观地说，可测性可以解释为信息 $\mathscr{G}$ 足够去找到 $\xi$。
+**注 (随机向量与分量可测性)** @41
 
-(2) 如果 $\xi:\Omega\to\mathbb{R}^d$ 的每个分量是随机变量，那么 $\xi$ 称为是 $d$-维随机变量（或随机向量）。把 $d$ 维空间中两个向量小于等于理解为每个分量小于等于。这样，如果 $x=(x_1,\cdots,x_d)\in\mathbb{R}^d$，那么$$\{\xi\le x\}=\{\xi_1\le x_1,\cdots,\xi_d\le x_d\}=\bigcap_{i=1}^{d}\{\xi_i\le x_i\}.$$故 $\xi$ 是随机向量当且仅当对任何 $x\in\mathbb{R}^d$，$\{\xi\le x\}\in\mathscr{F}$。后面许多对于随机变量叙述和证明的定义和定理实际上对 $d$-维随机变量也是对的，需要的时候我们将直接使用，不再重复说明。
+如果 $\xi:\Omega\to\mathbb{R}^d$ 的每个分量是随机变量，那么 $\xi$ 称为是 $d$-维随机变量（或随机向量）。把 $d$ 维空间中两个向量小于等于理解为每个分量小于等于。这样，如果 $x=(x_1,\cdots,x_d)\in\mathbb{R}^d$，那么$$\{\xi\le x\}=\{\xi_1\le x_1,\cdots,\xi_d\le x_d\}=\bigcap_{i=1}^{d}\{\xi_i\le x_i\}.$$故 $\xi$ 是随机向量当且仅当对任何 $x\in\mathbb{R}^d$，$\{\xi\le x\}\in\mathscr{F}$。后面许多对于随机变量叙述和证明的定义和定理实际上对 $d$-维随机变量也是对的，需要的时候我们将直接使用，不再重复说明。
 
-(3) 因为 $\{\xi\le x\}^c=\{\xi>x\}$，故随机变量的定义等价于对任何 $x\in\mathbb{R}$，$\{\xi>x\}\in\mathscr{F}$。又因为$$\{\xi<x\}=\bigcup_n\left\{\xi\le x-\frac{1}{n}\right\},\qquad \{\xi\le x\}=\bigcap_n\left\{\xi<x+\frac{1}{n}\right\},$$由于 $\mathscr{F}$ 对可列并与可列交封闭，故而 $\xi$ 是随机变量等价于对任何 $x\in\mathbb{R}$，$\{\xi<x\}\in\mathscr{F}$（或 $\{\xi\ge x\}\in\mathscr{F}$）。
+**注 (随机变量定义的等价形式)** @41
 
-(4) 对于一个随机变量 $\xi$，如果对任何 $\omega\in\Omega$，$\xi(\omega)\in A$，我们说 $\xi$ **取值于** $A$。如果 $\mathbb{P}(\xi\in A)=1$，我们说 $\xi$ **分布在** $A$ 上。在古典模型中，两者没有什么不同，但在一般概率空间上，两者是不同的，尽管从概率角度看，没有本质区别。
+对随机变量 $\xi$，因为 $\{\xi\le x\}^c=\{\xi>x\}$，故随机变量的定义等价于对任何 $x\in\mathbb{R}$，$\{\xi>x\}\in\mathscr{F}$。又因为$$\{\xi<x\}=\bigcup_n\left\{\xi\le x-\frac{1}{n}\right\},\qquad \{\xi\le x\}=\bigcap_n\left\{\xi<x+\frac{1}{n}\right\},$$由于 $\mathscr{F}$ 对可列并与可列交封闭，故而 $\xi$ 是随机变量等价于对任何 $x\in\mathbb{R}$，$\{\xi<x\}\in\mathscr{F}$（或 $\{\xi\ge x\}\in\mathscr{F}$）。
 
-(5) 随机变量要求取有限值，但为了方便，通常要求它分布在 $\mathbb{R}$ 上就可以了，即 $\mathbb{P}(\xi\in\mathbb{R})=1$。这时我们说 $\xi$ 几乎处处或者说几乎肯定是有限的。一般地，一个概率为 1 的事件称为**几乎必然**的事件，一个在几乎必然的事件上成立的性质称为是几乎处处或者几乎肯定成立。
+**注 (取值于与分布在)** @41
+
+对于一个随机变量 $\xi$，如果对任何 $\omega\in\Omega$，$\xi(\omega)\in A$，我们说 $\xi$ **取值于** $A$。如果 $\mathbb{P}(\xi\in A)=1$，我们说 $\xi$ **分布在** $A$ 上。在古典模型中，两者没有什么不同，但在一般概率空间上，两者是不同的，尽管从概率角度看，没有本质区别。
+
+**注 (几乎必然与几乎处处)** @41
+
+随机变量要求取有限值，但为了方便，通常要求它分布在 $\mathbb{R}$ 上就可以了，即 $\mathbb{P}(\xi\in\mathbb{R})=1$。这时我们说 $\xi$ 几乎处处或者说几乎肯定是有限的。一般地，一个概率为 1 的事件称为**几乎必然**的事件，一个在几乎必然的事件上成立的性质称为是几乎处处或者几乎肯定成立。
+
+**注 (随机变量对运算封闭)** @41
 
 随机变量对于通常的运算是封闭的，这在第三章中会给予严格证明。这里让我们证明随机变量的集合是线性空间。
 
@@ -948,7 +968,15 @@ $$F(x,y)=\mathbb P(\xi\leqslant x,\eta\leqslant y),\qquad x,y\in\mathbb R.$$
 
 **注 (条件概率作为概率)** @56
 
-条件概率作为映射 $B\mapsto\mathbb{P}(B\mid A)$ 是 $(\Omega,\mathscr{F})$ 上的概率，也是缩小的空间 $(A,A\cap\mathscr{F})$ 上的概率，其中$$A\cap\mathscr{F}:=\{A\cap B\mid B\in\mathscr{F}\}$$是集合 $A$ 上的 $\sigma$-域。条件概率的叙述方式很多，比如"假设事件 $A$ 发生，事件 $B$ 发生的概率"，要注意它与两个事件同时发生的概率的不同之处。条件概率虽然是定义如上，但在古典概型中条件概率是直接由公式$$\mathbb{P}(B\mid A)=\frac{|A\cap B|}{|A|}$$计算的：已知 $A$ 发生，实际上就是考虑样本空间 $A$ 上的概率问题。
+条件概率作为映射 $B\mapsto\mathbb{P}(B\mid A)$ 是 $(\Omega,\mathscr{F})$ 上的概率，也是缩小的空间 $(A,A\cap\mathscr{F})$ 上的概率，其中$$A\cap\mathscr{F}:=\{A\cap B\mid B\in\mathscr{F}\}$$是集合 $A$ 上的 $\sigma$-域。
+
+**注 (条件概率的叙述与交事件概率的区别)** @56
+
+条件概率的叙述方式很多，比如"假设事件 $A$ 发生，事件 $B$ 发生的概率"，要注意它与两个事件同时发生的概率的不同之处。
+
+**注 (古典概型中的条件概率)** @56
+
+条件概率虽然是定义如上，但在古典概型中条件概率是直接由公式$$\mathbb{P}(B\mid A)=\frac{|A\cap B|}{|A|}$$计算的：已知 $A$ 发生，实际上就是考虑样本空间 $A$ 上的概率问题。
 
 **注 (乘法公式)** @56
 
@@ -1008,9 +1036,25 @@ A、B 两人各携带赌资 $a,b$ 进行简单的赌博：独立地重复某种�
 
 有一个由 Monty 主持的电视游戏栏目：Monty 让参与人 Voila 在三个完全一样的大门 $A,B,C$ 中任选一个，三门后分别有两只羊与一部汽车，Monty 知道门后是什么。当 Voila 选定（比如）$A$ 后，Monty 打开一个放有羊的门（比如）$B$，然后告诉 Voila 可以再选择。问题是 Voila 是选择换还是选择不换？
 
-**注 (公理体系与经典概率问题)** @64
+**注 (概率是赋予还是计算：常见困惑)** @64
 
-前面我们为概率论建立了公理体系并定义了随机变量、独立以及条件概率等概念。在讨论其中许多来自经典概率的例子时，细心的读者也许会感到困惑，常常会问概率究竟是赋予的还是计算的，独立性、条件概率这些概念究竟是由定义还是由直觉来判断的，全概率公式是经典方法中最有用的公式，人们在使用这个公式时大概很少想到其中的条件概率是怎样被定义的，等等。这些问题也许会使读者因此陷入逻辑迷思，这正是前言中我们所说概率论讲授时两难的选择。公理体系是从一个给定的概率空间开始的，而经典概率问题大多是根据假设来计算样本点的概率，我们需要知道这些概率才能断定我们是否在一个概率空间的框架内，因此也许可以说经典概率问题常常是游离在公理体系之外的，而公理体系是自我完备的。在公理体系内，概率、独立性与条件概率等都是被定义的，所有的困惑或逻辑迷思都与公理体系本身无关，它们的产生也许是由于我们要游走于公理体系内外两边而导致的，是源于我们想以直观背景来解释概率公理体系的这种思考和尝试。那么是否该抛开其直观背景与经典问题而从公理出发来学习概率论呢？这对于有相当数学基础的读者来说或许是一个选择，但（至少对于没有充分数学基础的初学者来说）不是一个更好的选择，因为没有背景的理论是苍白和形式的。而且如 Feller 所言，抛开背景来学习概率论的选择很难使其能够真正欣赏整个理论。无论对于哪种类型的读者，在学习概率论时，我们建议读者应该注意到但却不必拘泥于由此引起的疑问和困惑，在解决经典问题时发挥自己的直觉和想象力，在回到公理体系时严格地追随形式逻辑，然后体会两者的关系。
+前面我们为概率论建立了公理体系并定义了随机变量、独立以及条件概率等概念。在讨论其中许多来自经典概率的例子时，细心的读者也许会感到困惑，常常会问概率究竟是赋予的还是计算的，独立性、条件概率这些概念究竟是由定义还是由直觉来判断的，全概率公式是经典方法中最有用的公式，人们在使用这个公式时大概很少想到其中的条件概率是怎样被定义的，等等。这些问题也许会使读者因此陷入逻辑迷思，这正是前言中我们所说概率论讲授时两难的选择。
+
+**注 (公理体系自我完备与经典问题的游离)** @64
+
+公理体系是从一个给定的概率空间开始的，而经典概率问题大多是根据假设来计算样本点的概率，我们需要知道这些概率才能断定我们是否在一个概率空间的框架内，因此也许可以说经典概率问题常常是游离在公理体系之外的，而公理体系是自我完备的。
+
+**注 (困惑源于游走于公理体系内外)** @64
+
+在公理体系内，概率、独立性与条件概率等都是被定义的，所有的困惑或逻辑迷思都与公理体系本身无关，它们的产生也许是由于我们要游走于公理体系内外两边而导致的，是源于我们想以直观背景来解释概率公理体系的这种思考和尝试。
+
+**注 (是否抛开直观背景从公理出发)** @64
+
+那么是否该抛开其直观背景与经典问题而从公理出发来学习概率论呢？这对于有相当数学基础的读者来说或许是一个选择，但（至少对于没有充分数学基础的初学者来说）不是一个更好的选择，因为没有背景的理论是苍白和形式的。而且如 Feller 所言，抛开背景来学习概率论的选择很难使其能够真正欣赏整个理论。
+
+**注 (公理体系与直观背景之间的学习建议)** @64
+
+无论对于哪种类型的读者，在学习概率论时，我们建议读者应该注意到但却不必拘泥于由此引起的疑问和困惑，在解决经典问题时发挥自己的直觉和想象力，在回到公理体系时严格地追随形式逻辑，然后体会两者的关系。
 
 ### 第3章 习题（p64–67）
 
@@ -1276,9 +1320,13 @@ $$\mathbb P\left(\bigcap_{n\geqslant1}A_n\right)=\prod_{n\geqslant1}\mathbb P(A_
 
 Chebyshev 不等式也称为 **Markov 不等式**，它的一个简单推论：$\mathbb{E}|\xi|<+\infty$ 蕴含着 $|\xi|<+\infty$ a.s.。另外一个有用的推论：如果 $\xi$ 可积，那么$$\mathbb{P}(|\xi-\mathbb{E}\xi|\geqslant m)\leqslant\frac{1}{m^{2}}\mathbb{E}(\xi-\mathbb{E}\xi)^{2}.$$
 
-**注 ($L^{1}$、$L^{2}$ 范数与 Minkowski 不等式)** @79
+**注 ($L^{1}$、$L^{2}$ 范数与均方距离)** @79
 
-在 Cauchy-Schwarz 不等式里取 $\eta=1$，得 $\mathbb{E}|\xi|\leqslant\sqrt{\mathbb{E}\xi^{2}}$。左边的 $\mathbb{E}|\xi|$ 是 $\xi$ 的 $L^{1}$-范数，记为 $\|\xi\|_{1}$，右边是 $\xi$ 的 $L^{2}$-范数，记为 $\|\xi\|_{2}$；$\|\xi-\eta\|_{2}$ 通常称为 $\xi$ 与 $\eta$ 的**均方距离**。另外$$\mathbb{E}(\xi+\eta)^{2}\leqslant\mathbb{E}\xi^{2}+\mathbb{E}\eta^{2}+2\sqrt{\mathbb{E}\xi^{2}\mathbb{E}\eta^{2}}=(\sqrt{\mathbb{E}\xi^{2}}+\sqrt{\mathbb{E}\eta^{2}})^{2},$$推出 **Minkowski 不等式**，或 $L^{2}$-范数的三角不等式：$$\|\xi+\eta\|_{2}\leqslant\|\xi\|_{2}+\|\eta\|_{2}.$$
+在 Cauchy-Schwarz 不等式里取 $\eta=1$，得 $\mathbb{E}|\xi|\leqslant\sqrt{\mathbb{E}\xi^{2}}$。左边的 $\mathbb{E}|\xi|$ 是 $\xi$ 的 $L^{1}$-范数，记为 $\|\xi\|_{1}$，右边是 $\xi$ 的 $L^{2}$-范数，记为 $\|\xi\|_{2}$；$\|\xi-\eta\|_{2}$ 通常称为 $\xi$ 与 $\eta$ 的**均方距离**。
+
+**注 (Minkowski 不等式与 $L^{2}$ 范数的三角不等式)** @79
+
+另外，对 $\xi+\eta$ 有$$\mathbb{E}(\xi+\eta)^{2}\leqslant\mathbb{E}\xi^{2}+\mathbb{E}\eta^{2}+2\sqrt{\mathbb{E}\xi^{2}\mathbb{E}\eta^{2}}=(\sqrt{\mathbb{E}\xi^{2}}+\sqrt{\mathbb{E}\eta^{2}})^{2},$$推出 **Minkowski 不等式**，或 $L^{2}$-范数的三角不等式：$$\|\xi+\eta\|_{2}\leqslant\|\xi\|_{2}+\|\eta\|_{2}.$$
 
 **定义 (平方可积与方差)** @79
 
@@ -1574,17 +1622,31 @@ $$ \sigma\big(\{\Omega_n:n\geqslant1\}\big)=\Big\{\bigcup_{i\in I}\Omega_i:\ I\s
 
 现在 $\mathbb{R}$ 上的开区间全体生成的 $\sigma$-域是一个很有用的 $\sigma$-域，称为是 $\mathbb{R}$ 上的 **Borel 域**，记为 $\mathscr{B}$ 或者 $\mathscr{B}(\mathbb{R})$，其中的集合称为 **Borel 集**。
 
-**注 (Borel 域的生成元)** @94
+**注 (Borel 域包含常见集合)** @94
 
 $\mathscr{B}$ 包含了通常我们知道的集合，开集与闭集，单点集，半开半闭区间等。开集在 $\mathscr{B}$ 中是因为它是开区间的可列并，闭集是开集的余集，单点集是开区间的可列交：
 
 $$ \{a\}=\bigcap_{n=1}^{\infty}\Big(a-\frac{1}{n},\,a+\frac{1}{n}\Big), $$
 
-而半开半闭区间是开区间与单点集的并。反过来，不难验证 Borel 域可以由下面这样更简单的集类产生：
+而半开半闭区间是开区间与单点集的并。
+
+**注 (Borel 域的简化生成元)** @94
+
+反过来，不难验证 Borel 域可以由下面这样更简单的集类产生：
 
 $$ \begin{aligned} \mathscr{B}&=\sigma\big(\{(-\infty,x]:x\in\mathbb{R}\}\big)\\ &=\sigma\big(\{(-\infty,x):x\in\mathbb{R}\}\big)\\ &=\sigma\big(\{(-\infty,x]:x\in\mathbb{Q}\}\big). \end{aligned} $$
 
-实际上，$\mathscr{B}$ 也是由所有闭区间或者所有左开右闭区间生成的，但不能由所有单点生成（问问自己所有单点集生成的 $\sigma$-域是什么？）。注意 Borel 域虽然包含常见的集合，但不是 $\mathbb{R}$ 的子集全体。类似地，$n$ 维空间上由区间生成的 $\sigma$-域称为是 $n$ 维 Borel 域，记为 $\mathscr{B}^n$ 或者 $\mathscr{B}(\mathbb{R}^n)$。下面的一些定理虽然是对一维情况证明的，但显然证明可以稍加修改用于多维情况。为了叙述的方便，设有 $\Omega$ 到 $\mathbb{R}^n$ 的映射 $\xi$，对 $B\subset\mathbb{R}^n$，$\xi^{-1}(B)$ 是 $B$ 的逆像，是 $\Omega$ 的子集，对 $\mathbb{R}^n$ 的任何子集族 $\mathscr{B}_0$，定义
+**注 (Borel 域不能由单点集生成)** @94
+
+实际上，$\mathscr{B}$ 也是由所有闭区间或者所有左开右闭区间生成的，但不能由所有单点生成（问问自己所有单点集生成的 $\sigma$-域是什么？）。注意 Borel 域虽然包含常见的集合，但不是 $\mathbb{R}$ 的子集全体。
+
+**注 ($n$ 维 Borel 域)** @94
+
+类似地，$n$ 维空间上由区间生成的 $\sigma$-域称为是 $n$ 维 Borel 域，记为 $\mathscr{B}^n$ 或者 $\mathscr{B}(\mathbb{R}^n)$。下面的一些定理虽然是对一维情况证明的，但显然证明可以稍加修改用于多维情况。
+
+**注 (逆像与逆像集族)** @94
+
+为了叙述的方便，设有 $\Omega$ 到 $\mathbb{R}^n$ 的映射 $\xi$，对 $B\subset\mathbb{R}^n$，$\xi^{-1}(B)$ 是 $B$ 的逆像，是 $\Omega$ 的子集，对 $\mathbb{R}^n$ 的任何子集族 $\mathscr{B}_0$，定义
 
 $$ \xi^{-1}(\mathscr{B}_0):=\{\xi^{-1}(B):\ B\in\mathscr{B}_0\}, $$
 
@@ -1634,9 +1696,13 @@ $$ \xi^{-1}(\mathscr{B})\subset\mathscr{F}. $$
 
 从定义看，如果密度函数存在，形式上有 $f(x)=F'(x)$。但要注意 $F$ 并不是在所有点上都可微的，但在几乎所有点上都是对的。因此也可以说 $F$ 是连续型的当且仅当下式成立，且这时 $F'$ 就是密度函数：$$F(x)=\int_{-\infty}^{x}F'(t)\,\mathrm{d}t.$$
 
+**注 (连续型随机变量的一般期望公式)** @99
+
+由定理 4.2.2 直接推出，若 $\xi$ 是密度函数 $f$ 的连续型随机变量，$\phi$ 是一个非负连续函数，那么$$\mathbb{E}\phi(\xi)=\int_{-\infty}^{+\infty}\phi(x)f(x)\,\mathrm{d}x,$$积分理解为通常的 Riemann 积分。上式对 $\int|\phi(x)|f(x)\,\mathrm{d}x<\infty$ 的连续函数 $\phi$ 同样成立。实际上，上面的期望公式对逐段连续函数也成立。
+
 **注 (连续型随机变量的期望)** @99
 
-由定理 4.2.2 直接推出，若 $\xi$ 是密度函数 $f$ 的连续型随机变量，$\phi$ 是一个非负连续函数，那么$$\mathbb{E}\phi(\xi)=\int_{-\infty}^{+\infty}\phi(x)f(x)\,\mathrm{d}x,$$积分理解为通常的 Riemann 积分。上式对 $\int|\phi(x)|f(x)\,\mathrm{d}x<\infty$ 的连续函数 $\phi$ 同样成立。实际上，上面的期望公式对逐段连续函数也成立。特别地，$$\mathbb{E}\xi=\int_{-\infty}^{+\infty}xf(x)\,\mathrm{d}x,$$也就是说连续型随机变量的数学期望由大家熟悉的 Riemann 积分方法计算。
+特别地，$$\mathbb{E}\xi=\int_{-\infty}^{+\infty}xf(x)\,\mathrm{d}x,$$也就是说连续型随机变量的数学期望由大家熟悉的 Riemann 积分方法计算。
 
 **例 5.3.1 (均匀分布)** @99
 
@@ -1650,15 +1716,21 @@ $$ \xi^{-1}(\mathscr{B})\subset\mathscr{F}. $$
 
 记$$\Phi(x):=\int_{-\infty}^{x}\frac{1}{\sqrt{2\pi}}\mathrm{e}^{-\frac{1}{2}t^{2}}\,\mathrm{d}t,$$那么 $\Phi$ 是一个连续型的分布函数，称为标准（Guass）正态分布函数。它不是一个初等函数，其值通常由近似计算得到，而 $\phi$ 称为标准正态密度函数，它是一个严格正的光滑偶函数，在正半轴上严格递减，且以平方的指数速度递减。标准正态密度函数的图像呈钟形（图 5.1）。
 
-**注 (标准正态分布函数的性质)** @100
+**注 ($\Phi(0)=1/2$)** @100
 
-(1) $\Phi(0)=\dfrac{1}{2}$；
+$\Phi(0)=\dfrac{1}{2}$。
 
-(2) 对任何 $x\in\mathbf{R}$，有 $\Phi(-x)=1-\Phi(x)$；
+**注 ($\Phi$ 的对称性)** @100
 
-(3) $\Phi$ 是严格递增的，因此有反函数 $\Phi^{-1}$。
+对任何 $x\in\mathbf{R}$，有 $\Phi(-x)=1-\Phi(x)$。
 
-正态分布的值通常可查正态分布表，正态分布表只列举正半轴上的值，负半轴上的值由 (2) 计算。由于 (3)，正态分布表也可以查反函数，对任何 $y\in(0,1)$，查 $\Phi^{-1}(y)$，所以一般认为 $\Phi$ 与 $\Phi^{-1}$ 都是由正态分布表给出的。
+**注 ($\Phi$ 的严格单调性与反函数)** @100
+
+$\Phi$ 是严格递增的，因此有反函数 $\Phi^{-1}$。
+
+**注 (正态分布表的使用)** @100
+
+正态分布的值通常可查正态分布表，正态分布表只列举正半轴上的值，负半轴上的值由对称性计算。由于 $\Phi$ 严格递增，正态分布表也可以查反函数，对任何 $y\in(0,1)$，查 $\Phi^{-1}(y)$，所以一般认为 $\Phi$ 与 $\Phi^{-1}$ 都是由正态分布表给出的。
 
 **定义 ($\alpha$- 分位点)** @101
 
@@ -1674,21 +1746,45 @@ $$ \xi^{-1}(\mathscr{B})\subset\mathscr{F}. $$
 
 如果随机变量 $\xi$ 的密度函数是 $\phi(\cdot;\mu,\sigma^{2})$，即对任何 $x$，$$\mathbb{P}(\xi\le x)=\int_{-\infty}^{x}\frac{1}{\sqrt{2\pi}\sigma}\mathrm{e}^{-\frac{(t-\mu)^{2}}{2\sigma^{2}}}\,\mathrm{d}t,$$那么称 $\xi$ 服从参数为 $\mu,\sigma^{2}$ 的正态（或 Gauss）分布，简单记为 $\xi\sim N(\mu,\sigma^{2})$。按这个记号，$N(0,1)$ 就是标准正态分布。很多现象被认为是服从正态分布的，如人的身高、考试成绩、测量的误差，等等。
 
-**注 (正态分布的标准化与计算)** @102
+**注 (正态分布的标准化)** @102
 
-如果 $\xi\sim N(\mu,\sigma^{2})$，那么 $\dfrac{\xi-\mu}{\sigma}\sim N(0,1)$。事实上，作个积分变量替换即可得到，因此可以用标准正态分布来表示 $\xi$ 的分布函数 $F$：$$F(x)=\mathbb{P}(\xi\le x)=\mathbb{P}\!\left(\frac{\xi-\mu}{\sigma}\le\frac{x-\mu}{\sigma}\right)=\Phi\!\left(\frac{x-\mu}{\sigma}\right),$$也可以查正态分布表来得到其近似数值。关于正态分布的计算：设 $\xi\sim N(\mu,\sigma^{2})$，则$$\mathbb{P}(a<\xi<b)=\Phi\!\left(\frac{b-\mu}{\sigma}\right)-\Phi\!\left(\frac{a-\mu}{\sigma}\right).$$如果 $\alpha\in(0,1)$，$\mathbb{P}(\xi<c)=\alpha$，怎么算 $c$？同样的道理，$\Phi\!\left(\dfrac{c-\mu}{\sigma}\right)=\alpha$，因此$$c=\sigma\cdot\Phi^{-1}(\alpha)+\mu.$$
+如果 $\xi\sim N(\mu,\sigma^{2})$，那么 $\dfrac{\xi-\mu}{\sigma}\sim N(0,1)$。事实上，作个积分变量替换即可得到。
 
-**注 (正态分布的期望与方差)** @103
+**注 (用 $\Phi$ 表示正态分布函数)** @102
 
-先设 $\xi$ 是标准正态分布的，标准正态密度函数 $\phi$ 是偶函数，因此$$\mathbb{E}\xi=\int_{-\infty}^{+\infty}x\phi(x)\,\mathrm{d}x=0,$$而方差的计算也简单，用分部积分公式，有 $D\xi=\mathbb{E}\xi^{2}=1$。期望是 $0$ 而方差是 $1$。一般地，设 $\xi\sim N(\mu,\sigma^{2})$，那么 $\dfrac{\xi-\mu}{\sigma}$ 是标准正态分布的，因此$$\mathbb{E}\frac{\xi-\mu}{\sigma}=0,\quad D\frac{\xi-\mu}{\sigma}=1,$$由期望和方差的性质推出 $\mathbb{E}\xi=\mu$ 和 $D\xi=\sigma^{2}$。也就是说两个参数恰好是期望与方差，这也符合上面对于图像的描述。
+由上述标准化，可以用标准正态分布来表示 $\xi$ 的分布函数 $F$：$$F(x)=\mathbb{P}(\xi\le x)=\mathbb{P}\!\left(\frac{\xi-\mu}{\sigma}\le\frac{x-\mu}{\sigma}\right)=\Phi\!\left(\frac{x-\mu}{\sigma}\right),$$也可以查正态分布表来得到其近似数值。
+
+**注 (正态分布的区间概率)** @102
+
+关于正态分布的计算：设 $\xi\sim N(\mu,\sigma^{2})$，则$$\mathbb{P}(a<\xi<b)=\Phi\!\left(\frac{b-\mu}{\sigma}\right)-\Phi\!\left(\frac{a-\mu}{\sigma}\right).$$
+
+**注 (正态分布的分位点)** @102
+
+如果 $\alpha\in(0,1)$，$\mathbb{P}(\xi<c)=\alpha$，怎么算 $c$？同样的道理，$\Phi\!\left(\dfrac{c-\mu}{\sigma}\right)=\alpha$，因此$$c=\sigma\cdot\Phi^{-1}(\alpha)+\mu.$$
+
+**注 (标准正态分布的期望与方差)** @103
+
+先设 $\xi$ 是标准正态分布的，标准正态密度函数 $\phi$ 是偶函数，因此$$\mathbb{E}\xi=\int_{-\infty}^{+\infty}x\phi(x)\,\mathrm{d}x=0,$$而方差的计算也简单，用分部积分公式，有 $D\xi=\mathbb{E}\xi^{2}=1$。期望是 $0$ 而方差是 $1$。
+
+**注 (一般正态分布的期望与方差)** @103
+
+一般地，设 $\xi\sim N(\mu,\sigma^{2})$，那么 $\dfrac{\xi-\mu}{\sigma}$ 是标准正态分布的，因此$$\mathbb{E}\frac{\xi-\mu}{\sigma}=0,\quad D\frac{\xi-\mu}{\sigma}=1,$$由期望和方差的性质推出 $\mathbb{E}\xi=\mu$ 和 $D\xi=\sigma^{2}$。也就是说两个参数恰好是期望与方差，这也符合上面对于图像的描述。
 
 **例 5.3.3 (指数分布)** @103
 
 设 $\alpha>0$，函数$$f(x)=\begin{cases}\alpha\mathrm{e}^{-\alpha x},&x>0,\\ 0,&x\le 0\end{cases}$$是否为密度函数？对应的分布函数是什么？这个分布称为什么分布？
 
-**注 (指数分布)** @104
+**注 (指数分布的分布函数)** @104
 
-上述 $f$ 对应的分布函数为$$F(x)=\begin{cases}1-\mathrm{e}^{-\alpha x},&x>0,\\ 0,&x\le 0,\end{cases}$$称为参数为 $\alpha$ 的指数分布。分布函数是参数为 $\alpha$ 的指数分布的随机变量称为服从参数为 $\alpha$ 的指数分布。指数分布通常用来描述寿命，如某个产品的寿命，或者药品的残留量等。因为对任何 $x\in\mathbf{R}$，$\mathbb{P}(\xi>x)=\mathrm{e}^{-\alpha x}$，故指数分布的随机变量 $\xi$ 具有下面的遗忘性：对任何 $x,y>0$，有$$\mathbb{P}(\xi>x+y\mid\xi>x)=\mathbb{P}(\xi>y).$$
+上述 $f$ 对应的分布函数为$$F(x)=\begin{cases}1-\mathrm{e}^{-\alpha x},&x>0,\\ 0,&x\le 0,\end{cases}$$称为参数为 $\alpha$ 的指数分布。分布函数是参数为 $\alpha$ 的指数分布的随机变量称为服从参数为 $\alpha$ 的指数分布。
+
+**注 (指数分布的典型应用)** @104
+
+指数分布通常用来描述寿命，如某个产品的寿命，或者药品的残留量等。
+
+**注 (指数分布的遗忘性)** @104
+
+因为对任何 $x\in\mathbf{R}$，$\mathbb{P}(\xi>x)=\mathrm{e}^{-\alpha x}$，故指数分布的随机变量 $\xi$ 具有下面的遗忘性：对任何 $x,y>0$，有$$\mathbb{P}(\xi>x+y\mid\xi>x)=\mathbb{P}(\xi>y).$$
 
 **注 (指数分布的期望与方差)** @104
 
@@ -1698,9 +1794,17 @@ $$ \xi^{-1}(\mathscr{B})\subset\mathscr{F}. $$
 
 对任何 $r>0,\alpha>0$，函数$$y=\begin{cases}x^{r-1}\mathrm{e}^{-\alpha x},&x>0,\\ 0,&x\le 0\end{cases}$$是一个可积函数。利用 $\Gamma$ 函数的记号记$$\Gamma(r):=\int_{0}^{\infty}x^{r-1}\mathrm{e}^{-x}\,\mathrm{d}x,$$如何由此构造密度函数？该分布称为什么分布？它的期望与方差是多少？
 
-**注 ($\Gamma$ 函数与 $\Gamma$ 分布)** @104
+**注 ($\Gamma$ 函数的性质)** @104
 
-由 $\displaystyle\int_{0}^{\infty}x^{r-1}\mathrm{e}^{-\alpha x}\,\mathrm{d}x=\alpha^{-r}\Gamma(r)$，且由分部积分法容易推出 $\Gamma(r+1)=r\Gamma(r)$，$\Gamma(1)=1$。因此$$y=\begin{cases}\dfrac{\alpha^{r}}{\Gamma(r)}x^{r-1}\mathrm{e}^{-\alpha x},&x>0,\\ 0,&x\le 0\end{cases}$$是一个密度函数，对应的分布称为参数为 $r,\alpha$ 的 $\Gamma$ 分布，或者写 $\Gamma(r,\alpha)$。参数为 $\alpha$ 的指数分布就是 $\Gamma(1,\alpha)$ 分布。若 $\xi$ 是 $\Gamma(r,\alpha)$ 分布的，则$$\mathbb{E}\xi=\frac{r}{\alpha},\qquad \mathbb{E}\xi^{2}=\frac{r(r+1)}{\alpha^{2}},\qquad D\xi=\mathbb{E}\xi^{2}-(\mathbb{E}\xi)^{2}=\frac{r}{\alpha^{2}}.$$
+由 $\displaystyle\int_{0}^{\infty}x^{r-1}\mathrm{e}^{-\alpha x}\,\mathrm{d}x=\alpha^{-r}\Gamma(r)$，且由分部积分法容易推出 $\Gamma(r+1)=r\Gamma(r)$，$\Gamma(1)=1$。
+
+**注 ($\Gamma$ 分布)** @104
+
+由 $\Gamma$ 函数的上述性质，$$y=\begin{cases}\dfrac{\alpha^{r}}{\Gamma(r)}x^{r-1}\mathrm{e}^{-\alpha x},&x>0,\\ 0,&x\le 0\end{cases}$$是一个密度函数，对应的分布称为参数为 $r,\alpha$ 的 $\Gamma$ 分布，或者写 $\Gamma(r,\alpha)$。参数为 $\alpha$ 的指数分布就是 $\Gamma(1,\alpha)$ 分布。
+
+**注 ($\Gamma$ 分布的期望与方差)** @104
+
+若 $\xi$ 是 $\Gamma(r,\alpha)$ 分布的，则$$\mathbb{E}\xi=\frac{r}{\alpha},\qquad \mathbb{E}\xi^{2}=\frac{r(r+1)}{\alpha^{2}},\qquad D\xi=\mathbb{E}\xi^{2}-(\mathbb{E}\xi)^{2}=\frac{r}{\alpha^{2}}.$$
 
 **例 5.3.5 (正态变量的平方分布)** @105
 
@@ -1876,9 +1980,13 @@ $$\int_{-\infty}^{+\infty}(F(x+a)-F(x))\,\mathrm{d}x=a.$$
 
 随机向量 $X=(\xi_1,\cdots,\xi_n)$ 的联合分布函数是 $\mathbf{R}^n$ 上的函数$$F_X(x_1,\cdots,x_n)=\mathbb{P}(\xi_1\le x_1,\cdots,\xi_n\le x_n).$$
 
-**注 (联合分布函数与期望的计算)** @111
+**注 (联合分布下的期望计算)** @111
 
-若 $\phi$ 是 $\mathbf{R}^n$ 上连续函数且 $\phi(X)$ 可积，则与一维情形类似有$$\mathbb{E}\phi(X)=\int_{\mathbf{R}^n}\phi(x_1,\cdots,x_n)\,\mathrm{d}_nF(x_1,\cdots,x_n),\tag{6.1.1}$$其中符号 $\mathrm{d}_n$ 表示 $n$- 维的 Riemann–Stieltjes 积分。由联合分布函数可得到各随机变量的分布函数 $F_{\xi_i}$，称之为 $X$ 的一个边缘分布：$$F_{\xi_i}(x)=F_X(\infty,\cdots,x,\cdots,\infty),$$右端表示将 $x_i$ 用 $x$ 代替、让其他变量趋于 $\infty$。
+若 $\phi$ 是 $\mathbf{R}^n$ 上连续函数且 $\phi(X)$ 可积，则与一维情形类似有$$\mathbb{E}\phi(X)=\int_{\mathbf{R}^n}\phi(x_1,\cdots,x_n)\,\mathrm{d}_nF(x_1,\cdots,x_n),\tag{6.1.1}$$其中符号 $\mathrm{d}_n$ 表示 $n$- 维的 Riemann–Stieltjes 积分。
+
+**注 (由联合分布函数求边缘分布)** @111
+
+由联合分布函数可得到各随机变量的分布函数 $F_{\xi_i}$，称之为 $X$ 的一个边缘分布：$$F_{\xi_i}(x)=F_X(\infty,\cdots,x,\cdots,\infty),$$右端表示将 $x_i$ 用 $x$ 代替、让其他变量趋于 $\infty$。
 
 **注 (边缘分布与独立性)** @111
 
@@ -1918,9 +2026,17 @@ $$\rho(\xi,\eta):=\frac{\operatorname{cov}(\xi,\eta)}{\sqrt{D\xi\cdot D\eta}}$$�
 
 设有随机向量 $X=(\xi_1,\cdots,\xi_n)$，如果存在 $\mathbf{R}^n$ 上的非负可积函数 $f$，使得对任何 $x_1,\cdots,x_n$，$$F_X(x_1,\cdots,x_n)=\mathbb{P}(\xi_1\le x_1,\cdots,\xi_n\le x_n)=\int_{-\infty}^{x_1}\cdots\int_{-\infty}^{x_n}f(t_1,\cdots,t_n)\,\mathrm{d}t_1\cdots\mathrm{d}t_n,$$那么 $X$ 和对应的分布函数称为是连续型的，$f$ 称为它们的联合密度函数。反之，一个函数是（某个随机向量的）联合密度函数当且仅当它非负且积分等于 $1$。
 
-**注 (连续型的等价刻画与密度求法)** @113
+**注 (连续型的等价刻画)** @113
 
-上式等价于对任何区域（连通开集）$D\subset\mathbf{R}^n$ 有$$\mathbb{P}(X\in D)=\int\cdots\int_{(x_1,\cdots,x_n)\in D}f(x_1,\cdots,x_n)\,\mathrm{d}x_1\cdots\mathrm{d}x_n.\tag{6.1.2}$$等价性的直观证明是：任何区域或开集可表示为可列个互不相交（左开右闭）矩形的并。另外，分布函数求偏导数就是密度函数（几乎处的意义）：$$f(x_1,\cdots,x_n)=\frac{\partial^nF_X}{\partial x_1\cdots\partial x_n}.$$设 $\phi$ 是 $\mathbf{R}^n$ 上连续函数，则$$\mathbb{E}[\phi(X)]=\int_{-\infty}^{+\infty}\cdots\int_{-\infty}^{+\infty}\phi(x_1,\cdots,x_n)f(x_1,\cdots,x_n)\,\mathrm{d}x_1\cdots\mathrm{d}x_n,$$该公式对分段连续函数也成立。
+连续型的定义式等价于对任何区域（连通开集）$D\subset\mathbf{R}^n$ 有$$\mathbb{P}(X\in D)=\int\cdots\int_{(x_1,\cdots,x_n)\in D}f(x_1,\cdots,x_n)\,\mathrm{d}x_1\cdots\mathrm{d}x_n.\tag{6.1.2}$$等价性的直观证明是：任何区域或开集可表示为可列个互不相交（左开右闭）矩形的并。
+
+**注 (由分布函数求密度)** @113
+
+分布函数求偏导数就是密度函数（几乎处的意义）：$$f(x_1,\cdots,x_n)=\frac{\partial^nF_X}{\partial x_1\cdots\partial x_n}.$$
+
+**注 (连续型随机向量的期望)** @113
+
+设 $\phi$ 是 $\mathbf{R}^n$ 上连续函数，则$$\mathbb{E}[\phi(X)]=\int_{-\infty}^{+\infty}\cdots\int_{-\infty}^{+\infty}\phi(x_1,\cdots,x_n)f(x_1,\cdots,x_n)\,\mathrm{d}x_1\cdots\mathrm{d}x_n,$$该公式对分段连续函数也成立。
 
 **注 (独立与联合分布函数)** @113
 
@@ -1958,9 +2074,13 @@ $n$ 个随机变量 $\xi_1,\cdots,\xi_n$ 之间的两种平凡的关系之一是
 
 服从正态分布的随机向量 $(\xi_1,\cdots,\xi_n)$ 的分量相互独立当且仅当它们两两不相关，也就是说其协方差矩阵是对角矩阵。
 
-**注 (二维正态分布的密度)** @117
+**注 (二维正态分布的协方差矩阵)** @117
 
-设 $(\xi_1,\xi_2)$ 服从正态分布，$\xi_i\sim N(\mu_i,\sigma_i^2)$，$i=1,2$，相关系数为 $\rho$，则 $\operatorname{cov}(\xi_1,\xi_2)=\rho\sigma_1\sigma_2$，协方差矩阵为$$A=\begin{pmatrix}\sigma_1^2 & \rho\sigma_1\sigma_2\\ \rho\sigma_1\sigma_2 & \sigma_2^2\end{pmatrix},$$其逆为$$A^{-1}=\frac{1}{(1-\rho^2)}\begin{pmatrix}\frac{1}{\sigma_1^2} & -\frac{\rho}{\sigma_1\sigma_2}\\ -\frac{\rho}{\sigma_1\sigma_2} & \frac{1}{\sigma_2^2}\end{pmatrix},$$联合密度函数为$$f_{\xi_1,\xi_2}(x_1,x_2)=\frac{1}{2\pi\sqrt{1-\rho^2}\sigma_1\sigma_2}\exp\left\{-\frac{1}{2(1-\rho^2)}\left[\left(\frac{x_1-\mu_1}{\sigma_1}\right)^2-2\rho\frac{x_1-\mu_1}{\sigma_1}\frac{x_2-\mu_2}{\sigma_2}+\left(\frac{x_2-\mu_2}{\sigma_2}\right)^2\right]\right\}.$$容易看出右边函数是 $x_1$ 的函数与 $x_2$ 的函数的乘积当且仅当 $\rho=0$。
+设 $(\xi_1,\xi_2)$ 服从正态分布，$\xi_i\sim N(\mu_i,\sigma_i^2)$，$i=1,2$，相关系数为 $\rho$，则 $\operatorname{cov}(\xi_1,\xi_2)=\rho\sigma_1\sigma_2$，协方差矩阵为$$A=\begin{pmatrix}\sigma_1^2 & \rho\sigma_1\sigma_2\\ \rho\sigma_1\sigma_2 & \sigma_2^2\end{pmatrix},$$其逆为$$A^{-1}=\frac{1}{(1-\rho^2)}\begin{pmatrix}\frac{1}{\sigma_1^2} & -\frac{\rho}{\sigma_1\sigma_2}\\ -\frac{\rho}{\sigma_1\sigma_2} & \frac{1}{\sigma_2^2}\end{pmatrix},$$
+
+**注 (二维正态分布的联合密度)** @117
+
+上面 $(\xi_1,\xi_2)$ 的联合密度函数为$$f_{\xi_1,\xi_2}(x_1,x_2)=\frac{1}{2\pi\sqrt{1-\rho^2}\sigma_1\sigma_2}\exp\left\{-\frac{1}{2(1-\rho^2)}\left[\left(\frac{x_1-\mu_1}{\sigma_1}\right)^2-2\rho\frac{x_1-\mu_1}{\sigma_1}\frac{x_2-\mu_2}{\sigma_2}+\left(\frac{x_2-\mu_2}{\sigma_2}\right)^2\right]\right\}.$$容易看出右边函数是 $x_1$ 的函数与 $x_2$ 的函数的乘积当且仅当 $\rho=0$。
 
 ### 6.3 随机向量的函数的分布（p118–133）
 
@@ -1976,7 +2096,11 @@ $n$ 个随机变量 $\xi_1,\cdots,\xi_n$ 之间的两种平凡的关系之一是
 
 **注 (分布的可再生性)** @120
 
-如果两个相同类型（不一定相同）分布的独立随机变量之和的分布仍是同一类型，就称这种类型的分布有再生性。容易验证：(1) 正态分布有再生性；(2) 均匀分布没有再生性；(3) 成功概率 $p$ 相同时二项分布有再生性；(4) Poisson 分布有再生性；(5) $\Gamma$ 分布在第二个参数相同时有再生性。
+如果两个相同类型（不一定相同）分布的独立随机变量之和的分布仍是同一类型，就称这种类型的分布有再生性。
+
+**注 (具有再生性的分布举例)** @120
+
+按上述定义容易验证：(1) 正态分布有再生性；(2) 均匀分布没有再生性；(3) 成功概率 $p$ 相同时二项分布有再生性；(4) Poisson 分布有再生性；(5) $\Gamma$ 分布在第二个参数相同时有再生性。
 
 **例 6.3.2 ($\Gamma$ 分布的可再生性)** @120
 
@@ -1990,9 +2114,17 @@ $n$ 个随机变量 $\xi_1,\cdots,\xi_n$ 之间的两种平凡的关系之一是
 
 设 $\xi\sim\Gamma(r_1,\alpha)$ 与 $\eta\sim\Gamma(r_2,\alpha)$ 独立，则 $Y:=\dfrac{\xi}{\xi+\eta}$ 满足 $\mathbb{P}(0<Y<1)=1$，其密度函数为$$f_Y(x)=C\,x^{r_1-1}(1-x)^{r_2-1},\qquad x\in(0,1),$$其中常数由归一化确定，正是 $\beta$ 函数的倒数$$\mathrm{B}(r_1,r_2):=\int_0^1 x^{r_1-1}(1-x)^{r_2-1}\,\mathrm{d}x=\frac{\Gamma(r_1)\Gamma(r_2)}{\Gamma(r_1+r_2)}.$$这个分布称为参数为 $r_1,r_2$ 的 $\beta$ 分布，其期望为$$\mathbb{E}Y=\frac{1}{\mathrm{B}(r_1,r_2)}\int_0^1 x^{r_1}(1-x)^{r_2-1}\,\mathrm{d}x=\frac{r_1}{r_1+r_2}.$$作变换 $u=s+t,\ v=\dfrac{s}{s+t}$（把 $\mathbb{R}_+^2$ 一一映到 $\mathbb{R}_+\times(0,1)$，$\mathrm{d}s\mathrm{d}t=u\,\mathrm{d}u\mathrm{d}v$）还可算得 $(X,Y)=\bigl(\xi+\eta,\ \xi/(\xi+\eta)\bigr)$ 的联合密度$$f_{X,Y}(x,y)=C\,x^{r_1+r_2-1}\mathrm{e}^{-\alpha x}\,y^{r_1-1}(1-y)^{r_2-1},\qquad x>0,\ y\in(0,1),$$它是 $x$ 的函数与 $y$ 的函数的乘积，因此 $X$ 与 $Y$ 独立。
 
-**注 (反正弦分布)** @122
+**注 (反正弦分布的构造与密度)** @122
 
-若 $\xi,\eta$ 独立同分布且都服从标准正态分布，则 $\xi^2$ 与 $\eta^2$ 独立且都服从 $\Gamma\bigl(\tfrac12,\tfrac12\bigr)$，于是 $\xi^2+\eta^2$ 与 $\dfrac{\xi^2}{\xi^2+\eta^2}$ 独立，前者服从参数为 $\tfrac12$ 的指数分布，后者服从参数为 $\tfrac12,\tfrac12$ 的 $\beta$ 分布，密度函数为$$\frac{1}{\pi\sqrt{y(1-y)}},\qquad y\in(0,1),$$称之为反正弦分布，因为其分布函数为$$F_Y(y)=\begin{cases}0, & y\le 0,\\[2pt] \dfrac{2}{\pi}\arcsin\sqrt{y}, & y\in(0,1),\\[2pt] 1, & y\ge 1.\end{cases}$$得名之由是 Markov 过程中许多随机现象服从这个分布。
+若 $\xi,\eta$ 独立同分布且都服从标准正态分布，则 $\xi^2$ 与 $\eta^2$ 独立且都服从 $\Gamma\bigl(\tfrac12,\tfrac12\bigr)$，于是 $\xi^2+\eta^2$ 与 $\dfrac{\xi^2}{\xi^2+\eta^2}$ 独立，前者服从参数为 $\tfrac12$ 的指数分布，后者服从参数为 $\tfrac12,\tfrac12$ 的 $\beta$ 分布，密度函数为$$\frac{1}{\pi\sqrt{y(1-y)}},\qquad y\in(0,1),$$称之为反正弦分布。
+
+**注 (反正弦分布的分布函数)** @122
+
+反正弦分布的分布函数为$$F_Y(y)=\begin{cases}0, & y\le 0,\\[2pt] \dfrac{2}{\pi}\arcsin\sqrt{y}, & y\in(0,1),\\[2pt] 1, & y\ge 1.\end{cases}$$
+
+**注 (反正弦分布的得名之由)** @122
+
+得名之由是 Markov 过程中许多随机现象服从这个分布。
 
 **例 6.3.3 (两个独立标准正态变量之商)** @123
 
@@ -2022,9 +2154,17 @@ $n$ 个随机变量 $\xi_1,\cdots,\xi_n$ 之间的两种平凡的关系之一是
 
 设 $\xi_1,\cdots,\xi_n$ 独立同分布，分布函数为 $F$。对任意 $x\in\mathbb{R}$，$\xi_{(i)}\le x$ 当且仅当 $\{\xi_i\}$ 中至少有 $i$ 个不超过 $x$；用 $A_k$ 表示恰有 $k$ 个不超过 $x$，由二项分布$$\mathbb{P}(A_k)=\binom nk F(x)^k\bigl(1-F(x)\bigr)^{n-k},$$因此$$\mathbb{P}\bigl(\xi_{(i)}\le x\bigr)=\sum_{k=i}^{n}\binom nk F(x)^k\bigl(1-F(x)\bigr)^{n-k}=\mathbb{P}\bigl(\mathrm{B}(i,n-i)\le F(x)\bigr),$$其中 $\mathrm{B}(i,n-i)$ 是参数为 $i,n-i$ 的 $\beta$ 分布。特别地，$\xi_{(1)}=\min_i\xi_i$，$\xi_{(n)}=\max_i\xi_i$。
 
-**注 (随机向量的对称性)** @128
+**注 (对称随机向量的定义)** @128
 
-设 $(\xi_1,\cdots,\xi_n)$ 是随机向量，如果对 $(1,\cdots,n)$ 的任意置换 $(\sigma_1,\cdots,\sigma_n)$，$(\xi_{\sigma_1},\cdots,\xi_{\sigma_n})$ 与 $(\xi_1,\cdots,\xi_n)$ 同分布，就称它是对称的，即分布与次序无关。若 $\xi_1,\cdots,\xi_n$ 独立同分布，则它作为随机向量是对称的；用函数表达，即对任意非负或有界的 Borel 可测函数 $f:\mathbb{R}^n\to\mathbb{R}$ 有$$\mathbb{E}f(\xi_1,\cdots,\xi_n)=\mathbb{E}f(\xi_{\sigma_1},\cdots,\xi_{\sigma_n}).$$由此推出：$\{\xi_i\}$ 的各种顺序排列是等可能发生的，故随机序号 $((1),(2),\cdots,(n))$ 在 $1,2,\cdots,n$ 的所有排列上均匀分布。
+设 $(\xi_1,\cdots,\xi_n)$ 是随机向量，如果对 $(1,\cdots,n)$ 的任意置换 $(\sigma_1,\cdots,\sigma_n)$，$(\xi_{\sigma_1},\cdots,\xi_{\sigma_n})$ 与 $(\xi_1,\cdots,\xi_n)$ 同分布，就称它是对称的，即分布与次序无关。
+
+**注 (独立同分布向量的对称性)** @128
+
+若 $\xi_1,\cdots,\xi_n$ 独立同分布，则它作为随机向量是对称的；用函数表达，即对任意非负或有界的 Borel 可测函数 $f:\mathbb{R}^n\to\mathbb{R}$ 有$$\mathbb{E}f(\xi_1,\cdots,\xi_n)=\mathbb{E}f(\xi_{\sigma_1},\cdots,\xi_{\sigma_n}).$$
+
+**注 (对称向量的次序等可能)** @128
+
+由此推出：$\{\xi_i\}$ 的各种顺序排列是等可能发生的，故随机序号 $((1),(2),\cdots,(n))$ 在 $1,2,\cdots,n$ 的所有排列上均匀分布。
 
 **例 6.3.8 (指数分布的最小顺序统计量)** @128
 
@@ -2298,7 +2438,11 @@ $$\mathbb{P}(X\in S)\leqslant\frac{1}{1+\inf\{x\Sigma^{-1}x^{\mathrm{T}}:x\in S\
 
 **注 (Kolmogorov 判别准则)** @142
 
-由 Kolmogorov 不等式可以推出独立随机序列的强大数律成立的一个判别准则：级数$$\sum_k\frac{\sigma_k^2}{k^2}$$收敛。事实上，由 Borel–Cantelli 引理，只需证明对任何 $t>0$，$$\sum_n\mathbb{P}\left(\frac1n|S_n-m_n|>t\right)<\infty.$$对 $k\ge 1$，在 $2^{k-1}<n\le 2^k$ 上应用 Kolmogorov 不等式，右边关于 $k$ 求和后可用 $\sum_{n\ge 1}\frac{16}{3}\frac{\sigma_n^2}{n^2}$ 控制，从而该级数有限；再由 Borel–Cantelli 引理推出$$\max_{2^{k-1}<n\le 2^k}\frac1n|S_n-m_n|$$几乎处处趋于零，这蕴含着 $\{\xi_n\}$ 服从强大数定律。
+由 Kolmogorov 不等式可以推出独立随机序列的强大数律成立的一个判别准则：级数$$\sum_k\frac{\sigma_k^2}{k^2}$$收敛。事实上，由 Borel–Cantelli 引理，只需证明对任何 $t>0$，$$\sum_n\mathbb{P}\left(\frac1n|S_n-m_n|>t\right)<\infty.$$
+
+**注 (判别准则的证明)** @142
+
+接上条，对 $k\ge 1$，在 $2^{k-1}<n\le 2^k$ 上应用 Kolmogorov 不等式，右边关于 $k$ 求和后可用 $\sum_{n\ge 1}\frac{16}{3}\frac{\sigma_n^2}{n^2}$ 控制，从而该级数有限；再由 Borel–Cantelli 引理推出$$\max_{2^{k-1}<n\le 2^k}\frac1n|S_n-m_n|$$几乎处处趋于零，这蕴含着 $\{\xi_n\}$ 服从强大数定律。
 
 **定理 7.3.2 (Kolmogorov)** @143
 
@@ -2346,9 +2490,17 @@ $$\mathbb{P}(X\in S)\leqslant\frac{1}{1+\inf\{x\Sigma^{-1}x^{\mathrm{T}}:x\in S\
 
 ### 7.5 依分布收敛（p147–155）
 
-**注 (引入依分布收敛的缘由)** @147
+**注 (Bernoulli 大数定律)** @147
 
-依分布收敛的引入是缘由 de Moivre 中心极限定理。在早期研究成功概率为 $p$ 的 Bernoulli 随机序列 $\{\xi_n\}$ 时，Bernoulli 证明了大数定律，即成功的频率依概率收敛于成功的概率：$$\frac{S_n}{n}\xrightarrow{\ \mathbb{P}\ }p.$$而 de Moivre 研究成功次数 $S_n$ 的分布情况，他的想法是先把 $S_n$ 标准化，然后再看它落在区间 $(a,b)$ 的概率当 $n$ 无穷的极限是什么，用数学的语言来表达，也就是要计算$$\lim_n\mathbb{P}\left(a<\frac{S_n-np}{\sqrt{npq}}<b\right).$$实际上，当初 de Moivre 只是研究了 $p=1/2$ 的情况，一般的 $p$ 的情况是 Laplace 后来推广的。
+在早期研究成功概率为 $p$ 的 Bernoulli 随机序列 $\{\xi_n\}$ 时，Bernoulli 证明了大数定律，即成功的频率依概率收敛于成功的概率：$$\frac{S_n}{n}\xrightarrow{\ \mathbb{P}\ }p.$$
+
+**注 (de Moivre 的标准化与区间概率的极限)** @147
+
+依分布收敛的引入是缘由 de Moivre 中心极限定理。而 de Moivre 研究成功次数 $S_n$ 的分布情况，他的想法是先把 $S_n$ 标准化，然后再看它落在区间 $(a,b)$ 的概率当 $n$ 无穷的极限是什么，用数学的语言来表达，也就是要计算$$\lim_n\mathbb{P}\left(a<\frac{S_n-np}{\sqrt{npq}}<b\right).$$
+
+**注 (de Moivre 的 $p=1/2$ 与 Laplace 的推广)** @147
+
+实际上，当初 de Moivre 只是研究了 $p=1/2$ 的情况，一般的 $p$ 的情况是 Laplace 后来推广的。
 
 **定义 7.5.1 (弱收敛与依分布收敛)** @148
 
@@ -2842,15 +2994,29 @@ $$\varphi_m(t)=\left(1-\frac{|t|}{m}\right)\varphi(t)1_{\{|t|<m\}}.$$
 
 设 $\{\xi_n\}$ 是成功概率为 $p$ 的 Bernoulli 随机序列，则对 $x\in\mathbb{R}$ 有$$\lim_{n\to\infty}\mathbb{P}\left(\frac{\sum_{i=1}^{n}\xi_i-np}{\sqrt{np(1-p)}}\le x\right)=\Phi(x),$$其中 $\Phi$ 是标准正态分布函数。
 
-**注 (Stirling 公式与常数 $c$)** @170
+**注 (Stirling 公式)** @170
 
-估计组合数时要估计 $n!$，有 Stirling 公式$$n!\sim\sqrt{2\pi n}\,n^{n+\frac12}\mathrm{e}^{-n}.$$由$$\int_{k-1}^{k}\log x\,\mathrm{d}x<\log k<\int_{k}^{k+1}\log x\,\mathrm{d}x,$$对 $1\le k\le n$ 求和得$$n\log n-n<\log n!<(n+1)\log(n+1)-n .$$令$$d_n:=\log n!-\left(n+\frac12\right)\log n+n,$$则$$d_{n+1}-d_n=\left(n+\frac12\right)\log\frac{n+1}{n}-1<0,$$故 $d_n$ 递减有极限，记此极限为 $d$，又 $c:=\mathrm{e}^{d}$，于是$$n!\sim c\cdot n^{n+\frac12}\mathrm{e}^{-n}.$$常数 $c$ 的值由本节末尾的估计定出。
+估计组合数时要估计 $n!$，有 Stirling 公式$$n!\sim\sqrt{2\pi n}\,n^{n+\frac12}\mathrm{e}^{-n}.$$
 
-**注 (二项分布的尾估计与局部估计)** @171
+**注 ($\log n!$ 的积分估计)** @170
 
-记 $b(k;n,p)=\binom{n}{k}p^{k}q^{n-k}$，$q=1-p$。由$$\frac{b(k;n,p)}{b(k-1;n,p)}=\frac{(n-k+1)p}{kq}=1+\frac{(n+1)p-k}{kq}$$知 $b(k;n,p)$ 在 $k<(n+1)p$ 时递增、在 $k>(n+1)p$ 时递减；取整数 $m$ 满足 $(n+1)p-1<m\le(n+1)p$，则 $b(k;n,p)$ 在 $k=m$ 时最大。对任何整数 $r>0$，$$\mathbb{P}(S_n\ge r)=\sum_{k\ge r}b(k;n,p)\le\frac{rq}{r-np}\le\frac{rq}{(r-np)^{2}},$$最后一步用到 $1\ge\sum_{k=m}^{r}b(k;n,p)\ge(r-np)b(r;n,p)$。
+由$$\int_{k-1}^{k}\log x\,\mathrm{d}x<\log k<\int_{k}^{k+1}\log x\,\mathrm{d}x,$$对 $1\le k\le n$ 求和得$$n\log n-n<\log n!<(n+1)\log(n+1)-n .$$
 
-记 $\delta:=m-np$，$$a_k:=b(m+k;n,p)=\mathbb{P}(S_n=m+k)=\binom{n}{m+k}p^{m+k}q^{n-m-k}.$$当 $k\ge0$ 且远小于 $n$ 时，利用对数函数的 Taylor 展开（$|x|<\frac12$ 时 $|x-\log(1+x)|\le2x^{2}$）得局部估计$$a_k=a_0\,\mathrm{e}^{-\frac{k^{2}}{2npq}+\rho_k},\qquad |\rho_k|\le\frac{2k^{3}}{(npq)^{2}}+\frac{2k}{npq}.$$
+**注 ($d_n$ 的单调性与常数 $c$)** @170
+
+令$$d_n:=\log n!-\left(n+\frac12\right)\log n+n,$$则$$d_{n+1}-d_n=\left(n+\frac12\right)\log\frac{n+1}{n}-1<0,$$故 $d_n$ 递减有极限，记此极限为 $d$，又 $c:=\mathrm{e}^{d}$，于是$$n!\sim c\cdot n^{n+\frac12}\mathrm{e}^{-n}.$$常数 $c$ 的值由本节末尾的估计定出。
+
+**注 ($b(k;n,p)$ 的单调性与最大值点)** @171
+
+记 $b(k;n,p)=\binom{n}{k}p^{k}q^{n-k}$，$q=1-p$。由$$\frac{b(k;n,p)}{b(k-1;n,p)}=\frac{(n-k+1)p}{kq}=1+\frac{(n+1)p-k}{kq}$$知 $b(k;n,p)$ 在 $k<(n+1)p$ 时递增、在 $k>(n+1)p$ 时递减；取整数 $m$ 满足 $(n+1)p-1<m\le(n+1)p$，则 $b(k;n,p)$ 在 $k=m$ 时最大。
+
+**注 (二项分布的尾估计)** @171
+
+接上条，对任何整数 $r>0$，$$\mathbb{P}(S_n\ge r)=\sum_{k\ge r}b(k;n,p)\le\frac{rq}{r-np}\le\frac{rq}{(r-np)^{2}},$$最后一步用到 $1\ge\sum_{k=m}^{r}b(k;n,p)\ge(r-np)b(r;n,p)$。
+
+**注 (二项分布的局部估计)** @171
+
+沿用上条，记 $\delta:=m-np$，$$a_k:=b(m+k;n,p)=\mathbb{P}(S_n=m+k)=\binom{n}{m+k}p^{m+k}q^{n-m-k}.$$当 $k\ge0$ 且远小于 $n$ 时，利用对数函数的 Taylor 展开（$|x|<\frac12$ 时 $|x-\log(1+x)|\le2x^{2}$）得局部估计$$a_k=a_0\,\mathrm{e}^{-\frac{k^{2}}{2npq}+\rho_k},\qquad |\rho_k|\le\frac{2k^{3}}{(npq)^{2}}+\frac{2k}{npq}.$$
 
 **定理 (De Moivre–Laplace 的估计)** @172
 
@@ -2938,9 +3104,13 @@ $$\lim_n\max_{1\leqslant i\leqslant k_n}\frac{\sigma_{n,i}}{\sigma_n}=0.$$
 
 设 $\mathscr{F}_0$ 是一个 $\pi$-类，$\mathscr{F}$ 是一个 Dynkin 类且 $\mathscr{F}\supset\mathscr{F}_0$，则 $\mathscr{F}\supset\sigma(\mathscr{F}_0)$。
 
-**注 (单调类方法)** @180
+**注 (分布相同的等价刻画)** @180
 
-设 $\xi,\eta$ 是两个 $n$ 维随机变量，那么下面断言是等价的：(1) 对任何 $x\in\mathbb{R}^n$，$\mathbb{P}(\xi\leqslant x)=\mathbb{P}(\eta\leqslant x)$；(2) 对任何 Borel 集 $B$，$\mathbb{P}(\xi\in B)=\mathbb{P}(\eta\in B)$；(3) 对任何有界（或非负）Borel 可测函数 $f$，$\mathbb{E}f(\xi)=\mathbb{E}f(\eta)$。从 (1) 推出 (2) 是 Dynkin 引理，从 (2) 推出 (3) 是单调收敛定理，把这样两种方法结合起来用称为**单调类方法**。
+设 $\xi,\eta$ 是两个 $n$ 维随机变量，那么下面断言是等价的：(1) 对任何 $x\in\mathbb{R}^n$，$\mathbb{P}(\xi\leqslant x)=\mathbb{P}(\eta\leqslant x)$；(2) 对任何 Borel 集 $B$，$\mathbb{P}(\xi\in B)=\mathbb{P}(\eta\in B)$；(3) 对任何有界（或非负）Borel 可测函数 $f$，$\mathbb{E}f(\xi)=\mathbb{E}f(\eta)$。
+
+**注 (单调类方法的证明思路)** @180
+
+上条中，从 (1) 推出 (2) 是 Dynkin 引理，从 (2) 推出 (3) 是单调收敛定理，把这样两种方法结合起来用称为**单调类方法**。
 
 **定理 10.1.2 (Fubini 定理)** @180
 
@@ -2956,7 +3126,9 @@ $$ \mathbb{E}f(\xi,\eta)=\mathbb{E}\big[\mathbb{E}f(x,\eta)\big]_{x=\xi}=\mathbb
 
 $$ \int_{\mathbb{R}^2}f(x,y)\,\mathrm{d}_2F(x)G(y)=\int_{\mathbb{R}}\mathrm{d}F(x)\int_{\mathbb{R}}f(x,y)\,\mathrm{d}G(y)=\int_{\mathbb{R}}\mathrm{d}G(y)\int_{\mathbb{R}}f(x,y)\,\mathrm{d}F(x).\tag{10.1.2} $$
 
-同样的方法可以证明数学期望和 Riemann 积分是可以交换的。如果 $f$ 是非负 Borel 可测函数，那么
+**注 (期望与 Riemann 积分交换)** @181
+
+与上条相同的方法可以证明数学期望和 Riemann 积分是可以交换的。如果 $f$ 是非负 Borel 可测函数，那么
 
 $$ \mathbb{E}\Big(\int_{\mathbb{R}}f(\xi,x)\,\mathrm{d}x\Big)=\int_{\mathbb{R}}\mathbb{E}\big[f(\xi,x)\big]\,\mathrm{d}x.\tag{10.1.3} $$
 
