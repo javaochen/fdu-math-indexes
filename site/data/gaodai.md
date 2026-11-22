@@ -2218,6 +2218,8 @@ $\mathbb{K}[x]$ 中元素的乘积适合下列法则：
 
 ### 5.4 因式分解（p226–230）
 
+读者在中学里已经学习过因式分解。但是由于当时没有数域的概念，因此对什么叫"不可再分"缺乏严格的定义。现在我们可以来严格地建立多项式的因式分解理论。
+
 **定义 5.4.1 (可约与不可约多项式)** @226
 
 设 $f(x)$ 是数域 $\mathbb{K}$ 上的非常数多项式，若 $f(x)$ 可以分解为两个次数小于 $f(x)$ 次数的 $\mathbb{K}$ 上多项式之积，则称 $f(x)$ 是 $\mathbb{K}$ 上的**可约多项式**。否则，称 $f(x)$ 为 $\mathbb{K}$ 上的**不可约多项式**。
@@ -2285,6 +2287,8 @@ $\mathbb{K}[x]$ 中元素的乘积适合下列法则：
 设 $d(x)=(f(x),f'(x))$，则 $f(x)/d(x)$ 是一个没有重因式的多项式，且这个多项式的不可约因式与 $f(x)$ 的不可约因式相同（不计重数）。
 
 ### 5.5 多项式函数（p231–233）
+
+我们在定义数域 $\mathbb{K}$ 上的多项式 $f(x)$ 时，未定元 $x$ 被看成是一个形式元，多项式 $f(x)$ 是一个形式多项式。若$$f(x)=a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0,$$对 $\mathbb{K}$ 中任一元素 $b$，定义$$f(b)=a_nb^n+a_{n-1}b^{n-1}+\cdots+a_1b+a_0,$$则称 $f(b)$ 为 $f(x)$ 在点 $b$ 的值。这样多项式 $f(x)$ 又可看成是数域 $\mathbb{K}$ 上的函数，这个函数称为**多项式函数**。一个很自然的问题是：多项式函数与多项式是否是一回事？也就是说，若两个多项式 $f(x)$ 与 $g(x)$ 在 $\mathbb{K}$ 上取值相同，那么是否必有 $f(x)=g(x)$，即它们对应的各项的系数相同？我们将在下面给予肯定的回答。
 
 **定义 5.5.1 (多项式的根)** @232
 
@@ -2938,6 +2942,8 @@ $n$ 阶矩阵 $A$ 的极小多项式和特征多项式有相同的根（不计�
 
 ### 7.2 矩阵的法式（p302–306）
 
+在上一节中，我们把矩阵的相似归结为 $\lambda$-矩阵的相抵。现在我们要求 $\lambda$-矩阵的相抵标准型。我们自然地希望任一 $\lambda$-矩阵相抵于一个对角 $\lambda$-矩阵。
+
 **引理 7.2.1 (相抵于首元整除全体的 λ-矩阵)** @303
 
 设 $A(\lambda)=(a_{ij}(\lambda))_{m\times n}$ 是任一非零 $\lambda$-矩阵，则 $A(\lambda)$ 必相抵于这样的一个 $\lambda$-矩阵 $B(\lambda)=(b_{ij}(\lambda))_{m\times n}$，其中 $b_{11}(\lambda)\neq 0$ 且 $b_{11}(\lambda)$ 可整除 $B(\lambda)$ 中的任一元素 $b_{ij}(\lambda)$。
@@ -3025,6 +3031,8 @@ $n$ 阶 $\lambda$-矩阵 $A(\lambda)$ 的法式与初等变换的选取无关。
 设 $\mathbb{F}\subseteq\mathbb{K}$ 是两个数域，$A,B$ 是 $\mathbb{F}$ 上的两个矩阵，则 $A$ 与 $B$ 在 $\mathbb{F}$ 上相似的充分必要条件是它们在 $\mathbb{K}$ 上相似。
 
 ### 7.4 有理标准型（p311–314）
+
+利用矩阵的不变因子，现在可以来构造所谓的"有理标准型"了。我们的想法是寻找一个比较简单的矩阵，使它和给定的矩阵有相同的不变因子。由前面两节我们已经知道，矩阵 $A$ 的特征矩阵 $\lambda I-A$ 的法式为$$\operatorname{diag}\{1,\cdots,1,d_1(\lambda),\cdots,d_k(\lambda)\},$$其中 $d_i(\lambda)$ 为非零首一多项式且 $d_i(\lambda)\mid d_{i+1}(\lambda)\ (i=1,2,\cdots,k-1)$，则 $A$ 的不变因子就是$$1,\cdots,1,d_1(\lambda),\cdots,d_k(\lambda).$$
 
 **引理 7.4.1 (Frobenius 块的相伴矩阵)** @311
 
@@ -3141,6 +3149,8 @@ $$1,\cdots,1,\lambda-1,(\lambda-1)(\lambda+1)^2,(\lambda-1)^2(\lambda+1)^3(\lamb
 用初等因子组我们可以得到比有理标准型更精细的标准型．对每个初等因子 $p(\lambda)^l$，可构造一个比较简单的矩阵，使它的初等因子组就是 $p(\lambda)^l$，再将所有这样的矩阵拼成一个分块对角阵就可以得到标准型．显而易见，数域越“大”，矩阵的初等因子越多，从而分块也越精细．我们在这里不打算构造一般数域上以初等因子为基础的标准型，在下一节中我们将讨论复数域上以初等因子为基础的 Jordan（若当）标准型．
 
 ### 7.6 Jordan 标准型（p318–325）
+
+我们根据上一节末提出的寻找标准型的思想来讨论复数域上的标准型．由于任一多项式在复数域上均可分解为一次因子的乘积，因此复数域上的初等因子都是一次因子的幂．又因为初等因子必是矩阵特征多项式的因式，故必具有 $(\lambda-\lambda_0)^r$ 的形状，其中 $\lambda_0$ 是矩阵的特征值．我们先来求一个形状比较简单的矩阵，它的初等因子组就是 $(\lambda-\lambda_0)^r$．
 
 **引理 7.6.1 (幂零块形的 Jordan 块)** @318
 
@@ -4024,6 +4034,12 @@ $$4-t^2>0,\quad -4(t-1)(t+2)>0,$$
 
 ### 8.5 Hermite 型（p367–372）
 
+Hermite 型看成是复数域上的二次齐次函数：$$f(x_1,x_2,\cdots,x_n)=\sum_{j=1}^{n}\sum_{i=1}^{n}a_{ij}\overline{x_i}x_j,\tag{8.5.1}$$其中 $\overline{a_{ij}}=a_{ji}$。Hermite 型虽然系数是复数且变元 $x_i$ 是复数域上的变元，但作为函数它的值却总是实数，这点从 Hermite 型的定义即可看出。事实上，$$\overline{f}=\sum_{j=1}^{n}\sum_{i=1}^{n}\overline{a_{ij}}\overline{x_i}x_j=\sum_{i=1}^{n}\sum_{j=1}^{n}a_{ji}\overline{x_j}x_i=f,$$因此 $f$ 的值总是实数。当 Hermite 型的变元 $x_i$ 取实变元且 $a_{ij}$ 都是实数时，$f$ 就是实二次型。因此，Hermite 型也可看成是实二次型的推广。事实上，Hermite 型有许多与实二次型相同的性质。
+
+Hermite 型 (8.5.1) 可写成如下的矩阵相乘的形式：$$f(x_1,x_2,\cdots,x_n)=\overline{x}'Ax,$$其中$$A=\begin{pmatrix} a_{11}&a_{12}&\cdots&a_{1n}\\ a_{21}&a_{22}&\cdots&a_{2n}\\ \vdots&\vdots&&\vdots\\ a_{n1}&a_{n2}&\cdots&a_{nn} \end{pmatrix},\quad x=\begin{pmatrix} x_1\\x_2\\\vdots\\x_n \end{pmatrix},$$且满足 $\overline{A}'=A$，这样的矩阵称为 **Hermite 矩阵**。与实二次型类似，Hermite 型与 Hermite 矩阵之间有着一一对应关系，即给定一个 $n$ 变元的 Hermite 型必相伴有一个 $n$ 阶 Hermite 矩阵，反之给定一个 $n$ 阶 Hermite 矩阵，必有一个 $n$ 元 Hermite 型与之对应。
+
+设 $x=Cy$，其中 $C$ 是一个非异复矩阵，$y=(y_1,y_2,\cdots,y_n)'$，则$$f=(\overline{Cy})'A(Cy)=\overline{y}'\overline{C}'ACy.$$矩阵 $\overline{C}'AC$ 仍是一个 Hermite 矩阵。
+
 **定义 8.5.1 (复相合)** @367
 
 设 $A,B$ 是两个 Hermite 矩阵，若存在非异复矩阵 $C$，使$$B=\overline{C}'AC,$$则称 $A$ 与 $B$ 是**复相合**的。
@@ -4800,6 +4816,24 @@ $$ B_i=\begin{pmatrix}0&b_i\\-b_i&0\end{pmatrix},\quad i=1,\cdots,r. $$
 
 ### 9.8 谱分解与极分解（p417–423）
 
+设 $V$ 是 $n$ 维酉空间，$\varphi$ 是 $V$ 上的正规算子，$\lambda_1,\lambda_2,\cdots,\lambda_k$ 为 $\varphi$ 的全体不同特征值．由命题 9.6.2 知道，存在 $V$ 的一组标准正交基，使 $\varphi$ 在这组基下的表示矩阵为对角阵
+
+$$ A=\operatorname{diag}\{\lambda_1,\cdots,\lambda_1;\lambda_2,\cdots,\lambda_2;\cdots;\lambda_k,\cdots,\lambda_k\}. $$
+
+假设特征值 $\lambda_i$ 的重数等于 $r_i$，则在分解式
+
+$$ V=W_1\perp W_2\perp\cdots\perp W_k $$
+
+中，$W_i$ 是 $\varphi$ 的特征子空间且维数等于 $r_i$．若记 $D_i$ 为如下对角阵
+
+$$ D_i=\operatorname{diag}\{0,\cdots,0;\cdots;1,\cdots,1;\cdots;0,\cdots,0\}, $$
+
+即主对角元有 $r_i$ 个 $1$，其余都是 $0$ 的对角阵，则
+
+$$ A=\lambda_1D_1+\lambda_2D_2+\cdots+\lambda_kD_k. $$
+
+诸 $D_i$ 满足条件 $D_i^2=D_i$，$D_iD_j=O\ (i\neq j)$，$D_1+D_2+\cdots+D_k=I_n$．
+
 **定理 9.8.1 (谱分解定理)** @418
 
 设 $V$ 是有限维内积空间，$\varphi$ 是 $V$ 上的线性算子，当 $V$ 是酉空间时 $\varphi$ 为正规算子；当 $V$ 是欧氏空间时 $\varphi$ 为自伴随算子．设 $\lambda_1,\lambda_2,\cdots,\lambda_k$ 是 $\varphi$ 的全体不同特征值，$W_i$ 为 $\varphi$ 属于 $\lambda_i$ 的特征子空间，则 $V$ 是 $W_1,W_2,\cdots,W_k$ 的正交直和．设 $E_i$ 是 $V$ 到 $W_i$ 上的正交投影，则 $\varphi$ 有下列分解式：
@@ -5391,6 +5425,44 @@ $$g(\varphi(x),\varphi(y))=g(x,y)$$
 辛空间上的几何学称为**辛几何**．辛几何近年来发展很快，并在数学、力学及其他学科中有重要的应用．
 
 ### 10.5 对称型与正交几何（p461–466）
+
+设 $V$ 是数域 $\mathbb{K}$ 上的线性空间，$g$ 是 $V$ 上的对称型．取 $V$ 的一组基 $\{e_1,e_2,\cdots,e_n\}$，设 $g$ 在这组基下的表示矩阵为 $A$，则 $A$ 是对称阵．若
+
+$$ x=x_1e_1+x_2e_2+\cdots+x_ne_n, $$
+
+则
+
+$$ g(x,x)=(x_1,x_2,\cdots,x_n)A(x_1,x_2,\cdots,x_n)'. $$
+
+这时我们得到了一个 $V$ 上的二次型．反过来，若 $f$ 是 $V$ 上的二次型，定义
+
+$$ g(x,y)=\frac{1}{2}\big(f(x+y)-f(x)-f(y)\big). $$
+
+在基 $\{e_1,e_2,\cdots,e_n\}$ 下，设二次型 $f$ 的相伴对称阵为 $A$．若
+
+$$ x=x_1e_1+x_2e_2+\cdots+x_ne_n,\quad y=y_1e_1+y_2e_2+\cdots+y_ne_n, $$
+
+$\alpha,\beta$ 分别是 $x,y$ 在给定基下的坐标向量，即
+
+$$ \alpha=(x_1,x_2,\cdots,x_n)',\quad \beta=(y_1,y_2,\cdots,y_n)', $$
+
+则
+
+$$ \begin{aligned} g(x,y)&=\frac{1}{2}\Big((\alpha'+\beta')A(\alpha+\beta)-\alpha'A\alpha-\beta'A\beta\Big)\\ &=\frac{1}{2}\Big(\alpha'A\alpha+\beta'A\beta+\beta'A\alpha+\alpha'A\beta-\alpha'A\alpha-\beta'A\beta\Big)\\ &=\frac{1}{2}(\alpha'A\beta+\beta'A\alpha). \end{aligned} $$
+
+因为 $A$ 是对称阵，故 $\alpha'A\beta=\beta'A\alpha$，于是
+
+$$ g(x,y)=g(y,x)=\alpha'A\beta. $$
+
+显然，$g$ 是 $V$ 上的对称型．从这里可以看出，对称型与二次型是等价的．在这个意义下，双线性型可以看成是二次型的推广．
+
+任一 $\mathbb{K}$ 上的对称阵必合同于 $\mathbb{K}$ 上的对角阵．因此，若 $g$ 是 $V$ 上的对称型，则必存在 $V$ 的一组基，使 $g$ 在这组基下的表示矩阵为对角阵
+
+$$ \operatorname{diag}\{b_1,\cdots,b_r;0,\cdots,0\}\ (b_i\neq 0). $$
+
+这组基称为 $V$ 的**正交基**．
+
+欧氏空间的内积实际上就是一个正定对称型．若一个线性空间 $V$ 上定义了一个非退化的对称型，则 $V$ 上的几何学称为**正交几何学**．正交几何是欧氏几何的推广．
 
 **定义 10.5.1 (保距同构与正交变换)** @462
 

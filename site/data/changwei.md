@@ -236,6 +236,8 @@ $$\frac{dy}{dx}=\frac{\bigl\{[(x-a)^2+y^2]^{3/2}-[(x+a)^2+y^2]^{3/2}\bigr\}y}{(x
 
 ### 2.1 恰当方程（p11–14）
 
+所谓微分方程的初等积分法，就是通过初等函数及其有限次积分的表达式求解微分方程的方法。本节考虑对称形式的一阶微分方程$$P(x,y)\,\mathrm{d}x+Q(x,y)\,\mathrm{d}y=0. \tag{2.1}$$
+
 **定义 (恰当方程)** @11
 
 如果存在一个可微函数 $\Phi(x,y)$，使得它的全微分为$$\mathrm{d}\Phi(x,y)=P(x,y)\,\mathrm{d}x+Q(x,y)\,\mathrm{d}y,$$亦即它的偏导数为$$\frac{\partial\Phi}{\partial x}=P(x,y),\qquad \frac{\partial\Phi}{\partial y}=Q(x,y),$$则称 (2.1) 式为**恰当方程**或**全微分方程**。
@@ -452,6 +454,8 @@ $RL$ 串联电路（图 2-5）：电感 $L$、电阻 $R$ 及电源电压 $U$ 均
 
 ### 2.5 积分因子法（p31–35）
 
+在本章的 §2.1 中我们已经看到，假若方程$$P(x,y)\mathrm{d}x+Q(x,y)\mathrm{d}y=0\tag{2.55}$$是恰当方程（即 $\dfrac{\partial P}{\partial y}=\dfrac{\partial Q}{\partial x}$），则它的通积分为$$\int_{x_0}^{x}P(x,y)\,\mathrm{d}x+\int_{y_0}^{y}Q(x_0,y)\,\mathrm{d}y=C.$$在 §2.2—§2.4 中，我们还讨论了当方程 (2.55) 不是恰当方程时，如何把它转化为一个恰当方程的求解问题。例如，当方程 (2.55) 具有变量分离的形式$$X(x)Y_1(y)\,\mathrm{d}x+X_1(x)Y(y)\,\mathrm{d}y=0$$时，用 $\mu(x,y)=\dfrac{1}{X_1(x)Y_1(y)}$ 乘上式两侧，就得到一个恰当方程$$\frac{X(x)}{X_1(x)}\mathrm{d}x+\frac{Y(y)}{Y_1(y)}\mathrm{d}y=0;$$当方程 (2.55) 是一个一阶线性方程，亦即$$\mathrm{d}y+\bigl(p(x)y-q(x)\bigr)\mathrm{d}x=0$$时，用 $\mu(x)=\mathrm{e}^{\int p(x)\mathrm{d}x}$ 乘上式两侧，就得到一个恰当方程$$\bigl(\mathrm{e}^{\int p(x)\mathrm{d}x}\mathrm{d}y+y\,\mathrm{e}^{\int p(x)\mathrm{d}x}p(x)\mathrm{d}x\bigr)-q(x)\mathrm{e}^{\int p(x)\mathrm{d}x}\mathrm{d}x=0.$$
+
 **定义 (积分因子)** @31
 
 现在我们尝试将这种方法一般化：对一般的方程 (2.55)，设函数 $\mu=\mu(x,y)$ 可微且非零，使得用它乘方程 (2.55) 后，所得方程$$\mu(x,y)P(x,y)\,\mathrm{d}x+\mu(x,y)Q(x,y)\,\mathrm{d}y=0\tag{2.56}$$成为恰当方程，亦即$$\frac{\partial(\mu P)}{\partial y}=\frac{\partial(\mu Q)}{\partial x}.\tag{2.57}$$这时，函数 $\mu=\mu(x,y)$ 叫作方程 (2.55) 的一个**积分因子**。
@@ -514,6 +518,8 @@ $RL$ 串联电路（图 2-5）：电感 $L$、电阻 $R$ 及电源电压 $U$ 均
 
 ### 2.6 应用举例（p36–43）
 
+本节通过几个实例展示一阶微分方程的一些简单应用。
+
 **例 1 (等角轨线族)** @36
 
 设在 $Oxy$ 平面上由方程$$\Phi(x,y,C)=0\tag{2.65}$$给出一个以 $C$ 为参数的曲线族。若另一曲线族$$\Psi(x,y,K)=0\tag{2.66}$$（其中 $K$ 为参数）中任一条曲线与族 (2.65) 中每一条曲线相交成定角 $\alpha\in\left(-\dfrac{\pi}{2},\dfrac{\pi}{2}\right]$（以逆时针方向为正），则称曲线族 (2.66) 为已知曲线族 (2.65) 的**等角轨线族**。特别地，当 $\alpha=\dfrac{\pi}{2}$ 时，称 (2.66) 为 (2.65) 的**正交轨线族**。
@@ -573,6 +579,8 @@ $RL$ 串联电路（图 2-5）：电感 $L$、电阻 $R$ 及电源电压 $U$ 均
 ## 第3章 存在和唯一性定理
 
 ### 3.1 皮卡存在和唯一性定理（p44–49）
+
+本节将利用皮卡的逐次迭代法，来证明微分方程初值问题解的存在和唯一性定理。为此，我们首先介绍一个条件。
 
 **定义 (利普希茨条件)** @44
 
@@ -671,6 +679,10 @@ $$y_n(x)=(-1)^{n+1}x^2\qquad(0\leqslant x\leqslant 1;\ n=1,2,\cdots).$$
 另外，可以验证 $y=\dfrac{1}{3}x^2\ (0\leqslant x\leqslant 1)$ 是初值问题 $(E_0)$ 的解；而且只要利用 $F(x,y)$ 关于 $y$ 的递减性就可证明 $(E_0)$ 的解是唯一的（见本节习题 3）。但是，初值问题 $(E_0)$ 的皮卡序列和它的任何子序列都不能充分接近 $(E_0)$ 的解。这就是说，对初值问题 $(E_0)$ 的求解，皮卡逐次迭代法是无效的。
 
 ### 3.2 佩亚诺存在定理（p50–56）
+
+本节旨在放宽有关微分方程解的存在定理的条件。简言之，在皮卡定理中如果只假定 $f(x,y)$ 在 $R$ 内的连续性，那么利用下述欧拉折线仍可证明初值问题 $(E)$ 的解在区间 $[x_0-h,x_0+h]$ 上是存在的（但不一定是唯一的）。这就是本节要介绍的佩亚诺存在定理。
+
+为此，需要先做一些准备工作。
 
 **注 (欧拉折线的几何背景)** @50
 
@@ -776,6 +788,8 @@ $$y_n(x)=(-1)^{n+1}x^2\qquad(0\leqslant x\leqslant 1;\ n=1,2,\cdots).$$
 
 ### 3.4 比较定理及其应用（p63–70）
 
+上一节已经看到，为了对微分方程的解的存在区间作出估计，仅应用延伸定理经常是不够的，有时需要分析有关线素场的几何特性（见上节例 2）。本节给出的一般原理是为这种分析提供的一套方法。
+
 **定理 3.6 (第一比较定理)** @63
 
 设函数 $f(x,y)$ 与 $F(x,y)$ 都在平面区域 $G$ 内连续且满足不等式$$f(x,y)<F(x,y),\qquad (x,y)\in G;\tag{3.29}$$又设函数 $y=\varphi(x)$ 与 $y=\Phi(x)$ 在区间 $(a,b)$ 上分别是初值问题$$(E_1):\ \frac{\mathrm{d}y}{\mathrm{d}x}=f(x,y),\qquad y(x_0)=y_0$$与$$(E_2):\ \frac{\mathrm{d}y}{\mathrm{d}x}=F(x,y),\qquad y(x_0)=y_0$$的解，其中 $(x_0,y_0)\in G$。则我们有$$\begin{cases} \varphi(x)<\Phi(x), & x\in(x_0,b),\\[2pt] \varphi(x)>\Phi(x), & x\in(a,x_0). \end{cases}\tag{3.30}$$
@@ -838,6 +852,16 @@ $$y_n(x)=(-1)^{n+1}x^2\qquad(0\leqslant x\leqslant 1;\ n=1,2,\cdots).$$
 
 ### 4.1 一阶隐式微分方程（p71–76）
 
+作为对第二章初等积分法的补充，本节讨论一阶隐式方程$$F\left(x,y,\frac{\mathrm{d}y}{\mathrm{d}x}\right)=0 \tag{4.1}$$的几个特殊解法。这里"隐式"的含义，是指在方程中未知函数的微商 $\dfrac{\mathrm{d}y}{\mathrm{d}x}$ 没有预先表示为 $x,y$ 的显函数。
+
+**微分法.** 设从微分方程 (4.1) 中可显式解出未知函数$$y=f(x,p), \tag{4.2}$$其中 $p=\dfrac{\mathrm{d}y}{\mathrm{d}x}$。设函数 $f(x,p)$ 对 $(x,p)$ 是连续可微的，则由方程 (4.2) 对 $x$ 进行微分，我们得到$$p=f'_x(x,p)+f'_p(x,p)\frac{\mathrm{d}p}{\mathrm{d}x},$$或$$\left[f'_x(x,p)-p\right]\mathrm{d}x+f'_p(x,p)\,\mathrm{d}p=0. \tag{4.3}$$
+
+这是一个关于变量 $x$ 和 $p$ 的一阶显式微分方程。
+
+如果能够得到方程 (4.3) 的通解 $p=u(x,C)$，那么就得到方程 (4.2) 的通解$$y=f(x,u(x,C)),$$其中 $C$ 是一个任意常数。另外，如果方程 (4.3) 有解 $p=w(x)$，那么方程 (4.2) 有相应的解$$y=f(x,w(x)).$$
+
+在某些情况下，方程 (4.3) 的通解容易写成 $x=v(p,C)$ 的形式，则方程 (4.2) 的通解可写成$$\begin{cases} x=v(p,C),\\ y=f(v(p,C),p),\end{cases}$$这里 $p$ 视作一个参变量；同样，如果方程 (4.3) 有解 $x=z(p)$，则方程 (4.2) 有相应的解$$\begin{cases} x=z(p),\\ y=f(z(p),p).\end{cases}$$
+
 **例 1 (克莱罗方程)** @72
 
 求解克莱罗方程$$y=xp+f(p)\qquad\left(p=\frac{\mathrm{d}y}{\mathrm{d}x}\right), \tag{4.4}$$其中 $f''(p)\neq 0$。
@@ -879,6 +903,8 @@ $$y_n(x)=(-1)^{n+1}x^2\qquad(0\leqslant x\leqslant 1;\ n=1,2,\cdots).$$
 用参数法求解微分方程$$\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^2+y-x=0. \tag{4.21}$$令 $u=x$ 和 $v=\dfrac{\mathrm{d}y}{\mathrm{d}x}$ 为两个参变量，则可由方程 (4.21) 得到$$x=u,\qquad \frac{\mathrm{d}y}{\mathrm{d}x}=v,\qquad y=u-v^2.$$因此，我们得到$$v=\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{\mathrm{d}u-2v\,\mathrm{d}v}{\mathrm{d}u},$$亦即$$(v-1)\mathrm{d}u+2v\,\mathrm{d}v=0.$$容易求得它的通解$$u=-2v-\ln(v-1)^2+C$$和一个特解 $v=1$。由此得到微分方程 (4.21) 的通解$$\begin{cases} x=C-2v-\ln(v-1)^2,\\ y=C-2v-\ln(v-1)^2-v^2\end{cases}$$和一个特解$$\begin{cases} x=u,\\ y=u-1\end{cases}\qquad(\text{亦即 } y=x-1).$$
 
 ### 4.2 奇解（p77–79）
+
+在上一节我们已经看到某些一阶隐式微分方程的个别解具有特殊的几何意义，即它们满足如下奇解的定义。
 
 **定义 4.1 (奇解)** @77
 
@@ -994,6 +1020,22 @@ $$y_n(x)=(-1)^{n+1}x^2\qquad(0\leqslant x\leqslant 1;\ n=1,2,\cdots).$$
 
 ### 5.1 几个例子（p88–98）
 
+在实际问题中出现的微分方程通常包含若干个未知函数，以及它们的一些微商。各未知函数微商的最高阶数之和称为该微分方程的阶，它是反映求解微分方程难度的一个量。如果我们能把一个 $n$ 阶的微分方程降低到 $(n-1)$ 阶，那就使求解微分方程的问题前进了一步。本章将通过一些具体的例子介绍微分方程的降阶技巧，然后讨论一般高阶微分方程的初值问题解的存在性和唯一性，以及解对初值和参数的连续性与可微性。关于高阶线性微分方程的一般理论和求解方法，我们将在下一章进行专门介绍。
+
+有一类微分方程不明显包含自变量，这类方程叫作**自治**（或**驻定**）的微分方程，对它们可以进行降阶。例如，考虑 $n$ 阶的自治微分方程$$F\left(y,\frac{\mathrm{d}y}{\mathrm{d}x},\frac{\mathrm{d}^2y}{\mathrm{d}x^2},\cdots,\frac{\mathrm{d}^ny}{\mathrm{d}x^n}\right)=0,\tag{5.1}$$令 $z=\dfrac{\mathrm{d}y}{\mathrm{d}x}$，则有关系式$$\begin{cases} \dfrac{\mathrm{d}^2y}{\mathrm{d}x^2}=\dfrac{\mathrm{d}z}{\mathrm{d}x}=\dfrac{\mathrm{d}z}{\mathrm{d}y}\dfrac{\mathrm{d}y}{\mathrm{d}x}=z\dfrac{\mathrm{d}z}{\mathrm{d}y},\\[2mm] \dfrac{\mathrm{d}^3y}{\mathrm{d}x^3}=\dfrac{\mathrm{d}}{\mathrm{d}x}\left(z\dfrac{\mathrm{d}z}{\mathrm{d}y}\right)=z^2\dfrac{\mathrm{d}^2z}{\mathrm{d}y^2}+z\left(\dfrac{\mathrm{d}z}{\mathrm{d}y}\right)^2,\\ \cdots\cdots\cdots\cdots\\ \dfrac{\mathrm{d}^ny}{\mathrm{d}x^n}=\varphi\left(z,\dfrac{\mathrm{d}z}{\mathrm{d}y},\cdots,\dfrac{\mathrm{d}^{n-1}z}{\mathrm{d}y^{n-1}}\right). \end{cases}$$然后，把它们代入方程 (5.1)，就得到一个 $(n-1)$ 阶的微分方程$$F_1\left(y,z,\frac{\mathrm{d}z}{\mathrm{d}y},\cdots,\frac{\mathrm{d}^{n-1}z}{\mathrm{d}y^{n-1}}\right)=0,$$其中 $z$ 是未知函数，而 $y$ 是自变量。
+
+例如，微分方程$$\frac{\mathrm{d}^2x}{\mathrm{d}t^2}=f(x)\tag{5.2}$$是一个二阶的自治方程。令 $v=\dfrac{\mathrm{d}x}{\mathrm{d}t}$，则$$\frac{\mathrm{d}^2x}{\mathrm{d}t^2}=\frac{\mathrm{d}v}{\mathrm{d}t}=\frac{\mathrm{d}v}{\mathrm{d}x}\frac{\mathrm{d}x}{\mathrm{d}t}=v\frac{\mathrm{d}v}{\mathrm{d}x}.$$再代入方程 (5.2)，我们得到一个一阶方程$$v\frac{\mathrm{d}v}{\mathrm{d}x}=f(x),$$它是变量分离方程。因此，可以求出它的积分$$\frac{1}{2}v^2=F(x)-\frac{1}{2}C_1,$$或$$v^2=2F(x)-C_1,\tag{5.3}$$其中 $C_1$ 是一个任意常数，而 $F(x)$ 是 $f(x)$ 的一个原函数。注意，对于固定的 $C_1$，积分 (5.3) 实际上是一个一阶的微分方程$$\frac{\mathrm{d}x}{\mathrm{d}t}=\pm\sqrt{2F(x)-C_1},$$正巧它也是变量分离的。因此，又可求出它的积分$$G(x,C_1)=t+C_2,\tag{5.4}$$其中 $C_2$ 是第二个任意常数，而$$G(x,C_1)=\int\frac{\mathrm{d}x}{\pm\sqrt{2F(x)-C_1}}.$$通常由 (5.4) 式可以得到通解$$x=u(t,C_1,C_2).\tag{5.5}$$但在实际求解时，求原函数 $G$ 和由 (5.4) 式反解 $x$ 都可能碰到困难。例如，当 $F(x)$ 是一个三次多项式时，$G$ 就是一个椭圆积分。
+
+其实，对某些实际问题，并不需要完全求出通解 (5.5)。如果我们只对运动的位移 $x$ 和速度 $v$ 之间的关系，即运动的相 $(x,v)$ 感兴趣，那么 (5.3) 式就已经给出了这种关系。事实上，对于适当固定的常数 $C_1$，关系式 (5.3) 在平面 $Oxv$ 上确定一条（或几条）名为**轨线**的曲线 $\Gamma_{C_1}$。我们把平面 $Oxv$ 称为**相平面**，把相平面上的轨线分布图称为**相图**（相空间和轨线的一般定义将在第八章的 §8.1 中给出）。
+
+例如，当 $f(x)=-x$ 时，利用 (5.3) 式我们就有$$v^2+x^2=-C_1.$$这时任意常数 $C_1$ 必须是负的。令 $C_1=-C^2\ (C>0)$，则轨线 $\Gamma_{C_1}$ 是一个以原点 $O$ 为中心、以 $C$ 为半径的圆周。因此，微分方程$$\frac{\mathrm{d}^2x}{\mathrm{d}t^2}+x=0\tag{5.6}$$的相图如图 5-1 所示。注意，微分方程 (5.6) 等价于$$\begin{cases} \dfrac{\mathrm{d}x}{\mathrm{d}t}=v,\\[2mm] \dfrac{\mathrm{d}v}{\mathrm{d}t}=-x. \end{cases}$$同样地，可以作出微分方程$$\frac{\mathrm{d}^2x}{\mathrm{d}t^2}-x=0$$的相图如图 5-2 所示，其中轨线的箭头方向是根据关系式$$\frac{\mathrm{d}x}{\mathrm{d}t}=v$$画出的，它表示解在轨线上运动的方向。在相图 5-1 中每条轨线都是封闭的，这表明相应的运动具有周而复始的周期性，而相图 5-2 所表示的运动就没有这种性质。注意，在上述两个相图中原点 $O$ 都表示各自的静止状态，它对应于各自微分方程的零解（平凡解）。
+
+当 $f(x)$ 不是 $x$ 的线性函数时，要作出方程 (5.2) 的相图就不像上面那样简单了。以下我们对自治的二阶微分方程 (5.2) 和相应的积分 (5.3) 介绍它的几何作图法：
+
+首先，在辅助平面 $Oxu$ 上作出函数 $u=2F(x)$ 的图形 $\Delta$；其次，对于任意固定的常数 $C_1$，再考虑图形 $\Delta$ 在水平线 $u=C_1$ 之上的那部分 $\Delta^+(C_1)$，即$$2F(x)-C_1\geqslant 0;$$然后，根据 (5.3) 式或 $v=\pm\sqrt{2F(x)-C_1}$ 把辅助平面 $Oxu$ 上的图形 $\Delta^+(C_1)$ 变换成相平面 $Oxv$ 上的图形，即得相应的运动轨线 $\Gamma_{C_1}$（可能不止一条）。图 5-3 简明地表示了这种作图法。
+
+注意，在图 5-3 中与 $\Delta^+(C_1)$ 对应的轨线 $\Gamma_{C_1}$ 有两个分支，其中之一是一封闭曲线。特别地，当 $C_1$ 增加至 $C_0$ 时，相应的封闭曲线 $\Gamma_{C_1}$ 就收缩到静止点 $S_0$。请读者再考虑 $C_1>C_0$ 的情况，或 $C_1$ 减少时轨线 $\Gamma_{C_1}$ 变化的情况。
+
 **例 1 (单摆方程)** @91
 
 设有一长度为 $l$ 不能伸长的细线（不计质量），它的上端固定在空间中的 $P_0$ 点，而在下端悬挂一个质量为 $m$ 的小球，并让它在一竖直平面内自由摆动，这里所说自由的含意是单摆除重力外不受其他外力的作用，如图 5-4 所示。
@@ -1035,6 +1077,8 @@ $$y_n(x)=(-1)^{n+1}x^2\qquad(0\leqslant x\leqslant 1;\ n=1,2,\cdots).$$
 由 (5.22)—(5.24) 式推出$$C_1x+C_2y+C_3z=0.$$这证明了地球运动的轨道永远在一个平面上；或者说，二体问题是一个平面问题。因此，我们不妨设地球的轨道永远在平面 $z=0$ 上。这样一来，方程组 (5.20) 就可降为一个 4 阶方程组$$\begin{cases} \ddot{x}+\mu x\left(\sqrt{x^2+y^2}\right)^{-3}=0,\\[2mm] \ddot{y}+\mu y\left(\sqrt{x^2+y^2}\right)^{-3}=0, \end{cases}\tag{5.25}$$其中常数 $\mu=Gm_s$。由此可得$$(\dot{x}\ddot{x}+\dot{y}\ddot{y})+\mu(x\dot{x}+y\dot{y})\left(\sqrt{x^2+y^2}\right)^{-3}=0,$$亦即$$\frac{\mathrm{d}}{\mathrm{d}t}(\dot{x}^2+\dot{y}^2)-2\mu\frac{\mathrm{d}}{\mathrm{d}t}\left(\frac{1}{\sqrt{x^2+y^2}}\right)=0.$$由此又得到一个首次积分$$\dot{x}^2+\dot{y}^2-\frac{2\mu}{\sqrt{x^2+y^2}}=C_4.\tag{5.26}$$利用极坐标 $x=r\cos\theta$，$y=r\sin\theta$，则 (5.26) 式变成$$\left(\frac{\mathrm{d}r}{\mathrm{d}t}\right)^2+\left(r\frac{\mathrm{d}\theta}{\mathrm{d}t}\right)^2-\frac{2\mu}{r}=C_4,\tag{5.27}$$而首次积分 (5.24) 变成$$r^2\frac{\mathrm{d}\theta}{\mathrm{d}t}=-C_3.\tag{5.28}$$然后，由 (5.27) 式和 (5.28) 式可知$$\left(\frac{\mathrm{d}r}{\mathrm{d}t}\right)^2=C_4+\left(\frac{\mu}{C_3}\right)^2-\left(\frac{C_3}{r}-\frac{\mu}{C_3}\right)^2,$$它蕴涵积分常数 $C_4$ 必须满足$$C_4+\left(\frac{\mu}{C_3}\right)^2>0.$$因此，我们有$$\frac{\mathrm{d}r}{\mathrm{d}t}=\pm\sqrt{C_4+\left(\frac{\mu}{C_3}\right)^2-\left(\frac{C_3}{r}-\frac{\mu}{C_3}\right)^2}.$$再利用 (5.28) 式推出$$\frac{\mathrm{d}r}{\mathrm{d}\theta}=\pm\frac{r^2}{C_3}\sqrt{C_4+\left(\frac{\mu}{C_3}\right)^2-\left(\frac{C_3}{r}-\frac{\mu}{C_3}\right)^2},$$亦即$$\frac{\mathrm{d}\left(\dfrac{C_3}{r}\right)}{\pm\sqrt{C_4+\left(\dfrac{\mu}{C_3}\right)^2-\left(\dfrac{C_3}{r}-\dfrac{\mu}{C_3}\right)^2}}=\mathrm{d}\theta.$$
 
 ### 5.2 n 维线性空间中的微分方程（p99–102）
+
+本节把 $n$ 阶微分方程化为一阶标准微分方程组，并引进向量记法，使高阶方程可以在 $n$ 维线性空间 $\mathbb{R}^n$ 中统一处理。
 
 **定义 (标准微分方程组)** @99
 
@@ -1087,6 +1131,46 @@ $$y_n(x)=(-1)^{n+1}x^2\qquad(0\leqslant x\leqslant 1;\ n=1,2,\cdots).$$
 最后指出一点，如果在方程组 (5.34) 中函数 $f_1,f_2,\cdots,f_n$ 都是 $y_1,y_2,\cdots,y_n$ 的线性函数，即$$f_k(x,y_1,y_2,\cdots,y_n)=\sum_{i=1}^{n}a_{ik}(x)y_i+e_k(x)\quad(k=1,2,\cdots,n),$$则称微分方程 (5.34)（或 (5.35)）是**线性**的；否则，称它是**非线性**的。线性微分方程组$$\frac{\mathrm{d}y_k}{\mathrm{d}x}=\sum_{i=1}^{n}a_{ik}(x)y_i+e_k(x)\quad(k=1,2,\cdots,n)\tag{5.37}$$的向量形式可以写成$$\frac{\mathrm{d}\boldsymbol{y}}{\mathrm{d}x}=\boldsymbol{y}A(x)+\boldsymbol{e}(x).\tag{5.38}$$
 
 ### 5.3 解对初值和参数的连续依赖性（p103–107）
+
+大家知道，微分方程的解不仅取决于微分方程本身，而且也取决于解的初值。通常，微分方程还可能包含某些参数。因此，我们需要考虑微分方程的解对初值和参数的依赖性。
+
+例如，线性单摆方程
+
+$$\frac{\mathrm{d}^2x}{\mathrm{d}t^2}+a^2x=0$$
+
+满足初值条件
+
+$$x(t_0)=x_0,\qquad x'(t_0)=v_0$$
+
+的解为
+
+$$x=x_0\cos a(t-t_0)+\frac{v_0}{a}\sin a(t-t_0).$$
+
+显然，它对初值 $t_0,x_0,v_0$ 和参数 $a$ 是连续的，而且也是连续可微的。注意，参数 $a=\sqrt{\dfrac{g}{l}}$ 随重力加速度大小 $g$ 和单摆长度 $l$ 而定。由于初值 $x_0,v_0$ 和常数 $g,l$ 都是由测量得到的，而任何测量都难免存在误差，所以上述解对 $x_0,v_0$ 和 $a$ 的连续性有明显的物理意义：只要初值和参数的误差足够小，相应的单摆振动只有很小的偏差。
+
+上面这个简单的结论对非线性单摆方程也应该成立，但它的数学证明就不是如此简单了。
+
+其实，我们可以讨论一般 $n$ 阶微分方程的初值问题
+
+$$\frac{\mathrm{d}\boldsymbol{y}}{\mathrm{d}x}=\boldsymbol{f}(x,\boldsymbol{y},\boldsymbol{\lambda}),\qquad \boldsymbol{y}(x_0)=\boldsymbol{y}_0\tag{5.40}$$
+
+的解 $\boldsymbol{y}=\boldsymbol{\varphi}(x;x_0,\boldsymbol{y}_0,\boldsymbol{\lambda})$ 关于初值 $(x_0,\boldsymbol{y}_0)$ 和参数 $\boldsymbol{\lambda}$ 的依赖性问题，这里 $\boldsymbol{\lambda}=(\lambda_1,\lambda_2,\cdots,\lambda_m)\in K\subset\mathbb{R}^m$。
+
+本节先考虑连续依赖性。为此，作变换
+
+$$t=x-x_0,\qquad \boldsymbol{u}=\boldsymbol{y}-\boldsymbol{y}_0,$$
+
+其中 $t$ 是新的自变量，而 $\boldsymbol{u}=\boldsymbol{u}(t)$ 是未知函数。则初值问题 (5.40) 变成
+
+$$\frac{\mathrm{d}\boldsymbol{u}}{\mathrm{d}t}=\boldsymbol{f}(t+x_0,\boldsymbol{u}+\boldsymbol{y}_0,\boldsymbol{\lambda}),\qquad \boldsymbol{u}(0)=\boldsymbol{0}.\tag{5.41}$$
+
+注意，原来的初值 $x_0,\boldsymbol{y}_0$ 在 (5.41) 式的微分方程中和 $\boldsymbol{\lambda}$ 一样以参数的形式出现，而 (5.41) 式的初值条件是固定不变的。因此，不失一般性，我们只讨论初值问题
+
+$$(E_\lambda):\ \frac{\mathrm{d}\boldsymbol{y}}{\mathrm{d}x}=\boldsymbol{f}(x,\boldsymbol{y},\boldsymbol{\lambda}),\qquad \boldsymbol{y}(0)=\boldsymbol{0}\tag{5.42}$$
+
+的解 $\boldsymbol{y}=\boldsymbol{\varphi}(x,\boldsymbol{\lambda})$ 对参数 $\boldsymbol{\lambda}$ 的依赖性，其中 $\boldsymbol{\lambda}$ 是 $m$ 维的参数向量。
+
+我们在下面讨论的思路将是：先证明初值问题 $(E_\lambda)$ 的皮卡序列 $\{\boldsymbol{\varphi}_k(x,\boldsymbol{\lambda})\}$ 对参数 $\boldsymbol{\lambda}$ 的连续性（和可微性）；再证明 $\boldsymbol{\varphi}_k(x,\boldsymbol{\lambda})$ 是一致收敛的，而且它的极限函数 $\boldsymbol{y}=\boldsymbol{\varphi}(x,\boldsymbol{\lambda})$ 是 $(E_\lambda)$ 的解，从而也就证明了解对参数 $\boldsymbol{\lambda}$ 的连续性（和可微性）。
 
 **定理 5.1 (解对参数的连续依赖)** @104
 
@@ -1168,6 +1252,8 @@ $$D_\delta:\ a\leqslant x\leqslant b,\qquad a\leqslant x_0\leqslant b,\qquad |\b
 
 ### 5.4 解对初值和参数的连续可微性（p108–115）
 
+本节将讨论微分方程的解对初值和参数的连续可微性。如上节一样，不失一般性，我们只考虑微分方程$$\frac{\mathrm{d}y}{\mathrm{d}x}=f(x,y,\lambda)\tag{5.52}$$满足初值条件$$y(0)=0$$的解 $y=\varphi(x,\lambda)$ 对参数 $\lambda$ 的连续可微性。
+
 **定理 5.3** @109
 
 设 $f(x,y,\lambda)$ 在区域$$G:\ |x|\leqslant a,\quad |y|\leqslant b,\quad |\lambda-\lambda_0|\leqslant c$$上连续，而且对 $y$ 和 $\lambda$ 有连续的偏微商，则微分方程 (5.52) 满足初值条件 $y(0)=0$ 的解 $y=\varphi(x,\lambda)$ 在区域$$D:\ |x|\leqslant h,\quad |\lambda-\lambda_0|\leqslant c$$上是连续可微的，其中正数 $h$ 的定义同上节定理 5.1。
@@ -1201,6 +1287,36 @@ $$D_\delta:\ a\leqslant x\leqslant b,\qquad a\leqslant x_0\leqslant b,\qquad |\b
 ## 第6章 线性微分方程组
 
 ### 6.1 一般理论（p116–124）
+
+在数学的一些实际应用中有许多涉及非线性微分方程的问题。通常对它们采用线性化的方法简化为关于线性微分方程的问题，这样往往可以获得比较简捷的解答（如上一章单摆之例）。本章的主题是线性微分方程组的一般理论和一些解法。它们是微分方程实际应用的工具，而且也是理论分析的基础。
+
+我们首先在 §6.1 介绍线性微分方程组的一般理论，然后在 §6.2 讨论常系数线性微分方程组的初等解法，并在 §6.3 把上两节的结果应用到线性的高阶微分方程。
+
+考虑标准形式的 $n$ 阶线性微分方程组
+
+$$\frac{\mathrm{d}y_i}{\mathrm{d}x}=\sum_{j=1}^{n}a_{ij}(x)y_j+f_i(x)\qquad(i=1,2,\cdots,n),$$
+
+其中系数函数 $a_{ij}(x)$ 和 $f_i(x)$ $(i,j=1,2,\cdots,n)$ 在区间 $(a,b)$ 上都是连续的。在上一章的 §5.2 中我们已指出，只要采用矩阵
+
+$$A(x)=(a_{ij}(x))_{n\times n}$$
+
+和向量
+
+$$y=\begin{pmatrix}y_1\\ y_2\\ \vdots\\ y_n\end{pmatrix},\qquad f(x)=\begin{pmatrix}f_1(x)\\ f_2(x)\\ \vdots\\ f_n(x)\end{pmatrix}$$
+
+的记号，就可以把上面的线性微分方程组写成向量的形式
+
+$$\frac{\mathrm{d}y}{\mathrm{d}x}=A(x)y+f(x).\tag{6.1}$$
+
+当 $f(x)$ $(a<x<b)$ 不恒为零时，称 (6.1) 式是**非齐次线性微分方程组**；当 $f(x)\equiv 0$，亦即
+
+$$\frac{\mathrm{d}y}{\mathrm{d}x}=A(x)y\tag{6.2}$$
+
+时，称它是（相应的）**齐次线性微分方程组**。
+
+我们在这里指出，$n$ 阶线性微分方程组的向量表达式 (6.1) 在形式上与第二章 §2.3 的一阶线性微分方程 (2.28) 是相似的。本节将阐明，这种相似性不仅是形式上的，而且在第二章 §2.3 中有关一阶线性微分方程 (2.28) 的性质 1—5 及其通解公式 (2.32) 都可推广到这里的（向量形式）线性微分方程组 (6.1)。
+
+下面的定理是本章的理论基础，其证明要点与第三章定理 3.1 相同（注意，由 $A(x)$ 的连续性可知，在含 $x$ 的任意有限闭区间上，函数 $A(x)y$ 对 $y$ 满足利普希茨条件）。
 
 **定理 (存在唯一性定理)** @117
 
@@ -1498,6 +1614,24 @@ $$\begin{pmatrix}y_1\\ y_2\end{pmatrix}=C_1\begin{pmatrix}\mathrm{e}^x\\ 0\end{p
 
 ### 6.2 常系数线性微分方程组（p125–140）
 
+我们在上一节指出，由于基解矩阵 $\boldsymbol{\Phi}(x)$ 只有理论上的存在性，所以公式 (6.21) 和 (6.22) 并没有完全解决微分方程组 (6.1) 的求解问题。本节把讨论的范围限于常系数的情形，则我们可以利用矩阵的指数函数解决相应的求解问题。
+
+所谓常系数线性微分方程组，指的是线性微分方程组$$\frac{\mathrm{d}\boldsymbol{y}}{\mathrm{d}x}=\boldsymbol{A}\boldsymbol{y}+\boldsymbol{f}(x)\tag{6.24}$$中的系数矩阵 $\boldsymbol{A}$ 为 $n$ 阶常数矩阵，而 $\boldsymbol{f}(x)$ 是在区间 $(a,b)$ 上连续的向量函数。我们已经知道，求解线性微分方程组 (6.24) 的关键是求出相应齐次线性微分方程组$$\frac{\mathrm{d}\boldsymbol{y}}{\mathrm{d}x}=\boldsymbol{A}\boldsymbol{y}\tag{6.25}$$的一个基解矩阵。当 $n=1$ 时，矩阵 $\boldsymbol{A}$ 就是一个实数 $a$，这时方程 (6.25) 成为$$\frac{\mathrm{d}y}{\mathrm{d}x}=ay,\tag{6.26}$$它的通解为 $y=C\mathrm{e}^{ax}$，其中 $C$ 为任意常数。换句话说，$\mathrm{e}^{ax}$ 是方程 (6.26) 的一个（一阶的）基解矩阵。由此引申出一个设想：常系数线性微分方程组 (6.25) 有一个基解矩阵为 $\mathrm{e}^{x\boldsymbol{A}}$。这里首先需要弄清，把一个矩阵放在指数的位置上是什么意思？
+
+令 $M$ 表示由一切 $n$ 阶（实常数）矩阵组成的集合。在线性代数中，我们知道 $M$ 是一个 $n^2$ 维的线性空间。对 $M$ 中的任何元素$$\boldsymbol{A}=(a_{ij})_{n\times n},$$定义它的模为$$\|\boldsymbol{A}\|=\sum_{i,j=1}^{n}|a_{ij}|,$$则我们容易证明：
+
+(1) $\|\boldsymbol{A}\|\geqslant 0$，而且 $\|\boldsymbol{A}\|=0$ 当且仅当 $\boldsymbol{A}=\boldsymbol{O}$（零矩阵）；
+
+(2) 对于任意 $\boldsymbol{A},\boldsymbol{B}\in M$，有不等式$$\|\boldsymbol{A}+\boldsymbol{B}\|\leqslant\|\boldsymbol{A}\|+\|\boldsymbol{B}\|.$$
+
+现在，我们在 $M$ 中有了这个模 $\|\cdot\|$，就可以仿照实数域中的数学分析来定义矩阵序列、柯西矩阵序列和矩阵无穷级数及其收敛性的概念。而且容易证明，在 $M$ 中任何柯西序列都是收敛的，即线性空间 $M$ 关于模 $\|\cdot\|$ 是完备的。
+
+另外，在 $M$ 中还特别有乘法运算，即对于任意 $\boldsymbol{A},\boldsymbol{B}\in M$，有 $\boldsymbol{AB}\in M$。而且
+
+(3) $\|\boldsymbol{AB}\|\leqslant\|\boldsymbol{A}\|\cdot\|\boldsymbol{B}\|$.
+
+利用上述性质，我们有$$\|\boldsymbol{A}^k\|\leqslant\|\boldsymbol{A}\|^k\qquad(k\geqslant 1).$$通常令 $\boldsymbol{A}^0$ 为 $n$ 阶单位矩阵 $\boldsymbol{E}$。这样，上面的不等式对 $k=0$ 不能成立。由此不难证明下述
+
 **命题 1 (矩阵幂级数的收敛性)** @126
 
 矩阵 $\boldsymbol{A}$ 的幂级数$$\boldsymbol{E}+\boldsymbol{A}+\frac{1}{2!}\boldsymbol{A}^2+\cdots+\frac{1}{k!}\boldsymbol{A}^k+\cdots$$是绝对收敛的。$\square$
@@ -1750,6 +1884,18 @@ $$\begin{pmatrix}y_1\\ y_2\end{pmatrix}=C_1\begin{pmatrix}\mathrm{e}^x\\ 0\end{p
 
 ### 7.1 柯西定理（p153–158）
 
+第一个从理论上研究初值问题有唯一收敛的幂级数解的人，正是我们在第三章中提到过的柯西．他在 1820—1830 年间用欧拉折线法证明了初值问题解的存在定理（这定理后来由利普希茨和佩亚诺等人作了发展）之后，又在 1839—1842 年间用优级数法成功地建立了初值问题收敛的幂级数解的存在和唯一性定理．下面我们将介绍这个定理．为了叙述的简便，我们只讨论一阶的微分方程
+
+$$\frac{\mathrm{d}y}{\mathrm{d}x}=f(x,y),$$
+
+其中函数 $f(x,y)$ 在区域 $G\subset\mathbb{R}^2$ 内解析，亦即，对于 $G$ 内的任意一点 $(x_0,y_0)$，存在正的常数 $a$ 和 $b$，使得函数 $f(x,y)$ 在邻域
+
+$$\{(x,y)\mid |x-x_0|\leqslant a,\ |y-y_0|\leqslant b\}$$
+
+内可以展成 $(x-x_0)$ 和 $(y-y_0)$ 的（收敛）幂级数
+
+$$f(x,y)=\sum_{i,j=0}^{\infty}a_{ij}(x-x_0)^i(y-y_0)^j.$$
+
 **定义 (解析函数)** @153
 
 设函数 $f(x,y)$ 在区域 $G$ 内有定义．如果对于 $G$ 内的任意一点 $(x_0,y_0)$，存在正的常数 $a$ 和 $b$，使得 $f(x,y)$ 在邻域
@@ -1869,6 +2015,8 @@ $$\frac{\mathrm{d}y}{\mathrm{d}x}=\frac{M}{\left(1-\dfrac{x}{a}\right)\left(1-\d
 有解 $y=y(x)$，则 $y_i=y(x)\ (i=1,2,\cdots,n)$ 就是方程组 (7.14) 的解．再与引理 7.2 类似可证，初值问题 (7.15) 在 $x=0$ 的某邻域内确有收敛的幂级数解．这样，就可以推断出微分方程组 (7.12) 有收敛的幂级数解．
 
 ### 7.2 幂级数解法（p159–162）
+
+从本节开始，我们限于讨论二阶齐次线性微分方程$$A(x)y''+B(x)y'+C(x)y=0,\tag{7.16}$$其中 $A(x),B(x)$ 和 $C(x)$ 都在区间 $(x_0-r,x_0+r)$ 内解析（下文实际考虑的都是多项式的情形）。如果它们有公因子 $(x-x_0)$，那么在方程 (7.16) 中我们不妨先把它约去。如果 $A(x_0)\neq 0$，那么在 $x_0$ 点附近 $A(x)\neq 0$，因此方程 (7.16) 可以写成如下形式：$$y''+p(x)y'+q(x)y=0,\tag{7.17}$$其中系数函数$$p(x)=\frac{B(x)}{A(x)},\qquad q(x)=\frac{C(x)}{A(x)}$$在 $x_0$ 点附近是解析的。
 
 **定义 (常点与奇点)** @159
 
@@ -2023,6 +2171,8 @@ $\mathrm{P}_n(x)$ 满足罗德里格斯（Rodrigues，1795—1851）公式$$\mat
 此时，为了求出与 $\mathrm{J}_n(x)$ 线性无关的另一个解，对应于这个整数 $n\geqslant 0$，我们取参数 $\alpha\neq n$，但 $\alpha$ 充分接近 $n$，则 $\mathrm{J}_\alpha(x)$ 和 $\mathrm{J}_{-\alpha}(x)$ 都有意义，而且函数$$y_\alpha(x)=\frac{\mathrm{J}_\alpha(x)\cos\alpha\pi-\mathrm{J}_{-\alpha}(x)}{\sin\alpha\pi}\qquad (\sin\alpha\pi\neq 0)$$是贝塞尔方程 (7.49)（把方程中的 $n$ 改写为 $\alpha$ 时）的一个解，并且它在 $x=0$ 的邻域内是无界的。注意，当 $\alpha\to n$ 时，上述 $y_\alpha(x)$ 是一个 $\dfrac{0}{0}$ 型不定式。我们对其应用洛必达法则。令$$\mathrm{Y}_n(x)=\lim_{\alpha\to n}y_\alpha(x),$$即$$\mathrm{Y}_n(x)=\lim_{\alpha\to n}\frac{\mathrm{J}_\alpha(x)\cos\alpha\pi-\mathrm{J}_{-\alpha}(x)}{\sin\alpha\pi}.\tag{7.55}$$可以证明，$y=\mathrm{Y}_n(x)$ 是贝塞尔方程 (7.49) 的解，且与第一类贝塞尔函数 $\mathrm{J}_n(x)$ 线性无关。它称为**诺伊曼（Neumann, 1832—1925）函数**或（相应于整数 $n$ 的）**第二类贝塞尔函数**。
 
 ### 7.5 贝塞尔函数（p174–179）
+
+在上一节中，我们求出了贝塞尔方程$$x^2y''+xy'+(x^2-n^2)y=0\tag{7.56}$$的广义幂级数解（其中常数 $n\geqslant0$），并且用它定义了两个重要的特殊函数：第一类贝塞尔函数 $y=\mathrm{J}_n(x)$（见 (7.52) 式）和第二类贝塞尔函数 $y=\mathrm{J}_{-n}(x)$（当 $n$ 不是整数时，见 (7.54) 式）或 $y=\mathrm{Y}_n(x)$（当 $n$ 是整数时，见 (7.55) 式；$\mathrm{Y}_n(x)$ 又名诺伊曼函数）。由于在实用上主要是 $n$ 为整数的情况，所以我们在下面都假设 $n$ 为非负整数。通常称 $\mathrm{J}_n(x)$ 为 $n$ 阶贝塞尔函数，而称 $\mathrm{Y}_n(x)$ 为 $n$ 阶诺伊曼函数。本节主要讨论有关这两个函数的某些性质。
 
 **命题 1 (无穷远处的渐近式)** @174
 
@@ -2432,6 +2582,10 @@ $\mathrm{P}_n(x)$ 满足罗德里格斯（Rodrigues，1795—1851）公式$$\mat
 
 ### 8.4 结构稳定与分支现象（p205–215）
 
+在 §8.3.1 结尾处给出了动力系统结构稳定性和奇点双曲性的定义，并介绍了局部结构稳定性定理。本节进一步介绍一个大范围的结构稳定性定理，然后举例说明当这个定理的条件不成立时可能出现的分支现象，最后通过波格丹诺夫-塔肯什（Bogdanov-Takens）系统的分支现象粗浅地介绍普适开折和分支的余维这两个概念。
+
+在高维空间中的结构稳定性问题十分复杂和困难，这里只考虑平面系统$$\begin{cases} \dfrac{\mathrm{d}x}{\mathrm{d}t}=X(x,y),\\[6pt] \dfrac{\mathrm{d}y}{\mathrm{d}t}=Y(x,y), \end{cases}\tag{8.36}$$其中函数 $X(x,y)$ 和 $Y(x,y)$ 连续可微，定义在圆盘 $\Sigma:\ x^2+y^2\leqslant R^2$ 上（常数 $R>0$），并且由 (8.36) 给出的向量场与 $\Sigma$ 的边界 $\partial\Sigma$ 不相切。把所有满足上述条件的系统组成的集合记为 $\mathcal{X}(\Sigma)$，则可考虑在 $\mathcal{X}(\Sigma)$ 内一个给定系统的结构稳定性。
+
 **定理 8.10 (大范围结构稳定性)** @205
 
 在 $\mathcal{X}(\Sigma)$ 中系统 (8.36) 结构稳定的充要条件是：
@@ -2542,6 +2696,8 @@ $\mathrm{P}_n(x)$ 满足罗德里格斯（Rodrigues，1795—1851）公式$$\mat
 
 ### 9.1 施图姆比较定理（p216–220）
 
+施图姆（Sturm，1803—1855）是在微分方程研究中最早使用定性方法的先驱者之一。如我们在上一章所看到的，这种定性方法的主要特点是不依赖于对微分方程的求解，而只凭方程本身的一些特征来确定解的有关性质，例如解的变号和周期性等。我们讨论二阶线性微分方程$$y''+p(x)y'+q(x)y=0,\tag{9.1}$$其中系数函数 $p(x)$ 和 $q(x)$ 在区间 $J$ 上是连续的。
+
 **引理 9.1** @216
 
 齐次线性微分方程 (9.1) 的任何非零解在区间 $J$ 内的零点（如果存在）都是孤立的。
@@ -2644,6 +2800,10 @@ S-L 边值问题有无限多个（简单的）特征值，而且可把它们排�
 
 ### 9.3 特征函数系的正交性（p228–232）
 
+为了方便，我们现在把上节的 S-L 边值问题 (9.20)+(9.21) 重写如下：$$y''+[\lambda+q(x)]y=0\tag{9.33}$$和$$\begin{cases}y(0)\cos\alpha-y'(0)\sin\alpha=0,\\[2pt] y(1)\cos\beta-y'(1)\sin\beta=0,\end{cases}\tag{9.34}$$其中 $\lambda$ 是参数，而函数 $q(x)$ 在区间 $[0,1]$ 上是连续的；又设常数 $\alpha$ 和 $\beta$ 满足不等式$$0\leqslant\alpha<\pi,\qquad 0<\beta\leqslant\pi.$$
+
+根据上节特征值的存在定理可知，边值问题 (9.33)+(9.34) 有可数无限多个特征值$$\lambda_0<\lambda_1<\cdots<\lambda_n<\cdots,$$其中 $\lambda_n\to+\infty\ (n\to\infty)$。因此，对应于每个特征值 $\lambda_n$，至少有一个特征函数 $\varphi(x,\lambda_n)$。而且，设常数 $C\neq0$，则 $C\varphi(x,\lambda_n)$ 也是对应于 $\lambda_n$ 的特征函数。这里自然会提出一个问题：对应于特征值 $\lambda_n$，除了特征函数 $C\varphi(x,\lambda_n)$ 外，是否还有别的（即与 $\varphi(x,\lambda_n)$ 线性无关的）特征函数。
+
 **引理 9.5 (特征函数的唯一性)** @229
 
 对应于每个特征值，S-L 边值问题有且只有一个线性无关的特征函数。$\square$
@@ -2682,6 +2842,8 @@ S-L 边值问题有无限多个（简单的）特征值，而且可把它们排�
 
 ### 9.4 一个非线性边值问题的例子（p233–237）
 
+本节将用一个具体的例子来说明，对某些边值问题只作线性化处理是不够的。因此，还要考虑非线性的边值问题。
+
 **例 1 (钢条的弯曲)** @233
 
 设在水平桌面上有一长度为 $l$ 的均匀钢条，在两端施加大小为 $p>0$ 而方向相反的一对水平压力。试研究钢条的弯曲情况。
@@ -2712,6 +2874,18 @@ S-L 边值问题有无限多个（简单的）特征值，而且可把它们排�
 
 ### 9.5 周期边值问题（p237–240）
 
+本节讨论二阶的微分方程$$\ddot{x}+\omega_0^2x=p(t)+\lambda f(t,x,\dot{x}),\tag{9.56}$$其中 $\omega_0>0$ 是常数，$\lambda$ 是小参数，$p(t)$ 是 $t$ 的连续的 $2\pi$ 周期函数，$f(t,x,\dot{x})$ 是 $t,x,\dot{x}$ 的连续函数，它对 $t$ 是 $2\pi$ 周期的，而对 $x$ 和 $\dot{x}$ 是连续可微的。这类方程在电讯和机械的振动理论中占有重要的地位。一个令人关注的问题是关于它的有界振动，特别是 $2\pi$ 周期振动（解）的存在性。
+
+设 $x=x(t)$ 是方程 (9.56) 的一个 $2\pi$ 周期解，则它自然满足如下周期边值条件：$$x(0)=x(2\pi),\qquad \dot{x}(0)=\dot{x}(2\pi).\tag{9.57}$$反之，设 $x=x(t)$ 是方程 (9.56) 的一个解，而且它满足周期边值条件 (9.57)，则可以证明这个解是 $2\pi$ 周期的。
+
+事实上，因为 $x=x(t)$ 是方程 (9.56) 的解，所以有恒等式$$\ddot{x}(t)+\omega_0^2x(t)\equiv p(t)+\lambda f(t,x(t),\dot{x}(t)).$$因为 $p(t)$ 和 $f(t,x,\dot{x})$ 对 $t$ 是 $2\pi$ 周期的，所以只要在上面的恒等式中用 $t+2\pi$ 替换 $t$，我们就得到$$\ddot{x}(t+2\pi)+\omega_0^2x(t+2\pi)=p(t)+\lambda f(t,x(t+2\pi),\dot{x}(t+2\pi)).$$这就是说，$x=\bar{x}(t)\stackrel{\text{def}}{=}x(t+2\pi)$ 也是方程 (9.56) 的一个解，而且它满足初值条件$$\bar{x}(0)=x(2\pi),\qquad \bar{x}'(0)=x'(2\pi).$$再利用周期边值条件 (9.57) 推出$$\bar{x}(0)=x(0),\qquad \bar{x}'(0)=x'(0),$$亦即方程 (9.56) 有两个解 $x(t)$ 和 $\bar{x}(t)$ 当 $t=0$ 时具有相同的初值。因此，根据解的唯一性定理，它们是恒同的，亦即 $x(t)\equiv\bar{x}(t)$。这样，我们得到$$x(t)\equiv x(t+2\pi),$$即 $x=x(t)$ 是 $2\pi$ 周期的。
+
+由此可见，寻找微分方程 (9.56) 的 $2\pi$ 周期解等价于解周期边值问题 (9.56)+(9.57)。
+
+先设$$x=x(t,x_0,v_0,\lambda)\tag{9.58}$$是微分方程 (9.56) 的解，而且它满足初值条件$$x(0)=x_0,\qquad \dot{x}(0)=v_0.$$易知，当 $|\lambda|$ 充分小时，解 (9.58) 在区间 $[0,2\pi]$ 上存在，而且根据解对初值和参数的连续可微性，它对 $t,x_0,v_0,\lambda$ 是连续可微的。
+
+由此可见，$x=x(t,x_0,v_0,\lambda)$ 是周期边值问题 (9.56)+(9.57) 的解，当且仅当初值 $x_0,v_0$ 满足方程$$\begin{cases}F(x_0,v_0,\lambda)\stackrel{\text{def}}{=}x(2\pi,x_0,v_0,\lambda)-x_0=0,\\[4pt] G(x_0,v_0,\lambda)\stackrel{\text{def}}{=}\dot{x}(2\pi,x_0,v_0,\lambda)-v_0=0.\end{cases}\tag{9.59}$$这样一来，只要能够由方程组 $(9.59)_\lambda$ 确定初值 $x_0=x_0(\lambda)$ 和 $v_0=v_0(\lambda)$，然后分别代入 (9.58) 式，我们就得到微分方程 (9.56) 的一个 $2\pi$ 周期解。
+
 **定理 9.5 (周期解的存在唯一性)** @238
 
 设 $\omega_0$ 不为正整数，则当 $\lambda$ 是小参数（$|\lambda|$ 充分小）时，微分方程 (9.56) 有唯一的 $2\pi$ 周期解。
@@ -2723,6 +2897,10 @@ S-L 边值问题有无限多个（简单的）特征值，而且可把它们排�
 ## 第10章 首次积分
 
 ### 10.1 首次积分的定义（p241–245）
+
+在 §5.1 中，虽然没有明确给出首次积分的定义，但我们已用首次积分的方法求解了几个特殊类型的微分方程，并获得一种直观的理解：求解一个微分方程就是寻找它的首次积分，$n$ 阶微分方程应该有 $n$ 个独立的首次积分；而且一旦能找到其中的 $k$ 个，原来的 $n$ 阶微分方程就可简化为一个 $(n-k)$ 阶微分方程。本章的目的就是要证明上述结果，它们构成首次积分的理论基础，也可以看成线性微分方程的一般理论在非线性微分方程中的推广。特别要指出，首次积分的一般理论只在局部区域内成立；关于大范围的首次积分缺少一般的理论分析，我们在最后一节只作些简要的介绍。
+
+在给出首次积分确切的定义之前，我们再来求解几个特殊的微分方程，从中体会首次积分的含义和作用。
 
 **例 1 (求两独立首次积分)** @241
 
@@ -2782,6 +2960,10 @@ S-L 边值问题有无限多个（简单的）特征值，而且可把它们排�
 
 ### 10.2 首次积分的性质（p246–249）
 
+为了方便，我们把微分方程组 (10.14) 重写如下：$$\frac{\mathrm{d}y_i}{\mathrm{d}x}=f_i(x,y_1,y_2,\cdots,y_n)\qquad (i=1,2,\cdots,n),\tag{10.17}$$其中 $f_1,f_2,\cdots,f_n$ 在某个区域 $G_1$ 内对 $(x,y_1,y_2,\cdots,y_n)$ 是连续的，而且对 $(y_1,y_2,\cdots,y_n)$ 是连续可微的。
+
+根据首次积分的定义，为了判别函数 $V(x,y_1,y_2,\cdots,y_n)$ 是否为微分方程 (10.17) 在区域 $G_1$ 内的首次积分，我们需要知道方程组 (10.17) 在 $G_1$ 内的所有积分曲线。这在实际应用上是有困难的。下述定理避免了这一缺点，为我们提供了一个有效的判别法。
+
 **定理 10.1** @246
 
 设函数 $\varPhi(x,y_1,y_2,\cdots,y_n)$ 在区域 $G_1$ 内是连续可微的，而且它不是常数，则$$\varPhi(x,y_1,y_2,\cdots,y_n)=C\tag{10.18}$$是微分方程组 (10.17) 在区域 $G_1$ 内的首次积分的充要条件为：$$\frac{\partial \varPhi}{\partial x}+\frac{\partial \varPhi}{\partial y_1}f_1+\frac{\partial \varPhi}{\partial y_2}f_2+\cdots+\frac{\partial \varPhi}{\partial y_n}f_n=0\tag{10.19}$$是关于变量 $(x,y_1,y_2,\cdots,y_n)\in G_1$ 的一个恒等式。
@@ -2804,6 +2986,8 @@ S-L 边值问题有无限多个（简单的）特征值，而且可把它们排�
 
 ### 10.3 首次积分的存在性（p250–252）
 
+一般而言，要实际找出微分方程的首次积分是有困难的。但是，在相当广泛的条件下，可以证明首次积分的（局部）存在性。
+
 **定理 10.4 (首次积分的局部存在性)** @251
 
 设 $P_0=(x_0,y_1^0,y_2^0,\cdots,y_n^0)\in G$，则存在 $P_0$ 点的一个邻域 $G_0\subset G$，使得微分方程组 (10.17) 在区域 $G_0$ 内有 $n$ 个互相独立的首次积分。
@@ -2819,6 +3003,34 @@ S-L 边值问题有无限多个（简单的）特征值，而且可把它们排�
 设 (10.28) 式是微分方程组 (10.17) 在区域 $G_0$ 内的 $n$ 个独立的首次积分，则在区域 $G_0$ 内微分方程组 (10.17) 的任何首次积分$$V(x,y_1,y_2,\cdots,y_n)=C$$可以用 (10.28) 式来表达，亦即$$V(x,y_1,y_2,\cdots,y_n)=h(\Phi_1(x,y_1,y_2,\cdots,y_n),\cdots,\Phi_n(x,y_1,y_2,\cdots,y_n)),\tag{10.41}$$其中 $h(\cdot,\cdots,\cdot)$ 是某个连续可微的函数。
 
 ### 10.4 大范围的首次积分（p253–256）
+
+上述的首次积分理论都是在小范围内（即局部）成立的，而在大范围内，一般而言它们不再成立。例如，在 §10.1 中的例 1 虽有两个互相独立的首次积分 (10.2) 和 (10.3)，但它们也只是局部的。这是因为对于 (10.2) 式而言，它的左端函数在原点 $O$ 没有定义；而对于 (10.3) 式而言，它的左端函数不是单值的（当点 $(x,y)$ 绕原点逆时针转一圈后函数的值增加 $2\pi$），而且在原点 $O$ 也没有定义。
+
+注意，在 §10.1 中的例 2 有大范围的首次积分 (10.6) 和 (10.7)。
+
+为了简明起见，我们考虑二阶的微分方程组$$\begin{cases}\dfrac{\mathrm{d}y}{\mathrm{d}x}=f(x,y,z),\\[8pt] \dfrac{\mathrm{d}z}{\mathrm{d}x}=g(x,y,z),\end{cases}\tag{10.45}$$其中函数 $f$ 和 $g$ 在 $Oxyz$ 空间的区域 $\Omega$ 内是充分光滑的。现在我们提出下述
+
+**问题 (W)**：寻找二阶微分方程组 (10.45) 在大范围区域 $\Omega$ 内的两个互相独立的首次积分$$\Phi_i(x,y,z)=C_i\qquad(i=1,2).\tag{10.46}$$
+
+我们要指出，变量 $x,y,z$ 在方程组 (10.45) 中的地位是不“对称”的，即 $x$ 是自变量，而 $y$ 和 $z$ 是未知函数。但是，我们也可以把方程组 (10.45) 化成如下“对称的”形式：$$\begin{cases}\dfrac{\mathrm{d}x}{\mathrm{d}t}=E(x,y,z),\\[8pt] \dfrac{\mathrm{d}y}{\mathrm{d}t}=F(x,y,z),\\[8pt] \dfrac{\mathrm{d}z}{\mathrm{d}t}=G(x,y,z),\end{cases}\tag{10.47}$$这里 $x,y,z$ 都是未知函数。从方程组 (10.47) 中消去 $\mathrm{d}t$，即可得到方程组 (10.45)，并且有$$f=\frac{F}{E},\qquad g=\frac{G}{E}.$$注意，微分方程组 (10.47) 的右端 $E,F,G$ 不依赖于自变量 $t$，即它是驻定的（或自治的）系统。
+
+我们已经知道，(10.46) 式在 $\Omega$ 内分别代表方程组 (10.45) 的两个互相独立的积分曲面族 $S(C_1)$ 和 $T(C_2)$，而且它们的交线 $\Gamma(C_1,C_2)$ 就是微分方程组 (10.45) 在 $\Omega$ 内的积分曲线族，其中 $C_1$ 和 $C_2$ 是两个参数（任意常数）。
+
+显然，(10.46) 式也是微分方程组 (10.47) 的驻定的首次积分。因此，对于微分方程组 (10.47) 的任何运动（解）$$x=x(t),\quad y=y(t),\quad z=z(t),\tag{10.48}$$它们必定满足等式 (10.46)，其中 $C_1$ 和 $C_2$ 是与运动 (10.48) 有关的常数。这也就是说，微分方程组 (10.47) 的运动轨线恰好是微分方程组 (10.45) 的某条积分曲线 $\Gamma$，只是轨线的运动方向需要根据微分方程组 (10.47) 确定。反之，微分方程组 (10.45) 的积分曲线也必定是微分方程组 (10.47) 的运动轨线。（只是当 $E(x,y,z)=0$ 时需要作必要的补充解释，其说法雷同于在第一章中关于对称形式的微分方程的说明。）这样一来，我们将一般地讨论自治系统 (10.47)，其中函数 $E,F,G$ 在 $\Omega$ 内充分光滑，而且它们除了在个别点以外不能同时等于零。注意，设在点 $P^*(x^*,y^*,z^*)$ 处，它们同时等于零，即$$E(x^*,y^*,z^*)=F(x^*,y^*,z^*)=G(x^*,y^*,z^*)=0,$$则自治系统 (10.47) 有一个静止的运动（解）$$x=x^*,\quad y=y^*,\quad z=z^*,\qquad -\infty<t<+\infty,$$它的轨线退化成一个静止点 $P^*$。
+
+现在，我们把前面的问题 (W) 改提成下述
+
+**问题 (W)**：寻找驻定系统 (10.47) 在大范围区域 $\Omega$ 内的两个互相独立的（驻定的）首次积分 (10.46)。
+
+以下就来分析这个问题。假设驻定系统 (10.47) 在 $\Omega$ 内有两个互相独立的形如 (10.46) 式的首次积分，则由首次积分的充要条件，我们在 $\Omega$ 内有恒等式$$\begin{cases}\dfrac{\partial\Phi_1}{\partial x}E+\dfrac{\partial\Phi_1}{\partial y}F+\dfrac{\partial\Phi_1}{\partial z}G=0,\\[8pt] \dfrac{\partial\Phi_2}{\partial x}E+\dfrac{\partial\Phi_2}{\partial y}F+\dfrac{\partial\Phi_2}{\partial z}G=0.\end{cases}\tag{10.49}$$
+
+令雅可比行列式$$L=\frac{D(\Phi_1,\Phi_2)}{D(y,z)},\quad M=\frac{D(\Phi_1,\Phi_2)}{D(z,x)},\quad N=\frac{D(\Phi_1,\Phi_2)}{D(x,y)},$$则联立方程组 (10.49) 蕴涵$$\frac{L}{E}=\frac{M}{F}=\frac{N}{G}.$$又令它们的公比为 $\mu$，即得$$L=\mu E,\quad M=\mu F,\quad N=\mu G.\tag{10.50}$$因为上面的首次积分 $\Phi_1$ 和 $\Phi_2$ 是互相独立的，所以在 $\Omega$ 内（个别点除外）矩阵$$\begin{pmatrix} \dfrac{\partial\Phi_1}{\partial x} & \dfrac{\partial\Phi_1}{\partial y} & \dfrac{\partial\Phi_1}{\partial z}\\[8pt] \dfrac{\partial\Phi_2}{\partial x} & \dfrac{\partial\Phi_2}{\partial y} & \dfrac{\partial\Phi_2}{\partial z} \end{pmatrix}$$的秩等于 $2$，亦即$$L^2+M^2+N^2>0.$$然后，利用 (10.50) 式推出$$\mu=\pm\sqrt{\frac{L^2+M^2+N^2}{E^2+F^2+G^2}},$$我们在 $\Omega$ 内不妨设$$\mu=\mu(x,y,z)>0\qquad(\text{个别点除外}).\tag{10.51}$$另一方面，根据 $L,M,N$ 的定义，容易验证恒等式$$\frac{\partial L}{\partial x}+\frac{\partial M}{\partial y}+\frac{\partial N}{\partial z}=0$$在 $\Omega$ 内成立（这里要求 $\Phi_1$ 和 $\Phi_2$ 是二次连续可微的）。
+
+因此，再由 (10.50) 式我们在 $\Omega$ 内得到恒等式$$\frac{\partial}{\partial x}(\mu E)+\frac{\partial}{\partial y}(\mu F)+\frac{\partial}{\partial z}(\mu G)=0,\tag{10.52}$$其中函数 $\mu$ 满足条件 (10.51)。
+
+当 $\mu$ 是常数时，恒等式 (10.52) 变成$$\frac{\partial E}{\partial x}+\frac{\partial F}{\partial y}+\frac{\partial G}{\partial z}=0,$$即系统 (10.47) 的散度等于零，亦即它是一个**保守系统**。
+
+当 $\mu$ 不是常数时，称上述函数 $\mu(x,y,z)$ 为微分方程组 (10.47) 在 $\Omega$ 内的一个**拟积分因子**。
 
 **引理 (拟积分因子)** @255
 
@@ -2837,6 +3049,26 @@ S-L 边值问题有无限多个（简单的）特征值，而且可把它们排�
 ## 第11章 一阶偏微分方程
 
 ### 11.1 一阶齐次线性偏微分方程（p257–259）
+
+我们讨论下面的一阶偏微分方程：
+
+$$\sum_{i=1}^{n}A_i(x_1,x_2,\cdots,x_n)\frac{\partial u}{\partial x_i}=0,\tag{11.1}$$
+
+其中 $u=u(x_1,x_2,\cdots,x_n)$ 是未知函数（$n\geqslant 2$）。假定方程 (11.1) 的系数函数 $A_1,A_2,\cdots,A_n$ 对 $(x_1,x_2,\cdots,x_n)\in D$ 是连续可微的，而且它们不同时为零，即在区域 $D$ 上有
+
+$$\sum_{i=1}^{n}\left|A_i(x_1,x_2,\cdots,x_n)\right|>0.$$
+
+注意，偏微分方程 (11.1) 是线性齐次的。
+
+对应于偏微分方程 (11.1)，我们考虑一个对称形式的常微分方程组
+
+$$\frac{\mathrm{d}x_1}{A_1(x_1,x_2,\cdots,x_n)}=\frac{\mathrm{d}x_2}{A_2(x_1,x_2,\cdots,x_n)}=\cdots=\frac{\mathrm{d}x_n}{A_n(x_1,x_2,\cdots,x_n)},\tag{11.2}$$
+
+它叫作偏微分方程 (11.1) 的**特征方程**。注意，特征方程 (11.2) 是一个 $(n-1)$ 阶的常微分方程组，所以它有 $(n-1)$ 个独立的首次积分
+
+$$\varphi_i(x_1,x_2,\cdots,x_n)=C_i\qquad(i=1,2,\cdots,n-1).\tag{11.3}$$
+
+我们的目的是：通过求解特征方程 (11.2) 的首次积分，求得偏微分方程 (11.1) 的通解。
 
 **定理 11.1 (齐次方程的通解)** @257
 

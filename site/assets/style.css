@@ -70,14 +70,16 @@ body {
 body::before {
   content: "";
   position: fixed; inset: 0; z-index: 0; pointer-events: none;
-  background: url("bg/library-reading-room.jpg") center/cover no-repeat;
+  background: url("bg/library-reading-room.webp") center/cover no-repeat;
   opacity: .04;
   filter: grayscale(1) contrast(.9);
 }
-body[data-bg="blackboard"]::before { background-image: url("bg/blackboard.jpg"); opacity: .032; }
-body[data-bg="manuscript"]::before { background-image: url("bg/mathematics-manuscript.jpg"); opacity: .038; }
-body[data-bg="geometry"]::before { background-image: url("bg/geometry-manuscript.jpg"); opacity: .036; }
+body[data-bg="blackboard"]::before { background-image: url("bg/blackboard.webp"); opacity: .032; }
+body[data-bg="manuscript"]::before { background-image: url("bg/mathematics-manuscript.webp"); opacity: .038; }
+body[data-bg="geometry"]::before { background-image: url("bg/geometry-manuscript.webp"); opacity: .036; }
+body[data-bg="none"]::before { display: none; }
 body.home-mode::before { opacity: .065; }
+body:not(.home-mode)::before { display: none; }
 body.network-home::before { display: none; }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) body::before { opacity: .055; filter: grayscale(1) brightness(.5) contrast(1.05); }
@@ -690,14 +692,9 @@ kbd {
 .exercise-topic-links a > span { flex: 0 0 auto; font-size: 11px; }
 .exercise-question-links a.in-topic { font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
 /* 章末习题主题 ↔ 正文节的导航；只加链接，不搬题。 */
-.section-exercise-links { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 10px 0 0; font-size: 12px; color: var(--muted); }
-.section-exercise-links > span { font-size: 11px; letter-spacing: .04em; }
-.section-exercise-links a { padding: 4px 9px; border: 1px solid var(--line); border-radius: 6px; color: var(--ink); text-decoration: none; }
-.section-exercise-links a:hover { color: var(--accent); border-color: var(--accent); }
-.section-exercise-links em { font-style: normal; margin-left: 6px; color: var(--muted); font-size: 11px; }
-.exercise-section-links { margin: 0 0 14px; font-size: 12px; color: var(--muted); }
-.exercise-section-links a { color: var(--accent); text-decoration: none; }
-.exercise-section-links a:hover { text-decoration: underline; }
+/* 章末习题主题并入现有标签行，不另占一行。 */
+.section-tabs a.tab-topic { border-style: dashed; }
+.section-tabs a.tab-topic span { margin-left: 6px; font-size: 11px; color: var(--muted); }
 .bh-topic-secs { font-style: normal; margin-left: 6px; font-size: 11px; color: var(--muted); }
 
 /* 概率论知识网络：纸面上的提问，墨色展台上的关系。 */

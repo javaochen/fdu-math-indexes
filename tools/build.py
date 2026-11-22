@@ -5,7 +5,8 @@
 输出（site/data/）：
     books.json       目录元数据：书、章、节、条目数（不含正文）
     <book>.json      单本书的全部章节与条目（含渲染 HTML 与 Markdown 源码）
-    search.json      检索索引：[书, 节, 锚点, 类型, 编号, 标题, 正文摘要]
+    search.json      全库检索索引（兼容旧链接）
+    search/<book>.json  按书拆分的检索索引，书页搜索先读这一份
 
 content/<书>/_book.md：
 
@@ -254,22 +255,22 @@ def load_book(book_dir: Path, problems: list[str]) -> dict | None:
             item["anchor"] = base if k == 1 else f"{base}-{k}"
             section["items"].append(item)
 
+        def prose_block(text: str) -> dict | None:
+            paras = to_paragraphs(text)
+            if not paras:
+                return None
+            html = "".join(f"<p>{inline(p)}</p>" for p in paras)
+            check_math(html, f"{path.name} 节首/小标题导语", problems)
+            return {"kind": "prose", "html": html}
+
+        blocks = []
+        first = events[0][0] if events else len(lines)
+        pre = prose_block("\n".join(lines[:first]))
+        if pre:
+            pre["before"] = 0
+            blocks.append(pre)
+
         if subheads:
-            def prose_block(text: str) -> dict | None:
-                paras = to_paragraphs(text)
-                if not paras:
-                    return None
-                html = "".join(f"<p>{inline(p)}</p>" for p in paras)
-                check_math(html, f"{path.name} 小标题导语", problems)
-                return {"kind": "prose", "html": html}
-
-            blocks = []
-            first = events[0][0] if events else len(lines)
-            pre = prose_block("\n".join(lines[:first]))
-            if pre:
-                pre["before"] = 0
-                blocks.append(pre)
-
             items_before = 0
             for k, (idx, kind, n) in enumerate(events):
                 nxt = events[k + 1][0] if k + 1 < len(events) else len(lines)
@@ -295,6 +296,7 @@ def load_book(book_dir: Path, problems: list[str]) -> dict | None:
                         blocks.append(post)
                 else:
                     items_before += 1
+        if blocks:
             section["blocks"] = blocks
 
         ch["sections"].append(section)
@@ -453,6 +455,10 @@ def main() -> int:
         stale.unlink()
 
     search: list[list] = []
+    search_dir = DATA / "search"
+    search_dir.mkdir(parents=True, exist_ok=True)
+    for old in search_dir.glob("*.json"):
+        old.unlink()
     meta_books: list[dict] = []
     for b in books:
         count = 0
@@ -487,6 +493,7 @@ def main() -> int:
                     ])
         else:
             (DATA / f"{b['id']}-exercises.json").unlink(missing_ok=True)
+        write_json(search_dir / f"{b['id']}.json", [e for e in search if e[0] == b["id"]])
         write_bundle(b, ex_data, DATA / f"{b['id']}.md")
         meta_books.append({
             "id": b["id"], "title": b["title"], "short": b["short"], "author": b["author"],

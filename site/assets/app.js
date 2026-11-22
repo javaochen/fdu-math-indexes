@@ -13,8 +13,11 @@
   let CACHE = new Map();       // bookId -> { ...meta, sections: [含 items] }
   let INDEX = new Map();       // "book/section/anchor" -> {item, section, book}
   let SRC = new Map();         // 同上 -> Markdown 源码
-  let SEARCH = null;           // search.json 原始数组
-  let SEARCH_N = null;         // 归一化后的检索串
+  let SEARCH = null;           // 全库搜索条目（按需合并）
+  let SEARCH_LOADING = null;   // 全库索引的在途请求
+  const SEARCH_PARTS = new Map(); // bookId -> 本书搜索条目
+  let searchAll = false;       // 用户是否主动要求全库搜索
+  const BOOK_LOADS = new Map();// bookId -> 在途请求
   let srcSet = new Set();
   let srcAll = false;
   let mode = "read";
@@ -194,15 +197,38 @@
     if (window.PageJump) window.PageJump.init(BOOKS);
     document.title = SITE.title;
     buildBooks();
+    // 空闲时预热搜索索引；书页只预热本书，首页才预热全库。
+    const conn = navigator.connection;
+    if (window.requestIdleCallback && !(conn && conn.saveData)) {
+      window.requestIdleCallback(() => {
+        const active = bookFromHash(location.hash);
+        (active ? loadSearchBook(active) : loadSearch()).catch(() => {});
+      }, { timeout: 8000 });
+    }
+  }
+
+  async function fetchBook(id) {
+    if (BOOK_LOADS.has(id)) return BOOK_LOADS.get(id);
+    const request = (async () => {
+      const res = await fetch(`data/${id}.json`);
+      if (!res.ok) throw new Error(`无法加载 ${id}.json`);
+      return res.json();
+    })();
+    BOOK_LOADS.set(id, request);
+    request.catch(() => BOOK_LOADS.delete(id));
+    return request;
+  }
+
+  // 悬停书按钮时提前取数据；点击时直接复用同一个请求。
+  function prefetchBook(id) {
+    if (!CACHE.has(id)) fetchBook(id).catch(() => {});
   }
 
   async function ensureBook(id) {
     if (CACHE.has(id)) return CACHE.get(id);
     const meta = BOOKS.find((b) => b.id === id);
     if (!meta) throw new Error(`未知的书 ${id}`);
-    const res = await fetch(`data/${id}.json`, { cache: "no-cache" });
-    if (!res.ok) throw new Error(`无法加载 ${id}.json`);
-    const data = await res.json();
+    const data = await fetchBook(id);
     const sections = [];
     for (const ch of data.chapters) {
       for (const s of ch.sections) {
@@ -220,12 +246,26 @@
     return loaded;
   }
 
+  async function loadSearchBook(id) {
+    if (SEARCH_PARTS.has(id)) return SEARCH_PARTS.get(id);
+    const res = await fetch(`data/search/${id}.json`);
+    if (!res.ok) throw new Error(`无法加载 search/${id}.json`);
+    const data = await res.json();
+    SEARCH_PARTS.set(id, data);
+    return data;
+  }
+
   async function loadSearch() {
-    if (SEARCH) return;
-    const res = await fetch("data/search.json", { cache: "no-cache" });
-    if (!res.ok) throw new Error("无法加载 search.json");
-    SEARCH = await res.json();
-    SEARCH_N = SEARCH.map((e) => e[7] || norm(`${e[3]} ${e[4]} ${e[5]} ${e[6]}`));
+    if (SEARCH) return SEARCH;
+    if (!SEARCH_LOADING) {
+      SEARCH_LOADING = (async () => {
+        const lists = await Promise.all(BOOKS.map((b) => loadSearchBook(b.id).catch(() => [])));
+        SEARCH = BOOKS.flatMap((b, i) => lists[i]);
+        return SEARCH;
+      })();
+      SEARCH_LOADING.catch(() => { SEARCH_LOADING = null; });
+    }
+    return SEARCH_LOADING;
   }
 
   async function ensureExercises(id) {
@@ -305,17 +345,26 @@
     const chapterInfo = chapter && chapter.exercises;
     const exerciseId = chapterInfo ? chapterExerciseId(chapter) : s.id;
     const label = chapterInfo ? `本章习题 ${chapterInfo.count} 题` : exerciseLabel(s);
+    const related = chapterGroupsForSection(s);
+    const topicTabs = related.groups.map((group) =>
+      `<a class="tab-topic" href="${esc(topicUrl(s.book.id, chapterExerciseId(related.chapter), group.id))}">相关习题 · ${esc(group.title)}<span>${group.count} 题</span></a>`).join("");
     return `<nav class="section-tabs" aria-label="本节内容">
       <a href="${esc(sectionUrl(s.book.id, s.id))}"${exercises ? "" : ' aria-current="page"'}>正文</a>
-      <a href="${esc(sectionUrl(s.book.id, exerciseId, true))}"${exercises ? ' aria-current="page"' : ""}>${esc(label)}</a>
+      <a href="${esc(sectionUrl(s.book.id, exerciseId, true))}"${exercises ? ' aria-current="page"' : ""}>${esc(label)}</a>${topicTabs}
     </nav>`;
   }
 
   /* ---------------- 侧栏 ---------------- */
   function buildBooks() {
-    $("#books").innerHTML = BOOKS.map((b) => `
+    const el = $("#books");
+    el.innerHTML = BOOKS.map((b) => `
       <button class="book-btn" type="button" data-book="${esc(b.id)}" title="${esc(b.title)}">
         <span class="bk-name">${esc(b.short || b.title)}</span><span class="cnt">${b.count || "待录入"}</span></button>`).join("");
+    el.querySelectorAll(".book-btn").forEach((btn) => {
+      const warm = () => prefetchBook(btn.dataset.book);
+      btn.addEventListener("pointerenter", warm, { passive: true });
+      btn.addEventListener("focus", warm);
+    });
   }
 
   function buildToc(meta) {
@@ -391,7 +440,9 @@
   };
 
   function setBookBackground(meta) {
-    document.body.dataset.bg = meta ? (BOOK_BG[meta.id] || "library") : "library";
+    document.body.dataset.bg = meta
+      ? (meta.id === "none" ? "none" : BOOK_BG[meta.id] || "library")
+      : "library";
   }
 
   function setBook(meta) {
@@ -644,11 +695,6 @@
       return `<button class="chip${typeFilter === key ? " active" : ""}" type="button" data-filter="${key}">${label}<em>${n}</em></button>`;
     }).join("");
     const defsBtn = `<button class="chip${defsOpen ? " active" : ""}" type="button" data-defs>${defsOpen ? "收起定义" : "展开定义"}</button>`;
-    const related = chapterGroupsForSection(s);
-    const relatedHtml = related.groups.length ? `<div class="section-exercise-links">
-      <span>本章习题相关主题</span>
-      ${related.groups.map((group) => `<a href="${esc(topicUrl(b.id, chapterExerciseId(related.chapter), group.id))}">${esc(group.title)}<em>${group.count} 题</em></a>`).join("")}
-    </div>` : "";
     return pageHead({
       book: b,
       title: `${esc(s.id)}&nbsp;&nbsp;${esc(s.title)}`,
@@ -658,7 +704,7 @@
         ${s.pages ? `<span>原书 p.${esc(s.pages)}</span>` : ""}`,
       tagline: sectionTagline(),
       tabs: sectionTabs(s),
-      extra: `<div class="filters">${chips}${defsBtn}</div>${relatedHtml}`,
+      extra: `<div class="filters">${chips}${defsBtn}</div>`,
       copy: copyButton("section", "复制本小节", "复制本小节全部条目（含小标题与导语）的 Markdown/LaTeX 源码"),
     });
   }
@@ -899,9 +945,58 @@
     return `<a class="search-back" href="#/search/${encodeURIComponent(lastSearch)}">← 返回搜索“${esc(lastSearch)}”</a>`;
   }
 
+  function bookFromHash(hash) {
+    const raw = (hash || "").replace(/^#\/?/, "").split("/")[0];
+    try {
+      const id = decodeURIComponent(raw);
+      return BOOKS.some((b) => b.id === id) ? id : "";
+    } catch (_) { return ""; }
+  }
+
+  function searchIndex(entries) {
+    return { entries, norms: entries.map((e) => e[7] || norm(`${e[3]} ${e[4]} ${e[5]} ${e[6]}`)) };
+  }
+
+  function renderSearchResults(q, index, partial = false) {
+    const terms = norm(q).split(" ").filter(Boolean);
+    const hitIdx = [];
+    for (let i = 0; i < index.entries.length && hitIdx.length < 200; i++) {
+      if (terms.every((t) => index.norms[i].includes(t))) hitIdx.push(i);
+    }
+    const shown = hitIdx.slice(0, 80);
+    const hits = hitIdx.map((i) => index.entries[i]);
+    searchState = { q, hits, partial };
+    const rows = shown.map((i) => {
+      const e = index.entries[i];
+      const book = BOOKS.find((b) => b.id === e[0]);
+      const sourceLocation = searchHitLocation(e, book);
+      return `<a class="hit" href="#/${esc(e[0])}/${esc(e[1])}/${esc(e[2])}">
+        <span class="badge" data-type="${esc(e[3])}">${esc(e[3])}</span>
+        <b>${esc(e[4] || "")}</b>
+        <span class="hit-title">${esc(e[5] || "")}</span>
+        <span class="hit-src">${esc(book ? book.short || book.title : e[0])} · ${esc(sourceLocation)}</span>
+        <p class="hit-text">${highlight(e[6], terms)}</p>
+      </a>`;
+    }).join("");
+    const origin = partial && bookFromHash(searchOrigin);
+    const originBook = origin && BOOKS.find((b) => b.id === origin);
+    const scope = originBook ? `《${esc(originBook.short || originBook.title)}》内` : "";
+    $("#view").innerHTML = `
+      <div class="sec-head"><h1>搜索</h1>
+        <div class="meta"><span>${scope}“${esc(q)}” 命中 ${hitIdx.length} 条${hitIdx.length > shown.length ? `（显示前 ${shown.length} 条）` : ""}${partial ? "，正在搜索全库…" : ""}</span>
+          ${partial ? `<button class="sec-copy" type="button" data-search-all>搜索全部书</button>` : ""}
+          ${hitIdx.length ? `<button class="sec-copy" type="button" data-copy-search title="复制全部命中结果为 Markdown">${partial ? "复制本书" : "复制全部"} ${hitIdx.length} 条</button>` : ""}
+        </div>
+        <p class="page-tagline">${esc(pickPhrase("search"))}</p>
+      </div>` + (rows || `<div class="empty">${partial ? "本书没有匹配的条目，可搜索全部书。" : "没有匹配的条目。"}</div>`);
+    $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <b>搜索</b> “${esc(q)}”`;
+    typesetLazy($("#view"), ".hit");
+    markActive();
+  }
+
   async function renderSearch(q) {
     const token = ++loadToken;
-    setBookBackground(null);
+    setBookBackground({ id: "none" });
     lastSearch = q;
     const h = `#/search/${encodeURIComponent(q)}`;
     if (location.hash !== h) {
@@ -917,38 +1012,23 @@
     if (exerciseView) current = null;
     setExerciseView(false);
     document.body.classList.remove("home-mode");
+    const originBook = searchAll ? "" : bookFromHash(searchOrigin);
+    if (originBook && !SEARCH) {
+      try {
+        const entries = await loadSearchBook(originBook);
+        if (token !== loadToken) return;
+        renderSearchResults(q, searchIndex(entries), true);
+        // 本书结果先显示，再后台补齐全库；完成后自动换成全库结果。
+        loadSearch().then(() => {
+          if (token === loadToken && !searchAll && query === q) renderSearch(q);
+        }).catch(() => {});
+        return;
+      } catch (_) { /* 本书索引不可用时退回全库 */ }
+    }
+    if (!SEARCH) $("#view").innerHTML = `<div class="empty">正在加载搜索索引…</div>`;
     await loadSearch();
     if (token !== loadToken) return;
-    const terms = norm(q).split(" ").filter(Boolean);
-    const hitIdx = [];
-    for (let i = 0; i < SEARCH.length && hitIdx.length < 200; i++) {
-      if (terms.every((t) => SEARCH_N[i].includes(t))) hitIdx.push(i);
-    }
-    const shown = hitIdx.slice(0, 80);
-    const hits = hitIdx.map((i) => SEARCH[i]);
-    searchState = { q, hits };
-    const rows = shown.map((i) => {
-      const e = SEARCH[i];
-      const book = BOOKS.find((b) => b.id === e[0]);
-      const sourceLocation = searchHitLocation(e, book);
-      return `<a class="hit" href="#/${esc(e[0])}/${esc(e[1])}/${esc(e[2])}">
-        <span class="badge" data-type="${esc(e[3])}">${esc(e[3])}</span>
-        <b>${esc(e[4] || "")}</b>
-        <span class="hit-title">${esc(e[5] || "")}</span>
-        <span class="hit-src">${esc(book ? book.short || book.title : e[0])} · ${esc(sourceLocation)}</span>
-        <p class="hit-text">${highlight(e[6], terms)}</p>
-      </a>`;
-    }).join("");
-    $("#view").innerHTML = `
-      <div class="sec-head"><h1>搜索</h1>
-        <div class="meta"><span>“${esc(q)}” 命中 ${hitIdx.length} 条${hitIdx.length > shown.length ? `（显示前 ${shown.length} 条）` : ""}</span>
-          ${hitIdx.length ? `<button class="sec-copy" type="button" data-copy-search title="复制全部命中结果为 Markdown">复制全部 ${hitIdx.length} 条</button>` : ""}
-        </div>
-        <p class="page-tagline">${esc(pickPhrase("search"))}</p>
-      </div>` + (rows || `<div class="empty">没有匹配的条目。</div>`);
-    $("#crumbs").innerHTML = `<a class="crumb-home" href="#/">书目</a> · <b>搜索</b> “${esc(q)}”`;
-    typesetLazy($("#view"), ".hit");
-    markActive();
+    renderSearchResults(q, searchIndex(SEARCH), false);
   }
 
   function renderHome() {
@@ -1080,10 +1160,6 @@
     } else {
       body = `<p class="exercise-note">本章习题按主题分组，保留原书题号与小问，不附解答。页码均为书内印刷页码。</p>
         <nav class="exercise-topic-links" aria-label="本章习题主题">${groups.map((g) => `<a href="${esc(topicUrl(s.book.id, s.id, g.id))}"${g === group ? ' aria-current="page"' : ""}>${esc(g.title)}<span>${g.count} 题</span></a>`).join("")}</nav>
-        ${group && group.sections && group.sections.length ? `<p class="exercise-section-links">对应小节：${group.sections.map((sid) => {
-          const sec = findSection(s.book, sid);
-          return `<a href="${esc(sectionUrl(s.book.id, sid))}">${esc(sid)}${sec ? ` ${esc(sec.title)}` : ""}</a>`;
-        }).join(" · ")}</p>` : ""}
         <nav class="exercise-question-links" aria-label="本章全部习题题号">${allItems.map((it) => `<a href="${esc(sectionUrl(s.book.id, s.id, true))}/${esc(it.anchor)}"${numbers.has(parseInt(it.number, 10)) ? ' class="in-topic"' : ""}>${esc(it.number)}</a>`).join("")}</nav>
         <div class="exercise-items">${items.map((it) => itemHtml({ ...it, bookId: s.book.id, secId: `${s.id}/exercises` })).join("")}</div>`;
     }
@@ -1092,7 +1168,11 @@
       title: `第${esc(s.chapter)}章${group ? ` · ${esc(group.title)}` : ""} · 习题`,
       meta: `<span>${esc(s.book.title)}${s.book.author ? ` · ${esc(s.book.author)}` : ""}</span>
         <span>${esc(s.chapterTitle || "")}</span>
-        <span>${group ? `本主题 ${items.length} 题 · ` : ""}全章 ${info.count} 题</span>${info.pages ? `<span>原书 p.${esc(info.pages)}</span>` : ""}`,
+        <span>${group ? `本主题 ${items.length} 题 · ` : ""}全章 ${info.count} 题</span>${info.pages ? `<span>原书 p.${esc(info.pages)}</span>` : ""}
+        ${group && group.sections && group.sections.length ? `<span>对应小节：${group.sections.map((sid) => {
+          const sec = findSection(s.book, sid);
+          return `<a href="${esc(sectionUrl(s.book.id, sid))}">${esc(sid)}${sec ? ` ${esc(sec.title)}` : ""}</a>`;
+        }).join(" · ")}</span>` : ""}`,
       tagline: pickPhrase("exercise"),
       tabs: sectionTabs(s, true),
       copy: allItems.length ? copyButton("exercises", "复制本章习题", "复制本章全部习题（含所有主题）的 Markdown/LaTeX 源码") : "",
@@ -1231,6 +1311,9 @@
     const copySearch = e.target.closest("[data-copy-search]");
     if (copySearch) { copyText(searchMarkdown(searchState), copySearch); return; }
 
+    const searchAllBtn = e.target.closest("[data-search-all]");
+    if (searchAllBtn) { searchAll = true; renderSearch(lastSearch); return; }
+
     const copySection = e.target.closest("[data-copy-section]");
     if (copySection) {
       if (!current) return;
@@ -1327,12 +1410,20 @@
   });
 
   const searchEl = $("#search");
+  const warmSearch = () => {
+    if (SEARCH) return;
+    const active = bookFromHash(location.hash);
+    (active ? loadSearchBook(active) : loadSearch()).catch(() => {});
+  };
+  searchEl.addEventListener("focus", warmSearch, { once: true });
+  searchEl.addEventListener("pointerenter", warmSearch, { once: true });
   let timer = null;
   searchEl.addEventListener("input", () => {
     clearTimeout(timer);
     const v = searchEl.value;
     timer = setTimeout(() => {
       query = v.trim();
+      searchAll = false;
       if (!query) {
         lastSearch = "";
         searchState = null;

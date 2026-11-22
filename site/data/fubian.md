@@ -720,6 +720,8 @@ $\Omega\subset\mathbb{C}$ 是单连通区域的充要条件是 $\mathbb{C}_\inft
 
 ### 2.2 全纯函数的共形性（p45–50）
 
+本节中所有函数都规定为 $C^1$ 函数，即关于实变量 $(x,y)$ 连续可微；对全纯函数也暂时要求其为 $C^1$。由于区域 $\Omega$ 上复变函数 $f=u+\mathrm{i}v$ 也是 $\Omega$ 到平面 $\mathbb{R}^2$ 的实二元映射 $f:\Omega\to\mathbb{R}^2$，$(x,y)\mapsto(u,v)$，故先回顾实二元 $C^1$ 映射的相关性质。设 $f:\Omega\to\mathbb{R}^2$，$(x,y)\mapsto(u,v)$ 是 $C^1$ 映射，其中 $u=u(x,y)$，$v=v(x,y)$，则其 Jacobi 矩阵和 Jacobi 行列式分别为$$J_f=\begin{pmatrix}u_x & u_y\\ v_x & v_y\end{pmatrix},\qquad \det J_f=\begin{vmatrix}u_x & u_y\\ v_x & v_y\end{vmatrix}=\frac{\partial u}{\partial x}\frac{\partial v}{\partial y}-\frac{\partial u}{\partial y}\frac{\partial v}{\partial x}.$$如果 $\det J_f>0$，则称 $f$ 是**保向映射**（参见习题 9）。
+
 **定理 2.6 (逆映射定理)** @46
 
 设 $f:(x,y)\mapsto(u,v)$ 是 $(x_0,y_0)$ 的某个邻域到 $\mathbb{R}^2$ 的 $C^1$ 映射，$(x_0,y_0)\mapsto(u_0,v_0)$，且在该点的 Jacobi 矩阵非退化，即 $\det J_f(x_0,y_0)\neq0$，则存在 $(x_0,y_0)$ 的某个邻域 $U$ 以及 $(u_0,v_0)$ 的某个邻域 $V$，使得 $f:U\to V$ 是同胚，有唯一的逆映射 $f^{-1}:V\to U$，$(u,v)\mapsto(x,y)$，且 $f^{-1}$ 也是 $C^1$ 的。
@@ -1464,6 +1466,8 @@ Morera 定理中的任意闭三角形 $\Delta$ 可以修改为任意边平行于
 
 ### 3.5 Cauchy 定理的一般形式（p98–105）
 
+本节首先考虑辐角在曲线上的连续变化。
+
 **引理 3.37 (局部辐角函数)** @98
 
 对任意给定的 $z_0\in\mathbb{C}\setminus\{0\}$ 以及 $0<r<|z_0|$。给定 $\arg z_0=\theta_0$，则在 $D(z_0,r)$ 上存在 $C^1$ 辐角函数 $\arg z$，使得 $\arg z_0=\theta_0$。
@@ -1722,6 +1726,8 @@ Morera 定理中的任意闭三角形 $\Delta$ 可以修改为任意边平行于
 
 ### 4.2 全纯函数的幂级数展开（p120–124）
 
+上一节表明，幂级数的和函数是其收敛圆上的全纯函数。本节首先说明，圆上的全纯函数一定是某个幂级数的和函数。
+
 **定理 4.7 (全纯函数的幂级数展开)** @120
 
 设函数 $f$ 在圆 $D(z_0,\rho)$ 上全纯，那么，$f$ 有如下幂级数表示$$f(z)=\sum_{n=0}^{+\infty}a_n(z-z_0)^n,\qquad z\in D(z_0,\rho),\tag{4.8}$$其中$$a_n=\frac{1}{n!}f^{(n)}(z_0),\qquad n\geq 0.$$且 (4.8) 右端幂级数的收敛半径 $R\geq\rho$。并且，对任意 $0<r<\rho$，$$a_n=\frac{1}{2\pi\mathrm{i}}\int_{|\zeta-z_0|=r}\frac{f(\zeta)}{(\zeta-z_0)^{n+1}}\mathrm{d}\zeta,\qquad n\geq 0.\tag{4.9}$$
@@ -1773,6 +1779,8 @@ Morera 定理中的任意闭三角形 $\Delta$ 可以修改为任意边平行于
 考虑 $\mathbb{C}\setminus[0,+\infty)$ 上对数函数单值支 $\log z$（$\log(-1)=\pi\mathrm{i}$）在 $1+\mathrm{i}$ 点的幂级数展开$$\log z=\frac{1}{2}\log 2+\mathrm{i}\frac{\pi}{4}+\sum_{n=1}^{+\infty}\frac{(-1)^{n-1}}{(1+\mathrm{i})^nn}\bigl(z-(1+\mathrm{i})\bigr)^n\tag{4.12}$$的收敛半径为 $\sqrt{2}$，而不是 $1$。事实上，如果考虑 $\mathbb{C}\setminus(-\infty,0]$ 上对数函数单值支 $\log z$（$\log 1=0$），则这个单值支和前一个单值支在上半平面是相等的，故 $1+\mathrm{i}$ 点的幂级数展开式也是 (4.12)，而这个单值支到 $1+\mathrm{i}$ 的最近奇点是支点 $0$，故其收敛半径为 $\sqrt{2}$。其原因是，对单值支 $\log z$（$\log(-1)=\pi\mathrm{i}$）而言，割缝 $[0,+\infty)$ 是人为添加的，其真正的奇点是支点 $0$。
 
 ### 4.3 全纯函数的零点（p125–129）
+
+多项式是整个复平面上的全纯函数。设 $p(z)$ 是一个 $n\ge1$ 次多项式，则由代数基本定理，$p(z)$ 必有一个零点 $z_0$，且可以作因式分解 $p(z)=(z-z_0)p_1(z)$，其中 $p_1(z)$ 是 $n-1$ 次多项式；若 $n-1\ge1$，重复这一过程即可得到$$p(z)=a_n(z-z_0)(z-z_1)\cdots(z-z_{n-1}),\qquad \text{常数 } a_n\ne0.$$上述 $n$ 个零点可能有相同的。如果其中 $k$ 个零点与 $z_0$ 相同，则有$$p(z)=a_n(z-z_0)^k\varphi(z),$$其中 $\varphi(z)$ 是一个 $n-k$ 次多项式，且 $\varphi(z_0)\ne0$。这时称 $z_0$ 是多项式 $p(z)$ 的 $k$ 阶零点，$k$ 为零点 $z_0$ 的阶；当 $k\ge2$ 时，又称为 $k$ 重零点。显然有$$p(z_0)=\cdots=p^{(k-1)}(z_0)=0,\qquad p^{(k)}(z_0)\ne0.$$利用幂级数展开，全纯函数在局部也具有与多项式类似的特征。
 
 **定义 (零点与阶)** @125
 
@@ -2168,6 +2176,8 @@ $$\operatorname{Res}\left(\tan z,\frac{\pi}{2}\right)=\operatorname{Res}\left(\f
 
 ### 5.2 利用留数计算积分（p162–171）
 
+留数定理的一个重要应用是可以将一些定积分通过构造恰当的围道转换为围道积分，从而可以通过计算留数求积分值。在下面的定理和例子中，函数 $f$ 总假定当 $x\in\mathbb{R}$ 时，$f(x)\in\mathbb{R}$。
+
 **定理 5.2 (有理函数的积分)** @162
 
 设 $f=P/Q$ 是有理函数，$P,Q$ 是两个没有公共零点的多项式，$\deg Q\ge\deg P+2$，且 $Q$ 在 $\mathbb{R}$ 上没有零点，则$$\int_{-\infty}^{+\infty}f(x)\,\mathrm{d}x=2\pi\mathrm{i}\sum_{j=1}^{n}\operatorname{Res}(f,z_j),\tag{5.7}$$其中 $z_1,\dots,z_n$ 是 $Q$ 在 $\mathbb{H}$ 中的零点。
@@ -2338,6 +2348,8 @@ Rouché 定理也可以用来证明代数基本定理，留作习题。
 
 ### 5.4 全纯函数局部和全局性质（p179–182）
 
+利用辐角原理或 Rouché 定理，可以得到全纯映射的局部映射性质。
+
 **定理 5.15 (全纯函数的局部映射性质)** @179
 
 设 $f$ 为非常值全纯函数，$z_0$ 是 $f(z)-w_0$ 的 $n$ 阶零点。那么，存在 $r_0>0$，对任意 $0<r<r_0$，记 $\delta=\delta(r)=\inf\limits_{|z-z_0|=r}|f(z)|>0$，当 $w\in D^*(w_0,\delta)$ 时，$f(z)-w$ 在 $D(z_0,r)$ 内恰有 $n$ 个互不相同的零点，且每个都为单零点。
@@ -2383,6 +2395,8 @@ Rouché 定理也可以用来证明代数基本定理，留作习题。
 设 $f$ 是区域 $\Omega$ 上全纯函数。如果存在 $M>0$，使得对任意 $\zeta\in\partial_\infty\Omega$，$$\varlimsup_{z\to\zeta}|f(z)|\le M,$$则对任意 $z\in\Omega$，$|f(z)|\le M$。若存在 $z_0\in\Omega$ 使得 $|f(z_0)|=M$，则 $f$ 是常值函数。
 
 ### 5.5 Schwarz 引理（p183–187）
+
+利用最大模原理，我们可以证明如下能很好地揭示全纯函数映射性质的 Schwarz 引理。
 
 **定理 5.22 (Schwarz 引理)** @183
 
@@ -2620,6 +2634,10 @@ Schwarz 引理（Schwarz-Pick 定理）是一个很深刻的定理，是单位�
 
 ### 6.4 边界对应（p200–205）
 
+设 $f(z)$ 是 $\mathbb{D}$ 到 $\Omega$ 的共形映射。问题：当 $z\to\zeta\in\partial\mathbb{D}$ 时，是否有 $f(z)\to w\in\partial\Omega$？进一步，在什么情况下，$f(z)$ 可以延拓为 $\overline{\mathbb{D}}$ 到 $\overline{\Omega}$ 的同胚？由引理 6.10，可以假定 $\Omega$ 有界区域。
+
+如果 $\gamma:[a,b)\to\mathbb{C}$ 是一条光滑半开曲线，则其长度定义为$$\ell(\gamma)=\lim_{t\to b^-}\int_a^t|\gamma'(\tau)|\,\mathrm{d}\tau.$$
+
 **引理 6.11 (有限长度曲线的极限)** @201
 
 如果半开曲线 $\gamma:[a,b)\to\mathbb{C}$ 具有有限长度，则 $\lim_{t\to b^-}\gamma(t)$ 存在。
@@ -2840,6 +2858,8 @@ Koebe 偏差定理的几何解释：$f(z)\in\mathcal{S}$，则 $f(z)$ 将 $D(0,r
 
 ### 7.4 Poisson 公式（p220–221）
 
+对调和函数是否也有像全纯函数那样圆上的 Cauchy 积分公式，圆内任一点的值可由圆周上的值所确定？对 Cauchy 公式直接取其实部不可取。但是，我们可以通过分式线性变换将圆内一点映成圆心。为此，我们需要调和函数的共形不变性。
+
 **引理 7.8 (共形不变性)** @220
 
 设 $w=\varphi(z)$ 是区域 $\Omega$ 到 $\Omega'$ 的共形映射，$u(w)$ 是区域 $\Omega'$ 上函数，$v(z)=u(\varphi(z))$，则 $u(w)$ 调和的充要条件是 $v(z)$ 调和。
@@ -2946,6 +2966,8 @@ Koebe 偏差定理的几何解释：$f(z)\in\mathcal{S}$，则 $f(z)$ 将 $D(0,r
 
 ### 8.2 Perron 方法（p230–231）
 
+一般有界区域上的 Dirichlet 问题解的存在性可用 Perron 方法。
+
 **定义 (Perron 族)** @230
 
 设 $\Omega\subset\mathbb{C}$ 是有界区域，$\varphi(\zeta)$ 是 $\partial\Omega$ 上有界实值函数。定义$$\mathcal{P}(\varphi,\Omega)=\left\{v(z):v(z)\text{ 是 }\Omega\text{ 上次调和函数},\ \varlimsup_{z\to\zeta}v(z)\le\varphi(\zeta),\ \forall\,\zeta\in\partial\Omega\right\},$$称 $\mathcal{P}(\varphi,\Omega)$ 是 $\Omega$ 上关于 $\varphi(\zeta)$ 的 Perron 族。
@@ -2957,6 +2979,8 @@ Koebe 偏差定理的几何解释：$f(z)\in\mathcal{S}$，则 $f(z)$ 将 $D(0,r
 设 $\mathcal{P}(\varphi,\Omega)$ 是 $\Omega$ 上 Perron 族，则$$u(z)=\sup\{v(z):v(z)\in\mathcal{P}(\varphi,\Omega)\}$$是 $\Omega$ 上的调和函数。称 $u(z)$ 为 $\Omega$ 上关于 $\varphi(\zeta)$ 的 Perron 函数。
 
 ### 8.3 Dirichlet 问题的解（p232–234）
+
+那么，如果 $\varphi(\zeta)$ 在 $\partial\Omega$ 上连续，$\Omega$ 上关于 $\varphi(\zeta)$ 的 Perron 函数 $u(z)$ 是否就是以 $\varphi(\zeta)$ 为边值的 Dirichlet 问题的解呢？一般并非如此。事实上，对于一般区域，Dirichlet 问题未必有解。
 
 **例 (Dirichlet 问题未必有解)** @232
 
@@ -3061,6 +3085,8 @@ Green 函数 $g(z,w)$ 关于变量 $w\in\Omega$ 调和，且有对称性 $g(z,w)
 设 $u(z)$ 是 $\Omega$ 上调和函数，且在 $\overline{\Omega}$ 上有连续二阶导数，设 $g(z,z_0)$ 是 $\Omega$ 上以 $z_0\in\Omega$ 为奇点的 Green 函数，则有如下 Green-Poisson 公式：$$u(z_0)=-\frac{1}{2\pi}\int_{\partial\Omega}u(\zeta)d^*g(\zeta,z_0). \tag{8.13}$$
 
 ### 8.5 调和测度（p240–244）
+
+和调和函数有关的另一重要概念是调和测度。先考虑一个特殊情形。对任意给定的 $z\in\mathbb{D}$，以及 $\partial\mathbb{D}=C(0,1)$ 上有界分段连续函数 $\varphi(\zeta)$，我们有 Poisson 积分$$u_\varphi(z)=\frac{1}{2\pi}\int_0^{2\pi}\varphi(e^{i\theta})\frac{1-|z|^2}{|e^{i\theta}-z|^2}\,d\theta=\frac{1}{2\pi i}\int_{|\zeta|=1}\varphi(\zeta)\frac{1-|z|^2}{|\zeta-z|^2}\frac{d\zeta}{\zeta}, \tag{8.17}$$这里 $u_\varphi(z)$ 在 $\mathbb{D}$ 上调和。上述积分对 $\partial\mathbb{D}$ 上任意有界 Borel 可测函数 $\varphi(\zeta)$ 都存在，并且仍有 $u_\varphi(z)$ 是调和函数。
 
 **定义 (圆盘上的调和测度)** @240
 
@@ -3187,6 +3213,8 @@ Schwarz 对称原理有助于我们求一些对称区域间的共形映射。
 设区域 $\Omega$ 有一段边界为全纯 Jordan 弧 $\gamma$，$f(z)$ 在 $\Omega$ 上全纯，当 $z\to\gamma$ 时，$f(z)\to\zeta_0$（常数），则 $f(z)\equiv\zeta_0$。
 
 ### 9.3 Schwarz-Christoffel 公式（p248–250）
+
+设 $\Omega$ 是一个由有限条线段所围的多边形区域，我们要找共形映射 $f(z)$ 将上半平面 $\mathbb{H}$ 映成 $\Omega$。设 $\Omega$ 有顶点 $w_1,w_2,\dots,w_n$（依次按逆时针方向排列），对应的内角分别为 $\pi\alpha_1,\pi\alpha_2,\dots,\pi\alpha_n$（$0<\alpha_j<2$，$\alpha_1+\alpha_2+\dots+\alpha_n=n-2$）。按边界对应定理，$f(z)$ 可以连续延拓到实轴上，因此，存在 $a_1,a_2,\dots,a_n$ 使得 $f(a_j)=w_j$，$j=1,2,\dots,n$。不妨假定 $-\infty<a_1<a_2<\dots<a_n<+\infty$（也可以让 $a_n=\infty$）。那么，$f(z)$ 将 $[a_j,a_{j+1}]$ 一一到上地映成 $\Omega$ 的边 $[w_j,w_{j+1}]$（将 $[a_n,+\infty)\cup\{\infty\}\cup(-\infty,a_1]$ 映成 $\Omega$ 的边 $[w_n,w_1]$）。
 
 **引理 9.4** @249
 

@@ -386,6 +386,8 @@ $$A_i=\bigsqcup_{E_j\subseteq A_i} E_j.$$
 
 ### 1.2 R^k 中的点集（p13–23）
 
+我们将介绍 Euclid 空间上 $\mathbb{R}^k$ 中点集的一些基本概念，并研究它们的性质。
+
 **定义 (区间)** @13
 
 我们用 $\mathbb{R}$ 表示实数的全体所成的集，也就是实数直线，每个实数也称为 $\mathbb{R}$ 中的点。本书也常考虑广义实数集 $\overline{\mathbb{R}}=\mathbb{R}\cup\{-\infty,+\infty\}=[-\infty,+\infty]$ 和它的子集。实数集和广义实数集中最常用的点集是区间。对于 $a,b\in\overline{\mathbb{R}}$，区间有下面几种：
@@ -727,6 +729,12 @@ $$\chi_{\lim_{n\to\infty} A_n}(x)=\lim_{n\to\infty}\chi_{A_n}(x).$$
 (ii) 求闭区间 $[a,b]$ 上单调递增函数全体的势.
 
 ### 1.3 R^k 中的 Borel 代数（p26–31）
+
+$\mathbb{R}^k$ 上的测度是对 $\mathbb{R}^k$ 的一些子集的某种赋值。本节将讨论 $\mathbb{R}^k$ 中的子集族的代数性质。
+
+**1.3.1　$\sigma$-环与 $\sigma$-代数**
+
+设 $X$ 是一个非空的集合。若 $\mathcal{A}$ 是由 $X$ 的某些子集构成的集合，我们称它为 $X$ 上的集类，称 $X$ 为基本空间（或全集）。
 
 **例 1.3.1 (集类在子集上的限制)** @26
 
@@ -1118,6 +1126,14 @@ $$\mu([x]_n)=\prod_{i=1}^n\frac{1}{1+i^2}$$
 
 ### 2.2 测度的扩张（p43–49）
 
+本节中始终记 $\mathcal{P}$ 是全集 $X$ 上的半环，$\mu$ 是 $\mathcal{P}$ 上的测度。为简化讨论，假设半环 $\mathcal{P}$ 还满足如下条件：
+
+- $X$ 被 $\mathcal{P}$ **可数覆盖**，即存在 $\mathcal{P}$ 中集列 $\{E_n\}$，使得 $X=\bigcup_{n=1}^{\infty}E_n$。
+
+显然，例 2.1.7、例 2.1.8 与例 2.1.9 均满足这个假设。
+
+为将测度 $\mu$ 的定义延拓到更多的子集上，采用覆盖和近似的方法：使用 $\mathcal{P}$ 中「尽可能小」的集族覆盖 $X$ 的子集，就得到外测度的定义。
+
 **定义 (外测度)** @43
 
 设全集 $X$ 被半环 $\mathcal{P}$ 可数覆盖，$\mu$ 是 $\mathcal{P}$ 上的测度。对 $X$ 中子集 $A$，令$$\mu^{*}(A)=\inf\left\{\sum_{n=1}^{\infty}\mu(E_n):A\subset\bigcup_{n=1}^{\infty}E_n,\ \text{其中每个 } E_n\in\mathcal{P}\right\},$$称 $\mu^{*}(A)$ 是 $A$ 的**外测度**。
@@ -1326,6 +1342,8 @@ $$m^*(E\cap I)\geqslant\alpha m^*(I),$$
 
 ### 2.3 可测集的结构（p51–56）
 
+在上节中，我们证明了通过外测度方式得到的可测集包含了半环 $\mathcal{P}$ 和零测集这两类集。下面说明可测集本质上只有这两类集。
+
 **定理 2.3.1 (可测集的结构)** @51
 
 设 $\mathcal{P}$ 是全集 $X$ 上半环，$\mu$ 是半环 $\mathcal{P}$ 上的 $\sigma$-有限测度（即存在 $\mathcal{P}$ 中的集列 $\{X_n\}$，使得 $\mu(X_n)<+\infty$ 且 $X=\bigcup\limits_{n=1}^{\infty}X_n$，从而 $X$ 是被 $\mathcal{P}$ 可数覆盖的），$\mu^*$ 是所诱导的外测度。那么，下列条件等价：
@@ -1508,6 +1526,10 @@ $$E=\left\{x\in\mathbb{R}: \text{存在无限多个既约分数 } \frac{p}{q} \t
 
 ### 2.4 Lebesgue 测度的平移不变性和不可测集（p58–61）
 
+在本节中将给出直线上 Lebesgue 测度在仿射变换下的性质和应用。
+
+直线上的仿射变换可将其分为如下三类。对实数 $a$，直线的平移变换 $\tau_a$ 为$$\tau_a:\ x\mapsto x+a,\quad x\in\mathbb{R};$$反射变换 $\tau$ 为$$\tau:\ x\mapsto -x,\quad x\in\mathbb{R};$$对正数 $c$，伸缩变换 $S_c$ 为$$S_c:\ x\mapsto cx,\quad x\in\mathbb{R}.$$将直线上子集 $E$ 在这些变换下的像分别记作$$E+a\triangleq\{x+a:\ x\in E\};\quad -E\triangleq\{-x:\ x\in E\};\quad cE\triangleq\{cx:\ x\in E\}.$$
+
 **定理 2.4.1 (Lebesgue 测度的不变性)** @58
 
 设 $E$ 是直线上的子集。对实数 $a$ 及正数 $c$，直线上的变换 $\tau_a$，$\tau$，$S_c$ 如上定义。那么，
@@ -1659,6 +1681,8 @@ $$m(G)=m^*(E);\ m^*(G\setminus E)>0.$$
 ## 第3章 可测函数与收敛
 
 ### 3.1 可测函数的定义（p65–71）
+
+在本书中，如无特殊说明，默认考虑的函数是取值于广义实数集 $\overline{\mathbb{R}}=[-\infty,+\infty]$。补充定义 $\overline{\mathbb{R}}$ 的代数运算如下：对于 $a\in\mathbb{R}$，$$(\pm\infty)+a=\pm\infty,\ \forall a\in\mathbb{R};\quad (\pm\infty)+(\pm\infty)=(\pm\infty);\quad (+\infty)+(-\infty)\ \text{无意义}.$$$$\frac{\pm\infty}{a}=(\pm\infty)\times\frac{1}{a}=(\pm\infty),\ \forall a>0;\quad \frac{\pm\infty}{a}=(\pm\infty)\times\frac{1}{a}=(\mp\infty),\ \forall a<0;\quad (\pm\infty)\times 0=0.$$$$\frac{a}{\pm\infty}\ \text{和}\ \frac{a}{0}\ \text{无意义}.$$
 
 **定义 3.1.1 (可测函数的定义)** @65
 
@@ -1880,6 +1904,10 @@ $$F(x)=\varlimsup_{y\to 0+} f(x,y)$$
 
 ### 3.2 可测函数的基本性质（p72–78）
 
+本节将讨论可测函数的一些基本性质和收敛性。
+
+在数学分析中，Weierstrass 定理告诉我们闭区间上的连续函数可用多项式函数一致逼近，它在对连续函数的研究中起了重要的作用。在研究可测函数的时候，通常使用的是简单函数。
+
 **定义 3.2.1 (简单函数)** @73
 
 设 $(X,\mathcal{R})$ 是可测空间，$E\in\mathcal{R}$，$\varphi:E\to\mathbb{R}$ 可测。若存在 $\mathcal{R}$ 中集族 $\{E_i\}_{i=1}^{n}$ 及数 $\{\alpha_i\}_{i=1}^{n}$，使得 $E=\bigsqcup\limits_{i=1}^{n}E_i$ 且$$\varphi(x)=\sum_{i=1}^{n}\alpha_i\chi_{E_i}(x),\quad \forall x\in E,$$则称 $\varphi$ 为**简单函数**。
@@ -2078,6 +2106,8 @@ $$f(x+y)=f(x)+f(y).$$
 
 ### 3.3 依测度收敛（p81–84）
 
+现在，我们引进一种用测度描述的函数列收敛的概念。
+
 **定义 3.3.1 (依测度收敛)** @81
 
 设 $(X,\mathcal{R},\mu)$ 是测度空间，$E\in\mathcal{R}$，函数列 $\{f_n\}$ 和函数 $f$ 都是 $E$ 上几乎处处有限的可测函数。若对任何 $\varepsilon>0$ 均有$$\lim_{n\to\infty}\mu(E(|f_n-f|\geqslant\varepsilon))=0,$$就称 $\{f_n\}$ 在 $E$ 上**依测度收敛**于 $f$，记为$$f_n\xrightarrow{\ \mu\ } f.$$
@@ -2189,6 +2219,14 @@ $$\lim_{n\to\infty} m^*(E(|f_n-f|)\geqslant\varepsilon)=0.$$
 ## 第4章 积分
 
 ### 4.1 预备知识（p88–93）
+
+分析 Lebesgue 的思路，可以认为 Riemann 积分受限的一个原因是只考虑将 $[a,b]$ 分割成了有限个区间并这种相对简单的分解形式。若允许分法更加任意，那么上和与下和就更可能一致。为便于叙述"任意分法给出的和式"，我们可使用简单函数的语言。
+
+我们通过对 Riemann 积分定义的修改来说明使用的语言。对闭区间 $[a,b]$ 上的有界函数 $f$ 和如上的分法 $P$，令 $\varphi(x)=m_i$，那么 $\varphi$ 是阶梯函数，$\varphi\leqslant f$，并且 $\varphi$ 图像的面积正好是上面出现的 Riemann 和。$$L^R(f;P)=\int_a^b\varphi.$$从而，可以得到$$L^R(f)=\sup\left\{\int_a^b\varphi:\ \varphi\ \text{是阶梯函数},\ \varphi\leqslant f\right\}.$$类似的，$$U^R(f)=\inf\left\{\int_a^b\psi:\ \psi\ \text{是阶梯函数},\ \psi\geqslant f\right\}.$$将上式中的阶梯函数用简单函数代替，就意味着用更一般的分法推广了区间并的划分，这也是本章中定义积分的方式。
+
+**4.1.1　简单函数的积分**
+
+我们首先给出简单函数图像"面积"的数学定义和性质。
 
 **定义 4.1.1 (简单函数的积分)** @88
 
@@ -2341,6 +2379,8 @@ $$\lim_{n\to\infty}\int_0^1 f_n(x)dx=\int_0^1 f(x)dx.$$
 对直线上 Lebesgue 测度有限集 $E$ 上有界函数 $f$，若 $f$ 是 Lebesgue 可积函数，则它是 Lebesgue 可测的。
 
 ### 4.2 非负可测函数的积分（p94–100）
+
+本节来正式定义可测函数的积分。受上节"原始版本"的定义与性质的启发，先给出非负的可测函数的积分与性质。
 
 **定义 4.2.1 (非负可测函数的积分)** @94
 
@@ -2536,6 +2576,8 @@ $$\lambda(E)=\int_E f(x)dm(x),\quad \forall E\in\mathcal{L}.$$
 
 ### 4.3 一般可测函数的积分和性质（p101–106）
 
+当 $f$ 可积时，它「基本」是测度有限集上的有界函数，由此我们可得如下结果。
+
 **定理 4.3.1 (绝对连续性)** @101
 
 设 $\mu$ 是集 $X$ 上的 $\sigma$-代数 $\mathcal{R}$ 上的测度，$E\in\mathcal{R}$，$f$ 是 $E$ 上可积函数。那么对任何 $\varepsilon>0$，存在 $\delta>0$，对任意 $F\subseteq E$，$F\in\mathcal{R}$ 且 $\mu(F)<\delta$ 时，都有$$\int_F |f|\,d\mu<\varepsilon.$$
@@ -2687,6 +2729,12 @@ $$\int_{\mathbb{R}}f(g(x))d\mu_g(x)=\int_{\mathbb{R}}f(x)dm(x)$$
 总是成立的。
 
 ### 4.4 积分的极限定理（p108–120）
+
+在处理积分和极限交换顺序时，我们将看到新的积分所要求满足的条件要比 Riemann 积分弱得多。本节中的一些基本定理在一般分析数学中经常被引用。
+
+**4.4.1　Levi 引理和 Fatou 引理**
+
+首先介绍两个理论证明中常用的收敛定理。
 
 **定理 4.4.1 (Levi 引理)** @108
 
@@ -2970,6 +3018,12 @@ $$\lim_{M\to\infty}\sup_{f\in\mathcal{F}}\int_{|f|>M}|f(x)|dm(x)=0.$$
 
 ### 4.5 Fubini 定理（p123–128）
 
+在这一节里，我们将建立重积分的理论，并研究重积分和累次积分的关系，以及累次积分中交换积分顺序的问题。不失一般性，我们只讨论二重积分和二次积分。为此，我们先建立乘积空间上的乘积测度。
+
+**4.5.1　乘积测度**
+
+设 $(X,\mathcal{S},\mu)$，$(Y,\mathcal{T},\nu)$ 是两个测度空间。为简化讨论，本节中总设 $\mu$，$\nu$ 分别是 $\sigma$-代数 $\mathcal{S}$，$\mathcal{T}$ 上的 $\sigma$-有限测度。首先我们先给出它们的 Cartesian 乘积 $X\times Y=\{(x,y):\ x\in X,\ y\in Y\}$ 上的乘积测度。
+
 **定义 4.5.1 (矩形与乘积 σ-环)** @123
 
 对两个集 $X$，$Y$，设 $A\subset X$，$B\subset Y$，称 $A\times B$ 为 $X\times Y$ 中的**矩形**，$A$，$B$ 称为这个矩形的边。令$$\mathcal{S}\times\mathcal{T}=\{A\times B:\ A\in\mathcal{S},\ B\in\mathcal{T}\},$$$\mathcal{S}\times\mathcal{T}$ 生成的 $\sigma$-环记做 $\mathcal{S}\otimes\mathcal{T}$。
@@ -3142,6 +3196,8 @@ $$\int_{\mathbb{R}}\left|\int_{\mathbb{R}}f(x-y)g(y)dm(y)\right|dm(x)\leqslant\i
 
 ### 5.1 L^p 空间的定义与不等式（p131–136）
 
+本章介绍分析中极为重要的 $L^p$ 空间和一些基本性质。
+
 **定义 5.1.1 (Lp 空间与 p-范数)** @131
 
 设 $E$ 是直线 $\mathbb{R}$ 上的 Lebesgue 集。
@@ -3299,6 +3355,10 @@ $$\{p:0<p\leqslant\infty,\ f\in L^p(\mathbb{R})\}$$
 是直线上的一个区间（可能是空集）。
 
 ### 5.2 L^p 空间的性质（p138–142）
+
+**5.2.1　完备性**
+
+一般而言，可测函数的极限函数还是可测函数。对 $L^p$ 空间，我们也希望它对极限运算封闭。然而，很容易举出例子来说明 $L^p$ 中函数列的点态收敛极限或依测度收敛的极限都可能不在 $L^p$ 中。下面，我们给出一个新的收敛概念并说明 $L^p$ 对这个极限运算的封闭性。
 
 **定义 (L^p 上的距离)** @138
 
@@ -3471,6 +3531,10 @@ $$\lim_{p\to 0+}\|f\|_p=e^{\int_{[0,1]}\ln|f(x)|dm(x)}.$$
 ## 第6章 微分
 
 ### 6.1 单调函数（p146–156）
+
+在这一节中，我们将讨论单调函数的连续性、可微性以及可积性。证明的关键是一个源自于调和分析理论的覆盖结果。
+
+**6.1.1　Vitali 覆盖定理**
 
 **定义 6.1.1 (Vitali 覆盖的定义)** @146
 
@@ -3920,6 +3984,10 @@ $$P_a^b(f)=\sup_{\Delta}P_f(\Delta).$$
 
 ### 6.3 绝对连续函数（p169–173）
 
+**6.3.1　绝对连续函数的定义与性质**
+
+下面讨论怎样的函数 $F(x)$ 能写成一个可积函数 $f(t)$ 的不定积分。如果 $F(x)$ 能写成$$F(x)=\int_a^x f(t)\,dm(t)+C,$$那么 $F(x)$ 是 $[a,b]$ 上连续的有界变差函数，但不是所有的连续的有界变差函数都能写成上面形式。积分有更强的连续性，即绝对连续性。函数 $F(x)$ 能够成为可积函数的不定积分，要求 $F(x)$ 具有比普通连续性更强的连续性，这就得到了下面的定义。
+
 **定义 6.3.1 (绝对连续函数)** @169
 
 设 $F$ 是 $[a,b]$ 上的有限函数。如果对于任意的 $\varepsilon>0$，存在 $\delta>0$，使得当 $\{[a_i,b_i]\}$ 是 $[a,b]$ 中任意有限个互不相交的开区间，其总长度 $\sum_i(b_i-a_i)<\delta$ 时，不等式$$\sum_i|F(b_i)-F(a_i)|<\varepsilon$$成立，那么称 $F$ 在 $[a,b]$ 上**绝对连续函数**，或称做**全连续函数**。
@@ -4116,6 +4184,8 @@ $$\sum_{k=1}^n|f(b_k)-f(a_k)|<\varepsilon.$$
 
 ### A 有界变差函数与广义测度（p177–179）
 
+对于 $[a,b]$ 上的单调递增函数 $g$，若 $g(a)=0$，$g$ 在 $(a,b)$ 中右连续，那么由第 2 章的测度扩张理论知，存在唯一的 $\mathfrak{B}_{[a,b]}$ 上的有限测度 $\mu_g$ 使得$$\mu_g([a,x])=g(x),\quad \forall x\in(a,b].$$
+
 **构造 (由有界变差函数生成的有限广义测度)** @177
 
 那么，对于 $[a,b]$ 上的有界变差函数 $f$，若 $f(a)=0$，$f$ 在 $(a,b)$ 中右连续，令 $f=f_+-f_-$ 是 $f$ 的 Jordan 分解。那么，$f_+(a)=f_-(a)=0$，$f_+$，$f_-$ 在 $[a,b]$ 上单调递增。我们还可断言：$f_+-f_-$ 在 $(a,b)$ 中也是右连续。那么，我们就得到了 $\mathfrak{B}_{[a,b]}$ 上的有限测度 $\mu^+$，$\mu^-$ 使得$$\mu^+([a,x])=f_+(x);\quad \mu^-([a,x])=f_-(x),\quad \forall x\in(a,b].$$令 $\mu_f=\mu^+-\mu^-$，那么 $\mu_f$ 是满足$$\mu_f([a,x])=f(x),\quad \forall x\in(a,b] \tag{A.1}$$的有限广义测度。并且，使用相同的证明，定理 2.3.3 在有限广义测度的情形也是成立的，从而可得满足式 (A.1) 的测度是唯一的。
@@ -4137,6 +4207,12 @@ $$\sum_{k=1}^n|f(b_k)-f(a_k)|<\varepsilon.$$
 对应 $[a,b]$ 的 Borel 代数 $\mathfrak{B}_{[a,b]}$ 上的有限广义测度 $\mu$，存在唯一的一对正测度 $\mu^+$，$\mu^-$ 使得 $\mu=\mu^+-\mu^-$ 且 $\mu^+\perp\mu^-$。
 
 ### B 广义测度（p180–185）
+
+本附录讨论取值可为负的「广义测度」，建立其上的积分、Hahn 分解与 Radon–Nikodym 导数，最后给出 Stieltjes 积分的两个推论。
+
+**B.4　测度的加法**
+
+设 $(X,\mathfrak{M},\mu_i)(i=1,2)$ 是两个测度空间，$\alpha>0$，$\beta>0$，那么 $\mu=\alpha\mu_1+\beta\mu_2$ 是 $(X,\mathfrak{M})$ 上的测度。
 
 **定理 B.1 (测度和的积分)** @180
 

@@ -4902,6 +4902,12 @@ $$\frac{\partial u}{\partial t}+c\frac{\partial u}{\partial x}-\epsilon\frac{\pa
 
 ### 4.5 波动方程（p222–231）
 
+本节考虑一维标量波动方程的齐次问题
+
+$$\frac{\partial^2 u}{\partial t^2}=c^2\frac{\partial^2 u}{\partial x^2},\tag{4.5.1}$$
+
+并讨论它的差分格式、精度与稳定性。
+
 **注 (行波解与 d'Alembert 公式)** @222
 
 对 Cauchy 问题，方程 (4.5.1) 的通解形如

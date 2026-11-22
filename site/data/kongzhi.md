@@ -1268,6 +1268,24 @@ $$\rho^n-a_1\rho^{n-1}-\cdots-a_n=0. \tag{3.62}$$
 
 ### 2.4 z－传递函数和z－传递矩阵（p50–53）
 
+对于线性定常连续系统，我们前面曾经引入传递函数和传递矩阵。它们对研究线性定常连续系统的特性有很大的帮助。自然地，对于线性定常离散系统，我们也希望有类似的工具。这就是本节要介绍的概念。
+
+对于线性定常离散系统
+
+$$\begin{cases}x_{k+1}=Ax_k+Bu_k,\\ y_k=Cx_k+Du_k,\end{cases}\qquad k\geqslant 0, \tag{4.1}$$
+
+如果形式地记 $x_{k+1}$ 为 $zx_k$，那么 (4.1) 可写成
+
+$$\begin{cases}zx_k=Ax_k+Bu_k,\\ y_k=Cx_k+Du_k,\end{cases}\qquad k\geqslant 0, \tag{4.2}$$
+
+从而
+
+$$(zI-A)x_k=Bu_k,\qquad k\geqslant 0. \tag{4.3}$$
+
+于是，形式地，我们有
+
+$$\begin{cases}x_k=(zI-A)^{-1}Bu_k,\\ y_k=[C(zI-A)^{-1}B+D]u_k,\end{cases}\qquad k\geqslant 0. \tag{4.4}$$
+
 **定义 (z－传递矩阵与 z－传递函数)** @50
 
 我们称
@@ -1391,6 +1409,8 @@ $G(1)$ 称为系统的**静态放大倍数**。
 最后，我们指出，类似于连续系统，对于离散系统，串联环节的 $z$-传递函数等于各个环节的 $z$-传递函数的乘积，并联环节的 $z$-传递函数等于各个环节的 $z$-传递函数之和。
 
 ### 2.5 受控对象方程的参数辨识（p53–57）
+
+根据物理规律列写受控对象的动态方程，在控制系统的建模中占有重要的地位。这样建立模型的方法，由于系统内部结构和动态变化规律是清楚的，称为**白箱方法**。但是，这通常对于一些具有简单结构的系统才适用。对于许多具体对象例如化工生产过程等复杂系统，我们不十分清楚其物理规律；有些对象虽然物理规律是足够清楚的，但相应的参数是不清楚的；还有一些对象由于控制过程对设备产生磨损，模型以及部分参数会发生缓慢的变化。这就促使人们研究如何根据对象的输入输出数据直接建立对象的数学方程的方法，这就是所谓的**黑箱方法**。由于不需要了解系统的内部结构并且能够适应系统的变化，黑箱方法使用比较方便，其缺点是开始时误差较大。一种最常见的黑箱方法称为系统的**参数辨识**，这种方法的基本出发点是假定我们已经知道了系统的数学模型的结构，但是模型中有一些参数是未知的。本节主要讨论这种方法。
 
 **命题 (参数辨识问题的提法)** @54
 
@@ -2076,6 +2096,8 @@ $f^{*}(\cdot)$ 的互反多项式为 $f(\cdot)$；若 $\alpha_j$ 是 $f(\cdot)$ 
 
 ### 3.5 一次近似定理（p92–94）
 
+在讨论离心调速器的稳定问题时，我们对系统的方程进行了线性化。人们自然要问：对线性化方程得到的结论，能否用到离心调速器的分析呢？如果对线性化方程得到的结论不能用到原方程，那么 §3.3 的结论是不能应用于实际问题的。幸运的是，我们有下述结果。
+
 **定理 5.1 (一次近似定理)** @93
 
 考虑非线性系统
@@ -2123,6 +2145,16 @@ $$\|\boldsymbol{f}(\boldsymbol{x})\|=\left|x_2-\sin x_2\right|=\left|\frac{\sin\
 其中 $\xi$ 介于 $0$ 与 $x_2$ 之间。定理 5.1 的条件满足，所以成立相应的结论。
 
 ### 3.6 稳定性的频率判据（p95–99）
+
+稳定性的代数判据是利用特征多项式的系数给出的。工程师有时感到应用起来不太方便。他们更容易理解系统的传递函数，所以他们宁愿采用一种直接从系统的传递函数出发的分析方法。本节讨论用频率特性判断系统稳定性的方法，这本质上是复变函数的方法。
+
+先讨论 $n$ 次实系数多项式
+
+$$f(s)=a_0s^{n}+a_1s^{n-1}+\cdots+a_n\tag{6.1}$$
+
+稳定性的频率判据，其中 $a_0>0$。设它的零点为 $\alpha_j\ (j=1,2,\cdots,n)$，那么
+
+$$f(s)=a_0\prod_{j=1}^{n}(s-\alpha_j).\tag{6.2}$$
 
 **命题 (单因子与乘积的幅角变化)** @95
 
@@ -2235,6 +2267,16 @@ $$\begin{aligned} \Delta_{-\infty}^{+\infty}\arg f(\mathrm{i}\omega) &=\{(n-n_1-
 由于系统的开环频率特性可以用实验方法确定，并不一定要从系统的动态方程来得到，所以工程师们宁愿用频率特性讨论闭环系统的稳定性。这就是 Nyquist 稳定性判据的优点。
 
 ### 3.7 多项式族的稳定性判据（p100–103）
+
+考虑 $n$ 次实系数多项式族
+
+$$f(s,\boldsymbol{a})=a_0s^{n}+a_1s^{n-1}+\cdots+a_n,\tag{7.1}$$
+
+其中系数 $\boldsymbol{a}=(a_0,a_1,\cdots,a_n)$ 满足不等式
+
+$$\underline{a}_j\leqslant a_j\leqslant\overline{a}_j,\quad 0\leqslant j\leqslant n,\tag{7.2}$$
+
+且 $\underline{a}_0\neq 0$，此处 $\underline{a}_j\leqslant\overline{a}_j$，$0\leqslant j\leqslant n$ 为已知实数。我们称 (7.1)—(7.2) 为一族区间多项式。由于描述系统对象的数学模型一般是近似的，因此其系数并不是十分准确的。满足不等式 (7.2) 是一种重要的情形，于是人们关注满足 (7.2) 的多项式族 (7.1) 的稳定性问题。1978 年，苏联学者 Kharitonov 给出了一个判定这族多项式稳定性的方法。现在我们就来介绍这个方法。
 
 **定义 (区间多项式族的稳定性)** @100
 
@@ -2878,6 +2920,20 @@ $$\boldsymbol{A}-\boldsymbol{B}\boldsymbol{K}=\begin{pmatrix}-1&0\\1&0\end{pmatr
 
 ### 4.3 线性系统的能观性与能检性（p122–128）
 
+系统的状态变量是抽象的数学量，一般不能够直接测量。但是，为了研究受控系统，有必要通过观测量来确定系统的状态变量。这就产生了观测量选得是否合理、能否通过它确定状态变量的问题，即所谓系统的能观性问题。
+
+设系统的状态方程为
+
+$$\frac{\mathrm{d}\boldsymbol{x}(t)}{\mathrm{d}t}=\boldsymbol{A}\boldsymbol{x}(t)+\boldsymbol{B}\boldsymbol{u}(t),\qquad \boldsymbol{x}(0)=\boldsymbol{x}_0,\tag{3.1}$$
+
+假定观测方程为
+
+$$\boldsymbol{y}(t)=\boldsymbol{C}\boldsymbol{x}(t)+\boldsymbol{D}\boldsymbol{u}(t),\tag{3.2}$$
+
+这里 $\boldsymbol{x}\in\mathbb{R}^n$，$\boldsymbol{y}\in\mathbb{R}^p$，$\boldsymbol{u}\in\mathbb{R}^m$ 分别是系统的状态变量、观测变量和控制变量，$\boldsymbol{A},\boldsymbol{B},\boldsymbol{C},\boldsymbol{D}$ 分别是 $n\times n$、$n\times m$、$p\times n$、$p\times m$ 阶的常值矩阵。
+
+观测的目的是通过观测到的 $\boldsymbol{y}(\cdot)$ 和已知的 $\boldsymbol{u}(\cdot)$ 唯一确定状态 $\boldsymbol{x}(\cdot)$。由状态方程 (3.1) 可知，这只需唯一确定出初值 $\boldsymbol{x}_0$。因此，我们有下述定义。
+
 **定义 3.1** @122
 
 对于系统 (3.1) 和 (3.2)，若存在时刻 $\tau>0$，根据输入和输出 $\boldsymbol{u}(t),\boldsymbol{y}(t)$，$t\in[0,\tau]$，能够唯一地确定初始状态 $\boldsymbol{x}_0$，则称系统是**能观测的**，简称**能观**，否则称系统是**不能观的**。
@@ -3321,6 +3377,14 @@ Hankel 矩阵是一个行数和列数均为可列无限的矩阵。对于给定�
 在一般情况下，上面的实现方法需要用到无限阶矩阵，给运算带来不便，尤其无法用于计算机编程计算。下面考虑仅用有限阶 Hankel 矩阵的实现方法。假定已经知道系统实现的阶数估计 $N$，即存在一个阶数为 $n\le N$ 的实现。记$$K_n=\begin{pmatrix}A_1&A_2&\cdots&A_n\\A_2&A_3&\cdots&A_{n+1}\\\vdots&\vdots&&\vdots\\A_n&A_{n+1}&\cdots&A_{2n-1}\end{pmatrix}=\begin{pmatrix}C\\CA\\\vdots\\CA^{n-1}\end{pmatrix}(B,AB,\cdots,A^{n-1}B),$$由 Cayley–Hamilton 定理，有$$\operatorname{rank}K_n=\operatorname{rank}K_{n+1}=\cdots=\operatorname{rank}K.$$将前面介绍的方法稍加改造就能得到一个简化算法。设 $\operatorname{rank}K_n=k$，则在 $K_n$ 中存在线性无关的列向量组 $\{y^1,y^2,\cdots,y^k\}$。显然存在矩阵 $B\in\mathbb{R}^{k\times m}$，使得$$\begin{pmatrix}A_1\\A_2\\\vdots\\A_n\end{pmatrix}=(y^1,y^2,\cdots,y^k)B.\tag{2.14}$$而且上述 $B$ 与利用 (2.7) 得到的结果是相同的。类似地，可以求出 $A,C$，结果与用 $K$ 得到的完全一样。最后可以利用传递矩阵 $F(s)$ 的最小公分母的次数和输入变量的维数之乘积作为 $n$ 的估计。如例 2.4，显然 $\operatorname{rank}K=\operatorname{rank}K_n=4$。
 
 ### 5.3 最小实现（p152–155）
+
+由上一节中定理 2.1 及其证明，我们知道如果 Hankel 矩阵 $K$ 的秩是有限数 $n$，那么存在一个 $K$ 的 $n$ 阶实现 $[A,B,C]$，即
+
+$$ A_j=CA^{j-1}B,\qquad \forall j=1,2,\cdots, $$
+
+并且 $A\in\mathbb{R}^{n\times n}$，$B\in\mathbb{R}^{n\times m}$，$C\in\mathbb{R}^{p\times n}$。这时
+
+$$ K=\begin{pmatrix}C\\CA\\\vdots\\CA^{n-1}\\\vdots\end{pmatrix}(B,AB,\cdots,A^{n-1}B,\cdots). $$
 
 **命题 (实现既是能控的又是能观的)** @152
 
@@ -4192,6 +4256,14 @@ $$\boldsymbol{e}_2=\boldsymbol{A}\boldsymbol{e}_3\in V+\mathcal{R}(\boldsymbol{B
 
 ### 7.1 控制系统的镇定（p195–196）
 
+控制系统的设计是在受控对象的动态方程给定后，根据系统的动态品质或其他品质指标，来求出控制装置的运算形式或控制规律，为控制工程提供设计原理。在当今计算机几乎已经普及各个领域的时代，只要有了控制的运算形式或控制规律并可直接编写相应的计算程序，就可以认为控制装置的理论设计工作已经完成。而后续的控制装置的具体实现将由控制工程师来完成，不属于控制理论的研究范畴。
+
+本章研究由线性常系数微分方程所描述系统的线性调节器的设计原理。
+
+设受控对象的动态方程为$$\frac{\mathrm{d}\boldsymbol{x}(t)}{\mathrm{d}t}=\boldsymbol{A}\boldsymbol{x}(t)+\boldsymbol{B}\boldsymbol{u}(t),\tag{1.1}$$其中状态变量 $\boldsymbol{x}=(x_1,x_2,\cdots,x_n)^{\mathrm{T}}$，控制变量 $\boldsymbol{u}=(u_1,u_2,\cdots,u_m)^{\mathrm{T}}$，而 $\boldsymbol{A}$ 和 $\boldsymbol{B}$ 分别为 $n\times n$ 和 $n\times m$ 阶的常数矩阵。
+
+给定目标函数 $\boldsymbol{g}(t)=(g_1(t),g_2(t),\cdots,g_n(t))^{\mathrm{T}}$，我们要求系统 (1.1) 的状态 $\boldsymbol{x}(t)$ 跟踪 $\boldsymbol{g}(t)$。这时，偏差 $\boldsymbol{e}(t)=\boldsymbol{g}(t)-\boldsymbol{x}(t)$ 满足方程$$\frac{\mathrm{d}\boldsymbol{e}(t)}{\mathrm{d}t}=\boldsymbol{A}\boldsymbol{e}(t)-\boldsymbol{B}\boldsymbol{u}(t)+\frac{\mathrm{d}\boldsymbol{g}(t)}{\mathrm{d}t}-\boldsymbol{A}\boldsymbol{g}(t).\tag{1.2}$$此处，我们假设 $\boldsymbol{g}(\cdot)$ 是可微的。我们希望选取控制规律，使得反馈后得到的方程 (1.2) 的任意解当 $t\to+\infty$ 时都趋于零。如果能做到这点，则称**跟踪问题有解**。如果控制是偏差 $\boldsymbol{e}(t)$ 的线性反馈，即$$\boldsymbol{u}(t)=\boldsymbol{K}\boldsymbol{e}(t)=\boldsymbol{K}[\boldsymbol{g}(t)-\boldsymbol{x}(t)],\tag{1.3}$$则反馈后的方程变成$$\frac{\mathrm{d}\boldsymbol{e}(t)}{\mathrm{d}t}=(\boldsymbol{A}-\boldsymbol{B}\boldsymbol{K})\boldsymbol{e}(t)+\frac{\mathrm{d}\boldsymbol{g}(t)}{\mathrm{d}t}-\boldsymbol{A}\boldsymbol{g}(t).\tag{1.4}$$
+
 **命题 (跟踪问题有解的必要条件)** @196
 
 在一定条件下，跟踪问题有解的必要条件是齐次方程$$\frac{\mathrm{d}\boldsymbol{e}(t)}{\mathrm{d}t}=(\boldsymbol{A}-\boldsymbol{B}\boldsymbol{K})\boldsymbol{e}(t)$$的解都趋于零，即要求选择矩阵 $\boldsymbol{K}$，使得矩阵 $\boldsymbol{A}-\boldsymbol{B}\boldsymbol{K}$ 的特征值都在左半平面内。
@@ -4209,6 +4281,10 @@ $$\boldsymbol{e}_2=\boldsymbol{A}\boldsymbol{e}_3\in V+\mathcal{R}(\boldsymbol{B
 在第四章中已经证明：如果系统是能稳的，那么该系统能够用 (1.3) 形式的状态反馈来镇定。
 
 ### 7.2 控制装置的参数选择（p196–200）
+
+前面设计控制器的方法是要求经状态反馈后系统是稳定的，从而闭环系统的输出与目标函数的动态误差随着时间的推移趋于零。我们已经知道，这样的控制器是不唯一的。而人们对控制系统的品质往往还有其他要求。例如，对于系统 (1.1) 要求系统的能量消耗要小。又如要求指标$$J=\int_0^{+\infty}\|\boldsymbol{e}(t)\|^2\,\mathrm{d}t\tag{2.1}$$达到最小，这里假定所跟踪的目标函数 $\boldsymbol{g}(t)$ 满足$$\frac{\mathrm{d}\boldsymbol{g}(t)}{\mathrm{d}t}\equiv\boldsymbol{A}\boldsymbol{g}(t).\tag{2.2}$$记误差函数 $\boldsymbol{e}(t)\equiv\boldsymbol{g}(t)-\boldsymbol{x}(t)$，这时，$$\frac{\mathrm{d}\boldsymbol{e}(t)}{\mathrm{d}t}=\boldsymbol{A}\boldsymbol{e}(t)-\boldsymbol{B}\boldsymbol{u}(t).\tag{2.3}$$指标 (2.1) 称为**均方误差指标**，这是控制系统设计的一种常用指标。
+
+在以后的讨论中，若矩阵 $\boldsymbol{G}=\boldsymbol{G}^{\mathrm{T}}$ 是正定的，则记 $\boldsymbol{G}>\boldsymbol{0}$；若矩阵 $\boldsymbol{F}=\boldsymbol{F}^{\mathrm{T}}$ 半正定，则记 $\boldsymbol{F}\geqslant\boldsymbol{0}$。为了研究控制系统的设计问题，我们先证明一个命题。
 
 **命题 2.1 (代数 Lyapunov 方程的可解性)** @196
 
@@ -4511,6 +4587,10 @@ $$\boldsymbol{e}_2=\boldsymbol{A}\boldsymbol{e}_3\in V+\mathcal{R}(\boldsymbol{B
 由于$$\boldsymbol{A}-\boldsymbol{B}\boldsymbol{R}^{-1}(\boldsymbol{B}^{\mathrm T}\boldsymbol{P}+\boldsymbol{S})=\begin{pmatrix}0&1\\-2&-2\end{pmatrix}$$稳定，故问题 (LQ) 存在唯一的最优控制$$u(t)=-x_1(t)-x_2(t).$$
 
 ### 7.5 跟踪给定值问题（p225–227）
+
+上述讨论给出的最优反馈调节器使系统的状态当 $t\to+\infty$ 时趋于零。然而在工程上经常要求系统跟踪给定值，并且给定值是根据需要确定的。先看一个简单的例子。
+
+设系统是一阶环节，它的动态方程是$$\frac{\mathrm{d}x(t)}{\mathrm{d}t}+ax(t)=bu(t), \tag{5.1}$$这里 $a$ 和 $b$ 是给定的非零常数且 $a\neq -1$。要求控制作用使系统的输出 $x(t)$ 当 $t\to+\infty$ 时跟踪非零给定值 $z$。
 
 **例 (指标 (5.2) 不能实现跟踪)** @225
 

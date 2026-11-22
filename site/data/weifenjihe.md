@@ -60,6 +60,12 @@
 
 ### 1.2 主法向量与从法向量 曲率与挠率（p5–9）
 
+对曲线 $r=r(s)$，用 $T(s)$ 表示单位切向量，即
+
+$$T(s)=r'(s).\tag{1-6}$$
+
+由上节末的定理，我们可用 $|T'(s)|=|r''(s)|$ 来表示曲线上两邻近点 $s$、$s+\Delta s$ 的切向量 $T(s)$、$T(s+\Delta s)$ 之间的夹角与 $\Delta s$ 之比在 $\Delta s\to0$ 时的变化情况。它度量了曲线上邻近两点的切向量的夹角对弧长的变化率，反映了曲线的“弯曲程度”。
+
 **定义 (曲率与曲率半径)** @5
 
 称 $k(s)=|r''(s)|$ 为曲线 $r(s)$ 在 $s$ 点的**曲率**。当 $k(s)\neq0$ 时，其倒数 $\rho(s)=\dfrac{1}{k(s)}$ 称为曲线在 $s$ 点的**曲率半径**。
@@ -289,6 +295,8 @@ $$m=\frac{z(s)}{y(s)}=\frac{\dfrac{k\tau}{6}s^3+\cdots}{\dfrac{k}{2}s^2+\dfrac{k
 在正则曲线 $\boldsymbol{r}(s)$ 上，当参数 $s$ 变化时，得到一族活动的 Frenet 标架 $\{\boldsymbol{r}(s);\boldsymbol{T}(s),\boldsymbol{N}(s),\boldsymbol{B}(s)\}$。在研究曲线在一点邻近的几何性质时，Frenet 标架是一个十分有力的工具。可以想象，如果在曲面的每一点也能附上一组与该曲面的特性密切相关的活动标架，则对揭示曲面的几何性质也将是十分有用的。今后我们将多次运用这种“活动标架法”。
 
 ### 1.5 曲线论基本定理（p17–22）
+
+前面我们已经看到，曲率 $k$ 和挠率 $\tau$ 可以刻画某些曲线的特征：直线 $k\equiv 0$；平面曲线 $k\neq 0,\ \tau\equiv 0$；螺线 $\dfrac{k}{\tau}=\text{常数}$。事实上，当 $k\neq 0$ 时，$k$ 与 $\tau$ 完全刻画了曲线的几何形状。
 
 **定理 (曲线论基本定理)** @17
 
@@ -1210,6 +1218,8 @@ $$L=\frac{(\boldsymbol{a}''+v\boldsymbol{l}'',\boldsymbol{a}'+v\boldsymbol{l}',\
 
 ### 2.3 曲面上的活动标架 曲面的基本公式（p80–87）
 
+本节把曲面 $S$ 的参数 $u,v$ 改记为 $u^1,u^2$，采用省略和式的约定，然后仿照曲线论的 Frenet 公式，用活动标架的微分来刻画曲面，得到曲面的基本公式（Gauss 公式与 Weingarten 公式），并由此引入 Weingarten 变换，讨论共轭方向、渐近方向与渐近曲线。
+
 **注 (省略和式记号的约定)** @80
 
 把曲面 $S$ 的参数 $u,v$ 改记为 $u^1,u^2$，这时曲面方程为$$r=r(u^1,u^2).$$又记$$r_1=r_u,\quad r_2=r_v;\qquad r_{11}=r_{uu},\quad r_{12}=r_{uv},\quad r_{21}=r_{vu},\quad r_{22}=r_{vv};\qquad n_1=n_u,\quad n_2=n_v.$$再把第一、二基本形式的系数分别改记为$$g_{11}=E,\quad g_{12}=g_{21}=F,\quad g_{22}=G,\qquad g_{ij}=r_i\cdot r_j;$$$$\Omega_{11}=L,\quad \Omega_{12}=\Omega_{21}=M,\quad \Omega_{22}=N,$$即$$\Omega_{ij}=r_{ij}\cdot n=-r_i\cdot n_j=-r_j\cdot n_i.$$于是第一、第二基本形式就分别为$$\mathrm{I}=g_{11}(\mathrm{d}u^1)^2+2g_{12}\mathrm{d}u^1\mathrm{d}u^2+g_{22}(\mathrm{d}u^2)^2=\sum_{i,j=1}^{2}g_{ij}\mathrm{d}u^i\mathrm{d}u^j,$$$$\mathrm{II}=\Omega_{11}(\mathrm{d}u^1)^2+2\Omega_{12}\mathrm{d}u^1\mathrm{d}u^2+\Omega_{22}(\mathrm{d}u^2)^2=\sum_{i,j=1}^{2}\Omega_{ij}\mathrm{d}u^i\mathrm{d}u^j.$$
@@ -2099,6 +2109,8 @@ $$f=c\operatorname{ch}\Big(\frac{v}{c}+b\Big),$$
 ## 第3章 曲面的整体性质初步
 
 ### 3.1 曲面的整体表述（p152–158）
+
+第二章讨论的曲面性质都是由曲面的一小片得出的，但球面、环面、椭球面、单叶双曲面、双叶双曲面等都是整体，除各小片具有的几何性质外，还有整个曲面所具有的性质，即整体的性质。例如球面的任何一条测地线都是闭曲线（大圆），而平面上任何一条测地线（直线）可以无限延伸。
 
 **定义 1 (曲面片)** @152
 

@@ -201,6 +201,8 @@ async function main() {
   await app.navigate("#/fanhan/1.1/exercises");
   const searchEntry = readJSON("search.json").find((entry) => entry[0] === "fanhan" && entry[5]);
   await app.search(searchEntry[5]);
+  assert.ok(app.requests.includes("data/search/fanhan.json"),
+    "Searching from a book should load that book's search index first");
   assert.match(app.html(), /class="hit"/);
   assert.match(app.html(), /data-copy-search/);
   await app.copySearch();
@@ -334,11 +336,11 @@ async function checkProbabilityChapters() {
     await app.navigate(`#/gailv/${section.id}`);
     assert.ok(app.html().includes(`href="#/gailv/${info.id}/exercises\"`));
     assert.ok(app.html().includes(`本章习题 ${info.count} 题`));
-    assert.match(app.html(), /class="section-exercise-links"/);
+    assert.match(app.html(), /class="tab-topic"/);
     assert.ok(app.html().includes(`#/gailv/${info.id}/exercises/topic-${related.id}"`),
       "Section page must link to its related chapter topic");
     await app.navigate(`#/gailv/${info.id}/exercises/topic-${related.id}`);
-    assert.match(app.html(), /class="exercise-section-links"/);
+    assert.ok(app.html().includes("对应小节："));
     assert.ok(app.html().includes(`href="#/gailv/${section.id}"`),
       "Topic page must link back to its related section");
     await app.navigate(`#/gailv/${section.id}/exercises`);
