@@ -6,7 +6,7 @@ section_title: Kolmogorov 不等式与强大数律（*）
 pages: "141–143"
 ---
 
-### 定理 7.3.1 (Kolmogorov) @141
+### 定理 7.3.1 (Kolmogorov 不等式) @141
 
 设 $\{\xi_n\}$ 是独立平方可积随机序列，$\mu_n$ 和 $\sigma_n^2$ 分别表示其期望和方差，$S_n$ 表示其部分和，$m_n$ 和 $s_n^2$ 分别表示 $S_n$ 的期望与方差。则对任何 $n\ge 1$、$t>0$，有
 $$\mathbb{P}\left(\max_{1\le k\le n}|S_k-m_k|\ge t\right)\le t^{-2}\mathbb{E}\big[(S_n-m_n)^2\big].$$
@@ -26,6 +26,6 @@ $$\sum_n\mathbb{P}\left(\frac1n|S_n-m_n|>t\right)<\infty.$$
 $$\max_{2^{k-1}<n\le 2^k}\frac1n|S_n-m_n|$$
 几乎处处趋于零，这蕴含着 $\{\xi_n\}$ 服从强大数定律。
 
-### 定理 7.3.2 (Kolmogorov) @143
+### 定理 7.3.2 (Kolmogorov 强大数律) @143
 
 独立同分布可积随机序列服从强大数定律。

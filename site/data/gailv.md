@@ -16,7 +16,7 @@
 
 设完成一件事情分 $r$ 个顺序的步骤，第一步有 $n_1$ 种选择，固定第一步的选择后，第二步有 $n_2$ 种选择，固定前两步的选择后，第三步有 $n_3$ 种选择，$\cdots$，在固定前 $r-1$ 步的选择后，第 $r$ 步有 $n_r$ 种选择，那么完成这件事情共有 $n_1n_2\cdots n_r$ 种选择。
 
-**定义 (排列数与组合数)** @4
+**定义 (排列数)** @4
 
 从 $n$ 个对象中选 $r$ 个排成队列，不同排列的方法数为
 
@@ -24,11 +24,17 @@ $$ (n)_r = n(n-1)\cdots(n-r+1), $$
 
 称为 $n$ 个对象中选 $r$ 个的**排列数**；当 $r=n$ 时即为 $n!$。
 
+**注 (可重复排列)** @4
+
 若每一步的选择可以重复（例如 $r$ 个人各自从 $1,2,\cdots,n$ 中选一个号码，选择是独立的），则共有 $n^r$ 种不同选择。
+
+**定义 (组合数)** @4
 
 将 $n$ 个对象取 $r$ 个的排列分为两步：先取出 $r$ 个对象，再将它们排顺序。第一步的不同选择数称为 $n$ 个对象中取 $r$ 个的**组合数**，记为 $\binom{n}{r}$ 或 $C_n^r$，它不计顺序；第二步有 $r!$ 种排列。由乘法原理
 
 $$ (n)_r=\binom{n}{r}\cdot r!, \qquad\text{因此}\qquad \binom{n}{r}=\frac{(n)_r}{r!}=\frac{n!}{r!\,(n-r)!}. $$
+
+**注 (组合数的分组解释)** @4
 
 组合数也可理解为把 $n$ 个不同元素分成含 $r$ 个与 $n-r$ 个的两个组的分组数：排列与组合的差别就在于是否考虑顺序。
 
@@ -104,11 +110,15 @@ $$ \mathbb{P}(A)=\frac{|A|}{|\Omega|}. $$
 
 这个概率称为 $\Omega$ 上的**古典概率**。
 
-**注 (等概率假设)** @10
+**注 (古典概型的计算)** @10
 
 上述定义由 Laplace 明确给出。计算古典概型中事件 $A$ 的概率，实际上就是计算 $A$ 中元素个数与 $\Omega$ 中元素个数的比例；样本空间的具体形式不重要，重要的是样本点的数量，因此计算多是应用乘法原理与排列组合的方法。
 
+**注 (等可能性的来源)** @10
+
 样本空间的等可能性来自假设，这个假设符合或者不符合直觉在理论上是无关紧要的，但实际上的假设应要求符合直觉或常识，或者有一种物理上的对称性作为根据：掷硬币时假设正反面等可能，是因为硬币两面具有物理对称性；掷骰子时假设 $6$ 个点等可能，是因为骰子是正方体。
+
+**注 (等概率假设应明确)** @10
 
 等概率的假设通常应该明确。有些问题中我们经常省略等概率性的假设的明确叙述，作为隐含在语义中的自然假设（除非问题明确叙述其他假设）：比如说掷一个骰子，那么隐含着假设 $1,2,3,4,5,6$ 点出现的可能性是一样的；说从一个盒子里取球时，总是假设取到盒子中任何一个球的可能性都是一样的。
 
@@ -271,6 +281,10 @@ $$p_k=\frac{\phi(k)}{k}.$$
 **例 (两个自然数互素)** @24
 
 在上面定义的意义下，任取两个自然数，它们恰好互素的概率是多少？
+
+**注 (两个自然数互素的概率)** @25
+
+在上述密度的意义下，任取两个自然数互素的概率为$$\mathbb{P}(K)=\prod_{p}\left(1-\frac{1}{p^{2}}\right)=\frac{6}{\pi^{2}}.$$这个结论可以直观地解释为（注意只是解释而不是就是）任取两个自然数互素的概率为 $6/\pi^{2}$。
 
 ### 第1章 习题（p25–29）
 
@@ -492,15 +506,19 @@ $$|B_k|=(k-1)(|B_{k-1}|+|B_{k-2}|),$$
 
 空集 $\varnothing$ 是不含任何元素的集合，因此是任何集合的子集。如果 $A\subset B$ 且 $B\subset A$，则称 $A,B$ 两个集合**重合**，记为 $A=B$。例如 $\{1,2\}=\{2,1\}$。
 
-**定义 (并、交、差)** @31
+**定义 (并集)** @31
 
 集合之间的基本运算有并、交、差。集合 $A,B$ 的**并** $A\cup B$ 是属于 $A,B$ 之一的元素全体，即
 
 $$A\cup B:=\{x:\ x\in A\ \text{或者}\ x\in B\}.$$
 
+**定义 (交集)** @31
+
 **交** $A\cap B$ 是同时属于两者的元素全体，即
 
 $$A\cap B:=\{x:\ x\in A\ \text{且}\ x\in B\}.$$
+
+**定义 (差集)** @31
 
 **差** $A\setminus B$ 是属于 $A$ 但是不属于 $B$ 的元素全体，即
 
@@ -556,9 +574,17 @@ $$A^{c}:=\Omega\setminus A.$$
 
 因此 $\sigma$-域对通常涉及可列步的运算都是封闭的。$\sigma$-域的概念在概率论的理论研究中是极其重要的，但它常常是初学者感到困难的地方，它的详细讨论将放在下一章。
 
+**定义 (划分)** @33
+
+说事件列 $\{\Omega_n\}$ 是 $\Omega$ 的一个划分，是指它们互不相交（互斥）且 $\Omega=\bigcup_n\Omega_n$。
+
 **例 2.2.1 (划分生成的事件域)** @33
 
-说事件列 $\{\Omega_n\}$ 是 $\Omega$ 的一个划分，是指它们互不相交（互斥）且 $\Omega=\bigcup_n\Omega_n$。设$$\mathscr{A}:=\left\{\bigcup_{i\in I}\Omega_i: I\subset\{1,2,\cdots\}\right\},$$那么 $\mathscr{A}$ 是 $\Omega$ 上的 $\sigma$-域吗？称一个子 $\sigma$-域是**离散的**，如果它由某个划分生成，这样的 $\sigma$-域 $\sigma(\{\Omega_n\})$ 是什么？它对包含 $\{\Omega_n\}$ 的 $\sigma$-域有什么最小性？
+设$$\mathscr{A}:=\left\{\bigcup_{i\in I}\Omega_i: I\subset\{1,2,\cdots\}\right\},$$那么 $\mathscr{A}$ 是 $\Omega$ 上的 $\sigma$-域吗？这样的 $\sigma$-域 $\sigma(\{\Omega_n\})$ 是什么？它对包含 $\{\Omega_n\}$ 的 $\sigma$-域有什么最小性？
+
+**定义 (离散 $\sigma$-域)** @33
+
+称一个子 $\sigma$-域是**离散的**，如果它由某个划分生成。
 
 **定义 2.2.2 (概率测度)** @33
 
@@ -570,7 +596,11 @@ $$A^{c}:=\Omega\setminus A.$$
 
 (3) **可列可加性**：对 $\mathscr{F}$ 中互斥的可列个事件 $\{A_n:n\geqslant 1\}$，有$$\mathbb{P}\left(\bigcup_{n\geqslant 1}A_n\right)=\sum_{n\geqslant 1}\mathbb{P}(A_n).$$
 
-这时，称 $\mathbb{P}(A)$ 是事件 $A$ 发生的概率，且称满足上面两个定义的三要素 $(\Omega,\mathscr{F},\mathbb{P})$ 是一个**概率空间**。
+这时，称 $\mathbb{P}(A)$ 是事件 $A$ 发生的概率。
+
+**定义 (概率空间)** @33
+
+称满足上面两个定义的三要素 $(\Omega,\mathscr{F},\mathbb{P})$ 是一个**概率空间**。
 
 **例 2.2.2 (至少两次正面概率)** @34
 
@@ -612,13 +642,19 @@ $$A^{c}:=\Omega\setminus A.$$
 
 性质 (2) 是有限可加性，因此定理 1.3.1 中的公式依然成立。概率空间的定义是简单的，三条简单的公理给我们一个丰富多彩的概率论，但简单的定义并不意味着概率空间的构造是简单的。通常的函数值可以任意地定义，概率作为 $\sigma$-域上的函数值却不能随意定义，需要符合可列可加性，因此概率空间的构造不是件容易的事情。在本教材中，我们将避免概率空间的构造问题，因为这需要太多的细节，而且对理解概率本身没有紧迫的必要性。概率空间的构造当样本空间是个有限或可列集合时的情形是简单的，如下例所示。
 
-**例 2.2.3 (离散概率空间)** @37
+**例 2.2.3 (离散概率空间的构造)** @37
 
 设 $\Omega$ 是离散样本空间，即有限或可列，$\mathscr{F}$ 通常取为 $\Omega$ 的全体子集的集合。给每个样本点 $\omega\in\Omega$ 赋予一个非负实数 $p(\omega)$，满足 $\sum_{\omega\in\Omega}p(\omega)=1$。对任何 $A\subset\Omega$ 定义$$\mathbb{P}(A):=\sum_{\omega\in A}p(\omega),$$那么 $(\Omega,\mathscr{F},\mathbb{P})$ 是概率空间吗？$p(\omega)$ 的直观含义是什么？如果 $\Omega$ 是有限的，对各 $\omega\in\Omega$ 定义 $\mathbb{P}(\{\omega\}):=\dfrac{1}{|\Omega|}$，得到的是什么样的概率空间？
 
+**定义 (Bernoulli 概率空间)** @37
+
 下面给出另一个由两个结果构成的概率空间。有时候，虽然样本空间有许多结果，但我们把它们分成两类结果：成功或者失败。成功的概率为 $p$，自然失败的概率就是 $1-p$。在数学上，这意味着任意样本空间 $\Omega$，它的某个子集 $A$ 是成功的事件，它的补集 $A^{c}$ 是失败。这样定义了概率空间$$(\Omega,\{\varnothing,A,A^{c},\Omega\},\mathbb{P}),$$其中 $\mathbb{P}(\varnothing)=0$，$\mathbb{P}(A)=p$，$\mathbb{P}(A^{c})=1-p$，$\mathbb{P}(\Omega)=1$。这个概率空间通常称为 **Bernoulli 概率空间**。
 
+**定义 (离散概率空间)** @37
+
 一般地，我们可以把样本空间 $\Omega$ 的结果分类为 $\{\Omega_n\}$，相当于给出例 2.2.1 所说的划分，这样我们得到事件域 $\sigma(\{\Omega_n\})$。用上面所说的和等于 $1$ 的非负数列 $\{p_n\}$ 定义 $\mathbb{P}(\Omega_n)=p_n$ 或$$\mathbb{P}\left(\bigcup_{i\in I}\Omega_i\right)=\sum_{i\in I}p_i,$$这样 $(\Omega,\sigma(\{\Omega_n\}),\mathbb{P})$ 也是一个概率空间，上面的概率空间是这个概率空间的特例，我们把这样的概率空间称为**离散概率空间**。
+
+**注 (无限次掷硬币的概率空间)** @37
 
 因此在离散样本空间中，我们可以对每个元素（基本事件）赋值（非负且总和为 $1$）而得到一个概率空间。但对不可列的样本空间，这一直觉的方法通常是无效的，因为这样做很可能会导致逻辑上的矛盾。比如重复地掷 $n$ 次硬币这个试验是简单的，它是具有 $2^n$ 个结果的古典概率空间，那么重复地无限次（或者说任意多次）掷硬币这样一个随机试验在直观上也是显然可以实现的，但是不是真的有一个概率空间可以描述这个看上去简单的随机试验呢？这里有两个问题：(1) 这个随机试验在理论上应该怎样描述？(2) 这样的描述在定义 2.2.2 的意义下是否存在？
 
@@ -652,11 +688,13 @@ $$A^{c}:=\Omega\setminus A.$$
 
 (3) 如果 $B_i,\ i\in I$ 是 $Y$ 的子集族（族也是集合的意思），则$$f^{-1}\left(\bigcap_{i\in I}B_i\right)=\bigcap_{i\in I}f^{-1}(B_i),\qquad f^{-1}\left(\bigcup_{i\in I}B_i\right)=\bigcup_{i\in I}f^{-1}(B_i).$$
 
+**定义 (幂集、子集类与封闭性)** @40
+
 固定一个集合 $X$，交并补等是作用在其子集上的运算，就像加减乘除是作用在数上的运算一样。$X$ 的子集的全体称为 $X$ 的**幂集**，记为 $2^X$。幂集的子集称为是 $X$ 的**子集类**，就是 $X$ 的某些子集组成的集合，通常用花体字母表示。说一个子集类对某种运算**封闭**是指子集类中的集合经过此运算后得到的集合仍然在此子集类中。
 
-还有一个需要介绍的概念是示性函数。
-
 **定义 (示性函数)** @40
+
+还有一个需要介绍的概念是示性函数。
 
 设 $X$ 是一个集合，$A\subset X$。$A$ 在 $X$ 上的**示性函数** $\mathbf{1}_A$ 定义为$$\mathbf{1}_A(x):=\begin{cases}1, & x\in A,\\ 0, & x\notin A.\end{cases}$$如果 $B\subset Y$，那么示性函数与逆像有以下关系$$\mathbf{1}_{f^{-1}(B)}=\mathbf{1}_B\circ f,$$右边表示两个映射的复合。
 
@@ -710,6 +748,8 @@ $\mathscr{F}$ 可测的随机变量全体是线性空间。
 
 1. $n$ 个球随意地放入 $N$ 个盒子中，记 $\xi$ 是空盒的个数；2. 掷两个骰子，记点数之和为 $\xi$，点数小者为 $\eta$；3. 掷 $n$ 个骰子，点数为 6 的骰子个数 $\xi$；4. 重复地掷一个硬币，正面首次出现时所掷的次数 $\xi$ 与正面第 $r$ 次出现时所掷的次数 $\xi_r$。
 
+**定义 (离散随机变量与简单随机变量)** @43
+
 在这一章里，我们主要关注的是分布在一个有限或可列集（至多可列集）上的随机变量，这样的随机变量称为**离散随机变量**。为了简单，我们不妨认为离散随机变量的取值于一个至多可数集，用 $R(\xi)$ 表示，称为**值域**。用 $\mathbf{D}$ 表示一个给定概率空间 $(\Omega,\mathscr{F},\mathbb{P})$ 上离散随机变量全体，是个线性空间。特别地，当值域是有限集时，称为是**简单随机变量**，用 $\mathbf{S}$ 表示简单随机变量全体，是 $\mathbf{D}$ 的线性子空间。上面所列举的都是离散随机变量。形式上，离散随机变量可以表示为$$\xi=\sum_{x\in R(\xi)}x\,\mathbf{1}_{\{\xi=x\}}.$$
 
 **引理 2.3.1 (可列值随机变量判定)** @43
@@ -734,7 +774,11 @@ $\mathscr{F}$ 可测的随机变量全体是线性空间。
 
 (3) $\lim\limits_{x\to-\infty}F_\xi(x)=0$，$\lim\limits_{x\to+\infty}F_\xi(x)=1$。
 
+**定义 (分布函数的刻画)** @44
+
 一般地，$\mathbb{R}$ 上满足上面性质的函数称为是一个**分布函数**，简称**分布**。
+
+**注 (离散分布的分布函数)** @44
 
 如果 $\xi$ 是离散的，则分布函数$$F_\xi(x)=\mathbb{P}(\xi\le x)=\sum_{y\in R(\xi),\,y\le x}\mathbb{P}(\xi=y),$$即取值不超过 $x$ 的概率的和。集 $\{(x,\mathbb{P}(\xi=x)):x\in R(\xi)\}$ 唯一地决定了分布函数。
 
@@ -766,15 +810,21 @@ $\mathscr{F}$ 可测的随机变量全体是线性空间。
 
 一个概率空间上通常要考虑多个随机变量 $\xi=(\xi_1,\cdots,\xi_d)$，同样称它是**离散的**，如果它的值域是 $\mathbb{R}^d$ 上的一个有限或可列点集。这时正概率 $\mathbb{P}(\xi_1=x_1,\cdots,\xi_d=x_d)$ 的全体就是 $\xi$ 的联合分布。
 
-**定义 (联合分布与边缘分布)** @47
+**定义 (离散随机向量与联合分布)** @47
 
-称 $\xi=(\xi_1,\cdots,\xi_d)$ 为**离散**的，如果它的值域是 $\mathbb{R}^d$ 上的一个有限或可列点集。这时正概率$$\mathbb{P}(\xi_1=x_1,\cdots,\xi_d=x_d)$$的全体就是 $\xi$ 的**联合分布**。每个 $\xi_i$ 也是离散的，其分布律也称为是**边缘分布**。联合分布决定边缘分布，例如$$\mathbb{P}(\xi_1=x_1)=\sum_{x_2,\cdots,x_d}\mathbb{P}(\xi_1=x_1,\xi_2=x_2,\cdots,\xi_d=x_d).$$但是即使知道每个分量的分布，也不能决定联合分布。
+称 $\xi=(\xi_1,\cdots,\xi_d)$ 为**离散**的，如果它的值域是 $\mathbb{R}^d$ 上的一个有限或可列点集。这时正概率$$\mathbb{P}(\xi_1=x_1,\cdots,\xi_d=x_d)$$的全体就是 $\xi$ 的**联合分布**。
+
+**定义 (边缘分布)** @47
+
+每个 $\xi_i$ 也是离散的，其分布律也称为是**边缘分布**。联合分布决定边缘分布，例如$$\mathbb{P}(\xi_1=x_1)=\sum_{x_2,\cdots,x_d}\mathbb{P}(\xi_1=x_1,\xi_2=x_2,\cdots,\xi_d=x_d).$$但是即使知道每个分量的分布，也不能决定联合分布。
 
 **例 2.3.8 (离散均匀分布)** @47
 
 一个离散 $d$-维随机变量称为**均匀分布**的，如果它取任何值的概率都是相等的。这时，由可列可加性，这样的随机变量一定是简单的。反过来，如果 $D$ 是 $\mathbb{R}^d$ 的一个有限点集，那么一定存在概率空间 $(\Omega,\mathscr{F},\mathbb{P})$ 和随机变量 $\xi:\Omega\to\mathbb{R}^d$ 使得 $\xi$ 均匀分布在 $D$ 上。
 
 在 $1,2,3,4,5$ 中选个数记为 $\xi$，不重复地再选一个数，记为 $\eta$。那么 $(\xi,\eta)$ 的联合分布是什么？它的两个边缘分布各是什么？又记 $X=\xi\wedge\eta$，$Y=\xi\vee\eta$，那么 $(X,Y)$ 的联合分布是什么？$X,Y$ 的边缘分布还是均匀的吗？
+
+**定义 (连续均匀分布)** @47
 
 类似地，设 $D$ 是 $\mathbb{R}^n$ 上的一个有界区域，如果存在概率空间及其随机变量 $\xi$ 使得对任何子区域 $U\subset D$，有$$\mathbb{P}(\xi\in U)=\frac{|U|}{|D|},$$这里 $|\cdot|$ 表示区域的体积，那么称 $\xi$ 服从 $D$ 上的均匀分布。同样，区域 $D$ 上均匀分布随机变量的存在性等价于 $D$ 上几何概率空间的存在性。
 
@@ -928,9 +978,13 @@ $$F(x,y)=\mathbb P(\xi\leqslant x,\eta\leqslant y),\qquad x,y\in\mathbb R.$$
 
 ### 3.1 独立性（p51–54）
 
-**定义 3.1.1 (独立与相互独立)** @51
+**定义 3.1.1 (事件的独立性)** @51
 
-设 $(\Omega,\mathscr{F},\mathbb{P})$ 是一个概率空间，$\mathscr{F}$ 中的元素称为事件。称事件 $A,B$ **独立**，如果$$\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B).$$称事件 $A_1,\cdots,A_n,\cdots$ **相互独立**，如果其任何有限多个 $A_{i_1},\cdots,A_{i_k}$ 有$$\mathbb{P}(A_{i_1}\cap\cdots\cap A_{i_k})=\mathbb{P}(A_{i_1})\cdots\mathbb{P}(A_{i_k}).$$随机变量 $\xi_1,\cdots,\xi_n$ **相互独立**是指对任何 $x_i\in\mathbf{R}$，$1\leqslant i\leqslant n$，有$$\mathbb{P}(\xi_1\leqslant x_1,\cdots,\xi_n\leqslant x_n)=\mathbb{P}(\xi_1\leqslant x_1)\cdots\mathbb{P}(\xi_n\leqslant x_n).$$一个随机变量的集合称为相互独立是指其中任意有限个是相互独立的。
+设 $(\Omega,\mathscr{F},\mathbb{P})$ 是一个概率空间，$\mathscr{F}$ 中的元素称为事件。称事件 $A,B$ **独立**，如果$$\mathbb{P}(A\cap B)=\mathbb{P}(A)\mathbb{P}(B).$$称事件 $A_1,\cdots,A_n,\cdots$ **相互独立**，如果其任何有限多个 $A_{i_1},\cdots,A_{i_k}$ 有$$\mathbb{P}(A_{i_1}\cap\cdots\cap A_{i_k})=\mathbb{P}(A_{i_1})\cdots\mathbb{P}(A_{i_k}).$$
+
+**定义 (随机变量的独立性)** @51
+
+随机变量 $\xi_1,\cdots,\xi_n$ **相互独立**是指对任何 $x_i\in\mathbf{R}$，$1\leqslant i\leqslant n$，有$$\mathbb{P}(\xi_1\leqslant x_1,\cdots,\xi_n\leqslant x_n)=\mathbb{P}(\xi_1\leqslant x_1)\cdots\mathbb{P}(\xi_n\leqslant x_n).$$一个随机变量的集合称为相互独立是指其中任意有限个是相互独立的。
 
 **注 (两两独立与相互独立)** @51
 
@@ -1316,7 +1370,15 @@ $$\mathbb P\left(\bigcap_{n\geqslant1}A_n\right)=\prod_{n\geqslant1}\mathbb P(A_
 
 设 $\xi$ 是随机变量，$F$ 是其分布函数。如果 $\phi$ 是非负连续或有界连续函数，那么$$\mathbb{E}\phi(\xi)=\int_{\mathbb{R}}\phi(x)\,\mathrm{d}F(x).$$结论对 $\xi$ 是多维随机变量时也成立。
 
-如果只假设 $\phi$ 是连续函数，那么 $\phi(\xi)$ 可积当且仅当 $\int_{\mathbb{R}}|\phi(x)|\,\mathrm{d}F(x)<\infty$。这时$$\mathbb{E}\phi(\xi)=\int_{\mathbb{R}}\phi(x)\,\mathrm{d}F(x).$$特别地，$$\mathbb{E}\xi=\int_{\mathbb{R}}x\,\mathrm{d}F(x),$$这说明随机变量的期望只和其分布有关，尽管它是在概率空间上定义的。上式右端称为分布函数 $F$ 的均值，因此说随机变量的期望等于其分布函数的均值。在积分记号中变量 $x$ 没有实质意义，$\int_{\mathbb{R}}\phi(x)\,\mathrm{d}F(x)$ 经常简单地记为 $\int\phi\,\mathrm{d}F$。
+**推论 (连续函数的期望公式)** @77
+
+如果只假设 $\phi$ 是连续函数，那么 $\phi(\xi)$ 可积当且仅当 $\int_{\mathbb{R}}|\phi(x)|\,\mathrm{d}F(x)<\infty$。这时$$\mathbb{E}\phi(\xi)=\int_{\mathbb{R}}\phi(x)\,\mathrm{d}F(x).$$特别地，$$\mathbb{E}\xi=\int_{\mathbb{R}}x\,\mathrm{d}F(x),$$
+
+**注 (期望只依赖分布)** @77
+
+这说明随机变量的期望只和其分布有关，尽管它是在概率空间上定义的。上式右端称为分布函数 $F$ 的均值，因此说随机变量的期望等于其分布函数的均值。在积分记号中变量 $x$ 没有实质意义，$\int_{\mathbb{R}}\phi(x)\,\mathrm{d}F(x)$ 经常简单地记为 $\int\phi\,\mathrm{d}F$。
+
+**注 (变量替换公式的计算意义)** @77
 
 变量替换公式$$\mathbb{E}\phi(\xi)=\int_{\mathbb{R}}\phi(x)\,\mathrm{d}F(x)$$的左边是概率空间 $(\Omega,\mathscr{F},\mathbb{P})$ 上随机变量 $\phi(\xi)$ 的积分，除一些简单情况外很难实际计算；右边是 Euclid 空间上连续函数 $\phi$ 关于一个分布函数的积分，可以用微积分知识计算，从而把抽象的数学期望化为 Euclid 空间上具体的积分。一般 Stieltjes 积分也不容易算，但有两种特殊情况比较容易：一是当 $\xi$ 离散（或 $F$ 是跳跃型分布函数）时，定理 4.2.2 中的积分化为推论 4.2.1 中的级数；二是当 $F$ 绝对连续且密度函数 $f$ 为 Riemann 可积时，$$\int\phi\,\mathrm{d}F=\int\phi(x)\cdot f(x)\,\mathrm{d}x.$$
 
@@ -1326,9 +1388,13 @@ $$\mathbb P\left(\bigcap_{n\geqslant1}A_n\right)=\prod_{n\geqslant1}\mathbb P(A_
 
 (1) **Chebyshev 不等式**：设 $\xi$ 是一个随机变量，$\alpha>0$，则对于任意 $m>0$ 有$$\mathbb{P}(\{|\xi|\geqslant m\})\leqslant\frac{1}{m^{\alpha}}\mathbb{E}|\xi|^{\alpha}.$$(2) **Cauchy-Schwarz 不等式**：设 $\xi,\eta$ 是随机变量，那么$$|\mathbb{E}\xi\eta|^{2}\leqslant\mathbb{E}\xi^{2}\mathbb{E}\eta^{2}.$$
 
+**注 (Markov 不等式的推论)** @79
+
+Chebyshev 不等式也称为 **Markov 不等式**，它的一个简单推论：$\mathbb{E}|\xi|<+\infty$ 蕴含着 $|\xi|<+\infty$ a.s.。
+
 **注 (Chebyshev 不等式的推论)** @79
 
-Chebyshev 不等式也称为 **Markov 不等式**，它的一个简单推论：$\mathbb{E}|\xi|<+\infty$ 蕴含着 $|\xi|<+\infty$ a.s.。另外一个有用的推论：如果 $\xi$ 可积，那么$$\mathbb{P}(|\xi-\mathbb{E}\xi|\geqslant m)\leqslant\frac{1}{m^{2}}\mathbb{E}(\xi-\mathbb{E}\xi)^{2}.$$
+另外一个有用的推论：如果 $\xi$ 可积，那么$$\mathbb{P}(|\xi-\mathbb{E}\xi|\geqslant m)\leqslant\frac{1}{m^{2}}\mathbb{E}(\xi-\mathbb{E}\xi)^{2}.$$
 
 **注 ($L^{1}$、$L^{2}$ 范数与均方距离)** @79
 
@@ -1732,7 +1798,11 @@ $$F^{-1}(x):=\inf\{y: F(y)\ge x\},\qquad x\in(0,1).$$
 
 **定义 (连续型分布函数与密度函数)** @98
 
-一个分布函数 $F$ 称为是连续型的，如果存在一个非负 Riemann 可积函数（或者简单点，逐段连续函数）$f$ 使得对任何 $x\in\mathbf{R}$，$$F(x)=\int_{-\infty}^{x}f(t)\,\mathrm{d}t.$$（如果读者熟悉 Lebesgue 积分，那就把 $f$ 理解为 Lebesgue 可积的，积分也理解为 Lebesgue 积分，下面也是一样。）这时候，$F$ 是绝对连续的，$f$ 称为是 $F$ 的一个密度函数。如果随机变量的分布函数是连续型的，也说该随机变量是连续型的，密度函数是 $f$。注意容易看出，连续型的分布函数一定是连续的，而反之未必，例如著名的 Cantor 函数。当然密度函数是不唯一的，因为改变某点的值是不会改变积分的值的。
+一个分布函数 $F$ 称为是连续型的，如果存在一个非负 Riemann 可积函数（或者简单点，逐段连续函数）$f$ 使得对任何 $x\in\mathbf{R}$，$$F(x)=\int_{-\infty}^{x}f(t)\,\mathrm{d}t.$$（如果读者熟悉 Lebesgue 积分，那就把 $f$ 理解为 Lebesgue 可积的，积分也理解为 Lebesgue 积分，下面也是一样。）这时候，$F$ 是绝对连续的，$f$ 称为是 $F$ 的一个密度函数。如果随机变量的分布函数是连续型的，也说该随机变量是连续型的，密度函数是 $f$。
+
+**注 (连续型分布函数的性质)** @98
+
+注意容易看出，连续型的分布函数一定是连续的，而反之未必，例如著名的 Cantor 函数。当然密度函数是不唯一的，因为改变某点的值是不会改变积分的值的。
 
 **注 (密度的区间概率意义)** @98
 
@@ -1834,7 +1904,7 @@ $$F^{-1}(x):=\inf\{y: F(y)\ge x\},\qquad x\in(0,1).$$
 
 由 $\displaystyle\int_{0}^{\infty}x^{r-1}\mathrm{e}^{-\alpha x}\,\mathrm{d}x=\alpha^{-r}\Gamma(r)$，且由分部积分法容易推出 $\Gamma(r+1)=r\Gamma(r)$，$\Gamma(1)=1$。
 
-**注 ($\Gamma$ 分布)** @104
+**注 ($\Gamma$ 分布的密度)** @104
 
 由 $\Gamma$ 函数的上述性质，$$y=\begin{cases}\dfrac{\alpha^{r}}{\Gamma(r)}x^{r-1}\mathrm{e}^{-\alpha x},&x>0,\\ 0,&x\le 0\end{cases}$$是一个密度函数，对应的分布称为参数为 $r,\alpha$ 的 $\Gamma$ 分布，或者写 $\Gamma(r,\alpha)$。参数为 $\alpha$ 的指数分布就是 $\Gamma(1,\alpha)$ 分布。
 
@@ -2096,7 +2166,13 @@ $n$ 个随机变量 $\xi_1,\cdots,\xi_n$ 之间的两种平凡的关系之一是
 
 **定义 (n 维正态分布)** @116
 
-设 $a\in\mathbf{R}^n$，$A$ 是对称正定矩阵，称密度函数为$$\frac{1}{\sqrt{|A|}(\sqrt{2\pi})^n}\exp\left(-\frac{1}{2}(x-a)A^{-1}(x^{\mathrm{T}}-a^{\mathrm{T}})\right),\quad x\in\mathbf{R}^n$$的分布为（参数为 $a,A$ 的）**$n$ 维正态分布**，记为 $X\sim N(a,A)$。当 $a=0$ 时称为**中心化正态分布**；若进一步 $A$ 是单位矩阵，则称为**标准正态分布**。显然，若 $X\sim N(a,A)$，则 $(X-a)B^{-1}$ 是标准正态的，其中 $B$ 是对称正定矩阵且 $B^2=A$。
+设 $a\in\mathbf{R}^n$，$A$ 是对称正定矩阵，称密度函数为$$\frac{1}{\sqrt{|A|}(\sqrt{2\pi})^n}\exp\left(-\frac{1}{2}(x-a)A^{-1}(x^{\mathrm{T}}-a^{\mathrm{T}})\right),\quad x\in\mathbf{R}^n$$的分布为（参数为 $a,A$ 的）**$n$ 维正态分布**，记为 $X\sim N(a,A)$。
+
+**定义 (中心化与标准正态分布)** @116
+
+当 $a=0$ 时称为**中心化正态分布**；若进一步 $A$ 是单位矩阵，则称为**标准正态分布**。显然，若 $X\sim N(a,A)$，则 $(X-a)B^{-1}$ 是标准正态的，其中 $B$ 是对称正定矩阵且 $B^2=A$。
+
+**注 (正态密度的刻画)** @116
 
 简单地说，一个随机向量是正态分布的当且仅当其密度函数为 $C\cdot\exp(-\phi(x))$，其中 $C$ 是常数，$\phi$ 是具有最小值的二次函数。
 
@@ -2394,11 +2470,15 @@ $$\mathbb{P}(X\in S)\leqslant\frac{1}{1+\inf\{x\Sigma^{-1}x^{\mathrm{T}}:x\in S\
 
 ### 7.1 收敛的不同意义（p134–137）
 
-**定义 7.1.1 (依概率收敛与几乎处处收敛)** @134
+**定义 7.1.1 (依概率收敛)** @134
 
 设 $\{\xi_n\}$ 是一个随机变量序列，$\xi$ 是一个随机变量。
 
 (1) 称 $\{\xi_n\}$ **依概率收敛**于 $\xi$，如果对任何 $\varepsilon>0$，$$\lim_n\mathbb{P}(\{\omega\in\Omega:|\xi_n(\omega)-\xi(\omega)|\ge\varepsilon\})=0,$$记为 $\xi_n\xrightarrow{\ \mathbb{P}\ }\xi$。
+
+**定义 (几乎处处收敛)** @134
+
+设 $\{\xi_n\}$ 是一个随机变量序列，$\xi$ 是一个随机变量。
 
 (2) 称 $\{\xi_n\}$ **几乎处处**（或概率 $1$）**收敛**于 $\xi$，如果$$\mathbb{P}(\{\omega\in\Omega:\lim_n\xi_n(\omega)=\xi(\omega)\})=1,$$记为 $\xi_n\xrightarrow{\ \text{a.s.}\ }\xi$。
 
@@ -2460,7 +2540,7 @@ $$\mathbb{P}(X\in S)\leqslant\frac{1}{1+\inf\{x\Sigma^{-1}x^{\mathrm{T}}:x\in S\
 
 ### 7.3 Kolmogorov 不等式与强大数律（*）（p141–143）
 
-**定理 7.3.1 (Kolmogorov)** @141
+**定理 7.3.1 (Kolmogorov 不等式)** @141
 
 设 $\{\xi_n\}$ 是独立平方可积随机序列，$\mu_n$ 和 $\sigma_n^2$ 分别表示其期望和方差，$S_n$ 表示其部分和，$m_n$ 和 $s_n^2$ 分别表示 $S_n$ 的期望与方差。则对任何 $n\ge 1$、$t>0$，有$$\mathbb{P}\left(\max_{1\le k\le n}|S_k-m_k|\ge t\right)\le t^{-2}\mathbb{E}\big[(S_n-m_n)^2\big].$$
 
@@ -2474,7 +2554,7 @@ $$\mathbb{P}(X\in S)\leqslant\frac{1}{1+\inf\{x\Sigma^{-1}x^{\mathrm{T}}:x\in S\
 
 接上条，对 $k\ge 1$，在 $2^{k-1}<n\le 2^k$ 上应用 Kolmogorov 不等式，右边关于 $k$ 求和后可用 $\sum_{n\ge 1}\frac{16}{3}\frac{\sigma_n^2}{n^2}$ 控制，从而该级数有限；再由 Borel–Cantelli 引理推出$$\max_{2^{k-1}<n\le 2^k}\frac1n|S_n-m_n|$$几乎处处趋于零，这蕴含着 $\{\xi_n\}$ 服从强大数定律。
 
-**定理 7.3.2 (Kolmogorov)** @143
+**定理 7.3.2 (Kolmogorov 强大数律)** @143
 
 独立同分布可积随机序列服从强大数定律。
 
@@ -2484,7 +2564,11 @@ $$\mathbb{P}(X\in S)\leqslant\frac{1}{1+\inf\{x\Sigma^{-1}x^{\mathrm{T}}:x\in S\
 
 设 $1<p<\infty$，$1<q<\infty$ 且 $\dfrac{1}{p}+\dfrac{1}{q}=1$。则$$\mathbb{E}|\xi\eta|\le\bigl(\mathbb{E}|\xi|^p\bigr)^{\frac{1}{p}}\cdot\bigl(\mathbb{E}|\eta|^q\bigr)^{\frac{1}{q}}.$$
 
-当 $p=q=2$ 时即为 Cauchy-Schwarz 不等式（见定理 4.3.1）。对随机变量 $\xi$，$a>0$，$\mathbb{E}|\xi|^a$ 称为 $\xi$ 的 **$a$-阶绝对矩**。
+当 $p=q=2$ 时即为 Cauchy-Schwarz 不等式（见定理 4.3.1）。
+
+**定义 ($a$-阶绝对矩)** @144
+
+对随机变量 $\xi$，$a>0$，$\mathbb{E}|\xi|^a$ 称为 $\xi$ 的 **$a$-阶绝对矩**。
 
 **推论 7.4.1 (矩的单调性)** @145
 
@@ -2495,6 +2579,8 @@ $$\mathbb{P}(X\in S)\leqslant\frac{1}{1+\inf\{x\Sigma^{-1}x^{\mathrm{T}}:x\in S\
 **定义 7.4.1 ($L^r$-收敛)** @145
 
 称随机序列 $\{\xi_n\}$ 以 $r$ 阶矩收敛或 **$L^r$-收敛**于 $\xi$（$r\ge 1$），如果 $\mathbb{E}|\xi_n|^r$ 与 $\mathbb{E}|\xi|^r$ 有限且$$\lim_n \mathbb{E}|\xi_n-\xi|^r=0.$$记为 $\xi_n\xrightarrow{\ L^r\ }\xi$，其中最重要的是 $L^1$ 与 $L^2$ 收敛。
+
+**注 ($L^1$ 收敛的推论)** @145
 
 由 Chebyshev 不等式，$$\mathbb{P}(|\xi_n-\xi|>\varepsilon)\le\frac{1}{\varepsilon}\mathbb{E}|\xi_n-\xi|,$$因此 $L^1$ 收敛蕴含着依概率收敛。另外因为$$|\mathbb{E}\xi_n-\mathbb{E}\xi|\le\mathbb{E}|\xi_n-\xi|,$$故 $L^1$ 收敛蕴含着期望和极限可交换。但是 $L^1$ 收敛与几乎处处收敛是不能互相蕴含的。
 
@@ -2532,9 +2618,11 @@ $$\mathbb{P}(X\in S)\leqslant\frac{1}{1+\inf\{x\Sigma^{-1}x^{\mathrm{T}}:x\in S\
 
 实际上，当初 de Moivre 只是研究了 $p=1/2$ 的情况，一般的 $p$ 的情况是 Laplace 后来推广的。
 
-**定义 7.5.1 (弱收敛与依分布收敛)** @148
+**定义 7.5.1 (弱收敛)** @148
 
 (1) 设 $F_n$ 是 $\mathbf{R}$ 上分布函数。称 $\{F_n\}$ **弱收敛**，如果存在一个递增右连续函数 $F$ 使得对任何 $F$ 的连续点 $x$，有$$\lim_n F_n(x)=F(x),$$记为 $F_n\xrightarrow{\ \mathrm{w}\ }F$；
+
+**定义 (依分布收敛)** @148
 
 (2) 说一个随机变量序列 $\{\xi_n\}$ **依分布收敛**于随机变量 $\xi$，记为 $\xi_n\Rightarrow\xi$，如果 $\xi_n$ 的分布函数序列 $F_n$ 弱收敛于 $\xi$ 的分布函数 $F$。
 
@@ -2544,7 +2632,11 @@ $$\mathbb{P}(X\in S)\leqslant\frac{1}{1+\inf\{x\Sigma^{-1}x^{\mathrm{T}}:x\in S\
 
 由定义，如果 $F$ 是分布函数列弱收敛的极限，则 $F(+\infty)-F(-\infty)\le 1$。我们应注意到，一个分布函数列的弱收敛极限可能不是分布函数，或者说可能有亏损。例如 $F_n=1_{[n,\infty)}$，则 $F_n\xrightarrow{\ \mathrm{w}\ }0$。这说明弱收敛极限可能有亏损的理由是分布在 $\mathbf{R}$ 上的某些"物质"经过极限后跑到无穷远处去了。
 
+**注 (依分布收敛与依概率收敛的区别)** @148
+
 定理 7.5.1 说明一个概率空间上的随机序列 $\{\xi_n\}$ 依概率收敛蕴含着依分布收敛，但反之显然不对，因为不同随机变量可以有相同分布，甚至依分布收敛的定义中随机变量 $\{\xi_n\}$ 与 $\xi$ 可以不是定义在同一个概率空间上。
+
+**注 (为什么只在连续点要求收敛)** @148
 
 另外一个问题是为什么定义中只要求在 $F$ 的连续点上收敛就够了，这是因为在所有点上收敛的要求太苛刻了。比如随机序列 $\xi_n=1/n$ 收敛于 $0$，但分布函数 $1_{[1/n,+\infty)}$ 在零点总是等于零，而随机变量零的分布函数在零点等于 $1$，就没有收敛性。
 
@@ -2772,6 +2864,8 @@ $$\lim_n\mathbb{P}(\xi_n\in E)=\mathbb{P}(\xi\in E).$$
 
 设 $\xi$ 是 $d$ 维随机变量，$F$ 是 $\xi$ 的分布函数。那么复值函数$$\hat{F}(x):=\int_{\mathbf{R}^d}\mathrm{e}^{\mathrm{i}x\cdot y}\,\mathrm{d}F(y),\quad x\in\mathbf{R}^d$$（其中 $x\cdot y$ 是 $\mathbf{R}^d$ 空间的内积）称为分布函数 $F$ 的**特征函数**。
 
+**注 (特征函数与 Fourier 变换)** @156
+
 注意内积视方便有时也写为 $(x,y)$，或者直接写为 $xy$。特征函数就是 Fourier 变换。如果分布函数 $F$ 有密度函数 $f$，那么 $F$ 的特征函数为$$\hat{F}(x):=\int_{\mathbf{R}^d}\mathrm{e}^{\mathrm{i}x\cdot y}f(y)\,\mathrm{d}y,$$也记为 $\hat{f}$。按照期望公式，特征函数也可以用随机变量 $\xi$ 表示，写成下面的形式：$$\hat{F}(x)=\mathbb{E}\mathrm{e}^{\mathrm{i}x\cdot\xi},$$因此 $\hat{F}$ 也称为是 $\xi$ 的特征函数。当然特征函数本质上是由分布函数决定的，同分布的随机变量有相同的特征函数。
 
 **引理 8.1.1 (特征函数的性质)** @157
@@ -2786,9 +2880,13 @@ $$\lim_n\mathbb{P}(\xi_n\in E)=\mathbb{P}(\xi\in E).$$
 
 (4) 设 $\xi,\eta$ 是独立随机变量，则 $\mathbb{E}\mathrm{e}^{\mathrm{i}x\cdot(\xi+\eta)}=\mathbb{E}\mathrm{e}^{\mathrm{i}x\cdot\xi}\cdot\mathbb{E}\mathrm{e}^{\mathrm{i}x\cdot\eta}$，即和的特征函数是各自特征函数的积；
 
-(5) 特征函数是非负定的。一个 $\mathbf{R}^d$ 上的复值函数 $\varphi$ 称为是**非负定**的，如果对任何有限点集 $\{x_1,\cdots,x_m\}\subset\mathbf{R}^d$，矩阵 $(\varphi(x_j-x_k))_{1\le j,k\le m}$ 是非负定 Hermite 阵；
+(5) 特征函数是非负定的；
 
 (6) 设 $F$ 是随机变量 $\xi$ 的分布函数，如果 $\mathbb{E}|\xi|^n<\infty$，那么 $\hat{F}$ 在 $0$ 点 $n$ 次可导，且这时有 $\mathrm{i}^n\mathbb{E}\xi^n=\hat{F}^{(n)}(0)$。
+
+**定义 (非负定函数)** @157
+
+一个 $\mathbf{R}^d$ 上的复值函数 $\varphi$ 称为是**非负定**的，如果对任何有限点集 $\{x_1,\cdots,x_m\}\subset\mathbf{R}^d$，矩阵 $(\varphi(x_j-x_k))_{1\le j,k\le m}$ 是非负定 Hermite 阵。
 
 **注 (偶数阶可导与矩)** @158
 
@@ -3212,7 +3310,11 @@ $$ \mathbb{E}\Big(\int_{\mathbb{R}}f(\xi,x)\,\mathrm{d}x\Big)=\int_{\mathbb{R}}\
 
 随机序列 $\{\xi_n:n\geqslant 1\}$ 的**尾事件域**定义为$$\mathscr{T}(\{\xi_n:n\geqslant 1\}):=\bigcap_{n\geqslant 1}\sigma(\{\xi_k:k\geqslant n\}).$$
 
-直观上说，一个尾事件域中的事件发生与否和随机序列的前有限个随机变量无关。请说明事件 $\{\sum_n\xi_n\ \text{收敛}\}$、$\{\sup_n\xi_n=\infty\}$ 都属于尾事件域，但是事件$$\left\{\frac{1}{n}\sum_{k=1}^n\xi_k\ \text{收敛}\right\}$$一般不属于尾事件域。我们说一个事件域**服从 01 律**，如果其中事件的概率非 0 即 1。
+直观上说，一个尾事件域中的事件发生与否和随机序列的前有限个随机变量无关。请说明事件 $\{\sum_n\xi_n\ \text{收敛}\}$、$\{\sup_n\xi_n=\infty\}$ 都属于尾事件域，但是事件$$\left\{\frac{1}{n}\sum_{k=1}^n\xi_k\ \text{收敛}\right\}$$一般不属于尾事件域。
+
+**定义 (01 律)** @185
+
+我们说一个事件域**服从 01 律**，如果其中事件的概率非 0 即 1。
 
 **定理 10.2.3 (Kolmogorov 01 律)** @185
 
@@ -3322,9 +3424,13 @@ $$\mathbb{E}(\xi';\eta\le y)=\mathbb{E}(\xi;\eta\le y).$$
 
 设 $\{\xi_n\}$ 是连续掷一个均匀硬币的独立同分布随机序列，定义$$X_0:=a,\qquad X_n:=X_0+\sum_{i=1}^n\xi_i.$$为什么 $\{X_n\}$ 是一个鞅？
 
+**定义 (随机积分)** @198
+
+设 $\{H_n\}$ 是一列随机变量，其中对任何 $n$，$H_n$ 是依赖于 $X_0,\cdots,X_n$（即关于 $\mathscr{F}_n^X$ 可测）的有界随机变量。定义新的随机序列$$Y_0:=0,\qquad Y_n:=H_0(X_1-X_0)+H_1(X_2-X_1)+\cdots+H_{n-1}(X_n-X_{n-1}).$$称 $\{Y_n\}$ 为 $H$ 关于 $X$ 的**随机积分**。
+
 **定理 10.4.1 (Doob)** @198
 
-设 $\{H_n\}$ 是一列随机变量，其中对任何 $n$，$H_n$ 是依赖于 $X_0,\cdots,X_n$（即关于 $\mathscr{F}_n^X$ 可测）的有界随机变量。定义新的随机序列$$Y_0:=0,\qquad Y_n:=H_0(X_1-X_0)+H_1(X_2-X_1)+\cdots+H_{n-1}(X_n-X_{n-1}).$$称 $\{Y_n\}$ 为 $H$ 关于 $X$ 的**随机积分**。如果 $(X_n)$ 是鞅，那么 $(Y_n)$ 也是鞅。
+如果 $(X_n)$ 是鞅，那么随机积分 $(Y_n)$ 也是鞅。
 
 ### 第10章 习题（p198–201）
 
