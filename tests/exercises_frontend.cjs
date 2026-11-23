@@ -235,6 +235,10 @@ async function main() {
   assert.ok(!/class="empty"/.test(cardApp.html()),
     "Escape after searching from exercises rendered an empty statement section (current.items was empty)");
 
+  const timerApp = await start({ hash: "#/fanhan/1.1", search: "?mode=card" });
+  assert.match(timerApp.html(), /data-card-timer/);
+  assert.match(timerApp.html(), /计时 00:00/);
+
   const exerciseHit = readJSON("search.json").find((entry) => entry[3] === "习题" && entry[5]);
   assert.ok(exerciseHit, 'Exercises must be searchable');
   await app.search(exerciseHit[5]);

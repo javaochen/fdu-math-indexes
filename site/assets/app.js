@@ -22,6 +22,7 @@
   let srcAll = false;
   let mode = "read";
   let cardIdx = 0;
+  const cardTimer = { on: false, seconds: 0, id: null, section: "", cardIdx: null };
   let defsOpen = false;
   let lastFoldCard = null;
   let typeFilter = "all";
@@ -723,6 +724,7 @@
   }
 
   function renderSection(s) {
+    stopCardTimer();
     const b = s.book;
     const items = filterItems(s.items);
     const blocks = typeFilter === "all" && Array.isArray(s.blocks) ? s.blocks : null;
@@ -754,11 +756,56 @@
     window.scrollTo({ top: 0 });
   }
 
+  function formatCardTimer(seconds) {
+    const m = Math.floor(seconds / 60);
+    const s = seconds % 60;
+    return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+  }
+
+  function updateCardTimerButton() {
+    const btn = document.querySelector("[data-card-timer]");
+    if (!btn) return;
+    btn.textContent = `${cardTimer.on ? "停止" : "计时"} ${formatCardTimer(cardTimer.seconds)}`;
+    btn.setAttribute("aria-pressed", cardTimer.on ? "true" : "false");
+  }
+
+  function stopCardTimer() {
+    if (cardTimer.id) clearInterval(cardTimer.id);
+    cardTimer.id = null;
+    cardTimer.on = false;
+    cardTimer.seconds = 0;
+    cardTimer.section = "";
+    cardTimer.cardIdx = null;
+    updateCardTimerButton();
+  }
+
+  function startCardTimer() {
+    if (cardTimer.id) clearInterval(cardTimer.id);
+    cardTimer.on = true;
+    cardTimer.seconds = 0;
+    cardTimer.section = current ? current.id : "";
+    cardTimer.cardIdx = cardIdx;
+    updateCardTimerButton();
+    cardTimer.id = setInterval(() => {
+      cardTimer.seconds += 1;
+      updateCardTimerButton();
+    }, 1000);
+  }
+
+  function toggleCardTimer() {
+    if (cardTimer.on) stopCardTimer();
+    else startCardTimer();
+  }
+
   function renderCard(idx) {
     if (!current) { route(); return; }
     const items = filterItems(current.items);
     if (!items.length) { renderSection(current); return; }
     cardIdx = Math.max(0, Math.min(items.length - 1, idx | 0));
+    // 默认每张卡片独立计时：切到新卡片时归零并继续正计时。
+    if (cardTimer.on && (cardTimer.section !== current.id || cardTimer.cardIdx !== cardIdx)) {
+      startCardTimer();
+    }
     const it = items[cardIdx];
     const b = current.book;
     const head = sectionHead(current, items);
@@ -769,6 +816,7 @@
           <button class="card-nav" type="button" data-card="-1" ${cardIdx === 0 ? "disabled" : ""}>← 上一条</button>
           <span class="card-count">${cardIdx + 1} / ${items.length}</span>
           <button class="card-nav" type="button" data-card="1" ${cardIdx === items.length - 1 ? "disabled" : ""}>下一条 →</button>
+          <button class="card-nav card-timer" type="button" data-card-timer aria-pressed="${cardTimer.on}" title="正计时开关">${cardTimer.on ? "停止" : "计时"} ${formatCardTimer(cardTimer.seconds)}</button>
         </div>
         ${itemHtml({ ...it, bookId: b.id, secId: current.id }, { foldable: true, folded: true })}
         <p class="card-hint">← → 翻动 · 空格 显示/隐藏 · j / k 切节 · Esc 回到阅读</p>
@@ -780,6 +828,7 @@
   }
 
   function renderBookHome(meta, chapterNo = "") {
+    stopCardTimer();
     setBookBackground(meta);
     setExerciseView(false);
     setTopbarCopy(null);
@@ -958,6 +1007,7 @@
   }
 
   function renderSearchResults(q, index, partial = false) {
+    stopCardTimer();
     const terms = norm(q).split(" ").filter(Boolean);
     const hitIdx = [];
     for (let i = 0; i < index.entries.length && hitIdx.length < 200; i++) {
@@ -1032,6 +1082,7 @@
   }
 
   function renderHome() {
+    stopCardTimer();
     ++loadToken;
     setBookBackground(null);
     lastSearch = "";
@@ -1077,6 +1128,7 @@
   }
 
   function renderExercises(s, record, anchor = "", error = "") {
+    stopCardTimer();
     if (s.scope === "chapter") { renderChapterExercises(s, record, anchor, error); return; }
     setExerciseView(true);
     document.body.classList.remove("home-mode", "card-mode");
@@ -1339,6 +1391,9 @@
       if (ex) copyText(ex, copyExercises);
       return;
     }
+
+    const timerBtn = e.target.closest("[data-card-timer]");
+    if (timerBtn) { toggleCardTimer(); return; }
 
     const cardBtn = e.target.closest("[data-card]");
     if (cardBtn) { renderCard(cardIdx + Number(cardBtn.dataset.card)); return; }
